@@ -2,13 +2,37 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { BsCalendar2EventFill } from "react-icons/bs";
 
-const Event = ({ handleClick, title, description, className, icon, date, time }) => {
+const Event = ({
+  handleClick,
+  title,
+  description,
+  className,
+  icon,
+  date,
+  time,
+}) => {
   return (
+    <div className="group relative transition-all hover:z-10">
+      <div className="absolute opacity-0 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-blue-300 rounded-b-3xl px-4 py-2 transition-all">
+        <div className="flex flex-row space-x-12 justify-center">
+          <div className="">
+            <p className="font-sans font-semibold text-center text-xl">
+              {date}
+            </p>
+            <p className="font-sans text-center text-gray-600">Date</p>
+          </div>
 
-    <div className="w-full group relative z-10 hover:z-30 transition-all block  hover:scale-110">
+          <div className="">
+            <p className="font-sans font-semibold text-center text-xl">
+              {time}
+            </p>
+            <p className="font-sans text-center text-gray-600">Time</p>
+          </div>
+        </div>
+      </div>
 
       <div
-        className={`${className} text-lg text-blue w-full h-5/6 px-4 py-2 rounded-3xl relative bg-blue-300 group-hover:bg-blue-200`}
+        className={`${className} text-lg text-blue p-6 rounded-3xl group-hover:rounded-b-none relative bg-blue-300 group-hover:scale-[110%] transition-all`}
       >
         <div className="bg-white rounded-bl-[30px] p-2 absolute top-0 right-0">
           <div className="absolute top-0 -left-4 bg-white">
@@ -19,7 +43,8 @@ const Event = ({ handleClick, title, description, className, icon, date, time })
               e.preventDefault();
               handleClick(e);
             }}
-            className="bg-lime-300 rounded-full p-4">
+            className="bg-lime-300 rounded-full p-4"
+          >
             <FiArrowUpRight className="text-black text-3xl" />
           </button>
           <div className="absolute -bottom-4 right-0 bg-white">
@@ -31,43 +56,14 @@ const Event = ({ handleClick, title, description, className, icon, date, time })
           {React.cloneElement(icon, { className: "text-white text-3xl" })}
         </div>
 
-        <p className="font-semibold mb-4 font-sans text-xl">
-          {title}
-        </p>
+        <p className="font-semibold mb-4 font-sans text-xl">{title}</p>
 
-        <p>
-          {description}
-        </p>
+        <p>{description}</p>
 
-        <div className="hidden group-hover:block absolute bottom-0 left-0 bg-blue-200 p-3"></div>
-        <div className="hidden group-hover:block absolute bottom-0 right-0 bg-blue-200 p-3"></div>
-
+        {/* <div className="hidden group-hover:block absolute bottom-0 left-0 bg-blue-200 p-3"></div>
+        <div className="hidden group-hover:block absolute bottom-0 right-0 bg-blue-200 p-3"></div> */}
       </div>
-
-      <div className="hidden group-hover:block bg-slate-100 rounded-b-3xl px-4 py-2">
-        <div className="flex flex-row space-x-12 justify-center">
-          <div className="">
-            <p className="font-sans font-semibold text-center text-xl">
-              {date}
-            </p>
-            <p className="font-sans text-center text-gray-600">
-              Date
-            </p>
-          </div>
-
-          <div className="">
-            <p className="font-sans font-semibold text-center text-xl">
-              {time}
-            </p>
-            <p className="font-sans text-center text-gray-600">
-              Time
-            </p>
-          </div>
-        </div>
-      </div>
-
     </div>
-
   );
 };
 
