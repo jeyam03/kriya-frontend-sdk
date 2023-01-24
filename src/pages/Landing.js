@@ -18,15 +18,15 @@ const Landing = () => {
         </a>
       </section>
 
-      <section className="h-screen relative">
-        <div className="absolute w-full h-full left-0 top-0">
-          <video controls={false} autoPlay muted loop>
+      <section className="relative">
+        <div className="">
+          <video className="h-full object-cover" controls={false} autoPlay muted loop>
             <source src={VIDEO_LINK} type="video/mp4" />
           </video>
         </div>
       </section>
 
-      <section className="px-10 mb-8">
+      <section className="px-10 my-8">
         <div className="col-span-2 mb-4">
           <h1 className="text-5xl font-bold tracking-wider">Events.</h1>
         </div>
