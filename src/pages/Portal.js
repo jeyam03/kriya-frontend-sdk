@@ -1,6 +1,7 @@
 import React from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
-// import SampleImg from "../assests/sample.png";
+import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
+import { AiOutlineTeam } from "react-icons/ai";
 
 const Portal = () => {
   return (
@@ -12,7 +13,7 @@ const Portal = () => {
           </p>
         </div>
         <div className="bg-[#dbeaf3] w-full lg:w-2/3 rounded-3xl p-12">
-          <p className="text-xl font-semibold tracking-wider text-[#3c4043]">
+          <p className="text-xl text-justify font-semibold tracking-wider text-[#3c4043]">
             An interesting event to bring out the Civil engineer in you. All you
             need for this event is knowledge in AutoCAD software, innovative
             ideas and the talent of justifying your ideas. If you have a knack
@@ -22,7 +23,7 @@ const Portal = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:w-3/4">
-        <div className="bg-[#dbeaf3] w-full lg:w-2/3 rounded-3xl p-12 space-y-8">
+        <div className="bg-[#dbeaf3] w-full lg:w-2/3 rounded-3xl p-12 space-y-12">
           <div className="space-y-4">
             <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
               Round 1 - Rough Sketch
@@ -74,35 +75,52 @@ const Portal = () => {
           </div>
 
           <div className="bg-[#e8edd7] flex-1 rounded-3xl p-12 space-y-4">
-            <div className="flex flex-row items-center gap-4">
+            <div className="flex flex-row items-center gap-6">
               <p className="text-7xl font-semibold tracking-wide text-[#3c4043]">
                 24
               </p>
               <div className="flex flex-col">
-                <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
+                <p className="text-2xl font-semibold tracking-wide text-[#3c4043]">
                   March
                 </p>
-                <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
+                <p className="text-2xl font-semibold tracking-wide text-[#3c4043]">
                   2023
                 </p>
               </div>
             </div>
-            <p className="text-xl font-semibold tracking-wide text-[#3c4043]">
-              09:30 AM - 12:00 PM
-            </p>
-            <p className="text-xl font-semibold tracking-wide text-[#3c4043]">
-              02:00 PM - 03:30 PM
-            </p>
-            <div className="flex flex-row items-center gap-4">
-              <p className="text-7xl font-semibold tracking-wide text-[#3c4043]">
-                K
+            <div className="flex flex-row items-center gap-6">
+              <p className="text-6xl font-semibold tracking-wide text-[#3c4043] p-3">
+                <MdAccessTime />
               </p>
               <div className="flex flex-col">
-                <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
-                  Block
+                <p className="text-xl font-semibold tracking-wide text-[#3c4043]">
+                  09:30 AM - 12:00 PM
                 </p>
-                <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
-                  1<sup>st</sup> Floor
+                <p className="text-xl font-semibold tracking-wide text-[#3c4043]">
+                  02:00 PM - 03:30 PM
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row items-center gap-6">
+              <p className="text-6xl font-semibold tracking-wide text-[#3c4043] p-3">
+                <MdOutlineLocationOn />
+              </p>
+              <div className="flex flex-col">
+                <p className="text-2xl font-semibold tracking-wide text-[#3c4043]">
+                  K Block 1<sup>st</sup> Floor
+                </p>
+                <p className="text-2xl tracking-wide text-[#3c4043]">
+                  Civil Seminar Hall
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row items-center gap-6">
+              <p className="text-6xl font-semibold tracking-wide text-[#3c4043] p-3">
+                <AiOutlineTeam />
+              </p>
+              <div className="flex flex-col">
+                <p className="text-2xl font-semibold tracking-wide text-[#3c4043]">
+                  2 - 3 Members
                 </p>
               </div>
             </div>
@@ -118,7 +136,7 @@ const Portal = () => {
                 <p className="text-2xl font-semibold tracking-wide text-[#3c4043]">
                   Ellakiyaa A
                 </p>
-                <p className="text-xl tracking-wide text-[#3c4043]">
+                <p className="text-xl tracking-wider text-[#3c4043]">
                   7598436113
                 </p>
               </div>
@@ -143,7 +161,7 @@ const Portal = () => {
                 <p className="text-2xl font-semibold tracking-wide text-[#3c4043]">
                   Gokul Ram C
                 </p>
-                <p className="text-xl tracking-wide text-[#3c4043]">
+                <p className="text-xl tracking-wider text-[#3c4043]">
                   9361135851
                 </p>
               </div>
