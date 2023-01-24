@@ -1,6 +1,5 @@
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
-import { BsCalendar2EventFill } from "react-icons/bs";
 
 const Event = ({
   handleClick,
@@ -36,7 +35,7 @@ const Event = ({
       >
         <div className="bg-white rounded-bl-[30px] p-2 absolute top-0 right-0">
           <div className="absolute top-0 -left-4 bg-white">
-            <div className="bg-blue-300 group-hover:bg-blue-200 rounded-tr-full w-4 h-4"></div>
+            <div className="bg-blue-300 rounded-tr-full w-4 h-4"></div>
           </div>
           <button
             onClick={(e) => {
@@ -48,7 +47,7 @@ const Event = ({
             <FiArrowUpRight className="text-black text-3xl" />
           </button>
           <div className="absolute -bottom-4 right-0 bg-white">
-            <div className="bg-blue-300 group-hover:bg-blue-200 rounded-tr-full w-4 h-4"></div>
+            <div className="bg-blue-300 rounded-tr-full w-4 h-4"></div>
           </div>
         </div>
 
@@ -60,8 +59,6 @@ const Event = ({
 
         <p>{description}</p>
 
-        {/* <div className="hidden group-hover:block absolute bottom-0 left-0 bg-blue-200 p-3"></div>
-        <div className="hidden group-hover:block absolute bottom-0 right-0 bg-blue-200 p-3"></div> */}
       </div>
     </div>
   );
