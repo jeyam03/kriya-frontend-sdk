@@ -2,10 +2,10 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { BsCalendar2EventFill } from "react-icons/bs";
 
-const Event = ({ handleClick, title, description, className }) => {
+const Event = ({ handleClick, title, description, className, icon, date, time }) => {
   return (
 
-    <div className="w-full group">
+    <div className="w-full group relative z-10 hover:z-30 transition-all block  hover:scale-110">
 
       <div
         className={`${className} text-lg text-blue w-full h-5/6 px-4 py-2 rounded-3xl relative bg-blue-300 group-hover:bg-blue-200`}
@@ -28,10 +28,10 @@ const Event = ({ handleClick, title, description, className }) => {
         </div>
 
         <div className="bg-blue-500 rounded-full p-4 mb-4 w-fit">
-          <BsCalendar2EventFill className="text-white text-3xl" />
+          {React.cloneElement(icon, { className: "text-white text-3xl" })}
         </div>
 
-        <p className="font-semibold mb-4 font-sans">
+        <p className="font-semibold mb-4 font-sans text-xl">
           {title}
         </p>
 
@@ -48,7 +48,7 @@ const Event = ({ handleClick, title, description, className }) => {
         <div className="flex flex-row space-x-12 justify-center">
           <div className="">
             <p className="font-sans font-semibold text-center text-xl">
-              March 24
+              {date}
             </p>
             <p className="font-sans text-center text-gray-600">
               Date
@@ -57,7 +57,7 @@ const Event = ({ handleClick, title, description, className }) => {
 
           <div className="">
             <p className="font-sans font-semibold text-center text-xl">
-              10:00 AM
+              {time}
             </p>
             <p className="font-sans text-center text-gray-600">
               Time

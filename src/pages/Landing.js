@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { animate, stagger, scroll } from "motion"
 import "../styles/scrollanim.css";
 import Event from "../components/Event";
+import { BsCalendar2EventFill } from "react-icons/bs";
 
 const Landing = () => {
 
@@ -35,62 +36,121 @@ const Landing = () => {
       </section>
 
       <section className="w-screen h-screen flex flex-col bg-white">
-        <p className="text-3xl mt-8 font-semibold tracking-widest text-blue-500 font-sans">
-          Events
+        <p className="text-3xl mt-8 font-semibold tracking-wider text-blue-500 font-sans">
+          EVENTS
         </p>
+
+        <div className="w-full flex z-10 gap-x-8 px-6 relative">
+          <Event
+            title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
+          />
+          <Event
+            title="Event 2"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
+          />
+          <Event
+            title="Event 3"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
+          />
+          <Event
+            title="Event 4"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
+          />
+          <Event
+            title="Event 5"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
+          />
+        </div>
 
         <div className="w-full flex flex-row space-x-8 px-6">
           <Event
             title="Event 1"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
-            title="Event 2"
+            title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
-            title="Event 3"
+            title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
-            title="Event 4"
+            title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
-            title="Event 5"
+            title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
         </div>
 
         <div className="w-full flex flex-row space-x-8 px-6">
           <Event
             title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
             title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
             title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
             title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
           <Event
             title="Event 1"
-          />
-        </div>
-
-        <div className="w-full flex flex-row space-x-8 px-6">
-          <Event
-            title="Event 1"
-          />
-          <Event
-            title="Event 1"
-          />
-          <Event
-            title="Event 1"
-          />
-          <Event
-            title="Event 1"
-          />
-          <Event
-            title="Event 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
+            icon=<BsCalendar2EventFill/>
+            date="24th March"
+            time="10:00 AM"
           />
         </div>
       </section>
