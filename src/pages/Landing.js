@@ -4,87 +4,28 @@ import Event from "../components/Event";
 import { BsCalendar2EventFill } from "react-icons/bs";
 
 const Landing = () => {
-  const VIDEO_LINK =
-    "https://res.cloudinary.com/dksmk66vo/video/upload/v1674456543/FINAL_RENDER_v2_1_u0bkpf.mp4";
+  const [bgColor, setBgColor] = useState("#121212");
+  const [consolee, setConsolee] = useState("");
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee(`${window.pageYOffset} - ${window.innerHeight}`);
+        console.log(window.pageYOffset);
+      },
+      { passive: true }
+    );
+  }, []);
 
   return (
-    <>
-      <section className="bg-black flex flex-row justify-center items-center h-screen">
-        <a href="https://ibb.co/M97bZvT">
-          <img
-            src="https://i.ibb.co/3kcw43X/Kriya-Logo-2023-white.png"
-            alt="Kriya-Logo-2023"
-          />
-        </a>
-      </section>
-
-      <section className="relative">
-        <div className="">
-          <video className="h-full object-cover" controls={false} autoPlay muted loop>
-            <source src={VIDEO_LINK} type="video/mp4" />
-          </video>
-        </div>
-      </section>
-
-      <section className="px-10 my-8">
-        <div className="col-span-2 mb-4">
-          <h1 className="text-5xl font-bold tracking-wider">Events.</h1>
-        </div>
-
-        <div className="relative grid grid-cols-5 gap-2">
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-        </div>
-      </section>
-
-      <section className="px-10">
-        <div className="col-span-2 mb-4">
-          <h1 className="text-5xl font-bold tracking-wider">Workshops.</h1>
-        </div>
-
-
-      </section>
-    </>
+    <React.Fragment>
+      <div className="bg-white p-4 rounded-lg fixed top-10 left-10">{consolee}</div>
+      <main className={`w-screen overflow-x-hidden bg-[${bgColor}]`}>
+        <section id="section1" className=" h-screen w-full"></section>
+        <section id="section2" className="bg-red-500 h-screen w-full"></section>
+      </main>
+    </React.Fragment>
   );
 };
 
