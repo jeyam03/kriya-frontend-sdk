@@ -50,7 +50,7 @@ const Portal = () => {
 
           <div className="bg-[#e8edd7] flex-1 rounded-3xl p-12 space-y-4">
             <div className="flex flex-row items-center gap-6">
-              <p className="text-7xl font-semibold tracking-wide text-[#3c4043]">
+              <p className="text-6xl font-semibold tracking-wide text-[#3c4043]">
                 24
               </p>
               <div className="flex flex-col">
@@ -63,7 +63,7 @@ const Portal = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-6">
-              <p className="text-6xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-5xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdAccessTime />
               </p>
               <div className="flex flex-col">
@@ -76,7 +76,7 @@ const Portal = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-6">
-              <p className="text-6xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-5xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdOutlineLocationOn />
               </p>
               <div className="flex flex-col">
@@ -89,7 +89,7 @@ const Portal = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-6">
-              <p className="text-6xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-5xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <AiOutlineTeam />
               </p>
               <div className="flex flex-col">
