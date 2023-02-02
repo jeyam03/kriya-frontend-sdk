@@ -23,12 +23,17 @@ const Portal = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:w-3/4">
-        <div className="bg-[#dbeaf3] w-full lg:w-2/3 rounded-3xl p-12 space-y-12">
-          <div className="space-y-4">
-            <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
-              Round 1 - Rough Sketch
-            </p>
-            <p className="text-xl tracking-wide text-justify text-[#3c4043]">
+        <div className="bg-[#dbeaf3] w-full lg:w-2/3 rounded-3xl p-12 space-y-8">
+          <div className="space-y-2">
+            <div className="flex flex-row items-end gap-4">
+              <p className="text-9xl font-semibold tracking-wider text-[#3c4043]">
+                1
+              </p>
+              <p className="text-3xl font-semibold tracking-wide text-[#3c4043] pb-2">
+                Rough Sketch
+              </p>
+            </div>
+            <p className="text-xl tracking-wide text-justify text-[#3c4043] pl-12">
               Participants should prepare a Line sketch for the specified type
               of building with the specifications provided(eg. Area of the
               plot,size of the rooms) and it should contain the necessary data
@@ -36,11 +41,16 @@ const Portal = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
-              Round 2 - Plan.dwg
-            </p>
-            <p className="text-xl tracking-wide text-justify text-[#3c4043]">
+          <div className="space-y-2">
+            <div className="flex flex-row items-end gap-4">
+              <p className="text-9xl font-semibold tracking-wider text-[#3c4043]">
+                2
+              </p>
+              <p className="text-3xl font-semibold tracking-wide text-[#3c4043] pb-2">
+                Plan.dwg
+              </p>
+            </div>
+            <p className="text-xl tracking-wide text-justify text-[#3c4043] pl-12">
               To make a 2-D plan with the drawn line sketch (in ROUND1) in
               AutoCAD within the given time (45 mins) with all data for the
               construction with accurate dimensioning and using
@@ -50,11 +60,16 @@ const Portal = () => {
             </p>
           </div>
 
-          <div className="space-y-4">
-            <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
-              Round 3 - Budget Assessment
-            </p>
-            <p className="text-xl tracking-wide text-justify text-[#3c4043]">
+          <div className="space-y-2">
+            <div className="flex flex-row items-end gap-4">
+              <p className="text-9xl font-semibold tracking-wider text-[#3c4043]">
+                3
+              </p>
+              <p className="text-3xl font-semibold tracking-wide text-[#3c4043] pb-2">
+                Budget Assessment
+              </p>
+            </div>
+            <p className="text-xl tracking-wide text-justify text-[#3c4043] pl-12">
               In this round the selected participants from the previous round
               will have to prepare an approximate estimation and an impressive
               pitch of their proposed plan as a contractor with maximum utility
