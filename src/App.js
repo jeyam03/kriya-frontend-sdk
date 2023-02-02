@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
-import Portal from "./pages/Portal";
+import Portal, { PortalAnother } from "./pages/Portal";
 
 const App = () => {
   return (
@@ -8,7 +8,8 @@ const App = () => {
       <Routes>
         {/* <Route path="team" element={<OurTeam />} />
         <Route path="event/:id" element={<Event />} /> */}
-        <Route path="portal" element={<Portal />} />
+        <Route path="portal" element={<Portal />} />/
+        <Route path="another-portal" element={<PortalAnother />} />/
         <Route index element={<Landing />} />
       </Routes>
     </BrowserRouter>
