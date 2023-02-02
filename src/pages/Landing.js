@@ -66,7 +66,7 @@ const Landing = () => {
         </button>
       </nav>
       <main
-        className={`w-screen overflow-x-hidden transition-all duration-700`}
+        className={`w-screen overflow-x-hidden transition-all duration-300`}
         style={{
           // background: `rgba(${getColorVal(consolee)}, ${getColorVal(
           //   consolee
@@ -85,7 +85,7 @@ const Landing = () => {
           className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0"
           style={{ flexFlow: "column" }}
         ></section>
-        <Section2 />
+        <Section2 scrollYByVH={consolee} />
         <section id="section3" className=" h-screen w-full"></section>
         <section id="section3" className=" h-screen w-full"></section>
         <section id="section3" className=" h-screen w-full"></section>
@@ -211,30 +211,51 @@ const Section1 = () => {
   );
 };
 
-const Section2 = () => {
+const Section2 = ({ scrollYByVH }) => {
   const [fadeInAnimate, setFadeInAnimate] = useState(false);
 
   useEffect(() => {
     const element = document.querySelector(".anchor");
     const numberTags = document.querySelectorAll(".number-tag");
-    const calenderText = document.querySelector(".calender-text");
+    const calenderTexts = document.querySelectorAll(".calender-text");
     const observer = new IntersectionObserver((entries) => {
       console.log(entries[0].isIntersecting);
       if (entries[0].isIntersecting) {
         numberTags.forEach((numberTag) => {
           numberTag.classList.add("animate-fade-in-top");
         });
+        calenderTexts.forEach((calenderText) => {
         calenderText.classList.add("animate-fade-in");
+        });
       } else {
         numberTags.forEach((numberTag) => {
           numberTag.classList.remove("animate-fade-in-top");
         });
+        calenderTexts.forEach((calenderText) => {
         calenderText.classList.remove("animate-fade-in");
+        });
       }
     });
 
     observer.observe(element);
   });
+
+  // useEffect(() => {
+  //   const element = document.querySelector(".anchor");
+  //   const numberTags = document.querySelectorAll(".number-tag");
+  //   const calenderText = document.querySelector(".calender-text");
+  //   if (scrollYByVH > 1) {
+  //     numberTags.forEach((numberTag) => {
+  //       numberTag.classList.add("animate-fade-in-top");
+  //     });
+  //     calenderText.classList.add("animate-fade-in");
+  //   } else {
+  //     numberTags.forEach((numberTag) => {
+  //       numberTag.classList.remove("animate-fade-in-top");
+  //     });
+  //     calenderText.classList.remove("animate-fade-in");
+  //   }
+  // }, [scrollYByVH]);
 
   useEffect(() => {
     console.log(fadeInAnimate);
@@ -248,13 +269,13 @@ const Section2 = () => {
         id="section2"
         className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0 pt-16 flex flex-col lg:flex-row"
       >
-        <div className="w-full lg:w-[50vw] pl-[calc(100vw/12)] py-16 pr-16 calender-text">
-          <h1 className="text-7xl  font-bold text-[#181818]">
+        <div className="w-full lg:w-[50vw] pl-[calc(100vw/12)] py-16 pr-16 ">
+          <h1 className="text-7xl  font-bold text-[#181818] calender-text">
             Mark your calendar for your next big event
           </h1>
-          <p className="text-xl mt-8 text-[#181818]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit
-            amet mattis eros, et porta nibh. Interdum et malesuada fames.
+          <p className="text-xl mt-8 text-[#181818] calender-text">
+            Join us at the forefront of technological advancements and gain
+            valuable insights at our upcoming technical symposium Kriya 2023 !
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-0 w-full lg:w-[50vw] pr-[calc(100vw/12)] relative">
