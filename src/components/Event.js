@@ -2,13 +2,13 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const Event = ({
-  handleClick,
-  title,
-  description,
-  className,
-  icon,
-  date,
-  time,
+  handleClick = () => {},
+  title = "",
+  description = "",
+  className = "",
+  icon = <div/>,
+  date = "",
+  time = "",
 }) => {
   return (
     <div className="group relative transition-all hover:z-10">
