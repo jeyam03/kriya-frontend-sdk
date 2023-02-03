@@ -79,7 +79,7 @@ const Section3 = () => {
              />
            </div> 
 
-         </div> */}
+         </div>  */}
 
         <svg width="0" height="0">
           <linearGradient id="gradient1" x1="100%" y1="100%" x2="0%" y2="0%">

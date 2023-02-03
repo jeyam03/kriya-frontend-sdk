@@ -41,7 +41,7 @@ const Landing = () => {
       <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10">
         {consolee}
       </div>
-      <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-24 ">
+      <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-4 lg:space-x-24 ">
         <button
           className={`text-xs text-gray-600 leading-5 font-poppins ${
             consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
@@ -56,7 +56,7 @@ const Landing = () => {
         >
           Workshops
         </button>
-        <div className="w-16"></div>
+        <div className="w-16 hidden lg:block"></div>
         <button
           className={`text-xs text-gray-600 leading-5 font-poppins ${
             consolee > 1 ? "hover:text-black" : "hover:text-gray-300"

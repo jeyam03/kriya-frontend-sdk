@@ -4,10 +4,10 @@ const Section2 = ({ scrollYByVH }) => {
   const [fadeInAnimate, setFadeInAnimate] = useState(false);
 
   const [timer, setTimer] = useState({
-    hours: "00",
-    minutes: "00",
-    seconds: "00",
-    days: "00",
+    hours: "0",
+    minutes: "0",
+    seconds: "0",
+    days: "0",
   });
 
   const timerRef = useRef(null);
@@ -101,24 +101,35 @@ const Section2 = ({ scrollYByVH }) => {
     <div className="w-full h-full relative">
       <section
         id="section2"
-        className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0 pt-16 flex flex-col lg:flex-row lg:justify-center"
+        className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0 py-12 lg:py-16 flex flex-col lg:flex-row lg:justify-center"
       >
-        <div className="w-full lg:w-[50vw] pl-[calc(100vw/12)] py-16 pr-16 h-full flex flex-col justify-center">
-          <h1 className="text-7xl opacity-0  font-[600] text-[#181818] calender-text font-poppins">
+        <div className="w-full lg:w-[50vw] lg:pl-[calc(100vw/12)] py-16 lg:pr-16 h-full flex flex-col justify-center">
+          <h1 className="text-7xl opacity-0 px-8 lg:p-0  font-[600] text-[#181818] calender-text font-poppins">
             Mark your{" "}
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               calendar
             </span>
           </h1>
-          <p className="text-xl mt-8 opacity-0 text-[#181818] calender-text font-poppins">
+          <p className="text-xl mt-8 opacity-0 px-8 lg:p-0  text-[#181818] calender-text font-poppins">
             Join us at the forefront of technological advancements and gain
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </p>
-          <button className="calender-text oapcity-0 mt-8 w-fit px-4 py-2 text-lg font-poppins rounded-lg border-[#181818] border ">
-            Add to Calendar
-          </button>
+          <div className="px-8 lg:p-0 ">
+            <button className="calender-text opacity-0 mt-8 w-fit px-4 py-2 text-lg font-poppins rounded-lg border-[#181818] border ">
+              Add to Calendar
+            </button>
+          </div>
+          <div className="flex space-x-4 lg:hidden items-center justify-center w-full mt-8 px-8 lg:p-0 ">
+            <NumberAndTagForMobile number={timer.days} tag="days" />
+            <h1 className="text-3xl font-poppins font-bold">:</h1>
+            <NumberAndTagForMobile number={timer.hours} tag="hours" />
+            <h1 className="text-3xl font-poppins font-bold">:</h1>
+            <NumberAndTagForMobile number={timer.minutes} tag="minutes" />
+            <h1 className="text-3xl font-poppins font-bold">:</h1>
+            <NumberAndTagForMobile number={timer.seconds} tag="seconds" />
+          </div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-0 w-full lg:w-[50vw] pr-[calc(100vw/12)] relative">
+        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-x-0 w-full lg:w-[50vw] pr-[calc(100vw/12)] relative">
           <NumberAndTag
             fadeInAnimate={fadeInAnimate}
             number={timer.days}
@@ -156,6 +167,17 @@ const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
       <p className="absolute right-4 bottom-8 uppercase  text-[rgb(18,18,18)] text-5xl font-bold font-oswald">
         {tag}
       </p>
+    </div>
+  );
+};
+
+const NumberAndTagForMobile = ({ number, tag }) => {
+  return (
+    <div className="space-y-4 flex flex-col justify-center">
+      <h1 className="text-4xl font-oswald font-bold text-center">
+        {parseInt(number) % 10 === parseInt(number) ? `0${number}` : number}
+      </h1>
+      <p className="text-center text-xs uppercase tracking-widest">{tag}</p>
     </div>
   );
 };
