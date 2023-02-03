@@ -28,9 +28,9 @@ const Section3 = () => {
         id="section3"
         className=" h-screen w-full relative p-16 px-[calc(100vw/12)] flex items-center"
       >
-        <div className="w-[70vw] overflow-hidden bg-blue-400 h-full">
-          <div className="flex">
-            <Event title="Scan and Reckon" description="Lorem Ipsum blah blah blah"/>
+        <div className="w-[70vw] overflow-hidden h-full">
+          <div className="flex relative p-12">
+            <Event title="Scan and Reckon" description="Lorem Ipsum blah blah blah" className=""/>
           </div>
         </div>
         <div className="w-[30vw]">
