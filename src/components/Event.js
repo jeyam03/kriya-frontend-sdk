@@ -31,23 +31,23 @@ const Event = ({
       </div>
 
       <div
-        className={`${className} text-lg text-blue p-6 rounded-xl group-hover:rounded-b-none relative bg-gray-300 group-hover:scale-[110%] transition-all`}
+        className={`${className} text-lg text-blue p-6 rounded-xl group-hover:rounded-b-none relative bg-gray-100 group-hover:scale-[110%] transition-all`}
       >
         <div className="bg-[#181818] rounded-bl-3xl p-2 absolute top-0 right-0">
           <div className="absolute top-0 -left-4 bg-[#181818]">
-            <div className="bg-gray-300 rounded-tr-full w-4 h-4"></div>
+            <div className="bg-gray-100 rounded-tr-full w-4 h-4"></div>
           </div>
           <button
             onClick={(e) => {
               e.preventDefault();
               handleClick(e);
             }}
-            className="bg-gradient-to-tr from-[#C80067] to-[#5451B6] text-white rounded-full p-4"
+            className="bg-gradient-to-tr from-[#ff2596] to-[#463fff] text-white rounded-full p-4"
           >
             <FiArrowUpRight className="text-white text-xl" />
           </button>
           <div className="absolute -bottom-4 right-0 bg-[#181818]">
-            <div className="bg-gray-300 rounded-tr-full w-4 h-4"></div>
+            <div className="bg-gray-100 rounded-tr-full w-4 h-4"></div>
           </div>
         </div>
 
