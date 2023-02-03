@@ -75,11 +75,11 @@ const Section3 = () => {
              />
            </div> 
 
-         </div> */}
+         </div>  */}
 
-        <div className="w-[70vw] h-full bg-red-500">
+        {/* <div className="w-[70vw] h-full bg-red-500">
           <div className="grid grid-cols-3"></div>
-        </div>
+        </div> */}
 
         <div className="w-[30vw] pl-12">
           <h1 className="text-7xl font-poppins font-semibold text-white events-text opacity-0">
