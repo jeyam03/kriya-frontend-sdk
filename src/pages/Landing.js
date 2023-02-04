@@ -83,9 +83,12 @@ const Landing = () => {
                   ? `rgba(18, 18, 18, 1)`
                   : `rgba(255, 255, 255, 1)`
               ) :
-              (parseFloat(consolee) + 0.25) % 2 <= 1
-                ? `rgba(18, 18, 18, 1)`
-                : `rgba(255, 255, 255, 1)`,
+              (
+                (parseFloat(consolee) + 0.25) >= 3 ? `rgba(255, 255, 255, 1)` :
+                  (parseFloat(consolee) + 0.25) % 2 <= 1
+                    ? `rgba(18, 18, 18, 1)`
+                    : `rgba(255, 255, 255, 1)`
+              ),
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",

@@ -95,7 +95,7 @@ const Section2 = ({ scrollYByVH }) => {
     observer.observe(element);
   });
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   return (
     <div className="w-full h-full relative">
@@ -103,29 +103,36 @@ const Section2 = ({ scrollYByVH }) => {
         id="section2"
         className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0 py-12 lg:py-16 flex flex-col lg:flex-row lg:justify-center"
       >
-        <div className="w-full lg:w-[50vw] lg:pl-[calc(100vw/12)] py-16 lg:pr-16 h-full flex flex-col justify-center">
-          <h1 className="text-7xl opacity-0 px-8 lg:p-0  font-[600] text-[#181818] calender-text font-poppins">
+        <div className="w-full lg:w-[50vw] lg:pl-[calc(100vw/12)] py-16 lg:pr-16 h-full flex flex-col items-center lg:items-start justify-center">
+          <h1 className="text-6xl lg:text-7xl opacity-0 px-8 lg:p-0  font-[600] text-[#181818] calender-text font-poppins text-center lg:text-left">
             Mark your{" "}
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               calendar
             </span>
           </h1>
-          <p className="text-xl mt-8 opacity-0 px-8 lg:p-0  text-[#181818] calender-text font-poppins">
+          <p className="text-xl mt-8 opacity-0 px-8 lg:p-0  text-[#181818] calender-text font-poppins text-center lg:text-left">
             Join us at the forefront of technological advancements and gain
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </p>
           <div className="px-8 lg:p-0 ">
-            <button className="calender-text opacity-0 mt-8 w-fit px-4 py-2 text-lg font-poppins rounded-lg border-[#181818] border ">
+            <button
+              className="calender-text opacity-0 mt-8 w-fit px-4 py-2 text-lg font-poppins rounded-lg border-[#181818] border"
+              onClick={() => {
+                window.open(
+                  "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230324T033000Z%2F20230324T053000Z&details=&location=&text=Kriya%20%2723%20Inauguration"
+                );
+              }}
+            >
               Add to Calendar
             </button>
           </div>
-          <div className="flex space-x-4 lg:hidden items-center justify-center w-full mt-8 px-8 lg:p-0 ">
+          <div className="gap-4 lg:hidden grid grid-cols-2 items-center justify-center w-full mt-8 px-16 lg:p-0 ">
             <NumberAndTagForMobile number={timer.days} tag="days" />
-            <h1 className="text-3xl font-poppins font-bold">:</h1>
+            {/* <h1 className="text-3xl font-poppins font-bold">:</h1> */}
             <NumberAndTagForMobile number={timer.hours} tag="hours" />
-            <h1 className="text-3xl font-poppins font-bold">:</h1>
+            {/* <h1 className="text-3xl font-poppins font-bold">:</h1> */}
             <NumberAndTagForMobile number={timer.minutes} tag="minutes" />
-            <h1 className="text-3xl font-poppins font-bold">:</h1>
+            {/* <h1 className="text-3xl font-poppins font-bold">:</h1> */}
             <NumberAndTagForMobile number={timer.seconds} tag="seconds" />
           </div>
         </div>
@@ -160,7 +167,7 @@ const Section2 = ({ scrollYByVH }) => {
 const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
   return (
     <div className="relative w-[40ch] number-tag">
-      <h1 className="absolute bottom-4 right-4 [line-height:40vh] bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-t from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)] text-[40vh] text-red-400 font-oswald font-bold tracking-[-0.15em]">
+      <h1 className="pr-4 absolute bottom-4 right-4 [line-height:40vh] bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-t from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)] text-[30vh] 2xl:text-[40vh] text-red-400 font-oswald font-bold tracking-[-0.15em]">
         {parseInt(number) % 10 === parseInt(number) ? `0${number}` : number}
         &nbsp;
       </h1>
