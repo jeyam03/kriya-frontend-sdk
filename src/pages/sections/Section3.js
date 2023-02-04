@@ -1,32 +1,51 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
 import "../../styles/Landing.css";
 
 const Section3 = () => {
+  const [consolee, setConsolee] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
+      },
+      { passive: true }
+    );
+  }, [consolee]);
+
   useEffect(() => {
     const element = document.querySelector("#anchor3");
     const eventsTexts = document.querySelectorAll(".events-text");
     const observer = new IntersectionObserver((entries) => {
       console.log(entries[0].isIntersecting);
-      if (entries[0].isIntersecting) {
-        eventsTexts.forEach((eventsText) => {
-          eventsText.classList.add("animate-fade-in");
-        });
-      } else {
-        eventsTexts.forEach((eventsText) => {
-          eventsText.classList.remove("animate-fade-in");
-        });
-      }
+      // if (entries[0].isIntersecting) {
+      //   eventsTexts.forEach((eventsText) => {
+      //     eventsText.classList.add("animate-fade-in");
+      //   });
+      // } else {
+      //   eventsTexts.forEach((eventsText) => {
+      //     eventsText.classList.remove("animate-fade-in");
+      //   });
+      // }
+      eventsTexts.forEach((eventsText) => {
+        eventsText.classList.add("animate-fade-in");
+      });
     });
 
     observer.observe(element);
   });
 
+  const condition = `${window.innerWidth < 768 ?
+    parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3.75 ? "text-white" : "text-[#181818]"
+    : parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3 ? "text-white" : "text-[#181818]"}`;
+
   return (
     <div className="w-full h-full relative">
       <section
         id="section3"
-        className=" h-screen w-full relative p-16 px-[calc(100vw/12)] flex items-center"
+        className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
       >
 
         <svg width="0" height="0">
@@ -71,117 +90,118 @@ const Section3 = () => {
           </linearGradient>
         </svg>
 
-        <div className="w-[70vw] h-full">
-          <div className="grid grid-cols-2 p-24 font-poppins gap-16">
+        <div className="w-full lg:w-[70vw] h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 p-8 lg:p-24 lg:pl-12 font-poppins gap-4 lg:gap-16">
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient1)" }} size={72} />
-                <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                <FaSoundcloud style={{ fill: "url(#gradient1)" }} className="text-5xl lg:text-6xl" />
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {" Kriyative "}
                 </p>
               </div>
-              <p className="text-white text-sm">
+              <p className={`${condition} text-sm`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm">
-                { "Explore more >" }
+              <p className="text-blue-500 text-sm pt-2">
+                {"Explore more >"}
               </p>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient2)" }} size={72} />
-                <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
+                <FaSoundcloud style={{ fill: "url(#gradient2)" }} className="text-5xl lg:text-6xl" />
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
                   {" Brainiac "}
                 </p>
               </div>
-              <p className="text-white text-sm">
+              <p className={`${condition} text-sm`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm">
-                { "Explore more >" }
+              <p className="text-blue-500 text-sm pt-2">
+                {"Explore more >"}
               </p>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient3)" }} size={72} />
-                <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
+                <FaSoundcloud style={{ fill: "url(#gradient3)" }} className="text-5xl lg:text-6xl" />
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
                   {" Coding "}
                 </p>
               </div>
-              <p className="text-white text-sm">
+              <p className={`${condition} text-sm`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm">
-                { "Explore more >" }
+              <p className="text-blue-500 text-sm pt-2">
+                {"Explore more >"}
               </p>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient4)" }} size={72} />
-                <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
+                <FaSoundcloud style={{ fill: "url(#gradient4)" }} className="text-5xl lg:text-6xl" />
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
                   {" Circuit "}
                 </p>
               </div>
-              <p className="text-white text-sm">
+              <p className={`${condition} text-sm`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm">
-                { "Explore more >" }
+              <p className="text-blue-500 text-sm pt-2">
+                {"Explore more >"}
               </p>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient5)" }} size={72} />
-                <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
+                <FaSoundcloud style={{ fill: "url(#gradient5)" }} className="text-5xl lg:text-6xl" />
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
                   {" Core Engineering "}
                 </p>
               </div>
-              <p className="text-white text-sm">
+              <p className={`${condition} text-sm`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm">
-                { "Explore more >" }
+              <p className="text-blue-500 text-sm pt-2">
+                {"Explore more >"}
               </p>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient6)" }} size={72}/>
-                <p className="bg-clip-text text-3xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
+                <FaSoundcloud style={{ fill: "url(#gradient6)" }} className="text-4xl lg:text-6xl" />
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
                   {" Management "}
                 </p>
               </div>
-              <p className="text-white text-sm">
+              <p className={`${condition} text-sm`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm">
-                { "Explore more >" }
+              <p className="text-blue-500 text-sm pt-2">
+                {"Explore more >"}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="w-[30vw] pl-12">
-          <h1 className="text-7xl font-poppins font-semibold text-white events-text opacity-0">
+        <div className="w-full lg:w-[30vw] px-12 lg:pr-0">
+          <h1 className={`text-3xl lg:text-7xl font-poppins font-semibold ${condition} events-text opacity-0`}>
             Unleash your
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" potential "}
+              {" potential"}
             </span>
             , participate in events.
           </h1>
         </div>
       </section>
-      <a id="anchor3" className="absolute top-[75%] w-full h-20"></a>
+      <a id="anchor3" className="absolute top-[40%] lg:top-[75%] w-full h-20"></a>
+      <div className="absolute top-[100%] w-full h-10"></div>
     </div>
   );
 };

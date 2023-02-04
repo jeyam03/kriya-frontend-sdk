@@ -30,7 +30,7 @@ const Section5 = () => {
     <div className="w-full relative">
       <section
         id="section5"
-        className="w-full relative pl-[calc(100vw/12)] flex items-start team-text opacity-0"
+        className="w-full relative pl-[calc(100vw/12)] py-12 flex items-start team-text opacity-0"
       >
         <div className="w-[60vw] font-poppins">
           <h1 className="text-7xl font-semibold text-white">
