@@ -160,7 +160,7 @@ const Section2 = ({ scrollYByVH }) => {
 const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
   return (
     <div className="relative w-[40ch] number-tag">
-      <h1 className="absolute bottom-4 right-4 [line-height:40vh] bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-b from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)] text-[40vh] text-red-400 font-oswald font-bold tracking-[-0.15em]">
+      <h1 className="absolute bottom-4 right-4 [line-height:40vh] bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-t from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)] text-[40vh] text-red-400 font-oswald font-bold tracking-[-0.15em]">
         {parseInt(number) % 10 === parseInt(number) ? `0${number}` : number}
         &nbsp;
       </h1>

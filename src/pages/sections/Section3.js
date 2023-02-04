@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
-import "../../styles/Landing.css";
-import Event from "../../components/Event";
-import { RiComputerLine } from "react-icons/ri";
-import { FiCheck } from "react-icons/fi";
 import { FaSoundcloud } from "react-icons/fa";
-import { MdComputer } from "react-icons/md";
+import "../../styles/Landing.css";
 
 const Section3 = () => {
   useEffect(() => {
@@ -32,54 +28,6 @@ const Section3 = () => {
         id="section3"
         className=" h-screen w-full relative p-16 px-[calc(100vw/12)] flex items-center"
       >
-        {/* <div className="w-[70vw] overflow-hidden h-full bg-red-600">
-        <div className="flex relative p-12 space-x-6 bg-red-400">
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-           </div>
-
-            <div className="flex relative p-12 space-x-6 bg-red-500">
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-             <Event
-               title="Scan and Reckon"
-               description="Lorem Ipsum blah blah blah"
-               className="w-72"
-             />
-           </div> 
-
-         </div>  */}
 
         <svg width="0" height="0">
           <linearGradient id="gradient1" x1="100%" y1="100%" x2="0%" y2="0%">
@@ -125,7 +73,7 @@ const Section3 = () => {
 
         <div className="w-[70vw] h-full">
           <div className="grid grid-cols-2 p-24 font-poppins gap-16">
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-2 events-text opacity-0 delay-100">
               <div className="flex items-center space-x-4">
                 <FaSoundcloud style={{ fill: "url(#gradient1)" }} size={72} />
                 <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
@@ -141,7 +89,7 @@ const Section3 = () => {
               </p>
             </div>
 
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-2 events-text opacity-0 delay-100">
               <div className="flex items-center space-x-4">
                 <FaSoundcloud style={{ fill: "url(#gradient2)" }} size={72} />
                 <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
@@ -157,7 +105,7 @@ const Section3 = () => {
               </p>
             </div>
 
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-2 events-text opacity-0 delay-500">
               <div className="flex items-center space-x-4">
                 <FaSoundcloud style={{ fill: "url(#gradient3)" }} size={72} />
                 <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
@@ -173,7 +121,7 @@ const Section3 = () => {
               </p>
             </div>
 
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-2 events-text opacity-0 delay-500">
               <div className="flex items-center space-x-4">
                 <FaSoundcloud style={{ fill: "url(#gradient4)" }} size={72} />
                 <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
@@ -189,7 +137,7 @@ const Section3 = () => {
               </p>
             </div>
 
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-2 events-text opacity-0 delay-700">
               <div className="flex items-center space-x-4">
                 <FaSoundcloud style={{ fill: "url(#gradient5)" }} size={72} />
                 <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
@@ -205,10 +153,10 @@ const Section3 = () => {
               </p>
             </div>
 
-            <div className="p-4 space-y-2">
+            <div className="p-4 space-y-2 events-text opacity-0 delay-700">
               <div className="flex items-center space-x-4">
-                <FaSoundcloud style={{ fill: "url(#gradient6)" }} size={72} />
-                <p className="bg-clip-text text-4xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
+                <FaSoundcloud style={{ fill: "url(#gradient6)" }} size={72}/>
+                <p className="bg-clip-text text-3xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
                   {" Management "}
                 </p>
               </div>
