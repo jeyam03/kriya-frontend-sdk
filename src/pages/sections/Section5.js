@@ -36,25 +36,27 @@ const Section5 = () => {
     observer.observe(element);
   });
 
-  const [isFixed, setIsFixed] = useState(false);
+  const [fixedPosition, setFixedPosition] = useState("relative");
 
   useEffect(() => {
     const rightGrid = document.querySelector("#right-grid");
     const leftGrid = document.querySelector("#left-grid");
     if (
       leftGrid.getBoundingClientRect().top <= 0 &&
-      leftGrid.getBoundingClientRect().bottom > 0 &&
-      !isFixed
+      leftGrid.getBoundingClientRect().bottom > window.innerHeight &&
+      fixedPosition !== "fixed"
     ) {
-      setIsFixed(true);
+      setFixedPosition("fixed");
+    } else if (leftGrid.getBoundingClientRect().top > 0) {
+      setFixedPosition("relative");
+    } else if (leftGrid.getBoundingClientRect().bottom <= window.innerHeight) {
+      setFixedPosition("absolute");
     }
-    if (
-      (leftGrid.getBoundingClientRect().bottom <= 0 ||
-        leftGrid.getBoundingClientRect().top > 0) &&
-      isFixed
-    ) {
-      setIsFixed(false);
-    }
+    console.log(
+      leftGrid.getBoundingClientRect(),
+      fixedPosition,
+      window.innerHeight
+    );
   });
 
   return (
@@ -83,8 +85,12 @@ const Section5 = () => {
         </div>
 
         <div
-          className={`hidden lg:block lg:w-[40vw] h-screen bg-red-500 overflow-y-hidden ${
-            isFixed ? "fixed top-0 right-0" : "relative"
+          className={`hidden lg:block lg:w-[40vw] h-screen bg-red-500 overflow-y-hidden transition-all ${
+            fixedPosition === "fixed"
+              ? "fixed top-0 right-0"
+              : fixedPosition === "absolute"
+              ? "absolute bottom-0 right-0"
+              : "absolute top-0 right-0"
           }`}
           id="right-grid"
         >
