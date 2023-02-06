@@ -41,8 +41,8 @@ const Section5 = () => {
     observer.observe(element);
   });
 
-  const rightCondition = `${(parseFloat(consolee) >= 4 && parseFloat(consolee) <= 5.25) ? "bg-red-700 fixed top-12 -right-16" : "bg-red-400"}`;
-  const leftCondition = `${(parseFloat(consolee) >= 4 && parseFloat(consolee) <= 5.25) ? "lg:pr-24" : ""}`;
+  const rightCondition = `${(parseFloat(consolee) >= 5 && parseFloat(consolee) <= 6.25) ? "bg-red-700 fixed top-12 -right-16" : "bg-red-400"}`;
+  const leftCondition = `${(parseFloat(consolee) >= 5 && parseFloat(consolee) <= 6.25) ? "lg:pr-24" : ""}`;
 
   return (
     <div className="w-full relative">

@@ -4,6 +4,7 @@ import Section2 from "./sections/Section2";
 import Section3 from "./sections/Section3";
 import Section4 from "./sections/Section4";
 import Section5 from "./sections/Section5";
+import Section6 from "./sections/Section6";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -102,6 +103,7 @@ const Landing = () => {
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
         <Section4 scrollYByVH={consolee} />
+        <Section6 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
         <section id="section3" className=" h-screen w-full"></section>
       </main>
