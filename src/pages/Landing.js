@@ -32,17 +32,13 @@ const Landing = () => {
     if (val > 2 - a && val < 2)
       return ((b - w) * (a - 2)) / (2 * a) + (w + b) / 2;
   };
-
-  useEffect(() => {
-    console.log(consolee, parseFloat(consolee) - 0.5);
-  }, [consolee]);
-
+  
   return (
     <React.Fragment>
       <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10">
         {consolee}
       </div>
-      <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-4 lg:space-x-24 ">
+      <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-4 lg:space-x-24 z-50 h-12">
         <button
           className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}

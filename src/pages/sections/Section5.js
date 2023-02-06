@@ -23,7 +23,7 @@ const Section5 = () => {
     const element = document.querySelector("#anchor5");
     const teamTexts = document.querySelectorAll(".team-text");
     const observer = new IntersectionObserver((entries) => {
-      console.log(entries[0].isIntersecting);
+      // console.log(entries[0].isIntersecting);
       // if (entries[0].isIntersecting) {
       //   teamTexts.forEach((eventsText) => {
       //     eventsText.classList.add("animate-fade-in");
@@ -41,17 +41,41 @@ const Section5 = () => {
     observer.observe(element);
   });
 
-  const rightCondition = `${(parseFloat(consolee) >= 4 && parseFloat(consolee) <= 5.25) ? "bg-red-700 fixed top-12 -right-16" : "bg-red-400"}`;
-  const leftCondition = `${(parseFloat(consolee) >= 4 && parseFloat(consolee) <= 5.25) ? "lg:pr-24" : ""}`;
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const rightGrid = document.querySelector("#right-grid");
+    const leftGrid = document.querySelector("#left-grid");
+    if (
+      leftGrid.getBoundingClientRect().top <= 0 &&
+      leftGrid.getBoundingClientRect().bottom > 0 &&
+      !isFixed
+    ) {
+      setIsFixed(true);
+    }
+    if (
+      (leftGrid.getBoundingClientRect().bottom <= 0 ||
+        leftGrid.getBoundingClientRect().top > 0) &&
+      isFixed
+    ) {
+      setIsFixed(false);
+    }
+  });
 
   return (
     <div className="w-full relative">
       <section
         id="section5"
-        className="w-full relative pl-[calc(100vw/12)] py-12 flex items-start team-text opacity-0"
+        className="w-full relative flex items-start team-text opacity-0"
       >
-        <div className={`w-full lg:w-[60vw] font-poppins py-16 ${leftCondition}`}>
-          <h1 className="text-6xl lg:text-7xl font-semibold text-[#181818]">
+        <div
+          className={`w-full flex-1 font-poppins pt-16 pb-0  pl-[calc(100vw/12)]`}
+          id="left-grid"
+        >
+          <h1
+            className="text-6xl lg:text-7xl font-semibold text-[#181818]"
+            id="our-team-text"
+          >
             Our
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" Team "}
@@ -63,7 +87,12 @@ const Section5 = () => {
           <Vertical name="Technical" />
         </div>
 
-        <div className={`hidden lg:block w-[40vw] h-screen ${rightCondition}`}>
+        <div
+          className={`hidden lg:block lg:w-[40vw] h-screen bg-red-500 overflow-y-hidden ${
+            isFixed ? "fixed top-0 right-0" : "relative"
+          }`}
+          id="right-grid"
+        >
           hello
         </div>
       </section>
@@ -77,9 +106,7 @@ export default Section5;
 const Vertical = ({ name }) => {
   return (
     <div>
-      <h1 className="pt-12 pb-8 text-4xl lg:text-5xl text-[#181818]">
-        {name}
-      </h1>
+      <h1 className="pt-12 pb-8 text-4xl lg:text-5xl text-[#181818]">{name}</h1>
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-8">
         <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
         <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>

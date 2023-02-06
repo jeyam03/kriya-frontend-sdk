@@ -18,7 +18,7 @@ const Section4 = ({ scrollYByVH }) => {
     const element = document.querySelector("#anchor4");
     const workshopTexts = document.querySelectorAll(".workshop-text");
     const observer = new IntersectionObserver((entries) => {
-      console.log(entries[0].isIntersecting);
+      // console.log(entries[0].isIntersecting);
       // if (entries[0].isIntersecting) {
       //   workshopTexts.forEach((workshopText) => {
       //     workshopText.classList.add("animate-fade-in");

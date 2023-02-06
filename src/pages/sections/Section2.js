@@ -74,7 +74,7 @@ const Section2 = ({ scrollYByVH }) => {
     const numberTags = document.querySelectorAll(".number-tag");
     const calenderTexts = document.querySelectorAll(".calender-text");
     const observer = new IntersectionObserver((entries) => {
-      console.log(entries[0].isIntersecting);
+      // console.log(entries[0].isIntersecting);
       if (entries[0].isIntersecting) {
         numberTags.forEach((numberTag) => {
           numberTag.classList.add("animate-fade-in-bottom");
