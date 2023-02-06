@@ -66,11 +66,11 @@ const Section5 = () => {
         className="w-full relative flex items-start team-text opacity-0"
       >
         <div
-          className={`w-full flex-1 font-poppins pt-16 pb-0  pl-[calc(100vw/12)]`}
+          className={`w-full lg:w-[60vw] font-poppins pt-16 pb-0 pr-16 pl-[calc(100vw/12)]`}
           id="left-grid"
         >
           <h1
-            className="text-6xl lg:text-7xl font-semibold text-[#181818]"
+            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-96"
             id="our-team-text"
           >
             Our
@@ -78,10 +78,10 @@ const Section5 = () => {
               {" Team "}
             </span>
           </h1>
-          <Vertical name="Events" />
-          <Vertical name="PR" />
-          <Vertical name="Design" />
-          <Vertical name="Technical" />
+          <p className="w-full mt-8 text-xl">
+            We bring our creativity and attention to detail to every event we
+            plan, ensuring a seamless and unforgettable experience for you all.
+          </p>
         </div>
 
         <div
