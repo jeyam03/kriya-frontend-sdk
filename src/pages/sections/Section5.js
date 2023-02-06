@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
-import Event from "../../components/Event";
-import { RiComputerLine } from "react-icons/ri";
-import { FiCheck } from "react-icons/fi";
-import { FaSoundcloud } from "react-icons/fa";
-import { MdComputer } from "react-icons/md";
 
 const Section5 = () => {
   const [consolee, setConsolee] = useState(0);
