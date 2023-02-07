@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
+import TeamDetails from "./TeamDetails.js";
+import "../../styles/FlipCard.css";
 
 const Section5 = () => {
   const [consolee, setConsolee] = useState(0);
@@ -82,6 +84,12 @@ const Section5 = () => {
             We bring our creativity and attention to detail to every event we
             plan, ensuring a seamless and unforgettable experience for you all.
           </p>
+          <ImageGrid vertical="Ambience and Creativity" />
+          <ImageGrid vertical="App and Web Development" />
+          <ImageGrid vertical="Design" />
+          <ImageGrid vertical="Events Resource Management" />
+          <ImageGrid vertical="PR and Sponsorship" />
+          <ImageGrid vertical="SU Volunteer" />
         </div>
 
         <div
@@ -104,20 +112,49 @@ const Section5 = () => {
 
 export default Section5;
 
-const Vertical = ({ name }) => {
+const ImageGrid = ({ vertical }) => {
+  const IMAGE_URL_1 =
+    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80";
+  const IMAGE_URL_2 =
+    "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80";
+
   return (
-    <div>
-      <h1 className="pt-12 pb-8 text-4xl lg:text-5xl text-[#181818]">{name}</h1>
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-8">
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
-        <div className="w-[10rem] h-[10rem] bg-slate-500 rounded-2xl"></div>
+    <React.Fragment>
+      <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
+      <div className="flex flex-wrap gap-2">
+        {TeamDetails.filter((i) => i.Verticals === vertical).map(
+          (item, idx) => {
+            return (
+              <div
+                className="w-36 h-36 aspect-square overflow-hidden"
+                id="flip-card"
+              >
+                <div className="w-full h-full" id="flip-card-inner">
+                  <div
+                    className="w-full h-full "
+                    style={{
+                      background: `url(${
+                        idx % 2 === 0 ? IMAGE_URL_1 : IMAGE_URL_2
+                      })`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                    id="flip-card-front"
+                  ></div>
+                  <div
+                    className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
+                    id="flip-card-back"
+                  >
+                    <h3 className="text-sm font-semibold">{item.Name}</h3>
+                    <p className="text-xs">{item.Position}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+        )}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
