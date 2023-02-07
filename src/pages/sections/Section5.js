@@ -82,6 +82,11 @@ const Section5 = () => {
             We bring our creativity and attention to detail to every event we
             plan, ensuring a seamless and unforgettable experience for you all.
           </p>
+        <div className="flex flex-col mt-8">
+          <Vertical name="Core Team" />
+          <Vertical name="Core Team" />
+          <Vertical name="Core Team" />
+        </div>
         </div>
 
         <div

@@ -37,18 +37,17 @@ const Section6 = () => {
   });
 
   // useEffect(() => {
-  //   const stallsContainer = document.getElementById('stalls');
+  //   const stallsContainer = document.querySelector('.stalls');
   //   const stallsScrollWidth = stallsContainer.scrollWidth;
 
-  //   window.addEventListener('load', () => {
-  //     self.setInterval(() => {
-  //       if (stallsContainer.scrollLeft !== stallsScrollWidth) {
-  //         stallsContainer.scrollTo(stallsContainer.scrollLeft + 1, 0);
-  //       }
-  //     }, 15);
-  //   });
 
-  // });
+  //   setInterval(() => {
+  //     if (stallsContainer.scrollLeft !== stallsScrollWidth) {
+  //       stallsContainer.scrollTo(stallsContainer.scrollLeft + 1, 0);
+  //     }
+  //   }, 15);
+
+  // }, []);
 
   const condition = "";
 
@@ -59,7 +58,7 @@ const Section6 = () => {
         className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
       >
 
-        <div className="w-full lg:w-[70vw] h-full">
+        <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
           <div className="flex flex-col p-8 lg:p-12 lg:pl-0 font-poppins space-y-4">
             <div className="w-1/2 p-4 space-y-4 sponsors-text opacity-0 delay-100">
               <p className="text-2xl font-semibold tracking-wider">
@@ -68,7 +67,7 @@ const Section6 = () => {
                 </span>
                 Sponsor
               </p>
-              <div className="w-3/4 h-3/4 rounded-2xl border-4 border-black justify-center items-center p-12">
+              <div className="w-3/4 h-3/4 rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                   alt=""
@@ -85,36 +84,36 @@ const Section6 = () => {
                 Sponsors
               </p>
 
-              <div className="grid grid-cols-3 gap-4">
-                <div className="rounded-2xl border-4 border-black justify-center items-center p-12">
+              <div className="flex flex-wrap gap-4">
+                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/PSG_College_of_Technology_logo.png/220px-PSG_College_of_Technology_logo.png"
+                    alt=""
+                    className="object-contain"
+                  />
+                </div>
+                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     alt=""
                     className="object-contain"
                   />
                 </div>
-                <div className="rounded-2xl border-4 border-black justify-center items-center p-12">
+                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     alt=""
                     className="object-contain"
                   />
                 </div>
-                <div className="rounded-2xl border-4 border-black justify-center items-center p-12">
+                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     alt=""
                     className="object-contain"
                   />
                 </div>
-                <div className="rounded-2xl border-4 border-black justify-center items-center p-12">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    alt=""
-                    className="object-contain"
-                  />
-                </div>
-                <div className="rounded-2xl border-4 border-black justify-center items-center p-12">
+                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     alt=""
@@ -132,44 +131,44 @@ const Section6 = () => {
                 Sponsors
               </p>
 
-              <div className="w-full overflow-x-scroll whitespace-nowrap stalls">
-                <div className="flex w-fit relative space-x-6">
-                  <div className="w-80 h-44 rounded-2xl border-4 border-black items-center justify-center p-12">
+              <div className="w-full max-w-full relative overflow-x-hidden h-48">
+                <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
+                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                       alt=""
                       className="object-contain"
                     />
                   </div>
-                  <div className="w-80 h-44 rounded-2xl border-4 border-black items-center justify-center p-12">
+                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                       alt=""
                       className="object-contain"
                     />
                   </div>
-                  <div className="w-80 h-44 rounded-2xl border-4 border-black items-center justify-center p-12">
+                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                       alt=""
                       className="object-contain"
                     />
                   </div>
-                  <div className="w-80 h-44 rounded-2xl border-4 border-black items-center justify-center p-12">
+                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                       alt=""
                       className="object-contain"
                     />
                   </div>
-                  <div className="w-80 h-44 rounded-2xl border-4 border-black items-center justify-center p-12">
+                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                       alt=""
                       className="object-contain"
                     />
                   </div>
-                  <div className="w-80 h-44 rounded-2xl border-4 border-black items-center justify-center p-12">
+                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
                     <img
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                       alt=""
@@ -183,8 +182,8 @@ const Section6 = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-[30vw] px-12 lg:pr-0">
-          <h1 className={`text-3xl lg:text-7xl font-poppins font-semibold ${condition} sponsors-text opacity-0`}>
+        <div className="w-full lg:w-[30%]">
+          <h1 className={`text-3xl lg:text-7xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-right`}>
             Kriya '23
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" Sponsors"}
