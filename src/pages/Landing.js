@@ -101,7 +101,6 @@ const Landing = () => {
         <Section4 scrollYByVH={consolee} />
         <Section6 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
-        <section id="section3" className=" h-screen w-full"></section>
       </main>
     </React.Fragment>
   );

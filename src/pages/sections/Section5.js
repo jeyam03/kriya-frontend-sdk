@@ -93,7 +93,7 @@ const Section5 = () => {
         </div>
 
         <div
-          className={`hidden lg:block lg:w-[40vw] h-screen bg-red-500 overflow-y-hidden transition-all ${
+          className={`hidden lg:block lg:w-[40vw] h-screen overflow-y-hidden transition-all ${
             fixedPosition === "fixed"
               ? "fixed top-0 right-0"
               : fixedPosition === "absolute"
@@ -102,7 +102,20 @@ const Section5 = () => {
           }`}
           id="right-grid"
         >
-          hello
+          <div className="grid grid-cols-3 grid-rows-4 w-full h-full ">
+            <div className="border border-gray-100 rounded-tr-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-t[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-bl-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
+            <div className="border border-gray-100 bg-gray-300"></div>
+            <div className="border border-gray-100 bg-gray-300"></div>
+            <div className="border border-gray-100 rounded-tr-[6rem] rounded-bl-[6rem] bg-gray-300"></div>
+          </div>
         </div>
       </section>
       <a id="anchor5" className="absolute top-[75%] w-full h-20"></a>
@@ -121,12 +134,12 @@ const ImageGrid = ({ vertical }) => {
   return (
     <React.Fragment>
       <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 w-full">
         {TeamDetails.filter((i) => i.Verticals === vertical).map(
           (item, idx) => {
             return (
               <div
-                className="w-36 h-36 aspect-square overflow-hidden"
+                className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
                 id="flip-card"
               >
                 <div className="w-full h-full" id="flip-card-inner">
