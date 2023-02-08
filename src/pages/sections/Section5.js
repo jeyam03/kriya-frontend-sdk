@@ -68,7 +68,7 @@ const Section5 = () => {
         className="w-full relative flex items-start team-text opacity-0"
       >
         <div
-          className={`w-full lg:w-[65vw] font-poppins pt-16 pb-0 pr-16 pl-[calc(100vw/12)]`}
+          className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-16 pb-0 pr-16 pl-[calc(100vw/12)]`}
           id="left-grid"
         >
           <h1
@@ -91,6 +91,8 @@ const Section5 = () => {
           <ImageGrid vertical="PR and Sponsorship" />
           <ImageGrid vertical="SU Volunteer" />
         </div>
+
+
 
         <div
           className={`hidden lg:block lg:w-fit h-screen overflow-y-hidden transition-all ${
