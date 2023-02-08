@@ -67,13 +67,10 @@ const Section6 = () => {
                 </span>
                 Sponsor
               </p>
-              <div className="w-3/4 h-3/4 rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                  alt=""
-                  className="object-contain"
-                />
-              </div>
+              <Sponsers
+                imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                title="GOOGLE"
+              />
             </div>
 
             <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
@@ -84,42 +81,23 @@ const Section6 = () => {
                 Sponsors
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/PSG_College_of_Technology_logo.png/220px-PSG_College_of_Technology_logo.png"
-                    alt=""
-                    className="object-contain"
-                  />
-                </div>
-                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    alt=""
-                    className="object-contain"
-                  />
-                </div>
-                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    alt=""
-                    className="object-contain"
-                  />
-                </div>
-                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    alt=""
-                    className="object-contain"
-                  />
-                </div>
-                <div className="rounded-2xl bg-gray-200 bg-opacity-50 border-black justify-center items-center px-12 py-6 w-64 ">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    alt=""
-                    className="object-contain"
-                  />
-                </div>
+              <div className="flex flex-wrap gap-6">
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
+                  title="Apple"
+                />
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                  title="Google"
+                />
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png"
+                  title="PSG College of Technology"
+                />
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/en/8/8d/Adyar_Ananda_Bhavan_logo.png"
+                  title="Adyar Ananda Bhavan"
+                />
               </div>
             </div>
 
@@ -133,48 +111,46 @@ const Section6 = () => {
 
               <div className="w-full max-w-full relative overflow-x-hidden h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
-                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                      alt=""
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                      alt=""
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                      alt=""
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                      alt=""
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                      alt=""
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="w-80 h-32 rounded-2xl bg-gray-200 bg-opacity-50 border-black items-center justify-center p-12">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                      alt=""
-                      className="object-contain"
-                    />
-                  </div>
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
                 </div>
               </div>
 
@@ -183,7 +159,7 @@ const Section6 = () => {
         </div>
 
         <div className="w-full lg:w-[30%]">
-          <h1 className={`text-3xl lg:text-7xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-right`}>
+          <h1 className={`text-3xl lg:text-6xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-right`}>
             Kriya '23
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" Sponsors"}
@@ -193,6 +169,25 @@ const Section6 = () => {
       </section>
       <a id="anchor5" className="absolute top-[40%] lg:top-[75%] w-full h-20"></a>
       <div className="absolute top-[100%] w-full h-10"></div>
+    </div>
+  );
+};
+
+const Sponsers = ({ imgurl, title }) => {
+  return (
+    <div className="flex flex-col gap-y-2 w-64">
+      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-8 w-64 h-36 rounded-2xl">
+        <div
+          style={{
+            background: `url("${imgurl}")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+
+          }}
+          className={`w-full h-full`}></div>
+      </div>
+      <p className="uppercase text-lg text-[#181818] tracking-wider text-center">{title}</p>
     </div>
   );
 };
