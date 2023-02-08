@@ -68,7 +68,7 @@ const Section5 = () => {
         className="w-full relative flex items-start team-text opacity-0"
       >
         <div
-          className={`w-full lg:w-[60vw] font-poppins pt-16 pb-0 pr-16 pl-[calc(100vw/12)]`}
+          className={`w-full lg:w-[65vw] font-poppins pt-16 pb-0 pr-16 pl-[calc(100vw/12)]`}
           id="left-grid"
         >
           <h1
@@ -93,7 +93,7 @@ const Section5 = () => {
         </div>
 
         <div
-          className={`hidden lg:block lg:w-[40vw] h-screen overflow-y-hidden transition-all ${
+          className={`hidden lg:block lg:w-fit h-screen overflow-y-hidden transition-all ${
             fixedPosition === "fixed"
               ? "fixed top-0 right-0"
               : fixedPosition === "absolute"
@@ -103,18 +103,18 @@ const Section5 = () => {
           id="right-grid"
         >
           <div className="grid grid-cols-3 grid-rows-4 w-full h-full ">
-            <div className="border border-gray-100 rounded-tr-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-t[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-bl-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
-            <div className="border border-gray-100 bg-gray-300"></div>
-            <div className="border border-gray-100 bg-gray-300"></div>
-            <div className="border border-gray-100 rounded-tr-[6rem] rounded-bl-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tr-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-t[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-bl-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 bg-gray-300"></div>
+            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tr-[6rem] rounded-bl-[6rem] bg-gray-300"></div>
           </div>
         </div>
       </section>

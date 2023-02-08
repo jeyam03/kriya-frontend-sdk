@@ -6260,6 +6260,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+pattern@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/pattern/-/pattern-0.2.0.tgz#bc0a0fe0d9be0006b7cdf2d36ba7e92fdab29a3a"
+  integrity sha512-RYQM4zvWMk/m8hG+QefAX7VkAxa4SLWQJMb/dzdfF4oc962j929w5TOw5zLEklNo1VBFCj/c4QX3gYDwj+wmOQ==
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
