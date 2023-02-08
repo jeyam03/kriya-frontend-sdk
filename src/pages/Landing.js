@@ -5,6 +5,7 @@ import Section3 from "./sections/Section3";
 import Section4 from "./sections/Section4";
 import Section5 from "./sections/Section5";
 import Section6 from "./sections/Section6";
+import Section1 from "./sections/Section1";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -36,9 +37,9 @@ const Landing = () => {
   
   return (
     <React.Fragment>
-      <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10">
+      {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10">
         {consolee}
-      </div>
+      </div> */}
       <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-4 lg:space-x-24 z-50 h-12">
         <button
           className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
@@ -91,11 +92,7 @@ const Landing = () => {
           scrollSnapType: "y mandatory",
         }}
       >
-        <section
-          id="section1"
-          className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0"
-          style={{ flexFlow: "column" }}
-        ></section>
+        <Section1/>
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
         <Section4 scrollYByVH={consolee} />
