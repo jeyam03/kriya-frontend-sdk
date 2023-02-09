@@ -35,7 +35,7 @@ const Section9 = () => {
     <div className="">
       <section
         id="section9"
-        className=" h-screen w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
+        className="h-fit lg:h-screen w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
       >
         <h1 className="text-5xl font-bold w-[40vw]">
           Frequently asked{" "}
@@ -61,7 +61,7 @@ const Section9 = () => {
 const FAQItem = ({ question, answer, delay = false }) => {
   return (
     <div
-      className={`space-y-4 font-poppins faq-text opacity-0 ${
+      className={`space-y-4 font-poppins faq-text lg:opacity-0 ${
         delay ? "delay-500" : "delay-1000"
       }`}
     >
