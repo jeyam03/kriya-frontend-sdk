@@ -8,6 +8,8 @@ import Section5 from "./sections/Section5";
 import Section6 from "./sections/Section6";
 import Section7 from "./sections/Section7";
 import Section8 from "./sections/Section8";
+import Section9 from "./sections/Section9";
+import Section10 from "./sections/Section10";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -36,7 +38,7 @@ const Landing = () => {
     if (val > 2 - a && val < 2)
       return ((b - w) * (a - 2)) / (2 * a) + (w + b) / 2;
   };
-  
+
   return (
     <React.Fragment>
       {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10">
@@ -44,27 +46,31 @@ const Landing = () => {
       </div> */}
       <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-4 lg:space-x-24 z-50 h-12">
         <button
-          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Events
         </button>
         <button
-          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Workshops
         </button>
         <div className="w-16 hidden lg:block"></div>
         <button
-          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Sponsors
         </button>
         <button
-          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Register
         </button>
@@ -76,25 +82,23 @@ const Landing = () => {
           //   consolee
           // )}, ${getColorVal(consolee)}, 1)`,
           background:
-            window.innerWidth < 768 ?
-              (
-                ((parseFloat(consolee) + 0.25) <= 1 ||
-                  ((parseFloat(consolee) + 0.25) >= 2 && (parseFloat(consolee) + 0.25) <= 3.75))
-                  ? `rgba(18, 18, 18, 1)`
-                  : `rgba(255, 255, 255, 1)`
-              ) :
-              (
-                (parseFloat(consolee) + 0.25) >= 3 ? `rgba(255, 255, 255, 1)` :
-                  (parseFloat(consolee) + 0.25) % 2 <= 1
-                    ? `rgba(18, 18, 18, 1)`
-                    : `rgba(255, 255, 255, 1)`
-              ),
+            window.innerWidth < 768
+              ? parseFloat(consolee) + 0.25 <= 1 ||
+                (parseFloat(consolee) + 0.25 >= 2 &&
+                  parseFloat(consolee) + 0.25 <= 3.75)
+                ? `rgba(18, 18, 18, 1)`
+                : `rgba(255, 255, 255, 1)`
+              : parseFloat(consolee) + 0.25 >= 3
+              ? `rgba(255, 255, 255, 1)`
+              : (parseFloat(consolee) + 0.25) % 2 <= 1
+              ? `rgba(18, 18, 18, 1)`
+              : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",
         }}
       >
-        <Section1/>
+        <Section1 />
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
         {/* <Section4 scrollYByVH={consolee} /> */}
@@ -102,6 +106,8 @@ const Landing = () => {
         <Section6 scrollYByVH={consolee} />
         <Section7 scrollYByVH={consolee} />
         <Section8 scrollYByVH={consolee} />
+        <Section9 />
+        <Section10 />
       </main>
     </React.Fragment>
   );

@@ -102,19 +102,48 @@ const Section8 = () => {
           }`}
           id="right-grid"
         >
-          <div className="grid grid-cols-3 grid-rows-4 w-full h-full ">
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tr-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-t[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-br-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-bl-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tl-[6rem] bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 bg-gray-300"></div>
-            <div className="border aspect-square h-[25vh]  border-gray-100 rounded-tr-[6rem] rounded-bl-[6rem] bg-gray-300"></div>
+          <div className="grid grid-cols-3 w-[75vh] h-full ">
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tr-[6rem] bg-gradient-to-br from-[#c9478a] to-[#eb6dae]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-br-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem] bg-black flex items-end justify-start p-2">
+              <p className="text-white font-poppins ">Kriya 2023</p>
+            </div>
+            {/* <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] bg-gray-800"></div> */}
+            <div
+              className="border row-span-1 col-span-2 w-[50vh] h-[25vh]  rounded-tl-[6rem] rounded-br-[6rem]"
+              style={{
+                background:
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958606/IMG_0073-min_oy2aif.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-bl-[6rem] bg-gradient-to-tl from-[#c9478a] to-[#eb6dae]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem] bg-black"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
+            <div
+              className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem]"
+              style={{
+                background:
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div
+              className="border row-span-1 col-span-1 w-[25vh] h-[25vh] "
+              style={{
+                background:
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958847/IMG_0776_futuj1.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] bg-gradient-to-br from-[#c9478a] to-[#eb6dae]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tr-[6rem] rounded-bl-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
           </div>
         </div>
       </section>
