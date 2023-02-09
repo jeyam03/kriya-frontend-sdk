@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/Landing.css";
+import Section1 from "./sections/Section1";
 import Section2 from "./sections/Section2";
 import Section3 from "./sections/Section3";
-import Section4 from "./sections/Section4";
+// import Section4 from "./sections/Section4";
 import Section5 from "./sections/Section5";
 import Section6 from "./sections/Section6";
-import Section1 from "./sections/Section1";
+import Section7 from "./sections/Section7";
+import Section8 from "./sections/Section8";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -95,9 +97,11 @@ const Landing = () => {
         <Section1/>
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
-        <Section4 scrollYByVH={consolee} />
-        <Section6 scrollYByVH={consolee} />
+        {/* <Section4 scrollYByVH={consolee} /> */}
         <Section5 scrollYByVH={consolee} />
+        <Section6 scrollYByVH={consolee} />
+        <Section7 scrollYByVH={consolee} />
+        <Section8 scrollYByVH={consolee} />
       </main>
     </React.Fragment>
   );

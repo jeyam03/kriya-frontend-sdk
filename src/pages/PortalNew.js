@@ -192,7 +192,7 @@ const Main = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdAccessTime />
               </p>
               <div className="flex flex-col">
@@ -205,11 +205,11 @@ const Main = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdOutlineLocationOn />
               </p>
               <div className="flex flex-col">
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
+                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
                   K Block 1<sup>st</sup> Floor
                 </p>
                 <p className="text-base lg:text-base tracking-wide text-[#3c4043]">
@@ -218,11 +218,11 @@ const Main = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <AiOutlineTeam />
               </p>
               <div className="flex flex-col">
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
+                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
                   2 - 3 Members
                 </p>
               </div>
@@ -287,7 +287,7 @@ const Main = () => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-4 w-full my-8 px-4 lg:px-0">
+      <div className="flex flex-row gap-4 w-full my-4 px-4 lg:px-0">
         <div className="bg-[#ffffff] w-full rounded-3xl p-12 space-y-4">
           <p className="text-3xl lg:text-3xl font-semibold tracking-wider text-[#3c4043]">
             Rules

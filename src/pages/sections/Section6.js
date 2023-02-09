@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
 
-const Section6 = () => {
+const Section6 = ({ scrollYByVH }) => {
   const [consolee, setConsolee] = useState(0);
 
   useEffect(() => {
@@ -15,179 +15,94 @@ const Section6 = () => {
   }, [consolee]);
 
   useEffect(() => {
-    const element = document.querySelector("#anchor5");
-    const sponsorsTexts = document.querySelectorAll(".sponsors-text");
+    const element = document.querySelector("#anchor6");
+    const workshopTexts = document.querySelectorAll(".workshop-text");
     const observer = new IntersectionObserver((entries) => {
-      console.log(entries[0].isIntersecting);
+      // console.log(entries[0].isIntersecting);
       // if (entries[0].isIntersecting) {
-      //   sponsorsTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
+      //   workshopTexts.forEach((workshopText) => {
+      //     workshopText.classList.add("animate-fade-in");
       //   });
       // } else {
-      //   sponsorsTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
+      //   workshopTexts.forEach((workshopText) => {
+      //     workshopText.classList.remove("animate-fade-in");
       //   });
       // }
-      sponsorsTexts.forEach((eventsText) => {
-        eventsText.classList.add("animate-fade-in");
+      workshopTexts.forEach((workshopText) => {
+        workshopText.classList.add("animate-fade-in");
       });
     });
 
     observer.observe(element);
   });
 
-  // useEffect(() => {
-  //   const stallsContainer = document.querySelector('.stalls');
-  //   const stallsScrollWidth = stallsContainer.scrollWidth;
+  const [onMouseHoverIndex, setOnMouseHoverIndex] = useState(2);
 
-
-  //   setInterval(() => {
-  //     if (stallsContainer.scrollLeft !== stallsScrollWidth) {
-  //       stallsContainer.scrollTo(stallsContainer.scrollLeft + 1, 0);
-  //     }
-  //   }, 15);
-
-  // }, []);
-
-  const condition = "";
+  const condition = `${window.innerWidth < 768 ?
+    parseFloat(consolee) + 0.25 <= 3.75 ? "text-white" : "text-[#181818]"
+    : parseFloat(consolee) + 0.25 <= 3 ? "text-white" : "text-[#181818]"}`;
 
   return (
     <div className="w-full h-full relative">
       <section
-        id="section5"
-        className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
+        id="section6"
+        className="h-screen w-full p-0 py-12 lg:p-16 lg:px-[calc(100vw/12)] flex flex-col lg:flex-row lg:items-center"
       >
-
-        <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
-          <div className="flex flex-col p-8 lg:p-12 lg:pl-0 font-poppins space-y-4">
-            <div className="w-1/2 p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"TITLE "}
-                </span>
-                Sponsor
-              </p>
-              <Sponsers
-                imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                title="GOOGLE"
-              />
-            </div>
-
-            <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"ASSOCIATE "}
-                </span>
-                Sponsors
-              </p>
-
-              <div className="flex flex-wrap gap-6">
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
-                  title="Apple"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                  title="Google"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png"
-                  title="PSG College of Technology"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/en/8/8d/Adyar_Ananda_Bhavan_logo.png"
-                  title="Adyar Ananda Bhavan"
-                />
-              </div>
-            </div>
-
-            <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"STALL "}
-                </span>
-                Sponsors
-              </p>
-
-              <div className="w-full max-w-full relative overflow-x-hidden h-48">
-                <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                </div>
-              </div>
-
-            </div>
+        <div className="lg:w-[30%] w-full h-fit lg:h-full flex flex-col lg:justify-center ">
+          <h1 className={`text-4xl lg:text-5xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
+            Join the
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+              {" masterclass workshops "}
+            </span>{" "}
+            from innovation leaders and industry experts
+          </h1>
+        </div>
+        <div className="block lg:hidden w-full overflow-x-auto  mt-8">
+          <div className="flex w-fit relative space-x-6">
+            <div className="w-32"></div>
+            <div className="w-64 h-96 bg-gray-500"> </div>
+            <div className="w-64 h-96 bg-gray-500"></div>
+            <div className="w-64 h-96 bg-gray-500"></div>
+            <div className="w-32"></div>
           </div>
         </div>
 
-        <div className="w-full lg:w-[30%]">
-          <h1 className={`text-3xl lg:text-6xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-right`}>
-            Kriya '23
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" Sponsors"}
-            </span>
-          </h1>
+        <div className="lg:w-[70%] h-full hidden lg:block">
+          <div className="flex items-center h-full space-x-2 w-full pl-16">
+            <div
+              onMouseEnter={(e) => setOnMouseHoverIndex(0)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              className={`rounded-lg shadow-md ${onMouseHoverIndex === 0 ? "h-full w-2/6" : "h-[95%] w-1/6"
+                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
+            ></div>
+            <div
+              onMouseEnter={(e) => setOnMouseHoverIndex(1)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              className={`rounded-lg shadow-md ${onMouseHoverIndex === 1 ? "h-full w-2/6" : "h-[95%] w-1/6"
+                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
+            ></div>
+            <div
+              onMouseEnter={(e) => setOnMouseHoverIndex(2)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              className={`rounded-lg shadow-md ${onMouseHoverIndex === 2 ? "h-full w-2/6" : "h-[95%] w-1/6"
+                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
+            ></div>
+            <div
+              onMouseEnter={(e) => setOnMouseHoverIndex(3)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              className={`rounded-lg shadow-md ${onMouseHoverIndex === 3 ? "h-full w-2/6" : "h-[95%] w-1/6"
+                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
+            ></div>
+            <div
+              onMouseEnter={(e) => setOnMouseHoverIndex(4)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              className={`rounded-lg shadow-md ${onMouseHoverIndex === 4 ? "h-full w-2/6" : "h-[95%] w-1/6"
+                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
+            ></div>
+          </div>
         </div>
       </section>
-      <a id="anchor5" className="absolute top-[40%] lg:top-[75%] w-full h-20"></a>
-      <div className="absolute top-[100%] w-full h-10"></div>
-    </div>
-  );
-};
-
-const Sponsers = ({ imgurl, title }) => {
-  return (
-    <div className="flex flex-col gap-y-2 w-64">
-      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-8 w-64 h-36 rounded-2xl">
-        <div
-          style={{
-            background: `url("${imgurl}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-
-          }}
-          className={`w-full h-full`}></div>
-      </div>
-      <p className="uppercase text-lg text-[#181818] tracking-wider text-center">{title}</p>
+      <a id="anchor6" className="absolute top-[75%] w-full h-20"></a>
     </div>
   );
 };
