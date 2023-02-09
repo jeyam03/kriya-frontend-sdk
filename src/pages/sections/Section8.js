@@ -92,8 +92,6 @@ const Section8 = () => {
           <ImageGrid vertical="SU Volunteer" />
         </div>
 
-
-
         <div
           className={`hidden lg:block lg:w-fit h-screen overflow-y-hidden transition-all ${
             fixedPosition === "fixed"

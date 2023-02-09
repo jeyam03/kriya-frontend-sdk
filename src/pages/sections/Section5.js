@@ -48,27 +48,8 @@ const Section5 = ({ scrollYByVH }) => {
         id="section5"
         className="h-screen w-full p-0 py-12 lg:p-16 lg:px-[calc(100vw/12)] flex flex-col lg:flex-row lg:items-center"
       >
-        <div className="lg:w-[30%] w-full h-fit lg:h-full flex flex-col lg:justify-center ">
-          <h1 className={`text-4xl lg:text-5xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
-            Join the
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" masterclass workshops "}
-            </span>{" "}
-            from innovation leaders and industry experts
-          </h1>
-        </div>
-        <div className="block lg:hidden w-full overflow-x-auto  mt-8">
-          <div className="flex w-fit relative space-x-6">
-            <div className="w-32"></div>
-            <div className="w-64 h-96 bg-gray-500"> </div>
-            <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-32"></div>
-          </div>
-        </div>
-
         <div className="lg:w-[70%] h-full hidden lg:block">
-          <div className="flex items-center h-full space-x-2 w-full pl-16">
+          <div className="flex items-center h-full space-x-2 w-full pr-16">
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(0)}
               onMouseLeave={(e) => setOnMouseHoverIndex(2)}
@@ -99,6 +80,25 @@ const Section5 = ({ scrollYByVH }) => {
               className={`rounded-lg shadow-md ${onMouseHoverIndex === 4 ? "h-full w-2/6" : "h-[95%] w-1/6"
                 } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
             ></div>
+          </div>
+        </div>
+
+        <div className="lg:w-[30%] w-full h-fit lg:h-full flex flex-col lg:justify-center ">
+          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8 text-right`}>
+            Engineering.
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+              {" Surveying. "}
+            </span>{" "}
+            Solutions.
+          </h1>
+        </div>
+        <div className="block lg:hidden w-full overflow-x-auto  mt-8">
+          <div className="flex w-fit relative space-x-6">
+            <div className="w-32"></div>
+            <div className="w-64 h-96 bg-gray-500"> </div>
+            <div className="w-64 h-96 bg-gray-500"></div>
+            <div className="w-64 h-96 bg-gray-500"></div>
+            <div className="w-32"></div>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
 
-const Section6 = ({ scrollYByVH }) => {
+const Section6 = () => {
   const [consolee, setConsolee] = useState(0);
 
   useEffect(() => {
@@ -20,85 +20,139 @@ const Section6 = ({ scrollYByVH }) => {
     const observer = new IntersectionObserver((entries) => {
       // console.log(entries[0].isIntersecting);
       // if (entries[0].isIntersecting) {
-      //   workshopTexts.forEach((workshopText) => {
-      //     workshopText.classList.add("animate-fade-in");
+      //   teamTexts.forEach((eventsText) => {
+      //     eventsText.classList.add("animate-fade-in");
       //   });
       // } else {
-      //   workshopTexts.forEach((workshopText) => {
-      //     workshopText.classList.remove("animate-fade-in");
+      //   teamTexts.forEach((eventsText) => {
+      //     eventsText.classList.remove("animate-fade-in");
       //   });
       // }
-      workshopTexts.forEach((workshopText) => {
-        workshopText.classList.add("animate-fade-in");
+      workshopTexts.forEach((eventsText) => {
+        eventsText.classList.add("animate-fade-in");
       });
     });
 
     observer.observe(element);
   });
 
-  const [onMouseHoverIndex, setOnMouseHoverIndex] = useState(2);
+  const [fixedPosition, setFixedPosition] = useState("relative");
 
-  const condition = `${window.innerWidth < 768 ?
-    parseFloat(consolee) + 0.25 <= 3.75 ? "text-white" : "text-[#181818]"
-    : parseFloat(consolee) + 0.25 <= 3 ? "text-white" : "text-[#181818]"}`;
+  useEffect(() => {
+    const rightGrid = document.querySelector("#right-workshop-grid");
+    const leftGrid = document.querySelector("#left-workshop-grid");
+    if (
+      leftGrid.getBoundingClientRect().top <= 0 &&
+      leftGrid.getBoundingClientRect().bottom > window.innerHeight &&
+      fixedPosition !== "fixed"
+    ) {
+      setFixedPosition("fixed");
+    } else if (leftGrid.getBoundingClientRect().top > 0) {
+      setFixedPosition("relative");
+    } else if (leftGrid.getBoundingClientRect().bottom <= window.innerHeight) {
+      setFixedPosition("absolute");
+    }
+    console.log(
+      leftGrid.getBoundingClientRect(),
+      fixedPosition,
+      window.innerHeight
+    );
+  });
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full relative">
       <section
-        id="section6"
-        className="h-screen w-full p-0 py-12 lg:p-16 lg:px-[calc(100vw/12)] flex flex-col lg:flex-row lg:items-center"
+        id="section8"
+        className="w-screen relative flex items-start workshop-text opacity-0"
       >
-        <div className="lg:w-[30%] w-full h-fit lg:h-full flex flex-col lg:justify-center ">
-          <h1 className={`text-4xl lg:text-5xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
-            Join the
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" masterclass workshops "}
-            </span>{" "}
-            from innovation leaders and industry experts
-          </h1>
-        </div>
-        <div className="block lg:hidden w-full overflow-x-auto  mt-8">
-          <div className="flex w-fit relative space-x-6">
-            <div className="w-32"></div>
-            <div className="w-64 h-96 bg-gray-500"> </div>
-            <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-32"></div>
+
+        <div
+          className={`hidden lg:w-screen lg:flex items-center h-screen overflow-y-hidden transition-all ${fixedPosition === "fixed"
+            ? "fixed top-0 left-0"
+            : fixedPosition === "absolute"
+              ? "absolute bottom-0 left-0"
+              : "absolute top-0 left-0"
+            }`}
+          id="right-workshop-grid"
+        >
+
+          <div className="w-[50%] h-full flex flex-col lg:justify-center items-center p-24">
+            <h1 className={`text-4xl lg:text-5xl font-poppins font-semibold workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
+              Join the
+              <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+                {" masterclass workshops "}
+              </span>{" "}
+              from innovation leaders and industry experts.
+            </h1>
           </div>
         </div>
 
-        <div className="lg:w-[70%] h-full hidden lg:block">
-          <div className="flex items-center h-full space-x-2 w-full pl-16">
-            <div
-              onMouseEnter={(e) => setOnMouseHoverIndex(0)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 0 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
-            <div
-              onMouseEnter={(e) => setOnMouseHoverIndex(1)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 1 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
-            <div
-              onMouseEnter={(e) => setOnMouseHoverIndex(2)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 2 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
-            <div
-              onMouseEnter={(e) => setOnMouseHoverIndex(3)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 3 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
-            <div
-              onMouseEnter={(e) => setOnMouseHoverIndex(4)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 4 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
+        <div
+          className={`relative flex items-center right-0 w-screen font-poppins pt-16 pb-0`}
+          id="left-workshop-grid"
+        >
+          <div className="flex-1"></div>
+          <div className="lg:w-[calc(100vw-75vh)] pl-[calc(100vw/12)] pr-8 pt-96">
+            <RightImage
+              number={1}
+              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
+              title="Discovery Workshop"
+            />
+            <LeftImage
+              number={2}
+              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
+              title="Data Science Workshop"
+            />
+            <RightImage
+              number={3}
+              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
+              title="Discovery Workshop"
+            />
+            <LeftImage
+              number={4}
+              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
+              title="Data Science Workshop"
+            />
+            <RightImage
+              number={5}
+              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
+              title="Discovery Workshop"
+            />
+            <LeftImage
+              number={6}
+              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
+              title="Data Science Workshop"
+            />
+            <RightImage
+              number={7}
+              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
+              title="Discovery Workshop"
+            />
+            <LeftImage
+              number={8}
+              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
+              title="Data Science Workshop"
+            />
+            <RightImage
+              number={9}
+              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
+              title="Discovery Workshop"
+            />
+            <LeftImage
+              number={10}
+              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
+              title="Data Science Workshop"
+            />
+            <RightImage
+              number={11}
+              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
+              title="Discovery Workshop"
+            />
+            <LeftImage
+              number={12}
+              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
+              title="Data Science Workshop"
+            />
           </div>
         </div>
       </section>
@@ -108,3 +162,55 @@ const Section6 = ({ scrollYByVH }) => {
 };
 
 export default Section6;
+
+const LeftImage = ({ number, imgurl, title }) => {
+  return (
+    <div className="flex flex-row justify-end">
+      <div className="bg-opacity-50 bg-gray-200 flex w-96 h-64">
+        <div
+          style={{
+            background: `url("${imgurl}")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+
+          }}
+          className={`w-full h-full`}></div>
+      </div>
+      <div className="w-96 h-64 border-r border-r-gray-300 p-4 flex flex-row items-end space-x-4">
+        <div className="text-lg w-[75%] pb-2 font-semibold">
+          {title}
+        </div>
+        <div className="text-8xl text-gray-300">
+          {number}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const RightImage = ({ number, imgurl, title }) => {
+  return (
+    <div className="flex flex-row justify-end">
+      <div className="w-96 h-64 border-l border-l-gray-300 p-4 flex flex-row items-end space-x-4">
+        <div className="text-lg w-[75%] pb-2 font-semibold">
+          {title}
+        </div>
+        <div className="text-8xl text-gray-300">
+          {number}
+        </div>
+      </div>
+      <div className="bg-opacity-50 bg-gray-200 flex w-96 h-64">
+        <div
+          style={{
+            background: `url("${imgurl}")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+
+          }}
+          className={`w-full h-full`}></div>
+      </div>
+    </div>
+  );
+};
