@@ -2,30 +2,31 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
 const Event = ({
-  handleClick = () => {},
+  handleClick = () => { },
   title = "",
   description = "",
   className = "",
-  icon = <div/>,
+  icon = <div />,
   date = "",
   time = "",
+  arrowColor = "bg-white",
 }) => {
   return (
     <div className="group relative transition-all hover:z-10 font-poppins">
-      <div className="absolute opacity-0 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-gray-600 rounded-b-xl px-4 py-2 transition-all">
-        <div className="flex flex-row space-x-12 justify-center py-4">
-          <div className="">
-            <p className="font-sans font-semibold text-center text-xl">
+      <div className="absolute opacity-0 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-gray-600 rounded-b-xl px-4 pt-2 transition-all">
+        <div className="flex flex-row space-x-12 justify-center py-4 text-gray-100">
+          <div className="pt-4">
+            <p className="font-poppins font-semibold text-center text-xl">
               {date}
             </p>
-            <p className="font-sans text-center text-gray-100">Date</p>
+            <p className="font-poppins text-center">Date</p>
           </div>
 
-          <div className="">
-            <p className="font-sans font-semibold text-center text-xl">
+          <div className="pt-4">
+            <p className="font-poppins font-semibold text-center text-xl">
               {time}
             </p>
-            <p className="font-sans text-center text-gray-100">Time</p>
+            <p className="font-poppins text-center">Time</p>
           </div>
         </div>
       </div>
@@ -33,8 +34,8 @@ const Event = ({
       <div
         className={`${className} text-lg text-blue p-6 rounded-xl group-hover:rounded-b-none relative bg-gray-100 group-hover:scale-[110%] transition-all`}
       >
-        <div className="bg-[#181818] rounded-bl-3xl p-2 absolute top-0 right-0">
-          <div className="absolute top-0 -left-4 bg-[#181818]">
+        <div className={`${arrowColor} rounded-bl-3xl p-2 absolute top-0 right-0`}>
+          <div className={`absolute top-0 -left-4 ${arrowColor}`}>
             <div className="bg-gray-100 rounded-tr-full w-4 h-4"></div>
           </div>
           <button
@@ -44,9 +45,9 @@ const Event = ({
             }}
             className="bg-gradient-to-tr from-[#ff2596] to-[#463fff] text-white rounded-full p-4"
           >
-            <FiArrowUpRight className="text-white text-xl" />
+            <FiArrowUpRight className="text-white text-3xl" />
           </button>
-          <div className="absolute -bottom-4 right-0 bg-[#181818]">
+          <div className={`absolute -bottom-4 right-0 ${arrowColor}`}>
             <div className="bg-gray-100 rounded-tr-full w-4 h-4"></div>
           </div>
         </div>
@@ -59,7 +60,7 @@ const Event = ({
           {title}
         </p>
 
-        <p>{description}</p>
+        <p className="font-poppins">{description}</p>
       </div>
     </div>
   );
