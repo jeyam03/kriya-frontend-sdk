@@ -4,9 +4,9 @@ const Section1 = () => {
   return (
     <section
       id="section1"
-      className=" h-screen w-screen relative overflow-hidden"
+      className="h-screen w-screen relative overflow-hidden"
     >
-      <div className="flex w-full h-full justify-center items-center overflow-hidden bg-[rgb(18,18,18)]">
+      <div className="hidden lg:flex w-full h-full justify-center items-center overflow-hidden bg-[rgb(18,18,18)]">
         <div className="w-1/6 h-full space-y-6 px-6 -mt-48">
           <div
             className="w-full aspect-[3/4] rounded-lg shadow-2xl bg-black [box-shadow:inset_0_0_3rem_black] hover:scale-105 transition-all"
@@ -248,6 +248,10 @@ const Section1 = () => {
             }}
           ></div>
         </div>
+      </div>
+
+      <div className="bg-red-500 w-full h-full lg:hidden">
+
       </div>
     </section>
   );

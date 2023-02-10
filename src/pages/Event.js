@@ -19,8 +19,8 @@ const Event = () => {
         this, Come and grab your opportunities.
       </p>
 
-      <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-6">
-        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-8 relative py-12 px-8 lg:px-8">
+      <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4">
+        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8">
           <RoundDescription
             roundNumber={1}
             title="Rough Sketch"
@@ -56,7 +56,7 @@ const Event = () => {
           />
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
-          <div className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4">
+          <div className="lg:bg-[#ffffff] lg:rounded-3xl p-6 px-8 lg:p-12 lg:pr-8 space-y-4">
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
               {"Register Here !"}
             </span>
@@ -77,10 +77,10 @@ const Event = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdAccessTime />
               </p>
-              <div className="flex flex-col">
+              <div className="pl-2 flex flex-col">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
                   09:30 AM - 12:00 PM
                 </p>
@@ -90,10 +90,10 @@ const Event = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdOutlineLocationOn />
               </p>
-              <div className="flex flex-col">
+              <div className="pl-2 flex flex-col">
                 <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
                   K Block 1<sup>st</sup> Floor
                 </p>
@@ -103,10 +103,10 @@ const Event = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <AiOutlineTeam />
               </p>
-              <div className="flex flex-col">
+              <div className="pl-2 flex flex-col">
                 <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
                   2 - 3 Members
                 </p>
@@ -120,7 +120,7 @@ const Event = () => {
             </p>
 
             <div className="flex flex-row items-center gap-8">
-              <div className="w-1/3 lg:w-1/2">
+              <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   Ellakiyaa A
                 </p>
@@ -145,7 +145,7 @@ const Event = () => {
             </div>
 
             <div className="flex flex-row items-center gap-8">
-              <div className="w-1/3 lg:w-1/2">
+              <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   Gokul Ram C
                 </p>
@@ -172,9 +172,9 @@ const Event = () => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-4 w-full my-4  lg:px-0">
+      <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
         <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
-          <p className="text-3xl lg:text-3xl font-semibold tracking-wider text-[#3c4043]">
+          <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
             Rules
           </p>
           <ul className="list-disc text-base tracking-wide text-justify text-[#3c4043] pl-4">
@@ -196,22 +196,22 @@ const Event = () => {
 
 const RoundDescription = ({ roundNumber, description, title }) => {
   return (
-    <React.Fragment>
-      <p className="hidden lg:block text-9xl font-semibold tracking-wider text-[#3c4043] absolute z-10 opacity-40 text-right">
+    <div className="flex w-full ">
+      <p className="hidden lg:block w-28 pr-4 text-9xl font-semibold tracking-wider text-[#3c4043] z-10 opacity-40 text-right">
         {roundNumber}
       </p>
-      <div className="space-y-2 z-30">
-        <p className="lg:pl-[5.5rem] tracking-wider uppercase">ROUND {roundNumber}</p>
+      <div className="space-y-2 z-30 flex-1">
+        <p className="tracking-wider uppercase">ROUND {roundNumber}</p>
         <div className="flex flex-row items-end gap-y-4">
-          <p className="text-3xl font-semibold tracking-wide text-[#3c4043] lg:pl-[5.5rem]">
+          <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
             {title}
           </p>
         </div>
-        <p className="text-base lg:text-base text-justify text-[#3c4043] lg:pl-[5.5rem] pt-4 lg:pt-0">
+        <p className="text-base lg:text-base text-justify text-[#3c4043] pt-4 lg:pt-0">
           {description}
         </p>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

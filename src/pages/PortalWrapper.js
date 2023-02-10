@@ -29,7 +29,7 @@ const NavBar = () => {
 
 
   return (
-    <nav className="z-20 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 lg:h-screen overflow-y-scroll px-6  font-poppins">
+    <nav className="z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
       <div className="flex w-full justify-between items-center">
         <h1 className="text-3xl font-bold uppercase py-6 ">Kriya '23</h1>
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
