@@ -268,7 +268,7 @@ const Section1 = () => {
           }}
         ></div> */}
       </div>
-      <div className="bg-[#181818] w-full h-full absolute top-0 hidden lg:block">
+      <div className="bg-[#121212] w-full h-full absolute top-0 hidden lg:block">
         <div className="w-full h-full" style={{
           background: "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676036256/KriyaFinal_lj4u2j.png)",
             backgroundPosition: "center",
