@@ -84,7 +84,7 @@ const Section5 = ({ scrollYByVH }) => {
         </div>
 
         <div className="lg:w-[30%] w-full h-fit lg:h-full flex flex-col lg:justify-center ">
-          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8 text-right`}>
+          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8 text-center lg:text-right`}>
             Engineering.
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" Surveying. "}
@@ -92,13 +92,13 @@ const Section5 = ({ scrollYByVH }) => {
             Solutions.
           </h1>
         </div>
-        <div className="block lg:hidden w-full overflow-x-auto  mt-8">
-          <div className="flex w-fit relative space-x-6">
-            <div className="w-32"></div>
+        <div className="block lg:hidden w-full overflow-x-auto mt-8">
+          <div className="flex w-fit relative space-x-6 px-8">
+            <div className="w-64 h-96 bg-gray-500"> </div>
             <div className="w-64 h-96 bg-gray-500"> </div>
             <div className="w-64 h-96 bg-gray-500"></div>
             <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-32"></div>
+            <div className="w-64 h-96 bg-gray-500"> </div>
           </div>
         </div>
       </section>

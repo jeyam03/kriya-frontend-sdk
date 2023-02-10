@@ -191,7 +191,7 @@ const Section3 = () => {
         </div>
 
         <div className="w-full lg:w-[30vw] px-12 lg:pr-0">
-          <h1 className={`text-5xl lg:text-7xl font-poppins font-semibold ${condition} events-text opacity-0 text-right`}>
+          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} events-text opacity-0 text-center lg:text-right`}>
             Unleash your
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" potential"}

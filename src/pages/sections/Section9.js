@@ -37,8 +37,8 @@ const Section9 = () => {
         id="section9"
         className="h-fit lg:h-screen w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
       >
-        <h1 className="text-5xl font-bold w-[40vw]">
-          Frequently asked{" "}
+        <h1 className="text-4xl lg:text-5xl font-bold w-full lg:w-[40vw] text-center lg:text-left">
+          Frequently Asked{" "}
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
             Questions
           </span>

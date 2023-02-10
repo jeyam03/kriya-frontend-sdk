@@ -77,7 +77,7 @@ const Section6 = () => {
         >
 
           <div className="w-[50%] h-full flex flex-col lg:justify-center items-center p-24">
-            <h1 className={`text-4xl lg:text-5xl font-poppins font-semibold workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
+            <h1 className={`text-5xl font-poppins font-semibold workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
               Join the
               <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
                 {" masterclass workshops "}
@@ -88,11 +88,11 @@ const Section6 = () => {
         </div>
 
         <div
-          className={`relative flex items-center right-0 w-screen font-poppins pt-16 pb-0`}
+          className={`hidden lg:flex relative items-center right-0 w-screen font-poppins pt-16 pb-0`}
           id="left-workshop-grid"
         >
           <div className="flex-1"></div>
-          <div className="lg:w-[calc(100vw-75vh)] pl-[calc(100vw/12)] pr-8 pt-96">
+          <div className="lg:w-[calc(100vw-75vh)] pl-[calc(100vw/12)] pr-8 pt-8 lg:pt-96">
             <RightImage
               number={1}
               imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
@@ -155,6 +155,17 @@ const Section6 = () => {
             />
           </div>
         </div>
+
+
+        <div className="lg:hidden w-full p-8 pt-0">
+          <h1 className={`text-4xl font-poppins font-semibold workshop-text opacity-0 text-center`}>
+            Join the
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+              {" masterclass workshops "}
+            </span>{" "}
+            from innovation leaders and industry experts.
+          </h1>
+        </div>
       </section>
       <a id="anchor6" className="absolute top-[75%] w-full h-20"></a>
     </div>
@@ -181,7 +192,7 @@ const LeftImage = ({ number, imgurl, title }) => {
         <div className="text-lg w-[75%] pb-2 font-semibold">
           {title}
         </div>
-        <div className="text-8xl text-gray-300">
+        <div className="text-8xl font-semibold text-gray-300">
           {number}
         </div>
       </div>
@@ -196,7 +207,7 @@ const RightImage = ({ number, imgurl, title }) => {
         <div className="text-lg w-[75%] pb-2 font-semibold">
           {title}
         </div>
-        <div className="text-8xl text-gray-300">
+        <div className="text-8xl font-semibold text-gray-300">
           {number}
         </div>
       </div>

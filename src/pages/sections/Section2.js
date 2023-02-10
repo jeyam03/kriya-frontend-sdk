@@ -180,8 +180,8 @@ const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
 
 const NumberAndTagForMobile = ({ number, tag }) => {
   return (
-    <div className="space-y-4 flex flex-col justify-center">
-      <h1 className="text-4xl font-oswald font-bold text-center">
+    <div className="space-y-2 flex flex-col justify-center">
+      <h1 className="text-6xl font-oswald font-bold text-center">
         {parseInt(number) % 10 === parseInt(number) ? `0${number}` : number}
       </h1>
       <p className="text-center text-xs uppercase tracking-widest">{tag}</p>

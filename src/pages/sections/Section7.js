@@ -59,9 +59,9 @@ const Section7 = () => {
       >
 
         <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
-          <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-4">
-            <div className="w-1/2 p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider">
+          <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
+            <div className="w-full p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"TITLE "}
                 </span>
@@ -74,14 +74,14 @@ const Section7 = () => {
             </div>
 
             <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"ASSOCIATE "}
                 </span>
                 Sponsors
               </p>
 
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <Sponsers
                   imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
                   title="Apple"
@@ -101,8 +101,8 @@ const Section7 = () => {
               </div>
             </div>
 
-            <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider">
+            <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"STALL "}
                 </span>
@@ -158,8 +158,8 @@ const Section7 = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-[30%]">
-          <h1 className={`text-3xl lg:text-6xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-right`}>
+        <div className="w-full lg:w-[30%] p-8 pb-0 lg:p-0">
+          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-center lg:text-right`}>
             Kriya '23
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" Sponsors"}
@@ -175,8 +175,8 @@ const Section7 = () => {
 
 const Sponsers = ({ imgurl, title }) => {
   return (
-    <div className="flex flex-col gap-y-2 w-64">
-      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-8 w-64 h-36 rounded-2xl">
+    <div className="flex flex-col gap-y-2 w-48 lg:w-64">
+      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-6 lg:p-8 h-28 lg:w-64 lg:h-36 rounded-2xl">
         <div
           style={{
             background: `url("${imgurl}")`,
@@ -187,7 +187,7 @@ const Sponsers = ({ imgurl, title }) => {
           }}
           className={`w-full h-full`}></div>
       </div>
-      <p className="uppercase text-lg text-[#181818] tracking-wider text-center">{title}</p>
+      <p className="uppercase text-base lg:text-lg text-[#181818] tracking-wider text-center">{title}</p>
     </div>
   );
 };
