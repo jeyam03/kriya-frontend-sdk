@@ -73,3 +73,58 @@
     transform: translateX(-50%);
   }
 }
+
+
+#duotone-1::before {
+  background-color: rgb(240, 14, 46);
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+}
+
+#duotone-1::after {
+  background-color: rgb(25, 37, 80);
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: lighten;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+
+}
+
+#duotone-2::before {
+  background-color: rgb(15, 208, 176);
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+}
+
+#duotone-2::after {
+  background-color: rgb(37, 39, 51);
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: lighten;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.5rem;
+
+}

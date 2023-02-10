@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import PortalWrapper from "./pages/PortalWrapper";
 import Event from "./pages/Event";
 import Profile from "./pages/Profile";
+import Workshop from "./pages/Workshop";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="portal" element={<PortalWrapper />}>
           <Route path="event" element={<Event />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="workshop" element={<Workshop />} />
         </Route>
         <Route path="register" element={<Register />} />
         <Route index element={<Landing />} />
