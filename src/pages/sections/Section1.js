@@ -6,7 +6,7 @@ const Section1 = () => {
       id="section1"
       className="h-screen w-screen relative overflow-hidden"
     >
-      <div className="hidden lg:flex w-full h-full justify-center items-center overflow-hidden bg-[rgb(18,18,18)]">
+      <div className="hidden lg:flex w-full h-full justify-center items-center overflow-hidden bg[rgb(18,18,18)] relative z-10">
         <div className="w-1/6 h-full space-y-6 px-6 -mt-48">
           <div
             className="w-full aspect-[3/4] rounded-lg shadow-2xl bg-black [box-shadow:inset_0_0_3rem_black] hover:scale-105 transition-all"
@@ -250,8 +250,31 @@ const Section1 = () => {
         </div>
       </div>
 
-      <div className="bg-red-500 w-full h-full lg:hidden">
-
+      <div className="bg-[#121212] w-full h-full lg:hidden">
+        <div className="w-full h-full lg:w-64 lg:h-64"
+          style={{
+            background: "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676036256/KriyaFinal_lj4u2j.png)",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+        {/* <div className="w-full h-full absolute z-50"
+          style={{
+            background: "url(https://i.ibb.co/QHfydfF/Kriya-Logo-2023-white-1.png)",
+            backgroundPosition: "center",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div> */}
+      </div>
+      <div className="bg-[#181818] w-full h-full absolute top-0 hidden lg:block">
+        <div className="w-full h-full" style={{
+          background: "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676036256/KriyaFinal_lj4u2j.png)",
+            backgroundPosition: "center",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+        }}></div>
       </div>
     </section>
   );
