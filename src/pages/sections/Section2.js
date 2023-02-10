@@ -2,6 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 
 const Section2 = ({ scrollYByVH }) => {
   const [fadeInAnimate, setFadeInAnimate] = useState(false);
+  const [consolee, setConsolee] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
+      },
+      { passive: true }
+    );
+  }, [consolee]);
 
   const [timer, setTimer] = useState({
     hours: "0",
@@ -75,27 +86,36 @@ const Section2 = ({ scrollYByVH }) => {
     const calenderTexts = document.querySelectorAll(".calender-text");
     const observer = new IntersectionObserver((entries) => {
       // console.log(entries[0].isIntersecting);
-      if (entries[0].isIntersecting) {
-        numberTags.forEach((numberTag) => {
-          numberTag.classList.add("animate-fade-in-bottom");
-        });
-        calenderTexts.forEach((calenderText) => {
-          calenderText.classList.add("animate-fade-in");
-        });
-      } else {
-        numberTags.forEach((numberTag) => {
-          numberTag.classList.remove("animate-fade-in-bottom");
-        });
-        calenderTexts.forEach((calenderText) => {
-          calenderText.classList.remove("animate-fade-in");
-        });
-      }
+      // if (entries[0].isIntersecting) {
+      //   numberTags.forEach((numberTag) => {
+      //     numberTag.classList.add("animate-fade-in-bottom");
+      //   });
+      //   calenderTexts.forEach((calenderText) => {
+      //     calenderText.classList.add("animate-fade-in");
+      //   });
+      // } else {
+      //   numberTags.forEach((numberTag) => {
+      //     numberTag.classList.remove("animate-fade-in-bottom");
+      //   });
+      //   calenderTexts.forEach((calenderText) => {
+      //     calenderText.classList.remove("animate-fade-in");
+      //   });
+      // }
+      numberTags.forEach((numberTag) => {
+        numberTag.classList.add("animate-fade-in-bottom");
+      });
+      calenderTexts.forEach((calenderText) => {
+        calenderText.classList.add("animate-fade-in");
+      });
     });
 
     observer.observe(element);
   });
 
   useEffect(() => { }, []);
+
+  const condition = `${parseFloat(consolee) <= 0.75 ? "text-white" : "text-[#181818]"}`;
+  const borderCondition = `${parseFloat(consolee) <= 0.75 ? "border-white" : "border-[#181818]"}`;
 
   return (
     <div className="w-full h-full relative">
@@ -104,19 +124,19 @@ const Section2 = ({ scrollYByVH }) => {
         className="h-screen w-full relative [scroll-snap-align:start] m-0 p-0 py-12 lg:py-16 flex flex-col lg:flex-row lg:justify-center"
       >
         <div className="w-full lg:w-[50vw] lg:pl-[calc(100vw/12)] py-16 lg:pr-16 h-full flex flex-col items-center lg:items-start justify-center">
-          <h1 className="text-6xl lg:text-7xl opacity-0 px-8 lg:p-0  font-[600] text-[#181818] calender-text font-poppins text-center lg:text-left">
+          <h1 className={`text-6xl lg:text-7xl opacity-0 px-8 lg:p-0  font-[600] ${condition} calender-text font-poppins text-center lg:text-left`}>
             Mark your{" "}
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               calendar
             </span>
           </h1>
-          <p className="text-xl mt-8 opacity-0 px-8 lg:p-0  text-[#181818] calender-text font-poppins text-center lg:text-left">
+          <p className={`text-xl mt-8 opacity-0 px-8 lg:p-0 ${condition} calender-text font-poppins text-center lg:text-left`}>
             Join us at the forefront of technological advancements and gain
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </p>
           <div className="px-8 lg:p-0 ">
             <button
-              className="calender-text opacity-0 mt-8 w-fit px-4 py-2 text-lg font-poppins rounded-lg border-[#181818] border"
+              className={`calender-text opacity-0 mt-8 w-fit px-4 py-2 text-lg font-poppins rounded-lg ${borderCondition} ${condition} border`}
               onClick={() => {
                 window.open(
                   "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230324T033000Z%2F20230324T053000Z&details=&location=&text=Kriya%20%2723%20Inauguration"
@@ -126,7 +146,7 @@ const Section2 = ({ scrollYByVH }) => {
               Add to Calendar
             </button>
           </div>
-          <div className="gap-4 lg:hidden grid grid-cols-2 items-center justify-center w-full mt-8 px-16 lg:p-0 ">
+          <div className="gap-4 lg:hidden grid grid-cols-2 items-center justify-center w-full mt-12 px-16 lg:p-0 ">
             <NumberAndTagForMobile number={timer.days} tag="days" />
             {/* <h1 className="text-3xl font-poppins font-bold">:</h1> */}
             <NumberAndTagForMobile number={timer.hours} tag="hours" />
@@ -159,19 +179,34 @@ const Section2 = ({ scrollYByVH }) => {
           />
         </div>
       </section>
-      <a id="anchor1" className="absolute top-[75%] w-full h-20"></a>
+      <a id="anchor1" className="absolute top-[35%] w-full h-20"></a>
     </div>
   );
 };
 
 const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
+  const [consolee, setConsolee] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
+      },
+      { passive: true }
+    );
+  }, [consolee]);
+  
+  const condition = `${parseFloat(consolee) <= 0.75 ? "text-white" : "text-[#181818]"}`;
+  const gradientCondition = `${parseFloat(consolee) <= 0.75 ? "from-[rgba(255,255,255,0.3)] to-[rgba(255,255,255,0.6)]" : "from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)]"}`;
+
   return (
     <div className="relative w-[40ch] number-tag">
-      <h1 className="pr-4 absolute bottom-4 right-4 [line-height:40vh] bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-t from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)] text-[30vh] 2xl:text-[40vh] text-red-400 font-oswald font-bold tracking-[-0.15em]">
+      <h1 className={`pr-4 absolute bottom-4 right-4 [line-height:40vh] bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-t ${gradientCondition} text-[30vh] 2xl:text-[40vh] text-red-400 font-oswald font-bold tracking-[-0.15em]`}>
         {parseInt(number) % 10 === parseInt(number) ? `0${number}` : number}
         &nbsp;
       </h1>
-      <p className="absolute right-4 bottom-8 uppercase  text-[rgb(18,18,18)] text-5xl font-bold font-oswald">
+      <p className={`absolute right-4 bottom-8 uppercase ${condition} text-5xl font-bold font-oswald`}>
         {tag}
       </p>
     </div>
@@ -179,8 +214,22 @@ const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
 };
 
 const NumberAndTagForMobile = ({ number, tag }) => {
+  const [consolee, setConsolee] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
+      },
+      { passive: true }
+    );
+  }, [consolee]);
+  
+  const condition = `${parseFloat(consolee) <= 0.75 ? "text-white" : "text-[#181818]"}`;
+
   return (
-    <div className="space-y-2 flex flex-col justify-center">
+    <div className={`space-y-2 flex flex-col justify-center ${condition}`}>
       <h1 className="text-6xl font-oswald font-bold text-center">
         {parseInt(number) % 10 === parseInt(number) ? `0${number}` : number}
       </h1>

@@ -92,13 +92,13 @@ const Section5 = ({ scrollYByVH }) => {
             Solutions.
           </h1>
         </div>
-        <div className="block lg:hidden w-full overflow-x-auto mt-8">
-          <div className="flex w-fit relative space-x-6 px-8">
-            <div className="w-64 h-96 bg-gray-500"> </div>
-            <div className="w-64 h-96 bg-gray-500"> </div>
-            <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-64 h-96 bg-gray-500"></div>
-            <div className="w-64 h-96 bg-gray-500"> </div>
+        <div className="block lg:hidden w-full h-full overflow-x-auto mt-8">
+          <div className="flex w-fit h-full items-center relative space-x-6 px-8">
+            <div className="w-64 h-[90%] bg-gray-500"> </div>
+            <div className="w-64 h-[90%] bg-gray-500"> </div>
+            <div className="w-64 h-[90%] bg-gray-500"></div>
+            <div className="w-64 h-[90%] bg-gray-500"></div>
+            <div className="w-64 h-[90%] bg-gray-500"> </div>
           </div>
         </div>
       </section>

@@ -254,7 +254,7 @@ const LeftImage = ({ number, imgurl, title }) => {
           className={`w-full h-full`}></div>
       </div>
       <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-r border-r-gray-300 p-4 flex flex-row items-end space-x-4">
-        <div className="text-base lg:text-lg w-[75%] pb-2 font-semibold">
+        <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold">
           {title}
         </div>
         <div className="text-6xl lg:text-8xl font-semibold text-gray-300">
@@ -269,7 +269,7 @@ const RightImage = ({ number, imgurl, title }) => {
   return (
     <div className="flex flex-row justify-end">
       <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-l border-l-gray-300 p-4 flex flex-row items-end space-x-4">
-        <div className="text-base lg:text-lg w-[75%] pb-2 font-semibold">
+        <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold">
           {title}
         </div>
         <div className="text-6xl lg:text-8xl font-semibold text-gray-300">

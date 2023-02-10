@@ -41,7 +41,7 @@ const Landing = () => {
 
   return (
     <React.Fragment>
-      {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10">
+      {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10 z-50">
         {consolee}
       </div> */}
       <nav className="fixed top-0 w-full left-0 right-0 p-4 flex justify-center space-x-4 lg:space-x-24 z-50 h-12">
