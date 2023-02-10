@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 
+// FAQs
+
 const Section9 = () => {
   const [faqOpenIdx, setFaqOpenIdx] = useState(0);
 

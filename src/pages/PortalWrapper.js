@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 
 const PortalWrapper = ({ children }) => {
@@ -36,9 +36,9 @@ const NavBar = () => {
       </div>
       <div className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"} transition-all ease-in-out duration-300`}>
         <div className="py-8 w-full">
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+          <Link to="/register" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Register
-          </button>
+          </Link>
           <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Sponsors
           </button>

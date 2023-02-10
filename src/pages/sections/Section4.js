@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
 import Event from "../../components/Event";
 
+// Event Grid
+
 const Section4 = () => {
   const [consolee, setConsolee] = useState(0);
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
 
+// Sponsors
+
 const Section7 = () => {
   const [consolee, setConsolee] = useState(0);
 
@@ -19,15 +21,7 @@ const Section7 = () => {
     const sponsorsTexts = document.querySelectorAll(".sponsors-text");
     const observer = new IntersectionObserver((entries) => {
       console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   sponsorsTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   sponsorsTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
-      //   });
-      // }
+
       sponsorsTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });
@@ -36,28 +30,12 @@ const Section7 = () => {
     observer.observe(element);
   });
 
-  // useEffect(() => {
-  //   const stallsContainer = document.querySelector('.stalls');
-  //   const stallsScrollWidth = stallsContainer.scrollWidth;
-
-
-  //   setInterval(() => {
-  //     if (stallsContainer.scrollLeft !== stallsScrollWidth) {
-  //       stallsContainer.scrollTo(stallsContainer.scrollLeft + 1, 0);
-  //     }
-  //   }, 15);
-
-  // }, []);
-
-  const condition = "";
-
   return (
     <div className="w-full h-full relative">
       <section
         id="section7"
         className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
       >
-
         <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
           <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
             <div className="w-full p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
@@ -153,13 +131,14 @@ const Section7 = () => {
                   />
                 </div>
               </div>
-
             </div>
           </div>
         </div>
 
         <div className="w-full lg:w-[30%] p-8 pb-0 lg:p-0">
-          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} sponsors-text opacity-0 text-center lg:text-right`}>
+          <h1
+            className={`text-4xl lg:text-6xl font-poppins font-semibold  sponsors-text opacity-0 text-center lg:text-right`}
+          >
             Kriya '23
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" Sponsors"}
@@ -167,7 +146,10 @@ const Section7 = () => {
           </h1>
         </div>
       </section>
-      <a id="anchor7" className="absolute top-[40%] lg:top-[75%] w-full h-20"></a>
+      <a
+        id="anchor7"
+        className="absolute top-[40%] lg:top-[75%] w-full h-20"
+      ></a>
       <div className="absolute top-[100%] w-full h-10"></div>
     </div>
   );
@@ -183,11 +165,13 @@ const Sponsers = ({ imgurl, title }) => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
-
           }}
-          className={`w-full h-full`}></div>
+          className={`w-full h-full`}
+        ></div>
       </div>
-      <p className="uppercase text-base lg:text-lg text-[#181818] tracking-wider text-center">{title}</p>
+      <p className="uppercase text-base lg:text-lg text-[#181818] tracking-wider text-center">
+        {title}
+      </p>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
+// Countdown
+
 const Section2 = ({ scrollYByVH }) => {
   const [fadeInAnimate, setFadeInAnimate] = useState(false);
   const [consolee, setConsolee] = useState(0);

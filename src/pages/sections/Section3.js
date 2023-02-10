@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
 import "../../styles/Landing.css";
 
+// Events
+
 const Section3 = () => {
   const [consolee, setConsolee] = useState(0);
 
@@ -19,16 +21,6 @@ const Section3 = () => {
     const element = document.querySelector("#anchor3");
     const eventsTexts = document.querySelectorAll(".events-text");
     const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   eventsTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   eventsTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
-      //   });
-      // }
       eventsTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });

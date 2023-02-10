@@ -2,9 +2,11 @@ import React from "react";
 import { BsInstagram, BsLinkedin, BsTelephone } from "react-icons/bs";
 import {SiGmail} from "react-icons/si";
 
+// Contact Us
+
 const Section10 = () => {
   return (
-    <section className="w-screen bg-black px-[calc(100vw/12)] py-16 font-poppins">
+    <section id="section10" className="w-screen bg-black px-[calc(100vw/12)] py-16 font-poppins">
       <h1 className="text-5xl text-white font-bold">Contact Us</h1>
       <div className="flex flex-col lg:flex-row gap-8 flex-wrap text-white mt-8">
         <div className="flex-1 space-y-6">

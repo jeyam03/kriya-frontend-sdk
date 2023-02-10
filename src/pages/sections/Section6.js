@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
 
+// Workshops
+
 const Section6 = () => {
   const [consolee, setConsolee] = useState(0);
 
@@ -62,7 +64,7 @@ const Section6 = () => {
   return (
     <div className="w-full relative">
       <section
-        id="section8"
+        id="section6"
         className="w-screen relative flex flex-col lg:flex-row items-start workshop-text opacity-0"
       >
 

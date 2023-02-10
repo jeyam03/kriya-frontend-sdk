@@ -10,6 +10,7 @@ import Section7 from "./sections/Section7";
 import Section8 from "./sections/Section8";
 import Section9 from "./sections/Section9";
 import Section10 from "./sections/Section10";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -44,53 +45,108 @@ const Landing = () => {
       <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10 z-50">
         {consolee}
       </div>
-      <nav className={`${consolee > 1 ? "fixed" : "hidden"} top-0 w-full left-0 right-0 px-4 flex justify-between lg:justify-evenly space-x-4 lg:space-x-24 z-50 h-12 bg-white shadow-md`}>
+      <nav
+        className={`${
+          consolee > 1 ? "fixed" : "hidden"
+        } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-24 z-50 h-12 bg-white shadow-md`}
+      >
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section3");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Events
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section5");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Paper Presentations
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section6");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           Workshops
         </button>
-
-        <div className="w-48 h-full"
-          style={{
-            background: "url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)",
-            backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-        </div>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section7");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           Sponsors
         </button>
+        <div
+          className="w-48 h-full"
+          style={{
+            background:
+              "url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)",
+            backgroundPosition: `${
+              window.innerWidth < 768 ? "left" : "center"
+            }`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section8");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Our Team
+        </button>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section9");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          FAQs
+        </button>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section10");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
         >
           Contact Us
         </button>
-        <button
-          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
+        <Link
+          to="/register"
+          className={`text-xs text-gray-600 leading-5 font-poppins ${
+            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+          } transition-all`}
         >
           Register
-        </button>
+        </Link>
       </nav>
       <main
         className={`w-screen overflow-x-hidden transition-all duration-300`}
@@ -106,10 +162,10 @@ const Landing = () => {
                 ? `rgba(18, 18, 18, 1)`
                 : `rgba(255, 255, 255, 1)`
               : parseFloat(consolee) + 0.25 >= 3
-                ? `rgba(255, 255, 255, 1)`
-                : (parseFloat(consolee) + 0.25) % 2 <= 1
-                  ? `rgba(18, 18, 18, 1)`
-                  : `rgba(255, 255, 255, 1)`,
+              ? `rgba(255, 255, 255, 1)`
+              : (parseFloat(consolee) + 0.25) % 2 <= 1
+              ? `rgba(18, 18, 18, 1)`
+              : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",

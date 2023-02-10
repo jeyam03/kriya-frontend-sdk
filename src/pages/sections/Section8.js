@@ -3,6 +3,8 @@ import "../../styles/Landing.css";
 import TeamDetails from "./TeamDetails.js";
 import "../../styles/FlipCard.css";
 
+// Our Team
+
 const Section8 = () => {
   const [consolee, setConsolee] = useState(0);
 
