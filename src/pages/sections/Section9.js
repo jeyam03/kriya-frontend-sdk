@@ -11,7 +11,7 @@ const Section9 = () => {
         className="h-fit w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
       >
         <h1 className="text-4xl lg:text-5xl font-bold text-center">
-          Frequently asked{" "}
+          Frequently Asked{" "}
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
             Questions
           </span>
@@ -36,15 +36,15 @@ const Section9 = () => {
 const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
   return (
     <div className="w-full">
-      <div className="px-8 py-4 border-t border-gray-300 text-lg flex justify-between font-semibold">
-        <p className="">{question}</p>
+      <div className="p-4 lg:px-8 border-t border-gray-300 text-lg flex justify-between font-semibold">
+        <p className="text-xl py-2">{question}</p>
         <button onClick={onClick}>
           <AiOutlinePlus className="text-2xl" />
         </button>
       </div>
       <div
         className={`${
-          isOpened ? "h-fit px-8 py-4 " : "h-0 overflow-y-hidden"
+          isOpened ? "h-fit px-4 lg:px-8 py-4 " : "h-0 overflow-y-hidden"
         } transition-all ease-in-out text-base`}
       >
         {answer}

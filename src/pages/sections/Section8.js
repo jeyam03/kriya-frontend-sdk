@@ -68,7 +68,7 @@ const Section8 = () => {
         className="w-full relative flex items-start team-text opacity-0"
       >
         <div
-          className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-16 pb-0 px-[calc(100vw/12)]`}
+          className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-8 lg:pt-16 pb-0 px-[calc(100vw/12)]`}
           id="left-grid"
         >
           <h1

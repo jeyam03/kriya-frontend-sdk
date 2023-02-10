@@ -107,6 +107,22 @@ const Main = () => {
         this, Come and grab your opportunities.
       </p>
 
+      {/* <div className="flex flex-col lg:flex-row gap-4 w-full pt-8 px-4 lg:px-0">
+        <div className="bg-[#ffffff] w-full lg:w-1/3 rounded-3xl p-12">
+          <p className="text-4xl lg:text-5xl font-semibold tracking-wider text-[#3c4043]">
+            Scan Plan and Reckon
+          </p>
+        </div>
+        <div className="bg-[#ffffff] w-full lg:w-2/3 rounded-3xl p-12">
+          <p className="text-xl text-justify font-semibold tracking-wider text-[#3c4043]">
+            An interesting event to bring out the Civil engineer in you. All you
+            need for this event is knowledge in AutoCAD software, innovative
+            ideas and the talent of justifying your ideas. If you have a knack
+            for all this, Come and grab your opportunities.
+          </p>
+        </div>
+      </div> */}
+
       <div className="flex flex-col lg:flex-row gap-4 w-full px-4 lg:px-0 my-6">
         <div className="bg-[#ffffff] w-full lg:w-2/3 rounded-3xl p-12 space-y-8 relative">
           <p className="text-9xl font-semibold tracking-wider text-[#3c4043] absolute z-10 opacity-40 text-right">
