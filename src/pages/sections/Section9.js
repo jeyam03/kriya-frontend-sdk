@@ -1,72 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Section9 = () => {
-  useEffect(() => {
-    const element = document.querySelector("#anchor9");
-    const faqTexts = document.querySelectorAll(".faq-text");
-    const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      if (entries[0].isIntersecting) {
-        faqTexts.forEach((faqText, index) => {
-          console.log(index, Math.floor(index / 3) === 0);
-          faqText.classList.add(
-            "animate-fade-in",
-            Math.floor(index / 3) === 0
-              ? "animation-delay-1"
-              : "animation-delay-2"
-          );
-        });
-      } else {
-        faqTexts.forEach((faqText, index) => {
-          faqText.classList.remove(
-            "animate-fade-in",
-            Math.floor(index / 3) === 0
-              ? "animation-delay-1"
-              : "animation-delay-2"
-          );
-        });
-      }
-    });
-
-    observer.observe(element);
-  });
+  const [faqOpenIdx, setFaqOpenIdx] = useState(0);
 
   return (
     <div className="">
       <section
         id="section9"
-        className="h-fit lg:h-screen w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
+        className="h-fit w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
       >
-        <h1 className="text-5xl font-bold w-[40vw]">
+        <h1 className="text-5xl font-bold text-center">
           Frequently asked{" "}
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
             Questions
           </span>
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-6 mt-16">
-          {FAQContent.map((item, index) => (
-            <FAQItem
-              question={item.question}
-              answer={item.answer}
-              delay={Math.floor(index / 3) === 0}
-            />
-          ))}
+        <div className="w-full flex items-center justify-center">
+          <div className="flex flex-col items-center w-full lg:w-[60vw] mt-16">
+            {FAQContent.map((item, index) => (
+              <FAQItem
+                question={item.question}
+                answer={item.answer}
+                isOpened={index === faqOpenIdx}
+                onClick={() => setFaqOpenIdx(index)}
+              />
+            ))}
+          </div>
         </div>
       </section>
-      <a id="anchor9"></a>
     </div>
   );
 };
 
-const FAQItem = ({ question, answer, delay = false }) => {
+const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
   return (
-    <div
-      className={`space-y-4 font-poppins faq-text lg:opacity-0 ${
-        delay ? "delay-500" : "delay-1000"
-      }`}
-    >
-      <p className="font-bold text-lg">{question}</p>
-      <p className="text-sm">{answer}</p>
+    <div className="w-full">
+      <div className="px-8 py-4 border-t border-gray-300 text-lg flex justify-between font-semibold">
+        <p className="">{question}</p>
+        <button onClick={onClick}>
+          <AiOutlinePlus className="text-2xl" />
+        </button>
+      </div>
+      <div
+        className={`${
+          isOpened ? "h-fit px-8 py-4 " : "h-0 overflow-y-hidden"
+        } transition-all ease-in-out text-base`}
+      >
+        {answer}
+      </div>
     </div>
   );
 };
