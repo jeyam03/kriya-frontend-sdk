@@ -48,7 +48,7 @@ const Landing = () => {
       <nav
         className={`${
           consolee > 1 ? "fixed" : "hidden"
-        } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-24 z-50 h-12 bg-white shadow-md`}
+        } top-0 w-full left-0 right-0 px-4 flex items-center justify-center lg:justify-center space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
       >
         <button
           onClick={(e) => {
