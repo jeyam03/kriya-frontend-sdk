@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
-import Event from "../../components/Event";
+import EventGrid from "../../components/EventGrid";
 
 // Event Grid
 
@@ -88,53 +88,53 @@ const EventsGrid = ({ }) => {
     );
   }, [consolee]);
 
-  const arrowBgCondition = `${window.innerWidth < 768 ?  parseFloat(consolee) <= 3.5 ? "bg-[#181818]" : "bg-white" : parseFloat(consolee) <= 2.75 ? "bg-[#181818]" : "bg-white"}`;
+  const arrowBgCondition = `${window.innerWidth < 768 ? parseFloat(consolee) <= 3.5 ? "bg-[#121212]" : "bg-white" : parseFloat(consolee) <= 2.75 ? "bg-[#121212]" : "bg-white"}`;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 py-12">
-      <Event
+      <EventGrid
         title="Kriyative"
-        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds to showcase their talent and get recognized."
+        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
         date="21st March 2021"
         time="10:00 AM"
         arrowColor={arrowBgCondition}
         icon={<FaSoundcloud />}
       />
-      <Event
+      <EventGrid
         title="Kriyative"
-        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds to showcase their talent and get recognized."
+        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
         date="21st March 2021"
         time="10:00 AM"
         arrowColor={arrowBgCondition}
         icon={<FaSoundcloud />}
       />
-      <Event
+      <EventGrid
         title="Kriyative"
-        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds to showcase their talent and get recognized."
+        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
         date="21st March 2021"
         time="10:00 AM"
         arrowColor={arrowBgCondition}
         icon={<FaSoundcloud />}
       />
-      <Event
+      <EventGrid
         title="Kriyative"
-        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds to showcase their talent and get recognized."
+        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
         date="21st March 2021"
         time="10:00 AM"
         arrowColor={arrowBgCondition}
         icon={<FaSoundcloud />}
       />
-      <Event
+      <EventGrid
         title="Kriyative"
-        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds to showcase their talent and get recognized."
+        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
         date="21st March 2021"
         time="10:00 AM"
         arrowColor={arrowBgCondition}
         icon={<FaSoundcloud />}
       />
-      <Event
-        title="Kriyative"
-        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds to showcase their talent and get recognized."
+      <EventGrid
+        title="Kriyative Kriyative"
+        description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
         date="21st March 2021"
         time="10:00 AM"
         arrowColor={arrowBgCondition}
