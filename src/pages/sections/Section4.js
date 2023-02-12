@@ -88,7 +88,7 @@ const EventsGrid = ({ }) => {
     );
   }, [consolee]);
 
-  const arrowBgCondition = `${window.innerWidth < 768 ? parseFloat(consolee) <= 3.5 ? "bg-[#121212]" : "bg-white" : parseFloat(consolee) <= 2.75 ? "bg-[#121212]" : "bg-white"}`;
+  const arrowBgCondition = `${window.innerWidth < 768 ? parseFloat(consolee) <= 3.5 ? "bg-[#121212]" : "bg-white" : parseFloat(consolee) < 2.75 ? "bg-[#121212]" : "bg-white"}`;
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 py-12">

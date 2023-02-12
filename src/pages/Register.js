@@ -12,24 +12,24 @@ const Register = () => {
 
   return (
     <main className="w-screen h-screen overflow-x-hidden flex items-center bg-[#181818] font-poppins">
-      <div className="w-4 bg-gradient-to-t from-[#C80067] to-[#5451B6] h-screen"></div>
+      <div className="hidden lg:block w-4 bg-gradient-to-t from-[#C80067] to-[#5451B6] h-screen"></div>
       <section
         className={`w-full transition-all duration-200 ease-in-out ${isLogInPage ? "bg-[#181818]" : "bg-[#f5f5f5]"
           } h-screen overflow-hidden flex  relative`}
       >
         <div
-          className={`transition-all duration-300 ease-in absolute w-[85vw] lg:w-[30vw] h-screen top-0 right-[calc(5vw)] lg:right-[calc(15vw)] z-20 flex justify-center items-center`}
+          className={`transition-all duration-300 ease-in absolute w-[90vw] lg:w-[30vw] h-screen top-0 right-[calc(5vw)] lg:right-[calc(15vw)] z-20 flex justify-center items-center`}
         >
           {isLogInPage ? (
             <div className="w-full py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
               <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
-              <TextInput title="Email" type="email" className="" valueState={[email, setEmail]}/>
-              <TextInput title="Password" className="" valueState={[password, setPassword]}/>
+              <TextInput title="Email" type="email" className="" valueState={[email, setEmail]} />
+              <TextInput title="Password" className="" valueState={[password, setPassword]} />
               <button
                 onClick={(e) => setIsLogInPage(!isLogInPage)}
                 className="w-full text-center"
               >
-                Already have an account ?{" "}
+                Don't have an account yet ? <u>Sign up</u>
               </button>
             </div>
           ) : (
@@ -52,7 +52,7 @@ const Register = () => {
                 onClick={(e) => setIsLogInPage(!isLogInPage)}
                 className="w-full text-center"
               >
-                Already have an account ?{" "}
+                Already have an account ? <u>Sign in</u>
               </button>
             </div>
           )}
@@ -65,9 +65,8 @@ const Register = () => {
             <img
               src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674502647/Kriya_Logo_2023_white_npmqdj.png"
               alt="logo"
-              className={`${
-                !isLogInPage && "invert"
-              } transition-all duration-400 w-64`}
+              className={`${!isLogInPage && "invert"
+                } transition-all duration-400 w-64`}
             />
           </div>
         </div>
