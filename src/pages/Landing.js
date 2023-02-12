@@ -46,18 +46,16 @@ const Landing = () => {
         {consolee}
       </div>
       <nav
-        className={`${
-          consolee > 1 ? "fixed" : "hidden"
-        } top-0 w-full left-0 right-0 px-4 flex items-center justify-center lg:justify-center space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
+        className={`${consolee > 1 ? "fixed" : "hidden"
+          } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
       >
         <button
           onClick={(e) => {
             const element = document.getElementById("section3");
             element.scrollIntoView({ behavior: "smooth" });
           }}
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
         >
           Events
         </button>
@@ -66,16 +64,14 @@ const Landing = () => {
             const element = document.getElementById("section5");
             element.scrollIntoView({ behavior: "smooth" });
           }}
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
         >
           Paper Presentations
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
           onClick={(e) => {
             const element = document.getElementById("section6");
             element.scrollIntoView({ behavior: "smooth" });
@@ -84,9 +80,8 @@ const Landing = () => {
           Workshops
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
           onClick={(e) => {
             const element = document.getElementById("section7");
             element.scrollIntoView({ behavior: "smooth" });
@@ -99,17 +94,22 @@ const Landing = () => {
           style={{
             background:
               "url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)",
-            backgroundPosition: `${
-              window.innerWidth < 768 ? "left" : "center"
-            }`,
+            backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"
+              }`,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
           }}
-        ></div>
+        >
+          <button className="w-full h-full"
+            onClick={(e) => {
+              const element = document.getElementById("section1");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}>
+          </button>
+        </div>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
           onClick={(e) => {
             const element = document.getElementById("section8");
             element.scrollIntoView({ behavior: "smooth" });
@@ -118,9 +118,8 @@ const Landing = () => {
           Our Team
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
           onClick={(e) => {
             const element = document.getElementById("section9");
             element.scrollIntoView({ behavior: "smooth" });
@@ -129,9 +128,8 @@ const Landing = () => {
           FAQs
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
           onClick={(e) => {
             const element = document.getElementById("section10");
             element.scrollIntoView({ behavior: "smooth" });
@@ -141,9 +139,8 @@ const Landing = () => {
         </button>
         <Link
           to="/register"
-          className={`text-xs text-gray-600 leading-5 font-poppins ${
-            consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-          } transition-all`}
+          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
         >
           Register
         </Link>
@@ -162,10 +159,10 @@ const Landing = () => {
                 ? `rgba(18, 18, 18, 1)`
                 : `rgba(255, 255, 255, 1)`
               : parseFloat(consolee) + 0.25 >= 3
-              ? `rgba(255, 255, 255, 1)`
-              : (parseFloat(consolee) + 0.25) % 2 <= 1
-              ? `rgba(18, 18, 18, 1)`
-              : `rgba(255, 255, 255, 1)`,
+                ? `rgba(255, 255, 255, 1)`
+                : (parseFloat(consolee) + 0.25) % 2 <= 1
+                  ? `rgba(18, 18, 18, 1)`
+                  : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",
@@ -187,3 +184,44 @@ const Landing = () => {
 };
 
 export default Landing;
+
+const MenuToggle = ({ isOpen, setIsOpen }) => {
+  return (
+    <button
+      className="lg:hidden flex items-center p-1 text-gray-500 lg:hover:text-gray-300"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      )}
+    </button>
+  );
+};
