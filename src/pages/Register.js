@@ -3,9 +3,13 @@ import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
 import TextInput from "../components/TextInput";
+import Dropdown from "../components/Dropdown";
+import colleges from "./CollegeList";
 
 const Register = () => {
   const [isLogInPage, setIsLogInPage] = useState(true);
+
+  const [college, setCollege] = useState("");
 
   return (
     <main className="w-screen h-screen overflow-x-hidden flex items-center bg-[#181818] font-poppins">
@@ -37,8 +41,14 @@ const Register = () => {
               <TextInput title="Name" className="" />
               <TextInput title="Email" type="email" className="" />
               <TextInput title="Phone number" className="" />
-              <TextInput title="Phone number" className="" />
-              <TextInput title="Phone number" className="" />
+              <Dropdown
+                valueState={[college, setCollege]}
+                title="College/University"
+                className=""
+                placeholder="Select a college"
+                options={colleges}
+              />
+              <TextInput title="Referral Code" className="" />
               <button
                 onClick={(e) => setIsLogInPage(!isLogInPage)}
                 className="w-full text-center"
@@ -53,8 +63,14 @@ const Register = () => {
             isLogInPage ? "bg-[#181818]" : "bg-[#f5f5f5]"
           }`}
         >
-          <div className="w-full h-full p-8 flex flex-col justify-end">
-           Insert Content Here
+          <div className="w-full h-full p-8 flex flex-col items-center justify-center">
+            <img
+              src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674502647/Kriya_Logo_2023_white_npmqdj.png"
+              alt="logo"
+              className={`${
+                !isLogInPage && "invert"
+              } transition-all duration-400 w-64`}
+            />
           </div>
         </div>
         <div
