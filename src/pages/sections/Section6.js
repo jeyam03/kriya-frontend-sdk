@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
 
-// Workshops
+// Sponsors
 
 const Section6 = () => {
   const [consolee, setConsolee] = useState(0);
@@ -17,20 +17,12 @@ const Section6 = () => {
   }, [consolee]);
 
   useEffect(() => {
-    const element = document.querySelector("#anchor6");
-    const workshopTexts = document.querySelectorAll(".workshop-text");
+    const element = document.querySelector("#anchor7");
+    const sponsorsTexts = document.querySelectorAll(".sponsors-text");
     const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
-      //   });
-      // }
-      workshopTexts.forEach((eventsText) => {
+      console.log(entries[0].isIntersecting);
+
+      sponsorsTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });
     });
@@ -38,257 +30,150 @@ const Section6 = () => {
     observer.observe(element);
   });
 
-  const [fixedPosition, setFixedPosition] = useState("relative");
-
-  useEffect(() => {
-    const rightGrid = document.querySelector("#right-workshop-grid");
-    const leftGrid = document.querySelector("#left-workshop-grid");
-    if (
-      leftGrid.getBoundingClientRect().top <= 0 &&
-      leftGrid.getBoundingClientRect().bottom > window.innerHeight &&
-      fixedPosition !== "fixed"
-    ) {
-      setFixedPosition("fixed");
-    } else if (leftGrid.getBoundingClientRect().top > 0) {
-      setFixedPosition("relative");
-    } else if (leftGrid.getBoundingClientRect().bottom <= window.innerHeight) {
-      setFixedPosition("absolute");
-    }
-    console.log(
-      leftGrid.getBoundingClientRect(),
-      fixedPosition,
-      window.innerHeight
-    );
-  });
-
   return (
-    <div className="w-full relative">
+    <div className="w-full h-full relative">
       <section
         id="section6"
-        className="w-screen relative flex flex-col lg:flex-row items-start workshop-text opacity-0"
+        className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
       >
+        <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
+          <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
+            <div className="w-full p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
+                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                  {"TITLE "}
+                </span>
+                Sponsor
+              </p>
+              <Sponsers
+                imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                title="GOOGLE"
+              />
+            </div>
 
-        <div
-          className={`hidden lg:w-screen lg:flex items-center h-screen overflow-y-hidden transition-all ${fixedPosition === "fixed"
-            ? "fixed top-0 left-0"
-            : fixedPosition === "absolute"
-              ? "absolute bottom-0 left-0"
-              : "absolute top-0 left-0"
-            }`}
-          id="right-workshop-grid"
-        >
-          <div className="w-[50%] h-full flex flex-col lg:justify-center items-center p-24">
-            <h1 className={`text-5xl font-poppins font-semibold workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
-              Join the
-              <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-                {" masterclass workshops "}
-              </span>{" "}
-              from innovation leaders and industry experts.
-            </h1>
+            <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
+                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                  {"ASSOCIATE "}
+                </span>
+                Sponsors
+              </p>
+
+              <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
+                  title="Apple"
+                />
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                  title="Google"
+                />
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png"
+                  title="PSG College of Technology"
+                />
+                <Sponsers
+                  imgurl="https://upload.wikimedia.org/wikipedia/en/8/8d/Adyar_Ananda_Bhavan_logo.png"
+                  title="Adyar Ananda Bhavan"
+                />
+              </div>
+            </div>
+
+            <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
+                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                  {"STALL "}
+                </span>
+                Sponsors
+              </p>
+
+              <div className="w-full max-w-full relative overflow-x-hidden h-48">
+                <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                  <Sponsers
+                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                    title="GOOGLE"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div
-          className={`hidden lg:flex relative items-center right-0 w-screen font-poppins pt-16 pb-0`}
-          id="left-workshop-grid"
-        >
-          <div className="flex-1"></div>
-          <div className="lg:w-[calc(100vw-75vh)] pl-[calc(100vw/24)] pr-8 pt-96">
-            <RightImage
-              number={1}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={2}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={3}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={4}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={5}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={6}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={7}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={8}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={9}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={10}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={11}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={12}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
-          </div>
-        </div>
-
-
-
-        <div className="lg:hidden w-full p-8 pt-0">
-          <h1 className={`text-4xl font-poppins font-semibold workshop-text opacity-0 text-center`}>
-            Join the
+        <div className="w-full lg:w-[30%] p-8 pb-0 lg:p-0">
+          <h1
+            className={`text-4xl lg:text-6xl font-poppins font-semibold  sponsors-text opacity-0 text-center lg:text-right`}
+          >
+            Kriya '23
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" masterclass workshops "}
-            </span>{" "}
-            from innovation leaders and industry experts.
+              {" Sponsors"}
+            </span>
           </h1>
         </div>
-
-        <div className={`lg:hidden items-center w-full font-poppins py-8`}>
-          <div className="p-4">
-            <RightImage
-              number={1}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={2}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={3}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={4}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={5}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={6}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={7}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={8}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={9}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={10}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={11}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={12}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
-          </div>
-        </div>
       </section>
-      <a id="anchor6" className="absolute top-[75%] w-full h-20"></a>
+      <a
+        id="anchor7"
+        className="absolute top-[40%] lg:top-[75%] w-full h-20"
+      ></a>
+      <div className="absolute top-[100%] w-full h-10"></div>
+    </div>
+  );
+};
+
+const Sponsers = ({ imgurl, title }) => {
+  return (
+    <div className="flex flex-col gap-y-2 w-48 lg:w-64">
+      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-6 lg:p-8 h-28 lg:w-64 lg:h-36 rounded-2xl">
+        <div
+          style={{
+            background: `url("${imgurl}")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+          className={`w-full h-full`}
+        ></div>
+      </div>
+      <p className="uppercase text-base lg:text-lg text-[#181818] tracking-wider text-center">
+        {title}
+      </p>
     </div>
   );
 };
 
 export default Section6;
-
-const LeftImage = ({ number, imgurl, title }) => {
-  return (
-    <div className="flex flex-row justify-end">
-      <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64">
-        <div
-          style={{
-            background: `url("${imgurl}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-
-          }}
-          className={`w-full h-full`}></div>
-      </div>
-      <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-r border-r-gray-300 p-4 flex flex-row items-end space-x-4">
-        <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold">
-          {title}
-        </div>
-        <div className="text-6xl lg:text-8xl font-semibold text-gray-300">
-          {number}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const RightImage = ({ number, imgurl, title }) => {
-  return (
-    <div className="flex flex-row justify-end">
-      <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-l border-l-gray-300 p-4 flex flex-row items-end space-x-4">
-        <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold">
-          {title}
-        </div>
-        <div className="text-6xl lg:text-8xl font-semibold text-gray-300">
-          {number}
-        </div>
-      </div>
-      <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64">
-        <div
-          style={{
-            background: `url("${imgurl}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-
-          }}
-          className={`w-full h-full`}></div>
-      </div>
-    </div>
-  );
-};

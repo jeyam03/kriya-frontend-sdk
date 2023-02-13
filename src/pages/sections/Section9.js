@@ -1,92 +1,77 @@
-import React, { useEffect, useState } from "react";
-import { AiOutlinePlus } from "react-icons/ai";
+import React from "react";
+import { BsInstagram, BsLinkedin, BsTelephone } from "react-icons/bs";
+import {SiGmail} from "react-icons/si";
 
-// FAQs
+// Contact Us
 
 const Section9 = () => {
-  const [faqOpenIdx, setFaqOpenIdx] = useState(0);
-
   return (
-    <div className="">
-      <section
-        id="section9"
-        className="h-fit w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
-      >
-        <h1 className="text-4xl lg:text-5xl font-bold text-center">
-          Frequently Asked{" "}
-          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-            Questions
-          </span>
-        </h1>
-        <div className="w-full flex items-center justify-center">
-          <div className="flex flex-col items-center w-full lg:w-[60vw] mt-16">
-            {FAQContent.map((item, index) => (
-              <FAQItem
-                question={item.question}
-                answer={item.answer}
-                isOpened={index === faqOpenIdx}
-                onClick={() => setFaqOpenIdx(index)}
-              />
-            ))}
+    <section id="section9" className="w-screen bg-black px-[calc(100vw/12)] py-16 font-poppins">
+      <h1 className="text-5xl text-white font-bold">Contact Us</h1>
+      <div className="flex flex-col lg:flex-row gap-8 flex-wrap text-white mt-8">
+        <div className="flex-1 space-y-6">
+          <div className="flex items-center space-x-4">
+            <BsLinkedin size={24} className="text-white" />
+            <p className="text-lg"></p>
+          </div>
+          <div className="flex items-center space-x-4">
+            <BsInstagram size={24} className="text-white" />
+            <p className="text-lg">@kriya_psgtech</p>
+          </div>
+          <div className="flex items-center space-x-4">
+            <SiGmail size={24} className="text-white" />
+            <p className="text-lg">events@psgkriya.in</p>
           </div>
         </div>
-      </section>
-    </div>
+        <div className="w-full lg:w-56">
+          <h5 className="text-xs tracking-widest">Chairperson</h5>
+          <ContactItem name="Dharmendra R" phone="+91 94860 60706" />
+
+          <h5 className="text-xs tracking-widest mt-8">Co-Chairperson</h5>
+          <ContactItem name="Mano M" phone="+91 93600 07515" />
+        </div>
+        <div className="w-full lg:w-56">
+          <h5 className="text-xs tracking-widest">Event Support</h5>
+          <ContactItem name="Kavinesh" phone="+91 93613 57737" />
+          <ContactItem
+            name="Aditya Varma"
+            phone="+91 82486 84835"
+            className="mt-4"
+          />
+        </div>
+        <div className="w-full lg:w-56">
+          <h5 className="text-xs tracking-widest">PR & Sponsorship Support</h5>
+          <ContactItem name="Athrukshna" phone="+91 99433 19292" />
+          <ContactItem
+            name="Sudharshan"
+            phone="+91 87546 13534"
+            className="mt-4"
+          />
+        </div>
+        <div className="w-full lg:w-56">
+          <h5 className="text-xs tracking-widest">Tech Support</h5>
+          <ContactItem name="T G Ashwin Kumar" phone="+91 96596 04838" />
+          <ContactItem
+            name="Jeyam Palaniappan"
+            phone="+91 93847 68177"
+            className="mt-4"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
-const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
+const ContactItem = ({ name, phone, className = "" }) => {
   return (
-    <div className="w-full">
-      <div className="p-4 lg:px-8 border-t border-gray-300 text-lg flex justify-between font-semibold">
-        <p className="text-xl py-2">{question}</p>
-        <button onClick={onClick}>
-          <AiOutlinePlus className="text-2xl" />
-        </button>
-      </div>
-      <div
-        className={`${
-          isOpened ? "h-fit px-4 lg:px-8 py-4 " : "h-0 overflow-y-hidden"
-        } transition-all ease-in-out text-base`}
-      >
-        {answer}
+    <div className={`${className}`}>
+      <h4 className="text-lg mt-2 font-semibold">{name}</h4>
+      <div className="flex items-center space-x-4 mt-2">
+        <BsTelephone className="text-white" />
+        <p className="text-sm">{phone}</p>
       </div>
     </div>
   );
 };
-
-const FAQContent = [
-  {
-    question: "What is the purpose of the college event?",
-    answer:
-      "The purpose of the college event is to provide a platform for students, faculty, and staff to come together to participate in a range of activities and programs designed to promote community building and learning. The event may include workshops, speakers, concerts, and other forms of entertainment.",
-  },
-  {
-    question: "Who can attend the college event?",
-    answer:
-      "The college event is open to all students, faculty, and staff members of the college, as well as alumni and members of the local community.",
-  },
-  {
-    question: "What is the schedule for the event?",
-    answer:
-      "The schedule for the college event will be made available in advance through the college's website, social media channels, and other communication channels. It will typically include a detailed schedule of activities and programs, along with information on when and where they will take place.",
-  },
-  {
-    question: "Is there a cost to attend the college event?",
-    answer:
-      "The cost of attending the college event will depend on the specific activities and programs included in the event. Some activities and programs may be free, while others may require a fee. Information on the cost of attending each event will be made available in advance through the college's website and other communication channels.",
-  },
-  {
-    question: "How can I register to attend the college event?",
-    answer:
-      "Registration to attend the college event can typically be done through the college's website or by contacting the event organizers directly. Information on how to register will be made available in advance through the college's website and other communication channels.",
-  },
-  {
-    question:
-      "Are there any accommodations available for attendees with disabilities?",
-    answer:
-      "The college is committed to providing accommodations for attendees with disabilities. Information on available accommodations will be made available in advance through the college's website and other communication channels, and attendees are encouraged to contact the event organizers directly to request any necessary accommodations.",
-  },
-];
 
 export default Section9;
