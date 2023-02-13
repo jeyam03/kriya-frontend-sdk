@@ -28,42 +28,59 @@ const Workshop = () => {
       </p>
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-6">
-        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-4 relative py-12 px-8 lg:px-8">
-          <div className="text-4xl font-bold pb-8">Agenda</div>
-          <p className="text-xs text-gray-500">8.30-9.30</p>
-          <ol className="list-decimal pl-4">
-            {" "}
-            <li> Overview on Iot technology and its application </li>
-            <li>
-              Introduction to STEPS Iot Development kit (will be provided) with
-              built in network processor, IDE Platform
-            </li>
-          </ol>
-          <p className="text-xs text-gray-500"> 9.30-11.30</p>
-          <ol className="list-decimal pl-4">
-            <li>
-              {" "}
-              Preparing Sensor Node (Things) Embedded C Arduino API Programming{" "}
-            </li>
-            <li>Sensor and actuators </li>
-            <li>Creating own webserver using HTTP protocol</li>
-          </ol>
-          <p className="text-xs text-gray-500"> 11.45-1.00 </p>
-          <ol className="list-decimal pl-4">
-            {" "}
-            <li> Iot communication models – HTTP & MQTT protocol </li>
-          </ol>
-          <p className="text-xs text-gray-500"> 2.00-5.30 </p>
-          <ol className="list-decimal pl-4">
-            {" "}
-            <li>
-              {" "}
-              Implementation of Iot system – sending date to cloud, data
-              analysis and visualization using Think Speak cloud server
-            </li>{" "}
-            <li> Dash board creation </li>
-            <li> Python programming implementation in microcontroller</li>
-          </ol>
+        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 relative py-12 px-8">
+          <div className="text-4xl font-bold">Agenda</div>
+
+          <div className="mt-8">
+            <div className="flex flex-row gap-4 items-center">
+              <div className="w-6 h-6 z-10 rounded-full bg-black"></div>
+              <div className="text-xl font-semibold">08:30 - 09:30</div>
+            </div>
+            <ol className="list-disc pt-2 border-l-black border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
+              <li> Overview on Iot technology and its application </li>
+              <li>
+                Introduction to STEPS Iot Development kit (will be provided) with
+                built in network processor, IDE Platform
+              </li>
+            </ol>
+          </div>
+
+          <div className="">
+            <div className="flex flex-row gap-4 items-center">
+              <div className="w-6 h-6 z-10 rounded-full bg-black"></div>
+              <div className="text-xl font-semibold">09:30 - 11:30</div>
+            </div>
+            <ol className="list-disc pt-2 border-l-black border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
+              <li>Preparing Sensor Node (Things) Embedded C Arduino API Programming</li>
+              <li>Sensor and actuators </li>
+              <li>Creating own webserver using HTTP protocol</li>
+            </ol>
+          </div>
+
+          <div className="">
+            <div className="flex flex-row gap-4 items-center">
+              <div className="w-6 h-6 z-10 rounded-full bg-black"></div>
+              <div className="text-xl font-semibold">11:45 - 01:00</div>
+            </div>
+            <ol className="list-disc pt-2 border-l-black border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
+              <li> Iot communication models - HTTP & MQTT protocol </li>
+            </ol>
+          </div>
+
+          <div className="">
+            <div className="flex flex-row gap-4 items-center">
+              <div className="w-6 h-6 z-10 rounded-full bg-black"></div>
+              <div className="text-xl font-semibold">02:00 - 05:30</div>
+            </div>
+            <ol className="list-disc pt-2 border-l-black border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
+              <li>
+                Implementation of Iot system - sending date to cloud, data
+                analysis and visualization using Think Speak cloud server
+              </li>
+              <li> Dash board creation </li>
+              <li> Python programming implementation in microcontroller</li>
+            </ol>
+          </div>
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
@@ -91,10 +108,10 @@ const Workshop = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-4xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdAccessTime />
               </p>
-              <div className="flex flex-col">
+              <div className="flex flex-col pl-2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
                   09:30 AM - 12:00 PM
                 </p>
@@ -104,10 +121,10 @@ const Workshop = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-4xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdOutlineLocationOn />
               </p>
-              <div className="flex flex-col">
+              <div className="flex flex-col pl-2">
                 <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
                   K Block 1<sup>st</sup> Floor
                 </p>
@@ -117,10 +134,10 @@ const Workshop = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-3xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+              <p className="text-4xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <AiOutlineTeam />
               </p>
-              <div className="flex flex-col">
+              <div className="flex flex-col pl-2">
                 <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
                   2 - 3 Members
                 </p>
@@ -134,7 +151,7 @@ const Workshop = () => {
             </p>
 
             <div className="flex flex-row items-center gap-8">
-              <div className="w-1/3 lg:w-1/2">
+              <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   Ellakiyaa A
                 </p>
@@ -159,7 +176,7 @@ const Workshop = () => {
             </div>
 
             <div className="flex flex-row items-center gap-8">
-              <div className="w-1/3 lg:w-1/2">
+              <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   Gokul Ram C
                 </p>

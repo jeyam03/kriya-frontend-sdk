@@ -39,8 +39,32 @@ const Event = () => {
         {eventDetail.description}
       </p>
 
-      <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4">
-        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8">
+      <div className="hidden lg:flex flex-col lg:flex-row gap-4 w-full pt-6 px-4 lg:px-0">
+        <div className="bg-white w-full lg:w-1/3 rounded-3xl p-12">
+          <p className="text-4xl lg:text-5xl font-semibold tracking-wider text-[#3c4043]">
+            Scan Plan and Reckon
+          </p>
+        </div>
+        <div className="bg-white w-full lg:w-2/3 rounded-3xl p-12">
+          <p className="text-xl text-justify font-semibold tracking-wider text-[#3c4043]">
+            An interesting event to bring out the Civil engineer in you. All you
+            need for this event is knowledge in AutoCAD software, innovative
+            ideas and the talent of justifying your ideas. If you have a knack
+            for all this, Come and grab your opportunities.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-white">
+        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8"
+          style={{
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/management_vogvi4.png)`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+          }}
+        >
           <RoundDescription
             roundNumber={1}
             title={eventDetail.round_title_1}
@@ -224,7 +248,7 @@ const Event = () => {
 const RoundDescription = ({ roundNumber, description, title = "" }) => {
   return (
     <div className="flex w-full ">
-      <p className="hidden lg:block w-28 pr-4 text-9xl font-semibold tracking-wider text-[#3c4043] z-10 opacity-40 text-right">
+      <p className="hidden lg:block w-28 pr-4 text-9xl font-semibold tracking-wider text-[#fff] z-10 opacity-40 text-right">
         {roundNumber}
       </p>
       <div className="space-y-2 z-30 flex-1">
