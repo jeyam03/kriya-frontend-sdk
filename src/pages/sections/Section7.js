@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
+import TeamDetails from "./TeamDetails.js";
+import "../../styles/FlipCard.css";
 
-// Sponsors
+// Our Team
 
 const Section7 = () => {
   const [consolee, setConsolee] = useState(0);
@@ -17,12 +19,20 @@ const Section7 = () => {
   }, [consolee]);
 
   useEffect(() => {
-    const element = document.querySelector("#anchor7");
-    const sponsorsTexts = document.querySelectorAll(".sponsors-text");
+    const element = document.querySelector("#anchor8");
+    const teamTexts = document.querySelectorAll(".team-text");
     const observer = new IntersectionObserver((entries) => {
-      console.log(entries[0].isIntersecting);
-
-      sponsorsTexts.forEach((eventsText) => {
+      // console.log(entries[0].isIntersecting);
+      // if (entries[0].isIntersecting) {
+      //   teamTexts.forEach((eventsText) => {
+      //     eventsText.classList.add("animate-fade-in");
+      //   });
+      // } else {
+      //   teamTexts.forEach((eventsText) => {
+      //     eventsText.classList.remove("animate-fade-in");
+      //   });
+      // }
+      teamTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });
     });
@@ -30,150 +40,165 @@ const Section7 = () => {
     observer.observe(element);
   });
 
+  const [fixedPosition, setFixedPosition] = useState("relative");
+
+  useEffect(() => {
+    const rightGrid = document.querySelector("#right-grid");
+    const leftGrid = document.querySelector("#left-grid");
+    if (
+      leftGrid.getBoundingClientRect().top <= 0 &&
+      leftGrid.getBoundingClientRect().bottom > window.innerHeight &&
+      fixedPosition !== "fixed"
+    ) {
+      setFixedPosition("fixed");
+    } else if (leftGrid.getBoundingClientRect().top > 0) {
+      setFixedPosition("relative");
+    } else if (leftGrid.getBoundingClientRect().bottom <= window.innerHeight) {
+      setFixedPosition("absolute");
+    }
+    console.log(
+      leftGrid.getBoundingClientRect(),
+      fixedPosition,
+      window.innerHeight
+    );
+  });
+
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full relative">
       <section
         id="section7"
-        className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
+        className="w-full relative flex items-start team-text opacity-0"
       >
-        <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
-          <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
-            <div className="w-full p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"TITLE "}
-                </span>
-                Sponsor
-              </p>
-              <Sponsers
-                imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                title="GOOGLE"
-              />
-            </div>
-
-            <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"ASSOCIATE "}
-                </span>
-                Sponsors
-              </p>
-
-              <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
-                  title="Apple"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                  title="Google"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png"
-                  title="PSG College of Technology"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/en/8/8d/Adyar_Ananda_Bhavan_logo.png"
-                  title="Adyar Ananda Bhavan"
-                />
-              </div>
-            </div>
-
-            <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"STALL "}
-                </span>
-                Sponsors
-              </p>
-
-              <div className="w-full max-w-full relative overflow-x-hidden h-48">
-                <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                  <Sponsers
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-full lg:w-[30%] p-8 pb-0 lg:p-0">
+        <div
+          className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-8 lg:pt-16 pb-0 px-[calc(100vw/12)]`}
+          id="left-grid"
+        >
           <h1
-            className={`text-4xl lg:text-6xl font-poppins font-semibold  sponsors-text opacity-0 text-center lg:text-right`}
+            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-96"
+            id="our-team-text"
           >
-            Kriya '23
+            Our
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" Sponsors"}
+              {" Team "}
             </span>
           </h1>
+          <p className="w-full mt-8 text-xl">
+            We bring our creativity and attention to detail to every event we
+            plan, ensuring a seamless and unforgettable experience for you all.
+          </p>
+          <ImageGrid vertical="Ambience and Creativity" />
+          <ImageGrid vertical="App and Web Development" />
+          <ImageGrid vertical="Design" />
+          <ImageGrid vertical="Events Resource Management" />
+          <ImageGrid vertical="PR and Sponsorship" />
+          <ImageGrid vertical="SU Volunteer" />
+        </div>
+
+        <div
+          className={`hidden lg:block lg:w-fit h-screen overflow-y-hidden transition-all ${
+            fixedPosition === "fixed"
+              ? "fixed top-0 right-0"
+              : fixedPosition === "absolute"
+              ? "absolute bottom-0 right-0"
+              : "absolute top-0 right-0"
+          }`}
+          id="right-grid"
+        >
+          <div className="grid grid-cols-3 w-[75vh] h-full ">
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tr-[6rem] bg-gradient-to-br from-[#c9478a] to-[#eb6dae]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-br-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem] bg-black flex items-end justify-start p-2">
+              <p className="text-white font-poppins ">Kriya 2023</p>
+            </div>
+            {/* <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] bg-gray-800"></div> */}
+            <div
+              className="border row-span-1 col-span-2 w-[50vh] h-[25vh]  rounded-tl-[6rem] rounded-br-[6rem]"
+              style={{
+                background:
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958606/IMG_0073-min_oy2aif.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-bl-[6rem] bg-gradient-to-tl from-[#c9478a] to-[#eb6dae]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem] bg-black"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
+            <div
+              className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem]"
+              style={{
+                background:
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div
+              className="border row-span-1 col-span-1 w-[25vh] h-[25vh] "
+              style={{
+                background:
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958847/IMG_0776_futuj1.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            ></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] bg-gradient-to-br from-[#c9478a] to-[#eb6dae]"></div>
+            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tr-[6rem] rounded-bl-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
+          </div>
         </div>
       </section>
-      <a
-        id="anchor7"
-        className="absolute top-[40%] lg:top-[75%] w-full h-20"
-      ></a>
-      <div className="absolute top-[100%] w-full h-10"></div>
-    </div>
-  );
-};
-
-const Sponsers = ({ imgurl, title }) => {
-  return (
-    <div className="flex flex-col gap-y-2 w-48 lg:w-64">
-      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-6 lg:p-8 h-28 lg:w-64 lg:h-36 rounded-2xl">
-        <div
-          style={{
-            background: `url("${imgurl}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-          }}
-          className={`w-full h-full`}
-        ></div>
-      </div>
-      <p className="uppercase text-base lg:text-lg text-[#181818] tracking-wider text-center">
-        {title}
-      </p>
+      <a id="anchor8" className="absolute top-[75%] w-full h-20"></a>
     </div>
   );
 };
 
 export default Section7;
+
+const ImageGrid = ({ vertical }) => {
+  const IMAGE_URL_1 =
+    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80";
+  const IMAGE_URL_2 =
+    "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80";
+
+  return (
+    <React.Fragment>
+      <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
+      <div className="flex flex-wrap gap-2 w-full">
+        {TeamDetails.filter((i) => i.Verticals === vertical).map(
+          (item, idx) => {
+            return (
+              <div
+                className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
+                id="flip-card"
+              >
+                <div className="w-full h-full" id="flip-card-inner">
+                  <div
+                    className="w-full h-full "
+                    style={{
+                      background: `url(${
+                        idx % 2 === 0 ? IMAGE_URL_1 : IMAGE_URL_2
+                      })`,
+                      backgroundPosition: "center",
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                    id="flip-card-front"
+                  ></div>
+                  <div
+                    className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
+                    id="flip-card-back"
+                  >
+                    <h3 className="text-sm font-semibold">{item.Name}</h3>
+                    <p className="text-xs">{item.Position}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+        )}
+      </div>
+    </React.Fragment>
+  );
+};

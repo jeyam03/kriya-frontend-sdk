@@ -9,7 +9,6 @@ import Section6 from "./sections/Section6";
 import Section7 from "./sections/Section7";
 import Section8 from "./sections/Section8";
 import Section9 from "./sections/Section9";
-import Section10 from "./sections/Section10";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
@@ -61,7 +60,7 @@ const Landing = () => {
         </button>
         <button
           onClick={(e) => {
-            const element = document.getElementById("section5");
+            const element = document.getElementById("section4");
             element.scrollIntoView({ behavior: "smooth" });
           }}
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
@@ -73,7 +72,7 @@ const Landing = () => {
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
           onClick={(e) => {
-            const element = document.getElementById("section6");
+            const element = document.getElementById("section5");
             element.scrollIntoView({ behavior: "smooth" });
           }}
         >
@@ -83,7 +82,7 @@ const Landing = () => {
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
           onClick={(e) => {
-            const element = document.getElementById("section7");
+            const element = document.getElementById("section6");
             element.scrollIntoView({ behavior: "smooth" });
           }}
         >
@@ -111,7 +110,7 @@ const Landing = () => {
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
           onClick={(e) => {
-            const element = document.getElementById("section8");
+            const element = document.getElementById("section7");
             element.scrollIntoView({ behavior: "smooth" });
           }}
         >
@@ -121,7 +120,7 @@ const Landing = () => {
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
           onClick={(e) => {
-            const element = document.getElementById("section9");
+            const element = document.getElementById("section8");
             element.scrollIntoView({ behavior: "smooth" });
           }}
         >
@@ -131,7 +130,7 @@ const Landing = () => {
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
           onClick={(e) => {
-            const element = document.getElementById("section10");
+            const element = document.getElementById("section9");
             element.scrollIntoView({ behavior: "smooth" });
           }}
         >
@@ -155,7 +154,7 @@ const Landing = () => {
             window.innerWidth < 768
               ? parseFloat(consolee) + 0.25 <= 1 ||
                 (parseFloat(consolee) + 0.25 >= 2 &&
-                  parseFloat(consolee) + 0.25 <= 3.75)
+                  parseFloat(consolee) + 0.25 <= 3.5)
                 ? `rgba(18, 18, 18, 1)`
                 : `rgba(255, 255, 255, 1)`
               : parseFloat(consolee) + 0.25 >= 3
@@ -175,9 +174,8 @@ const Landing = () => {
         <Section5 scrollYByVH={consolee} />
         <Section6 scrollYByVH={consolee} />
         <Section7 scrollYByVH={consolee} />
-        <Section8 scrollYByVH={consolee} />
+        <Section8 />
         <Section9 />
-        <Section10 />
       </main>
     </React.Fragment>
   );

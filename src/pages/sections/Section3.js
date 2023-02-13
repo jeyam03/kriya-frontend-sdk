@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "../../styles/Landing.css";
 
 // Events
@@ -91,13 +92,15 @@ const Section3 = () => {
                   {" Kriyative "}
                 </p>
               </div>
-              <p className={`${condition} text-sm`}>
+              <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm pt-2">
+              <Link className="text-blue-500 text-sm"
+                to="/portal/event?ctg=kriyative"
+              >
                 {"Explore more >"}
-              </p>
+              </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
@@ -107,13 +110,15 @@ const Section3 = () => {
                   {" Brainiac "}
                 </p>
               </div>
-              <p className={`${condition} text-sm`}>
+              <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm pt-2">
+              <Link className="text-blue-500 text-sm"
+                to="/portal/event?ctg=brainiac"
+              >
                 {"Explore more >"}
-              </p>
+              </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
@@ -123,13 +128,15 @@ const Section3 = () => {
                   {" Coding "}
                 </p>
               </div>
-              <p className={`${condition} text-sm`}>
+              <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm pt-2">
+              <Link className="text-blue-500 text-sm"
+                to="/portal/event?ctg=coding"
+              >
                 {"Explore more >"}
-              </p>
+              </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
@@ -139,13 +146,15 @@ const Section3 = () => {
                   {" Circuit "}
                 </p>
               </div>
-              <p className={`${condition} text-sm`}>
+              <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm pt-2">
+              <Link className="text-blue-500 text-sm"
+                to="/portal/event?ctg=circuit"
+              >
                 {"Explore more >"}
-              </p>
+              </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
@@ -155,13 +164,15 @@ const Section3 = () => {
                   {" Core Engineering "}
                 </p>
               </div>
-              <p className={`${condition} text-sm`}>
+              <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm pt-2">
+              <Link className="text-blue-500 text-sm"
+                to="/portal/event?ctg=core"
+              >
                 {"Explore more >"}
-              </p>
+              </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
@@ -171,13 +182,15 @@ const Section3 = () => {
                   {" Management "}
                 </p>
               </div>
-              <p className={`${condition} text-sm`}>
+              <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <p className="text-blue-500 text-sm pt-2">
+              <Link className="text-blue-500 text-sm"
+                to="/portal/event?ctg=management"
+              >
                 {"Explore more >"}
-              </p>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,204 +1,92 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/Landing.css";
-import TeamDetails from "./TeamDetails.js";
-import "../../styles/FlipCard.css";
+import { AiOutlinePlus } from "react-icons/ai";
 
-// Our Team
+// FAQs
 
 const Section8 = () => {
-  const [consolee, setConsolee] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      (event) => {
-        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
-      },
-      { passive: true }
-    );
-  }, [consolee]);
-
-  useEffect(() => {
-    const element = document.querySelector("#anchor8");
-    const teamTexts = document.querySelectorAll(".team-text");
-    const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
-      //   });
-      // }
-      teamTexts.forEach((eventsText) => {
-        eventsText.classList.add("animate-fade-in");
-      });
-    });
-
-    observer.observe(element);
-  });
-
-  const [fixedPosition, setFixedPosition] = useState("relative");
-
-  useEffect(() => {
-    const rightGrid = document.querySelector("#right-grid");
-    const leftGrid = document.querySelector("#left-grid");
-    if (
-      leftGrid.getBoundingClientRect().top <= 0 &&
-      leftGrid.getBoundingClientRect().bottom > window.innerHeight &&
-      fixedPosition !== "fixed"
-    ) {
-      setFixedPosition("fixed");
-    } else if (leftGrid.getBoundingClientRect().top > 0) {
-      setFixedPosition("relative");
-    } else if (leftGrid.getBoundingClientRect().bottom <= window.innerHeight) {
-      setFixedPosition("absolute");
-    }
-    console.log(
-      leftGrid.getBoundingClientRect(),
-      fixedPosition,
-      window.innerHeight
-    );
-  });
+  const [faqOpenIdx, setFaqOpenIdx] = useState(0);
 
   return (
-    <div className="w-full relative">
+    <div className="">
       <section
         id="section8"
-        className="w-full relative flex items-start team-text opacity-0"
+        className="h-fit w-screen relative overflow-x-hidden lg:overflow-hidden px-[calc(100vw/12)] font-poppins py-24"
       >
-        <div
-          className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-8 lg:pt-16 pb-0 px-[calc(100vw/12)]`}
-          id="left-grid"
-        >
-          <h1
-            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-96"
-            id="our-team-text"
-          >
-            Our
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" Team "}
-            </span>
-          </h1>
-          <p className="w-full mt-8 text-xl">
-            We bring our creativity and attention to detail to every event we
-            plan, ensuring a seamless and unforgettable experience for you all.
-          </p>
-          <ImageGrid vertical="Ambience and Creativity" />
-          <ImageGrid vertical="App and Web Development" />
-          <ImageGrid vertical="Design" />
-          <ImageGrid vertical="Events Resource Management" />
-          <ImageGrid vertical="PR and Sponsorship" />
-          <ImageGrid vertical="SU Volunteer" />
-        </div>
-
-        <div
-          className={`hidden lg:block lg:w-fit h-screen overflow-y-hidden transition-all ${
-            fixedPosition === "fixed"
-              ? "fixed top-0 right-0"
-              : fixedPosition === "absolute"
-              ? "absolute bottom-0 right-0"
-              : "absolute top-0 right-0"
-          }`}
-          id="right-grid"
-        >
-          <div className="grid grid-cols-3 w-[75vh] h-full ">
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tr-[6rem] bg-gradient-to-br from-[#c9478a] to-[#eb6dae]"></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-br-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem] bg-black flex items-end justify-start p-2">
-              <p className="text-white font-poppins ">Kriya 2023</p>
-            </div>
-            {/* <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] bg-gray-800"></div> */}
-            <div
-              className="border row-span-1 col-span-2 w-[50vh] h-[25vh]  rounded-tl-[6rem] rounded-br-[6rem]"
-              style={{
-                background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958606/IMG_0073-min_oy2aif.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-bl-[6rem] bg-gradient-to-tl from-[#c9478a] to-[#eb6dae]"></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem] bg-black"></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
-            <div
-              className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem]"
-              style={{
-                background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div
-              className="border row-span-1 col-span-1 w-[25vh] h-[25vh] "
-              style={{
-                background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958847/IMG_0776_futuj1.jpg)",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            ></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] bg-gradient-to-br from-[#c9478a] to-[#eb6dae]"></div>
-            <div className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tr-[6rem] rounded-bl-[6rem] bg-gradient-to-tl from-[#6764b7] to-[#a7a5f9]"></div>
+        <h1 className="text-4xl lg:text-5xl font-bold text-center">
+          Frequently Asked{" "}
+          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            Questions
+          </span>
+        </h1>
+        <div className="w-full flex items-center justify-center">
+          <div className="flex flex-col items-center w-full lg:w-[60vw] mt-16">
+            {FAQContent.map((item, index) => (
+              <FAQItem
+                question={item.question}
+                answer={item.answer}
+                isOpened={index === faqOpenIdx}
+                onClick={() => setFaqOpenIdx(index)}
+              />
+            ))}
           </div>
         </div>
       </section>
-      <a id="anchor8" className="absolute top-[75%] w-full h-20"></a>
     </div>
   );
 };
 
-export default Section8;
-
-const ImageGrid = ({ vertical }) => {
-  const IMAGE_URL_1 =
-    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80";
-  const IMAGE_URL_2 =
-    "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80";
-
+const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
   return (
-    <React.Fragment>
-      <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
-      <div className="flex flex-wrap gap-2 w-full">
-        {TeamDetails.filter((i) => i.Verticals === vertical).map(
-          (item, idx) => {
-            return (
-              <div
-                className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
-                id="flip-card"
-              >
-                <div className="w-full h-full" id="flip-card-inner">
-                  <div
-                    className="w-full h-full "
-                    style={{
-                      background: `url(${
-                        idx % 2 === 0 ? IMAGE_URL_1 : IMAGE_URL_2
-                      })`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                    id="flip-card-front"
-                  ></div>
-                  <div
-                    className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
-                    id="flip-card-back"
-                  >
-                    <h3 className="text-sm font-semibold">{item.Name}</h3>
-                    <p className="text-xs">{item.Position}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          }
-        )}
+    <div className="w-full">
+      <div className="p-4 lg:px-8 border-t border-gray-300 text-lg flex justify-between font-semibold">
+        <p className="text-xl py-2">{question}</p>
+        <button onClick={onClick}>
+          <AiOutlinePlus className="text-2xl" />
+        </button>
       </div>
-    </React.Fragment>
+      <div
+        className={`${
+          isOpened ? "h-fit px-4 lg:px-8 py-4 " : "h-0 overflow-y-hidden"
+        } transition-all ease-in-out text-base`}
+      >
+        {answer}
+      </div>
+    </div>
   );
 };
+
+const FAQContent = [
+  {
+    question: "What is the purpose of the college event?",
+    answer:
+      "The purpose of the college event is to provide a platform for students, faculty, and staff to come together to participate in a range of activities and programs designed to promote community building and learning. The event may include workshops, speakers, concerts, and other forms of entertainment.",
+  },
+  {
+    question: "Who can attend the college event?",
+    answer:
+      "The college event is open to all students, faculty, and staff members of the college, as well as alumni and members of the local community.",
+  },
+  {
+    question: "What is the schedule for the event?",
+    answer:
+      "The schedule for the college event will be made available in advance through the college's website, social media channels, and other communication channels. It will typically include a detailed schedule of activities and programs, along with information on when and where they will take place.",
+  },
+  {
+    question: "Is there a cost to attend the college event?",
+    answer:
+      "The cost of attending the college event will depend on the specific activities and programs included in the event. Some activities and programs may be free, while others may require a fee. Information on the cost of attending each event will be made available in advance through the college's website and other communication channels.",
+  },
+  {
+    question: "How can I register to attend the college event?",
+    answer:
+      "Registration to attend the college event can typically be done through the college's website or by contacting the event organizers directly. Information on how to register will be made available in advance through the college's website and other communication channels.",
+  },
+  {
+    question:
+      "Are there any accommodations available for attendees with disabilities?",
+    answer:
+      "The college is committed to providing accommodations for attendees with disabilities. Information on available accommodations will be made available in advance through the college's website and other communication channels, and attendees are encouraged to contact the event organizers directly to request any necessary accommodations.",
+  },
+];
+
+export default Section8;
