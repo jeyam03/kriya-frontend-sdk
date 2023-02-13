@@ -45,7 +45,7 @@ const AuthPortal = () => {
         } h-screen overflow-hidden flex  relative`}
       >
         <div
-          className={`transition-all duration-300 ease-in absolute w-[calc(100vw)] lg:w-[30vw] h-[90vh] overflow-auto lg:overflow-hidden lg:h-screen top-0 px-6 lg:px-0 lg:right-[calc(15vw)] z-20 flex justify-center items-center`}
+          className={`transition-all duration-300 ease-in absolute w-[calc(100vw)] lg:w-[30vw] h-[90%] overflow-scroll lg:overflow-hidden lg:h-screen top-6 lg:top-0 px-6 lg:px-0 lg:right-[calc(15vw)] z-20 flex justify-center items-center`}
         >
           {isLogInPage ? (
             <Login switchPage={switchPage} />
@@ -103,7 +103,7 @@ const Login = ({ switchPage }) => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="w-full py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+    <div className="w-full h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
       <div className="w-full space-y-4 py-4">
         <a
