@@ -11,13 +11,13 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="portal" element={<PortalWrapper />} >
-            <Route path="event/:id" element={<Event />} />
+        <Route path="portal" element={<PortalWrapper />}>
+          <Route path="event/:id" element={<Event />} />
           <Route path="event" element={<EventList />} />
           <Route path="profile" element={<Profile />} />
           <Route path="workshop" element={<Workshop />} />
         </Route>
-        <Route path="auth" element={<AuthPortal/>} />
+        <Route path="auth" element={<AuthPortal />} />
         <Route index element={<Landing />} />
       </Routes>
     </BrowserRouter>

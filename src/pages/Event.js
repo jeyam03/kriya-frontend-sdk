@@ -1,69 +1,87 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { fetchEventById } from "../API/call";
 
 const Event = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [generalPayment, setGeneralPayment] = useState(false);
 
-  return (
+  const { id } = useParams();
+
+  const [eventDetail, setEventDetail] = useState(null);
+
+  useEffect(() => {
+    fetchEventById(id)
+      .then((res) => {
+        console.log(res.data);
+        setEventDetail(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
+
+  return !eventDetail ? (
+    <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
+      <p className="text-white text-xl">Loading...</p>
+    </section>
+  ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
       <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
-        Scan and Reckon
+        {eventDetail.eventName}
       </h1>
       <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
-        Brainiac
+        {eventDetail.category}
       </h2>
       <p className="text-white mt-8 text-base w-full lg:w-[70%] pb-12 px-8 lg:px-0">
-        An interesting event to bring out the Civil engineer in you. All you
-        need for this event is knowledge in AutoCAD software, innovative ideas
-        and the talent of justifying your ideas. If you have a knack for all
-        this, Come and grab your opportunities.
+        {eventDetail.description}
       </p>
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4">
         <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8">
           <RoundDescription
             roundNumber={1}
-            title="Rough Sketch"
-            description="Participants should prepare a Line sketch for the specified type
-              of building with the specifications provided(eg. Area of the
-              plot,size of the rooms) and it should contain the necessary data
-              for making a 2-D Plan in AutoCAD by following the NBC guidelines."
+            title={eventDetail.round_title_1}
+            description={eventDetail.round_desc_1}
           />
 
           <RoundDescription
             roundNumber={2}
-            title="Plan.dwg"
-            description="To make a 2-D plan with the drawn line sketch (in ROUND1) in    
-              AutoCAD within the given time (45 mins) with all data for the
-              construction with accurate dimensioning and using layers.
-              Decorative blocks are not necessary, may be provided for
-              appearance. Completing the plan fully before the given time will
-              be appreciated."
+            title={eventDetail.round_title_2}
+            description={eventDetail.round_desc_2}
           />
 
-          <RoundDescription
-            roundNumber={3}
-            title="Budget Assessment"
-            description="In this round the selected participants from the previous round
-              will have to prepare an approximate estimation and an impressive
-              pitch of their proposed plan as a contractor with maximum utility
-              to impress the judges and to be crowned as winners. The cost per
-              unit area of the materials to be used will be provided, by
-              efficiently using the materials for the building the estimation
-              should be prepared without negotiating the quality of the
-              building. Participants should present their estimate and justify
-              the use of materials."
-          />
+          {eventDetail.round_title_3.length > 0 &&
+            eventDetail.round_desc_3.length > 0 && (
+              <RoundDescription
+                roundNumber={3}
+                title={eventDetail.round_title_3}
+                description={eventDetail.round_desc_3}
+              />
+            )}
+
+          {eventDetail.round_title_4.length > 0 &&
+            eventDetail.round_desc_4.length > 0 && (
+              <RoundDescription
+                roundNumber={3}
+                title={eventDetail.round_title_4}
+                description={eventDetail.round_desc_4}
+              />
+            )}
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
-          <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
+          <button
+            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
             onClick={() => {
-              isLoggedIn ? (window.confirm("Are you sure you want to register ?") ? (generalPayment ? navigate("/confirmed") : navigate("/payment")) : console.log("Cancelled")) : navigate("/register");
+              isLoggedIn
+                ? window.confirm("Are you sure you want to register ?")
+                  ? generalPayment
+                    ? navigate("/confirmed")
+                    : navigate("/payment")
+                  : console.log("Cancelled")
+                : navigate("/register");
             }}
           >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
@@ -131,22 +149,22 @@ const Event = () => {
             <div className="flex flex-row items-center gap-8">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
-                  Ellakiyaa A
+                  {eventDetail.contact_name_1}
                 </p>
                 <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
-                  7598436113
+                  {eventDetail.contact_mobile_1}
                 </p>
               </div>
               <button
                 onClick={() => {
-                  window.open("tel:7598436113");
+                  window.open(`tel:${eventDetail.contact_mobile_1}`);
                 }}
               >
                 <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
               </button>
               <button
                 onClick={() => {
-                  window.open("https://wa.me/7598436113");
+                  window.open(`https://wa.me/${eventDetail.contact_mobile_1}`);
                 }}
               >
                 <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
@@ -156,22 +174,22 @@ const Event = () => {
             <div className="flex flex-row items-center gap-8">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
-                  Gokul Ram C
+                  {eventDetail.contact_name_2}
                 </p>
                 <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
-                  9361135851
+                  {eventDetail.contact_mobile_2}
                 </p>
               </div>
               <button
                 onClick={() => {
-                  window.open("tel:9361135851");
+                  window.open(`tel:${eventDetail.contact_mobile_2}`);
                 }}
               >
                 <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
               </button>
               <button
                 onClick={() => {
-                  window.open("https://wa.me/9361135851");
+                  window.open(`https://wa.me/${eventDetail.contact_mobile_2}`);
                 }}
               >
                 <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
@@ -203,19 +221,29 @@ const Event = () => {
   );
 };
 
-const RoundDescription = ({ roundNumber, description, title }) => {
+const RoundDescription = ({ roundNumber, description, title = "" }) => {
   return (
     <div className="flex w-full ">
       <p className="hidden lg:block w-28 pr-4 text-9xl font-semibold tracking-wider text-[#3c4043] z-10 opacity-40 text-right">
         {roundNumber}
       </p>
       <div className="space-y-2 z-30 flex-1">
-        <p className="tracking-wider uppercase">ROUND {roundNumber}</p>
-        <div className="flex flex-row items-end gap-y-4">
-          <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
-            {title}
-          </p>
-        </div>
+        {title.length > 0 ? (
+          <React.Fragment>
+            <p className="tracking-wider uppercase">ROUND {roundNumber}</p>
+            <div className="flex flex-row items-end gap-y-4">
+              <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
+                {title}
+              </p>
+            </div>
+          </React.Fragment>
+        ) : (
+          <div className="flex flex-row items-end gap-y-4">
+            <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
+              ROUND {roundNumber}
+            </p>
+          </div>
+        )}
         <p className="text-base lg:text-base text-justify text-[#3c4043] pt-4 lg:pt-0">
           {description}
         </p>
