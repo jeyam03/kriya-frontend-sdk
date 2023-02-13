@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const Workshop = () => {
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [generalPayment, setGeneralPayment] = useState(false);
+
   return (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
       <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
@@ -61,11 +66,15 @@ const Workshop = () => {
           </ol>
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
-          <div className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4">
+          <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
+            onClick={() => {
+              isLoggedIn ? window.confirm("Are you sure you want to register ?") && generalPayment ? navigate("/confirmed") : navigate("/payment") : navigate("/register");
+            }}
+          >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
               {"Register Here !"}
             </span>
-          </div>
+          </button>
 
           <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-4 justify-center">
             <div className="flex flex-row items-center gap-4 lg:gap-4">
