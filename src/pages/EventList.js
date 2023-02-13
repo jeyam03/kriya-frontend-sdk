@@ -4,18 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import EventGrid from "../components/EventGrid";
 
 const EventList = () => {
-  const [consolee, setConsolee] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
-
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      (event) => {
-        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
-      },
-      { passive: true }
-    );
-  }, [consolee]);
 
   useEffect(() => {
     if (!searchParams.get("ctg")) return;
@@ -23,14 +12,12 @@ const EventList = () => {
     element.scrollIntoView({ behavior: "smooth" });
   }, [searchParams])
 
-  const condition = `${parseFloat(consolee) <= 2.75 ? "text-white" : "text-[#181818]"}`;
-
   return (
     <div className="w-full font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
       <section
         className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins p-12"
       >
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="kriyative">
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `} id="kriyative">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
             Kriyative
           </span>
@@ -44,7 +31,7 @@ const EventList = () => {
           rightCurve="bg-[#551789]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="brainiac">
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `} id="brainiac">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
             Brainiac
           </span>
@@ -58,7 +45,7 @@ const EventList = () => {
           rightCurve="bg-[#630a3d]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="coding">
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `} id="coding">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
             Coding
           </span>
@@ -72,7 +59,7 @@ const EventList = () => {
           rightCurve="bg-[#891750]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="circuit">
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `} id="circuit">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
             Circuit
           </span>
@@ -86,7 +73,7 @@ const EventList = () => {
           rightCurve="bg-[#e04918]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="core">
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `} id="core">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
             Core Engineering
           </span>
@@ -100,7 +87,7 @@ const EventList = () => {
           rightCurve="bg-[#0a4c63]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="management">
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `} id="management">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
             Management
           </span>
@@ -122,20 +109,6 @@ const EventList = () => {
 export default EventList;
 
 const EventsGrid = ({ obj, imgurl, arrowCircleStart, arrowCircleEnd, topCurve, rightCurve }) => {
-  const [consolee, setConsolee] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      (event) => {
-        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
-      },
-      { passive: true }
-    );
-  }, [consolee]);
-
-  const arrowBgCondition = `${window.innerWidth < 768 ? parseFloat(consolee) <= 3.5 ? "bg-[#121212]" : "bg-white" : parseFloat(consolee) < 2.75 ? "bg-[#121212]" : "bg-white"}`;
-
   return (
     <div className="flex-wrap flex gap-8 py-12">
       {
@@ -146,7 +119,6 @@ const EventsGrid = ({ obj, imgurl, arrowCircleStart, arrowCircleEnd, topCurve, r
               description="Kriyative is a platform for the creative minds to showcase their talent and get recognized. It is a platform for the creative minds."
               date="21st March 2021"
               time="10:00 AM"
-              arrowColor={arrowBgCondition}
               icon={<FaSoundcloud />}
               imgurl={imgurl}
               arrowCircleStart={arrowCircleStart}
