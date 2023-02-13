@@ -22,7 +22,7 @@ const Inputfield = ({
     <div
       className={`${className} font-poppins flex flex-col items-start justify-center space-y-2`}
     >
-      <label className="text-blue text-sm -mb-4 ml-3 z-10 bg-white">{title}</label>
+      <label className="text-blue text-sm -mb-5 ml-3 z-10 bg-white px-2">{title}</label>
       <div className="flex space-x-2 items-center w-full">
         <input
           disabled={isDisabled}
@@ -34,7 +34,7 @@ const Inputfield = ({
             setValue(e.target.value);
             setError("");
           }}
-          className={` px-4 py-3 rounded-lg w-full text-slate bg-gray bg-clip-padding bg-no-repeat border-2 border-solid ${
+          className={` px-4 py-3  rounded-lg w-full text-slate bg-gray bg-clip-padding bg-no-repeat border-2 border-solid ${
             error.length !== 0 ? "border-yellow" : "border-gray"
           } first-letter:transition ease-in-out m-0 focus:outline-none focus:border-cloud`}
         />

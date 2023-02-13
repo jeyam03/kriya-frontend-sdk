@@ -23,7 +23,9 @@ const Dropdown = ({
     <div
       className={`${className} flex flex-col items-start justify-center font-poppins space-y-2 mb-2`}
     >
-      <label className="text-dark-gray">{title}</label>
+      <label className="text-blue text-sm -mb-5 ml-3 z-10 bg-white px-2">
+        {title}
+      </label>
       <div className="flex space-x-2 items-center w-full">
         <select
           disabled={isDisabled}
@@ -34,8 +36,9 @@ const Dropdown = ({
             setValue(e.target.value);
             setError("");
           }}
-          className={`px-4 py-2 w-full rounded-lg text-slate bg-gray bg-clip-padding bg-no-repeat border-2 border-solid ${error.length !== 0 ? "border-yellow" : "border-gray"
-            } first-letter:transition ease-in-out m-0 focus:outline-none focus:border-cloud`}
+          className={`px-4 py-2 pt-3 w-full rounded-lg text-slate bg-gray bg-clip-padding bg-no-repeat border-2 border-solid ${
+            error.length !== 0 ? "border-yellow" : "border-gray"
+          } first-letter:transition ease-in-out m-0 focus:outline-none focus:border-cloud`}
         >
           {placeholder.length > 0 && (
             <option value="" selected disabled>
