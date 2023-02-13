@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import TextInput from "../components/TextInput";
 import Dropdown from "../components/Dropdown";
 import colleges from "./CollegeList";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { fetchUserByEmail } from "../API/call";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
@@ -10,13 +11,18 @@ const AuthPortal = () => {
   const [isLogInPage, setIsLogInPage] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (searchParams.get("type") === "signup") {
-      setIsLogInPage(false);
+    if (searchParams.get("existing") === "true") {
+      navigate("/portal");
     } else {
-      setIsLogInPage(true);
-      setSearchParams({ type: "login" });
+      if (searchParams.get("type") === "signup") {
+        setIsLogInPage(false);
+      } else {
+        setIsLogInPage(true);
+        setSearchParams({ type: "login" });
+      }
     }
   }, [searchParams]);
 
@@ -39,12 +45,18 @@ const AuthPortal = () => {
         } h-screen overflow-hidden flex  relative`}
       >
         <div
-          className={`transition-all duration-300 ease-in absolute w-[calc(100vw)] lg:w-[30vw] h-screen top-0 px-4 lg:px-0 lg:right-[calc(15vw)] z-20 flex justify-center items-center`}
+          className={`transition-all duration-300 ease-in absolute w-[calc(100vw)] lg:w-[30vw] h-[90vh] overflow-auto lg:overflow-hidden lg:h-screen top-0 px-6 lg:px-0 lg:right-[calc(15vw)] z-20 flex justify-center items-center`}
         >
           {isLogInPage ? (
             <Login switchPage={switchPage} />
-          ) : (
+          ) : searchParams.get("page") === "1" ? (
             <RegisterPage1 switchPage={switchPage} />
+          ) : searchParams.get("page") === "2" ? (
+            <RegisterPage2 switchPage={switchPage} />
+          ) : searchParams.get("page") === "3" ? (
+            <RegisterPage3 switchPage={switchPage} />
+          ) : (
+            <Navigate to="/auth?type=signup" />
           )}
         </div>
         <div
@@ -94,14 +106,17 @@ const Login = ({ switchPage }) => {
     <div className="w-full py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
       <div className="w-full space-y-4 py-4">
-        <button className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6">
+        <a
+          href="http://localhost:5002/api/auth/google"
+          className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6"
+        >
           <img
             src={GOOGLE_ICON}
             className="h-6 aspect-square w-6"
             alt="Google Icon"
           />
           <p className="">Login with Google</p>
-        </button>
+        </a>
       </div>
       <div className="w-full border-t border-t-gray-400 space-y-4 py-4">
         <TextInput
@@ -136,7 +151,10 @@ const RegisterPage1 = ({ switchPage }) => {
         Register for Kriya 2023
       </h1>
       <p className="">Choose the method of Registration</p>
-      <a href="http://localhost:5002/api/auth/google" className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6">
+      <a
+        href="http://localhost:5002/api/auth/google"
+        className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6"
+      >
         <img
           src={GOOGLE_ICON}
           className="h-6 aspect-square w-6"
@@ -160,17 +178,47 @@ const RegisterPage1 = ({ switchPage }) => {
 
 const RegisterPage2 = ({ switchPage }) => {
   const [college, setCollege] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const PSG_COLLEGE =
+      "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
+
+    if (!searchParams.get("email")) return;
+    const email = searchParams.get("email");
+    fetchUserByEmail(email)
+      .then((res) => {
+        const { name, email } = res.data.user;
+        setName(name);
+        setEmail(email);
+        if (email.endsWith("psgtech.ac.in")) setCollege(PSG_COLLEGE);
+      })
+      .catch((err) => console.log("ERROR", err));
+  }, [searchParams]);
 
   return (
     <div className="w-full py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <h1 className="text-2xl font-bold text-[#181818]">
         Register for Kriya 2023
       </h1>
-      <TextInput title="Name" className="" />
-      <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-2 w-full">
-        <TextInput title="Email" type="email" className="w-full lg:w-1/2" />
-        <TextInput title="Phone number" className="w-full lg:w-1/2" />
-      </div>
+      <TextInput title="Name" className="" valueState={[name, setName]} />
+      <TextInput
+        title="Email"
+        type="email"
+        className="w-full"
+        valueState={[email, setEmail]}
+      />
+      {/* <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-2 w-full">
+        <TextInput
+          title="Phone number"
+          className="w-full lg:w-1/2"
+          valueState={[phone, setPhone]}
+        />
+      </div> */}
       <Dropdown
         valueState={[college, setCollege]}
         title="College/University"
@@ -188,6 +236,72 @@ const RegisterPage2 = ({ switchPage }) => {
       >
         Already have an account ?{" "}
       </button>
+      <p className="w-full text-xs text-center">Page 2 of 3</p>
+    </div>
+  );
+};
+
+const RegisterPage3 = ({ switchPage }) => {
+  const [college, setCollege] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const PSG_COLLEGE =
+      "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
+
+    if (!searchParams.get("email")) return;
+    const email = searchParams.get("email");
+    fetchUserByEmail(email)
+      .then((res) => {
+        const { name, email } = res.data.user;
+        setName(name);
+        setEmail(email);
+        if (email.endsWith("psgtech.ac.in")) setCollege(PSG_COLLEGE);
+      })
+      .catch((err) => console.log("ERROR", err));
+  }, [searchParams]);
+
+  return (
+    <div className="w-full py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+      <h1 className="text-2xl font-bold text-[#181818]">
+        Your Kriya 2023 ID is
+      </h1>
+      <TextInput title="Name" className="" valueState={[name, setName]} />
+      <TextInput
+        title="Email"
+        type="email"
+        className="w-full"
+        valueState={[email, setEmail]}
+      />
+      {/* <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-2 w-full">
+        <TextInput
+          title="Phone number"
+          className="w-full lg:w-1/2"
+          valueState={[phone, setPhone]}
+        />
+      </div> */}
+      <Dropdown
+        valueState={[college, setCollege]}
+        title="College/University"
+        className=""
+        placeholder="Select a college"
+        options={colleges}
+      />
+      <TextInput title="Referral Code" className="" />
+      <button className="bg-black hover:bg-gray-700 transition-all duration-500 w-full text-white text-lg rounded-lg py-2 px-4">
+        Register
+      </button>
+      <button
+        onClick={(e) => switchPage("login")}
+        className="w-full text-center"
+      >
+        Already have an account ?{" "}
+      </button>
+      <p className="w-full text-xs text-center">Page 2 of 3</p>
     </div>
   );
 };

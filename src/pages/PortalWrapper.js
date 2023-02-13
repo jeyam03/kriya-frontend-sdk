@@ -36,7 +36,7 @@ const NavBar = () => {
       </div>
       <div className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"} transition-all ease-in-out duration-300`}>
         <div className="py-8 w-full">
-          <Link to="/register" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+          <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Register
           </Link>
           <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
