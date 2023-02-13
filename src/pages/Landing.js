@@ -138,7 +138,7 @@ const Landing = () => {
           Contact Us
         </button>
         <Link
-          to="/register"
+          to="/auth"
           className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
         >
