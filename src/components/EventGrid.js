@@ -17,7 +17,7 @@ const EventGrid = ({
   rightCurve = "bg-white",
 }) => {
   return (
-    <div className="group relative transition-all hover:z-30 font-poppins w-96">
+    <div className="group relative transition-all hover:z-30 font-poppins w-[21rem]">
       <div className="absolute opacity-0 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-gray-200 rounded-b-3xl px-4 pt-2 transition-all">
         <div className="flex flex-row space-x-12 justify-center py-4 text-gray-700">
           <div className="pt-2">
@@ -37,7 +37,7 @@ const EventGrid = ({
       </div>
 
       <div
-        className={`${className} text-lg text-blue rounded-3xl group-hover:rounded-b-none relative bg-gray-200 group-hover:scale-[110%] transition-all`}
+        className={`${className} text-lg text-blue rounded-3xl relative bg-gray-200 group-hover:scale-[110%] transition-all`}
         style={{
             background: `url("${imgurl}")`,
             backgroundPosition: "center",

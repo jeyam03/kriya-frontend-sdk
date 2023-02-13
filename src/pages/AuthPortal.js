@@ -138,7 +138,7 @@ const Login = ({ switchPage }) => {
         onClick={(e) => switchPage("register")}
         className="w-full text-center"
       >
-        Already have an account ?{" "}
+        Don't have an account yet ? <u>Sign up</u>
       </button>
     </div>
   );
@@ -169,7 +169,7 @@ const RegisterPage1 = ({ switchPage }) => {
         onClick={(e) => switchPage("login")}
         className="w-full text-center"
       >
-        Already have an account ?{" "}
+        Already have an account ? <u>Login</u>
       </button>
       <p className="w-full text-xs text-center">Page 1 of 3</p>
     </div>
@@ -234,7 +234,7 @@ const RegisterPage2 = ({ switchPage }) => {
         onClick={(e) => switchPage("login")}
         className="w-full text-center"
       >
-        Already have an account ?{" "}
+        Already have an account ? <u>Login</u>
       </button>
       <p className="w-full text-xs text-center">Page 2 of 3</p>
     </div>
