@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
+import { useSearchParams } from "react-router-dom";
 import EventGrid from "../components/EventGrid";
 
 const EventList = () => {
   const [consolee, setConsolee] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     window.addEventListener(
@@ -15,6 +17,12 @@ const EventList = () => {
     );
   }, [consolee]);
 
+  useEffect(() => {
+    if (!searchParams.get("ctg")) return;
+    const element = document.querySelector(`#${searchParams.get("ctg")}`);
+    element.scrollIntoView({ behavior: "smooth" });
+  }, [searchParams])
+
   const condition = `${parseFloat(consolee) <= 2.75 ? "text-white" : "text-[#181818]"}`;
 
   return (
@@ -22,7 +30,7 @@ const EventList = () => {
       <section
         className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins p-12"
       >
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`}>
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="kriyative">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
             Kriyative
           </span>
@@ -36,7 +44,7 @@ const EventList = () => {
           rightCurve="bg-[#551789]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`}>
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="brainiac">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
             Brainiac
           </span>
@@ -50,7 +58,7 @@ const EventList = () => {
           rightCurve="bg-[#630a3d]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`}>
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="coding">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
             Coding
           </span>
@@ -64,7 +72,7 @@ const EventList = () => {
           rightCurve="bg-[#891750]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`}>
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="circuit">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
             Circuit
           </span>
@@ -78,7 +86,7 @@ const EventList = () => {
           rightCurve="bg-[#e04918]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`}>
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="core">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
             Core Engineering
           </span>
@@ -92,7 +100,7 @@ const EventList = () => {
           rightCurve="bg-[#0a4c63]"
         />
 
-        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`}>
+        <h1 className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left ${condition}`} id="management">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
             Management
           </span>
