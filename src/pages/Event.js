@@ -11,20 +11,20 @@ const Event = () => {
 
   return (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
-      {/* <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
+      <h1 className="lg:hidden text-3xl text-white font-semibold px-8 lg:px-0">
         Scan and Reckon
       </h1>
-      <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
+      <h2 className="lg:hidden text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         Brainiac
       </h2>
-      <p className="text-white mt-8 text-base w-full lg:w-[70%] pb-12 px-8 lg:px-0">
+      <p className="lg:hidden text-white mt-8 text-base w-full lg:w-[70%] pb-12 px-8 lg:px-0">
         An interesting event to bring out the Civil engineer in you. All you
         need for this event is knowledge in AutoCAD software, innovative ideas
         and the talent of justifying your ideas. If you have a knack for all
         this, Come and grab your opportunities.
-      </p> */}
+      </p>
 
-      <div className="flex flex-col lg:flex-row gap-4 w-full pt-6 px-4 lg:px-0">
+      <div className="hidden lg:flex flex-col lg:flex-row gap-4 w-full pt-6 px-4 lg:px-0">
         <div className="bg-white w-full lg:w-1/3 rounded-3xl p-12">
           <p className="text-4xl lg:text-5xl font-semibold tracking-wider text-[#3c4043]">
             Scan Plan and Reckon
