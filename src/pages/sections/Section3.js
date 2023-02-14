@@ -31,8 +31,8 @@ const Section3 = () => {
   });
 
   const condition = `${window.innerWidth < 768 ?
-    parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3.75 ? "text-white" : "text-[#181818]"
-    : parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3 ? "text-white" : "text-[#181818]"}`;
+    parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3.75 ? "text-[#181818]" : "text-white"
+    : parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3 ? "text-[#181818]" : "text-white"}`;
 
   return (
     <div className="w-full h-full relative">
@@ -79,7 +79,7 @@ const Section3 = () => {
         <svg width="0" height="0">
           <linearGradient id="gradient6" x1="100%" y1="100%" x2="0%" y2="0%">
             <stop stopColor="#02b7e6" offset="0%" />
-            <stop stopColor="#27eba2" offset="100%" />
+            <stop stopColor="#00c37b" offset="100%" />
           </linearGradient>
         </svg>
 
@@ -178,7 +178,7 @@ const Section3 = () => {
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
               <div className="flex items-center space-x-4">
                 <FaSoundcloud style={{ fill: "url(#gradient6)" }} className="text-4xl lg:text-6xl" />
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
+                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
                   {" Management "}
                 </p>
               </div>

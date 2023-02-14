@@ -45,7 +45,7 @@ const Landing = () => {
         {consolee}
       </div>
       <nav
-        className={`${consolee > 1 ? "fixed" : "hidden"
+        className={`${consolee >= 0.97 ? "fixed" : "hidden"
           } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
       >
         <button
@@ -152,16 +152,14 @@ const Landing = () => {
           // )}, ${getColorVal(consolee)}, 1)`,
           background:
             window.innerWidth < 768
-              ? parseFloat(consolee) + 0.25 <= 1 ||
-                (parseFloat(consolee) + 0.25 >= 2 &&
-                  parseFloat(consolee) + 0.25 <= 3.5)
-                ? `rgba(18, 18, 18, 1)`
-                : `rgba(255, 255, 255, 1)`
+              ? parseFloat(consolee) + 0.25 <= 1 || parseFloat(consolee) + 0.25 >= 2
+                ? `rgba(255, 255, 255, 1)`
+                : `rgba(18, 18, 18, 1)`
               : parseFloat(consolee) + 0.25 >= 3
                 ? `rgba(255, 255, 255, 1)`
                 : (parseFloat(consolee) + 0.25) % 2 <= 1
-                  ? `rgba(18, 18, 18, 1)`
-                  : `rgba(255, 255, 255, 1)`,
+                  ? `rgba(255, 255, 255, 1)`
+                  : `rgba(18, 18, 18, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",
