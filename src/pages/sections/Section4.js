@@ -40,9 +40,7 @@ const Section4 = ({ scrollYByVH }) => {
 
   const [onMouseHoverIndex, setOnMouseHoverIndex] = useState(0);
 
-  const condition = `${window.innerWidth < 768 ?
-    parseFloat(consolee) + 0.25 <= 3.5 ? "text-white" : "text-[#181818]"
-    : parseFloat(consolee) + 0.25 < 3 ? "text-white" : "text-[#181818]"}`;
+  const condition = "text-[#181818]";
 
   return (
     <div className="w-full h-full relative">
