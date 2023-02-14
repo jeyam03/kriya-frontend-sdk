@@ -285,7 +285,6 @@ const RightImage = ({ number, imgurl, title }) => {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-
           }}
           className={`w-full h-full`}></div>
       </div>
