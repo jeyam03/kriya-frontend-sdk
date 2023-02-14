@@ -38,7 +38,7 @@ const Section4 = ({ scrollYByVH }) => {
     observer.observe(element);
   });
 
-  const [onMouseHoverIndex, setOnMouseHoverIndex] = useState(2);
+  const [onMouseHoverIndex, setOnMouseHoverIndex] = useState(0);
 
   const condition = `${window.innerWidth < 768 ?
     parseFloat(consolee) + 0.25 <= 3.5 ? "text-white" : "text-[#181818]"
@@ -54,34 +54,44 @@ const Section4 = ({ scrollYByVH }) => {
           <div className="flex items-center h-full space-x-2 w-full pr-16">
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(0)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(0)}
               className={`rounded-lg shadow-md ${onMouseHoverIndex === 0 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
+                } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+            >
+              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 0 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation One</p>
+            </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(1)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(0)}
               className={`rounded-lg shadow-md ${onMouseHoverIndex === 1 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
+                } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+            >
+              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 1 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Two</p>
+            </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(2)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(0)}
               className={`rounded-lg shadow-md ${onMouseHoverIndex === 2 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
+                } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+            >
+              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 2 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Three</p>
+            </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(3)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(0)}
               className={`rounded-lg shadow-md ${onMouseHoverIndex === 3 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
+                } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+            >
+              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 3 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Four</p>
+            </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(4)}
-              onMouseLeave={(e) => setOnMouseHoverIndex(2)}
+              onMouseLeave={(e) => setOnMouseHoverIndex(0)}
               className={`rounded-lg shadow-md ${onMouseHoverIndex === 4 ? "h-full w-2/6" : "h-[95%] w-1/6"
-                } transition-all bg-gradient-to-t from-[rgba(255,0,0,0.7)] to-[rgba(255,255,255,0.3)]`}
-            ></div>
+                } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+            >
+              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 4 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Five</p>
+            </div>
           </div>
         </div>
 

@@ -105,22 +105,10 @@ const Login = ({ switchPage }) => {
   return (
     <div className="w-full h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
+
       <div className="w-full space-y-4 py-4">
-        <a
-          href="http://localhost:5002/api/auth/google"
-          className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6"
-        >
-          <img
-            src={GOOGLE_ICON}
-            className="h-6 aspect-square w-6"
-            alt="Google Icon"
-          />
-          <p className="">Login with Google</p>
-        </a>
-      </div>
-      <div className="w-full border-t border-t-gray-400 space-y-4 py-4">
         <TextInput
-          title="Email"
+          title="Email / Kriya ID"
           type="email"
           className=""
           valueState={[email, setEmail]}
@@ -134,6 +122,21 @@ const Login = ({ switchPage }) => {
       <button className="bg-black hover:bg-gray-700 transition-all duration-500 w-full text-white rounded-lg py-3 px-4">
         Login with Email
       </button>
+
+      <div className="w-full space-y-4 py-6 border-t border-t-gray-400">
+        <a
+          href="http://localhost:5002/api/auth/google"
+          className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6"
+        >
+          <img
+            src={GOOGLE_ICON}
+            className="h-6 aspect-square w-6"
+            alt="Google Icon"
+          />
+          <p className="">Login with Google</p>
+        </a>
+      </div>
+
       <button
         onClick={(e) => switchPage("register")}
         className="w-full text-center"
@@ -181,6 +184,10 @@ const RegisterPage2 = ({ switchPage }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("")
+  const [passwordConfirm, setPasswordConfirm] = useState("")
+  const [department, setDepartment] = useState("")
+  const [year, setYear] = useState("")
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -212,13 +219,6 @@ const RegisterPage2 = ({ switchPage }) => {
         className="w-full"
         valueState={[email, setEmail]}
       />
-      {/* <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-2 w-full">
-        <TextInput
-          title="Phone number"
-          className="w-full lg:w-1/2"
-          valueState={[phone, setPhone]}
-        />
-      </div> */}
       <Dropdown
         valueState={[college, setCollege]}
         title="College/University"
@@ -226,6 +226,32 @@ const RegisterPage2 = ({ switchPage }) => {
         placeholder="Select a college"
         options={colleges}
       />
+      <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
+      <Dropdown
+        valueState={[department, setDepartment]}
+        title="Department"
+        className="w-full lg:w-2/3"
+        options={colleges}
+      />
+      <Dropdown
+        valueState={[year, setYear]}
+        title="Year"
+        className="w-full lg:w-1/3"
+        options={["I", "II", "III", "IV", "V"]}
+      />
+</div>
+      <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-2 w-full">
+        <TextInput
+          title="Password"
+          className="w-full lg:w-1/2"
+          valueState={[phone, setPhone]}
+        />
+        <TextInput
+          title="Confirm Password"
+          className="w-full lg:w-1/2"
+          valueState={[phone, setPhone]}
+        />
+      </div>
       <TextInput title="Referral Code" className="" />
       <button className="bg-black hover:bg-gray-700 transition-all duration-500 w-full text-white text-lg rounded-lg py-2 px-4">
         Register

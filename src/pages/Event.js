@@ -10,6 +10,14 @@ const Event = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [generalPayment, setGeneralPayment] = useState(false);
 
+  const toTitleCase = (phrase) => {
+    return phrase
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   const { id } = useParams();
 
   const [eventDetail, setEventDetail] = useState(null);
@@ -30,17 +38,24 @@ const Event = () => {
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
       <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
-        {eventDetail.eventName}
+        {toTitleCase(eventDetail.eventName)}
       </h1>
       <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {eventDetail.category}
       </h2>
-      <p className="text-white mt-8 text-base w-full lg:w-[70%] pb-12 px-8 lg:px-0">
+      <p className="text-white mt-8 text-base w-full lg:w-[65%] pb-8 px-8 lg:px-0">
         {eventDetail.description}
       </p>
 
-      <div className="hidden lg:flex flex-col lg:flex-row gap-4 w-full pt-6 px-4 lg:px-0">
-        <div className="bg-white w-full lg:w-1/3 rounded-3xl p-12">
+      {/* <div className="hidden lg:flex flex-col lg:flex-row gap-4 w-full pt-6 px-4 lg:px-0">
+        <div className="bg-white w-full lg:w-1/3 rounded-3xl p-12"
+          style={{
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/management_vogvi4.png)`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+          }}>
           <p className="text-4xl lg:text-5xl font-semibold tracking-wider text-[#3c4043]">
             Scan Plan and Reckon
           </p>
@@ -53,17 +68,10 @@ const Event = () => {
             for all this, Come and grab your opportunities.
           </p>
         </div>
-      </div>
+      </div> */}
 
-      <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-white">
+      <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-black">
         <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8"
-          style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/management_vogvi4.png)`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-          }}
         >
           <RoundDescription
             roundNumber={1}
@@ -173,7 +181,7 @@ const Event = () => {
             <div className="flex flex-row items-center gap-8">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
-                  {eventDetail.contact_name_1}
+                  {toTitleCase(eventDetail.contact_name_1)}
                 </p>
                 <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
                   {eventDetail.contact_mobile_1}
@@ -198,7 +206,7 @@ const Event = () => {
             <div className="flex flex-row items-center gap-8">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
-                  {eventDetail.contact_name_2}
+                  {toTitleCase(eventDetail.contact_name_2)}
                 </p>
                 <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
                   {eventDetail.contact_mobile_2}
@@ -246,9 +254,17 @@ const Event = () => {
 };
 
 const RoundDescription = ({ roundNumber, description, title = "" }) => {
+  const toTitleCase = (phrase) => {
+    return phrase
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   return (
     <div className="flex w-full ">
-      <p className="hidden lg:block w-28 pr-4 text-9xl font-semibold tracking-wider text-[#fff] z-10 opacity-40 text-right">
+      <p className="hidden lg:block w-28 pr-4 text-9xl font-jetbrains tracking-wider text-[#3c4043] z-10 opacity-40 text-right">
         {roundNumber}
       </p>
       <div className="space-y-2 z-30 flex-1">
@@ -257,7 +273,7 @@ const RoundDescription = ({ roundNumber, description, title = "" }) => {
             <p className="tracking-wider uppercase">ROUND {roundNumber}</p>
             <div className="flex flex-row items-end gap-y-4">
               <p className="text-3xl font-semibold tracking-wide text-[#3c4043]">
-                {title}
+                {toTitleCase(title)}
               </p>
             </div>
           </React.Fragment>

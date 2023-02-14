@@ -167,12 +167,20 @@ const EventsGrid = ({
   topCurve,
   rightCurve,
 }) => {
+  const toTitleCase = (phrase) => {
+    return phrase
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   return (
     <div className="flex-wrap flex gap-8 py-12">
       {obj.map((i) => {
         return (
           <EventGrid
-            title={i.name}
+            title={toTitleCase(i.name)}
             description={i.desc}
             date="21st March 2021"
             time="10:00 AM"
