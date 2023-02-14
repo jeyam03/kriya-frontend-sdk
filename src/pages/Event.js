@@ -13,9 +13,9 @@ const Event = () => {
   const toTitleCase = (phrase) => {
     return phrase
       .toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   const { id } = useParams();
@@ -23,12 +23,7 @@ const Event = () => {
   const [eventDetail, setEventDetail] = useState(null);
 
   useEffect(() => {
-    fetchEventById(id)
-      .then((res) => {
-        console.log(res.data);
-        setEventDetail(res.data);
-      })
-      .catch((err) => console.log(err));
+    setEventDetail(fetchEventById(id));
   }, [id]);
 
   return !eventDetail ? (
@@ -71,8 +66,7 @@ const Event = () => {
       </div> */}
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-black">
-        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8"
-        >
+        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8">
           <RoundDescription
             roundNumber={1}
             title={eventDetail.round_title_1}
@@ -257,9 +251,9 @@ const RoundDescription = ({ roundNumber, description, title = "" }) => {
   const toTitleCase = (phrase) => {
     return phrase
       .toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   return (

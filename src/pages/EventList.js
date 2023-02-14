@@ -7,30 +7,20 @@ import { fetchEvents } from "../API/call";
 const EventList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(
+    fetchEvents().map((event) => ({
+      name: event.eventName,
+      id: event.eventId,
+      desc: event.one_line_desc,
+      category: event.category,
+    }))
+  );
 
   useEffect(() => {
     if (!searchParams.get("ctg")) return;
     const element = document.querySelector(`#${searchParams.get("ctg")}`);
     element.scrollIntoView({ behavior: "smooth" });
   }, [searchParams]);
-
-  useEffect(() => {
-    fetchEvents()
-      .then((res) => {
-        setEvents(
-          res.data.map((event) => ({
-            name: event.eventName,
-            id: event.eventId,
-            desc: event.one_line_desc,
-            category: event.category,
-          }))
-        );
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   useEffect(() => {
     console.log(events);
@@ -170,9 +160,9 @@ const EventsGrid = ({
   const toTitleCase = (phrase) => {
     return phrase
       .toLowerCase()
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   };
 
   return (
