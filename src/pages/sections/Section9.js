@@ -1,6 +1,6 @@
 import React from "react";
 import { BsInstagram, BsLinkedin, BsTelephone } from "react-icons/bs";
-import {SiGmail} from "react-icons/si";
+import { SiGmail } from "react-icons/si";
 
 // Contact Us
 
@@ -10,18 +10,24 @@ const Section9 = () => {
       <h1 className="text-5xl text-white font-bold">Contact Us</h1>
       <div className="flex flex-col lg:flex-row gap-8 flex-wrap text-white mt-8">
         <div className="flex-1 space-y-6">
-          <div className="flex items-center space-x-4">
+          <button className="flex items-center space-x-4"
+            onClick={() => window.open("https://www.linkedin.com/company/studentsunion-psgtech/", "_blank")}
+          >
             <BsLinkedin size={24} className="text-white" />
-            <p className="text-lg"></p>
-          </div>
-          <div className="flex items-center space-x-4">
+            <p className="text-lg">Students Union</p>
+          </button>
+          <button className="flex items-center space-x-4"
+            onClick={() => window.open("https://www.instagram.com/kriya_psgtech/", "_blank")}
+          >
             <BsInstagram size={24} className="text-white" />
             <p className="text-lg">@kriya_psgtech</p>
-          </div>
-          <div className="flex items-center space-x-4">
+          </button>
+          <button className="flex items-center space-x-4"
+            onClick={() => window.open("mailto:events@psgkriya.in", "_blank")}
+          >
             <SiGmail size={24} className="text-white" />
             <p className="text-lg">events@psgkriya.in</p>
-          </div>
+          </button>
         </div>
         <div className="w-full lg:w-56">
           <h5 className="text-xs tracking-widest">Chairperson</h5>
@@ -66,10 +72,12 @@ const ContactItem = ({ name, phone, className = "" }) => {
   return (
     <div className={`${className}`}>
       <h4 className="text-lg mt-2 font-semibold">{name}</h4>
-      <div className="flex items-center space-x-4 mt-2">
+      <button className="flex items-center space-x-4 mt-2"
+        onClick={() => window.open(`tel:${phone}`)}
+      >
         <BsTelephone className="text-white" />
         <p className="text-sm">{phone}</p>
-      </div>
+      </button>
     </div>
   );
 };

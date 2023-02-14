@@ -55,42 +55,42 @@ const Section4 = ({ scrollYByVH }) => {
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(0)}
               onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 0 ? "h-full w-2/6" : "h-[95%] w-1/6"
+              className={`rounded-lg shadow-md flex items-end p-8 ${onMouseHoverIndex === 0 ? "h-full w-2/6" : "h-[95%] w-1/6"
                 } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
             >
-              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 0 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation One</p>
+              <p className={`font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 0 ? "rotate-0" : "-rotate-90 whitespace-nowrap -ml-20 mb-36"}`}>Paper Presentation One</p>
             </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(1)}
               onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 1 ? "h-full w-2/6" : "h-[95%] w-1/6"
+              className={`rounded-lg shadow-md flex items-end p-8 ${onMouseHoverIndex === 1 ? "h-full w-2/6" : "h-[95%] w-1/6"
                 } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
             >
-              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 1 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Two</p>
+              <p className={`font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 1 ? "rotate-0" : "-rotate-90 whitespace-nowrap -ml-20 mb-36"}`}>Paper Presentation Two</p>
             </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(2)}
               onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 2 ? "h-full w-2/6" : "h-[95%] w-1/6"
+              className={`rounded-lg shadow-md flex items-end p-8 ${onMouseHoverIndex === 2 ? "h-full w-2/6" : "h-[95%] w-1/6"
                 } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
             >
-              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 2 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Three</p>
+              <p className={`font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 2 ? "rotate-0" : "-rotate-90 whitespace-nowrap -ml-[5.5rem] mb-[9.5rem]"}`}>Paper Presentation Three</p>
             </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(3)}
               onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 3 ? "h-full w-2/6" : "h-[95%] w-1/6"
+              className={`rounded-lg shadow-md flex items-end p-8 ${onMouseHoverIndex === 3 ? "h-full w-2/6" : "h-[95%] w-1/6"
                 } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
             >
-              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 3 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Four</p>
+              <p className={`font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 3 ? "rotate-0" : "-rotate-90 whitespace-nowrap -ml-20 mb-36"}`}>Paper Presentation Four</p>
             </div>
             <div
               onMouseEnter={(e) => setOnMouseHoverIndex(4)}
               onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-              className={`rounded-lg shadow-md ${onMouseHoverIndex === 4 ? "h-full w-2/6" : "h-[95%] w-1/6"
+              className={`rounded-lg shadow-md flex items-end p-8 ${onMouseHoverIndex === 4 ? "h-full w-2/6" : "h-[95%] w-1/6"
                 } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
             >
-              <p className={`absolute font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 4 ? "rotate-0 bottom-[5%] left-[10%] w-[75%]" : "-rotate-90 whitespace-nowrap bottom-[22.5%] -left-[35%]"}`}>Paper Presentation Five</p>
+              <p className={`font-semibold font-poppins text-3xl text-gray-100 ${onMouseHoverIndex === 4 ? "rotate-0" : "-rotate-90 whitespace-nowrap -ml-20 mb-36"}`}>Paper Presentation Five</p>
             </div>
           </div>
         </div>
@@ -106,11 +106,21 @@ const Section4 = ({ scrollYByVH }) => {
         </div>
         <div className="block lg:hidden w-full h-full overflow-x-auto mt-8">
           <div className="flex w-fit h-full items-center relative space-x-6 px-8">
-            <div className="w-64 h-[90%] bg-gray-500"> </div>
-            <div className="w-64 h-[90%] bg-gray-500"> </div>
-            <div className="w-64 h-[90%] bg-gray-500"></div>
-            <div className="w-64 h-[90%] bg-gray-500"></div>
-            <div className="w-64 h-[90%] bg-gray-500"> </div>
+            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+              <p className="font-semibold font-poppins text-2xl text-gray-100">Paper Presentation One</p>
+            </div>
+            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+              <p className="font-semibold font-poppins text-2xl text-gray-100">Paper Presentation Two</p>
+            </div>
+            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+              <p className="font-semibold font-poppins text-2xl text-gray-100">Paper Presentation Three</p>
+            </div>
+            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+              <p className="font-semibold font-poppins text-2xl text-gray-100">Paper Presentation Four</p>
+            </div>
+            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+              <p className="font-semibold font-poppins text-2xl text-gray-100">Paper Presentation Five</p>
+            </div>
           </div>
         </div>
       </section>
