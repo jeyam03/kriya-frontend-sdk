@@ -1,7 +1,14 @@
 module.exports = {
   mode: "jit",
   purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
-  theme: {},
+  theme: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+      oswald: ["'Oswald'", "sans-serif"],
+      poppins: ["'Poppins'", "sans-serif"],
+      jetbrains: ["'JetBrains Mono'", "monospace"]
+    },
+  },
   variants: {
     extend: {
       colors: {
@@ -13,9 +20,6 @@ module.exports = {
         gray: "#e5e5e5",
         white: "#ffffff",
         cloud: "#a4a4a4",
-      },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
       },
       display: ["group-hover"],
     },

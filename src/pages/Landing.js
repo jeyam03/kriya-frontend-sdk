@@ -1,91 +1,223 @@
-import React, { useEffect, useState } from "react";
-import { animate, stagger, scroll } from "motion";
-import Event from "../components/Event";
-import { BsCalendar2EventFill } from "react-icons/bs";
+import React, { useEffect, useRef, useState } from "react";
+import "../styles/Landing.css";
+import Section1 from "./sections/Section1";
+import Section2 from "./sections/Section2";
+import Section3 from "./sections/Section3";
+import Section4 from "./sections/Section4";
+import Section5 from "./sections/Section5";
+import Section6 from "./sections/Section6";
+import Section7 from "./sections/Section7";
+import Section8 from "./sections/Section8";
+import Section9 from "./sections/Section9";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
-  const VIDEO_LINK =
-    "https://res.cloudinary.com/dksmk66vo/video/upload/v1674456543/FINAL_RENDER_v2_1_u0bkpf.mp4";
+  const [consolee, setConsolee] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
+      },
+      { passive: true }
+    );
+  }, [consolee]);
+
+  const getColorVal = (v) => {
+    const a = 0.05; // alpha
+    const w = 255; // white
+    const b = 18; // black
+    if (v < 1 - a) return b;
+    let val = v % 2;
+    if (val < a) return ((b - w) * (val - a)) / (2 * a) + b;
+    if (val > a && val < 1 - a) return b;
+    if (val > 1 - a && val < 1 + a)
+      return ((w - b) * (val - 1 - a)) / (2 * a) + w;
+    if (val > 1 + a && val < 2 - a) return w;
+    if (val > 2 - a && val < 2)
+      return ((b - w) * (a - 2)) / (2 * a) + (w + b) / 2;
+  };
 
   return (
-    <>
-      <section className="bg-black flex flex-row justify-center items-center h-screen">
-        <a href="https://ibb.co/M97bZvT">
-          <img
-            src="https://i.ibb.co/3kcw43X/Kriya-Logo-2023-white.png"
-            alt="Kriya-Logo-2023"
-          />
-        </a>
-      </section>
-
-      <section className="relative">
-        <div className="">
-          <video className="h-full object-cover" controls={false} autoPlay muted loop>
-            <source src={VIDEO_LINK} type="video/mp4" />
-          </video>
+    <React.Fragment>
+      {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10 z-50">
+        {consolee}
+      </div> */}
+      <nav
+        className={`${consolee >= 0.97 ? "fixed" : "hidden"
+          } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
+      >
+        <button
+          onClick={(e) => {
+            const element = document.getElementById("section3");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+        >
+          Events
+        </button>
+        <button
+          onClick={(e) => {
+            const element = document.getElementById("section4");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+        >
+          Paper Presentations
+        </button>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section5");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Workshops
+        </button>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section6");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Sponsors
+        </button>
+        <div
+          className="w-48 h-full"
+          style={{
+            background:
+              "url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)",
+            backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"
+              }`,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <button className="w-full h-full"
+            onClick={(e) => {
+              const element = document.getElementById("section1");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}>
+          </button>
         </div>
-      </section>
-
-      <section className="px-10 my-8">
-        <div className="col-span-2 mb-4">
-          <h1 className="text-5xl font-bold tracking-wider">Events.</h1>
-        </div>
-
-        <div className="relative grid grid-cols-5 gap-2">
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-          <Event
-            title="Event 1"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia."
-            icon=<BsCalendar2EventFill />
-            date="24th March"
-            time="10:00 AM"
-          />
-        </div>
-      </section>
-
-      <section className="px-10">
-        <div className="col-span-2 mb-4">
-          <h1 className="text-5xl font-bold tracking-wider">Workshops.</h1>
-        </div>
-
-
-      </section>
-    </>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section7");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Our Team
+        </button>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section8");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          FAQs
+        </button>
+        <button
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+          onClick={(e) => {
+            const element = document.getElementById("section9");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
+          Contact Us
+        </button>
+        <Link
+          to="/auth"
+          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+        >
+          Register
+        </Link>
+      </nav>
+      <main
+        className={`w-screen overflow-x-hidden transition-all duration-300`}
+        style={{
+          // background: `rgba(${getColorVal(consolee)}, ${getColorVal(
+          //   consolee
+          // )}, ${getColorVal(consolee)}, 1)`,
+          background:
+            window.innerWidth < 768
+              ? parseFloat(consolee) + 0.25 <= 1 || parseFloat(consolee) + 0.25 >= 2
+                ? `rgba(255, 255, 255, 1)`
+                : `rgba(18, 18, 18, 1)`
+              : parseFloat(consolee) + 0.25 >= 3
+                ? `rgba(255, 255, 255, 1)`
+                : (parseFloat(consolee) + 0.25) % 2 <= 1
+                  ? `rgba(255, 255, 255, 1)`
+                  : `rgba(18, 18, 18, 1)`,
+          flexBasis: "50%",
+          overflowY: "scroll",
+          scrollSnapType: "y mandatory",
+        }}
+      >
+        <Section1 />
+        <Section2 scrollYByVH={consolee} />
+        <Section3 scrollYByVH={consolee} />
+        <Section4 scrollYByVH={consolee} />
+        <Section5 scrollYByVH={consolee} />
+        <Section6 scrollYByVH={consolee} />
+        <Section7 scrollYByVH={consolee} />
+        <Section8 />
+        <Section9 />
+      </main>
+    </React.Fragment>
   );
 };
 
 export default Landing;
+
+const MenuToggle = ({ isOpen, setIsOpen }) => {
+  return (
+    <button
+      className="lg:hidden flex items-center p-1 text-gray-500 lg:hover:text-gray-300"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      )}
+    </button>
+  );
+};
