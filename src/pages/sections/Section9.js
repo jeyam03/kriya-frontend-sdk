@@ -7,7 +7,7 @@ import { SiGmail } from "react-icons/si";
 const Section9 = () => {
   return (
     <section id="section9" className="w-screen bg-black px-[calc(100vw/12)] py-16 font-poppins">
-      <h1 className="text-5xl text-white font-bold">Contact Us</h1>
+      <h1 className="text-5xl text-white font-bold pb-6">Contact Us</h1>
       <div className="flex flex-col lg:flex-row gap-8 flex-wrap text-white mt-8">
         <div className="flex-1 space-y-6">
           <button className="flex items-center space-x-4"

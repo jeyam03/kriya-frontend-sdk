@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
-import TeamDetails from "./TeamDetails.js";
+import TeamDetails from "./TeamDetails.json";
 import "../../styles/FlipCard.css";
 
 // Our Team
@@ -67,14 +67,14 @@ const Section7 = () => {
     <div className="w-full relative">
       <section
         id="section7"
-        className="w-full relative flex items-start team-text opacity-0"
+        className="w-full relative flex items-start team-text opacity-0 mt-24"
       >
         <div
           className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-8 lg:pt-16 pb-0 px-[calc(100vw/12)]`}
           id="left-grid"
         >
           <h1
-            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-96"
+            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-24"
             id="our-team-text"
           >
             Our
@@ -166,38 +166,35 @@ const ImageGrid = ({ vertical }) => {
     <React.Fragment>
       <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
       <div className="flex flex-wrap gap-2 w-full">
-        {TeamDetails.filter((i) => i.Verticals === vertical).map(
-          (item, idx) => {
-            return (
-              <div
-                className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
-                id="flip-card"
-              >
-                <div className="w-full h-full" id="flip-card-inner">
-                  <div
-                    className="w-full h-full "
-                    style={{
-                      background: `url(${
-                        idx % 2 === 0 ? IMAGE_URL_1 : IMAGE_URL_2
-                      })`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                    id="flip-card-front"
-                  ></div>
-                  <div
-                    className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
-                    id="flip-card-back"
-                  >
-                    <h3 className="text-sm font-semibold">{item.Name}</h3>
-                    <p className="text-xs">{item.Position}</p>
-                  </div>
+        {TeamDetails.filter((i) => i.category === vertical).map((item, i) => {
+          return (
+            <div
+              className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
+              id="flip-card"
+            >
+              <div className="w-full h-full" id="flip-card-inner">
+                <div
+                  loading="lazy"
+                  className="w-full h-full "
+                  style={{
+                    background: `url(${item.image_url})`,
+                    backgroundPosition: "top",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  id="flip-card-front"
+                ></div>
+                <div
+                  className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
+                  id="flip-card-back"
+                >
+                  <h3 className="text-sm font-semibold">{item.name}</h3>
+                  <p className="text-xs">{item.position}</p>
                 </div>
               </div>
-            );
-          }
-        )}
+            </div>
+          );
+        })}
       </div>
     </React.Fragment>
   );

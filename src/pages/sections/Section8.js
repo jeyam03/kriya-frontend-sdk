@@ -38,8 +38,8 @@ const Section8 = () => {
 const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
   return (
     <div className="w-full">
-      <div className="p-4 lg:px-8 border-t border-gray-300 text-lg flex justify-between font-semibold">
-        <button className={`text-lg lg:text-xl py-2 ${isOpened ? "text-blue-700" : "text-black"}`} onClick={onClick}>
+      <div className="p-4 lg:px-8 border-t border-gray-300 text-lg flex justify-between items-center font-semibold">
+        <button className={`text-lg py-2 ${isOpened ? "text-blue-700" : "text-black"}`} onClick={onClick}>
           {question}
         </button>
         <button onClick={onClick}>
@@ -48,7 +48,7 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
       </div>
       <div
         className={`${isOpened ? "h-fit px-4 lg:px-8 py-4 " : "h-0 overflow-y-hidden"
-          } transition-all ease-in-out text-base`}
+          } transition-all ease-in-out text-sm`}
       >
         {answer}
       </div>
