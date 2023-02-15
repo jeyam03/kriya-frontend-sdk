@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
 //  Landing
 
 const Section1 = () => {
-  const slides = ["https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg", "https://res.cloudinary.com/dksmk66vo/image/upload/v1675875367/1674280844981_qosaib.jpg"];
+  const slides = ["https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675875367/1674280844981_qosaib.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg",
+  ];
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const timeoutRef = React.useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const timeoutRef = useRef(null);
 
-  function resetTimeout() {
+  const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
@@ -31,12 +34,13 @@ const Section1 = () => {
     };
   }, [currentSlide]);
 
+
   return (
     <section
       id="section1"
       className="h-screen w-screen flex flex-row items-center"
     >
-      <div className="w-[25vw] h-full pl-[calc(100vw/24)] py-[calc(100vw/24)] flex flex-col justify-between">
+      <div className="hidden lg:flex flex-col w-[25vw] h-full pl-[calc(100vw/24)] py-[calc(100vw/24)] justify-between">
         <div
           className="w-36 h-36"
           style={{
@@ -100,58 +104,93 @@ const Section1 = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block w-[35vw] h-full"
-        style={{
-          // transform: `translate3d(${-currentSlide * 100}%, 0, 0)`,
-          background: `url(${slides[currentSlide]})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      ></div>
-
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 py-8 lg:p-24 lg:py-12 flex flex-col justify-between">
-        <div className="w-full h-24"
+      <div className="hidden lg:block w-[35vw] h-full relative">
+        <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
           style={{
-            background: `url(https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png)`,
-            backgroundPosition: "right",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-          }}
-        >
-        </div>
-        <div className="w-full font-poppins text-xl lg:text-2xl font-semibold tracking-wider">
-          <span className="text-[#C80067]">Mar</span> 24, 25 and 26
-        </div>
-        <div className="lg:hidden w-full h-[50%]"
-          style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg)`,
-            backgroundPosition: "center",
+            background: `url(${slides[0]})`,
+            backgroundPosition: "50% 50%  ",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
-        >
+        ></div>
+        <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
+          style={{
+            background: `url(${slides[1]})`,
+            backgroundPosition: "50% 50%  ",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
+        <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
+          style={{
+            background: `url(${slides[2]})`,
+            backgroundPosition: "50% 50%  ",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        ></div>
+      </div>
+
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:p-24 lg:pb-12 lg:pt-36 flex flex-col justify-between">
+        <div className="w-full font-poppins text-xl lg:text-2xl font-semibold tracking-wider">
+          <span className="text-[#C80067]">Mar</span> 24, 25 and 26
+        </div>
+        <div className="lg:hidden w-full h-[50%] relative">
+          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
+            style={{
+              background: `url(${slides[0]})`,
+              backgroundPosition: "50% 50%  ",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
+            style={{
+              background: `url(${slides[1]})`,
+              backgroundPosition: "50% 50%  ",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
+            style={{
+              background: `url(${slides[2]})`,
+              backgroundPosition: "50% 50%  ",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
         </div>
         <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-40 lg:-mt-0">
-          <span className="bg-[#7300fe] text-white leading-[4rem] px-2">
+          <span className="bg-[#7300fe] text-white leading-[4rem] px-2 relative z-10">
             The Global Clash of Techno Talents.
           </span>
         </h1>
-        <div className="w-full font-poppins pr-8 text-sm lg:text-base">
+        <div className="hidden lg:block w-full font-poppins pr-8 text-sm lg:text-base">
           Stay tuned for the forefront of technological advancements and gain valuable insights at our upcoming technical symposium Kriya 2023 !
         </div>
-        <div className="uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067] pr-16">
+        <div className="text-2xl uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067] pr-16">
           Registrations opening soon !
         </div>
-        <div className="space-y-1 lg:space-y-2 text-sm lg:text-base">
-          <div className="font-semibold tracking-wider w-full font-poppins pr-16">
-            Presented By
-          </div>
-          <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
-            Students Union
-          </div>
-          <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
-            PSG College of Technology
+        <div className="flex flex-row space-x-8 lg:space-x-4">
+          <div className="w-24 h-24"
+            style={{
+              background: `url(https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png)`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+            }}
+          ></div>
+          <div className="space-y-1 lg:space-y-2 text-sm lg:text-base">
+            <div className="font-semibold tracking-wider w-full font-poppins pr-16">
+              Presented By
+            </div>
+            <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+              Students Union
+            </div>
+            <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+              PSG College of Technology
+            </div>
           </div>
         </div>
       </div>

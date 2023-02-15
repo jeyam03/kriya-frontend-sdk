@@ -71,8 +71,8 @@ const Landing = () => {
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
+        <Section4 scrollYByVH={consolee} />
         {/* <Section6 scrollYByVH={consolee} /> */}
-        <div className="section w-screen h-96 bg-black"></div>
         <Section7 scrollYByVH={consolee} />
         <Section8 />
         <Section9 />
@@ -102,17 +102,6 @@ const NavBar = ({ consolee }) => {
         Events
       </button>
       <button
-        onClick={(e) => {
-          const element = document.getElementById("section4");
-          element.scrollIntoView({ behavior: "smooth" });
-        }}
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
-      >
-        Paper Presentations
-      </button>
-      <button
         className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
           consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
         } transition-all`}
@@ -124,15 +113,15 @@ const NavBar = ({ consolee }) => {
         Workshops
       </button>
       <button
+        onClick={(e) => {
+          const element = document.getElementById("section4");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
         className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
           consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
         } transition-all`}
-        onClick={(e) => {
-          const element = document.getElementById("section6");
-          element.scrollIntoView({ behavior: "smooth" });
-        }}
       >
-        Sponsors
+        Paper Presentations
       </button>
       <div
         className="w-48 h-full"
@@ -185,14 +174,6 @@ const NavBar = ({ consolee }) => {
       >
         Contact Us
       </button>
-      <Link
-        to="/auth"
-        className={`text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
-      >
-        Register
-      </Link>
     </nav>
   );
 };

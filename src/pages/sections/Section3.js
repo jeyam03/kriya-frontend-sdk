@@ -86,12 +86,14 @@ const Section3 = () => {
         <div className="w-full lg:w-[70vw] h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 p-8 lg:px-24 lg:pl-0 font-poppins gap-4 md:gap-8 lg:gap-12">
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
-              <div className="flex items-center space-x-4">
+              <Link className="flex items-center space-x-4"
+              to="/portal/event?ctg=kriyative"
+              >
                 <FaSoundcloud style={{ fill: "url(#gradient1)" }} className="text-5xl lg:text-6xl" />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {" Kriyative "}
                 </p>
-              </div>
+              </Link>
               <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
@@ -99,17 +101,19 @@ const Section3 = () => {
               <Link className="text-blue-500 text-sm"
                 to="/portal/event?ctg=kriyative"
               >
-                {"Explore more >"}
+                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
-              <div className="flex items-center space-x-4">
+              <Link className="flex items-center space-x-4"
+              to="/portal/event?ctg=brainiac"
+              >
                 <FaSoundcloud style={{ fill: "url(#gradient2)" }} className="text-5xl lg:text-6xl" />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
                   {" Brainiac "}
                 </p>
-              </div>
+              </Link>
               <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
@@ -117,17 +121,19 @@ const Section3 = () => {
               <Link className="text-blue-500 text-sm"
                 to="/portal/event?ctg=brainiac"
               >
-                {"Explore more >"}
+                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
-              <div className="flex items-center space-x-4">
+              <Link className="flex items-center space-x-4"
+              to="/portal/event?ctg=coding"
+              >
                 <FaSoundcloud style={{ fill: "url(#gradient3)" }} className="text-5xl lg:text-6xl" />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
                   {" Coding "}
                 </p>
-              </div>
+              </Link>
               <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
@@ -135,17 +141,19 @@ const Section3 = () => {
               <Link className="text-blue-500 text-sm"
                 to="/portal/event?ctg=coding"
               >
-                {"Explore more >"}
+                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
-              <div className="flex items-center space-x-4">
+              <Link className="flex items-center space-x-4"
+              to="/portal/event?ctg=circuit"
+              >
                 <FaSoundcloud style={{ fill: "url(#gradient4)" }} className="text-5xl lg:text-6xl" />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
                   {" Circuit "}
                 </p>
-              </div>
+              </Link>
               <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
@@ -153,35 +161,39 @@ const Section3 = () => {
               <Link className="text-blue-500 text-sm"
                 to="/portal/event?ctg=circuit"
               >
-                {"Explore more >"}
+                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
-              <div className="flex items-center space-x-4">
+              <Link className="flex items-center space-x-4"
+              to="/portal/event?ctg=core"
+              >
                 <FaSoundcloud style={{ fill: "url(#gradient5)" }} className="text-5xl lg:text-6xl" />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
                   {" Core Engineering "}
                 </p>
-              </div>
+              </Link>
               <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm"
+              <Link className="text-blue-500 text-sm group"
                 to="/portal/event?ctg=core"
               >
-                {"Explore more >"}
+                {"Explore more"}<span className="group-hover:ml-2 transition-all duration-200 ease-in-out"> {" >"}</span>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
-              <div className="flex items-center space-x-4">
+              <Link className="flex items-center space-x-4"
+              to="/portal/event?ctg=management"
+              >
                 <FaSoundcloud style={{ fill: "url(#gradient6)" }} className="text-4xl lg:text-6xl" />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
                   {" Management "}
                 </p>
-              </div>
+              </Link>
               <p className={`${condition} text-sm pb-2`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
@@ -189,7 +201,7 @@ const Section3 = () => {
               <Link className="text-blue-500 text-sm"
                 to="/portal/event?ctg=management"
               >
-                {"Explore more >"}
+                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
               </Link>
             </div>
           </div>
