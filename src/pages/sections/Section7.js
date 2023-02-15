@@ -22,16 +22,6 @@ const Section7 = () => {
     const element = document.querySelector("#anchor8");
     const teamTexts = document.querySelectorAll(".team-text");
     const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
-      //   });
-      // }
       teamTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });
@@ -181,6 +171,7 @@ const ImageGrid = ({ vertical }) => {
                     backgroundPosition: "top",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
+                    // filter: "grayscale(100%)",
                   }}
                   id="flip-card-front"
                 ></div>
@@ -189,7 +180,7 @@ const ImageGrid = ({ vertical }) => {
                   id="flip-card-back"
                 >
                   <h3 className="text-sm font-semibold">{item.name}</h3>
-                  <p className="text-xs">{item.position}</p>
+                  {/* <p className="text-xs">{item.position}</p> */}
                 </div>
               </div>
             </div>
