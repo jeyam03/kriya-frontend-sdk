@@ -1,5 +1,5 @@
 import axios from "axios";
-import EventsList from "../data/eventsList.json";
+import EventsList from "../data/eventsList2.json";
 
 const BASE_URL = "http://localhost:5002/api";
 const USER_URL = `${BASE_URL}/auth`;

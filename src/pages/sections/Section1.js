@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 //  Landing
 
 const Section1 = () => {
-  const slides = ["https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg",
+  const slides = [
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg",
     "https://res.cloudinary.com/dksmk66vo/image/upload/v1675875367/1674280844981_qosaib.jpg",
     "https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg",
   ];
@@ -17,7 +19,7 @@ const Section1 = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-  }
+  };
 
   React.useEffect(() => {
     resetTimeout();
@@ -26,14 +28,13 @@ const Section1 = () => {
         setCurrentSlide((prevIndex) =>
           prevIndex === slides.length - 1 ? 0 : prevIndex + 1
         ),
-      2500
+      4000
     );
 
     return () => {
       resetTimeout();
     };
   }, [currentSlide]);
-
 
   return (
     <section
@@ -42,7 +43,7 @@ const Section1 = () => {
     >
       <div className="hidden lg:flex flex-col w-[25vw] h-full pl-[calc(100vw/24)] py-[calc(100vw/24)] justify-between">
         <div
-          className="w-36 h-36"
+          className="w-36 h-36 before:w-full before:h-full before:bg-black relative before:absolute before:opacity-30 before:rounded-full before:translate-y-[30%] before:scale-y-[25%] before:[background:radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0)_70%)]"
           style={{
             background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
             backgroundPosition: "left",
@@ -51,25 +52,61 @@ const Section1 = () => {
           }}
         ></div>
 
-        <div className="space-y-6">
-          <h1 className="text-xl text-gray-700 font-poppins uppercase font-semibold tracking-wider hover:translate-x-2 transition-all duration-500 ease-in-out hover:text-black">
+        <div className="space-y-4 flex flex-col items-start justify-start">
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section4");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+          >
             Events
-          </h1>
-          <h1 className="text-xl text-gray-700 font-poppins uppercase font-semibold tracking-wider hover:translate-x-2 transition-all duration-500 ease-in-out hover:text-black">
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section4");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+          >
             Paper Presentations
-          </h1>
-          <h1 className="text-xl text-gray-700 font-poppins uppercase font-semibold tracking-wider hover:translate-x-2 transition-all duration-500 ease-in-out hover:text-black">
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section4");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+          >
             Workshops
-          </h1>
-          <h1 className="text-xl text-gray-700 font-poppins uppercase font-semibold tracking-wider hover:translate-x-2 transition-all duration-500 ease-in-out hover:text-black">
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section4");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+          >
             Our Team
-          </h1>
-          <h1 className="text-xl text-gray-700 font-poppins uppercase font-semibold tracking-wider hover:translate-x-2 transition-all duration-500 ease-in-out hover:text-black">
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section4");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+          >
             FAQ
-          </h1>
-          <h1 className="text-xl text-gray-700 font-poppins uppercase font-semibold tracking-wider hover:translate-x-2 transition-all duration-500 ease-in-out hover:text-black">
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section4");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+          >
             Contact Us
-          </h1>
+          </button>
         </div>
 
         <div className="flex flex-row space-x-8">
@@ -105,7 +142,10 @@ const Section1 = () => {
       </div>
 
       <div className="hidden lg:block w-[35vw] h-full relative">
-        <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
+        <div
+          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+            currentSlide === 0 ? "opacity-100" : "opacity-0"
+          }`}
           style={{
             background: `url(${slides[0]})`,
             backgroundPosition: "50% 50%  ",
@@ -113,7 +153,10 @@ const Section1 = () => {
             backgroundSize: "cover",
           }}
         ></div>
-        <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
+        <div
+          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+            currentSlide === 1 ? "opacity-100" : "opacity-0"
+          }`}
           style={{
             background: `url(${slides[1]})`,
             backgroundPosition: "50% 50%  ",
@@ -121,7 +164,10 @@ const Section1 = () => {
             backgroundSize: "cover",
           }}
         ></div>
-        <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
+        <div
+          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+            currentSlide === 2 ? "opacity-100" : "opacity-0"
+          }`}
           style={{
             background: `url(${slides[2]})`,
             backgroundPosition: "50% 50%  ",
@@ -131,12 +177,18 @@ const Section1 = () => {
         ></div>
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:p-24 lg:pb-12 lg:pt-36 flex flex-col justify-between">
-        <div className="w-full font-poppins text-xl lg:text-2xl font-semibold tracking-wider">
-          <span className="text-[#C80067]">Mar</span> 24, 25 and 26
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:p-24 lg:pb-12 lg:pt-20 flex flex-col justify-between">
+        <div className="w-full font-poppins text-lg lg:text-lg font-semibold tracking-wider text-gray-600">
+          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            Mar
+          </span>{" "}
+          24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
         </div>
         <div className="lg:hidden w-full h-[50%] relative">
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
+          <div
+            className={`w-full h-full absolute top-0 right-0 left-0 ${
+              currentSlide === 0 ? "opacity-100" : "opacity-0"
+            }`}
             style={{
               background: `url(${slides[0]})`,
               backgroundPosition: "50% 50%  ",
@@ -144,7 +196,10 @@ const Section1 = () => {
               backgroundSize: "cover",
             }}
           ></div>
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
+          <div
+            className={`w-full h-full absolute top-0 right-0 left-0 ${
+              currentSlide === 1 ? "opacity-100" : "opacity-0"
+            }`}
             style={{
               background: `url(${slides[1]})`,
               backgroundPosition: "50% 50%  ",
@@ -152,7 +207,10 @@ const Section1 = () => {
               backgroundSize: "cover",
             }}
           ></div>
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
+          <div
+            className={`w-full h-full absolute top-0 right-0 left-0 ${
+              currentSlide === 2 ? "opacity-100" : "opacity-0"
+            }`}
             style={{
               background: `url(${slides[2]})`,
               backgroundPosition: "50% 50%  ",
@@ -161,19 +219,25 @@ const Section1 = () => {
             }}
           ></div>
         </div>
-        <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-40 lg:-mt-0">
-          <span className="bg-[#7300fe] text-white leading-[4rem] px-2 relative z-10">
+        <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-40 lg:mt-8">
+          <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[4rem] relative z-10 whitespace-pre-line">
             The Global Clash of Techno Talents.
           </span>
         </h1>
-        <div className="hidden lg:block w-full font-poppins pr-8 text-sm lg:text-base">
-          Stay tuned for the forefront of technological advancements and gain valuable insights at our upcoming technical symposium Kriya 2023 !
-        </div>
-        <div className="text-2xl uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067] pr-16">
-          Registrations opening soon !
+        <div className="">
+          <div className="hidden lg:block w-full font-poppins pr-8 text-sm lg:text-base ">
+            Stay tuned for the forefront of technological advancements and gain
+            valuable insights at our upcoming technical symposium Kriya 2023 !
+          </div>
+          <div className="text-lg font-semibold w-full font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-2 rounded-lg mt-8 mb-16">
+            ✨ Registrations opening soon!✨
+            {/* <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            </span> */}
+          </div>
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4">
-          <div className="w-24 h-24"
+          <div
+            className="w-16 h-auto"
             style={{
               background: `url(https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png)`,
               backgroundPosition: "center",
@@ -181,21 +245,21 @@ const Section1 = () => {
               backgroundSize: "contain",
             }}
           ></div>
-          <div className="space-y-1 lg:space-y-2 text-sm lg:text-base">
-            <div className="font-semibold tracking-wider w-full font-poppins pr-16">
+          <div className=" text-sm lg:text-base">
+            <p className="uppercase tracking-wider w-full font-poppins pr-16 text-sm">
               Presented By
-            </div>
-            <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+            </p>
+            <p className="font-semibold tracking-wider w-full font-poppins pr-16 mt-2">
               Students Union
-            </div>
-            <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+            </p>
+            <p className="tracking-wider w-full font-poppins pr-16 text-xs mt1">
               PSG College of Technology
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="hidden lg:block w-[5vw] h-[70%] bg-[#7300fe]"></div>
+      <div className="hidden lg:block w-[5vw] h-[70vh] bg-opacity-50 bg-gradient-to-b from-[rgba(200,0,103,0.5)] to-[rgba(84,81,182,0.5)]"></div>
     </section>
   );
 };
