@@ -1,6 +1,7 @@
 [
   {
     "eventName": "Technozarre",
+    "category": "Circuit",
     "one_line_desc": "",
     "description": "An amazing technical event filled with fun and enthusiasm which carves out your inner skills and tests your knowledge on circuits. Ready for the event? Indulge yourself in the electrifying and fascinating event laden with tricky puzzles and riddles.",
     "round_title_1": "Round 1",
@@ -22,6 +23,7 @@
   },
   {
     "eventName": "Quest for Avians",
+    "category": "Kriyative",
     "one_line_desc": "Off the ground, around the world",
     "description": "The Aeronautical Association is hosting a new event to showcase your knowledge of air vehicles. Take 3 rounds and show off your aeronautical knowledge and design skills.",
     "round_title_1": "PicTalk",
@@ -43,6 +45,7 @@
   },
   {
     "eventName": "MasterMinds",
+    "category": "Brainiac",
     "one_line_desc": "",
     "description": "Draft your leanings to spun your Knowledge            Do you have a keen interest towards textiles.Then this event is for you! This event is mainly designed to test the technical knowledge on textiles and also helps to attain the knowledge. It is a team play with maximum of 2 members. This event totally consist of four rounds Quizzle & LogoGrab , Gamble your knowledge, Rebus with Machine and Tap & Talk.",
     "round_title_1": "Quizzle & LogoGrab",
@@ -64,6 +67,7 @@
   },
   {
     "eventName": "MATH-2-HUNT",
+    "category": "Brainiac",
     "one_line_desc": "",
     "description": "Math-2-hunt is a team event, consisting of three rounds which will surely awaken the young Ramanujan inside everyone. The first round consists of solving a few questions among which zero is the answer for some questions. To win this round, all the zeros should be found. We the Indians are the best at handling Zeros. Round 2 contains Questions filled in a box, every team has to take a question randomly and solve it. It also contains Bonus and Devil questions.  Mathematicians don't believe in Devil, they just smash it.   Last but not least. Round 3 contains simple mathematical calculations. But the twist is that calculators will not be allowed. Common young mathematicians, unleash the Ramanujan hiding inside you.",
     "round_title_1": "Zeros makes you heroes",
@@ -85,6 +89,7 @@
   },
   {
     "eventName": "Fortunatrix",
+    "category": "Management",
     "one_line_desc": "",
     "description": "An intriguing technical event based on a popular game show, this event tests the knowledge of the  participants in diverse fields such as electronics, programming, mathematics, science and so on. The  participants must use all their technical prowess in order to answer mind-boggling questions and move on  to the next round where their fate is decided by their luck as well as their skills. Spin the wheel, use your  wit to complete the given tasks quick as lightning and compete against your opponents to reach the top of  the scoreboard and win the game!",
     "round_title_1": "Round 1",
@@ -106,6 +111,7 @@
   },
   {
     "eventName": "Mech Maniacs",
+    "category": "Core Engineering",
     "one_line_desc": "",
     "description": "Are you a Mechanical engineer with passion?, Indian Institution of Industrial Engineering is  coming with an event to show case your core skills!! Participate in the 3 rounds and communicate  your ideas effectively and show case the engineer out of you!!",
     "round_title_1": "MechQuiz",
@@ -127,6 +133,7 @@
   },
   {
     "eventName": "SCAN PLAN AND RECKON",
+    "category": "Core Engineering",
     "one_line_desc": "Civil engineering association presents you an intriguing event, 'SCAN PLAN AND RECON', an arena where you plan with precision and quote your estimation! An interesting event to bring out the Civil engineer in you. All you need for this event is knowledge in AutoCAD software, innovative ideas and the talent of justifying your ideas. If you have a knack for all this, Come and grab your opportunities.",
     "description": "Civil engineering association presents you an intriguing event, 'SCAN PLAN AND RECON', an arena where you plan with precision and quote your estimation! An interesting event to bring out the Civil engineer in you. All you need for this event is knowledge in AutoCAD software, innovative ideas and the talent of justifying your ideas. If you have a knack for all this, Come and grab your opportunities.",
     "round_title_1": "ROUGH SKETCH",
@@ -139,7 +146,6 @@
     "round_desc_4": "",
     "eventId": "EVNT0007",
     "contact_name_1": "ELLAKIYAA A",
-    "category": "Core Engineering",
     "contact_mobile_1": 7598436113,
     "contact_name_2": "GOKUL RAM C",
     "contact_mobile_2": 9361135851,
@@ -171,6 +177,7 @@
   },
   {
     "eventName": "Maze Runner",
+    "category": "Kriyative",
     "one_line_desc": "",
     "description": "Robotics has come a long way, from being a story to reality. The imagination has come a long way to where we are now witnessing AI-driven autonomous machines receiving citizenships as digital humans. The main objectives of robotics are represented by intelligent machines that can assist personage in their day-to-day lives and keep everyone safe and secure. The evolution of robotics can surrogate for humans and replicate human actions. Over the years, robotics and artificial intelligence have made a quantum jump. Our event embodies the same idea into reality by expanding our understanding of robotics and its vast application in various walks of life. The event is specially curated for curious minds interested in the design and modeling of robots. This time-sensitive contest will surely put your minds to the test and scrutinize your passion in this field.",
     "round_title_1": "Round 1",
@@ -192,6 +199,7 @@
   },
   {
     "eventName": "PhyzPro",
+    "category": "Brainiac",
     "one_line_desc": "A team event that will awaken the physics enthusiast in you.",
     "description": "PhyzPro is a team event consisting two rounds which will take you through the expanse of physics. Round one is a fun event where every team must pick a chit containing a word related to physics. A new word, related to physics, is to be framed from the last letter of the chosen word, much like antakshari. In the second round, the qualified participant teams will be displayed a phenomenon related to physics. All teams may guess the answer and will be graded based on the accuracy of the answer. The team that gives the best answer will get all the points auctioned for the question.",
     "round_title_1": "Connection",
@@ -213,6 +221,7 @@
   },
   {
     "eventName": "Traze",
+    "category": "Gold",
     "one_line_desc": "Unlash the power of your engineering expertise and join us for a thought-provoking event and debate on future the future of technology!",
     "description": "Are you an engineering student looking for a new challenge? Then join us for an exciting technical event! TRAZE. This event will give you an opportunity to showcase your skills and gain valuable experience. We promise an engaging, informative, and inspiring experience that will equip our participants with the knowledge and skills needed to excel in their respective fields.",
     "round_title_1": "Round 1",
@@ -234,6 +243,7 @@
   },
   {
     "eventName": "Treasure hunt in metaverse",
+    "category": "Coding",
     "one_line_desc": "A fun filled technica event. It's a Race so don't you dare slacken!",
     "description": "A series of events where you will be judged by how fast you complete it before the others.",
     "round_title_1": "Round 1",
@@ -255,6 +265,7 @@
   },
   {
     "eventName": "FORENCIST",
+    "category": "Kriyative",
     "one_line_desc": "You have the answer. Just get quiet enough to hear it !!!",
     "description": "Forenscist is a team wise event where two rounds will be conducted. The first round will be the selection round which is like to find the imposter in the game within the time limit. Selected teams will further enter the main event of the Forenscist. In second round a plot will be given, the teams should solve the case and find the killer within the time limit.",
     "round_title_1": "Round 1",
@@ -276,6 +287,7 @@
   },
   {
     "eventName": "TRY AND TRUIMPH",
+    "category": "Kriyative",
     "one_line_desc": "Be the mastermind behind your escape",
     "description": "Come and experience a live escape game which challenges your mind. Imagine a place where you are locked up and to escape this place figure out a way by solving the puzzles. Remember there is no room to escape without solving the puzzle. So are you ready to face this imagination in reality!",
     "round_title_1": "Round 1",
@@ -297,6 +309,7 @@
   },
   {
     "eventName": "AUTO-FACSIMILE",
+    "category": "Core Engineering",
     "one_line_desc": "Modelling of the fascinating engineering systems",
     "description": "Hello, avid automobile buddies! Here the Automobile engineering association brings you the event Auto-facsimile. The ideal event to unleash your knowledge and skills of automobiles with 2 rounds of the event with great exposure. The event provides you an opportunity to learn about the car and interact with fellow car geeks. You will get hands-on training in MATLAB and Simulink for modeling the vehicular subsystems. Even if you don't have prior experience, you are most welcome to the event.",
     "round_title_1": "Round 1",
@@ -318,6 +331,7 @@
   },
   {
     "eventName": "QRack IT",
+    "category": "Coding",
     "one_line_desc": "A QR based technical treasure hunt",
     "description": "Think customary treasure hunt without paper chits and witty one liners. In QRack IT there are QR's that must be unlocked using everything from straight forward sorting algorithms to sophisticated decryption strategies. And the combination of all of these hints, cunningly placed, will produce one coherent story.",
     "round_title_1": "Round 1",
@@ -339,6 +353,7 @@
   },
   {
     "eventName": "GREENATORIUM",
+    "category": "Brainiac",
     "one_line_desc": "Build your 'GREEN' Idea",
     "description": "GREENATORIUM is the event which mainly revolves around the core concept of the association i.e. “green building”. In the above event participants will be explained about the concept of green building and will be asked to design their own green building concept in a creative and innovative way using prescribed software or by conventional way of drawing. Then the participants are asked to present their design to the judge and the best and innovative design will be declared as the winner.",
     "round_title_1": "Round 1",
@@ -360,6 +375,7 @@
   },
   {
     "eventName": "Ludovic",
+    "category": "Kriyative",
     "one_line_desc": "Answer - roll the die - climb the hill",
     "description": 2,
     "round_title_1": "Round 1",
@@ -381,6 +397,7 @@
   },
   {
     "eventName": "CRYPTIQUE",
+    "category": "Coding",
     "one_line_desc": "The biggest puzzle here is not the problem but the solution.",
     "description": "Show off your problem-solving skills by solving puzzles. Keep your senses sharp to pick any clues to figure your way out to reach the destination. If you and your buddy are comfortable with Command-Line and willing to challenge yourselves, grab a cup of coffee and figure your way out.",
     "round_title_1": "- Capture The Flag Style game",
@@ -402,6 +419,7 @@
   },
   {
     "eventName": "The Startup challenge",
+    "category": "Management",
     "one_line_desc": "Pitch in your business idea",
     "description": "Number of rounds -2",
     "round_title_1": "Round 1",
@@ -423,6 +441,7 @@
   },
   {
     "eventName": "FightByte",
+    "category": "Coding",
     "one_line_desc": "",
     "description": "FightByte is a 3 round, team based technical event for the coders among you. Starting with a chilling Rapid Quizz for our first round, participants will be tested on the basics of different languages The first round being a warm up round, the second round will test the participants intuition and confidence in their coding skills on a fast-paced blind coding battle. For the finale, it will be an epic CSS battle in which their reverse engineering skills to re-create PNGs with minimal code. Come join us and have fun making memories with your friends!",
     "round_title_1": "Round 1",
@@ -444,6 +463,7 @@
   },
   {
     "eventName": "AQUAJET",
+    "category": "Gold",
     "one_line_desc": "Explore your Aerodynamics Skills",
     "description": "Aqua Jet, an entertaining event that requires both interest and skills in fabrication with a basic knowledge in aerodynamics, whereby one has to build plastic soft drink bottle that thrust water as a result of pressurized air to propel the rocket upwards.",
     "round_title_1": "Round 1",
@@ -465,6 +485,7 @@
   },
   {
     "eventName": "Robo Rush",
+    "category": "Gold",
     "one_line_desc": "Everyone get ready with your kitbags. Yeah, Robo Rush is a bot event. Let's hunt our hidden talents in us, This is the event where you can show your creativity and problem-solving skills to find the solutions for real-time problems, here's your chance to display it!",
     "description": "The goal of the contest is to construct your own robot that satisfies industrial needs. It is an industrial collaborative event where the winners are provided with an internship at Emerald Industries. The contest is to be held in two parts. The first part is that the bot can pick up & carry blocks, pass through obstacles, and push the blocks. The winning criteria are based on the number of blocks carried, the distance successfully pushed, and the time taken. Bot 'dimensions': 30x30x30 cm. Bot weight: less than 10 kg. The second part is to automate the silver idol’s eye-marking process. The bot needs to pick the idols or they can be manually fed at single time. Then, the idol’s eyes were marked by any of the processes without damaging the product. After that, the finished products were collected/gathered along a single side. Automation of the process, marking efficiency, capacity, and weight of the bot, determines the winner.",
     "round_title_1": "Round 1",
@@ -486,6 +507,7 @@
   },
   {
     "eventName": "CAD Enhance",
+    "category": "Core Engineering",
     "one_line_desc": "Visualize the data using the CAD and Excel",
     "description": "Attention to all Automobile fanatics! Here the SOCIETY OF AUTOMOTIVE ENGINEERS brings you the event CAD enhance. The ideal event to unleash your knowledge and skills on data visualization and cad modelling with 2 rounds of the event with great exposure. The event provides you an opportunity to learn the cad and data visualization software. You will get hands-on experience in the CAD software during the event. Even if you don't have prior experience, you are most welcome to the event.",
     "round_title_1": "Round 1",
@@ -507,6 +529,7 @@
   },
   {
     "eventName": "ELECTORAPTORS",
+    "category": "Management",
     "one_line_desc": "As electricity ⚡️ is the flow of the electric power🔋 /charge, we cordially invite 🙏 the circuit branches 💡to flow their remembrance 📚and ideation faab in our event.",
     "description": "ok",
     "round_title_1": "Round 1",
@@ -528,6 +551,7 @@
   },
   {
     "eventName": "MECHANICAL Maestro V2.O",
+    "category": "Core Engineering",
     "one_line_desc": "Visualise Your Mechanism",
     "description": "American Society of Mechanical Engineers is providing an arena to showcase your intellectual skills and  mastery in Mechanical engineering through ‘Mechanical Maestro’. If you are brave enough to venture out  to showcase your expertise in solving real life problems and articulate the same in the best possible way, do  sign up to prove your mettle.",
     "round_title_1": "Round 1",
@@ -549,6 +573,7 @@
   },
   {
     "eventName": "The Darwinian game",
+    "category": "Brainiac",
     "one_line_desc": "",
     "description": "The Darwinian game is based upon the theory proposed by British naturalist Charles Darwin in which the fittest among different species will be surviving till the end popularly quoted as 'Survival of the fittest' A team will be consisting of two heads. A total of four rounds will be conducted. The difficulty level of the quiz will be increasing gradually in the upcoming rounds. The questions will be from the mechanical background.",
     "round_title_1": "Round 1",
@@ -570,6 +595,7 @@
   },
   {
     "eventName": "TECHORYX",
+    "category": "Coding",
     "one_line_desc": "Innovation empowering society",
     "description": "“An invasion of armies can be resisted, but not an idea whose time has come.” We present to you TECHORYX, a hackathon to test your innovative thinking and creational skills! In this hackathon, participants will race against time to build a novel solution to the theme given, in order to claim their spots in the finals, where they will present their ideas to our eminent jury. This hackathon is not for the simple 'minded': the biggest and most enthusiastic minds can make use of this great opportunity to come together and create magic! Come on, let’s ideate, develop products and be the catalysts that bring innovation to the world!",
     "round_title_1": "Round 1",
@@ -591,6 +617,7 @@
   },
   {
     "eventName": "Quizpicable me",
+    "category": "Brainiac",
     "one_line_desc": "Binge watchers...... ASSEMBLE!!!!!!",
     "description": "Quizpicable Me, an entertaining quiz competition on cinefest. The contestants must have both nerdical and fa(n)ctual knowledge about sci-fi Movies, TV series etc, to outshine others. This quiz tests the technical knowledge related to cinema as well. Gear up for a fun-filled trivia.",
     "round_title_1": "Round 1",
@@ -612,6 +639,7 @@
   },
   {
     "eventName": "Metaract",
+    "category": "Management",
     "one_line_desc": "Are you interested in exploring your knowledge in metallurgical domain? Are u ready to invest your quality time to unfold your knowledge?   Hey Meta-minds get ready to explore your metallurgical knowledge through 'Metaract', an exciting event exclusively for you .",
     "description": "Metaract comprises of four rounds which includes technical puzzles, group discussion, timeline, and case studies. It mainly priorities the understanding of the facts of metallurgical domains. This event enhances the critical solutionizing, interpersonal skills, and competitive abilities amongst participants.",
     "round_title_1": "Interference Visuelle",
@@ -633,6 +661,7 @@
   },
   {
     "eventName": "Pro-Shopper",
+    "category": "Kriyative",
     "one_line_desc": "“UNLEASH THE SHOPPER IN YOU”",
     "description": "An event which evokes a sense of mystery, elegance, opulence and become the character of your dreams. Bring your shadow of the dark and showcase your creativity through mask styling. This would be a event which has creative rounds that will make you involved in creating your own fashion. Surf across various internet sources finds different style and create your own look by collaging them. Its consists of three rounds quiz, pro-shopper and masquerade. Each round tests your fashion sense and proper usage of elements and principles of design.",
     "round_title_1": "Round 1",
@@ -654,6 +683,7 @@
   },
   {
     "eventName": "Tech-zap",
+    "category": "Gold",
     "one_line_desc": "The battle for 3s for the 4 th.      1C - cogitation , 2C - creativity, 3C - careful analysis for the 4 C - Champion .",
     "description": "During the first round , all participants will be given a crossword puzzle to solve in 20 minutes while answering technical questions. The top twenty teams will advance to the next  round. Round 2 delves into matching of famous tag lines with the products. The top ten teams will advance to the next round. Round 3 delves into marketing strategies for effectively advertising a given product. Come and join for us for this event to demonstrate your puzzle solving abilities and creativity in handling the given task.",
     "round_title_1": "Round 1",
@@ -675,6 +705,7 @@
   },
   {
     "eventName": "FUTECH",
+    "category": "Circuit",
     "one_line_desc": "FUTECH is an event based on electronics. This will test your analytic skill and hasty execution in that domain.",
     "description": "FUTECH as two technical and fun rounds, 1st you gotta solve some simple tricky question for a cross word puzzle then do a quick dare in between. People who did well, welcome to the 2nd round of FUTECH! The real fun of exploring partnership, communication and critical thinking when facing a technical problem.",
     "round_title_1": "Round 1",
@@ -696,6 +727,7 @@
   },
   {
     "eventName": "Scienza",
+    "category": "Brainiac",
     "one_line_desc": "Increase your velocity of pleasure!!  The fast you act, the higher chances to top!",
     "description": "Increase your velocity of pleasure!!  The fast you act, the higher chances to top! The first round tests your responsive time and your rapid ability to solve problem. The second round examines your strength in general science (physics and chemistry) and your  writing ability.",
     "round_title_1": "Round 1",
@@ -717,6 +749,7 @@
   },
   {
     "eventName": "ProTech",
+    "category": "Gold",
     "one_line_desc": "This will be a technical competition that attempts to develop young people's tech knowledge over a series of three rounds that will grow progressively harder and more engaging.",
     "description": "This is a technical event that aims to bring out the tech savvy in young minds. the event comprises of three rounds, which consecutively gets more challenging. All the rounds are engineered to accommodate participants from all technical departments, however prior knowledge in physics, Science or Coding is a prerequisite to the participants in the event",
     "round_title_1": "Round 1",
