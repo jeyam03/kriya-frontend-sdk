@@ -223,7 +223,7 @@ const Section1 = () => {
             Stay tuned for the forefront of technological advancements and gain
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </div>
-          <div className="text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-16">
+          <div className="text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-16 mr-8 lg:mr-0 text-center lg:text-left">
             ✨ Registrations opening soon ! ✨
           </div>
         </div>
