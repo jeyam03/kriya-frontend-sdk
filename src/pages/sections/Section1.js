@@ -131,9 +131,9 @@ const Section1 = () => {
         ></div>
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:p-24 lg:pb-12 lg:pt-36 flex flex-col justify-between">
-        <div className="w-full font-poppins text-xl lg:text-2xl font-semibold tracking-wider">
-          <span className="text-[#C80067]">Mar</span> 24, 25 and 26
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:px-20 lg:pb-12 lg:pt-36 flex flex-col justify-between">
+        <div className="w-full font-poppins text-xl font-semibold tracking-wider">
+          <span className="text-[#C80067]">Mar</span> 24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
         </div>
         <div className="lg:hidden w-full h-[50%] relative">
           <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
@@ -166,14 +166,17 @@ const Section1 = () => {
             The Global Clash of Techno Talents.
           </span>
         </h1>
-        <div className="hidden lg:block w-full font-poppins pr-8 text-sm lg:text-base">
-          Stay tuned for the forefront of technological advancements and gain valuable insights at our upcoming technical symposium Kriya 2023 !
-        </div>
-        <div className="text-2xl uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067] pr-16">
-          Registrations opening soon !
+        <div className="space-y-8">
+          <div className="hidden lg:block w-full font-poppins pr-8 text-sm lg:text-base">
+            Stay tuned for the forefront of technological advancements and gain valuable insights at our upcoming technical symposium Kriya 2023 !
+          </div>
+          <div className="text-lg font-semibold w-fit font-poppins bg-[#C80067] text-white px-4 py-3 rounded-lg shadow-gray-400 shadow-lg hover:scale-110 transition-all mr-8 text-center lg:text-center">
+            ✨ Registrations opening soon ! ✨
+          </div>
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4">
-          <div className="w-24 h-24"
+          <div
+            className="w-16 h-auto"
             style={{
               background: `url(https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png)`,
               backgroundPosition: "center",
@@ -181,21 +184,48 @@ const Section1 = () => {
               backgroundSize: "contain",
             }}
           ></div>
-          <div className="space-y-1 lg:space-y-2 text-sm lg:text-base">
-            <div className="font-semibold tracking-wider w-full font-poppins pr-16">
+          <div className=" text-sm lg:text-base">
+            <p className="uppercase tracking-wider w-full font-poppins pr-16 text-sm">
               Presented By
-            </div>
-            <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+            </p>
+            <p className="font-semibold tracking-wider w-full font-poppins pr-16 mt-2">
               Students Union
-            </div>
-            <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+            </p>
+            <p className="tracking-wider w-full font-poppins pr-16 text-xs mt1">
               PSG College of Technology
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="hidden lg:block w-[5vw] h-[70%] bg-[#7300fe]"></div>
+      <div className="hidden lg:block w-[5vw] h-[70%] bg-[#7300fe]">
+        <div className="w-full h-full relative">
+          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
+            style={{
+              background: `url(${slides[0]})`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
+            style={{
+              background: `url(${slides[1]})`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
+            style={{
+              background: `url(${slides[2]})`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        </div>
+      </div>
     </section>
   );
 };
