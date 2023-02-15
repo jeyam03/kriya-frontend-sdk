@@ -76,6 +76,7 @@ const Section7 = () => {
             We bring our creativity and attention to detail to every event we
             plan, ensuring a seamless and unforgettable experience for you all.
           </p>
+          <ImageGrid vertical="Office Bearers" />
           <ImageGrid vertical="Ambience and Creativity" />
           <ImageGrid vertical="App and Web Development" />
           <ImageGrid vertical="Design" />
@@ -156,10 +157,10 @@ const ImageGrid = ({ vertical }) => {
     <React.Fragment>
       <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
       <div className="flex flex-wrap gap-2 w-full">
-        {TeamDetails.filter((i) => i.category === vertical).map((item, i) => {
+        {TeamDetails.filter((i) => i.vertical === vertical).map((item, i) => {
           return (
             <div
-              className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
+              className="w-24 h-24 lg:w-36 lg:h-36 aspect-square overflow-hidden"
               id="flip-card"
             >
               <div className="w-full h-full" id="flip-card-inner">
@@ -167,7 +168,7 @@ const ImageGrid = ({ vertical }) => {
                   loading="lazy"
                   className="w-full h-full "
                   style={{
-                    background: `url(${item.image_url})`,
+                    background: `url(${item.image_url}), #f5f5f5`,
                     backgroundPosition: "top",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
@@ -180,7 +181,7 @@ const ImageGrid = ({ vertical }) => {
                   id="flip-card-back"
                 >
                   <h3 className="text-sm font-semibold">{item.name}</h3>
-                  {/* <p className="text-xs">{item.position}</p> */}
+                  <p className="text-xs">{item.position}</p>
                 </div>
               </div>
             </div>

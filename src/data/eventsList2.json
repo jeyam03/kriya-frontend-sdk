@@ -127,7 +127,7 @@
   },
   {
     "eventName": "SCAN PLAN AND RECKON",
-    "one_line_desc": "",
+    "one_line_desc": "Civil engineering association presents you an intriguing event, 'SCAN PLAN AND RECON', an arena where you plan with precision and quote your estimation! An interesting event to bring out the Civil engineer in you. All you need for this event is knowledge in AutoCAD software, innovative ideas and the talent of justifying your ideas. If you have a knack for all this, Come and grab your opportunities.",
     "description": "Civil engineering association presents you an intriguing event, 'SCAN PLAN AND RECON', an arena where you plan with precision and quote your estimation! An interesting event to bring out the Civil engineer in you. All you need for this event is knowledge in AutoCAD software, innovative ideas and the talent of justifying your ideas. If you have a knack for all this, Come and grab your opportunities.",
     "round_title_1": "ROUGH SKETCH",
     "round_desc_1": "Participants should prepare a Line sketch for the specified type of building with the",
@@ -139,6 +139,7 @@
     "round_desc_4": "",
     "eventId": "EVNT0007",
     "contact_name_1": "ELLAKIYAA A",
+    "category": "Core Engineering",
     "contact_mobile_1": 7598436113,
     "contact_name_2": "GOKUL RAM C",
     "contact_mobile_2": 9361135851,
@@ -148,7 +149,7 @@
   },
   {
     "eventName": "Pro Shopper",
-    "one_line_desc": "",
+    "one_line_desc": "A chance to unleash the fashion designer within you. The event is of two rounds. A theme should be selected from a given set of themes, then it’s all set. You can start shopping across the various different online shopping sites, but make sure you stick with the given budget for shopping. Show your creative side of creating the best look. After shopping create a costing sheet and collage of the garment by filling it in the given presentation template.",
     "description": "A chance to unleash the fashion designer within you. The event is of two rounds. A theme should be selected from a given set of themes, then it’s all set. You can start shopping across the various different online shopping sites, but make sure you stick with the given budget for shopping. Show your creative side of creating the best look. After shopping create a costing sheet and collage of the garment by filling it in the given presentation template.",
     "round_title_1": "Round 1",
     "round_desc_1": "In this round the teams should select a theme from a list of given themes and a budget will be given on the spot to all the teams to do shopping. In the given time, start shopping across the various online shopping sites by collecting pictures of the garments/ accessories along with its price. Make sure that, it is within the given budget. Arrange the selected pictures in the given template and also attach the price & link of the garments in the powerpoint or canva template. 15 teams will be short-listed to the final round based on the total look of the garment created and relevance to the given theme. For example, if the given theme is “beach”,the budget is Rs 50000, you have to shop a loose fitted shirt with a boxers along with any other matching components and accessories within the given budget (eg: t-shirts, shoes, coolers, chains etc….)",
@@ -165,6 +166,7 @@
     "contact_mobile_2": "80123 26847",
     "hall": "G508,G509",
     "eventRules": "",
+    "category": "Core Engineering",
     "timing": "9am to 12pm"
   },
   {

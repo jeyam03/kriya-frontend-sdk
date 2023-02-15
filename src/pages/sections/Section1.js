@@ -55,28 +55,19 @@ const Section1 = () => {
         <div className="space-y-4 flex flex-col items-start justify-start">
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section3");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Events
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section5");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
-          >
-            Paper Presentations
-          </button>
-          <button
-            onClick={() => {
-              const element = document.querySelector("#section4");
-              element.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Workshops
           </button>
@@ -85,25 +76,34 @@ const Section1 = () => {
               const element = document.querySelector("#section4");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
+          >
+            Paper Presentations
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section7");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Our Team
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section8");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             FAQ
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section9");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Contact Us
           </button>
@@ -142,36 +142,19 @@ const Section1 = () => {
       </div>
 
       <div className="hidden lg:block w-[35vw] h-full relative">
-        <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 0 ? "opacity-100" : "opacity-0"
+        {slides.map((slide, index) => (
+          <div
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+              currentSlide === index ? "opacity-100" : "opacity-0"
             }`}
-          style={{
-            background: `url(${slides[0]})`,
-            backgroundPosition: "50% 50%  ",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
-        <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 1 ? "opacity-100" : "opacity-0"
-            }`}
-          style={{
-            background: `url(${slides[1]})`,
-            backgroundPosition: "50% 50%  ",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
-        <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 2 ? "opacity-100" : "opacity-0"
-            }`}
-          style={{
-            background: `url(${slides[2]})`,
-            backgroundPosition: "50% 50%  ",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
+            style={{
+              background: `url(${slides[index]})`,
+              backgroundPosition: "50% 50%  ",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        ))}
       </div>
 
       <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col justify-between">
@@ -182,36 +165,19 @@ const Section1 = () => {
           24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
         </div>
         <div className="lg:hidden w-full h-[50%] relative">
-          <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"
+          {slides.map((slide, index) => (
+            <div
+              className={`w-full h-full absolute top-0 right-0 left-0 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
               }`}
-            style={{
-              background: `url(${slides[0]})`,
-              backgroundPosition: "50% 50%  ",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"
-              }`}
-            style={{
-              background: `url(${slides[1]})`,
-              backgroundPosition: "50% 50%  ",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"
-              }`}
-            style={{
-              background: `url(${slides[2]})`,
-              backgroundPosition: "50% 50%  ",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+              style={{
+                background: `url(${slides[index]})`,
+                backgroundPosition: "50% 50%  ",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            ></div>
+          ))}
         </div>
         <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-40 lg:mt-8">
           <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[4rem] relative z-10 whitespace-pre-line">
@@ -241,10 +207,10 @@ const Section1 = () => {
             <p className="uppercase tracking-wider w-full font-poppins pr-16 text-sm">
               Presented By
             </p>
-            <p className="font-semibold tracking-wider w-full font-poppins pr-16 mt-2">
+            <p className="font-semibold w-full font-poppins pr-16 mt-2">
               Students Union
             </p>
-            <p className="tracking-wider w-full font-poppins pr-16 text-xs mt1">
+            <p className="w-full font-poppins pr-16 text-xs mt1">
               PSG College of Technology
             </p>
           </div>
@@ -253,30 +219,19 @@ const Section1 = () => {
 
       <div className="hidden lg:block w-[5vw] h-[70%] bg-[#7300fe]">
         <div className="w-full h-full relative">
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
-            style={{
-              background: `url(${slides[0]})`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
-            style={{
-              background: `url(${slides[1]})`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
-            style={{
-              background: `url(${slides[2]})`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          {slides.map((slide, index) => (
+            <div
+              className={`w-full h-full absolute top-0 right-0 left-0 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
+                backgroundPosition: "left",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            ></div>
+          ))}
         </div>
       </div>
     </section>
