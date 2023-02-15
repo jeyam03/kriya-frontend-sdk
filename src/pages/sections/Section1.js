@@ -143,9 +143,8 @@ const Section1 = () => {
 
       <div className="hidden lg:block w-[35vw] h-full relative">
         <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
-            currentSlide === 0 ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 0 ? "opacity-100" : "opacity-0"
+            }`}
           style={{
             background: `url(${slides[0]})`,
             backgroundPosition: "50% 50%  ",
@@ -154,9 +153,8 @@ const Section1 = () => {
           }}
         ></div>
         <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
-            currentSlide === 1 ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 1 ? "opacity-100" : "opacity-0"
+            }`}
           style={{
             background: `url(${slides[1]})`,
             backgroundPosition: "50% 50%  ",
@@ -165,9 +163,8 @@ const Section1 = () => {
           }}
         ></div>
         <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
-            currentSlide === 2 ? "opacity-100" : "opacity-0"
-          }`}
+          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 2 ? "opacity-100" : "opacity-0"
+            }`}
           style={{
             background: `url(${slides[2]})`,
             backgroundPosition: "50% 50%  ",
@@ -177,7 +174,7 @@ const Section1 = () => {
         ></div>
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:px-20 lg:pb-12 lg:pt-20 flex flex-col justify-between">
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col justify-between">
         <div className="w-full font-poppins text-lg lg:text-lg font-semibold tracking-wider text-gray-600">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
             Mar
@@ -186,9 +183,8 @@ const Section1 = () => {
         </div>
         <div className="lg:hidden w-full h-[50%] relative">
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${
-              currentSlide === 0 ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               background: `url(${slides[0]})`,
               backgroundPosition: "50% 50%  ",
@@ -197,9 +193,8 @@ const Section1 = () => {
             }}
           ></div>
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${
-              currentSlide === 1 ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               background: `url(${slides[1]})`,
               backgroundPosition: "50% 50%  ",
@@ -208,9 +203,8 @@ const Section1 = () => {
             }}
           ></div>
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${
-              currentSlide === 2 ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               background: `url(${slides[2]})`,
               backgroundPosition: "50% 50%  ",
@@ -229,7 +223,7 @@ const Section1 = () => {
             Stay tuned for the forefront of technological advancements and gain
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </div>
-          <div className="text-lg font-semibold w-full font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-16">
+          <div className="text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-16">
             ✨ Registrations opening soon ! ✨
           </div>
         </div>
