@@ -65,7 +65,7 @@ const Section5 = () => {
     <div className="w-full relative">
       <section
         id="section5"
-        className="w-screen relative flex flex-col lg:flex-row items-start workshop-text opacity-0"
+        className="w-screen relative flex flex-col lg:flex-row items-start workshop-text opacity-0 pb-24"
       >
 
         <div

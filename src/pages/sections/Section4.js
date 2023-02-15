@@ -64,12 +64,12 @@ const Section4 = ({ scrollYByVH }) => {
               setOnMouseHoverIndex={setOnMouseHoverIndex}
               title="Paper Presentation Three"
             />
-            <PaperPresentationItemDesktop
+            {/* <PaperPresentationItemDesktop
               index={4}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
               title="Paper Presentation Four"
-            />
+            /> */}
           </div>
         </div>
 
