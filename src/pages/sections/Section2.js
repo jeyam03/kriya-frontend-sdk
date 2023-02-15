@@ -83,26 +83,11 @@ const Section2 = ({ scrollYByVH }) => {
   };
 
   useEffect(() => {
-    const element = document.querySelector("#anchor1");
+    const element = document.querySelector("#anchor2");
     const numberTags = document.querySelectorAll(".number-tag");
     const calenderTexts = document.querySelectorAll(".calender-text");
     const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   numberTags.forEach((numberTag) => {
-      //     numberTag.classList.add("animate-fade-in-bottom");
-      //   });
-      //   calenderTexts.forEach((calenderText) => {
-      //     calenderText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   numberTags.forEach((numberTag) => {
-      //     numberTag.classList.remove("animate-fade-in-bottom");
-      //   });
-      //   calenderTexts.forEach((calenderText) => {
-      //     calenderText.classList.remove("animate-fade-in");
-      //   });
-      // }
+
       numberTags.forEach((numberTag) => {
         numberTag.classList.add("animate-fade-in-bottom");
       });
@@ -181,7 +166,7 @@ const Section2 = ({ scrollYByVH }) => {
           />
         </div>
       </section>
-      <a id="anchor1" className="absolute top-[35%] w-full h-20"></a>
+      <a id="anchor2" className="absolute top-[35%] w-full h-20"></a>
     </div>
   );
 };
