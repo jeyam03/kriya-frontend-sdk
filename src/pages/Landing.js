@@ -59,16 +59,6 @@ const Landing = () => {
           Events
         </button>
         <button
-          onClick={(e) => {
-            const element = document.getElementById("section4");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-        >
-          Paper Presentations
-        </button>
-        <button
           className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
             } transition-all`}
           onClick={(e) => {
@@ -79,15 +69,22 @@ const Landing = () => {
           Workshops
         </button>
         <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
           onClick={(e) => {
-            const element = document.getElementById("section6");
+            const element = document.getElementById("section4");
             element.scrollIntoView({ behavior: "smooth" });
           }}
+          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
         >
-          Sponsors
+          Paper Presentations
         </button>
+        <Link
+          to="/auth"
+          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
+            } transition-all`}
+        >
+          Schedule
+        </Link>
         <div
           className="w-48 h-full"
           style={{
@@ -168,9 +165,9 @@ const Landing = () => {
         <Section1 />
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
-        <Section4 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
-        <Section6 scrollYByVH={consolee} />
+        <Section4 scrollYByVH={consolee} />
+        {/* <Section6 scrollYByVH={consolee} /> */}
         <Section7 scrollYByVH={consolee} />
         <Section8 />
         <Section9 />
