@@ -1,10 +1,36 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 
 //  Landing
 
 const Section1 = () => {
+  const slides = ["https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg", "https://res.cloudinary.com/dksmk66vo/image/upload/v1675875367/1674280844981_qosaib.jpg"];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const timeoutRef = React.useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  React.useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setCurrentSlide((prevIndex) =>
+          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        ),
+      2500
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [currentSlide]);
+
   return (
     <section
       id="section1"
@@ -74,36 +100,63 @@ const Section1 = () => {
         </div>
       </div>
 
-      <div
-        className="w-[35vw] h-full"
-
+      <div className="hidden lg:block w-[35vw] h-full"
         style={{
-          background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg)`,
+          // transform: `translate3d(${-currentSlide * 100}%, 0, 0)`,
+          background: `url(${slides[currentSlide]})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
       ></div>
 
-      <div className="w-[35vw] h-[75%] p-24 flex flex-col justify-between">
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pt-20 pb-8 lg:p-24 lg:py-12 flex flex-col justify-between">
+        <div className="w-full h-24"
+          style={{
+            background: `url(https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png)`,
+            backgroundPosition: "right",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+        >
+        </div>
         <div className="w-full font-poppins text-2xl font-semibold tracking-wider">
           <span className="text-[#C80067]">Mar</span> 24, 25 and 26
         </div>
-        <h1 className="uppercase w-full font-poppins text-4xl font-semibold -ml-48">
+        <div className="lg:hidden w-full h-[50%]"
+          style={{
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg)`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+        </div>
+        <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-36 lg:-mt-0">
           <span className="bg-[#7300fe] text-white leading-[4rem] px-2">
             The Global Clash of Techno Talents.
           </span>
         </h1>
-        <div className="w-full font-poppins">
-          Stay tuned for the forefront of technological advancements and gain
-          valuable insights at our upcoming technical symposium Kriya 2023 !
+        <div className="w-full font-poppins pr-8 text-sm lg:text-base">
+          Stay tuned for the forefront of technological advancements and gain valuable insights at our upcoming technical symposium Kriya 2023 !
         </div>
-        <div className="uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067]">
+        <div className="uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067] pr-16">
           Registrations opening soon !
+        </div>
+        <div className="space-y-2">
+          <div className="font-semibold tracking-wider w-full font-poppins pr-16">
+            Presented By
+          </div>
+          <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+            Students Union
+          </div>
+          <div className="uppercase font-semibold tracking-wider w-full font-poppins pr-16">
+            PSG College of Technology
+          </div>
         </div>
       </div>
 
-      <div className="w-[5vw] h-[70%] bg-[#7300fe]"></div>
+      <div className="hidden lg:block w-[5vw] h-[70%] bg-[#7300fe]"></div>
     </section>
   );
 };

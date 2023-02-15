@@ -70,7 +70,6 @@ const Landing = () => {
         <Section1 />
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
-        <Section4 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
         {/* <Section6 scrollYByVH={consolee} /> */}
         <div className="section w-screen h-96 bg-black"></div>
