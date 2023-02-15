@@ -86,7 +86,7 @@ const Section1 = () => {
       >
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pt-20 pb-8 lg:p-24 lg:py-12 flex flex-col justify-between">
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 py-8 lg:p-24 lg:py-12 flex flex-col justify-between">
         <div className="w-full h-24"
           style={{
             background: `url(https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png)`,
@@ -96,7 +96,7 @@ const Section1 = () => {
           }}
         >
         </div>
-        <div className="w-full font-poppins text-2xl font-semibold tracking-wider">
+        <div className="w-full font-poppins text-xl lg:text-2xl font-semibold tracking-wider">
           <span className="text-[#C80067]">Mar</span> 24, 25 and 26
         </div>
         <div className="lg:hidden w-full h-[50%]"
@@ -108,7 +108,7 @@ const Section1 = () => {
           }}
         >
         </div>
-        <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-36 lg:-mt-0">
+        <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-40 lg:-mt-0">
           <span className="bg-[#7300fe] text-white leading-[4rem] px-2">
             The Global Clash of Techno Talents.
           </span>
@@ -119,7 +119,7 @@ const Section1 = () => {
         <div className="uppercase font-semibold tracking-wider w-full font-poppins text-[#C80067] pr-16">
           Registrations opening soon !
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1 lg:space-y-2 text-sm lg:text-base">
           <div className="font-semibold tracking-wider w-full font-poppins pr-16">
             Presented By
           </div>
