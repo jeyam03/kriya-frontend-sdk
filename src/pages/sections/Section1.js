@@ -177,7 +177,7 @@ const Section1 = () => {
         ></div>
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:p-24 lg:pb-12 lg:pt-20 flex flex-col justify-between">
+      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:px-20 lg:pb-12 lg:pt-20 flex flex-col justify-between">
         <div className="w-full font-poppins text-lg lg:text-lg font-semibold tracking-wider text-gray-600">
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
             Mar
@@ -230,7 +230,7 @@ const Section1 = () => {
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </div>
           <div className="text-lg font-semibold w-full font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-16">
-            ✨ Registrations opening soon !✨
+            ✨ Registrations opening soon ! ✨
           </div>
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4">
