@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
 import { fetchWorkshops } from "../../API/call";
-import { Link, useNavigate } from "react-router-dom";
-import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 // Workshops
 
@@ -23,6 +22,16 @@ const Section5 = () => {
     const element = document.querySelector("#anchor6");
     const workshopTexts = document.querySelectorAll(".workshop-text");
     const observer = new IntersectionObserver((entries) => {
+      // console.log(entries[0].isIntersecting);
+      // if (entries[0].isIntersecting) {
+      //   teamTexts.forEach((eventsText) => {
+      //     eventsText.classList.add("animate-fade-in");
+      //   });
+      // } else {
+      //   teamTexts.forEach((eventsText) => {
+      //     eventsText.classList.remove("animate-fade-in");
+      //   });
+      // }
       workshopTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });
@@ -86,22 +95,17 @@ const Section5 = () => {
           id="left-workshop-grid"
         >
           <div className="flex-1"></div>
-          <div className="lg:w-[calc(100vw-75vw)] px-6 pt-56 flex flex-col items-end space-y-12">
+          <div className="lg:w-[calc(100vw-50vw)] pr-8 pt-96">
             {fetchWorkshops().map((item, index) => (
-              (index % 2 === 0) && (
-                <WorkshopGrid
+              (index % 2 === 0) ? (
+                <RightImage
                   number={index + 1}
                   imgurl={item.image}
                   id={item.wid}
                   title={item.workName}
                 />
-              )
-            ))}
-          </div>
-          <div className="lg:w-[calc(100vw-75vw)] mr-8 px-6 pt-96 flex flex-col items-start space-y-12">
-            {fetchWorkshops().map((item, index) => (
-              (index % 2 === 1) && (
-                <WorkshopGrid
+              ) : (
+                <LeftImage
                   number={index + 1}
                   imgurl={item.image}
                   id={item.wid}
@@ -113,7 +117,8 @@ const Section5 = () => {
         </div>
 
 
-        <div className="lg:hidden w-full p-8 pt-20">
+
+        <div className="lg:hidden w-full p-8 pt-0">
           <h1 className={`text-4xl font-poppins font-semibold workshop-text opacity-0 text-center`}>
             Join the
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
@@ -123,64 +128,97 @@ const Section5 = () => {
           </h1>
         </div>
 
-        <div className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-6`}>
-          {fetchWorkshops().map((item, index) => (
-            <WorkshopGrid
-              number={index + 1}
-              imgurl={item.image}
-              id={item.wid}
-              title={item.workName}
-            />
-          ))}
+        <div className={`lg:hidden items-center w-full font-poppins py-8`}>
+          <div className="py-4">
+            {fetchWorkshops().map((item, index) => (
+              (index % 2 === 0) ? (
+                <RightImage
+                  number={index + 1}
+                  imgurl={item.image}
+                  id={item.wid}
+                  title={item.workName}
+                />
+              ) : (
+                <LeftImage
+                  number={index + 1}
+                  imgurl={item.image}
+                  id={item.wid}
+                  title={item.workName}
+                />
+              )
+            ))}
+          </div>
         </div>
       </section>
-      <a id="anchor6" className="absolute top-[90%] w-full h-1"></a>
+      <a id="anchor6" className="absolute top-[75%] w-full h-20"></a>
     </div>
   );
 };
 
 export default Section5;
 
-const WorkshopGrid = ({ number, imgurl, title, id }) => {
+const LeftImage = ({ number, imgurl, title, id }) => {
 
   const navigate = useNavigate();
 
   return (
-    <div className="">
-      <div className="w-[20rem] lg:w-[22rem] h-96">
-        <div className="h-full p-2 pt-4 rounded-2xl flex flex-col items-center justify-between bg-gray-200">
-          <div className={`bg-opacity-50 flex w-72 lg:w-80 h-52`}
+    <div className="flex flex-row justify-end">
+      <button className="w-full h-full flex flex-row justify-end" onClick={() => navigate(`/portal/workshop/${id}`)}>
+        <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+          }}>
+          <div
             style={{
-              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
-            }}>
-            <div
-              style={{
-                background: `url("${imgurl}")`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover"
-              }}
-              className={`w-full h-full rounded-2xl`}></div>
+              background: `url("${imgurl}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover"
+            }}
+            className={`w-full h-full hover:scale-110 transition-all`}></div>
+        </div>
+        <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-r border-r-gray-300 p-4 flex flex-row items-end space-x-4">
+          <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold text-left">
+            {title}
           </div>
-          <div className="flex flex-row w-full justify-between items-center p-4">
-            <div className="">
-              <div className="text-sm lg:text-lg w-[75%] pb-4 font-semibold text-left">
-                {title}
-              </div>
-              <Link
-                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                to={`/portal/workshop/${id}`}
-              >
-                <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
-              </Link>
-            </div>
-            <div className="text-6xl lg:text-8xl font-semibold text-gray-400">
-              {number}
-            </div>
+          <div className="text-5xl lg:text-8xl font-semibold text-gray-300">
+            {number}
           </div>
         </div>
-      </div>
+      </button>
+    </div>
+  );
+};
+
+const RightImage = ({ number, imgurl, title, id }) => {
+
+  const navigate = useNavigate();
+
+  return (
+    <div className="flex flex-row justify-end">
+      <button className="w-full h-full flex flex-row justify-end" onClick={() => navigate(`/portal/workshop/${id}`)}>
+        <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-l border-l-gray-300 p-4 flex flex-row items-end space-x-4">
+          <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold text-left">
+            {title}
+          </div>
+          <div className="text-5xl lg:text-8xl font-semibold text-gray-300">
+            {number}
+          </div>
+        </div>
+        <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+          }}>
+          <div
+            style={{
+              background: `url("${imgurl}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+            className={`w-full h-full hover:scale-110 transition-all`}></div>
+        </div>
+      </button>
     </div>
   );
 };
