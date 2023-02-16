@@ -152,7 +152,7 @@
   },
   {
     "wid": "WKSP0004",
-    "image": "https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/R_Programming_in_Data_Analytics-min_cozob1.png",
     "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
     "workName": "R Programming in Data Analytics",
     "date": "",
@@ -221,7 +221,7 @@
   },
   {
     "wid": "WKSP0006",
-    "image": "https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Sensor_Interface_and_Integration-01-min_n718v0.png",
     "assnName": "American Society of Mechanical Engineers",
     "workName": "Sensor Interface and Integration",
     "date": "",
@@ -301,7 +301,7 @@
   },
   {
     "wid": "WKSP0008",
-    "image": "https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570949/Workshop/Nuts_and_Bots_with_naveen_1_mc6blf.png",
     "assnName": "Production Engineering Association",
     "workName": "Nuts and Bolts with Naveen",
     "date": "",
@@ -353,7 +353,7 @@
   },
   {
     "wid": "WKSP0009",
-    "image": "https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Basics_of_ROS_and_Hardware_Interfacing_with_it_mcyp9b.png",
     "assnName": "Robotics & Automation Engineering Association",
     "workName": "Basics of ROS and Hardware Interfacing with it",
     "date": "DAY 1",
@@ -450,5 +450,44 @@
         }
       ]
     ]
+  },
+  {
+    "wid": "WKSP0012",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570948/Workshop/FPGA_based_SoC_Design_1_wuocut.png",
+    "assnName": "",
+    "workName": "FPGA Based System Design",
+    "date": "",
+    "c1Name": "Lokesh Krishnakumar ",
+    "c1Num": "9003033373",
+    "c2Name": "Praveenbabu R S",
+    "c2Num": "9994542649",
+    "desc": "The objective of this workshop is to give an overview of the FPGA design flow and provide experience with various FPGA development tools. This two-day workshop provides an introduction to the Xilinx platform, Introduction to FPGA technology and its capabilities, Overview of design flow for FPGA-based systems, including hardware description languages (HDLs), Hands-on experience with FPGA development tools, such as Xilinx Vivado, Implementation of digital logic designs, including finite state machines and data path circuits, Use of IP cores and embedded processors in FPGA designs, Techniques for debugging and testing FPGA-based systems. At last, the participants will be able to design, simulate, implement and test their own FPGA-based designs by the end of the workshop.",
+    "agenda": ""
+  },
+  {
+    "wid": "WKSP0013",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535553/Workshop/Solaris-min_ydunjb.png",
+    "assnName": "",
+    "workName": "Solaris (Workshop + Skywatch)",
+    "date": "",
+    "c1Name": "BHAVANI K",
+    "c1Num": "7402876123",
+    "c2Name": "HAYAGREEV RETHINAVEL",
+    "c2Num": "9940922937",
+    "desc": "This event consists of a workshop followed by a sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained by the club members, Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by a sky watch for the participants where telescope handling is also taught.",
+    "agenda": ""
+  },
+  {
+    "wid": "WKSP0014",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/World_of_Biotechnology-min_dukug0.png",
+    "assnName": "",
+    "workName": "AI in BioTechnology",
+    "date": "",
+    "c1Name": "",
+    "c1Num": "",
+    "c2Name": "",
+    "c2Num": "",
+    "desc": "",
+    "agenda": ""
   }
 ]

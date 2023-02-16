@@ -47,32 +47,36 @@ const Workshop = () => {
         <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 relative py-12 px-8">
           <div className="text-4xl font-bold mb-8 text-[#3c4043]">Agenda</div>
 
-          <div className="flex flex-row items-center gap-4 mb-8">
-            <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
-              24
-            </p>
-            <div className="flex flex-col">
-              <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
-                March
-              </p>
-              <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
-                2023
-              </p>
-            </div>
-          </div>
-          {workshopDetail.agenda[0].map((item, index) => (
-            <div className="ml-8">
-              <div className="flex flex-row gap-4 items-center">
-                <div className="w-6 h-6 z-10 rounded-full bg-[#3c4043]"></div>
-                <div className="text-xl font-semibold text-[#3c4043]">{item.time}</div>
+          {workshopDetail.agenda.length > 0 && (
+            <div>
+              <div className="flex flex-row items-center gap-4 mb-8">
+                <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
+                  24
+                </p>
+                <div className="flex flex-col">
+                  <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
+                    March
+                  </p>
+                  <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
+                    2023
+                  </p>
+                </div>
               </div>
-              <ol className="list-disc pt-2 border-l-[#3c4043] border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
-                {item.description.map((desc) => (
-                  <li>{desc}</li>
-                ))}
-              </ol>
+              {workshopDetail.agenda[0]?.map((item, index) => (
+                <div className="ml-8">
+                  <div className="flex flex-row gap-4 items-center">
+                    <div className="w-6 h-6 z-10 rounded-full bg-[#3c4043]"></div>
+                    <div className="text-xl font-semibold text-[#3c4043]">{item.time}</div>
+                  </div>
+                  <ol className="list-disc pt-2 border-l-[#3c4043] border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
+                    {item.description.map((desc) => (
+                      <li>{desc}</li>
+                    ))}
+                  </ol>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
 
           {workshopDetail.agenda.length > 1 && (
             <div>
@@ -148,7 +152,7 @@ const Workshop = () => {
               Contact
             </p>
 
-            <div className="flex flex-row items-center gap-8 lg:px-12">
+            <div className="flex flex-row items-center justify-between lg:px-12">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(workshopDetail.c1Name)}
@@ -157,23 +161,25 @@ const Workshop = () => {
                   {workshopDetail.c1Num}
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  window.open(`tel:${workshopDetail.c1Num}`);
-                }}
-              >
-                <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
-              <button
-                onClick={() => {
-                  window.open(`https://wa.me/${workshopDetail.c1Num}`);
-                }}
-              >
-                <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
+              <div className="space-x-8">
+                <button
+                  onClick={() => {
+                    window.open(`tel:${workshopDetail.c1Num}`);
+                  }}
+                >
+                  <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+                <button
+                  onClick={() => {
+                    window.open(`https://wa.me/${workshopDetail.c1Num}`);
+                  }}
+                >
+                  <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-row items-center gap-8 lg:px-12">
+            <div className="flex flex-row items-center justify-between lg:px-12">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(workshopDetail.c2Name)}
@@ -182,20 +188,22 @@ const Workshop = () => {
                   {workshopDetail.c2Num}
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  window.open(`tel:${workshopDetail.c2Num}`);
-                }}
-              >
-                <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
-              <button
-                onClick={() => {
-                  window.open(`https://wa.me/${workshopDetail.c2Num}`);
-                }}
-              >
-                <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
+              <div className="space-x-8">
+                <button
+                  onClick={() => {
+                    window.open(`tel:${workshopDetail.c2Num}`);
+                  }}
+                >
+                  <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+                <button
+                  onClick={() => {
+                    window.open(`https://wa.me/${workshopDetail.c2Num}`);
+                  }}
+                >
+                  <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+              </div>
             </div>
 
             <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ", backgroundSize: "350%" }}>

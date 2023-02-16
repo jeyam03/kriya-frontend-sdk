@@ -172,7 +172,7 @@ const Event = () => {
               Contact
             </p>
 
-            <div className="flex flex-row items-center gap-8 lg:px-12">
+            <div className="flex flex-row items-center justify-between lg:px-12">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_1)}
@@ -181,23 +181,25 @@ const Event = () => {
                   {eventDetail.contact_mobile_1}
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  window.open(`tel:${eventDetail.contact_mobile_1}`);
-                }}
-              >
-                <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
-              <button
-                onClick={() => {
-                  window.open(`https://wa.me/${eventDetail.contact_mobile_1}`);
-                }}
-              >
-                <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
+              <div className="space-x-8">
+                <button
+                  onClick={() => {
+                    window.open(`tel:${eventDetail.contact_mobile_1}`);
+                  }}
+                >
+                  <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+                <button
+                  onClick={() => {
+                    window.open(`https://wa.me/${eventDetail.contact_mobile_1}`);
+                  }}
+                >
+                  <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-row items-center gap-8 lg:px-12">
+            <div className="flex flex-row items-center justify-between lg:px-12">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_2)}
@@ -206,20 +208,22 @@ const Event = () => {
                   {eventDetail.contact_mobile_2}
                 </p>
               </div>
-              <button
-                onClick={() => {
-                  window.open(`tel:${eventDetail.contact_mobile_2}`);
-                }}
-              >
-                <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
-              <button
-                onClick={() => {
-                  window.open(`https://wa.me/${eventDetail.contact_mobile_2}`);
-                }}
-              >
-                <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
-              </button>
+              <div className="space-x-8">
+                <button
+                  onClick={() => {
+                    window.open(`tel:${eventDetail.contact_mobile_2}`);
+                  }}
+                >
+                  <IoMdCall className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+                <button
+                  onClick={() => {
+                    window.open(`https://wa.me/${eventDetail.contact_mobile_2}`);
+                  }}
+                >
+                  <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                </button>
+              </div>
             </div>
 
             <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ", backgroundSize: "350%" }}>
