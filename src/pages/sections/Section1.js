@@ -55,28 +55,19 @@ const Section1 = () => {
         <div className="space-y-4 flex flex-col items-start justify-start">
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section3");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Events
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section5");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
-          >
-            Paper Presentations
-          </button>
-          <button
-            onClick={() => {
-              const element = document.querySelector("#section4");
-              element.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Workshops
           </button>
@@ -85,25 +76,34 @@ const Section1 = () => {
               const element = document.querySelector("#section4");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
+          >
+            Paper Presentations
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section7");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Our Team
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section8");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             FAQ
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section4");
+              const element = document.querySelector("#section9");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 hover:-skew-x-6 transition-all duration-300 ease-out hover:text-black"
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Contact Us
           </button>

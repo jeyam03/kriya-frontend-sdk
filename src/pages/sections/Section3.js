@@ -84,7 +84,7 @@ const Section3 = () => {
         </svg>
 
         <div className="w-full lg:w-[70vw] h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 p-8 lg:px-24 lg:pl-0 font-poppins gap-4 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 p-8 lg:px-24 lg:pl-0 font-poppins gap-4 md:gap-8 lg:gap-10">
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
               <Link className="flex items-center space-x-4"
               to="/portal/event?ctg=kriyative"
