@@ -126,10 +126,9 @@ const NavBar = ({ consolee }) => {
         Paper Presentations
       </button>
       <div
-        className="w-48 h-full"
+        className={`w-48 h-full ${condition && "invert"}`}
         style={{
           background:
-            // `url("${condition ? 'https://i.ibb.co/QHfydfF/Kriya-Logo-2023-white-1.png' : 'https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png'}")`,
             `url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)`,
           backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
           backgroundSize: "contain",

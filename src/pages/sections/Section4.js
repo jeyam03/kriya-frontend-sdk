@@ -144,6 +144,14 @@ const PaperPresentationItemDesktop = ({
 }) => {
   const navigate = useNavigate();
 
+  const toTitleCase = (phrase) => {
+    return phrase
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
     <button
       onMouseEnter={(e) => setOnMouseHoverIndex(index)}
@@ -156,11 +164,11 @@ const PaperPresentationItemDesktop = ({
     >
       <p
         className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${onMouseHoverIndex === index
-          ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-4 -translate-y-4"
-          : "-rotate-90 whitespace-nowrap text-xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
+          ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-6 -translate-y-6"
+          : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
           }`}
       >
-        {title}
+        {toTitleCase(title)}
       </p>
     </button>
   );

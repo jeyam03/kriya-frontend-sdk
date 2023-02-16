@@ -42,6 +42,8 @@ const Section1 = () => {
     const kriyaLogo = document.querySelector("#kriya-logo");
     const imageMulti = document.querySelector("#image-multi");
     const imageMulti2 = document.querySelector("#image-multi-2");
+    const tagline = document.querySelector("#tagline");
+
     const observer = new IntersectionObserver((entries) => {
       // numberTags.forEach((numberTag) => {
       //   numberTag.classList.add("animate-fade-in-bottom");
@@ -51,6 +53,7 @@ const Section1 = () => {
         kriyaLogo.classList.add("animate-bounce-in");
         registrationPrompt.classList.add("animate-flicker-in");
         imageMulti2.classList.add("animate-clip-in-side");
+        tagline.classList.add("animate-clip-in-side");
       }
       // else {
       //   imageMulti.classList.remove("animate-clip-in");
@@ -224,7 +227,7 @@ const Section1 = () => {
           </div>
         </div>
 
-        <h1 className="uppercase lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8">
+        <h1 id="tagline" className="uppercase lg:delay-500 lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8">
           <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[3.25rem] lg:leading-[4rem] relative z-10">
             The Global Clash of Techno Talents.
           </span>

@@ -32,16 +32,16 @@ const Paper = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-28 lg:pt-12 h-screen overflow-y-scroll">
-      <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
+      <h1 className="text-4xl text-white font-semibold px-8 lg:px-0">
         {toTitleCase(paperDetail.eventName)}
       </h1>
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-8 text-black">
-        <div className="bg-white w-full lg:w-1/2 lg:rounded-3xl lg:p-12 space-y-8 relative py-8 px-8">
-          <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
-            Topic / Theme
+        <div className="w-full lg:w-2/3 lg:rounded-3xl lg:px-0 space-y-8 relative py-8 px-8">
+          <p className="text-3xl font-semibold tracking-wider text-white">
+            Theme
           </p>
-          <ul className="list-disc text-base lg:text-lg text-[#3c4043] pl-4 space-y-2">
+          <ul className="list-disc text-base lg:text-lg text-white pl-4 space-y-2">
             {paperDetail.topic.split("\n").map((item, index) => (
               <li key={index}>{item}</li>
             ))}
