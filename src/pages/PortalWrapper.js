@@ -42,9 +42,8 @@ const NavBar = () => {
       </div>
 
       <div
-        className={`divide-y divide-gray-600 ${
-          isOpen ? "h-fit" : "h-0 overflow-hidden"
-        } transition-all ease-in-out duration-300`}
+        className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+          } transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col">
           {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
@@ -57,13 +56,13 @@ const NavBar = () => {
             Events
           </Link>
           <Link
-            to="/portal/workshop"
+            to="/../?sn=section5"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
           >
             Workshops
           </Link>
           <Link
-            to="/portal/paper-presentation"
+            to="/../?sn=section4"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
           >
             Paper Presentations
@@ -101,9 +100,8 @@ const EventNav = ({ category, noMargin = false, events }) => {
   return (
     <React.Fragment>
       <p
-        className={`w-full text-sm uppercase tracking-widest text-gray-500 ${
-          !noMargin && "mt-8"
-        } py-4`}
+        className={`w-full text-sm uppercase tracking-widest text-gray-500 ${!noMargin && "mt-8"
+          } py-4`}
       >
         {category}
       </p>

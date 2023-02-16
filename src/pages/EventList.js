@@ -32,7 +32,7 @@ const EventList = () => {
   return (
     <div className="w-full font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
       <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-4 lg:px-8 flex flex-col items-center lg:block p-8">
-        <div className="w-full my-16 lg:mt-0">
+        <div className="w-full my-8 lg:mt-0">
           <h1 className={`text-4xl lg:text-6xl text-white font-[600] font-poppins text-center py-2`}
             id="soon-text"
           >
@@ -44,7 +44,7 @@ const EventList = () => {
 
         </div>
         <h1
-          className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
+          className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="kriyative"
         >
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#a861ff] to-[#8938d1]">
@@ -63,7 +63,7 @@ const EventList = () => {
         />
 
         <h1
-          className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
+          className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="brainiac"
         >
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
@@ -82,7 +82,7 @@ const EventList = () => {
         />
 
         <h1
-          className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
+          className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="coding"
         >
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
@@ -101,7 +101,7 @@ const EventList = () => {
         />
 
         <h1
-          className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
+          className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="circuit"
         >
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
@@ -120,7 +120,7 @@ const EventList = () => {
         />
 
         <h1
-          className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
+          className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="core"
         >
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
@@ -139,7 +139,7 @@ const EventList = () => {
         />
 
         <h1
-          className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
+          className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="management"
         >
           <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#27eba2]">
@@ -180,7 +180,7 @@ const EventsGrid = ({
   };
 
   return (
-    <div className="flex-wrap flex gap-8 py-12">
+    <div className="flex-wrap flex gap-8 py-12 justify-center">
       {obj.map((i) => {
         return (
           <EventGrid

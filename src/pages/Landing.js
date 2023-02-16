@@ -10,9 +10,11 @@ import Section7 from "./sections/Section7";
 import Section8 from "./sections/Section8";
 import Section9 from "./sections/Section9";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     window.addEventListener(
@@ -38,6 +40,12 @@ const Landing = () => {
     if (val > 2 - a && val < 2)
       return ((b - w) * (a - 2)) / (2 * a) + (w + b) / 2;
   };
+
+  useEffect(() => {
+    if (!searchParams.get("sn")) return;
+    const element = document.querySelector(`#${searchParams.get("sn")}`);
+    element.scrollIntoView({ behavior: "smooth" });
+  }, [searchParams]);
 
   const condition = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
 

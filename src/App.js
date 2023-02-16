@@ -5,6 +5,7 @@ import Event from "./pages/Event";
 import Profile from "./pages/Profile";
 import Workshop from "./pages/Workshop";
 import EventList from "./pages/EventList";
+import Paper from "./pages/Paper";
 import AuthPortal from "./pages/AuthPortal";
 import Error404 from "./pages/Error404";
 
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="portal" element={<PortalWrapper />}>
           <Route path="event/:id" element={<Event />} />
           <Route path="event" element={<EventList />} />
+          <Route path="paper/:id" element={<Paper />} />
           {/* <Route path="profile" element={<Profile />} /> */}
           <Route path="workshop" element={<Workshop />} />
           <Route index element={<Navigate to="/portal/event" />} />

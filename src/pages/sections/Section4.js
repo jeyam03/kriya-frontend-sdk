@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
+import { fetchPapers } from "../../API/call";
+import { useNavigate } from "react-router-dom";
 
 // Paper Presentations
 
 const Section4 = ({ scrollYByVH }) => {
   const [consolee, setConsolee] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener(
@@ -44,32 +47,30 @@ const Section4 = ({ scrollYByVH }) => {
               index={0}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title="Paper Presentation Zero"
+              title={fetchPapers()[0].eventName}
+              id={fetchPapers()[0].ppid}
             />
             <PaperPresentationItemDesktop
               index={1}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title="Paper Presentation One"
+              title={fetchPapers()[1].eventName}
+              id={fetchPapers()[1].ppid}
             />
             <PaperPresentationItemDesktop
               index={2}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title="Paper Presentation Two"
+              title={fetchPapers()[2].eventName}
+              id={fetchPapers()[2].ppid}
             />
             <PaperPresentationItemDesktop
               index={3}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title="Paper Presentation Three"
+              title={fetchPapers()[3].eventName}
+              id={fetchPapers()[3].ppid}
             />
-            {/* <PaperPresentationItemDesktop
-              index={4}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title="Paper Presentation Four"
-            /> */}
           </div>
         </div>
 
@@ -86,31 +87,46 @@ const Section4 = ({ scrollYByVH }) => {
         </div>
         <div className="block lg:hidden w-full lg:w-[60%] h-full overflow-x-auto mt-8">
           <div className="flex w-fit h-full items-center relative space-x-6 px-8">
-            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+            <button
+              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
+              onClick={() => {
+                navigate(`/portal/paper/PP01`);
+              }}
+            >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
-                Paper Presentation One
+                {fetchPapers()[0].eventName}
               </p>
-            </div>
-            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+            </button>
+            <button
+              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
+              onClick={() => {
+                navigate(`/portal/paper/PP02`);
+              }}
+            >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
-                Paper Presentation Two
+                {fetchPapers()[1].eventName}
               </p>
-            </div>
-            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+            </button>
+            <button
+              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
+              onClick={() => {
+                navigate(`/portal/paper/PP03`);
+              }}
+            >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
-                Paper Presentation Three
+                {fetchPapers()[2].eventName}
               </p>
-            </div>
-            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
+            </button>
+            <button
+              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
+              onClick={() => {
+                navigate(`/portal/paper/PP04`);
+              }}
+            >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
-                Paper Presentation Four
+                {fetchPapers()[3].eventName}
               </p>
-            </div>
-            <div className="w-64 h-[90%] bg-gray-500 flex items-end p-4">
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                Paper Presentation Five
-              </p>
-            </div>
+            </button>
           </div>
         </div>
       </section>
@@ -124,25 +140,29 @@ const PaperPresentationItemDesktop = ({
   onMouseHoverIndex,
   setOnMouseHoverIndex,
   title,
+  id,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div
+    <button
       onMouseEnter={(e) => setOnMouseHoverIndex(index)}
       onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-      className={`rounded-lg shadow-md p-8 ${
-        onMouseHoverIndex === index ? "h-full w-2/6" : "h-[95%] w-1/6"
-      } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+      className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-full w-2/6" : "h-[95%] w-1/6"
+        } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+      onClick={() => {
+        navigate(`/portal/paper/${id}`);
+      }}
     >
       <p
-        className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${
-          onMouseHoverIndex === index
-            ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-4 -translate-y-4"
-            : "-rotate-90 whitespace-nowrap text-xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
-        }`}
+        className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${onMouseHoverIndex === index
+          ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-4 -translate-y-4"
+          : "-rotate-90 whitespace-nowrap text-xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
+          }`}
       >
         {title}
       </p>
-    </div>
+    </button>
   );
 };
 

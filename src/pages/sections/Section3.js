@@ -99,9 +99,8 @@ const Section3 = () => {
                   {" Kriyative "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              <p className={`${condition} text-sm pb-2 text-justify`}>
+                Let your imagination run wild with Kriyative! Whether you're an experienced artist, a hobbyist or a curious beginner, our events will inspire you to think outside the box, experiment with new techniques and express your unique vision.
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
@@ -125,9 +124,8 @@ const Section3 = () => {
                   {" Brainiac "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              <p className={`${condition} text-sm pb-2 text-justify`}>
+                Unlock Your Inner Genius: Join the Brainiac Brigade! Brainiac events are designed to challenge your intellect, ignite your curiosity and push the boundaries of your knowledge. From trivia challenges to mind-bending puzzles, there's something for every cerebral superhero.
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
@@ -151,9 +149,8 @@ const Section3 = () => {
                   {" Coding "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              <p className={`${condition} text-sm pb-2 text-justify`}>
+                Whether you're a seasoned coder or just starting out, our events offer something for everyone. Explore cutting-edge technologies, connect with like-minded coders, and compete for glory in our exciting challenges. Unleash the power of programming and take your skills to the next level at our Coding Events!
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
@@ -177,9 +174,8 @@ const Section3 = () => {
                   {" Circuit "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              <p className={`${condition} text-sm pb-2 text-justify`}>
+                Delve into the world of circuit engineering! From digital electronics to power systems, our Circuit Events cover it all. Get ready to master the fundamentals of circuit design and don’t miss out on this high-voltage opportunity to supercharge your knowledge and network with fellow circuit enthusiasts!
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
@@ -203,9 +199,8 @@ const Section3 = () => {
                   {" Core Engineering "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              <p className={`${condition} text-sm pb-2 text-justify`}>
+                Unleash your inner engineer and dive into the world of innovation with our cutting-edge Core Engineering events at this Kriya! From robotics to engines , discover the power of engineering and explore endless possibilities to put your skills to the test.
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
@@ -229,9 +224,8 @@ const Section3 = () => {
                   {" Management "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
+              <p className={`${condition} text-sm pb-2 text-justify`}>
+                Calling all aspiring leaders and entrepreneurs! Explore the dynamic world of Management at Kriya. From strategic planning to marketing and innovation, join us for an engaging and exhilarating set of events that will put your leadership skills to the test.
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
