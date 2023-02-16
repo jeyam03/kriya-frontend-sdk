@@ -57,7 +57,7 @@ const Section7 = () => {
     <div className="w-full relative">
       <section
         id="section7"
-        className="w-full relative flex items-start team-text opacity-0 mt-24"
+        className="w-full relative flex items-start team-text opacity-0 mt-12 lg:mt-24"
       >
         <div
           className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-8 lg:pt-16 pb-0 px-[calc(100vw/12)]`}
@@ -82,7 +82,6 @@ const Section7 = () => {
           <ImageGrid vertical="Design" />
           <ImageGrid vertical="Events Resource Management" />
           <ImageGrid vertical="PR and Sponsorship" />
-          <ImageGrid vertical="SU Volunteer" />
         </div>
 
         <div

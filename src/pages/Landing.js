@@ -39,6 +39,8 @@ const Landing = () => {
       return ((b - w) * (a - 2)) / (2 * a) + (w + b) / 2;
   };
 
+  const condition = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+
   return (
     <React.Fragment>
       {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10 z-50">
@@ -52,16 +54,9 @@ const Landing = () => {
           //   consolee
           // )}, ${getColorVal(consolee)}, 1)`,
           background:
-            window.innerWidth < 768
-              ? parseFloat(consolee) + 0.25 <= 1 ||
-                parseFloat(consolee) + 0.25 >= 2
-                ? `rgba(255, 255, 255, 1)`
-                : `rgba(18, 18, 18, 1)`
-              : parseFloat(consolee) + 0.25 >= 3
-              ? `rgba(255, 255, 255, 1)`
-              : (parseFloat(consolee) + 0.25) % 2 <= 1
-              ? `rgba(255, 255, 255, 1)`
-              : `rgba(18, 18, 18, 1)`,
+            condition
+              ? `rgba(18, 18, 18, 1)`
+              : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",
@@ -84,27 +79,27 @@ const Landing = () => {
 export default Landing;
 
 const NavBar = ({ consolee }) => {
+  const condition = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+
   return (
     <nav
-      className={`${
-        consolee >= 0.97 ? "fixed" : "hidden"
-      } top-0 w-full left-0 right-0 px-4 flex items-center justify-between   lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
+      className={`${consolee >= 0.97 ? "fixed" : "hidden"
+        } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 shadow-md
+      ${condition ? "bg-[#121212]" : "bg-white"} `}
     >
       <button
         onClick={(e) => {
           const element = document.getElementById("section3");
           element.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
       >
         Events
       </button>
       <button
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section5");
           element.scrollIntoView({ behavior: "smooth" });
@@ -117,9 +112,8 @@ const NavBar = ({ consolee }) => {
           const element = document.getElementById("section4");
           element.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
       >
         Paper Presentations
       </button>
@@ -127,7 +121,8 @@ const NavBar = ({ consolee }) => {
         className="w-48 h-full"
         style={{
           background:
-            "url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)",
+            // `url("${condition ? 'https://i.ibb.co/QHfydfF/Kriya-Logo-2023-white-1.png' : 'https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png'}")`,
+            `url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)`,
           backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -142,9 +137,8 @@ const NavBar = ({ consolee }) => {
         ></button>
       </div>
       <button
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section7");
           element.scrollIntoView({ behavior: "smooth" });
@@ -153,9 +147,8 @@ const NavBar = ({ consolee }) => {
         Our Team
       </button>
       <button
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section8");
           element.scrollIntoView({ behavior: "smooth" });
@@ -164,9 +157,8 @@ const NavBar = ({ consolee }) => {
         FAQs
       </button>
       <button
-        className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${
-          consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-        } transition-all`}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section9");
           element.scrollIntoView({ behavior: "smooth" });

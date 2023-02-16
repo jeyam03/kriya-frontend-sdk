@@ -170,7 +170,7 @@ const Section5 = () => {
         </div>
 
         <div className={`lg:hidden items-center w-full font-poppins py-8`}>
-          <div className="p-4">
+          <div className="py-4">
             <RightImage
               number={1}
               imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"

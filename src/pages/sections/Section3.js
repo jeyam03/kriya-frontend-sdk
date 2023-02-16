@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../../styles/Landing.css";
-import {IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 // Events
 
@@ -31,15 +31,10 @@ const Section3 = () => {
     observer.observe(element);
   });
 
-  const condition = `${
-    window.innerWidth < 768
-      ? parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3.75
-        ? "text-[#181818]"
-        : "text-white"
-      : parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3
-      ? "text-[#181818]"
-      : "text-white"
-  }`;
+  const condition = `${parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2
+    ? "text-white"
+    : "text-[#181818]"
+    }`;
 
   return (
     <div className="w-full h-full relative">
@@ -113,7 +108,7 @@ const Section3 = () => {
                 to="/portal/event?ctg=kriyative"
               >
                 <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
 
@@ -139,7 +134,7 @@ const Section3 = () => {
                 to="/portal/event?ctg=brainiac"
               >
                 <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
 
@@ -165,7 +160,7 @@ const Section3 = () => {
                 to="/portal/event?ctg=coding"
               >
                 <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
 
@@ -191,7 +186,7 @@ const Section3 = () => {
                 to="/portal/event?ctg=circuit"
               >
                 <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
 
@@ -217,7 +212,7 @@ const Section3 = () => {
                 to="/portal/event?ctg=core"
               >
                 <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
 
@@ -243,7 +238,7 @@ const Section3 = () => {
                 to="/portal/event?ctg=management"
               >
                 <p className="">Explore more</p>
-                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
           </div>

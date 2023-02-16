@@ -39,7 +39,7 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
   return (
     <div className="w-full">
       <div className="p-4 lg:px-8 border-t border-gray-300 text-lg flex justify-between items-center font-semibold">
-        <button className={`text-lg py-2 ${isOpened ? "text-blue-700" : "text-black"}`} onClick={onClick}>
+        <button className={`text-left text-base lg:text-lg py-2 ${isOpened ? "text-blue-700" : "text-black"}`} onClick={onClick}>
           {question}
         </button>
         <button onClick={onClick}>

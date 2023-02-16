@@ -36,7 +36,7 @@ const Section4 = ({ scrollYByVH }) => {
     <div className="w-full h-full relative">
       <section
         id="section4"
-        className="h-screen w-full p-0 py-12 lg:p-16 lg:px-[calc(100vw/12)] flex flex-col lg:flex-row lg:items-center"
+        className="h-screen w-full p-0 py-8 lg:p-16 lg:px-[calc(100vw/12)] flex flex-col lg:flex-row lg:items-center"
       >
         <div className="lg:w-[70%] h-full hidden lg:block">
           <div className="flex items-center h-full space-x-2 w-full pr-16">
@@ -75,7 +75,7 @@ const Section4 = ({ scrollYByVH }) => {
 
         <div className="lg:w-[30%] w-full h-fit lg:h-full flex flex-col lg:justify-center ">
           <h1
-            className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 pt-8 text-center lg:text-right`}
+            className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 text-center lg:text-right`}
           >
             Engineering.
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">

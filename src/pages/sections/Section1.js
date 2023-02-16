@@ -201,13 +201,13 @@ const Section1 = () => {
           ></div>
           <div className="w-full font-poppins text-lg font-semibold tracking-wider text-gray-600">
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              Mar
+              March <br></br>
             </span>{" "}
             24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
           </div>
         </div>
-        <div className="pl-20 w-full h-[50%]">
-          <div className="lg:hidden w-full h-full relative" id="image-multi-2">
+        <div className="lg:hidden pl-20 w-full h-[50%]">
+          <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
                 className={`w-full h-full absolute top-0 right-0 left-0 ${
@@ -224,7 +224,7 @@ const Section1 = () => {
           </div>
         </div>
 
-        <h1 className="uppercase lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 lg:-ml-40 -mt-40 lg:mb-8">
+        <h1 className="uppercase lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8">
           <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[3.25rem] lg:leading-[4rem] relative z-10">
             The Global Clash of Techno Talents.
           </span>
@@ -236,7 +236,7 @@ const Section1 = () => {
           </div>
           <div
             id="registration-prompt"
-            className="lg:text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-8 lg:mb-16 lg:mr-0 text-center lg:text-left whitespace-nowrap lg:whitespace-normal"
+            className="lg:text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg my-8 lg:mb-16 text-center lg:text-left whitespace-nowrap lg:whitespace-normal"
           >
             ✨Registrations opening soon! ✨
           </div>
