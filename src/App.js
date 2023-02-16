@@ -14,12 +14,12 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="portal" element={<PortalWrapper />}>
-          <Route path="event/:id" element={<Event />} />
           <Route path="event" element={<EventList />} />
+          <Route path="event/:id" element={<Event />} />
           <Route path="paper/:id" element={<Paper />} />
-          {/* <Route path="profile" element={<Profile />} /> */}
-          <Route path="workshop" element={<Workshop />} />
+          <Route path="workshop/:id" element={<Workshop />} />
           <Route index element={<Navigate to="/portal/event" />} />
+          {/* <Route path="profile" element={<Profile />} /> */}
         </Route>
         {/* <Route path="auth" element={<AuthPortal />} /> */}
         <Route index element={<Landing />} />

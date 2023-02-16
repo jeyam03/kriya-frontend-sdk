@@ -111,7 +111,7 @@ const Event = () => {
             }}
           >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {"Register Here !"}
+              {"Registrations Opening Soon !"}
             </span>
           </button>
 
@@ -167,12 +167,12 @@ const Event = () => {
             </div>
           </div>
 
-          <div className="lg:bg-[#ffffff] flex-1 lg:rounded-3xl p-8 lg:p-12 space-y-6">
-            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043]">
+          <div className="lg:bg-[#ffffff] flex-1 flex flex-col lg:rounded-3xl p-8 lg:px-0 lg:pb-0 lg:pt-12 space-y-6">
+            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043] px-12">
               Contact
             </p>
 
-            <div className="flex flex-row items-center gap-8">
+            <div className="flex flex-row items-center gap-8 lg:px-12">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_1)}
@@ -197,7 +197,7 @@ const Event = () => {
               </button>
             </div>
 
-            <div className="flex flex-row items-center gap-8">
+            <div className="flex flex-row items-center gap-8 lg:px-12">
               <div className="w-1/2 lg:w-1/2">
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_2)}
@@ -220,6 +220,9 @@ const Event = () => {
               >
                 <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
               </button>
+            </div>
+
+            <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ", backgroundSize: "350%" }}>
             </div>
           </div>
         </div>

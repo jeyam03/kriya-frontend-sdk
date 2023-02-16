@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
+import { fetchWorkshops } from "../../API/call";
+import { useNavigate } from "react-router-dom";
 
 // Workshops
 
@@ -93,67 +95,24 @@ const Section5 = () => {
           id="left-workshop-grid"
         >
           <div className="flex-1"></div>
-          <div className="lg:w-[calc(100vw-75vh)] pl-[calc(100vw/24)] pr-8 pt-96">
-            <RightImage
-              number={1}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={2}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={3}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={4}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={5}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={6}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={7}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={8}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={9}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={10}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={11}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={12}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
+          <div className="lg:w-[calc(100vw-50vw)] pr-8 pt-96">
+            {fetchWorkshops().map((item, index) => (
+              (index % 2 === 0) ? (
+                <RightImage
+                  number={index + 1}
+                  imgurl={item.image}
+                  id={item.wid}
+                  title={item.workName}
+                />
+              ) : (
+                <LeftImage
+                  number={index + 1}
+                  imgurl={item.image}
+                  id={item.wid}
+                  title={item.workName}
+                />
+              )
+            ))}
           </div>
         </div>
 
@@ -171,66 +130,23 @@ const Section5 = () => {
 
         <div className={`lg:hidden items-center w-full font-poppins py-8`}>
           <div className="py-4">
-            <RightImage
-              number={1}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={2}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={3}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={4}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={5}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={6}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={7}
-              imgurl="https://appinventiv.com/wp-content/uploads/sites/1/2019/10/Discovery-Workshop-The-complete-guide-to-starting-projects-right.png"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={8}
-              imgurl="https://i.pinimg.com/736x/0c/87/1b/0c871b0a561e310c830b60630367442a.jpg"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={9}
-              imgurl="https://davewentzel.com/images/discovery_1024.jpg"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={10}
-              imgurl="https://www.xevensolutions.com/wp-content/uploads/2022/11/Workshop-main.png"
-              title="Data Science Workshop"
-            />
-            <RightImage
-              number={11}
-              imgurl="https://www.thinkplaceglobal.com/sites/default/files/styles/detail_banner/public/online_workshop_adobestock_337053566-01.png?itok=rcLL_AzU"
-              title="Discovery Workshop"
-            />
-            <LeftImage
-              number={12}
-              imgurl="https://www.zohowebstatic.com/sites/default/files/zoho_general_pages/workshop/apac-art-work-6.png"
-              title="Data Science Workshop"
-            />
+            {fetchWorkshops().map((item, index) => (
+              (index % 2 === 0) ? (
+                <RightImage
+                  number={index + 1}
+                  imgurl={item.image}
+                  id={item.wid}
+                  title={item.workName}
+                />
+              ) : (
+                <LeftImage
+                  number={index + 1}
+                  imgurl={item.image}
+                  id={item.wid}
+                  title={item.workName}
+                />
+              )
+            ))}
           </div>
         </div>
       </section>
@@ -241,53 +157,68 @@ const Section5 = () => {
 
 export default Section5;
 
-const LeftImage = ({ number, imgurl, title }) => {
+const LeftImage = ({ number, imgurl, title, id }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-row justify-end">
-      <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64">
-        <div
+      <button className="w-full h-full flex flex-row justify-end" onClick={() => navigate(`/portal/workshop/${id}`)}>
+        <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64"
           style={{
-            background: `url("${imgurl}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-
-          }}
-          className={`w-full h-full`}></div>
-      </div>
-      <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-r border-r-gray-300 p-4 flex flex-row items-end space-x-4">
-        <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold">
-          {title}
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+          }}>
+          <div
+            style={{
+              background: `url("${imgurl}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover"
+            }}
+            className={`w-full h-full hover:scale-110 transition-all`}></div>
         </div>
-        <div className="text-6xl lg:text-8xl font-semibold text-gray-300">
-          {number}
+        <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-r border-r-gray-300 p-4 flex flex-row items-end space-x-4">
+          <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold text-left">
+            {title}
+          </div>
+          <div className="text-5xl lg:text-8xl font-semibold text-gray-300">
+            {number}
+          </div>
         </div>
-      </div>
+      </button>
     </div>
   );
 };
 
-const RightImage = ({ number, imgurl, title }) => {
+const RightImage = ({ number, imgurl, title, id }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-row justify-end">
-      <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-l border-l-gray-300 p-4 flex flex-row items-end space-x-4">
-        <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold">
-          {title}
+      <button className="w-full h-full flex flex-row justify-end" onClick={() => navigate(`/portal/workshop/${id}`)}>
+        <div className="w-1/2 h-28 lg:w-96 lg:h-64 border-l border-l-gray-300 p-4 flex flex-row items-end space-x-4">
+          <div className="text-sm lg:text-lg w-[75%] pb-2 font-semibold text-left">
+            {title}
+          </div>
+          <div className="text-5xl lg:text-8xl font-semibold text-gray-300">
+            {number}
+          </div>
         </div>
-        <div className="text-6xl lg:text-8xl font-semibold text-gray-300">
-          {number}
-        </div>
-      </div>
-      <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64">
-        <div
+        <div className="bg-opacity-50 bg-gray-200 flex w-1/2 h-28 lg:w-96 lg:h-64"
           style={{
-            background: `url("${imgurl}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-          className={`w-full h-full`}></div>
-      </div>
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+          }}>
+          <div
+            style={{
+              background: `url("${imgurl}")`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+            className={`w-full h-full hover:scale-110 transition-all`}></div>
+        </div>
+      </button>
     </div>
   );
 };
