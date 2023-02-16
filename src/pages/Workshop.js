@@ -107,7 +107,7 @@ const Workshop = () => {
         </div>
 
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
-          <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
+          <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
             onClick={() => {
               isLoggedIn ? (window.confirm("Are you sure you want to register ?") ? (generalPayment ? navigate("/confirmed") : navigate("/payment")) : console.log("Cancelled")) : navigate("/register");
             }}
@@ -144,7 +144,7 @@ const Workshop = () => {
           </div>
 
           <div className="lg:bg-[#ffffff] flex-1 flex flex-col lg:rounded-3xl p-8 lg:px-0 lg:pb-0 lg:pt-12 space-y-6">
-            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043] px-12">
+            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043] lg:px-12">
               Contact
             </p>
 

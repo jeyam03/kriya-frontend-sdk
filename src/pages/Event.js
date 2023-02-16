@@ -168,7 +168,7 @@ const Event = () => {
           </div>
 
           <div className="lg:bg-[#ffffff] flex-1 flex flex-col lg:rounded-3xl p-8 lg:px-0 lg:pb-0 lg:pt-12 space-y-6">
-            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043] px-12">
+            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043] lg:px-12">
               Contact
             </p>
 
