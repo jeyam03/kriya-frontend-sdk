@@ -21,7 +21,7 @@ const Section1 = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
@@ -36,14 +36,42 @@ const Section1 = () => {
     };
   }, [currentSlide]);
 
+  useEffect(() => {
+    const element = document.querySelector("#anchor1");
+    const registrationPrompt = document.querySelector("#registration-prompt");
+    const kriyaLogo = document.querySelector("#kriya-logo");
+    const imageMulti = document.querySelector("#image-multi");
+    const imageMulti2 = document.querySelector("#image-multi-2");
+    const observer = new IntersectionObserver((entries) => {
+      // numberTags.forEach((numberTag) => {
+      //   numberTag.classList.add("animate-fade-in-bottom");
+      // });
+      if (entries[0].isIntersecting) {
+        imageMulti.classList.add("animate-clip-in");
+        kriyaLogo.classList.add("animate-bounce-in");
+        registrationPrompt.classList.add("animate-flicker-in");
+        imageMulti2.classList.add("animate-clip-in-side");
+      }
+      // else {
+      //   imageMulti.classList.remove("animate-clip-in");
+      //   kriyaLogo.classList.remove("animate-bounce-in");
+      //   registrationPrompt.classList.remove("animate-flicker-in");
+      // }
+    });
+
+    observer.observe(element);
+  });
+
   return (
     <section
       id="section1"
-      className="h-screen w-screen flex flex-row items-center"
+      className="h-screen w-screen flex flex-row items-center relative "
     >
+      <a id="anchor1" className="w-screen absolute h-20 top-[75vh]"></a>
       <div className="hidden lg:flex flex-col w-[25vw] h-full pl-[calc(100vw/24)] py-[calc(100vw/24)] justify-between">
         <div
-          className="w-36 h-36 before:w-full before:h-full before:bg-black relative before:absolute before:opacity-30 before:rounded-full before:translate-y-[30%] before:scale-y-[25%] before:[background:radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0)_70%)]"
+          id="kriya-logo"
+          className="w-36 h-36 before:w-full before:h-full before:bg-black relative before:absolute before:opacity-30 before:rounded-full before:[background:radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0)_70%)]"
           style={{
             background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
             backgroundPosition: "left",
@@ -141,80 +169,63 @@ const Section1 = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block w-[35vw] h-full relative">
-        <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 0 ? "opacity-100" : "opacity-0"
+      <div
+        className="hidden lg:block w-[35vw] h-full relative"
+        id="image-multi"
+      >
+        {slides.map((slide, index) => (
+          <div
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+              currentSlide === index ? "opacity-100" : "opacity-0"
             }`}
-          style={{
-            background: `url(${slides[0]})`,
-            backgroundPosition: "50% 50%  ",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
-        <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 1 ? "opacity-100" : "opacity-0"
-            }`}
-          style={{
-            background: `url(${slides[1]})`,
-            backgroundPosition: "50% 50%  ",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
-        <div
-          className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === 2 ? "opacity-100" : "opacity-0"
-            }`}
-          style={{
-            background: `url(${slides[2]})`,
-            backgroundPosition: "50% 50%  ",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-          }}
-        ></div>
+            style={{
+              background: `url(${slides[index]})`,
+              backgroundPosition: "50% 50%  ",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+        ))}
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pl-20 pr-0 pb-8 pt-16 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col justify-between">
-        <div className="w-full font-poppins text-lg lg:text-lg font-semibold tracking-wider text-gray-600">
-          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-            Mar
-          </span>{" "}
-          24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
+      <div className="w-full lg:w-[35vw] h-full  pb-8 pt-4 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col items-center lg:items-start justify-between">
+        <div className="flex items-center  space-x-4 w-full px-8">
+          <div
+            className="lg:hidden w-28 h-28"
+            style={{
+              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+            }}
+          ></div>
+          <div className="w-full font-poppins text-lg font-semibold tracking-wider text-gray-600">
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+              Mar
+            </span>{" "}
+            24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
+          </div>
         </div>
-        <div className="lg:hidden w-full h-[50%] relative">
-          <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"
-              }`}
-            style={{
-              background: `url(${slides[0]})`,
-              backgroundPosition: "50% 50%  ",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"
-              }`}
-            style={{
-              background: `url(${slides[1]})`,
-              backgroundPosition: "50% 50%  ",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div
-            className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"
-              }`}
-            style={{
-              background: `url(${slides[2]})`,
-              backgroundPosition: "50% 50%  ",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+        <div className="pl-20 w-full h-[50%]">
+          <div className="lg:hidden w-full h-full relative" id="image-multi-2">
+            {slides.map((slide, index) => (
+              <div
+                className={`w-full h-full absolute top-0 right-0 left-0 ${
+                  currentSlide === index ? "opacity-100" : "opacity-0"
+                }`}
+                style={{
+                  background: `url(${slides[index]})`,
+                  backgroundPosition: "50% 50%  ",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                }}
+              ></div>
+            ))}
+          </div>
         </div>
-        <h1 className="uppercase lg:w-full font-poppins text-4xl font-semibold -ml-12 lg:-ml-48 -mt-40 lg:mt-8">
-          <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[4rem] relative z-10 whitespace-pre-line">
+
+        <h1 className="uppercase lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 lg:-ml-40 -mt-40 lg:mb-8">
+          <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[3.25rem] lg:leading-[4rem] relative z-10">
             The Global Clash of Techno Talents.
           </span>
         </h1>
@@ -223,11 +234,14 @@ const Section1 = () => {
             Stay tuned for the forefront of technological advancements and gain
             valuable insights at our upcoming technical symposium Kriya 2023 !
           </div>
-          <div className="text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-16 mr-8 lg:mr-0 text-center lg:text-left">
-            ✨ Registrations opening soon ! ✨
+          <div
+            id="registration-prompt"
+            className="lg:text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg mt-8 mb-8 lg:mb-16 lg:mr-0 text-center lg:text-left whitespace-nowrap lg:whitespace-normal"
+          >
+            ✨Registrations opening soon! ✨
           </div>
         </div>
-        <div className="flex flex-row space-x-8 lg:space-x-4">
+        <div className="flex flex-row space-x-8 lg:space-x-4 w-fit">
           <div
             className="w-16 h-auto"
             style={{
@@ -237,14 +251,14 @@ const Section1 = () => {
               backgroundSize: "contain",
             }}
           ></div>
-          <div className=" text-sm lg:text-base">
-            <p className="uppercase tracking-wider w-full font-poppins pr-16 text-sm">
+          <div className=" text-sm lg:text-base w-fit ">
+            <p className="uppercase tracking-wider font-poppins text-sm w-fit">
               Presented By
             </p>
-            <p className="font-semibold tracking-wider w-full font-poppins pr-16 mt-2">
+            <p className="font-semibold font-poppins  mt-2 w-fit">
               Students Union
             </p>
-            <p className="tracking-wider w-full font-poppins pr-16 text-xs mt1">
+            <p className="font-poppins text-xs  w-fit">
               PSG College of Technology
             </p>
           </div>
@@ -253,30 +267,19 @@ const Section1 = () => {
 
       <div className="hidden lg:block w-[5vw] h-[70%] bg-[#7300fe]">
         <div className="w-full h-full relative">
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 0 ? "opacity-100" : "opacity-0"}`}
-            style={{
-              background: `url(${slides[0]})`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 1 ? "opacity-100" : "opacity-0"}`}
-            style={{
-              background: `url(${slides[1]})`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
-          <div className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === 2 ? "opacity-100" : "opacity-0"}`}
-            style={{
-              background: `url(${slides[2]})`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          ></div>
+          {slides.map((slide, index) => (
+            <div
+              className={`w-full h-full absolute top-0 right-0 left-0 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
+                backgroundPosition: "left",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            ></div>
+          ))}
         </div>
       </div>
     </section>

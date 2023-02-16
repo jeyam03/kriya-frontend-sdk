@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../../styles/Landing.css";
+import {IoIosArrowForward } from "react-icons/io";
 
 // Events
 
@@ -30,9 +31,15 @@ const Section3 = () => {
     observer.observe(element);
   });
 
-  const condition = `${window.innerWidth < 768 ?
-    parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3.75 ? "text-[#181818]" : "text-white"
-    : parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3 ? "text-[#181818]" : "text-white"}`;
+  const condition = `${
+    window.innerWidth < 768
+      ? parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3.75
+        ? "text-[#181818]"
+        : "text-white"
+      : parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3
+      ? "text-[#181818]"
+      : "text-white"
+  }`;
 
   return (
     <div className="w-full h-full relative">
@@ -40,7 +47,6 @@ const Section3 = () => {
         id="section3"
         className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
       >
-
         <svg width="0" height="0">
           <linearGradient id="gradient1" x1="100%" y1="100%" x2="0%" y2="0%">
             <stop stopColor="#5238d1" offset="0%" />
@@ -86,10 +92,14 @@ const Section3 = () => {
         <div className="w-full lg:w-[70vw] h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 p-8 lg:px-24 lg:pl-0 font-poppins gap-4 md:gap-8 lg:gap-10">
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
-              <Link className="flex items-center space-x-4"
-              to="/portal/event?ctg=kriyative"
+              <Link
+                className="flex items-center space-x-4"
+                to="/portal/event?ctg=kriyative"
               >
-                <FaSoundcloud style={{ fill: "url(#gradient1)" }} className="text-5xl lg:text-6xl" />
+                <FaSoundcloud
+                  style={{ fill: "url(#gradient1)" }}
+                  className="text-5xl lg:text-6xl"
+                />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {" Kriyative "}
                 </p>
@@ -98,18 +108,24 @@ const Section3 = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm"
+              <Link
+                className="text-blue-500 text-sm flex items-center group"
                 to="/portal/event?ctg=kriyative"
               >
-                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
+                <p className="">Explore more</p>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
-              <Link className="flex items-center space-x-4"
-              to="/portal/event?ctg=brainiac"
+              <Link
+                className="flex items-center space-x-4"
+                to="/portal/event?ctg=brainiac"
               >
-                <FaSoundcloud style={{ fill: "url(#gradient2)" }} className="text-5xl lg:text-6xl" />
+                <FaSoundcloud
+                  style={{ fill: "url(#gradient2)" }}
+                  className="text-5xl lg:text-6xl"
+                />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
                   {" Brainiac "}
                 </p>
@@ -118,18 +134,24 @@ const Section3 = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm"
+              <Link
+                className="text-blue-500 text-sm flex items-center group"
                 to="/portal/event?ctg=brainiac"
               >
-                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
+                <p className="">Explore more</p>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
-              <Link className="flex items-center space-x-4"
-              to="/portal/event?ctg=coding"
+              <Link
+                className="flex items-center space-x-4"
+                to="/portal/event?ctg=coding"
               >
-                <FaSoundcloud style={{ fill: "url(#gradient3)" }} className="text-5xl lg:text-6xl" />
+                <FaSoundcloud
+                  style={{ fill: "url(#gradient3)" }}
+                  className="text-5xl lg:text-6xl"
+                />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
                   {" Coding "}
                 </p>
@@ -138,18 +160,24 @@ const Section3 = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm"
+              <Link
+                className="text-blue-500 text-sm flex items-center group"
                 to="/portal/event?ctg=coding"
               >
-                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
+                <p className="">Explore more</p>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-500">
-              <Link className="flex items-center space-x-4"
-              to="/portal/event?ctg=circuit"
+              <Link
+                className="flex items-center space-x-4"
+                to="/portal/event?ctg=circuit"
               >
-                <FaSoundcloud style={{ fill: "url(#gradient4)" }} className="text-5xl lg:text-6xl" />
+                <FaSoundcloud
+                  style={{ fill: "url(#gradient4)" }}
+                  className="text-5xl lg:text-6xl"
+                />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
                   {" Circuit "}
                 </p>
@@ -158,18 +186,24 @@ const Section3 = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm"
+              <Link
+                className="text-blue-500 text-sm flex items-center group"
                 to="/portal/event?ctg=circuit"
               >
-                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
+                <p className="">Explore more</p>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
-              <Link className="flex items-center space-x-4"
-              to="/portal/event?ctg=core"
+              <Link
+                className="flex items-center space-x-4"
+                to="/portal/event?ctg=core"
               >
-                <FaSoundcloud style={{ fill: "url(#gradient5)" }} className="text-5xl lg:text-6xl" />
+                <FaSoundcloud
+                  style={{ fill: "url(#gradient5)" }}
+                  className="text-5xl lg:text-6xl"
+                />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
                   {" Core Engineering "}
                 </p>
@@ -178,18 +212,24 @@ const Section3 = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm group"
+              <Link
+                className="text-blue-500 text-sm flex items-center group"
                 to="/portal/event?ctg=core"
               >
-                {"Explore more"}<span className="group-hover:ml-2 transition-all duration-200 ease-in-out"> {" >"}</span>
+                <p className="">Explore more</p>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
               </Link>
             </div>
 
             <div className="p-4 space-y-2 events-text opacity-0 delay-700">
-              <Link className="flex items-center space-x-4"
-              to="/portal/event?ctg=management"
+              <Link
+                className="flex items-center space-x-4"
+                to="/portal/event?ctg=management"
               >
-                <FaSoundcloud style={{ fill: "url(#gradient6)" }} className="text-4xl lg:text-6xl" />
+                <FaSoundcloud
+                  style={{ fill: "url(#gradient6)" }}
+                  className="text-4xl lg:text-6xl"
+                />
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
                   {" Management "}
                 </p>
@@ -198,17 +238,21 @@ const Section3 = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis
               </p>
-              <Link className="text-blue-500 text-sm"
+              <Link
+                className="text-blue-500 text-sm flex items-center group"
                 to="/portal/event?ctg=management"
               >
-                {"Explore more"}<span className="hover:translate-x-2 transition-all duration-500 ease-in-out"> {" >"}</span>
+                <p className="">Explore more</p>
+                <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16}/>
               </Link>
             </div>
           </div>
         </div>
 
         <div className="w-full lg:w-[30vw] px-12 lg:pr-0">
-          <h1 className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} events-text opacity-0 text-center lg:text-right`}>
+          <h1
+            className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} events-text opacity-0 text-center lg:text-right`}
+          >
             Unleash your
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
               {" potential"}
@@ -217,7 +261,10 @@ const Section3 = () => {
           </h1>
         </div>
       </section>
-      <a id="anchor3" className="absolute top-[40%] lg:top-[75%] w-full h-20"></a>
+      <a
+        id="anchor3"
+        className="absolute top-[40%] lg:top-[75%] w-full h-20"
+      ></a>
       <div className="absolute top-[100%] w-full h-10"></div>
     </div>
   );
