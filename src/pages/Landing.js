@@ -92,7 +92,7 @@ const NavBar = ({ consolee }) => {
   return (
     <nav
       className={`${consolee >= 0.97 ? "fixed" : "hidden"
-        } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 shadow-md
+        } top-0 w-full left-0 right-0 px-3 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-16 shadow-md
       ${condition ? "bg-[#121212]" : "bg-white"} `}
     >
       <button
@@ -126,10 +126,10 @@ const NavBar = ({ consolee }) => {
         Paper Presentations
       </button>
       <div
-        className={`w-48 h-full ${condition && "invert"}`}
+        className={`w-20 h-20 lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3 ${condition && "invert"}`}
         style={{
           background:
-            `url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)`,
+            `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
           backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",

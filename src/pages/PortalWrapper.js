@@ -37,7 +37,17 @@ const NavBar = () => {
   return (
     <nav className="z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
       <div className="flex w-full justify-between items-center sticky top-0 bg-white">
-        <h1 className="text-3xl font-bold uppercase py-6 ">Kriya '23</h1>
+        <Link
+          to={"/"}
+          className="w-20 h-20 lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
+          style={{
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+            backgroundPosition: "left",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+        >
+        </Link>
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
