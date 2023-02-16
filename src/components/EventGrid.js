@@ -3,7 +3,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const EventGrid = ({
-  handleClick = () => {},
+  handleClick = () => { },
   title = "",
   description = "",
   className = "",
@@ -21,9 +21,11 @@ const EventGrid = ({
   const navigate = useNavigate();
 
   return (
-    <div className="group relative transition-all hover:z-30 font-poppins w-full lg:w-[21rem]">
-      <div className="hidden lg:absolute group-hover:shadow-lg opacity-0 -translate-y-20 group-hover:-translate-y-2 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-gray-200 rounded-b-3xl px-4 pt-2 transition-all ease-in-out">
-        <div className="flex flex-row space-x-12 justify-center py-4 text-gray-700">
+    <button className="group relative transition-all hover:z-30 font-poppins w-full lg:w-[21rem] text-left"
+      onClick={() => navigate(to)}
+    >
+      <div className="hidden lg:block absolute group-hover:shadow-lg opacity-0 -translate-y-20 group-hover:-translate-y-2 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-gray-200 rounded-b-3xl px-4 pt-2 transition-all ease-in-out">
+        <div className="flex flex-row justify-evenly py-4 text-gray-700">
           <div className="pt-2">
             <p className="font-poppins font-semibold text-center">{date}</p>
             <p className="font-poppins text-center">Date</p>
@@ -85,7 +87,7 @@ const EventGrid = ({
         </div>
 
         <div className="lg:hidden shadow-lg w-full bg-gray-200 rounded-b-xl px-4 font-poppins">
-          <div className="flex flex-row space-x-12 justify-center py-2 text-gray-700">
+          <div className="flex flex-row justify-evenly py-2 text-gray-700 text-base">
             <div className="pt-2">
               <p className="font-poppins font-semibold text-center">{date}</p>
               <p className="font-poppins text-center">Date</p>
@@ -98,7 +100,7 @@ const EventGrid = ({
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 };
 

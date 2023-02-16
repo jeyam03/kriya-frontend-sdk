@@ -3,6 +3,7 @@ import { FaSoundcloud } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import EventGrid from "../components/EventGrid";
 import { fetchEvents } from "../API/call";
+import "../styles/gradientAnimation.css";
 
 const EventList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -31,11 +32,22 @@ const EventList = () => {
   return (
     <div className="w-full font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
       <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-4 lg:px-8 flex flex-col items-center lg:block p-8">
+        <div className="w-full my-16 lg:mt-0">
+          <h1 className={`text-4xl lg:text-6xl text-white font-[600] font-poppins text-center py-2`}
+            id="soon-text"
+          >
+            ✨ Registrations Opening Soon ! ✨
+            {/* <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+              ✨ Registrations Opening Soon ! ✨
+            </span> */}
+          </h1>
+
+        </div>
         <h1
           className={`text-3xl lg:text-4xl font-semibold text-center lg:text-left `}
           id="kriyative"
         >
-          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#a861ff] to-[#8938d1]">
             Kriyative
           </span>
         </h1>
@@ -174,7 +186,7 @@ const EventsGrid = ({
           <EventGrid
             title={toTitleCase(i.name)}
             description={i.desc}
-            date="21st March 2021"
+            date="21 March"
             time="10:00 AM"
             icon={<FaSoundcloud />}
             imgurl={imgurl}

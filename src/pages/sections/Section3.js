@@ -105,7 +105,7 @@ const Section3 = () => {
               </p>
               <Link
                 className="text-blue-500 text-sm flex items-center group"
-                to="/portal/event?ctg=kriyative"
+                to="/portal/event/"
               >
                 <p className="">Explore more</p>
                 <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
