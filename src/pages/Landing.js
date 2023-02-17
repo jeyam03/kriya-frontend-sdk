@@ -10,9 +10,11 @@ import Section7 from "./sections/Section7";
 import Section8 from "./sections/Section8";
 import Section9 from "./sections/Section9";
 import { Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     window.addEventListener(
@@ -39,111 +41,20 @@ const Landing = () => {
       return ((b - w) * (a - 2)) / (2 * a) + (w + b) / 2;
   };
 
+  useEffect(() => {
+    if (!searchParams.get("sn")) return;
+    const element = document.querySelector(`#${searchParams.get("sn")}`);
+    element.scrollIntoView({ behavior: "smooth" });
+  }, [searchParams]);
+
+  const condition = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+
   return (
     <React.Fragment>
       {/* <div className="bg-white p-4 hiddn rounded-lg fixed top-10 left-10 z-50">
         {consolee}
       </div> */}
-      <nav
-        className={`${consolee >= 0.97 ? "fixed" : "hidden"
-          } top-0 w-full left-0 right-0 px-4 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-12 bg-white shadow-md`}
-      >
-        <button
-          onClick={(e) => {
-            const element = document.getElementById("section3");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-        >
-          Events
-        </button>
-        <button
-          onClick={(e) => {
-            const element = document.getElementById("section4");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-        >
-          Paper Presentations
-        </button>
-        <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-          onClick={(e) => {
-            const element = document.getElementById("section5");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Workshops
-        </button>
-        <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-          onClick={(e) => {
-            const element = document.getElementById("section6");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Sponsors
-        </button>
-        <div
-          className="w-48 h-full"
-          style={{
-            background:
-              "url(https://i.ibb.co/2YByxvt/Kriya-Logo-2023-black-1.png)",
-            backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"
-              }`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <button className="w-full h-full"
-            onClick={(e) => {
-              const element = document.getElementById("section1");
-              element.scrollIntoView({ behavior: "smooth" });
-            }}>
-          </button>
-        </div>
-        <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-          onClick={(e) => {
-            const element = document.getElementById("section7");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Our Team
-        </button>
-        <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-          onClick={(e) => {
-            const element = document.getElementById("section8");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          FAQs
-        </button>
-        <button
-          className={`hidden lg:block text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-          onClick={(e) => {
-            const element = document.getElementById("section9");
-            element.scrollIntoView({ behavior: "smooth" });
-          }}
-        >
-          Contact Us
-        </button>
-        <Link
-          to="/auth"
-          className={`text-xs text-gray-600 leading-5 font-poppins ${consolee > 1 ? "hover:text-black" : "hover:text-gray-300"
-            } transition-all`}
-        >
-          Register
-        </Link>
-      </nav>
+      <NavBar consolee={consolee} />
       <main
         className={`w-screen overflow-x-hidden transition-all duration-300`}
         style={{
@@ -151,15 +62,9 @@ const Landing = () => {
           //   consolee
           // )}, ${getColorVal(consolee)}, 1)`,
           background:
-            window.innerWidth < 768
-              ? parseFloat(consolee) + 0.25 <= 1 || parseFloat(consolee) + 0.25 >= 2
-                ? `rgba(255, 255, 255, 1)`
-                : `rgba(18, 18, 18, 1)`
-              : parseFloat(consolee) + 0.25 >= 3
-                ? `rgba(255, 255, 255, 1)`
-                : (parseFloat(consolee) + 0.25) % 2 <= 1
-                  ? `rgba(255, 255, 255, 1)`
-                  : `rgba(18, 18, 18, 1)`,
+            condition
+              ? `rgba(18, 18, 18, 1)`
+              : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
           scrollSnapType: "y mandatory",
@@ -168,9 +73,9 @@ const Landing = () => {
         <Section1 />
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
-        <Section4 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
-        <Section6 scrollYByVH={consolee} />
+        <Section4 scrollYByVH={consolee} />
+        {/* <Section6 scrollYByVH={consolee} /> */}
         <Section7 scrollYByVH={consolee} />
         <Section8 />
         <Section9 />
@@ -180,6 +85,97 @@ const Landing = () => {
 };
 
 export default Landing;
+
+const NavBar = ({ consolee }) => {
+  const condition = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+
+  return (
+    <nav
+      className={`${consolee >= 0.97 ? "fixed" : "hidden"
+        } top-0 w-full left-0 right-0 px-3 flex items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-16 lg:h-12 shadow-md
+      ${condition ? "bg-[#121212]" : "bg-white"} `}
+    >
+      <button
+        onClick={(e) => {
+          const element = document.getElementById("section3");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+      >
+        Events
+      </button>
+      <button
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+        onClick={(e) => {
+          const element = document.getElementById("section5");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        Workshops
+      </button>
+      <button
+        onClick={(e) => {
+          const element = document.getElementById("section4");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+      >
+        Paper Presentations
+      </button>
+      <div
+        className={`w-[4.5rem] h-[4.5rem] mt-0 lg:mt-4 -mb-3 lg:mb-1 ${condition && "invert"}`}
+        style={{
+          background:
+            `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+          backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <button
+          className="w-full h-full"
+          onClick={(e) => {
+            const element = document.getElementById("section1");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
+        ></button>
+      </div>
+      <button
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+        onClick={(e) => {
+          const element = document.getElementById("section7");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        Our Team
+      </button>
+      <button
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+        onClick={(e) => {
+          const element = document.getElementById("section8");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        FAQs
+      </button>
+      <button
+        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+        onClick={(e) => {
+          const element = document.getElementById("section9");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        Contact Us
+      </button>
+    </nav>
+  );
+};
 
 const MenuToggle = ({ isOpen, setIsOpen }) => {
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
+import { fetchEvents } from "../API/call";
 
 const PortalWrapper = ({ children }) => {
   return (
@@ -14,8 +15,14 @@ const PortalWrapper = ({ children }) => {
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const events = fetchEvents()
+    .map((event) => ({
+      name: event.eventName,
+      category: event.category,
+      id: event.eventId,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
-  
   useEffect(() => {
     let details = navigator.userAgent;
     let regexp = /android|iphone|kindle|ipad/i;
@@ -27,29 +34,51 @@ const NavBar = () => {
     }
   }, []);
 
-
   return (
-    <nav className="z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
-      <div className="flex w-full justify-between items-center">
-        <h1 className="text-3xl font-bold uppercase py-6 ">Kriya '23</h1>
+    <nav className="z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
+      <div className="flex w-full justify-between items-center sticky top-0 bg-white">
+        <Link
+          to={"/"}
+          className="w-20 h-20 lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
+          style={{
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+            backgroundPosition: "left",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+        >
+        </Link>
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <div className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"} transition-all ease-in-out duration-300`}>
-        <div className="py-8 w-full">
-          <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+
+      <div
+        className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+          } transition-all ease-in-out duration-300`}
+      >
+        <div className="py-8 w-full flex flex-col">
+          {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Register
-          </Link>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Sponsors
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+          </Link> */}
+          <Link
+            to="/portal/event"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+          >
             Events
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+          </Link>
+          <Link
+            to="/../?sn=section5"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+          >
             Workshops
-          </button>
+          </Link>
+          <Link
+            to="/../?sn=section4"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+          >
+            Paper Presentations
+          </Link>
         </div>
-        <div className="py-8">
+        {/* <div className="py-8">
           <h3 className="text-base font-semibold py-6">✨ Suggested Events</h3>
           <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Scan and Reckon
@@ -60,52 +89,15 @@ const NavBar = () => {
           <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Sodapops
           </button>
-        </div>
+        </div> */}
         <div className="py-8">
           <h3 className="text-base font-semibold py-6">All Events</h3>
-          <p className="w-full text-sm text-gray-500 py-4">Brainiac</p>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Scan and Reckon
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Thirstify
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Sodapops
-          </button>
-
-          <p className="w-full text-sm text-gray-500 py-4">Brainiac</p>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Scan and Reckon
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Thirstify
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Sodapops
-          </button>
-
-          <p className="w-full text-sm text-gray-500 py-4">Brainiac</p>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Scan and Reckon
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Thirstify
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Sodapops
-          </button>
-
-          <p className="w-full text-sm text-gray-500 py-4">Brainiac</p>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Scan and Reckon
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Thirstify
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Sodapops
-          </button>
+          <EventNav category="Kriyative" noMargin events={events} />
+          <EventNav category="Brainiac" events={events} />
+          <EventNav category="Coding" events={events} />
+          <EventNav category="Circuit" events={events} />
+          <EventNav category="Core Engineering" events={events} />
+          <EventNav category="Management" events={events} />
         </div>
       </div>
     </nav>
@@ -114,10 +106,30 @@ const NavBar = () => {
 
 export default PortalWrapper;
 
-const MenuToggle = ({ isOpen, setIsOpen }) => {
+const EventNav = ({ category, noMargin = false, events }) => {
+  return (
+    <React.Fragment>
+      <p
+        className={`w-full text-sm uppercase tracking-widest text-gray-500 ${!noMargin && "mt-8"
+          } py-4`}
+      >
+        {category}
+      </p>
+      {events
+        .filter((e) => e.category === category)
+        .map((e) => (
+          <Link to={`/portal/event/${e.id}`} className="w-full text-gray-600 text-left hover:text-black text-base py-2 block">
+            {e.name}
+          </Link>
+        ))}
+    </React.Fragment>
+  );
+};
+
+const MenuToggle = ({ isOpen, setIsOpen, className }) => {
   return (
     <button
-      className="lg:hidden flex items-center p-1 text-gray-500 lg:hover:text-gray-300"
+      className={`lg:hidden relative z-20 flex items-center p-1 text-gray-500 lg:hover:text-gray-300`}
       onClick={() => setIsOpen(!isOpen)}
     >
       {isOpen ? (

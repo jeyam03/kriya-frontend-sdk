@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
-import TeamDetails from "./TeamDetails.js";
+import TeamDetails from "./TeamDetails.json";
 import "../../styles/FlipCard.css";
 
 // Our Team
@@ -22,16 +22,6 @@ const Section7 = () => {
     const element = document.querySelector("#anchor8");
     const teamTexts = document.querySelectorAll(".team-text");
     const observer = new IntersectionObserver((entries) => {
-      // console.log(entries[0].isIntersecting);
-      // if (entries[0].isIntersecting) {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.add("animate-fade-in");
-      //   });
-      // } else {
-      //   teamTexts.forEach((eventsText) => {
-      //     eventsText.classList.remove("animate-fade-in");
-      //   });
-      // }
       teamTexts.forEach((eventsText) => {
         eventsText.classList.add("animate-fade-in");
       });
@@ -67,14 +57,14 @@ const Section7 = () => {
     <div className="w-full relative">
       <section
         id="section7"
-        className="w-full relative flex items-start team-text opacity-0"
+        className="w-full relative flex items-start team-text opacity-0 mt-12 lg:mt-24"
       >
         <div
           className={`w-full lg:w-[calc(100vw-75vh)] font-poppins pt-8 lg:pt-16 pb-0 px-[calc(100vw/12)]`}
           id="left-grid"
         >
           <h1
-            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-96"
+            className="text-4xl lg:text-5xl w-full font-semibold text-[#181818] lg:pt-24"
             id="our-team-text"
           >
             Our
@@ -86,12 +76,12 @@ const Section7 = () => {
             We bring our creativity and attention to detail to every event we
             plan, ensuring a seamless and unforgettable experience for you all.
           </p>
+          <ImageGrid vertical="Office Bearers" />
           <ImageGrid vertical="Ambience and Creativity" />
           <ImageGrid vertical="App and Web Development" />
           <ImageGrid vertical="Design" />
           <ImageGrid vertical="Events Resource Management" />
           <ImageGrid vertical="PR and Sponsorship" />
-          <ImageGrid vertical="SU Volunteer" />
         </div>
 
         <div
@@ -166,38 +156,36 @@ const ImageGrid = ({ vertical }) => {
     <React.Fragment>
       <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
       <div className="flex flex-wrap gap-2 w-full">
-        {TeamDetails.filter((i) => i.Verticals === vertical).map(
-          (item, idx) => {
-            return (
-              <div
-                className="w-16 h-16 lg:w-36 lg:h-36 aspect-square overflow-hidden"
-                id="flip-card"
-              >
-                <div className="w-full h-full" id="flip-card-inner">
-                  <div
-                    className="w-full h-full "
-                    style={{
-                      background: `url(${
-                        idx % 2 === 0 ? IMAGE_URL_1 : IMAGE_URL_2
-                      })`,
-                      backgroundPosition: "center",
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                    id="flip-card-front"
-                  ></div>
-                  <div
-                    className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
-                    id="flip-card-back"
-                  >
-                    <h3 className="text-sm font-semibold">{item.Name}</h3>
-                    <p className="text-xs">{item.Position}</p>
-                  </div>
+        {TeamDetails.filter((i) => i.vertical === vertical).map((item, i) => {
+          return (
+            <div
+              className="w-24 h-24 lg:w-36 lg:h-36 aspect-square overflow-hidden"
+              id="flip-card"
+            >
+              <div className="w-full h-full" id="flip-card-inner">
+                <div
+                  loading="lazy"
+                  className="w-full h-full "
+                  style={{
+                    background: `url(${item.image_url}), #f5f5f5`,
+                    backgroundPosition: "top",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    // filter: "grayscale(100%)",
+                  }}
+                  id="flip-card-front"
+                ></div>
+                <div
+                  className="flex flex-col w-full h-full justify-center p-2 bg-gray-200 "
+                  id="flip-card-back"
+                >
+                  <h3 className="text-sm font-semibold">{item.name}</h3>
+                  <p className="text-xs">{item.position}</p>
                 </div>
               </div>
-            );
-          }
-        )}
+            </div>
+          );
+        })}
       </div>
     </React.Fragment>
   );
