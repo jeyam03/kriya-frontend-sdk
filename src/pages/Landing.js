@@ -100,13 +100,23 @@ const NavBar = ({ consolee }) => {
           const element = document.getElementById("section3");
           element.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
       >
         Events
       </button>
       <button
-        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+        onClick={(e) => {
+          const element = document.getElementById("section4");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+      >
+        Paper Presentations
+      </button>
+      <button
+        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section5");
@@ -114,16 +124,6 @@ const NavBar = ({ consolee }) => {
         }}
       >
         Workshops
-      </button>
-      <button
-        onClick={(e) => {
-          const element = document.getElementById("section4");
-          element.scrollIntoView({ behavior: "smooth" });
-        }}
-        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
-      >
-        Paper Presentations
       </button>
       <div
         className={`w-[4.5rem] h-[4.5rem] mt-0 lg:mt-4 -mb-3 lg:mb-1 ${condition && "invert"}`}
@@ -144,7 +144,7 @@ const NavBar = ({ consolee }) => {
         ></button>
       </div>
       <button
-        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section7");
@@ -154,7 +154,7 @@ const NavBar = ({ consolee }) => {
         Our Team
       </button>
       <button
-        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section8");
@@ -164,7 +164,7 @@ const NavBar = ({ consolee }) => {
         FAQs
       </button>
       <button
-        className={`hidden lg:block text-xs ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
+        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"} leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section9");

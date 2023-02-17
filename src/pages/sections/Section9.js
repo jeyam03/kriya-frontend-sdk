@@ -42,7 +42,7 @@ const Section9 = () => {
           <ContactItem
             name="Aditya Varma"
             phone="+91 82486 84835"
-            className="mt-4"
+            className="mt-4 lg:mt-14"
           />
         </div>
         <div className="w-full lg:w-56">
@@ -51,7 +51,7 @@ const Section9 = () => {
           <ContactItem
             name="Sudharshan"
             phone="+91 87546 13534"
-            className="mt-4"
+            className="mt-4 lg:mt-14"
           />
         </div>
         <div className="w-full lg:w-56">
@@ -60,7 +60,7 @@ const Section9 = () => {
           <ContactItem
             name="Jeyam Palaniappan"
             phone="+91 93847 68177"
-            className="mt-4"
+            className="mt-4 lg:mt-14"
           />
         </div>
       </div>
