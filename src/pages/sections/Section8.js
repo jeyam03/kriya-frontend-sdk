@@ -4,7 +4,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 // FAQs
 
 const Section8 = () => {
-  const [faqOpenIdx, setFaqOpenIdx] = useState(0);
+  const [faqOpenIdx, setFaqOpenIdx] = useState(-1);
 
   return (
     <div className="">
@@ -25,7 +25,9 @@ const Section8 = () => {
                 question={item.question}
                 answer={item.answer}
                 isOpened={index === faqOpenIdx}
-                onClick={() => setFaqOpenIdx(index)}
+                onClick={() => {
+                  index === faqOpenIdx ? setFaqOpenIdx(-1) : setFaqOpenIdx(index);
+                }}
               />
             ))}
           </div>
@@ -43,7 +45,7 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
           {question}
         </button>
         <button onClick={onClick}>
-          <AiOutlinePlus className="text-2xl" />
+          <AiOutlinePlus className={`text-2xl ${isOpened ? "rotate-45" : "rotate-0"} transition-all`} />
         </button>
       </div>
       <div
@@ -58,35 +60,35 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
 
 const FAQContent = [
   {
-    question: "What is the purpose of the college event?",
+    question: "What is Kriya?",
     answer:
-      "The purpose of the college event is to provide a platform for students, faculty, and staff to come together to participate in a range of activities and programs designed to promote community building and learning. The event may include workshops, speakers, concerts, and other forms of entertainment.",
+      "Kriya is the largest technical symposium conducted by PSG College of Technology. The Students Union is ecstatic to spread the aura of knowledge and healthy competition through Kriya by carrying out 35+ Events, 12+ Workshops and 4 Technical Paper Presentations that encompasses an array of engineering streams, Kriya brings together the savviest brains on the planet, from proficient scholars to dexterous techno-wizards, to who’s who of the industrial domain, and also eminent leaders from different walks of life, to enrich and aggrandize the minds of participating students.",
   },
   {
-    question: "Who can attend the college event?",
+    question: "Who can participate in Kriya?",
     answer:
-      "The college event is open to all students, faculty, and staff members of the college, as well as alumni and members of the local community.",
+      "The contest is open for all Undergraduate and Postgraduate students from Technical Higher Educational Institutions of India.",
   },
   {
-    question: "What is the schedule for the event?",
+    question: "What are the benefits of taking part in Kriya ?",
     answer:
-      "The schedule for the college event will be made available in advance through the college's website, social media channels, and other communication channels. It will typically include a detailed schedule of activities and programs, along with information on when and where they will take place.",
+      "Kriya is a national level technical fest where participants get an opportunity to compete in various events with students from across the country and win attractive cash prizes. Kriya is a also platform for participants to stay at the forefront of technical advancements through its industry-led workshops and technical paper presentations. ",
   },
   {
-    question: "Is there a cost to attend the college event?",
+    question: "What is the fee to participate in Kriya?",
     answer:
-      "The cost of attending the college event will depend on the specific activities and programs included in the event. Some activities and programs may be free, while others may require a fee. Information on the cost of attending each event will be made available in advance through the college's website and other communication channels.",
+      "The general registration fee is Rs. 200 for PSG Tech students and Rs. 250 for students from other colleges.",
   },
   {
-    question: "How can I register to attend the college event?",
+    question: "Where can I stay if I want to participate in Kriya?",
     answer:
-      "Registration to attend the college event can typically be done through the college's website or by contacting the event organizers directly. Information on how to register will be made available in advance through the college's website and other communication channels.",
+      "Accommodation is available on a first come first serve basis. The cost of on-campus accommodation be Rs. 150 per night. Food is available at the cost of Rs. 50 per meal.",
   },
   {
     question:
-      "Are there any accommodations available for attendees with disabilities?",
+      "Do we have to pay separately for attending workshops?",
     answer:
-      "The college is committed to providing accommodations for attendees with disabilities. Information on available accommodations will be made available in advance through the college's website and other communication channels, and attendees are encouraged to contact the event organizers directly to request any necessary accommodations.",
+      "Yes, we have to pay separately for each workshop. The general registration fee doesn’t cover workshop participation.",
   },
 ];
 

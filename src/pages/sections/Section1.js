@@ -261,7 +261,7 @@ const Section1 = () => {
               <div className="text-5xl">
                 <Number n={4} />
               </div>
-              <h1 className="text-sm text-center tracking-wide uppercase">Paper Presentations</h1>
+              <h1 className="text-xs text-center tracking-wide uppercase">Paper Presentations</h1>
             </div>
           </div>
           <div

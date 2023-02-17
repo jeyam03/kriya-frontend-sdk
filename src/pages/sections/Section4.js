@@ -80,7 +80,7 @@ const Section4 = ({ scrollYByVH }) => {
           >
             Engineering.
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" Surveying. "}
+              {" Researching. "}
             </span>{" "}
             Solutions.
           </h1>
