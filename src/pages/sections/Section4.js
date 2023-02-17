@@ -43,30 +43,17 @@ const Section4 = ({ scrollYByVH }) => {
       >
         <div className="lg:w-[70%] h-full hidden lg:block">
           <div className="flex items-center h-full space-x-2 w-full pr-16">
-            <PaperPresentationItemDesktop
-              index={0}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              data={fetchPapers()[0]}
-            />
-            <PaperPresentationItemDesktop
-              index={1}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              data={fetchPapers()[1]}
-            />
-            <PaperPresentationItemDesktop
-              index={2}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              data={fetchPapers()[2]}
-            />
-            <PaperPresentationItemDesktop
-              index={3}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              data={fetchPapers()[3]}
-            />
+            {fetchPapers().map((data, index) => {
+              return (
+                <PaperPresentationItemDesktop
+                  index={index}
+                  onMouseHoverIndex={onMouseHoverIndex}
+                  setOnMouseHoverIndex={setOnMouseHoverIndex}
+                  data={data}
+                />
+              );
+            })
+            }
           </div>
         </div>
 
@@ -83,70 +70,14 @@ const Section4 = ({ scrollYByVH }) => {
         </div>
         <div className="block lg:hidden w-full lg:w-[60%] h-full overflow-x-auto mt-8">
           <div className="flex w-fit h-full items-center relative space-x-6 px-8">
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP01`);
-              }}
-              style={{
-                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[0].image}")`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[0].eventName}
-              </p>
-            </button>
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP02`);
-              }}
-              style={{
-                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[1].image}")`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[1].eventName}
-              </p>
-            </button>
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP03`);
-              }}
-              style={{
-                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[2].image}")`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[2].eventName}
-              </p>
-            </button>
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP04`);
-              }}
-              style={{
-                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[3].image}")`,
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[3].eventName}
-              </p>
-            </button>
+            {fetchPapers().map((data, index) => {
+              return (
+                <PaperPresentationItemMobile
+                  data={data}
+                />
+              );
+            })
+            }
           </div>
         </div>
       </section>
@@ -162,14 +93,6 @@ const PaperPresentationItemDesktop = ({
   data,
 }) => {
   const navigate = useNavigate();
-
-  const toTitleCase = (phrase) => {
-    return phrase
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  };
 
   return (
     <button
@@ -191,9 +114,32 @@ const PaperPresentationItemDesktop = ({
         className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${onMouseHoverIndex === index
           ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-6 -translate-y-6"
           : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
-          }`}
+          } uppercase`}
       >
-        {toTitleCase(data.eventName)}
+        {data.eventName}
+      </p>
+    </button>
+  );
+};
+
+const PaperPresentationItemMobile = ({ data, }) => {
+  const navigate = useNavigate();
+
+  return (
+    <button
+      className="w-64 h-[90%] flex items-end rounded-lg p-4"
+      onClick={() => {
+        navigate(`/portal/paper/${data.ppid}`);
+      }}
+      style={{
+        background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${data.image}")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <p className="font-semibold font-poppins text-2xl text-gray-100">
+        {data.eventName}
       </p>
     </button>
   );
