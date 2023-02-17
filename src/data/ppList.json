@@ -1,6 +1,7 @@
 [
   {
     "ppid": "PPPN0001",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632273/Paper/technoblitz_niveqx.png",
     "eventName": "TECHNOBLITZ",
     "contact1": [
        "R S Krishna",
@@ -16,6 +17,7 @@
  },
   {
     "ppid": "PPPN0002",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632274/Paper/textrivia_png-01_l4fhx6.png",
     "eventName": "TEXTRIVIA",
     "contact1": [
        "R. K. BHARATRAJ ",
@@ -31,6 +33,7 @@
  },
   {
     "ppid": "PPPN0003",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632273/Paper/Technoration_intbeo.png",
     "eventName": "TECHNORATION",
     "contact1": [
        "Sharan S",
@@ -46,6 +49,7 @@
  },
   {
     "ppid": "PPPN0004",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632273/Paper/excel_v36t4m.png",
     "eventName": "EXCELLENCIA",
     "contact1": [
        "KEERTHIVASSAN S",
