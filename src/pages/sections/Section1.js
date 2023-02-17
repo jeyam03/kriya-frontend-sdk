@@ -202,9 +202,9 @@ const Section1 = () => {
       </div>
 
       <div className="w-full lg:w-[35vw] h-full pb-8 pt-4 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col items-center lg:items-start justify-between">
-        <div className="flex items-center  space-x-4 w-full px-8">
+        <div className="flex items-center space-x-4 w-full px-6">
           <div
-            className="lg:hidden w-28 h-28"
+            className="lg:hidden w-32 h-28"
             style={{
               background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
               backgroundPosition: "left",

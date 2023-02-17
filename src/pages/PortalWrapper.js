@@ -39,7 +39,7 @@ const NavBar = () => {
       <div className="flex w-full justify-between items-center sticky top-0 bg-white">
         <Link
           to={"/"}
-          className="w-20 h-20 lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
+          className="w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
           style={{
             background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
             backgroundPosition: "left",
