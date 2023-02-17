@@ -115,7 +115,7 @@ const Event = () => {
             </span>
           </button>
 
-          <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-4 justify-center">
+          <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
             <div className="flex flex-row items-center gap-4 lg:gap-4">
               <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
                 24
@@ -134,11 +134,8 @@ const Event = () => {
                 <MdAccessTime />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
-                  09:30 AM - 12:00 PM
-                </p>
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
-                  02:00 PM - 03:30 PM
+                <p className="text-base lg:text-base font-semibold tracking-wider text-[#3c4043]">
+                  {eventDetail.timing}
                 </p>
               </div>
             </div>
@@ -147,11 +144,8 @@ const Event = () => {
                 <MdOutlineLocationOn />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  K Block 1<sup>st</sup> Floor
-                </p>
-                <p className="text-base lg:text-base tracking-wide text-[#3c4043]">
-                  Civil Seminar Hall
+                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-sm" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
+                  {eventDetail.hall}
                 </p>
               </div>
             </div>
@@ -177,7 +171,7 @@ const Event = () => {
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_1)}
                 </p>
-                <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
+                <p className="text-base lg:text-sm tracking-wide text-white lg:text-[#3c4043]">
                   {eventDetail.contact_mobile_1}
                 </p>
               </div>
@@ -204,7 +198,7 @@ const Event = () => {
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_2)}
                 </p>
-                <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
+                <p className="text-base lg:text-sm tracking-wide text-white lg:text-[#3c4043]">
                   {eventDetail.contact_mobile_2}
                 </p>
               </div>
@@ -232,24 +226,20 @@ const Event = () => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
-        <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
-          <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
-            Rules
-          </p>
-          <ul className="list-disc text-base tracking-wide text-justify text-[#3c4043] pl-4">
-            <li>
-              Participants are advised to come with laptop, if not computers
-              with autocad version 2007 will only be provided.
-            </li>
-            <li>
-              Time based events and rounds will be conducted on elimination
-              basis.
-            </li>
-            <li>Judges decisions will be final.</li>
-          </ul>
+      {eventDetail.eventRules && eventDetail.eventRules.length > 0 && (
+        <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
+          <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
+            <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
+              Rules
+            </p>
+            <ul className="list-disc text-base tracking-wide text-justify text-[#3c4043] pl-4">
+              {eventDetail.eventRules.split("\n").map((rule, index) => (
+                <li key={index}>{rule}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
