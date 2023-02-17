@@ -148,7 +148,7 @@ const WorkshopGrid = ({ number, imgurl, title, id }) => {
   return (
     <div className="">
       <div className="w-[20rem] lg:w-[22rem] h-96">
-        <div className="h-full p-2 pt-4 rounded-2xl flex flex-col items-center justify-between bg-gray-200">
+        <div className="group h-full p-2 pt-4 rounded-2xl flex flex-col items-center justify-between bg-[#f0f0f0]">
           <div className={`bg-opacity-50 flex w-72 lg:w-80 h-52`}
             style={{
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
@@ -164,7 +164,7 @@ const WorkshopGrid = ({ number, imgurl, title, id }) => {
           </div>
           <div className="flex flex-row w-full justify-between items-center p-4">
             <div className="">
-              <div className="text-sm lg:text-lg w-[75%] pb-4 font-semibold text-left">
+              <div className="text-sm lg:text-lg w-[75%] pb-4 font-semibold text-left group-hover:bg-clip-text group-hover:[-webkit-text-fill-color:transparent] group-hover:bg-gradient-to-r from-[#C80067] to-[#5451B6] transition-all">
                 {title}
               </div>
               <Link
@@ -175,7 +175,7 @@ const WorkshopGrid = ({ number, imgurl, title, id }) => {
                 <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
-            <div className="text-6xl lg:text-8xl font-semibold text-gray-400">
+            <div className="text-6xl lg:text-8xl font-semibold text-gray-400 group-hover:bg-clip-text group-hover:[-webkit-text-fill-color:transparent] group-hover:bg-gradient-to-b from-[#C80067] to-[#5451B6] transition-all">
               {number}
             </div>
           </div>

@@ -156,7 +156,7 @@ const PaperPresentationItemDesktop = ({
     <button
       onMouseEnter={(e) => setOnMouseHoverIndex(index)}
       onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-      className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-full w-2/6" : "h-[95%] w-1/6"
+      className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-[90%] w-2/6" : "h-[85%] w-1/6"
         } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
       onClick={() => {
         navigate(`/portal/paper/${id}`);
