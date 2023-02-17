@@ -47,33 +47,25 @@ const Section4 = ({ scrollYByVH }) => {
               index={0}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[0].eventName}
-              id={fetchPapers()[0].ppid}
-              image={fetchPapers()[0].image}
+              data={fetchPapers()[0]}
             />
             <PaperPresentationItemDesktop
               index={1}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[1].eventName}
-              id={fetchPapers()[1].ppid}
-              image={fetchPapers()[1].image}
+              data={fetchPapers()[1]}
             />
             <PaperPresentationItemDesktop
               index={2}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[2].eventName}
-              id={fetchPapers()[2].ppid}
-              image={fetchPapers()[2].image}
+              data={fetchPapers()[2]}
             />
             <PaperPresentationItemDesktop
               index={3}
               onMouseHoverIndex={onMouseHoverIndex}
               setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[3].eventName}
-              id={fetchPapers()[3].ppid}
-              image={fetchPapers()[3].image}
+              data={fetchPapers()[3]}
             />
           </div>
         </div>
@@ -96,6 +88,12 @@ const Section4 = ({ scrollYByVH }) => {
               onClick={() => {
                 navigate(`/portal/paper/PP01`);
               }}
+              style={{
+                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[0].image}")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
             >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
                 {fetchPapers()[0].eventName}
@@ -105,6 +103,12 @@ const Section4 = ({ scrollYByVH }) => {
               className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
               onClick={() => {
                 navigate(`/portal/paper/PP02`);
+              }}
+              style={{
+                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[1].image}")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
               }}
             >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
@@ -116,6 +120,12 @@ const Section4 = ({ scrollYByVH }) => {
               onClick={() => {
                 navigate(`/portal/paper/PP03`);
               }}
+              style={{
+                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[2].image}")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
             >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
                 {fetchPapers()[2].eventName}
@@ -125,6 +135,12 @@ const Section4 = ({ scrollYByVH }) => {
               className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
               onClick={() => {
                 navigate(`/portal/paper/PP04`);
+              }}
+              style={{
+                background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${fetchPapers()[3].image}")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
               }}
             >
               <p className="font-semibold font-poppins text-2xl text-gray-100">
@@ -143,9 +159,7 @@ const PaperPresentationItemDesktop = ({
   index,
   onMouseHoverIndex,
   setOnMouseHoverIndex,
-  title,
-  id,
-  image,
+  data,
 }) => {
   const navigate = useNavigate();
 
@@ -164,10 +178,10 @@ const PaperPresentationItemDesktop = ({
       className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-[90%] w-2/6" : "h-[85%] w-1/6"
         } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
       onClick={() => {
-        navigate(`/portal/paper/${id}`);
+        navigate(`/portal/paper/${data.ppid}`);
       }}
       style={{
-        background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${image}")`,
+        background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${data.image}")`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -179,7 +193,7 @@ const PaperPresentationItemDesktop = ({
           : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
           }`}
       >
-        {toTitleCase(title)}
+        {toTitleCase(data.eventName)}
       </p>
     </button>
   );
