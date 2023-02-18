@@ -66,7 +66,7 @@
     "timing": "9.30 am to 1.30 pm"
   },
   {
-    "eventName": "MATH-2-HUNT",
+    "eventName": "MATH - 2 - HUNT",
     "category": "Brainiac",
     "one_line_desc": "",
     "description": "Math-2-hunt is a team event, consisting of three rounds which will surely awaken the young Ramanujan inside everyone. The first round consists of solving a few questions among which zero is the answer for some questions. To win this round, all the zeros should be found. We the Indians are the best at handling Zeros. Round 2 contains Questions filled in a box, every team has to take a question randomly and solve it. It also contains Bonus and Devil questions.  Mathematicians don't believe in Devil, they just smash it.   Last but not least. Round 3 contains simple mathematical calculations. But the twist is that calculators will not be allowed. Common young mathematicians, unleash the Ramanujan hiding inside you.",
@@ -74,7 +74,7 @@
     "round_desc_1": "It will be a 2 vs 2 pair. A team will be provided with 45qns . In that 45 qns, 25qns will have Zero as their answer. The participants have to select questions randomly and solve it. ( *no need to solve all the 45qns * ). One who got all zeros within the time limit or one who got more zeros within the time limit will be considered as a winner.",
     "round_title_2": "Fade out the devil",
     "round_desc_2": "Questions (easy to tough) from all the nooks and corners of mathematics are printed in small pieces of paper and filled in a box. Teams which perform good in round 1 are promoted for this round. They have to take the questions randomly from the box and solve it. For every solved question + 20 point. Answered questions will be isolated, they won't be circulated anymore. Every unsolved question will result in - 5 points. They can be returned to the box so that others can solve it.",
-    "round_title_3": "Unleash the 'Ramanujan'",
+    "round_title_3": "Unleash the ' Ramanujan '",
     "round_desc_3": "Only three teams will be finalized from the round 2. Now the teams are split into individuals. Simple addition, subtraction, multiplication, division questions will be given. Calculators and other electronic calculating devices won't be allowed. Small pieces of paper will be provided for calculation.",
     "round_title_4": "",
     "round_desc_4": "",
@@ -101,9 +101,9 @@
     "round_title_4": "",
     "round_desc_4": "",
     "eventId": "EVNT0005",
-    "contact_name_1": "Anusri.P",
+    "contact_name_1": "Anusri P",
     "contact_mobile_1": 9080424132,
-    "contact_name_2": "Abinivesh.G.A",
+    "contact_name_2": "Abinivesh G A",
     "contact_mobile_2": 8667466930,
     "hall": "G 602",
     "eventRules": "Participants should strictly adhere to the time limit.\nParticipants are strictly prohibited from using the internet.\nParticipants are advised not to indulge in any form of malpractice.\nDecision of the convenors/ judges will stand final.",
@@ -154,7 +154,7 @@
     "timing": "9:30 AM to 12:00 PM and 2:00 PM to 3:30 PM"
   },
   {
-    "eventName": "Electri-Warz",
+    "eventName": "Electri - Warz",
     "one_line_desc": "“UNLEASH THE SHOPPER IN YOU”",
     "description": "Looking for some festivity? Here you have fun filling rounds infused with technical ideas. In this technical event, kicking of the event's round with some rejoicing tasks The rounds will be of time based in which the participants should complete the questions in the specified provided timeline. All the rounds have intermediate technical questions steeped with",
     "round_title_1": "Round 1",
@@ -194,7 +194,7 @@
     "contact_name_2": "Sanjana Ragavan",
     "contact_mobile_2": 6369953122,
     "hall": "G-602",
-    "eventRules": "• Each team can have a minimum of 1 and a maximum of 4 members\n• Participants should be present in the informed venue before or on time.\n• The participants will be given 15 minutes for presenting their idea which will be followed by a 5-\nminute question-and-answer session.\n• Implementation of the robot via simulation or model will be an added credit\n• Usage of internet resources is allowed however direct plagiarism of ideas is strictly prohibited.\n• The decision of the judges will be deemed final and no correspondence will be entered into.\n• The robot can be self-contained or controlled remotely depending on the choice of the team.\n• The robot should be battery operated\n• The robot shall not leave any part of its body behind while negotiating the maze.\n• The robot shall not jump over, fly over, climb, scratch, cut, burn, mark, damage, or destroy the\nwalls of the maze.\n• The robot shall not be larger either in length or in width than the dimensions of the maze(20cm)",
+    "eventRules": " Each team can have a minimum of 1 and a maximum of 4 members\n Participants should be present in the informed venue before or on time.\n The participants will be given 15 minutes for presenting their idea which will be followed by a 5-\nminute question-and-answer session.\n Implementation of the robot via simulation or model will be an added credit\n Usage of internet resources is allowed however direct plagiarism of ideas is strictly prohibited.\n The decision of the judges will be deemed final and no correspondence will be entered into.\n The robot can be self-contained or controlled remotely depending on the choice of the team.\n The robot should be battery operated\n The robot shall not leave any part of its body behind while negotiating the maze.\n The robot shall not jump over, fly over, climb, scratch, cut, burn, mark, damage, or destroy the\nwalls of the maze.\n The robot shall not be larger either in length or in width than the dimensions of the maze(20cm)",
     "timing": "9 AM-12 PM & 1:30 PM-4 PM"
   },
   {
@@ -250,9 +250,9 @@
     "round_desc_1": " Participants will have to type the code for a given simple program without looking at what they type. If there are any syntax errors or typos, you have to start over again. teams with the shortest time to complete the task will qualify for the next round",
     "round_title_2": "Open Source Trivia",
     "round_desc_2": "Participants will have to answer questions based on based on open source projects embedded in each table in the metaverse. teams will have to navigate through the metaverse to answer all the given questions. Teams with the highest score and shortest time will qualify for the next round",
-    "round_title_3": "Typing, Coding, Debugging, Version control(Ninja Warrior style)",
+    "round_title_3": "Typing, Coding, Debugging, Version control ( Ninja Warrior style )",
     "round_desc_3": "Participants will be given all the above mentioned tasks which will appear when they clone, commit, push to a repository in GitHub. Teams have to finish it as fast as possible. Every teams's time will be recorded",
-    "round_title_4": "Propose an app idea for the theme(Shark tank Style)",
+    "round_title_4": "Propose an app idea for the theme ( Shark tank Style )",
     "round_desc_4": "A unique problem statement will be given to every team and they will be provided time to discuss and think about solving the problem using an app/website. What are the unique features the app will have? How will they build the proposed app?.",
     "eventId": "EVNT0012",
     "contact_name_1": "Nithiin",
@@ -293,7 +293,7 @@
     "round_title_1": "Round 1",
     "round_desc_1": "\tTeams will be given clues with respect to the number locked locks\" The teams are to use the given clues to unlock the certain number of given locks",
     "round_title_2": "Round 2",
-    "round_desc_2": "-- It’s time to capture your kingdom, by fighting with your enemies!  The teams who qualified round 1 are here to capture your kingdom.",
+    "round_desc_2": "It’s time to capture your kingdom, by fighting with your enemies!  The teams who qualified round 1 are here to capture your kingdom.",
     "round_title_3": "",
     "round_desc_3": "",
     "round_title_4": "",
@@ -308,7 +308,7 @@
     "timing": "8:30 am – 11:30 am (Round 1) ; 1:30 pm – 4:30 pm (Round 2)"
   },
   {
-    "eventName": "AUTO-FACSIMILE",
+    "eventName": "AUTO - FACSIMILE",
     "category": "Core Engineering",
     "one_line_desc": "Modelling of the fascinating engineering systems",
     "description": "Hello, avid automobile buddies! Here the Automobile engineering association brings you the event Auto-facsimile. The ideal event to unleash your knowledge and skills of automobiles with 2 rounds of the event with great exposure. The event provides you an opportunity to learn about the car and interact with fellow car geeks. You will get hands-on training in MATLAB and Simulink for modeling the vehicular subsystems. Even if you don't have prior experience, you are most welcome to the event.",
@@ -326,7 +326,7 @@
     "contact_name_2": "JANANI M",
     "contact_mobile_2": "93453 43055",
     "hall": "K - 404",
-    "eventRules": "•  Team should consist of two members.",
+    "eventRules": "  Team should consist of two members.",
     "timing": "9.30 AM - 12.30 PM"
   },
   {
@@ -358,7 +358,7 @@
     "description": "It’s a three-round event – which completely focus on green innovation in more fun and interactive way. Here the participants from various branches come together to share their innovative idea on sustainability and sustainable built environment. This event aims to promote sustainable built environment among student by exposing the participants to various engaging and critical thinking tasks to build the future India. All participants who are interested to participate in the event are requested to have some prior knowledge on sustainability and sustainable built environment.",
     "round_title_1": "CONNEXION",
     "round_desc_1": "It is a fun round in which participants are provide with series of picture depicting the term used in green energy, by using the pictures as clue the participants are asked to guess or find the term.",
-    "round_title_2": "GREEN LAB:",
+    "round_title_2": "GREEN LAB",
     "round_desc_2": "It is a group discussion round in which the participants will be shown a blurry picture depicting a environmental problem in them. Then the participants are asked to write done their own perception with solution in a note or paper. After writing down the solution participants are asked to discuss on the picture and come with an common solution incorporating solutions from all participants.",
     "round_title_3": "GREENATORIUM",
     "round_desc_3": "It is a construction-based event in which the shortlisted participants are made into group of 3 and asked to design a sustainable built environment by using the provide material. Here the participants are forced to think on innovative ideas to promote sustainable built environment and showcase the same in the 3D design.",
@@ -379,7 +379,7 @@
     "one_line_desc": "Answer - roll the die - climb the hill",
     "description": "Here an event involving Quiz and Ludo. Questions will be based on both general knowledge and mechanical knowledge. There are two rounds in this event: The first round is a general knowledge quiz The second round consists of a technical quiz based on the Mechanical Domain as well as a ludo game Winners of the first round will be shorlisted for the second round, in which participants wil be divided into four batches four. In Round 2, the participant's position in the Ludo game wil be taken into account and will affect the final score.",
     "round_title_1": "Round 1",
-    "round_desc_1": "Quiz -  for top 40 members /nEach participant is given 20 questions to answer in 20 minutes. The top 40 competitors will be chosen for the second round.",
+    "round_desc_1": "Quiz -  for top 40 members \nEach participant is given 20 questions to answer in 20 minutes. The top 40 competitors will be chosen for the second round.",
     "round_title_2": "Round 2",
     "round_desc_2": "The participants will be divided into four groups for the second round. The first question wil be asked to participant 1 with a time limit of one minute; if the participant does not know or answers incorrectly, the question will be open to other members of the team with a time limit of ten seconds Two marks will be awarded for correctly answering the question, and one mark will be awarded for correctly answering questions that are passed The participant receives 5 points for reaching the top of ludo",
     "round_title_3": "",
@@ -393,15 +393,15 @@
     "contact_mobile_2": 9095705511,
     "hall": "G601",
     "eventRules": "",
-    "timing": ""
+    "timing": "9:30 AM to 12:30 PM"
   },
   {
     "eventName": "CRYPTIQUE",
     "category": "Coding",
     "one_line_desc": "The biggest puzzle here is not the problem but the solution.",
     "description": "Show off your problem-solving skills by solving puzzles. Keep your senses sharp to pick any clues to figure your way out to reach the destination. If you and your buddy are comfortable with Command-Line and willing to challenge yourselves, grab a cup of coffee and figure your way out.",
-    "round_title_1": "- Capture The Flag Style game",
-    "round_desc_1": "- The game is comprised of 5 levels /nEach level has a goal and completetion of each level is required to proceed to the next /nThe team that completes all 5 levels quickest wins",
+    "round_title_1": "Capture The Flag Style game",
+    "round_desc_1": "The game is comprised of 5 levels \nEach level has a goal and completetion of each level is required to proceed to the next \nThe team that completes all 5 levels quickest wins",
     "round_title_2": "",
     "round_desc_2": "",
     "round_title_3": "",
@@ -425,7 +425,7 @@
     "round_title_1": "Round 1",
     "round_desc_1": "All the teams participating will present their business pitch along with their logo before a panel of judges. A maximum duration of 1 hour is given for the preparation of 1st round. Logo creation carries valid mark in 1st round, it can be done using Adobe illustrator, canva or any designing software. Presentation will be held in PPT format for minimum of 10 minutes per team. 7 minutes for presentation and 3 minutes for questions which will be asked by the judges.",
     "round_title_2": "Round 2",
-    "round_desc_2": "A maximum duration of 1 hour is given for the preparation. /n• The detailed 2nd Presentation will also be held in PPT format for minimum of 10 minutes per team. The best pitches will be selected and a detailed presentation of their product/session should be given. The pitches will be evaluated based on certain criteria and the team who scores the highest points will be the winner.",
+    "round_desc_2": "A maximum duration of 1 hour is given for the preparation. \n The detailed 2nd Presentation will also be held in PPT format for minimum of 10 minutes per team. The best pitches will be selected and a detailed presentation of their product/session should be given. The pitches will be evaluated based on certain criteria and the team who scores the highest points will be the winner.",
     "round_title_3": "",
     "round_desc_3": "",
     "round_title_4": "",
@@ -436,7 +436,7 @@
     "contact_name_2": "Sri Gurunandan R.",
     "contact_mobile_2": 6382784499,
     "hall": "M block CAD lab",
-    "eventRules": "This is a team event /nEach team can comprise of 2-3 participants /nEach team will have to present their basiness idea related to Fashion field. The ideas can be related to not only apparel but also jewelry design, branding, marketing service, arts and crafts. /nA maximum duration of 1 hour is given for the preparation of 1st round /n  Logo creation carries valid mark in 1st round, it can be done using Adobe illustrator, canva, or any designing software, /nPresentation will be held in PPT format for minimum of 10 minutes per team /n7 minutes for presentation and 3 minutes for questions which will be asked by the judges. /n• The detailed 2nd Presentation will also be held in PPT format for minimum of 10 minutes per team. /n• Each member in the team should present a part of the content, Content should be divided equally between them. /n• A panel of judges will allot points based on certain criteria's such as clarity on idea and innovation, strategy planning, marketing strategy, financial management planning and creativity in pitching /n • The team with best business pitch will be chosen as winners. /n A business Pitch template will be shared with the participants for reference. They should follow the template for uniformity.",
+    "eventRules": "This is a team event \nEach team can comprise of 2-3 participants \nEach team will have to present their basiness idea related to Fashion field. The ideas can be related to not only apparel but also jewelry design, branding, marketing service, arts and crafts. \nA maximum duration of 1 hour is given for the preparation of 1st round \n  Logo creation carries valid mark in 1st round, it can be done using Adobe illustrator, canva, or any designing software, \nPresentation will be held in PPT format for minimum of 10 minutes per team \n7 minutes for presentation and 3 minutes for questions which will be asked by the judges. \n The detailed 2nd Presentation will also be held in PPT format for minimum of 10 minutes per team. \n Each member in the team should present a part of the content, Content should be divided equally between them. \n A panel of judges will allot points based on certain criteria's such as clarity on idea and innovation, strategy planning, marketing strategy, financial management planning and creativity in pitching \n  The team with best business pitch will be chosen as winners. \n A business Pitch template will be shared with the participants for reference. They should follow the template for uniformity.",
     "timing": "9am- 3pm (12.00 to 1.00 break)"
   },
   {
@@ -506,7 +506,7 @@
     "timing": "9am to 6.30pm"
   },
   {
-    "eventName": "CAD-Enhance",
+    "eventName": "CAD - Enhance",
     "category": "Core Engineering",
     "one_line_desc": "Visualize the data using the CAD and Excel",
     "description": "Attention to all Automobile fanatics! Here the SOCIETY OF AUTOMOTIVE ENGINEERS brings you the event CAD enhance. The ideal event to unleash your knowledge and skills on data visualization and cad modelling with 2 rounds of the event with great exposure. The event provides you an opportunity to learn the cad and data visualization software. You will get hands-on experience in the CAD software during the event. Even if you don't have prior experience, you are most welcome to the event.",
@@ -550,7 +550,7 @@
     "timing": "9:00 AM to 12: 00 PM"
   },
   {
-    "eventName": "MECHANICAL Maestro V2.O",
+    "eventName": "MECHANICAL Maestro V2.0",
     "category": "Core Engineering",
     "one_line_desc": "Visualise Your Mechanism",
     "description": "Here is an arena to showcase your intellectual skills and  mastery in Mechanical engineering through ‘Mechanical Maestro’. If you are brave enough to venture out  to showcase your expertise in solving real life problems and articulate the same in the best possible way, do  sign up to prove your mettle.",
@@ -612,7 +612,7 @@
     "contact_name_2": "Bharath Kumar G",
     "contact_mobile_2": 6385567601,
     "hall": "GRD Lab & Software Programming Lab",
-    "eventRules": "1. Team size can range from 3 – 4 participants.\n2. Participants is open to all engineering branches.\n3. There are 5 themes identified for the hackathon.\n• Banking\n• Shopping\n• Travel\n• Manufacturing\n• Hi – Tech\n4. Participants have to choose a theme of their choice and need to attempt the problem statement (which will\nbe provided based on the theme) in the given time.\n5. Participants have to build applications around any one of the given problem statements in the given time.\n6. On completion, participants are expected to upload the source files into given GitHub repository.\n7. The evaluation is mostly based on the following parameters: functionality of the application, design\naesthetics and the quality of the code written.",
+    "eventRules": "1. Team size can range from 3 – 4 participants.\n2. Participants is open to all engineering branches.\n3. There are 5 themes identified for the hackathon.\n Banking\n Shopping\n Travel\n Manufacturing\n Hi – Tech\n4. Participants have to choose a theme of their choice and need to attempt the problem statement (which will\nbe provided based on the theme) in the given time.\n5. Participants have to build applications around any one of the given problem statements in the given time.\n6. On completion, participants are expected to upload the source files into given GitHub repository.\n7. The evaluation is mostly based on the following parameters: functionality of the application, design\naesthetics and the quality of the code written.",
     "timing": "9:00 AM to 2:00 PM"
   },
   {
@@ -623,7 +623,7 @@
     "round_title_1": "Round 1",
     "round_desc_1": "First the prelims in conducted using Quizziz platform. Random screenshots from different movies, series, anime would be shown, and the contestants must choose the movie it belongs to from the given set of options. Top 8 teams would be selected based on scores and are invited to the college for the Finals.",
     "round_title_2": "Round 2",
-    "round_desc_2": "The final consists of 5 rounds Round 1: “The Order of the Screenings” The contestants would be shown images of different movies, or screenshots within the same movies as the question. The team must find the correct sequence of the images. It could be the chronological order, release order, Box office, sequence of scenes within the same movie etc. /nRound 2: The Amateur Scientist The contestants would be shown a scene from a sci-fi movie. The team must correctly name the scientific principle involved/discussed in the scene. Explaining about the principle will be awarded with bonus marks. /n Round 3: That's what she said! A dialogue from a movie/series would be displayed in the form of text in the slide. The contestants must name the character that said that dialogue. Correct answer will be provided with full marks. In case of no answer, the same dialogue will be played as an audio clip, if answered correct, will be provided with half of the marks. /nRound 4: GK Geek This round consists of questions from GK, History and Current affairs related to Cinema. The contestants with strong technical knowledge will have an edge over the others in this round /n Round 5: Screenshot Saga Random (4-5) pictures from different movies, series, anime would be shown, and the contestant must find the common connect between the shown images",
+    "round_desc_2": "The final consists of 5 rounds Round 1: “The Order of the Screenings” The contestants would be shown images of different movies, or screenshots within the same movies as the question. The team must find the correct sequence of the images. It could be the chronological order, release order, Box office, sequence of scenes within the same movie etc. \nRound 2: The Amateur Scientist The contestants would be shown a scene from a sci-fi movie. The team must correctly name the scientific principle involved/discussed in the scene. Explaining about the principle will be awarded with bonus marks. \n Round 3: That's what she said! A dialogue from a movie/series would be displayed in the form of text in the slide. The contestants must name the character that said that dialogue. Correct answer will be provided with full marks. In case of no answer, the same dialogue will be played as an audio clip, if answered correct, will be provided with half of the marks. \nRound 4: GK Geek This round consists of questions from GK, History and Current affairs related to Cinema. The contestants with strong technical knowledge will have an edge over the others in this round \n Round 5: Screenshot Saga Random (4-5) pictures from different movies, series, anime would be shown, and the contestant must find the common connect between the shown images",
     "round_title_3": "",
     "round_desc_3": "",
     "round_title_4": "",
@@ -660,7 +660,7 @@
     "timing": "10am to 12pm and 2pm to 4pm"
   },
   {
-    "eventName": "Pro-Shopper",
+    "eventName": "Pro - Shopper",
     "category": "Kriyative",
     "one_line_desc": "“UNLEASH THE SHOPPER IN YOU”",
     "description": "An event which evokes a sense of mystery, elegance, opulence and become the character of your dreams. Bring your shadow of the dark and showcase your creativity through mask styling. This would be a event which has creative rounds that will make you involved in creating your own fashion. Surf across various internet sources finds different style and create your own look by collaging them. Its consists of three rounds quiz, pro-shopper and masquerade. Each round tests your fashion sense and proper usage of elements and principles of design.",
@@ -678,11 +678,11 @@
     "contact_name_2": "Tej Asswin S",
     "contact_mobile_2": 8012326847,
     "hall": "G509",
-    "eventRules": "It is an event of two /nPrelims (Buzzer based quiz round) based on fashion elements and brands will be conducted /nThe theme for the second round can be selected by yourself. /nA canva & powerpoint template will be provided to the teams for making collage of the collected pictures. /nParticipants can bring personal laptops to the event.(If required) /nAfter making the collage, it should be sent to the given mail id in ppt/pdf format. /nStudents should make a collage with its price taken from the respective site. The total price of attire should not exceed the given budget. /nFor the third round, A3 size plain cardboard along with A3 sheets and basic colour paints with a brush will be provided for mask creation. /nStudents can bring any material (paint, brush, colour paper, surface embellishments) to decorate the mask. /nAt the end of each round the participants will be filtered ( At the end of first round - 20 participants and at the end of second round - 10 participants).",
+    "eventRules": "It is an event of two \nPrelims (Buzzer based quiz round) based on fashion elements and brands will be conducted \nThe theme for the second round can be selected by yourself. \nA canva & powerpoint template will be provided to the teams for making collage of the collected pictures. \nParticipants can bring personal laptops to the event.(If required) \nAfter making the collage, it should be sent to the given mail id in ppt/pdf format. \nStudents should make a collage with its price taken from the respective site. The total price of attire should not exceed the given budget. \nFor the third round, A3 size plain cardboard along with A3 sheets and basic colour paints with a brush will be provided for mask creation. \nStudents can bring any material (paint, brush, colour paper, surface embellishments) to decorate the mask. \nAt the end of each round the participants will be filtered ( At the end of first round - 20 participants and at the end of second round - 10 participants).",
     "timing": "9:00 AM to 12:00 PM"
   },
   {
-    "eventName": "Tech-zap",
+    "eventName": "Tech - zap",
     "category": "Management",
     "one_line_desc": "The battle for 3s for the 4 th.      1C - cogitation , 2C - creativity, 3C - careful analysis for the 4 C - Champion .",
     "description": "During the first round , all participants will be given a crossword puzzle to solve in 20 minutes while answering technical questions. The top twenty teams will advance to the next  round. Round 2 delves into matching of famous tag lines with the products. The top ten teams will advance to the next round. Round 3 delves into marketing strategies for effectively advertising a given product. Come and join for us for this event to demonstrate your puzzle solving abilities and creativity in handling the given task.",
@@ -777,7 +777,7 @@
     "round_title_1": "Elec-tricky",
     "round_desc_1": "Test your knowledge in basic Digital and Analog electronics concepts. Knock the inner chambers of your brain. Wake up your problem solving skills. Run the risk of solving the tricky questions from electronics. Each candidate will be provided with a set of questions and the top performers will be qualified for the next round. Each question has its own weight and marks will be awarded accordingly",
     "round_title_2": "Round 2",
-    "round_desc_2": "Level 1 - behind the box /nA powerPoint presentation will be presented to the participants. Boxes shall be displayed, behind which there will be a problem statement. Participants should pick a box and solve the question behind it. If they get it right, +5 will be awarded, otherwise -2 marks will be provided. Unanswered questions will not be passed on. /nLevel 2 - bug the bug /nParticipants will be given a circuit with a missing component. They must find the missing component in the circuits within the stipulated time. If participants require clues, they can pick random chits provided to them and perform some funny technical tasks mentioned in it This round is assesed based on the time taken and the closeness or the output obtained.",
+    "round_desc_2": "Level 1 - behind the box \nA powerPoint presentation will be presented to the participants. Boxes shall be displayed, behind which there will be a problem statement. Participants should pick a box and solve the question behind it. If they get it right, +5 will be awarded, otherwise -2 marks will be provided. Unanswered questions will not be passed on. \nLevel 2 - bug the bug \nParticipants will be given a circuit with a missing component. They must find the missing component in the circuits within the stipulated time. If participants require clues, they can pick random chits provided to them and perform some funny technical tasks mentioned in it This round is assesed based on the time taken and the closeness or the output obtained.",
     "round_title_3": "",
     "round_desc_3": "",
     "round_title_4": "",
@@ -810,7 +810,7 @@
     "contact_name_2": "N.HARINI",
     "contact_mobile_2": 6384920066,
     "hall": "G501",
-    "eventRules": "Teams of 2 are allowed /nNo googling answers ( It’s a waste of time don’t bother trying it !) /nNever discuss with your neighbors  /nQuiz masters decision is the final /nRound-wise rules will be informed during the event",
+    "eventRules": "Teams of 2 are allowed \nNo googling answers ( It’s a waste of time don’t bother trying it !) \nNever discuss with your neighbors  \nQuiz masters decision is the final \nRound-wise rules will be informed during the event",
     "timing": "9:30 AM to 12:30 PM"
   }
 ]

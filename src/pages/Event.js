@@ -11,10 +11,21 @@ const Event = () => {
   const [generalPayment, setGeneralPayment] = useState(false);
 
   const toTitleCase = (phrase) => {
+    const wordsToIgnore = ["of", "in", "for", "and", "an", "or"];
+    const wordsToCapitalize = ["it", "cad"];
+
     return phrase
       .toLowerCase()
       .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => {
+        if (wordsToIgnore.includes(word)) {
+          return word;
+        }
+        if (wordsToCapitalize.includes(word)) {
+          return word.toUpperCase();
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
       .join(" ");
   };
 
@@ -66,18 +77,21 @@ const Event = () => {
       </div> */}
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-black">
-        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8">
+        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-12 relative py-8 px-8">
           <RoundDescription
             roundNumber={1}
             title={eventDetail.round_title_1}
             description={eventDetail.round_desc_1}
           />
 
-          <RoundDescription
-            roundNumber={2}
-            title={eventDetail.round_title_2}
-            description={eventDetail.round_desc_2}
-          />
+          {eventDetail.round_title_2.length > 0 &&
+            eventDetail.round_desc_2.length > 0 && (
+              <RoundDescription
+                roundNumber={2}
+                title={eventDetail.round_title_2}
+                description={eventDetail.round_desc_2}
+              />
+            )}
 
           {eventDetail.round_title_3.length > 0 &&
             eventDetail.round_desc_3.length > 0 && (
@@ -91,7 +105,7 @@ const Event = () => {
           {eventDetail.round_title_4.length > 0 &&
             eventDetail.round_desc_4.length > 0 && (
               <RoundDescription
-                roundNumber={3}
+                roundNumber={4}
                 title={eventDetail.round_title_4}
                 description={eventDetail.round_desc_4}
               />
@@ -246,11 +260,18 @@ const Event = () => {
 
 const RoundDescription = ({ roundNumber, description, title = "" }) => {
   const toTitleCase = (phrase) => {
-    return phrase
+    const wordsToIgnore = ["of", "in", "for", "and", "a", "an", "or", "the"];
+    const formattedPhrase = phrase
       .toLowerCase()
       .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => {
+        if (wordsToIgnore.includes(word)) {
+          return word;
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
       .join(" ");
+    return formattedPhrase.charAt(0).toUpperCase() + formattedPhrase.slice(1);
   };
 
   return (
@@ -276,7 +297,12 @@ const RoundDescription = ({ roundNumber, description, title = "" }) => {
           </div>
         )}
         <p className="text-base lg:text-base text-justify text-[#3c4043] pt-4 lg:pt-0">
-          {description}
+          {description.split("\n").map((desc, index) => (
+            <div>
+              <p key={index}>{desc}</p>
+              <br></br>
+            </div>
+          ))}
         </p>
       </div>
     </div>

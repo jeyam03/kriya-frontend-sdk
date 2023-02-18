@@ -107,6 +107,26 @@ const NavBar = () => {
 export default PortalWrapper;
 
 const EventNav = ({ category, noMargin = false, events }) => {
+
+  const toTitleCase = (phrase) => {
+    const wordsToIgnore = ["of", "in", "for", "and", "an", "or"];
+    const wordsToCapitalize = ["it", "cad"];
+
+    return phrase
+      .toLowerCase()
+      .split(" ")
+      .map((word) => {
+        if (wordsToIgnore.includes(word)) {
+          return word;
+        }
+        if (wordsToCapitalize.includes(word)) {
+          return word.toUpperCase();
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  };
+
   return (
     <React.Fragment>
       <p
@@ -119,7 +139,7 @@ const EventNav = ({ category, noMargin = false, events }) => {
         .filter((e) => e.category === category)
         .map((e) => (
           <Link to={`/portal/event/${e.id}`} className="w-full text-gray-600 text-left hover:text-black text-base py-2 block">
-            {e.name}
+            {toTitleCase(e.name)}
           </Link>
         ))}
     </React.Fragment>

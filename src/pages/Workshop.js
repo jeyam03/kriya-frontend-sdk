@@ -36,9 +36,9 @@ const Workshop = () => {
       <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
         {workshopDetail.workName}
       </h1>
-      <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
+      {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
-      </h2>
+      </h2> */}
       <p className="text-white mt-8 text-base w-full lg:w-[95%] pb-12 px-8 lg:px-0">
         {workshopDetail.desc}
       </p>
