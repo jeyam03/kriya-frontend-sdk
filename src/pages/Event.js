@@ -113,16 +113,16 @@ const Event = () => {
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button
-            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
-            onClick={() => {
-              isLoggedIn
-                ? window.confirm("Are you sure you want to register ?")
-                  ? generalPayment
-                    ? navigate("/confirmed")
-                    : navigate("/payment")
-                  : console.log("Cancelled")
-                : navigate("/register");
-            }}
+            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
+            // onClick={() => {
+            //   isLoggedIn
+            //     ? window.confirm("Are you sure you want to register ?")
+            //       ? generalPayment
+            //         ? navigate("/confirmed")
+            //         : navigate("/payment")
+            //       : console.log("Cancelled")
+            //     : navigate("/register");
+            // }}
           >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
               {"Registrations Opening Soon !"}
