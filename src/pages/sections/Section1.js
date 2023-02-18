@@ -25,6 +25,7 @@ const Section1 = () => {
 
   const [currentSlide, setCurrentSlide] = useState(1);
   const timeoutRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -225,7 +226,77 @@ const Section1 = () => {
             24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
           </div>
         </div>
-        <div className="lg:hidden pl-20 w-full h-[50%]">
+        <div className="lg:hidden flex flex-row w-full h-[50%]">
+          <div className="px-4">
+            <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
+          <div
+            className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+              } transition-all ease-in-out duration-300`}
+          >
+            <div className={`pb-8 w-full flex flex-col font-poppins absolute ${isOpen ? "z-20" : "-z-20"} bg-white transition-all ease-in-out duration-300`}>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section3");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Events
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section5");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Workshops
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section4");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Paper Presentations
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section7");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Our Team
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section8");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                FAQs
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section9");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
@@ -322,3 +393,44 @@ const Section1 = () => {
 };
 
 export default Section1;
+
+const MenuToggle = ({ isOpen, setIsOpen }) => {
+  return (
+    <button
+      className="lg:hidden flex items-center p-1 text-gray-500 lg:hover:text-gray-300"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      )}
+    </button>
+  );
+};

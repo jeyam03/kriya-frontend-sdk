@@ -32,7 +32,7 @@ const EventList = () => {
 
   return (
     <div className="w-full font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
-      <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-4 lg:px-8 flex flex-col items-center lg:block p-8">
+      <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-6 lg:px-8 flex flex-col items-center lg:block p-8">
         <div className="w-full my-8 lg:mt-0">
           <h1 className={`text-4xl lg:text-6xl text-white font-semibold font-poppins text-center py-2`}
             id="soon-text"

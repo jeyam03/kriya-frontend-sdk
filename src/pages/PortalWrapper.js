@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { IoMdClose } from "react-icons/io";
-import { fetchEvents } from "../API/call";
+import { IoMdClose, IoMdArrowDropright } from "react-icons/io";
+import { fetchEvents, fetchPapers, fetchWorkshops } from "../API/call";
 import { AiOutlinePlus } from "react-icons/ai";
 
 const PortalWrapper = ({ children }) => {
@@ -23,6 +23,19 @@ const NavBarForDesktop = () => {
       id: event.eventId,
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
+
+  const papers = fetchPapers()
+    .map((paper) => ({
+      name: paper.eventName,
+      id: paper.ppid,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const workshops = fetchWorkshops()
+    .map((workshop) => ({
+      name: workshop.workName,
+      id: workshop.wid,
+    }))
 
   return (
     <nav className="hidden lg:block z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
@@ -66,13 +79,17 @@ const NavBarForDesktop = () => {
           </Link>
         </div>
         <div className="py-8">
-          <h3 className="text-base font-semibold py-6">All Events</h3>
+          <h3 className="text-base font-semibold py-3">Events</h3>
           <EventNav category="Kriyative" noMargin events={events} />
           <EventNav category="Brainiac" events={events} />
           <EventNav category="Coding" events={events} />
           <EventNav category="Circuit" events={events} />
           <EventNav category="Core Engineering" events={events} />
           <EventNav category="Management" events={events} />
+          <h3 className="text-base font-semibold py-3">Workshops</h3>
+          <WorkNav noMargin workshops={workshops} />
+          <h3 className="text-base font-semibold py-3">Paper Presentations</h3>
+          <PaperNav noMargin papers={papers} />
         </div>
       </div>
     </nav>
@@ -89,9 +106,24 @@ const NavBarForMobile = () => {
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  const papers = fetchPapers()
+    .map((paper) => ({
+      name: paper.eventName,
+      id: paper.ppid,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const workshops = fetchWorkshops()
+    .map((workshop) => ({
+      name: workshop.workName,
+      id: workshop.wid,
+    }))
+
+
   return (
     <nav className="lg:hidden z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
       <div className="flex w-full justify-between items-center sticky top-0 bg-white">
+        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
         <Link
           to={"/"}
           className="w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
@@ -102,13 +134,11 @@ const NavBarForMobile = () => {
             backgroundSize: "contain",
           }}
         ></Link>
-        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
 
       <div
-        className={`divide-y divide-gray-600 ${
-          isOpen ? "h-fit" : "h-0 overflow-hidden"
-        } transition-all ease-in-out duration-300`}
+        className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+          } transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col">
           {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
@@ -145,8 +175,8 @@ const NavBarForMobile = () => {
             Sodapops
           </button>
         </div> */}
-        <div className="py-8">
-          <h3 className="text-base font-semibold py-6">All Events</h3>
+        <div className="py-8 pb-16">
+          <h3 className="text-base font-semibold py-3">Events</h3>
           <EventNav
             openState={[isOpen, setIsOpen]}
             isMobile
@@ -184,6 +214,20 @@ const NavBarForMobile = () => {
             category="Management"
             events={events}
           />
+          <h3 className="text-base font-semibold py-3">Workshops</h3>
+          <WorkNav
+            openState={[isOpen, setIsOpen]}
+            isMobile
+            noMargin
+            workshops={workshops}
+          />
+          <h3 className="text-base font-semibold py-3">Paper Presentations</h3>
+          <PaperNav
+            openState={[isOpen, setIsOpen]}
+            isMobile
+            noMargin
+            papers={papers}
+          />
         </div>
       </div>
     </nav>
@@ -197,7 +241,7 @@ const EventNav = ({
   noMargin = false,
   events,
   isMobile = false,
-  openState = [true, () => {}],
+  openState = [true, () => { }],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -231,28 +275,26 @@ const EventNav = ({
 
   return (
     <React.Fragment>
-      <div
-        className={`flex justify-between group items-center ${
-          !noMargin && "mt-0"
-        } my-4`}
+      <button
+        className={`flex justify-between group items-center ${!noMargin && "mt-0"
+          } my-2`}
+        onClick={() => setHideContent(!hideContent)}
       >
-        <button onClick={() => setHideContent(!hideContent)}>
-          <AiOutlinePlus
-            className={`text-lg text-gray-500 lg:opacity-0 lg:group-hover:opacity-50 opacity-50 ${
-              hideContent ? "rotate-45" : "rotate-0"
-            } transition-all`}
+        <div >
+          <IoMdArrowDropright
+            className={`text-lg text-gray-500 ${hideContent ? "rotate-90" : "rotate-0"
+              } transition-all`}
           />
-        </button>
+        </div>
         <p
-          className={`w-full text-sm uppercase tracking-widest text-gray-500  p-2`}
+          className={`w-full text-sm uppercase tracking-widest text-gray-500 py-2 pl-1`}
         >
           {category}
         </p>
-      </div>
+      </button>
       <div
-        className={`${
-          !hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
-        } transition-all overflow-hidden flex flex-col`}
+        className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+          } transition-all overflow-hidden flex flex-col`}
       >
         {events
           .filter((e) => e.category === category)
@@ -264,14 +306,169 @@ const EventNav = ({
                   setIsOpen(!isOpen);
                   navigate(`/portal/event/${e.id}`);
                 }}
-                className="w-full text-gray-600 text-left hover:text-black text-base py-2 block"
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-8 block"
               >
                 {toTitleCase(e.name)}
               </button>
             ) : (
               <Link
                 to={`/portal/event/${e.id}`}
-                className="w-full text-gray-600 text-left hover:text-black text-base py-2 block"
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-8 block"
+              >
+                {toTitleCase(e.name)}
+              </Link>
+            )
+          )}
+      </div>
+    </React.Fragment>
+  );
+};
+
+const WorkNav = ({
+  noMargin = false,
+  workshops,
+  isMobile = false,
+  openState = [true, () => { }],
+}) => {
+  const [isOpen, setIsOpen] = openState;
+  const [hideContent, setHideContent] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isOpen) {
+      setHideContent(false);
+    }
+  }, [isOpen]);
+
+  return (
+    <React.Fragment>
+      <div
+        className={`${"flex h-fit"
+          } transition-all overflow-hidden flex flex-col`}
+      >
+        {workshops
+          .filter((item, index) => index < 3)
+          .map((e) =>
+            isMobile ? (
+              <button
+                onClick={(event) => {
+                  console.log("clicked", e);
+                  setIsOpen(!isOpen);
+                  navigate(`/portal/workshop/${e.id}`);
+                }}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+              >
+                {e.name}
+              </button>
+            ) : (
+              <Link
+                to={`/portal/workshop/${e.id}`}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+              >
+                {e.name}
+              </Link>
+            )
+          )}
+      </div>
+      <button
+        className={`flex justify-between group items-center ${!noMargin && "mt-0"
+          } my-2 pl-2`}
+        onClick={() => setHideContent(!hideContent)}
+      >
+        <div >
+          <IoMdArrowDropright
+            className={`text-lg text-gray-500 ${hideContent ? "rotate-90" : "rotate-0"
+              } transition-all`}
+          />
+        </div>
+        <p
+          className={`w-full text-sm text-gray-500 py-2 pl-1`}
+        >
+          {`${hideContent ? "Hide" : "Show More"}`}
+        </p>
+      </button>
+      <div
+        className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+          } transition-all overflow-hidden flex flex-col`}
+      >
+        {workshops
+          .filter((item, index) => index >= 3)
+          .map((e) =>
+            isMobile ? (
+              <button
+                onClick={(event) => {
+                  console.log("clicked", e);
+                  setIsOpen(!isOpen);
+                  navigate(`/portal/workshop/${e.id}`);
+                }}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+              >
+                {e.name}
+              </button>
+            ) : (
+              <Link
+                to={`/portal/workshop/${e.id}`}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+              >
+                {e.name}
+              </Link>
+            )
+          )}
+      </div>
+    </React.Fragment>
+  );
+};
+
+const PaperNav = ({
+  noMargin = false,
+  papers,
+  isMobile = false,
+  openState = [true, () => { }],
+}) => {
+  const [isOpen, setIsOpen] = openState;
+  const [hideContent, setHideContent] = useState(false);
+  const navigate = useNavigate();
+
+  const toTitleCase = (phrase) => {
+    return phrase
+      .toLowerCase()
+      .split(" ")
+      .map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setHideContent(false);
+    }
+  }, [isOpen]);
+
+  return (
+    <React.Fragment>
+      <div
+        className={`${"flex h-fit mb-8"
+          } transition-all overflow-hidden flex flex-col`}
+      >
+        {papers
+          .map((e) =>
+            isMobile ? (
+              <button
+                onClick={(event) => {
+                  console.log("clicked", e);
+                  setIsOpen(!isOpen);
+                  navigate(`/portal/paper/${e.id}`);
+                }}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+              >
+                {toTitleCase(e.name)}
+              </button>
+            ) : (
+              <Link
+                to={`/portal/paper/${e.id}`}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
               >
                 {toTitleCase(e.name)}
               </Link>
