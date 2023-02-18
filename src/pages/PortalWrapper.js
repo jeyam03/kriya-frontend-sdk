@@ -119,6 +119,20 @@ const NavBarForMobile = () => {
       id: workshop.wid,
     }))
 
+  useEffect(() => {
+    const navOpen = document.querySelector("#navOpen");
+    const elements = document.querySelectorAll("#navElements");
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        elements.forEach((tag) => {
+          tag.classList.add("animate-fade-in-slow");
+        });
+      }
+    });
+
+    observer.observe(navOpen);
+  });
 
   return (
     <nav className="lg:hidden z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
@@ -146,18 +160,21 @@ const NavBarForMobile = () => {
           </Link> */}
           <Link
             to="/portal/event"
+            id="navElements"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
           >
             Events
           </Link>
           <Link
             to="/../?sn=section5"
+            id="navElements"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
           >
             Workshops
           </Link>
           <Link
             to="/../?sn=section4"
+            id="navElements"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
           >
             Paper Presentations
@@ -175,8 +192,9 @@ const NavBarForMobile = () => {
             Sodapops
           </button>
         </div> */}
-        <div className="py-8 pb-16">
-          <h3 className="text-base font-semibold py-3">Events</h3>
+        <div className="py-8 pb-16"
+          id="navOpen">
+          <h3 className="text-base font-semibold py-3" id="navElements">Events</h3>
           <EventNav
             openState={[isOpen, setIsOpen]}
             isMobile
@@ -214,14 +232,14 @@ const NavBarForMobile = () => {
             category="Management"
             events={events}
           />
-          <h3 className="text-base font-semibold py-3">Workshops</h3>
+          <h3 className="text-base font-semibold py-3" id="navElements">Workshops</h3>
           <WorkNav
             openState={[isOpen, setIsOpen]}
             isMobile
             noMargin
             workshops={workshops}
           />
-          <h3 className="text-base font-semibold py-3">Paper Presentations</h3>
+          <h3 className="text-base font-semibold py-3" id="navElements">Paper Presentations</h3>
           <PaperNav
             openState={[isOpen, setIsOpen]}
             isMobile
@@ -279,6 +297,7 @@ const EventNav = ({
         className={`flex justify-between group items-center ${!noMargin && "mt-0"
           } my-2`}
         onClick={() => setHideContent(!hideContent)}
+        id="navElements"
       >
         <div >
           <IoMdArrowDropright
@@ -295,6 +314,7 @@ const EventNav = ({
       <div
         className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
           } transition-all overflow-hidden flex flex-col`}
+        id="navElements"
       >
         {events
           .filter((e) => e.category === category)
@@ -346,6 +366,7 @@ const WorkNav = ({
       <div
         className={`${"flex h-fit"
           } transition-all overflow-hidden flex flex-col`}
+        id="navElements"
       >
         {workshops
           .filter((item, index) => index < 3)
@@ -375,6 +396,7 @@ const WorkNav = ({
         className={`flex justify-between group items-center ${!noMargin && "mt-0"
           } my-2 pl-2`}
         onClick={() => setHideContent(!hideContent)}
+        id="navElements"
       >
         <div >
           <IoMdArrowDropright
@@ -391,6 +413,7 @@ const WorkNav = ({
       <div
         className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
           } transition-all overflow-hidden flex flex-col`}
+        id="navElements"
       >
         {workshops
           .filter((item, index) => index >= 3)
@@ -451,6 +474,7 @@ const PaperNav = ({
       <div
         className={`${"flex h-fit mb-8"
           } transition-all overflow-hidden flex flex-col`}
+        id="navElements"
       >
         {papers
           .map((e) =>

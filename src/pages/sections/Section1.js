@@ -55,6 +55,7 @@ const Section1 = () => {
     const imageMulti = document.querySelector("#image-multi");
     const imageMulti2 = document.querySelector("#image-multi-2");
     const tagline = document.querySelector("#tagline");
+    const navElements = document.querySelectorAll("#nav-button");
 
     const observer = new IntersectionObserver((entries) => {
       // numberTags.forEach((numberTag) => {
@@ -66,6 +67,9 @@ const Section1 = () => {
         registrationPrompt.classList.add("animate-flicker-in");
         imageMulti2.classList.add("animate-clip-in-side");
         tagline.classList.add("animate-clip-in-side");
+        navElements.forEach((navElement) => {
+          navElement.classList.add("animate-fade-in-slow");
+        });
       }
       // else {
       //   imageMulti.classList.remove("animate-clip-in");
@@ -241,6 +245,7 @@ const Section1 = () => {
                   const element = document.getElementById("section3");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
+                id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Events
@@ -251,6 +256,7 @@ const Section1 = () => {
                   const element = document.getElementById("section5");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
+                id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Workshops
@@ -261,6 +267,7 @@ const Section1 = () => {
                   const element = document.getElementById("section4");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
+                id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Paper Presentations
@@ -271,6 +278,7 @@ const Section1 = () => {
                   const element = document.getElementById("section7");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
+                id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Our Team
@@ -281,6 +289,7 @@ const Section1 = () => {
                   const element = document.getElementById("section8");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
+                id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 FAQs
@@ -291,6 +300,7 @@ const Section1 = () => {
                   const element = document.getElementById("section9");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
+                id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Contact Us

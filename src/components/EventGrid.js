@@ -80,7 +80,7 @@ const EventGrid = ({
           </p>
         </div>
 
-        <div className=" p-6 pt-3 rounded-b-3xl backdrop-blur-md lg:group-hover:backdrop-blur-none transition-all text-gray-200">
+        <div className=" p-6 pt-3 lg:rounded-b-3xl backdrop-blur-sm lg:backdrop-blur-md lg:group-hover:backdrop-blur-none transition-all text-gray-200">
           <p className="font-poppins text-base [display:-webkit-box] [-webkit-line-clamp:3] overflow-hidden [-webkit-box-orient:vertical]">
             {description}
           </p>

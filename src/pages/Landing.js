@@ -211,7 +211,7 @@ const NavBarForMobile = ({ consolee }) => {
   return (
     <nav
       className={`${
-        consolee >= 0.97 ? "block" : "hidden"
+        consolee >= 0.25 ? "block" : "hidden"
       }  lg:hidden z-50 w-screen lg:w-1/4 ${
         !condition ? "bg-white" : "bg-black"
       } fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md`}
