@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Landing.css";
-import TeamDetails from "./TeamDetails.json";
+import TeamDetails from "./TeamDetails.js";
 import "../../styles/FlipCard.css";
 
 // Our Team
