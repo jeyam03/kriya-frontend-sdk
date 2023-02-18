@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { fetchEvents } from "../API/call";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const PortalWrapper = ({ children }) => {
   return (
@@ -199,6 +200,7 @@ const EventNav = ({
   openState = [true, () => {}],
 }) => {
   const [isOpen, setIsOpen] = openState;
+  const [hideContent, setHideContent] = useState(false);
 
   const navigate = useNavigate();
 
@@ -221,38 +223,61 @@ const EventNav = ({
       .join(" ");
   };
 
+  useEffect(() => {
+    if (!isOpen) {
+      setHideContent(false);
+    }
+  }, [isOpen]);
+
   return (
     <React.Fragment>
-      <p
-        className={`w-full text-sm uppercase tracking-widest text-gray-500 ${
-          !noMargin && "mt-8"
-        } py-4`}
+      <div
+        className={`flex justify-between group items-center ${
+          !noMargin && "mt-0"
+        } my-4`}
       >
-        {category}
-      </p>
-      {events
-        .filter((e) => e.category === category)
-        .map((e) =>
-          isMobile ? (
-            <button
-              onClick={(event) => {
-                console.log("clicked", e);
-                setIsOpen(!isOpen);
-                navigate(`/portal/event/${e.id}`);
-              }}
-              className="w-full text-gray-600 text-left hover:text-black text-base py-2 block"
-            >
-              {toTitleCase(e.name)}
-            </button>
-          ) : (
-            <Link
-              to={`/portal/event/${e.id}`}
-              className="w-full text-gray-600 text-left hover:text-black text-base py-2 block"
-            >
-              {toTitleCase(e.name)}
-            </Link>
-          )
-        )}
+        <p
+          className={`w-full text-sm uppercase tracking-widest text-gray-500  py-2`}
+        >
+          {category}
+        </p>
+        <button onClick={() => setHideContent(!hideContent)}>
+          <AiOutlinePlus
+            className={`text-lg text-gray-500 lg:opacity-0 lg:group-hover:opacity-50 opacity-50 ${
+              hideContent ? "rotate-45" : "rotate-0"
+            } transition-all`}
+          />
+        </button>
+      </div>
+      <div
+        className={`${
+          !hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+        } transition-all overflow-hidden flex flex-col`}
+      >
+        {events
+          .filter((e) => e.category === category)
+          .map((e) =>
+            isMobile ? (
+              <button
+                onClick={(event) => {
+                  console.log("clicked", e);
+                  setIsOpen(!isOpen);
+                  navigate(`/portal/event/${e.id}`);
+                }}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 block"
+              >
+                {toTitleCase(e.name)}
+              </button>
+            ) : (
+              <Link
+                to={`/portal/event/${e.id}`}
+                className="w-full text-gray-600 text-left hover:text-black text-base py-2 block"
+              >
+                {toTitleCase(e.name)}
+              </Link>
+            )
+          )}
+      </div>
     </React.Fragment>
   );
 };
