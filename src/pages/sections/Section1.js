@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiYoutube } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 
@@ -179,6 +179,12 @@ const Section1 = () => {
             onClick={() => window.open("mailto:events@psgkriya.in", "_blank")}
           >
             <SiGmail size={24} className=" text-gray-500 hover:text-black" />
+          </button>
+          <button
+            className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+            onClick={() => window.open("https://youtube.com/c/StudentsUnionPSGTech", "_blank")}
+          >
+            <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
           </button>
         </div>
       </div>
