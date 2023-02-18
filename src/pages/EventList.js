@@ -179,11 +179,23 @@ const EventsGrid = ({
   topCurve,
   rightCurve,
 }) => {
+
   const toTitleCase = (phrase) => {
+    const wordsToIgnore = ["of", "in", "for", "and", "a", "an", "or"];
+    const wordsToCapitalize = ["it", "cad"];
+
     return phrase
       .toLowerCase()
       .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => {
+        if (wordsToIgnore.includes(word)) {
+          return word;
+        } 
+        if (wordsToCapitalize.includes(word)) {
+          return word.toUpperCase();
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
       .join(" ");
   };
 

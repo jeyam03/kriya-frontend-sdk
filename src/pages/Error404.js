@@ -23,9 +23,10 @@ const Error404 = () => {
           }}
           className="lg:w-[40vw] w-[90vw] h-[50vh] "
         />
-        <h1 className="text-2xl font-semibold font-poppins lg:w-[40vw] w-[90vw] text-center">
-          Oops! Sorry, we can't match your rizz.
-          <br /> How about you try ours? 😉
+        <h1 className="text-xl font-semibold font-poppins lg:w-[40vw] w-[90vw] text-center">
+          The page you were looking for is experiencing technical
+          difficulties, but our team of tech wizards is working on a fix. In the
+          meantime, why not explore some of our other electrifying events?
         </h1>
         <Link
           to="/"

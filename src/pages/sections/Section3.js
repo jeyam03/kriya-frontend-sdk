@@ -103,7 +103,7 @@ const Section3 = () => {
                 Let your imagination run wild with Kriyative! Whether you're an experienced artist, a hobbyist or a curious beginner, our events will inspire you to think outside the box, experiment with new techniques and express your unique vision.
               </p>
               <Link
-                className="text-blue-500 text-sm flex items-center group"
+                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
                 to="/portal/event/"
               >
                 <p className="">Explore more</p>
@@ -128,7 +128,7 @@ const Section3 = () => {
                 Unlock Your Inner Genius: Join the Brainiac Brigade! Brainiac events are designed to challenge your intellect, ignite your curiosity and push the boundaries of your knowledge. From trivia challenges to mind-bending puzzles, there's something for every cerebral superhero.
               </p>
               <Link
-                className="text-blue-500 text-sm flex items-center group"
+                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
                 to="/portal/event?ctg=brainiac"
               >
                 <p className="">Explore more</p>
@@ -153,7 +153,7 @@ const Section3 = () => {
                 Whether you're a seasoned coder or just starting out, our events offer something for everyone. Explore cutting-edge technologies, connect with like-minded coders, and compete for glory in our exciting challenges. Unleash the power of programming and take your skills to the next level at our Coding Events!
               </p>
               <Link
-                className="text-blue-500 text-sm flex items-center group"
+                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
                 to="/portal/event?ctg=coding"
               >
                 <p className="">Explore more</p>
@@ -178,7 +178,7 @@ const Section3 = () => {
                 Delve into the world of circuit engineering! From digital electronics to power systems, our Circuit Events cover it all. Get ready to master the fundamentals of circuit design and don’t miss out on this high-voltage opportunity to supercharge your knowledge and network with fellow circuit enthusiasts!
               </p>
               <Link
-                className="text-blue-500 text-sm flex items-center group"
+                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
                 to="/portal/event?ctg=circuit"
               >
                 <p className="">Explore more</p>
@@ -200,10 +200,10 @@ const Section3 = () => {
                 </p>
               </Link>
               <p className={`${condition} text-sm pb-2 text-justify`}>
-                Unleash your inner engineer and dive into the world of innovation with our cutting-edge Core Engineering events at this Kriya! From robotics to engines , discover the power of engineering and explore endless possibilities to put your skills to the test.
+                Unleash your inner engineer and dive into the world of innovation with our cutting-edge Core Engineering events at this Kriya! Discover the power of engineering, and explore endless possibilities to put your skills to the test.
               </p>
               <Link
-                className="text-blue-500 text-sm flex items-center group"
+                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
                 to="/portal/event?ctg=core"
               >
                 <p className="">Explore more</p>
@@ -228,7 +228,7 @@ const Section3 = () => {
                 Calling all aspiring leaders and entrepreneurs! Explore the dynamic world of Management at Kriya. From strategic planning to marketing and innovation, join us for an engaging and exhilarating set of events that will put your leadership skills to the test.
               </p>
               <Link
-                className="text-blue-500 text-sm flex items-center group"
+                className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
                 to="/portal/event?ctg=management"
               >
                 <p className="">Explore more</p>
