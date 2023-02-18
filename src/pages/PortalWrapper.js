@@ -236,11 +236,6 @@ const EventNav = ({
           !noMargin && "mt-0"
         } my-4`}
       >
-        <p
-          className={`w-full text-sm uppercase tracking-widest text-gray-500  py-2`}
-        >
-          {category}
-        </p>
         <button onClick={() => setHideContent(!hideContent)}>
           <AiOutlinePlus
             className={`text-lg text-gray-500 lg:opacity-0 lg:group-hover:opacity-50 opacity-50 ${
@@ -248,6 +243,11 @@ const EventNav = ({
             } transition-all`}
           />
         </button>
+        <p
+          className={`w-full text-sm uppercase tracking-widest text-gray-500  p-2`}
+        >
+          {category}
+        </p>
       </div>
       <div
         className={`${

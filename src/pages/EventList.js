@@ -13,8 +13,9 @@ const EventList = () => {
       .map((event) => ({
         name: event.eventName,
         id: event.eventId,
-        desc: event.one_line_desc,
+        desc: event.one_line_desc ? event.one_line_desc : event.description,
         category: event.category,
+        time: event.timing.split("to")[0],
       }))
       .sort((a, b) => a.name.localeCompare(b.name))
   );
@@ -206,8 +207,8 @@ const EventsGrid = ({
           <EventGrid
             title={toTitleCase(i.name)}
             description={i.desc}
-            date="21 March"
-            time="10:00 AM"
+            date="24"
+            time={i.time}
             icon={<FaSoundcloud />}
             imgurl={imgurl}
             arrowCircleStart={arrowCircleStart}
