@@ -1,9 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiYoutube } from "react-icons/si";
 import { Link } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
 
 //  Landing
+
+function Number({ n }) {
+  const props = useSpring({
+    from: { number: 0 },
+    number: n,
+    delay: 200,
+    config: { mass: 1, tension: 20, friction: 10 },
+  });
+  return <animated.span>{props.number.to((n) => n.toFixed(0))}</animated.span>;
+}
 
 const Section1 = () => {
   const slides = [
@@ -169,6 +180,12 @@ const Section1 = () => {
           >
             <SiGmail size={24} className=" text-gray-500 hover:text-black" />
           </button>
+          <button
+            className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+            onClick={() => window.open("https://youtube.com/c/StudentsUnionPSGTech", "_blank")}
+          >
+            <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
+          </button>
         </div>
       </div>
 
@@ -178,9 +195,8 @@ const Section1 = () => {
       >
         {slides.map((slide, index) => (
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
-              currentSlide === index ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               background: `url(${slides[index]})`,
               backgroundPosition: "50% 50%  ",
@@ -191,10 +207,10 @@ const Section1 = () => {
         ))}
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full  pb-8 pt-4 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col items-center lg:items-start justify-between">
-        <div className="flex items-center  space-x-4 w-full px-8">
+      <div className="w-full lg:w-[35vw] h-full pb-8 pt-4 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col items-center lg:items-start justify-between">
+        <div className="flex items-center space-x-4 w-full px-6">
           <div
-            className="lg:hidden w-28 h-28"
+            className="lg:hidden w-32 h-28"
             style={{
               background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
               backgroundPosition: "left",
@@ -213,9 +229,8 @@ const Section1 = () => {
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
-                className={`w-full h-full absolute top-0 right-0 left-0 ${
-                  currentSlide === index ? "opacity-100" : "opacity-0"
-                }`}
+                className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
+                  }`}
                 style={{
                   background: `url(${slides[index]})`,
                   backgroundPosition: "50% 50%  ",
@@ -232,16 +247,34 @@ const Section1 = () => {
             The Global Clash of Techno Talents.
           </span>
         </h1>
-        <div className="">
-          <div className="hidden lg:block w-full font-poppins pr-8 text-sm lg:text-base ">
-            Stay tuned for the forefront of technological advancements and gain
-            valuable insights at our upcoming technical symposium Kriya 2023 !
+        <div className="w-full flex flex-col items-center">
+          <div className="hidden lg:flex flex-row w-full text-[#3c4043] font-poppins font-semibold justify-between">
+            <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
+              <div className="text-5xl">
+                <Number n={35} />
+                +
+              </div>
+              <h1 className="text-sm text-center tracking-wide uppercase">Events</h1>
+            </div>
+            <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
+              <div className="text-5xl">
+                <Number n={12} />
+                +
+              </div>
+              <h1 className="text-sm text-center tracking-wide uppercase">Workshops</h1>
+            </div>
+            <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
+              <div className="text-5xl">
+                <Number n={4} />
+              </div>
+              <h1 className="text-xs text-center tracking-wide uppercase">Paper Presentations</h1>
+            </div>
           </div>
           <div
             id="registration-prompt"
             className="lg:text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg my-8 lg:mb-16 text-center lg:text-left whitespace-nowrap lg:whitespace-normal"
           >
-            ✨Registrations opening soon! ✨
+            ✨ Registrations opening soon! ✨
           </div>
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4 w-fit">
@@ -272,9 +305,8 @@ const Section1 = () => {
         <div className="w-full h-full relative">
           {slides.map((slide, index) => (
             <div
-              className={`w-full h-full absolute top-0 right-0 left-0 ${
-                currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
+              className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
+                }`}
               style={{
                 background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
                 backgroundPosition: "left",

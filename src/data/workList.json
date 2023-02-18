@@ -4,7 +4,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535551/Workshop/Microcontroller_with_IOT_qzmkrm.png",
     "assnName": "IEEE EMBS Students Branch",
     "workName": " IoT system design using Embedded C and Python",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "PREETHI S ",
     "c1Num": "9361277079",
     "c2Name": "P M HARISHREE",
@@ -49,7 +49,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535551/Workshop/Mobile_Application_Development_vuwbb9.png",
     "assnName": "CAA(Computer Applications Association)",
     "workName": "Mobile App Development",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "MANOHARAN R ",
     "c1Num": "6369969599",
     "c2Name": "RAJKUMAR B",
@@ -113,7 +113,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676574196/Workshop/Deep_Learning_Unlocking_the_Full_Potential-min_yycxk1.png",
     "assnName": "Institute of Electrical & Electronics Engg. (IEEE) (Students Chapter)",
     "workName": "Deep Learning: Unlocking the Full Potential",
-    "date": "24/03/2023",
+    "date": "DAY 1",
     "c1Name": "Sanjana",
     "c1Num": "63699 53122",
     "c2Name": "Priyanka G S",
@@ -155,7 +155,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/R_Programming_in_Data_Analytics-min_cozob1.png",
     "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
     "workName": "R Programming in Data Analytics",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "BALAKUMARAN A",
     "c1Num": "6381854033",
     "c2Name": "SYED ABUTHAHIR S",
@@ -195,8 +195,8 @@
     "wid": "WKSP0005",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535560/Workshop/Workshop_and_Gaming-min-min_bd3khz.png",
     "assnName": "Information Technology Association",
-    "workName": "Workshop on Gaming",
-    "date": "",
+    "workName": "Game Development",
+    "date": "DAY 1",
     "c1Name": "RAHUL GUNASEELAN",
     "c1Num": "9176717108",
     "c2Name": "MITHUN RAMANUJAM",
@@ -224,7 +224,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Sensor_Interface_and_Integration-01-min_n718v0.png",
     "assnName": "American Society of Mechanical Engineers",
     "workName": "Sensor Interface and Integration",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "Harivardhan S V",
     "c1Num": "9626386882",
     "c2Name": "Logesh K",
@@ -264,7 +264,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535552/Workshop/IOT_for_Mechanical_Application-min_cxs3mc.png",
     "assnName": "Indian Institution of Industrial Engineering (Students Chapter)",
     "workName": "IOT for Mechanical Applications",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "SANJAY S",
     "c1Num": "9789348224",
     "c2Name": "YOGENDRAA S N",
@@ -304,7 +304,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570949/Workshop/Nuts_and_Bots_with_naveen_1_mc6blf.png",
     "assnName": "Production Engineering Association",
     "workName": "Nuts and Bolts with Naveen",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "DUVARAKESH D",
     "c1Num": "7397057322",
     "c2Name": "ARUN K",
@@ -355,7 +355,7 @@
     "wid": "WKSP0009",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Basics_of_ROS_and_Hardware_Interfacing_with_it_mcyp9b.png",
     "assnName": "Robotics & Automation Engineering Association",
-    "workName": "Basics of ROS and Hardware Interfacing with it",
+    "workName": "Build Your Custom Robot in ROS",
     "date": "DAY 1",
     "c1Name": "KISHORE S",
     "c1Num": "9894268704",
@@ -398,7 +398,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535554/Workshop/CREATIVE_FUSION_A_Hands-On_Workshop_on_Photoshop_Blender_Video_Editing_and_Poster_Design_2_-min-min_sum9sa.png",
     "assnName": "Radio Hub",
     "workName": "Creative Fusion",
-    "date": "",
+    "date": "DAY 2",
     "c1Name": "DANISH",
     "c1Num": "9080533862",
     "c2Name": "THANISH",
@@ -428,7 +428,7 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676574194/Workshop/Non-Destructive_Testing-min_nnerrb.png",
     "assnName": "Metallurgical Engineering Association",
     "workName": "Non-Destructive Testing",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "Rithish M",
     "c1Num": "9944521295",
     "c2Name": "Kavinesh M R",
@@ -456,38 +456,96 @@
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570948/Workshop/FPGA_based_SoC_Design_1_wuocut.png",
     "assnName": "",
     "workName": "FPGA Based System Design",
-    "date": "",
+    "date": "DAY 2",
     "c1Name": "Lokesh Krishnakumar ",
     "c1Num": "9003033373",
     "c2Name": "Praveenbabu R S",
     "c2Num": "9994542649",
     "desc": "The objective of this workshop is to give an overview of the FPGA design flow and provide experience with various FPGA development tools. This two-day workshop provides an introduction to the Xilinx platform, Introduction to FPGA technology and its capabilities, Overview of design flow for FPGA-based systems, including hardware description languages (HDLs), Hands-on experience with FPGA development tools, such as Xilinx Vivado, Implementation of digital logic designs, including finite state machines and data path circuits, Use of IP cores and embedded processors in FPGA designs, Techniques for debugging and testing FPGA-based systems. At last, the participants will be able to design, simulate, implement and test their own FPGA-based designs by the end of the workshop.",
-    "agenda": ""
+    "agenda":  [
+      [
+        {
+          "time": "9:00 AM - 4:00 PM",
+          "description": [
+            "SESSION 1 –  Introduction to Simple digital circuits implementation and basic knowledge of Xilinx platform."
+          ]
+        }
+      ],[
+        {
+          "time": "9:00 AM - 4:00 PM",
+          "description": [
+            "SESSION 2 - Simulation in Xilinx Vivado and implementation of combinational and sequential circuits."
+          ]
+        }
+      ]
+    ]
   },
   {
     "wid": "WKSP0013",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535553/Workshop/Solaris-min_ydunjb.png",
     "assnName": "",
     "workName": "Solaris (Workshop + Skywatch)",
-    "date": "",
+    "date": "DAY 1",
     "c1Name": "BHAVANI K",
     "c1Num": "7402876123",
     "c2Name": "HAYAGREEV RETHINAVEL",
     "c2Num": "9940922937",
     "desc": "This event consists of a workshop followed by a sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained by the club members, Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by a sky watch for the participants where telescope handling is also taught.",
-    "agenda": ""
+    "agenda": [
+      [
+        {
+          "time": "9:00 AM - 10:30 AM",
+          "description": [
+            "SESSION 1 –  Recent advancements and technology in the astronomy field."
+          ]
+        },
+        {
+          "time": "10:30 AM - 12:30 PM",
+          "description": [
+            "SESSION 2 - Participants will have a look into the available models."
+          ]
+        },
+        {
+          "time": "1:30 PM - 3:00 PM",
+          "description": [
+            "SESSION 3 - Sky Watch."
+          ]
+        }
+      ]
+    ]
   },
   {
     "wid": "WKSP0014",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/World_of_Biotechnology-min_dukug0.png",
     "assnName": "",
-    "workName": "AI in BioTechnology",
-    "date": "",
-    "c1Name": "",
-    "c1Num": "",
-    "c2Name": "",
-    "c2Num": "",
-    "desc": "",
-    "agenda": ""
+    "workName": "Tensorflow application in Biotechnology",
+    "date": "DAY 1",
+    "c1Name": "HARINNI AR",
+    "c1Num": "7358322522",
+    "c2Name": "BENSON RAYAN D",
+    "c2Num": "9840560365",
+    "desc": "AI in biotechnology plays a crucial role in boosting innovation not only in the laboratories but also throughout the lifecycle of a medicine or a chemical compound. Based on the target market AI based tools and applications help in developing the structure of molecules. The biotech industry is witnessing unprecedented demand on many fronts. Companies are looking to invest in fast paced innovations, systematic storage of massive research data, analysis of humongous databases, and meticulous management of the business processes. AI enabled application play a crucial role in meeting these demands. Here we provide you the opportunity to enrich your knowledge in the field of Artificial intelligence in biotechnology.",
+    "agenda": [
+      [
+        {
+          "time": "9:00 AM - 12:00 PM",
+          "description": [
+            "SESSION 1 –  Basics on Artificial intelligence."
+          ]
+        },
+        {
+          "time": "2:00 AM - 3:30 PM",
+          "description": [
+            "SESSION 2 - Application of AI in biotechnology."
+          ]
+        },
+        {
+          "time": "3:30 PM - 4:00 PM",
+          "description": [
+            "SESSION 3 - Tasks related to topics discussed in workshop."
+          ]
+        }
+      ]
+    ]
   }
 ]

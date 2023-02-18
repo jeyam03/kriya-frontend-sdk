@@ -43,34 +43,17 @@ const Section4 = ({ scrollYByVH }) => {
       >
         <div className="lg:w-[70%] h-full hidden lg:block">
           <div className="flex items-center h-full space-x-2 w-full pr-16">
-            <PaperPresentationItemDesktop
-              index={0}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[0].eventName}
-              id={fetchPapers()[0].ppid}
-            />
-            <PaperPresentationItemDesktop
-              index={1}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[1].eventName}
-              id={fetchPapers()[1].ppid}
-            />
-            <PaperPresentationItemDesktop
-              index={2}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[2].eventName}
-              id={fetchPapers()[2].ppid}
-            />
-            <PaperPresentationItemDesktop
-              index={3}
-              onMouseHoverIndex={onMouseHoverIndex}
-              setOnMouseHoverIndex={setOnMouseHoverIndex}
-              title={fetchPapers()[3].eventName}
-              id={fetchPapers()[3].ppid}
-            />
+            {fetchPapers().map((data, index) => {
+              return (
+                <PaperPresentationItemDesktop
+                  index={index}
+                  onMouseHoverIndex={onMouseHoverIndex}
+                  setOnMouseHoverIndex={setOnMouseHoverIndex}
+                  data={data}
+                />
+              );
+            })
+            }
           </div>
         </div>
 
@@ -80,53 +63,21 @@ const Section4 = ({ scrollYByVH }) => {
           >
             Engineering.
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" Surveying. "}
+              {" Researching. "}
             </span>{" "}
             Solutions.
           </h1>
         </div>
         <div className="block lg:hidden w-full lg:w-[60%] h-full overflow-x-auto mt-8">
           <div className="flex w-fit h-full items-center relative space-x-6 px-8">
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP01`);
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[0].eventName}
-              </p>
-            </button>
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP02`);
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[1].eventName}
-              </p>
-            </button>
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP03`);
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[2].eventName}
-              </p>
-            </button>
-            <button
-              className="w-64 h-[90%] bg-gradient-to-b from-[#C80067] to-[#5451B6] flex items-end p-4"
-              onClick={() => {
-                navigate(`/portal/paper/PP04`);
-              }}
-            >
-              <p className="font-semibold font-poppins text-2xl text-gray-100">
-                {fetchPapers()[3].eventName}
-              </p>
-            </button>
+            {fetchPapers().map((data, index) => {
+              return (
+                <PaperPresentationItemMobile
+                  data={data}
+                />
+              );
+            })
+            }
           </div>
         </div>
       </section>
@@ -139,36 +90,56 @@ const PaperPresentationItemDesktop = ({
   index,
   onMouseHoverIndex,
   setOnMouseHoverIndex,
-  title,
-  id,
+  data,
 }) => {
   const navigate = useNavigate();
-
-  const toTitleCase = (phrase) => {
-    return phrase
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  };
 
   return (
     <button
       onMouseEnter={(e) => setOnMouseHoverIndex(index)}
       onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-      className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-full w-2/6" : "h-[95%] w-1/6"
+      className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-[90%] w-2/6" : "h-[85%] w-1/6"
         } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
       onClick={() => {
-        navigate(`/portal/paper/${id}`);
+        navigate(`/portal/paper/${data.ppid}`);
+      }}
+      style={{
+        background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${data.image}")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
       <p
         className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${onMouseHoverIndex === index
           ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-6 -translate-y-6"
           : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
-          }`}
+          } uppercase`}
       >
-        {toTitleCase(title)}
+        {data.eventName}
+      </p>
+    </button>
+  );
+};
+
+const PaperPresentationItemMobile = ({ data, }) => {
+  const navigate = useNavigate();
+
+  return (
+    <button
+      className="w-64 h-[90%] flex items-end rounded-lg p-4"
+      onClick={() => {
+        navigate(`/portal/paper/${data.ppid}`);
+      }}
+      style={{
+        background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${data.image}")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <p className="font-semibold font-poppins text-2xl text-gray-100">
+        {data.eventName}
       </p>
     </button>
   );

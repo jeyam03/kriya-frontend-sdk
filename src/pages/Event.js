@@ -11,10 +11,21 @@ const Event = () => {
   const [generalPayment, setGeneralPayment] = useState(false);
 
   const toTitleCase = (phrase) => {
+    const wordsToIgnore = ["of", "in", "for", "and", "an", "or"];
+    const wordsToCapitalize = ["it", "cad"];
+
     return phrase
       .toLowerCase()
       .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => {
+        if (wordsToIgnore.includes(word)) {
+          return word;
+        }
+        if (wordsToCapitalize.includes(word)) {
+          return word.toUpperCase();
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
       .join(" ");
   };
 
@@ -66,18 +77,21 @@ const Event = () => {
       </div> */}
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-black">
-        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-16 relative py-8 px-8">
+        <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-12 relative py-8 px-8">
           <RoundDescription
             roundNumber={1}
             title={eventDetail.round_title_1}
             description={eventDetail.round_desc_1}
           />
 
-          <RoundDescription
-            roundNumber={2}
-            title={eventDetail.round_title_2}
-            description={eventDetail.round_desc_2}
-          />
+          {eventDetail.round_title_2.length > 0 &&
+            eventDetail.round_desc_2.length > 0 && (
+              <RoundDescription
+                roundNumber={2}
+                title={eventDetail.round_title_2}
+                description={eventDetail.round_desc_2}
+              />
+            )}
 
           {eventDetail.round_title_3.length > 0 &&
             eventDetail.round_desc_3.length > 0 && (
@@ -91,7 +105,7 @@ const Event = () => {
           {eventDetail.round_title_4.length > 0 &&
             eventDetail.round_desc_4.length > 0 && (
               <RoundDescription
-                roundNumber={3}
+                roundNumber={4}
                 title={eventDetail.round_title_4}
                 description={eventDetail.round_desc_4}
               />
@@ -99,23 +113,23 @@ const Event = () => {
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button
-            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-left"
-            onClick={() => {
-              isLoggedIn
-                ? window.confirm("Are you sure you want to register ?")
-                  ? generalPayment
-                    ? navigate("/confirmed")
-                    : navigate("/payment")
-                  : console.log("Cancelled")
-                : navigate("/register");
-            }}
+            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
+            // onClick={() => {
+            //   isLoggedIn
+            //     ? window.confirm("Are you sure you want to register ?")
+            //       ? generalPayment
+            //         ? navigate("/confirmed")
+            //         : navigate("/payment")
+            //       : console.log("Cancelled")
+            //     : navigate("/register");
+            // }}
           >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
               {"Registrations Opening Soon !"}
             </span>
           </button>
 
-          <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-4 justify-center">
+          <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
             <div className="flex flex-row items-center gap-4 lg:gap-4">
               <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
                 24
@@ -134,11 +148,8 @@ const Event = () => {
                 <MdAccessTime />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
-                  09:30 AM - 12:00 PM
-                </p>
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
-                  02:00 PM - 03:30 PM
+                <p className="text-base lg:text-base font-semibold tracking-wider text-[#3c4043]">
+                  {eventDetail.timing}
                 </p>
               </div>
             </div>
@@ -147,11 +158,8 @@ const Event = () => {
                 <MdOutlineLocationOn />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  K Block 1<sup>st</sup> Floor
-                </p>
-                <p className="text-base lg:text-base tracking-wide text-[#3c4043]">
-                  Civil Seminar Hall
+                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-sm" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
+                  {eventDetail.hall}
                 </p>
               </div>
             </div>
@@ -177,7 +185,7 @@ const Event = () => {
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_1)}
                 </p>
-                <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
+                <p className="text-base lg:text-sm tracking-wide text-white lg:text-[#3c4043]">
                   {eventDetail.contact_mobile_1}
                 </p>
               </div>
@@ -204,7 +212,7 @@ const Event = () => {
                 <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(eventDetail.contact_name_2)}
                 </p>
-                <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
+                <p className="text-base lg:text-sm tracking-wide text-white lg:text-[#3c4043]">
                   {eventDetail.contact_mobile_2}
                 </p>
               </div>
@@ -232,35 +240,38 @@ const Event = () => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
-        <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
-          <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
-            Rules
-          </p>
-          <ul className="list-disc text-base tracking-wide text-justify text-[#3c4043] pl-4">
-            <li>
-              Participants are advised to come with laptop, if not computers
-              with autocad version 2007 will only be provided.
-            </li>
-            <li>
-              Time based events and rounds will be conducted on elimination
-              basis.
-            </li>
-            <li>Judges decisions will be final.</li>
-          </ul>
+      {eventDetail.eventRules && eventDetail.eventRules.length > 0 && (
+        <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
+          <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
+            <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
+              Rules
+            </p>
+            <ul className="list-disc text-base tracking-wide text-justify text-[#3c4043] pl-4">
+              {eventDetail.eventRules.split("\n").map((rule, index) => (
+                <li key={index}>{rule}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
 
 const RoundDescription = ({ roundNumber, description, title = "" }) => {
   const toTitleCase = (phrase) => {
-    return phrase
+    const wordsToIgnore = ["of", "in", "for", "and", "a", "an", "or", "the"];
+    const formattedPhrase = phrase
       .toLowerCase()
       .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .map((word) => {
+        if (wordsToIgnore.includes(word)) {
+          return word;
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
       .join(" ");
+    return formattedPhrase.charAt(0).toUpperCase() + formattedPhrase.slice(1);
   };
 
   return (
@@ -286,7 +297,12 @@ const RoundDescription = ({ roundNumber, description, title = "" }) => {
           </div>
         )}
         <p className="text-base lg:text-base text-justify text-[#3c4043] pt-4 lg:pt-0">
-          {description}
+          {description.split("\n").map((desc, index) => (
+            <div>
+              <p key={index}>{desc}</p>
+              <br></br>
+            </div>
+          ))}
         </p>
       </div>
     </div>

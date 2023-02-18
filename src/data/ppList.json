@@ -1,6 +1,7 @@
 [
   {
-    "ppid": "PPPN0001",
+    "ppid": "PRPN0001",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632273/Paper/technoblitz_niveqx.png",
     "eventName": "TECHNOBLITZ",
     "contact1": [
        "R S Krishna",
@@ -11,11 +12,11 @@
        9600429401
     ],
     "topic": "Industrial automation\nGreen technology\nAI and ML\nAR and VR\nVLSI\nVision systems\nInternet of Things\nSwarm Robotics\nEdge computing\nRobotic Process Automation\nVision Systems\nBlock Chain Technology",
-    "rules": "Each team can have a maximum of three members\nParticipants are supposed to send their abstracts in pdf format on or before the given dates to the stated mail id\nThe abstract should be in IEEE format and should not exceed a page\nThe abstracts will be scrutinized and the selected teams will be informed via mail\nNo abstracts sent after the deadline will be considered\nThe participants will be given 10 minutes for presenting their ideas followed by 5 minutes of question-and-answer session\nInternet resources are allowed\nHowever, direct plagiarism of ideas is strictly prohibited\nThe judges’ decision is final and no correspondence will be entered into",
-    "FIELD8": "Software domain\nSuggested topics :"
+    "rules": "Each team can have a maximum of three members\nParticipants are supposed to send their abstracts in pdf format on or before the given dates to the stated mail id\nThe abstract should be in IEEE format and should not exceed a page\nThe abstracts will be scrutinized and the selected teams will be informed via mail\nNo abstracts sent after the deadline will be considered\nThe participants will be given 10 minutes for presenting their ideas followed by 5 minutes of question-and-answer session\nInternet resources are allowed\nHowever, direct plagiarism of ideas is strictly prohibited\nThe judges’ decision is final and no correspondence will be entered into"
  },
   {
-    "ppid": "PPPN0002",
+    "ppid": "PRPN0002",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632274/Paper/textrivia_png-01_l4fhx6.png",
     "eventName": "TEXTRIVIA",
     "contact1": [
        "R. K. BHARATRAJ ",
@@ -26,11 +27,11 @@
        9080307184
     ],
     "topic": "Digital Printing Technology in Textiles\nMedical textiles\nFuture in spinning technology\nAuxtic Textiles\nPreservation of Handlooms\nSustainability in Textile processing\nNanotechnology in Textile processing\n3D weaving\nSports textiles\nProtective textiles",
-    "rules": "Abstract should not exceed more than 250 words.\nPresentation should not exceed more than 7 - 8 minutes.\nThe deadline for submitting an abstract is one week before the competition.\nEach team consists of maximum 2 members.",
-    "FIELD8": ""
+    "rules": "Abstract should not exceed more than 250 words.\nPresentation should not exceed more than 7 - 8 minutes.\nThe deadline for submitting an abstract is one week before the competition.\nEach team consists of maximum 2 members."
  },
   {
-    "ppid": "PPPN0003",
+    "ppid": "PRPN0003",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632273/Paper/Technoration_intbeo.png",
     "eventName": "TECHNORATION",
     "contact1": [
        "Sharan S",
@@ -41,11 +42,11 @@
        9655637069
     ],
     "topic": "Internet of Things  \nMicroelectromechanical Systems (MEMS) \nEmbedded Systems \nApplications of nanotechnology in Electronics \nSOC Design \n3D Integrated Circuits \nLow-Power VLSI  \nQuantum Computing",
-    "rules": "Participants can form teams of 1 to 3 from the same college\nThe Participants must select a problem statement from the provided topics\nParticipants must not indulge in any plagiarism\nThe Shortlisted teams will present their paper on Campus ",
-    "FIELD8": ""
+    "rules": "Participants can form teams of 1 to 3 from the same college\nThe Participants must select a problem statement from the provided topics\nParticipants must not indulge in any plagiarism\nThe Shortlisted teams will present their paper on Campus "
  },
   {
-    "ppid": "PPPN0004",
+    "ppid": "PRPN0004",
+    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676632273/Paper/excel_v36t4m.png",
     "eventName": "EXCELLENCIA",
     "contact1": [
        "KEERTHIVASSAN S",
@@ -56,7 +57,6 @@
        9344968646
     ],
     "topic": "Application of Mathematics in - Present day Engineering\nApplications of Differential Equations in real life\nThe use of Fractal Geometry in various fields\nThe study of Graph theory and its applications\nRecent developments in the field of mathematical modeling. ",
-    "rules": "Participants can form teams of 1 to 3 from the same college\nThe Participants must select a problem statement from the provided topics\nParticipants must not indulge in any plagiarism\nThe Shortlisted teams will present their paper on Campus",
-    "FIELD8": ""
+    "rules": "Participants can form teams of 1 to 3 from the same college\nThe Participants must select a problem statement from the provided topics\nParticipants must not indulge in any plagiarism\nThe Shortlisted teams will present their paper on Campus"
  }
  ]
