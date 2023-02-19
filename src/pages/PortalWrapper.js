@@ -39,7 +39,7 @@ const NavBarForDesktop = () => {
 
   return (
     <nav className="hidden lg:block z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
-      <div className="flex w-full justify-between items-center sticky top-0 bg-white">
+      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white">
         <Link
           to={"/"}
           className="w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
@@ -136,7 +136,7 @@ const NavBarForMobile = () => {
 
   return (
     <nav className="lg:hidden z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
-      <div className="flex w-full justify-between items-center sticky top-0 bg-white">
+      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white">
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
         <Link
           to={"/"}

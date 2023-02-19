@@ -42,48 +42,6 @@ const Section3 = () => {
         id="section3"
         className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
       >
-        <svg width="0" height="0">
-          <linearGradient id="gradient1" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop stopColor="#5238d1" offset="0%" />
-            <stop stopColor="#8938d1" offset="100%" />
-          </linearGradient>
-        </svg>
-
-        <svg width="0" height="0">
-          <linearGradient id="gradient2" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop stopColor="#8f3ccf" offset="0%" />
-            <stop stopColor="#df51ad" offset="100%" />
-          </linearGradient>
-        </svg>
-
-        <svg width="0" height="0">
-          <linearGradient id="gradient3" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop stopColor="#dc4fab" offset="0%" />
-            <stop stopColor="#eb587b" offset="100%" />
-          </linearGradient>
-        </svg>
-
-        <svg width="0" height="0">
-          <linearGradient id="gradient4" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop stopColor="#e8567c" offset="0%" />
-            <stop stopColor="#f48555" offset="100%" />
-          </linearGradient>
-        </svg>
-
-        <svg width="0" height="0">
-          <linearGradient id="gradient5" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop stopColor="#eac64a" offset="0%" />
-            <stop stopColor="#2ea47e" offset="100%" />
-          </linearGradient>
-        </svg>
-
-        <svg width="0" height="0">
-          <linearGradient id="gradient6" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop stopColor="#02b7e6" offset="0%" />
-            <stop stopColor="#00c37b" offset="100%" />
-          </linearGradient>
-        </svg>
-
         <div className="w-full lg:w-[70vw] h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 p-8 lg:px-24 lg:pl-0 font-poppins gap-4 md:gap-8 lg:gap-10">
             <div className="p-4 space-y-2 events-text opacity-0 delay-100">
@@ -91,10 +49,18 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=kriyative"
               >
-                <FaSoundcloud
-                  style={{ fill: "url(#gradient1)" }}
-                  className="text-5xl lg:text-6xl"
-                />
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#5238d1] to-[#8938d1] flex items-center justify-center">
+                  <div
+                    style={{
+                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png)`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                    className="w-8 h-8 invert"
+                  >
+                  </div>
+                </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {" Kriyative "}
                 </p>
@@ -116,10 +82,18 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=brainiac"
               >
-                <FaSoundcloud
-                  style={{ fill: "url(#gradient2)" }}
-                  className="text-5xl lg:text-6xl"
-                />
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#8f3ccf] to-[#df51ad] flex items-center justify-center">
+                  <div
+                    style={{
+                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png)`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                    className="w-8 h-8 invert"
+                  >
+                  </div>
+                </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
                   {" Brainiac "}
                 </p>
@@ -141,10 +115,18 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=coding"
               >
-                <FaSoundcloud
-                  style={{ fill: "url(#gradient3)" }}
-                  className="text-5xl lg:text-6xl"
-                />
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#dc4fab] to-[#eb587b] flex items-center justify-center">
+                  <div
+                    style={{
+                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png)`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                    className="w-8 h-8 invert"
+                  >
+                  </div>
+                </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
                   {" Coding "}
                 </p>
@@ -166,10 +148,18 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=circuit"
               >
-                <FaSoundcloud
-                  style={{ fill: "url(#gradient4)" }}
-                  className="text-5xl lg:text-6xl"
-                />
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#e8567c] to-[#f48555] flex items-center justify-center">
+                  <div
+                    style={{
+                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png)`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                    className="w-8 h-8 invert"
+                  >
+                  </div>
+                </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
                   {" Circuit "}
                 </p>
@@ -191,10 +181,18 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=core"
               >
-                <FaSoundcloud
-                  style={{ fill: "url(#gradient5)" }}
-                  className="text-5xl lg:text-6xl"
-                />
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#eac64a] to-[#2ea47e] flex items-center justify-center">
+                  <div
+                    style={{
+                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png)`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                    className="w-8 h-8 invert"
+                  >
+                  </div>
+                </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
                   {" Core Engineering "}
                 </p>
@@ -216,10 +214,18 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=management"
               >
-                <FaSoundcloud
-                  style={{ fill: "url(#gradient6)" }}
-                  className="text-4xl lg:text-6xl"
-                />
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#02b7e6] to-[#00c37b] flex items-center justify-center">
+                  <div
+                    style={{
+                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png)`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                    }}
+                    className="w-8 h-8 invert"
+                  >
+                  </div>
+                </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
                   {" Management "}
                 </p>

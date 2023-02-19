@@ -7,7 +7,7 @@ const EventGrid = ({
   title = "",
   description = "",
   className = "",
-  icon = <div />,
+  iconImg = "",
   date = "",
   time = "",
   arrowColor = "bg-[#181818]",
@@ -69,10 +69,17 @@ const EventGrid = ({
         </button>
 
         <div className="p-6 pb-3 rounded-t-3xl flex flex-row  lg:flex-col items-center lg:items-start">
-          <div className="bg-gray-200 rounded-full p-3 w-fit h-fit aspect-square lg:mb-4 mr-4">
-            {React.cloneElement(icon, {
-              className: "text-[#181818] text-2xl lg:text-3xl",
-            })}
+          <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center lg:mb-4 mr-4">
+            <div
+              style={{
+                background: `url("${iconImg}}")`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+              className="w-8 h-8 bg-red-400"
+            >
+            </div>
           </div>
 
           <p className="font-semibold font-poppins text-xl w-[70%] text-gray-200 tracking-wider">

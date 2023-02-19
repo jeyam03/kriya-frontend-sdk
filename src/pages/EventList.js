@@ -69,6 +69,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Kriyative")}
           topCurve="bg-[#7d1ab2]"
           rightCurve="bg-[#551789]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png"}
         />
 
         <h1
@@ -88,6 +89,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Brainiac")}
           topCurve="bg-[#770658]"
           rightCurve="bg-[#630a3d]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png"}
         />
 
         <h1
@@ -107,6 +109,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Coding")}
           topCurve="bg-[#b21a56]"
           rightCurve="bg-[#891750]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png"}
         />
 
         <h1
@@ -126,6 +129,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Circuit")}
           topCurve="bg-[#e04918]"
           rightCurve="bg-[#e04918]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png"}
         />
 
         <h1
@@ -145,6 +149,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Core Engineering")}
           topCurve="bg-[#066b77]"
           rightCurve="bg-[#0a4c63]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png"}
         />
 
         <h1
@@ -164,6 +169,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Management")}
           topCurve="bg-[#28a5ea]"
           rightCurve="bg-[#28a5ea]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png"}
         />
       </section>
     </div>
@@ -179,6 +185,7 @@ const EventsGrid = ({
   arrowCircleEnd,
   topCurve,
   rightCurve,
+  iconImg,
 }) => {
 
   const toTitleCase = (phrase) => {
@@ -209,7 +216,7 @@ const EventsGrid = ({
             description={i.desc}
             date="24"
             time={i.time}
-            icon={<FaSoundcloud />}
+            icon={iconImg}
             imgurl={imgurl}
             arrowCircleStart={arrowCircleStart}
             arrowCircleEnd={arrowCircleEnd}
