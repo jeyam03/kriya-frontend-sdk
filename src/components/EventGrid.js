@@ -72,12 +72,12 @@ const EventGrid = ({
           <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center lg:mb-4 mr-4">
             <div
               style={{
-                background: `url("${iconImg}}")`,
+                background: `url("${iconImg}")`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
-              className="w-8 h-8 bg-red-400"
+              className="w-8 h-8"
             >
             </div>
           </div>

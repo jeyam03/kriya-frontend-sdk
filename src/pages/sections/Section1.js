@@ -18,9 +18,19 @@ function Number({ n }) {
 
 const Section1 = () => {
   const slides = [
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675875367/1674280844981_qosaib.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891951/Landing%20Photos/1_bubuws.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/3_oylhx1.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891946/Landing%20Photos/5_sbbs8q.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891948/Landing%20Photos/4_srzui7.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/12_wxeqd8.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/6_lh4nx6.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/7_nl1u1m.jpg",
+    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891949/Landing%20Photos/8_cyxwku.jpg",
+    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/9_gqvqh8.jpg",
+    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/10_bqezla.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/11_e1utjk.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/13_cr7mhl.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(1);

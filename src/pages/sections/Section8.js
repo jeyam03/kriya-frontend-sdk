@@ -77,7 +77,7 @@ const FAQContent = [
   {
     question: "What is the fee to participate in Kriya?",
     answer:
-      "The general registration fee is Rs. 200 for PSG Tech students and Rs. 250 for students from other colleges.",
+      "The general registration fee is Rs. 150 for PSG Tech students and Rs. 200 for students from other colleges.",
   },
   {
     question: "Where can I stay if I want to participate in Kriya?",
