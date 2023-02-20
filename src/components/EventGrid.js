@@ -74,7 +74,7 @@ const EventGrid = ({
               style={{
                 background: `url("${iconImg}")`,
                 backgroundPosition: "center",
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundRepeat: "no-repeat",
               }}
               className="w-8 h-8"
