@@ -4,6 +4,7 @@ import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchPaperById } from "../API/call";
+import { SiGmail } from "react-icons/si";
 
 const Paper = () => {
   const navigate = useNavigate();
@@ -112,10 +113,34 @@ const Paper = () => {
 
           <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
             <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
-              <p className="text-3xl font-semibold tracking-wider text-[#3c4043]">
+              <p className="text-xl font-semibold tracking-wider text-[#3c4043]">
+                Submit the abstract to the mail ID
+              </p>
+              <p className="text-base text-[#3c4043] space-y-4">
+                {paperDetail.eventMail.map((item, index) => (
+                  <div className="flex flex-row items-center space-x-4 group w-full">
+                    <SiGmail className="text-2xl group-hover:text-black" />
+                    <button
+                      key={index}
+                      className="text-blue-700 group-hover:underline [overflow-wrap:break-word] w-[80%] text-left"
+                      onClick={() => {
+                        window.open(`mailto:${item}`);
+                      }}
+                    >
+                      {item}
+                    </button>
+                  </div>
+                ))}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
+            <div className="lg:bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
+              <p className="text-3xl font-semibold tracking-wider lg:text-[#3c4043] text-white">
                 Rules
               </p>
-              <ul className="list-disc text-base text-[#3c4043] pl-4  space-y-1">
+              <ul className="list-disc text-base lg:text-[#3c4043] text-white pl-4  space-y-1">
                 {paperDetail.rules.split("\n").map((item, index) => (
                   <li key={index}>{item}</li>
                 ))}
