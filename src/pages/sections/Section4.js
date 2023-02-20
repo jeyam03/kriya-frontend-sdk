@@ -41,7 +41,7 @@ const Section4 = ({ scrollYByVH }) => {
         id="section4"
         className="h-screen w-full p-0 py-8 lg:p-16 lg:px-[calc(100vw/16)] flex flex-col lg:flex-row lg:items-center"
       >
-        <div className="lg:w-[75%] h-full hidden lg:block">
+        <div className="lg:w-[70%] h-full hidden lg:block">
           <div className="flex items-center h-full space-x-2 w-full pr-16">
             {fetchPapers().map((data, index) => {
               return (
