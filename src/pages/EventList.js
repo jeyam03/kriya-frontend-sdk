@@ -13,8 +13,9 @@ const EventList = () => {
       .map((event) => ({
         name: event.eventName,
         id: event.eventId,
-        desc: event.one_line_desc,
+        desc: event.one_line_desc ? event.one_line_desc : event.description,
         category: event.category,
+        time: event.timing.split("to")[0],
       }))
       .sort((a, b) => a.name.localeCompare(b.name))
   );
@@ -31,7 +32,7 @@ const EventList = () => {
 
   return (
     <div className="w-full font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
-      <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-4 lg:px-8 flex flex-col items-center lg:block p-8">
+      <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-6 lg:px-8 flex flex-col items-center lg:block p-8">
         <div className="w-full my-8 lg:mt-0">
           <h1 className={`text-4xl lg:text-6xl text-white font-semibold font-poppins text-center py-2`}
             id="soon-text"
@@ -68,6 +69,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Kriyative")}
           topCurve="bg-[#7d1ab2]"
           rightCurve="bg-[#551789]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png"}
         />
 
         <h1
@@ -87,6 +89,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Brainiac")}
           topCurve="bg-[#770658]"
           rightCurve="bg-[#630a3d]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png"}
         />
 
         <h1
@@ -106,6 +109,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Coding")}
           topCurve="bg-[#b21a56]"
           rightCurve="bg-[#891750]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png"}
         />
 
         <h1
@@ -125,6 +129,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Circuit")}
           topCurve="bg-[#e04918]"
           rightCurve="bg-[#e04918]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png"}
         />
 
         <h1
@@ -144,6 +149,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Core Engineering")}
           topCurve="bg-[#066b77]"
           rightCurve="bg-[#0a4c63]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png"}
         />
 
         <h1
@@ -163,6 +169,7 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Management")}
           topCurve="bg-[#28a5ea]"
           rightCurve="bg-[#28a5ea]"
+          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png"}
         />
       </section>
     </div>
@@ -178,6 +185,7 @@ const EventsGrid = ({
   arrowCircleEnd,
   topCurve,
   rightCurve,
+  iconImg,
 }) => {
 
   const toTitleCase = (phrase) => {
@@ -206,9 +214,9 @@ const EventsGrid = ({
           <EventGrid
             title={toTitleCase(i.name)}
             description={i.desc}
-            date="21 March"
-            time="10:00 AM"
-            icon={<FaSoundcloud />}
+            date="24"
+            time={i.time}
+            iconImg={iconImg}
             imgurl={imgurl}
             arrowCircleStart={arrowCircleStart}
             arrowCircleEnd={arrowCircleEnd}

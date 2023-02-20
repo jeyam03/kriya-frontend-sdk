@@ -158,7 +158,7 @@ const Event = () => {
                 <MdOutlineLocationOn />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-sm" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
+                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-base" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
                   {eventDetail.hall}
                 </p>
               </div>
@@ -280,7 +280,7 @@ const RoundDescription = ({ roundNumber, description, title = "" }) => {
         {roundNumber}
       </p>
       <div className="space-y-2 z-30 flex-1">
-        {title.length > 0 ? (
+        {title.length > 0 && title.split(" ")[0].toLowerCase() !== "round" ? (
           <React.Fragment>
             <p className="tracking-wider uppercase">ROUND {roundNumber}</p>
             <div className="flex flex-row items-end gap-y-4">

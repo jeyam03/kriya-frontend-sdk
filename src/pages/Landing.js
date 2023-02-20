@@ -211,14 +211,18 @@ const NavBarForMobile = ({ consolee }) => {
   return (
     <nav
       className={`${
-        consolee >= 0.97 ? "block" : "hidden"
+        consolee >= 0.25 ? "block" : "hidden"
       }  lg:hidden z-50 w-screen lg:w-1/4 ${
         !condition ? "bg-white" : "bg-black"
       } fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md`}
     >
       <div className="flex w-full justify-between items-center sticky top-0">
-        <Link
-          to={"/"}
+        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+        <button
+          onClick={(e) => {
+            const element = document.getElementById("section1");
+            element.scrollIntoView({ behavior: "smooth" });
+          }}
           className={`w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3 ${
             condition && "invert"
           }`}
@@ -228,8 +232,7 @@ const NavBarForMobile = ({ consolee }) => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
           }}
-        ></Link>
-        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+        ></button>
       </div>
 
       <div
