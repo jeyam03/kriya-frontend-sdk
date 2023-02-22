@@ -1,0 +1,58 @@
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { fetchUserByEmail, fetchUserVerify } from "../../API/call";
+import TextInput from "../../components/TextInput";
+import Dropdown from "../../components/Dropdown";
+import colleges from "../CollegeList";
+
+const RegisterPageVerifyEmail = ({ switchPage }) => {
+  const [authEmail, setAuthEmail] = useState("");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (!searchParams.get("email")) return;
+    const email = searchParams.get("email");
+    setAuthEmail(searchParams.get("email"));
+    fetchUserByEmail(email)
+      .then((res) => {
+        console.log(res.data.user);
+      })
+      .catch((err) => console.log("ERROR", err));
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (!authEmail || authEmail.length <= 0) return;
+    sendMail();
+  }, [authEmail]);
+
+  const sendMail = () => {
+    fetchUserVerify(authEmail)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
+  return (
+    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+      <div className="">
+        <h3 className="text-sm text-gray-500">Register for Krioya 2023</h3>
+        <h1 className="text-2xl font-bold text-[#181818]">Verify your email</h1>
+      </div>
+      <p className="">
+        Your email address <b className="font-semibold">{authEmail}</b> has
+        received an email. Please click the link in the email to confirm your
+        email address. You may proceed with registration after you have
+        verified.
+      </p>
+      <p className="">
+        If you have not received the email, please check your spam folder.
+      </p>
+      <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full">
+        Resend Email
+      </button>
+      <p className="w-full text-xs text-center">Page 5 of 5</p>
+    </div>
+  );
+};
+
+export default RegisterPageVerifyEmail;

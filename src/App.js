@@ -8,6 +8,7 @@ import EventList from "./pages/EventList";
 import Paper from "./pages/Paper";
 import AuthPortal from "./pages/AuthPortal";
 import Error404 from "./pages/Error404";
+import Verification from "./pages/AuthPortal/Verification";
 
 const App = () => {
   return (
@@ -19,9 +20,10 @@ const App = () => {
           <Route path="paper/:id" element={<Paper />} />
           <Route path="workshop/:id" element={<Workshop />} />
           <Route index element={<Navigate to="/portal/event" />} />
-          {/* <Route path="profile" element={<Profile />} /> */}
+          <Route path="profile" element={<Profile />} />
         </Route>
-        {/* <Route path="auth" element={<AuthPortal />} /> */}
+        <Route path="verify/:id" element={<Verification />} />
+        <Route path="auth" element={<AuthPortal />} />
         <Route index element={<Landing />} />
         <Route path="*" element={<Error404 />} />
       </Routes>

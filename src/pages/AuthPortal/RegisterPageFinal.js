@@ -1,0 +1,49 @@
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { fetchUserByEmail } from "../../API/call";
+import TextInput from "../../components/TextInput";
+import Dropdown from "../../components/Dropdown";
+import colleges from "../CollegeList";
+
+const RegisterPageFinal = ({ switchPage }) => {
+  const [kriyaID, setKriyaID] = useState("KRIYA00XXX");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const PSG_COLLEGE =
+      "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
+
+    if (!searchParams.get("email")) return;
+    const email = searchParams.get("email");
+    fetchUserByEmail(email)
+      .then((res) => {
+        console.log(res.data.user);
+        const { name, email, source } = res.data.user;
+      })
+      .catch((err) => console.log("ERROR", err));
+  }, [searchParams]);
+
+  return (
+    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+      <div className="">
+        <h3 className="text-sm text-gray-500">You're Kriya ID is</h3>
+        <h1 className="text-2xl font-bold text-[#181818]">{kriyaID}</h1>
+      </div>
+      <p className="">
+        The ticket for the event has been sent to your email{" "}
+        <b className="font-semibold">yoXXXXX@.com</b> and your Whatsapp number{" "}
+        <b className="font-semibold">99XXXXXX01</b>. You can login to the portal
+        with your Kriya ID or your email.
+      </p>
+      <p className=""> Thank you for registering for Kriya 2023.</p>
+      <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full">
+        Go to Home Page
+      </button>
+
+      <p className="w-full text-xs text-center">Page 5 of 5</p>
+    </div>
+  );
+};
+
+export default RegisterPageFinal;

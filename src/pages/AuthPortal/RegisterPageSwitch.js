@@ -1,10 +1,17 @@
-import React from 'react'
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
-const RegisterPage1 = ({ switchPage }) => {
+const RegisterPageSwitch = ({ switchPage }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleRegisterWithEmail = () => {
+    setSearchParams({ ...searchParams, type: "signup", page: "details" });
+  };
+
   return (
-    <div className="w-full py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <h1 className="text-2xl font-bold text-[#181818]">
         Register for Kriya 2023
       </h1>
@@ -22,7 +29,7 @@ const RegisterPage1 = ({ switchPage }) => {
       </a>
       <button
         className="bg-black hover:bg-gray-700 transition-all duration-500 w-full text-white rounded-lg py-3 px-4"
-        onClick={(e) => switchPage("register")}
+        onClick={(e) => handleRegisterWithEmail()}
       >
         Register with Email
       </button>
@@ -37,4 +44,4 @@ const RegisterPage1 = ({ switchPage }) => {
   );
 };
 
-export default RegisterPage1
+export default RegisterPageSwitch;

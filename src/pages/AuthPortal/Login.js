@@ -8,7 +8,7 @@ const Login = ({ switchPage }) => {
   const [password, setPassword] = useState("");
 
   return (
-    <div className="w-full h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
 
       <div className="w-full space-y-4 py-4">

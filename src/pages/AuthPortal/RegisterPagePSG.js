@@ -1,0 +1,93 @@
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import {
+  fetchUpdateUser,
+  fetchUserByEmail,
+  fetchUserVerify,
+} from "../../API/call";
+import TextInput from "../../components/TextInput";
+import Dropdown from "../../components/Dropdown";
+import colleges from "../CollegeList";
+
+const RegisterPagePSG = ({ switchPage }) => {
+  const [psgEmail, setPsgEmail] = useState("");
+  const [authEmail, setAuthEmail] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    const PSG_COLLEGE =
+      "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
+
+    if (!searchParams.get("email")) return;
+    const email = searchParams.get("email");
+    setAuthEmail(email);
+    fetchUserByEmail(psgEmail)
+      .then((res) => {
+        console.log("EXISTS", res);
+      })
+      .catch((err) => {
+        console.log("DOES NOT EXIST", err);
+        fetchUserByEmail(email)
+          .then((res) => {
+            console.log(res.data.user);
+            const { name, email, source } = res.data.user;
+          })
+          .catch((err) => console.log("ERROR", err));
+      });
+  }, [searchParams]);
+
+  const handleSendVerification = () => {
+    fetchUpdateUser(authEmail, { email: psgEmail })
+      .then((res) => {
+        console.log(res);
+        fetchUserVerify(psgEmail)
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    if (!authEmail || authEmail.length <= 0) return;
+    if (authEmail.endsWith("psgtech.ac.in")) setPsgEmail(authEmail);
+  }, [authEmail]);
+
+  return (
+    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+      <div className="">
+        <h3 className="text-sm text-gray-500">Register for Kriya 2023</h3>
+        <h1 className="text-2xl font-bold text-[#181818]">
+          For PSG Tech Students
+        </h1>
+      </div>
+      <p className="">
+        Kindly enter your PSG College of Technology email ID to verify your
+        student status.
+      </p>
+      <TextInput
+        title="PSG Tech Email ID"
+        valueState={[psgEmail, setPsgEmail]}
+      />
+      <p className="">
+        Your official PSG Tech email address will get a verification link.
+        Kindly click the link in the email to proceed with further registration.
+      </p>
+      <p>
+        You will only be able to access the portal using your official PSG Tech
+        email address, here onwards.
+      </p>
+      <button
+        onClick={handleSendVerification}
+        className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full"
+      >
+        Send Email for verification
+      </button>
+
+      <p className="w-full text-xs text-center">Page 5 of 5</p>
+    </div>
+  );
+};
+
+export default RegisterPagePSG;
