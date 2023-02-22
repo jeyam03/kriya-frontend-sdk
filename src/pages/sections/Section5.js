@@ -126,7 +126,7 @@ const Section5 = () => {
           </h1>
         </div>
 
-        <div ref={ref} className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-6`}>
+        <div ref={ref} className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-4`}>
           {fetchWorkshops().map((item, index) => (
             <WorkshopGrid
               number={index + 1}
