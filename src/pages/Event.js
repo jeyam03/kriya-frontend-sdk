@@ -113,20 +113,21 @@ const Event = () => {
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button
-            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
-            // onClick={() => {
-            //   isLoggedIn
-            //     ? window.confirm("Are you sure you want to register ?")
-            //       ? generalPayment
-            //         ? navigate("/confirmed")
-            //         : navigate("/payment")
-            //       : console.log("Cancelled")
-            //     : navigate("/register");
-            // }}
+            className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
+          // onClick={() => {
+          //   isLoggedIn
+          //     ? window.confirm("Are you sure you want to register ?")
+          //       ? generalPayment
+          //         ? navigate("/confirmed")
+          //         : navigate("/payment")
+          //       : console.log("Cancelled")
+          //     : navigate("/register");
+          // }}
           >
-            <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {"Registrations Opening Soon !"}
-            </span>
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+                {"Registrations Opening Soon !"}
+              </span>
+              {/* <p className="bg-gradient-to-r from-[#C80067] to-[#7470ff] py-4 px-6 rounded-xl shadow-lg shadow-gray-900 lg:shadow-md w-fit text-white text-3xl hover:underline">Register Here !</p> */}
           </button>
 
           <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
