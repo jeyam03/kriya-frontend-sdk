@@ -8,6 +8,7 @@ import {
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
+import { toast } from "react-hot-toast";
 
 const RegisterPagePassword = ({ switchPage }) => {
   const [authEmail, setAuthEmail] = useState("");
@@ -44,17 +45,26 @@ const RegisterPagePassword = ({ switchPage }) => {
       alert("Passwords do not match");
       return;
     }
-    fetchUpdateUserPassword(searchParams.get("email"), formData.password)
-      .then((res) => {
-        console.log(res);
-        setSearchParams({
-          ...searchParams,
-          type: "signup",
-          page: "payment",
-          email: authEmail,
-        });
-      })
-      .catch((err) => console.log(err));
+    toast.promise(
+      fetchUpdateUserPassword(searchParams.get("email"), formData.password),
+      {
+        loading: "Updating password",
+        success: (res) => {
+          console.log(res);
+          setSearchParams({
+            ...searchParams,
+            type: "signup",
+            page: "payment",
+            email: authEmail,
+          });
+          return "Password updated successfully";
+        },
+        error: (err) => {
+          console.log(err);
+          return "Error updating password";
+        },
+      }
+    );
   };
 
   return (

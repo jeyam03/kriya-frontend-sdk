@@ -8,6 +8,7 @@ import {
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
+import { toast } from "react-hot-toast";
 
 const RegisterPagePSG = ({ switchPage }) => {
   const [psgEmail, setPsgEmail] = useState("");
@@ -36,17 +37,40 @@ const RegisterPagePSG = ({ switchPage }) => {
       });
   }, [searchParams]);
 
+  const onStorageUpdate = (e) => {
+    if (e.key === "verify_email") {
+      console.log("STORAGE UPDATED", e.newValue);
+      setSearchParams({
+        ...searchParams,
+        type: "signup",
+        email: authEmail,
+        page: "password",
+      });
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("storage", onStorageUpdate);
+    return () => {
+      window.removeEventListener("storage", onStorageUpdate);
+    };
+  }, []);
+
   const handleSendVerification = () => {
-    fetchUpdateUser(authEmail, { email: psgEmail })
-      .then((res) => {
-        console.log(res);
-        fetchUserVerify(psgEmail)
-          .then((result) => {
-            console.log(result);
-          })
-          .catch((err) => console.log(err));
-      })
-      .catch((err) => console.log(err));
+    toast.promise(fetchUpdateUser(authEmail, { email: psgEmail }), {
+      loading: "Sending Verification Email",
+      success: async (res) => {
+        const result = await fetchUserVerify(psgEmail);
+        console.log(result);
+        return "Verification Email Sent";
+      },
+      error: (err) => {
+        console.log(err.response.data.error);
+        return err.response.data
+          ? err.response.data.error
+          : "Error Sending Verification Email";
+      },
+    });
   };
 
   useEffect(() => {

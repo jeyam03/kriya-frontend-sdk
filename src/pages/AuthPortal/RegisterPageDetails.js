@@ -5,7 +5,7 @@ import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
 import departments from "../DepartmentList";
-import { RegisterContext } from ".";
+import { toast } from "react-hot-toast";
 
 const PSG_COLLEGE =
   "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
@@ -23,8 +23,6 @@ const RegisterPageDetails = ({ switchPage }) => {
     isPSGStudent: false,
     phone: "",
   });
-
-  const [registerData, setRegisterData] = useContext(RegisterContext);
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -54,8 +52,9 @@ const RegisterPageDetails = ({ switchPage }) => {
   };
 
   const handleContinue = () => {
-    fetchUpdateUser(authEmail, formData)
-      .then((res) => {
+    toast.promise(fetchUpdateUser(authEmail, formData), {
+      loading: "Updating User",
+      success: (res) => {
         if (
           formData.college === PSG_COLLEGE &&
           !formData.email.endsWith("psgtech.ac.in")
@@ -83,8 +82,13 @@ const RegisterPageDetails = ({ switchPage }) => {
             });
           }
         }
-      })
-      .catch((err) => console.log(err));
+        return "User Updated";
+      },
+      error: (err) => {
+        console.log(err);
+        return "Error updating user";
+      },
+    });
   };
 
   useEffect(() => {
@@ -117,14 +121,14 @@ const RegisterPageDetails = ({ switchPage }) => {
           (val) => setFormData({ ...formData, email: val }),
         ]}
       />
-        <TextInput
-          title="Phone number"
-          className=""
-          valueState={[
-            formData.phone,
-            (val) => setFormData({ ...formData, phone: val }),
-          ]}
-        />
+      <TextInput
+        title="Phone number"
+        className=""
+        valueState={[
+          formData.phone,
+          (val) => setFormData({ ...formData, phone: val }),
+        ]}
+      />
       <Dropdown
         valueState={[
           formData.college,

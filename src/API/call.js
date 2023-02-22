@@ -6,12 +6,15 @@ import WorkList from "../data/workList.json";
 const BASE_URL = "http://localhost:5002/api";
 const USER_URL = `${BASE_URL}/auth`;
 const EVENT_URL = `${BASE_URL}/event`;
+const PAYMENT_URL = `${BASE_URL}/payment`;
 
 export const fetchUserByEmail = (email) =>
   axios.post(`${USER_URL}/user-details`, { email: email }, {});
 
-export const fetchUpdateUser = (email, formData) =>
-  axios.put(`${USER_URL}/user-details/${email}`, formData, {});
+export const fetchUpdateUser = (email = "", formData) =>
+  email.length <= 0
+    ? axios.put(`${USER_URL}/user-details/create`, formData, {})
+    : axios.put(`${USER_URL}/user-details/${email}`, formData, {});
 
 export const fetchUserVerify = (email) =>
   axios.get(`${USER_URL}/verify-email/${email}`, {});
@@ -21,6 +24,12 @@ export const fetchUserVerifyConfirm = (id) =>
 
 export const fetchUpdateUserPassword = (email, password) =>
   axios.post(`${USER_URL}/user-password/${email}`, { password: password }, {});
+
+export const fetchPayGeneral = (formData) =>
+  axios.post(`${PAYMENT_URL}/pay-general`, formData, {});
+
+export const fetchPaymentDetailsByTxnId = (txnId) =>
+  axios.get(`${PAYMENT_URL}/${txnId}`, {});
 
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 

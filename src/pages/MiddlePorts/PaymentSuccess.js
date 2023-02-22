@@ -1,32 +1,33 @@
 import React, { useEffect } from "react";
 import "../../styles/Loading.css";
-import { fetchUserVerifyConfirm } from "../../API/call";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  fetchPaymentDetailsByTxnId,
+  fetchUserVerifyConfirm,
+} from "../../API/call";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 const PSG_COLLEGE =
   "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
 
-const Verification = () => {
-  const { id } = useParams();
+const PaymentSuccess = () => {
+  const { type } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!id) return;
-    fetchUserVerifyConfirm(id)
+    if (!type) return;
+    console.log(searchParams.get("txn"));
+    localStorage.setItem("txn", searchParams.get("txn"));
+    fetchPaymentDetailsByTxnId(searchParams.get("txn"))
       .then((res) => {
-        console.log(res.data.user);
-        if (
-          res.data.user.college === PSG_COLLEGE &&
-          !res.data.user.email.endsWith("psgtech.ac.in")
-        )
-          navigate(`/auth/?type=signup&page=psg&email=${res.data.user.email}`);
-        else
+        if (searchParams.get("redirect") === "complete_register")
           navigate(
-            `/auth/?type=signup&page=password&email=${res.data.user.email}`
+            `/auth/?type=signup&page=final&email=${res.data.data.email}`
           );
+        else navigate(`/`);
       })
       .catch((err) => console.log(err));
-  }, [id]);
+  }, [type]);
 
   return (
     <section className="h-screen w-screen flex flex-col justify-center items-center space-y-6">
@@ -55,4 +56,4 @@ const Verification = () => {
   );
 };
 
-export default Verification;
+export default PaymentSuccess;

@@ -32,6 +32,25 @@ const RegisterPageVerifyEmail = ({ switchPage }) => {
       .catch((err) => console.log(err));
   };
 
+   const onStorageUpdate = (e) => {
+     if (e.key === "verify_email") {
+       console.log("STORAGE UPDATED", e.newValue);
+       setSearchParams({
+         ...searchParams,
+         type: "signup",
+         email: authEmail,
+         page: "password",
+       });
+     }
+   };
+
+   useEffect(() => {
+     window.addEventListener("storage", onStorageUpdate);
+     return () => {
+       window.removeEventListener("storage", onStorageUpdate);
+     };
+   }, []);
+
   return (
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <div className="">
