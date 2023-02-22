@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { fetchUpdateUser, fetchUpdateUserPassword, fetchUserByEmail } from "../../API/call";
+import {
+  fetchUpdateUser,
+  fetchUpdateUserPassword,
+  fetchUserByEmail,
+} from "../../API/call";
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
 
 const RegisterPagePassword = ({ switchPage }) => {
+  const [authEmail, setAuthEmail] = useState("");
+
   const [formData, setFormData] = useState({
     password: "",
   });
@@ -22,6 +28,7 @@ const RegisterPagePassword = ({ switchPage }) => {
 
     if (!searchParams.get("email")) return;
     const email = searchParams.get("email");
+    setAuthEmail(searchParams.get("email"));
     fetchUserByEmail(email).catch((err) => {
       console.log("ERROR", err);
       if (err.response.status >= 400) navigate("/auth?type=login");
@@ -44,6 +51,7 @@ const RegisterPagePassword = ({ switchPage }) => {
           ...searchParams,
           type: "signup",
           page: "payment",
+          email: authEmail,
         });
       })
       .catch((err) => console.log(err));
