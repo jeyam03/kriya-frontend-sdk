@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import TextInput from "../../components/TextInput";
+import { toast } from "react-hot-toast";
+import { fetchLogin } from "../../API/call";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthProvider";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
 const Login = ({ switchPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
+
+  const { setAuth } = useContext(AuthContext);
+
+  const handleLoginWithEmail = () => {
+    toast.promise(fetchLogin({ username: email, password: password }), {
+      loading: "Logging in...",
+      success: (res) => {
+        setAuth({ email: email, token: res.data.token });
+        localStorage.setItem("email", email);
+        localStorage.setItem("token", res.data.token);
+        navigate("/portal/profile");
+        return "Logged in successfully!";
+      },
+      error: (err) => {
+        return err.response.data.error;
+      },
+    });
+  };
 
   return (
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
@@ -20,11 +44,15 @@ const Login = ({ switchPage }) => {
         />
         <TextInput
           title="Password"
+          type="password"
           className=""
           valueState={[password, setPassword]}
         />
       </div>
-      <button className="bg-black hover:bg-gray-700 transition-all duration-500 w-full text-white rounded-lg py-3 px-4">
+      <button
+        onClick={handleLoginWithEmail}
+        className="bg-black hover:bg-gray-700 transition-all duration-500 w-full text-white rounded-lg py-3 px-4"
+      >
         Login with Email
       </button>
 

@@ -13,29 +13,35 @@ import PaymentSuccess from "./pages/MiddlePorts/PaymentSuccess";
 import { Fragment } from "react";
 import { Toaster } from "react-hot-toast";
 import PaymentFailure from "./pages/MiddlePorts/PaymentFailure";
+import AuthProvider from "./pages/AuthProvider";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 const App = () => {
   return (
     <Fragment>
       <Toaster />
-      <BrowserRouter>
-        <Routes>
-          <Route path="portal" element={<PortalWrapper />}>
-            <Route path="event" element={<EventList />} />
-            <Route path="event/:id" element={<Event />} />
-            <Route path="paper/:id" element={<Paper />} />
-            <Route path="workshop/:id" element={<Workshop />} />
-            <Route index element={<Navigate to="/portal/event" />} />
-            <Route path="profile" element={<Profile />} />
-          </Route>
-          <Route path="payment/failure" element={<PaymentFailure />} />
-          <Route path="payment/success" element={<PaymentSuccess />} />
-          <Route path="verify/:id" element={<Verification />} />
-          <Route path="auth" element={<AuthPortal />} />
-          <Route index element={<Landing />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="portal" element={<PortalWrapper />}>
+              <Route path="event" element={<EventList />} />
+              <Route path="event/:id" element={<Event />} />
+              <Route path="paper/:id" element={<Paper />} />
+              <Route path="workshop/:id" element={<Workshop />} />
+              <Route index element={<Navigate to="/portal/event" />} />
+              <Route path="profile" element={<ProtectedRoute />}>
+                <Route index element={<Profile />} />
+              </Route>
+            </Route>
+            <Route path="payment/failure" element={<PaymentFailure />} />
+            <Route path="payment/success" element={<PaymentSuccess />} />
+            <Route path="verify/:id" element={<Verification />} />
+            <Route path="auth" element={<AuthPortal />} />
+            <Route index element={<Landing />} />
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
     </Fragment>
   );
 };

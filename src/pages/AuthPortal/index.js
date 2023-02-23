@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
-import { fetchUserByEmail } from "../../API/call";
+import { fetchLoginByGoogle, fetchUserByEmail } from "../../API/call";
 import Login from "./Login";
 import RegisterPageSwitch from "./RegisterPageSwitch";
 import RegisterPageDetails from "./RegisterPageDetails";
@@ -9,6 +9,7 @@ import RegisterPagePayment from "./RegisterPagePayment";
 import RegisterPageFinal from "./RegisterPageFinal";
 import RegisterPageVerifyEmail from "./RegisterPageVerifyEmail";
 import RegisterPagePSG from "./RegisterPagePSG";
+import { AuthContext } from "../AuthProvider";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
@@ -17,10 +18,24 @@ const AuthPortal = () => {
 
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { setAuth } = useContext(AuthContext);
 
   useEffect(() => {
     if (searchParams.get("existing") === "true") {
-      navigate("/portal");
+      fetchLoginByGoogle({
+        email: searchParams.get("email"),
+        googleId: searchParams.get("gid"),
+      })
+        .then((res) => {
+          console.log("GOOGLE LOGIN", res);
+          localStorage.setItem("email", searchParams.get("email"));
+          localStorage.setItem("token", res.data.token);
+          setAuth({ email: searchParams.get("email"), token: res.data.token });
+          navigate("/portal/profile");
+        })
+        .catch((err) => {
+          console.log("GOOGLE LOGIN ERROR", err);
+        });
     } else {
       if (searchParams.get("type") === "signup") {
         setIsLogInPage(false);

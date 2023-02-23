@@ -8,6 +8,19 @@ const USER_URL = `${BASE_URL}/auth`;
 const EVENT_URL = `${BASE_URL}/event`;
 const PAYMENT_URL = `${BASE_URL}/payment`;
 
+export const fetchLogin = (formData) =>
+  axios.post(`${USER_URL}/login`, formData, {});
+
+export const fetchLoginByGoogle = (formData) =>
+  axios.post(`${USER_URL}/login-google`, formData, {});
+
+export const fetchLoginVerify = (email, token) =>
+  axios.get(`${USER_URL}/login-verify/${email}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
 export const fetchUserByEmail = (email) =>
   axios.post(`${USER_URL}/user-details`, { email: email }, {});
 
