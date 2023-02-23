@@ -29,7 +29,7 @@ export const fetchPayGeneral = (formData) =>
   axios.post(`${PAYMENT_URL}/pay-general`, formData, {});
 
 export const fetchPaymentDetailsByTxnId = (txnId) =>
-  axios.get(`${PAYMENT_URL}/${txnId}`, {});
+  axios.get(`${PAYMENT_URL}/payment-details/${txnId}`, {});
 
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 

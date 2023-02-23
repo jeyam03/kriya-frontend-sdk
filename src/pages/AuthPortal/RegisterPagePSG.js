@@ -59,13 +59,15 @@ const RegisterPagePSG = ({ switchPage }) => {
   const handleSendVerification = () => {
     toast.promise(fetchUpdateUser(authEmail, { email: psgEmail }), {
       loading: "Sending Verification Email",
-      success: async (res) => {
-        const result = await fetchUserVerify(psgEmail);
-        console.log(result);
+      success: (res) => {
+        fetchUserVerify(psgEmail)
+          .then((res) => console.log(res))
+          .catch((err) => console.log(err));
+
         return "Verification Email Sent";
       },
       error: (err) => {
-        console.log(err.response.data.error);
+        console.log(err);
         return err.response.data
           ? err.response.data.error
           : "Error Sending Verification Email";
