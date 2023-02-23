@@ -2,11 +2,9 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import PortalWrapper from "./pages/PortalWrapper";
 import Event from "./pages/Event";
-import Profile from "./pages/Profile";
 import Workshop from "./pages/Workshop";
 import EventList from "./pages/EventList";
 import Paper from "./pages/Paper";
-import AuthPortal from "./pages/AuthPortal";
 import Error404 from "./pages/Error404";
 
 const App = () => {
