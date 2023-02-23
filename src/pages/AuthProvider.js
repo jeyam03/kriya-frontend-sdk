@@ -25,6 +25,12 @@ const AuthProvider = ({ children }) => {
     )
       .then((res) => {
         console.log("AUTH SUCCESS", res);
+        if (!auth) {
+          setAuth({
+            email: localStorage.getItem("email"),
+            token: localStorage.getItem("token"),
+          });
+        }
       })
       .catch((err) => {
         console.log("AUTH ERROR", err);
@@ -32,7 +38,6 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!auth) return;
     if (localStorage.getItem("email") && localStorage.getItem("token")) {
       verifyAuth();
     }
