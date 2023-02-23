@@ -41,7 +41,7 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
   return (
     <div className="w-full">
       <button className="p-4 lg:px-8 border-t border-gray-300 text-lg flex w-full justify-between items-center font-semibold" onClick={onClick}>
-        <div className={`text-left text-base lg:text-lg py-2 text-black font-normal`}>
+        <div className={`text-left text-base lg:text-lg py-2 ${isOpened ? "text-blue-700" : "text-black"} font-normal`}>
           {question}
         </div>
         <div>
@@ -77,7 +77,7 @@ const FAQContent = [
   {
     question: "What is the fee to participate in Kriya?",
     answer:
-      "The general registration fee is Rs. 200 for PSG Tech students and Rs. 250 for students from other colleges.",
+      "The general registration fee is Rs. 150 for PSG Tech students and Rs. 200 for students from other colleges.",
   },
   {
     question: "Where can I stay if I want to participate in Kriya?",

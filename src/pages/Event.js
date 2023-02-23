@@ -113,20 +113,21 @@ const Event = () => {
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button
-            className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
-            // onClick={() => {
-            //   isLoggedIn
-            //     ? window.confirm("Are you sure you want to register ?")
-            //       ? generalPayment
-            //         ? navigate("/confirmed")
-            //         : navigate("/payment")
-            //       : console.log("Cancelled")
-            //     : navigate("/register");
-            // }}
+            className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
+          // onClick={() => {
+          //   isLoggedIn
+          //     ? window.confirm("Are you sure you want to register ?")
+          //       ? generalPayment
+          //         ? navigate("/confirmed")
+          //         : navigate("/payment")
+          //       : console.log("Cancelled")
+          //     : navigate("/register");
+          // }}
           >
-            <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {"Registrations Opening Soon !"}
-            </span>
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+                {"Registrations Opening Soon !"}
+              </span>
+              {/* <p className="bg-gradient-to-r from-[#C80067] to-[#7470ff] py-4 px-6 rounded-xl shadow-lg shadow-gray-900 lg:shadow-md w-fit text-white text-3xl hover:underline">Register Here !</p> */}
           </button>
 
           <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
@@ -158,7 +159,7 @@ const Event = () => {
                 <MdOutlineLocationOn />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-sm" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
+                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-base" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
                   {eventDetail.hall}
                 </p>
               </div>
@@ -280,7 +281,7 @@ const RoundDescription = ({ roundNumber, description, title = "" }) => {
         {roundNumber}
       </p>
       <div className="space-y-2 z-30 flex-1">
-        {title.length > 0 ? (
+        {title.length > 0 && title.split(" ")[0].toLowerCase() !== "round" ? (
           <React.Fragment>
             <p className="tracking-wider uppercase">ROUND {roundNumber}</p>
             <div className="flex flex-row items-end gap-y-4">

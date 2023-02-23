@@ -39,7 +39,7 @@ const Section4 = ({ scrollYByVH }) => {
     <div className="w-full h-full relative">
       <section
         id="section4"
-        className="h-screen w-full p-0 py-8 lg:p-16 lg:px-[calc(100vw/12)] flex flex-col lg:flex-row lg:items-center"
+        className="h-screen w-full p-0 py-8 lg:p-16 lg:px-[calc(100vw/16)] flex flex-col lg:flex-row lg:items-center"
       >
         <div className="lg:w-[70%] h-full hidden lg:block">
           <div className="flex items-center h-full space-x-2 w-full pr-16">
@@ -104,7 +104,7 @@ const PaperPresentationItemDesktop = ({
         navigate(`/portal/paper/${data.ppid}`);
       }}
       style={{
-        background: `linear-gradient(to top, #202020 1%, rgba(255,255,255,0) 50%), url("${data.image}")`,
+        background: `linear-gradient(to top, #202020 5%, rgba(255,255,255,0) 50%), url("${data.image}")`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -113,7 +113,7 @@ const PaperPresentationItemDesktop = ({
       <p
         className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${onMouseHoverIndex === index
           ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-6 -translate-y-6"
-          : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-0 translate-x-[calc(35vw/6)]"
+          : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-4 translate-x-[calc(35vw/6)]"
           } uppercase`}
       >
         {data.eventName}

@@ -18,13 +18,24 @@ function Number({ n }) {
 
 const Section1 = () => {
   const slides = [
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675874405/bridge_glqanj.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675875367/1674280844981_qosaib.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891951/Landing%20Photos/1_bubuws.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/3_oylhx1.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891946/Landing%20Photos/5_sbbs8q.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891948/Landing%20Photos/4_srzui7.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/12_wxeqd8.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/6_lh4nx6.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/7_nl1u1m.jpg",
+    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891949/Landing%20Photos/8_cyxwku.jpg",
+    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/9_gqvqh8.jpg",
+    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/10_bqezla.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/11_e1utjk.jpg",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/13_cr7mhl.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(1);
   const timeoutRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const resetTimeout = () => {
     if (timeoutRef.current) {
@@ -54,6 +65,7 @@ const Section1 = () => {
     const imageMulti = document.querySelector("#image-multi");
     const imageMulti2 = document.querySelector("#image-multi-2");
     const tagline = document.querySelector("#tagline");
+    const navElements = document.querySelectorAll("#nav-button");
 
     const observer = new IntersectionObserver((entries) => {
       // numberTags.forEach((numberTag) => {
@@ -65,6 +77,9 @@ const Section1 = () => {
         registrationPrompt.classList.add("animate-flicker-in");
         imageMulti2.classList.add("animate-clip-in-side");
         tagline.classList.add("animate-clip-in-side");
+        navElements.forEach((navElement) => {
+          navElement.classList.add("animate-fade-in-slow");
+        });
       }
       // else {
       //   imageMulti.classList.remove("animate-clip-in");
@@ -225,7 +240,83 @@ const Section1 = () => {
             24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
           </div>
         </div>
-        <div className="lg:hidden pl-20 w-full h-[50%]">
+        <div className="lg:hidden flex flex-row w-full h-[50%]">
+          <div className="px-4">
+            <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
+          <div
+            className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+              } transition-all ease-in-out duration-300`}
+          >
+            <div className={`pb-8 w-full flex flex-col font-poppins absolute ${isOpen ? "z-20" : "-z-20"} bg-white transition-all ease-in-out duration-300`}>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section3");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Events
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section5");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Workshops
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section4");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Paper Presentations
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section7");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Our Team
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section8");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                FAQs
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section9");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
@@ -322,3 +413,44 @@ const Section1 = () => {
 };
 
 export default Section1;
+
+const MenuToggle = ({ isOpen, setIsOpen }) => {
+  return (
+    <button
+      className="lg:hidden flex items-center p-1 text-gray-500 lg:hover:text-gray-300"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      )}
+    </button>
+  );
+};

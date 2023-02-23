@@ -9,7 +9,7 @@ const Section9 = () => {
     <section id="section9" className="w-screen bg-black px-[calc(100vw/12)] py-16 font-poppins">
       <h1 className="text-5xl text-white font-bold pb-6">Contact Us</h1>
       <div className="flex flex-col lg:flex-row gap-8 flex-wrap text-white mt-8">
-        <div className="flex-1 space-y-6">
+        <div className="space-y-6 lg:w-56 lg:mr-12">
           <button className="flex items-center space-x-4"
             onClick={() => window.open("https://www.linkedin.com/company/studentsunion-psgtech/", "_blank")}
           >
@@ -29,40 +29,44 @@ const Section9 = () => {
             <p className="text-lg">events@psgkriya.in</p>
           </button>
         </div>
-        <div className="w-full lg:w-56">
-          <h5 className="text-xs tracking-widest">Chairperson</h5>
-          <ContactItem name="Dharmendra R" phone="+91 94860 60706" />
+        <div className="flex-1 flex flex-col space-y-8 lg:space-y-0 lg:space-x-6 lg:flex-row items-center lg:justify-between">
 
-          <h5 className="text-xs tracking-widest mt-8">Co-Chairperson</h5>
-          <ContactItem name="Mano M" phone="+91 93600 07515" />
+          <div className="w-full lg:w-56">
+            <h5 className="text-xs tracking-widest">Chairperson</h5>
+            <ContactItem name="Dharmendra R" phone="+91 94860 60706" />
+
+            <h5 className="text-xs tracking-widest mt-8">Co-Chairperson</h5>
+            <ContactItem name="Mano M" phone="+91 93600 07515" />
+          </div>
+          <div className="w-full lg:w-56">
+            <h5 className="text-xs tracking-widest">Event Support</h5>
+            <ContactItem name="Kavinesh" phone="+91 93613 57737" />
+            <ContactItem
+              name="Aditya Varma"
+              phone="+91 82486 84835"
+              className="mt-4 lg:mt-14"
+            />
+          </div>
+          <div className="w-full lg:w-56">
+            <h5 className="text-xs tracking-widest">PR & Sponsorship Support</h5>
+            <ContactItem name="Athrukshna" phone="+91 99433 19292" />
+            <ContactItem
+              name="Sudharshan"
+              phone="+91 87546 13534"
+              className="mt-4 lg:mt-14"
+            />
+          </div>
+          <div className="w-full lg:w-56">
+            <h5 className="text-xs tracking-widest">Tech Support</h5>
+            <ContactItem name="T G Ashwin Kumar" phone="+91 96596 04838" />
+            <ContactItem
+              name="Jeyam Palaniappan"
+              phone="+91 93847 68177"
+              className="mt-4 lg:mt-14"
+            />
+          </div>
         </div>
-        <div className="w-full lg:w-56">
-          <h5 className="text-xs tracking-widest">Event Support</h5>
-          <ContactItem name="Kavinesh" phone="+91 93613 57737" />
-          <ContactItem
-            name="Aditya Varma"
-            phone="+91 82486 84835"
-            className="mt-4 lg:mt-14"
-          />
-        </div>
-        <div className="w-full lg:w-56">
-          <h5 className="text-xs tracking-widest">PR & Sponsorship Support</h5>
-          <ContactItem name="Athrukshna" phone="+91 99433 19292" />
-          <ContactItem
-            name="Sudharshan"
-            phone="+91 87546 13534"
-            className="mt-4 lg:mt-14"
-          />
-        </div>
-        <div className="w-full lg:w-56">
-          <h5 className="text-xs tracking-widest">Tech Support</h5>
-          <ContactItem name="T G Ashwin Kumar" phone="+91 96596 04838" />
-          <ContactItem
-            name="Jeyam Palaniappan"
-            phone="+91 93847 68177"
-            className="mt-4 lg:mt-14"
-          />
-        </div>
+
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ const EventGrid = ({
   title = "",
   description = "",
   className = "",
-  icon = <div />,
+  iconImg = "",
   date = "",
   time = "",
   arrowColor = "bg-[#181818]",
@@ -27,7 +27,7 @@ const EventGrid = ({
       <div className="hidden lg:block absolute group-hover:shadow-lg opacity-0 -translate-y-20 group-hover:-translate-y-2 group-hover:opacity-100 left-0 top-[100%] w-full group-hover:scale-[110%] bg-gray-200 rounded-b-3xl px-4 pt-2 transition-all ease-in-out">
         <div className="flex flex-row justify-evenly py-4 text-gray-700">
           <div className="pt-2">
-            <p className="font-poppins font-semibold text-center">{date}</p>
+            <p className="font-poppins font-semibold text-center">{date}<sup>th</sup> March</p>
             <p className="font-poppins text-center">Date</p>
           </div>
 
@@ -69,10 +69,17 @@ const EventGrid = ({
         </button>
 
         <div className="p-6 pb-3 rounded-t-3xl flex flex-row  lg:flex-col items-center lg:items-start">
-          <div className="bg-gray-200 rounded-full p-3 w-fit h-fit aspect-square lg:mb-4 mr-4">
-            {React.cloneElement(icon, {
-              className: "text-[#181818] text-2xl lg:text-3xl",
-            })}
+          <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center lg:mb-4 mr-4">
+            <div
+              style={{
+                background: `url("${iconImg}")`,
+                backgroundPosition: "center",
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+              }}
+              className="w-8 h-8"
+            >
+            </div>
           </div>
 
           <p className="font-semibold font-poppins text-xl w-[70%] text-gray-200 tracking-wider">
@@ -80,7 +87,7 @@ const EventGrid = ({
           </p>
         </div>
 
-        <div className=" p-6 pt-3 rounded-b-3xl backdrop-blur-md lg:group-hover:backdrop-blur-none transition-all text-gray-200">
+        <div className=" p-6 pt-3 lg:rounded-b-3xl backdrop-blur-sm lg:backdrop-blur-md lg:group-hover:backdrop-blur-none transition-all text-gray-200">
           <p className="font-poppins text-base [display:-webkit-box] [-webkit-line-clamp:3] overflow-hidden [-webkit-box-orient:vertical]">
             {description}
           </p>
@@ -89,7 +96,7 @@ const EventGrid = ({
         <div className="lg:hidden shadow-lg w-full bg-gray-200 rounded-b-xl px-4 font-poppins">
           <div className="flex flex-row justify-evenly py-2 text-gray-700 text-base">
             <div className="pt-2">
-              <p className="font-poppins font-semibold text-center">{date}</p>
+              <p className="font-poppins font-semibold text-center">{date}<sup>th</sup> March</p>
               <p className="font-poppins text-center">Date</p>
             </div>
 

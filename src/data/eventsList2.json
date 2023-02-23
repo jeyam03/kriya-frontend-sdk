@@ -40,7 +40,7 @@
     "contact_name_2": "Madhav N",
     "contact_mobile_2": 7606882547,
     "hall": "J310, J311 , K block mechanical department EDC lab",
-    "eventRules": "1) Individual Participants",
+    "eventRules": "Individual Participants",
     "timing": "9:00 AM to 1:00 PM"
   },
   {
@@ -128,7 +128,7 @@
     "contact_name_2": "Jeevanand R A",
     "contact_mobile_2": 9962711103,
     "hall": "J313 or J314",
-    "eventRules": "1) Registered Participants may come with Laptop if available.\n2) Judges Decisions are final.\n3) Students must attend the event with their College ID Card. 4) Usage of Mobile phones is strictly prohibited during the conduction of the event.",
+    "eventRules": "Registered Participants may come with Laptop if available.\nJudges Decisions are final.\nStudents must attend the event with their College ID Card.\nUsage of Mobile phones is strictly prohibited during the conduction of the event.",
     "timing": "9:00 AM to 12:00 PM"
   },
   {
@@ -139,7 +139,7 @@
     "round_title_1": "ROUGH SKETCH",
     "round_desc_1": "Participants should prepare a Line sketch for the specified type of building with the specifications provided(eg. Area of the plot, size of the rooms) and it should contain the necessary data for making a 2-D Plan in AutoCAD by following the NBC guidelines.",
     "round_title_2": "PLAN.dwg",
-    "round_desc_2": "To make a 2-D plan with the drawn line sketch (in ROUND1) in AutoCAD within the given time (45 mins) with all data for the construction with accurate dimensioning and using layers. Decorative blocks are not necessary, may be provided for appearance. Completing the plan fully before the given time will be appreciated.",
+    "round_desc_2": "To make a 2-D plan with the drawn line sketch (in ROUND 1) in AutoCAD within the given time (45 mins) with all data for the construction with accurate dimensioning and using layers. Decorative blocks are not necessary, may be provided for appearance. Completing the plan fully before the given time will be appreciated.",
     "round_title_3": "BUDGET ASSESSMENT",
     "round_desc_3": "In this round the selected participants from the previous round will have to prepare an approximate estimation and an impressive pitch of their proposed plan as a contractor with maximum utility to impress the judges and to be crowned as winners. The cost per unit area of the materials to be used will be provided, by efficiently using the materials for the building the estimation should be prepared without negotiating the quality of the building. Participants should present their estimate and justify the use of materials.",
     "round_title_4": "",
@@ -195,7 +195,7 @@
     "contact_mobile_2": 6369953122,
     "hall": "G-602",
     "eventRules": " Each team can have a minimum of 1 and a maximum of 4 members\n Participants should be present in the informed venue before or on time.\n The participants will be given 15 minutes for presenting their idea which will be followed by a 5-\nminute question-and-answer session.\n Implementation of the robot via simulation or model will be an added credit\n Usage of internet resources is allowed however direct plagiarism of ideas is strictly prohibited.\n The decision of the judges will be deemed final and no correspondence will be entered into.\n The robot can be self-contained or controlled remotely depending on the choice of the team.\n The robot should be battery operated\n The robot shall not leave any part of its body behind while negotiating the maze.\n The robot shall not jump over, fly over, climb, scratch, cut, burn, mark, damage, or destroy the\nwalls of the maze.\n The robot shall not be larger either in length or in width than the dimensions of the maze(20cm)",
-    "timing": "9 AM-12 PM & 1:30 PM-4 PM"
+    "timing": "9 AM to 12 PM & 1:30 PM to 4 PM"
   },
   {
     "eventName": "PhyzPro",
@@ -239,7 +239,7 @@
     "contact_mobile_2": 6380455530,
     "hall": "Y301",
     "eventRules": "1. All participants must register for the event prior to the commencement of the first round.\n2. All participants must adhere to the rules and regulations of the event.\n3. The first round of the event will be a quiz. All participants must answer the questions within the allotted\ntime. Usage of mobile phones is restricted in the first round.\n4. The second round of the event will be a debate. All participants must present their arguments logically\nand in a manner that is respectful to all participants.\n5. Any form of malpractice will not be entertained and participants engaging in such activities will be\ndisqualified.\n6. All participants must adhere to the instructions of the judges throughout the event.\n7. Winners will be decided based on their performance in second round.",
-    "timing": "10 a.m. – 12 p.m"
+    "timing": "10 a.m. to 12 p.m"
   },
   {
     "eventName": "Treasure hunt in metaverse",
@@ -305,7 +305,7 @@
     "contact_mobile_2": "98405 60365",
     "hall": "J 411, J413,  J414,  J415",
     "eventRules": "",
-    "timing": "8:30 am – 11:30 am (Round 1) ; 1:30 pm – 4:30 pm (Round 2)"
+    "timing": "8:30 am to 11:30 am (Round 1) ; 1:30 pm to 4:30 pm (Round 2)"
   },
   {
     "eventName": "AUTO - FACSIMILE",
@@ -327,7 +327,7 @@
     "contact_mobile_2": "93453 43055",
     "hall": "K - 404",
     "eventRules": "  Team should consist of two members.",
-    "timing": "9.30 AM - 12.30 PM"
+    "timing": "9.30 AM to 12.30 PM"
   },
   {
     "eventName": "QRack IT",
@@ -348,7 +348,7 @@
     "contact_name_2": "Thiruvenkata Krishnan B",
     "contact_mobile_2": 9944692114,
     "hall": "M503 and Scava Lab",
-    "eventRules": "1)The teams would not run around the whole block\n2) Referring to google is allowed for solving the problems\n3) Getting help from non-participants is not allowed",
+    "eventRules": "The teams would not run around the whole block\nReferring to google is allowed for solving the problems\nGetting help from non-participants is not allowed",
     "timing": "9:00 AM to 12:30 PM"
   },
   {
@@ -437,7 +437,7 @@
     "contact_mobile_2": 6382784499,
     "hall": "M block CAD lab",
     "eventRules": "This is a team event \nEach team can comprise of 2-3 participants \nEach team will have to present their basiness idea related to Fashion field. The ideas can be related to not only apparel but also jewelry design, branding, marketing service, arts and crafts. \nA maximum duration of 1 hour is given for the preparation of 1st round \n  Logo creation carries valid mark in 1st round, it can be done using Adobe illustrator, canva, or any designing software, \nPresentation will be held in PPT format for minimum of 10 minutes per team \n7 minutes for presentation and 3 minutes for questions which will be asked by the judges. \n The detailed 2nd Presentation will also be held in PPT format for minimum of 10 minutes per team. \n Each member in the team should present a part of the content, Content should be divided equally between them. \n A panel of judges will allot points based on certain criteria's such as clarity on idea and innovation, strategy planning, marketing strategy, financial management planning and creativity in pitching \n  The team with best business pitch will be chosen as winners. \n A business Pitch template will be shared with the participants for reference. They should follow the template for uniformity.",
-    "timing": "9am- 3pm (12.00 to 1.00 break)"
+    "timing": "9 AM to 3 PM (12.00 to 1.00 break)"
   },
   {
     "eventName": "FightByte",
@@ -458,7 +458,7 @@
     "contact_name_2": "Fredrick John J",
     "contact_mobile_2": 9952660011,
     "hall": "IT Main Lab",
-    "eventRules": "1. Use of mobile phones is not allowed after a round starts.\n2. There are round specific rules that will be provided to the participants when the round\nbegins. This is to not reveal more about the rounds themselves.\n3. Team size should not exceed 3 members.\n4. Computers will be provided so use of own laptop inside the event grounds without\nsupervision is prohibited.\n5. Not following the above rules will result in instant disqualification of the team.",
+    "eventRules": "Use of mobile phones is not allowed after a round starts.\nThere are round specific rules that will be provided to the participants when the round begins. This is to not reveal more about the rounds themselves.\nTeam size should not exceed 3 members.\nComputers will be provided so use of own laptop inside the event grounds without\nsupervision is prohibited.\nNot following the above rules will result in instant disqualification of the team.",
     "timing": "9:00 AM to 2:30 PM"
   },
   {
@@ -525,7 +525,7 @@
     "contact_mobile_2": 8778063573,
     "hall": "K-403",
     "eventRules": "Each question needs to be answered within one minute.\nEach correct answer scores one point.\nFor first three rounds, negative answers will not stop the participant to move on to the next question.\nIn last round (Knockout round), a single negative answer will lead to straight knock out.\nFor all lifelines duration of one minute will be provided.\nFor 50-50, four options will be reduced to two options.\nFor Phone-a-friend lifeline, the participant can call to their friend for the answer, if the first friend doesn’t pick up a provision for a call to second friend is allowed in final round only, not for the previous rounds.\nFor Audience vote, answers from panel of ten volunteers will be given.\nIf the lifeline is not used in the allotted round, bonus points (two points) will be allotted.\nIn case of tie, a tie breaker round with buzzer will be conducted.",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM to 12:30 PM"
   },
   {
     "eventName": "ELECTORAPTORS",

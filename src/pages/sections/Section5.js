@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../../styles/Landing.css";
 import { fetchWorkshops } from "../../API/call";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
+import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
 
 // Workshops
 
@@ -32,6 +33,8 @@ const Section5 = () => {
   });
 
   const [fixedPosition, setFixedPosition] = useState("relative");
+
+  const ref = useRef(null);
 
   useEffect(() => {
     const rightGrid = document.querySelector("#right-workshop-grid");
@@ -123,7 +126,7 @@ const Section5 = () => {
           </h1>
         </div>
 
-        <div className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-6`}>
+        <div ref={ref} className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-4`}>
           {fetchWorkshops().map((item, index) => (
             <WorkshopGrid
               number={index + 1}
@@ -132,6 +135,23 @@ const Section5 = () => {
               title={item.workName}
             />
           ))}
+        </div>
+
+        <div className="lg:hidden w-full flex flex-row justify-center text-3xl space-x-12 pt-8 [scroll-behavior:smooth]">
+          <button
+            onClick={() => {
+              ref.current.scrollLeft += -160;
+            }}
+          >
+            <MdOutlineArrowBackIosNew />
+          </button>
+          <button
+            onClick={() => {
+              ref.current.scrollLeft += 160;
+            }}
+          >
+            <MdOutlineArrowForwardIos />
+          </button>
         </div>
       </section>
       <a id="anchor6" className="absolute top-[90%] w-full h-1"></a>
