@@ -84,7 +84,7 @@ const Event = () => {
         <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
           {toTitleCase(eventDetail.eventName)}
         </h1>
-        <div className="w-[60%] lg:w-[80%] ml-8 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
       </div>
       <p className="text-white mt-8 text-base w-full lg:w-[65%] pb-8 px-8 lg:px-0">
         {eventDetail.description}

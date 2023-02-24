@@ -38,7 +38,7 @@ const Workshop = () => {
         <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
           {workshopDetail.workName}
         </h1>
-        <div className="w-[60%] lg:w-[80%] ml-8 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
       </div>      {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
       </h2> */}
