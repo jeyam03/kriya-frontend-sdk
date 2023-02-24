@@ -46,8 +46,8 @@ const Section6 = () => {
                 Sponsor
               </p>
               <Sponsers
-                imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                title="GOOGLE"
+                imgurl="https://mma.prnewswire.com/media/806571/KLA_Corporation_Logo.jpg?p=twitter"
+                title="KLA"
               />
             </div>
 
@@ -56,25 +56,13 @@ const Section6 = () => {
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"ASSOCIATE "}
                 </span>
-                Sponsors
+                Sponsor
               </p>
 
               <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1667px-Apple_logo_black.svg.png"
-                  title="Apple"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                  title="Google"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/en/e/eb/PSG_College_of_Technology_logo.png"
-                  title="PSG College of Technology"
-                />
-                <Sponsers
-                  imgurl="https://upload.wikimedia.org/wikipedia/en/8/8d/Adyar_Ananda_Bhavan_logo.png"
-                  title="Adyar Ananda Bhavan"
+                  imgurl="https://blog.shikshacoach.com/wp-content/uploads/2022/01/shankar-ias-academy-e1643541869552.jpg"
+                  title="Shankar IAS Academy"
                 />
               </div>
             </div>

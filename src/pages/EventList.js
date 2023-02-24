@@ -33,24 +33,12 @@ const EventList = () => {
   return (
     <div className="w-full font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
       <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-6 lg:px-8 flex flex-col items-center lg:block p-8">
-        <div className="w-full my-8 lg:mt-0">
+        {/* <div className="w-full my-8 lg:mt-0">
           <h1 className={`text-4xl lg:text-6xl text-white font-semibold font-poppins text-center py-2`}
             id="soon-text"
           >
-            ✨ Registrations Opening Soon ! ✨
+            ✨ EVENTS ✨
           </h1>
-        </div>
-        {/* <div className="w-full my-8 mb-24 lg:mt-0">
-          <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
-            <h1 className="uppercas text-4xl lg:text-6xl py-3 font-semibold tracking-wider font-poppins" id="soon-text" style={{
-              WebkitTextStroke: "4px transparent",
-              MozBackgroundClip: "text",
-              color: "black",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              // background: "linear-gradient(-86deg, #EEF85B 5%, #7AEC8D 53%, #09E5C3 91%)",
-            }}>Registrations Opening Soon ! Registrations Opening Soon ! Registrations Opening Soon ! Registrations Opening Soon !</h1>
-          </div>
         </div> */}
         <h1
           className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}

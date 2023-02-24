@@ -121,7 +121,7 @@ const Event = () => {
                     ? navigate("/confirmed")
                     : navigate("/payment")
                   : console.log("Cancelled")
-                : navigate("/auth");
+                : navigate("/auth?type=signup");
             }}
           >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">

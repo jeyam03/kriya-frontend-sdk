@@ -3,6 +3,7 @@ import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail, SiYoutube } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
+import { useNavigate } from "react-router-dom";
 
 //  Landing
 
@@ -17,6 +18,7 @@ function Number({ n }) {
 }
 
 const Section1 = () => {
+  const navigate = useNavigate();
   const slides = [
     "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
     "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891951/Landing%20Photos/1_bubuws.jpg",
@@ -139,6 +141,15 @@ const Section1 = () => {
           </button>
           <button
             onClick={() => {
+              const element = document.querySelector("#section6");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
+          >
+            Sponsers
+          </button>
+          <button
+            onClick={() => {
               const element = document.querySelector("#section7");
               element.scrollIntoView({ behavior: "smooth" });
             }}
@@ -240,15 +251,15 @@ const Section1 = () => {
             24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
           </div>
         </div>
-        <div className="lg:hidden flex flex-row w-full h-[50%]">
-          <div className="px-4">
+        <div className={`lg:hidden flex flex-row w-full ${isOpen && "shadow-lg"} h-[50vh]`}>
+          <div className={`px-4 ${isOpen ? "h-full" : "h-fit"} z-10 bg-white`}>
             <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div
-            className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+            className={`divide-y divide-gray-600 ${isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
               } transition-all ease-in-out duration-300`}
           >
-            <div className={`pb-8 w-full flex flex-col font-poppins absolute ${isOpen ? "z-20" : "-z-20"} bg-white transition-all ease-in-out duration-300`}>
+            <div className={`w-full flex flex-col font-poppins absolute ${isOpen ? "z-20 h-[50%]" : "-z-20"} bg-white transition-all ease-in-out duration-300`}>
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
@@ -281,6 +292,17 @@ const Section1 = () => {
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Paper Presentations
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section6");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Sponsers
               </button>
               <button
                 onClick={() => {
@@ -361,11 +383,25 @@ const Section1 = () => {
               <h1 className="text-xs text-center tracking-wide uppercase">Paper Presentations</h1>
             </div>
           </div>
-          <div
-            id="registration-prompt"
-            className="lg:text-lg font-semibold w-fit font-poppins text-white bg-[#C80067] shadow-lg hover:scale-110 transition-all px-4 py-3 rounded-lg my-8 lg:mb-16 text-center lg:text-left whitespace-nowrap lg:whitespace-normal"
-          >
-            ✨ Registrations opening soon! ✨
+          <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16">
+            <button
+              id="registration-prompt"
+              className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+              onClick={() => {
+                navigate("/auth?type=signup");
+              }}
+            >
+              Register
+            </button>
+            <button
+              id="registration-prompt"
+              className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+              onClick={() => {
+                navigate("/auth");
+              }}
+            >
+              Login
+            </button>
           </div>
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4 w-fit">

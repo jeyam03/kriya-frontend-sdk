@@ -47,7 +47,7 @@ const Profile = () => {
   );
 
   return (
-    <section className="w-screen font-poppins h-screen overflow-y-scroll py-24 lg:pt-0">
+    <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
         <div className="h-48 w-48 rounded-full bg-gray-300 lg:-mt-36 "></div>
@@ -65,11 +65,11 @@ const Profile = () => {
               <AiOutlineUser className="text-2xl" />
               <h1 className="text-2xl">About</h1>
             </div>
-            <div className="grid grid-cols-[100px_minmax(400px,1fr)]  w-full mt-8 space-y-1  ">
-              <TextOutput heading="Name" content={userDetails.name} />
-              <TextOutput heading="Email" content={userDetails.email} />
-              <TextOutput heading="Phone" content={userDetails.phone} />
-              <TextOutput heading="College" content={userDetails.college} />
+            <div className="grid grid-cols-1 gap-y-1   w-full mt-8 space-y-1  ">
+              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="Name" content={userDetails.name} />
+              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="Email" content={userDetails.email} />
+              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="Phone" content={userDetails.phone} />
+              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="College" content={userDetails.college} />
             </div>
           </div>
           <div className="w-full">
@@ -200,12 +200,12 @@ const Profile = () => {
   );
 };
 
-const TextOutput = ({ heading, content }) => {
+const TextOutput = ({ heading, content, className = "" }) => {
   return (
-    <React.Fragment>
+    <div className={`${className}`}>
       <p className="font-semibold text-white">{heading}</p>
       <p className="text-white">{content}</p>
-    </React.Fragment>
+    </div>
   );
 };
 

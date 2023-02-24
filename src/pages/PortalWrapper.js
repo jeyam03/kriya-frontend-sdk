@@ -56,9 +56,9 @@ const NavBarForDesktop = () => {
         className={`divide-y divide-gray-600 h-fit transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col">
-          {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+          <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Register
-          </Link> */}
+          </Link>
           <Link
             to="/portal/event"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
