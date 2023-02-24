@@ -14,6 +14,13 @@ const RegisterPageSwitch = ({ switchPage }) => {
 
   return (
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+      <div className="flex w-full justify-center lg:hidden items-center">
+        <img
+          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png"
+          alt="Kriya black"
+          className="lg:hidden h-24 w-auto opacity-50"
+        />
+      </div>
       <h1 className="text-2xl font-bold text-[#181818]">
         Register for Kriya 2023
       </h1>

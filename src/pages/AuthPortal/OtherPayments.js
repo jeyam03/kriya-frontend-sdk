@@ -106,7 +106,7 @@ const OtherPayments = ({ switchPage }) => {
   }, []);
 
   return (
-    <section className="h-screen w-screen flex  items-center bg-gray-100">
+    <section className="h-screen w-screen flex  items-center bg-gray-100 font-poppins">
       <div className="hidden lg:block w-4 bg-gradient-to-t from-[#C80067] to-[#5451B6] h-screen"></div>
       <main className="flex w-full  h-screen items-center relative justify-center  overflow-x-hidden lg:overflow-y-hidden ">
         <div
@@ -120,6 +120,13 @@ const OtherPayments = ({ switchPage }) => {
         ></div>
         {searchParams.get("type") === "WORKSHOP" && workshopDetails && (
           <div className="relative z-30 w-full lg:w-[30vw] h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6 ">
+            <div className="flex w-full justify-center lg:hidden items-center">
+              <img
+                src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png"
+                alt="Kriya black"
+                className="lg:hidden h-24 w-auto opacity-50"
+              />
+            </div>
             <div className="">
               <h3 className="text-sm text-gray-500">Confirm your payment</h3>
               <h1 className="text-2xl font-bold text-[#181818]">
@@ -152,6 +159,13 @@ const OtherPayments = ({ switchPage }) => {
         )}
         {searchParams.get("type") === "GENERAL" && (
           <div className="relative z-30 w-full lg:w-[30vw] h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6 ">
+            <div className="flex w-full justify-center lg:hidden items-center">
+              <img
+                src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png"
+                alt="Kriya black"
+                className="lg:hidden h-24 w-auto opacity-50"
+              />
+            </div>
             <div className="">
               <h3 className="text-sm text-gray-500">Confirm your payment</h3>
               <h1 className="text-2xl font-bold text-[#181818]">

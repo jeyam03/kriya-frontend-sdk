@@ -6,8 +6,6 @@ import {
   fetchUserVerify,
 } from "../../API/call";
 import TextInput from "../../components/TextInput";
-import Dropdown from "../../components/Dropdown";
-import colleges from "../CollegeList";
 import { toast } from "react-hot-toast";
 
 const RegisterPagePSG = ({ switchPage }) => {

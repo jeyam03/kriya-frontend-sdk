@@ -26,6 +26,13 @@ const RegisterPageFinal = ({ switchPage }) => {
 
   return (
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+      <div className="flex w-full justify-center lg:hidden items-center">
+        <img
+          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png"
+          alt="Kriya black"
+          className="lg:hidden h-24 w-auto opacity-50"
+        />
+      </div>
       <div className="">
         <h3 className="text-sm text-gray-500">You're Kriya ID is</h3>
         <h1 className="text-2xl font-bold text-[#181818]">
@@ -34,11 +41,14 @@ const RegisterPageFinal = ({ switchPage }) => {
       </div>
       <p className="">
         The ticket for the event has been sent to your email{" "}
-        <b className="font-semibold">{formData ? formData.email : "XXXXXX@.com"}</b>. You can login to the
-        portal with your Kriya ID or your email.
+        <b className="font-semibold">
+          {formData ? formData.email : "XXXXXX@.com"}
+        </b>
+        . You can login to the portal with your Kriya ID or your email.
       </p>
       <p className=""> Thank you for registering for Kriya 2023.</p>
-      <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full"
+      <button
+        className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full"
         onClick={() => navigate("/")}
       >
         Go to Home Page

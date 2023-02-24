@@ -146,7 +146,7 @@ const Section1 = () => {
             }}
             className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
-            Sponsers
+            Sponsors
           </button>
           <button
             onClick={() => {
@@ -314,7 +314,7 @@ const Section1 = () => {
                 id="nav-button"
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
-                Sponsers
+                Sponsors
               </button>
               <button
                 onClick={() => {

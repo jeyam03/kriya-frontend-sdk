@@ -38,32 +38,33 @@ const Section6 = () => {
       >
         <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
           <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
-            <div className="w-full p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"TITLE "}
-                </span>
-                Sponsor
-              </p>
-              <Sponsers
-                imgurl="https://mma.prnewswire.com/media/806571/KLA_Corporation_Logo.jpg?p=twitter"
-                title="KLA"
-              />
-            </div>
-
-            <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"ASSOCIATE "}
-                </span>
-                Sponsor
-              </p>
-
-              <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
-                <Sponsers
-                  imgurl="https://blog.shikshacoach.com/wp-content/uploads/2022/01/shankar-ias-academy-e1643541869552.jpg"
-                  title="Shankar IAS Academy"
+            <div className="flex justify-between">
+              <div className=" p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
+                <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
+                  <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                    {"TITLE "}
+                  </span>
+                  Sponsor
+                </p>
+                <Sponsors
+                  imgurl="https://mma.prnewswire.com/media/806571/KLA_Corporation_Logo.jpg?p=twitter"
+                  title="KLA"
                 />
+              </div>
+              <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
+                <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
+                  <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                    {"Co "}
+                  </span>
+                  Sponsor
+                </p>
+
+                <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
+                  <Sponsors
+                    imgurl="https://blog.shikshacoach.com/wp-content/uploads/2022/01/shankar-ias-academy-e1643541869552.jpg"
+                    title="Shankar IAS Academy"
+                  />
+                </div>
               </div>
             </div>
 
@@ -77,43 +78,43 @@ const Section6 = () => {
 
               <div className="w-full max-w-full relative overflow-x-hidden h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
-                  <Sponsers
+                  <Sponsors
                     imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
                     title="GOOGLE"
                   />
@@ -143,7 +144,7 @@ const Section6 = () => {
   );
 };
 
-const Sponsers = ({ imgurl, title }) => {
+const Sponsors = ({ imgurl, title }) => {
   return (
     <div className="flex flex-col gap-y-2 w-48 lg:w-64">
       <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-6 lg:p-8 h-28 lg:w-64 lg:h-36 rounded-2xl">
