@@ -3,7 +3,9 @@ import EventsList from "../data/eventsList2.json";
 import PapersList from "../data/ppList.json";
 import WorkList from "../data/workList.json";
 
-const BASE_URL = "http://localhost:5002/api";
+export const BACKEND_URL = "http://localhost:5002";
+
+const BASE_URL = `${BACKEND_URL}/api`;
 const USER_URL = `${BASE_URL}/auth`;
 const EVENT_URL = `${BASE_URL}/event`;
 const PAYMENT_URL = `${BASE_URL}/payment`;
