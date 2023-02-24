@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { fetchUserByEmail } from "../../API/call";
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
@@ -7,7 +7,7 @@ import colleges from "../CollegeList";
 
 const RegisterPageFinal = ({ switchPage }) => {
   const [formData, setFormData] = useState(null);
-
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
@@ -34,11 +34,13 @@ const RegisterPageFinal = ({ switchPage }) => {
       </div>
       <p className="">
         The ticket for the event has been sent to your email{" "}
-        <b className="font-semibold">{formData ? formData.email :"XXXXXX@.com"}</b>. You can login to the
+        <b className="font-semibold">{formData ? formData.email : "XXXXXX@.com"}</b>. You can login to the
         portal with your Kriya ID or your email.
       </p>
       <p className=""> Thank you for registering for Kriya 2023.</p>
-      <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full">
+      <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full"
+        onClick={() => navigate("/")}
+      >
         Go to Home Page
       </button>
 

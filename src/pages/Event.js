@@ -7,7 +7,7 @@ import { fetchEventById } from "../API/call";
 
 const Event = () => {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [generalPayment, setGeneralPayment] = useState(false);
 
   const toTitleCase = (phrase) => {
@@ -114,21 +114,23 @@ const Event = () => {
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button
             className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
-          // onClick={() => {
-          //   isLoggedIn
-          //     ? window.confirm("Are you sure you want to register ?")
-          //       ? generalPayment
-          //         ? navigate("/confirmed")
-          //         : navigate("/payment")
-          //       : console.log("Cancelled")
-          //     : navigate("/register");
-          // }}
+            onClick={() => {
+              isLoggedIn
+                ? window.confirm("Are you sure you want to register ?")
+                  ? generalPayment
+                    ? navigate("/confirmed")
+                    : navigate("/payment")
+                  : console.log("Cancelled")
+                : navigate("/auth");
+            }}
           >
-              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-                {"Registrations Opening Soon !"}
-              </span>
-              {/* <p className="bg-gradient-to-r from-[#C80067] to-[#7470ff] py-4 px-6 rounded-xl shadow-lg shadow-gray-900 lg:shadow-md w-fit text-white text-3xl hover:underline">Register Here !</p> */}
+            <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+              {"Register Here!"}
+            </span>
+            
           </button>
+
+          {/* <p className="bg-gradient-to-r from-[#C80067] to-[#7470ff] py-4 px-6 rounded-xl shadow-lg shadow-gray-900 lg:shadow-md w-fit text-white text-2xl hover:underline">Register Here !</p> */}
 
           <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
             <div className="flex flex-row items-center gap-4 lg:gap-4">
