@@ -84,7 +84,7 @@ const Profile = () => {
               <GrTransaction className="text-2xl text-white invert" />
               <h1 className="text-2xl">Transactions</h1>
             </div>
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-4 h-56 overflow-y-scroll">
               {paymentDetails?.length === 0 && <div className="space-y-4">
                 <p className="text-lg">Uh oh! You have'nt made any transactions yet !</p>
                 <Link
@@ -99,7 +99,7 @@ const Profile = () => {
                 </Link>
               </div>
               }
-              {paymentDetails?.map((payment) => (
+              {paymentDetails?.slice(0).reverse().map((payment) => (
                 <div className="flex flex-row items-center space-x-4">
                   {payment.status === "SUCCESS" ? (
                     <BsCheck2Circle className="text-3xl text-green-500" />
@@ -108,15 +108,15 @@ const Profile = () => {
                   )}
                   <div className="w-full">
                     <div className="flex items-center justify-between text-xs">
-                      <p className="">Transaction ID: {payment.transactionId}</p>
+                      <p className="w-1/2">Transaction ID: {payment.transactionId}</p>
                       <div className="flex flex-col items-end">
                         <p className="">{new Date(payment.datetime).toDateString()}</p>
                         <p className="">{new Date(payment.datetime).toTimeString().split("GMT")[0]}</p>
                       </div>
                     </div>
                     <div className={`${payment.status === "SUCCESS" ? "text-green-500" : "text-red-500"} flex items-center justify-between`}>
-                      <p className="text-lg w-5/6">{payment.eventId === "-1" ? "General" : "Workshop " + payment.eventId} registration {payment.status === "SUCCESS" ? "paid successfully" : "payment unsuccessful"}</p>
-                      <p className="text-lg">Rs. {payment.fee}</p>
+                      <p className="text-sm lg:text-base w-3/4 lg:w-5/6">{payment.eventId === "-1" ? "General" : "Workshop " + payment.eventId} registration {payment.status === "SUCCESS" ? "paid successfully" : "payment unsuccessful"}</p>
+                      <p className="text-base lg:text-lg">Rs. {payment.fee}</p>
                     </div>
                   </div>
                 </div>

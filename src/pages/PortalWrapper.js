@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { IoMdClose, IoMdArrowDropright, IoMdLogOut } from "react-icons/io";
-import { fetchEvents, fetchPapers, fetchWorkshops } from "../API/call";
+import { fetchEvents, fetchPapers, fetchUserByEmail, fetchWorkshops } from "../API/call";
 import { AiOutlinePlus } from "react-icons/ai";
 import { GrWorkshop } from "react-icons/gr";
 import { MdOutlineEmojiEvents } from "react-icons/md";
@@ -40,12 +40,21 @@ const NavBarForDesktop = () => {
       id: workshop.wid,
     }))
 
+  const [userDetails, setUserDetails] = useState(null);
+
+  useEffect(() => {
+    fetchUserByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setUserDetails(res.data.user);
+    });
+  }, []);
+
   return (
     <nav className="hidden lg:block z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll font-poppins shadow-md">
       <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6">
         <Link
           to={"/"}
-          className="w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
+          className="w-28 h-28 mt-4 -mb-3"
           style={{
             background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
             backgroundPosition: "left",
@@ -53,6 +62,26 @@ const NavBarForDesktop = () => {
             backgroundSize: "contain",
           }}
         ></Link>
+        {
+          userDetails ? (
+            <Link
+              to={"/portal/profile"}
+              className="w-12 h-12 mt-4 rounded-full"
+              style={{
+                backgroundImage: `url(${userDetails?.profilePhoto})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            ></Link>
+          ) : (
+            <Link
+              to={"/auth"}
+              className="w-fit px-4 py-2 mt-4 rounded-lg bg-[#1B73E8] text-white"
+            >
+              Register
+            </Link>
+          )}
       </div>
 
       <div
@@ -163,20 +192,53 @@ const NavBarForMobile = () => {
     observer.observe(navOpen);
   });
 
+  const [userDetails, setUserDetails] = useState(null);
+
+  useEffect(() => {
+    fetchUserByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setUserDetails(res.data.user);
+    });
+  }, []);
+
   return (
     <nav className="lg:hidden z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll font-poppins shadow-md">
       <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6">
-        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Link
-          to={"/"}
-          className="w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
-          style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
-            backgroundPosition: "left",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-          }}
-        ></Link>
+        <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} className="w-1/3" />
+        <div className="w-1/3 flex justify-center">
+          <Link
+            to={"/"}
+            className="w-[4.5rem] h-[4.5rem] -mb-3"
+            style={{
+              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+            }}
+          ></Link>
+        </div>
+        <div className="w-1/3 flex justify-end">
+          {
+            userDetails ? (
+              <Link
+                to={"/portal/profile"}
+                className="w-8 h-8 rounded-full"
+                style={{
+                  backgroundImage: `url(${userDetails?.profilePhoto})`,
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "cover",
+                }}
+              ></Link>
+            ) : (
+              <Link
+                to={"/auth"}
+                className="w-fit px-3 py-2 -mr-2 rounded-lg bg-[#1B73E8] text-white text-sm"
+              >
+                Register
+              </Link>
+            )}
+        </div>
       </div>
 
       <div
@@ -552,7 +614,7 @@ const PaperNav = ({
 const MenuToggle = ({ isOpen, setIsOpen, className }) => {
   return (
     <button
-      className={`lg:hidden relative z-20 flex items-center p-1 text-gray-500 lg:hover:text-gray-300`}
+      className={`${className} lg:hidden relative z-20 flex items-center p-1 text-gray-500 lg:hover:text-gray-300`}
       onClick={() => setIsOpen(!isOpen)}
     >
       {isOpen ? (
