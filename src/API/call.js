@@ -5,7 +5,7 @@ import WorkList from "../data/workList.json";
 
 const BASE_URL = "http://localhost:5002/api";
 const USER_URL = `${BASE_URL}/auth`;
-const EVENT_URL = `${BASE_URL}/event`;
+const EVENT_URL = `${BASE_URL}/register`;
 const PAYMENT_URL = `${BASE_URL}/payment`;
 
 export const fetchLogin = (formData) =>
@@ -43,6 +43,12 @@ export const fetchPayGeneral = (formData) =>
 
 export const fetchPaymentDetailsByTxnId = (txnId) =>
   axios.get(`${PAYMENT_URL}/payment-details/${txnId}`, {});
+
+export const fetchPaymentDetailsByEmail = (email) =>
+  axios.get(`${PAYMENT_URL}/user-payment-details/${email}`, {});
+
+export const fetchEventDetailsByEmail = (email) =>
+  axios.get(`${EVENT_URL}/events-from-user/${email}`, {});
 
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 

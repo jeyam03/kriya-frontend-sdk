@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
-import { GrTransaction } from "react-icons/gr";
-import { fetchUserByEmail } from "../API/call";
+import { GrTransaction, GrWorkshop } from "react-icons/gr";
+import { MdEventAvailable, MdOutlineCancel } from "react-icons/md";
+import { BsCheck2Circle } from "react-icons/bs";
+import { fetchEventDetailsByEmail, fetchEvents, fetchPaymentDetailsByEmail, fetchUserByEmail, fetchWorkshops } from "../API/call";
+import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
+
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState(null);
+  const [paymentDetails, setPaymentDetails] = useState(null);
+  const [eventDetails, setEventDetails] = useState(null);
 
   useEffect(() => {
     fetchUserByEmail(localStorage.getItem("email")).then((res) => {
@@ -13,8 +20,34 @@ const Profile = () => {
     });
   }, []);
 
+  useEffect(() => {
+    fetchPaymentDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data.data);
+      setPaymentDetails(res.data.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchEventDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setEventDetails(res.data);
+    });
+  }, []);
+
+  const [events, setEvents] = useState(
+    fetchEvents()
+      .map((event) => ({
+        name: event.eventName,
+        id: event.eventId,
+        desc: event.one_line_desc ? event.one_line_desc : event.description,
+        category: event.category,
+        time: event.timing.split("to")[0],
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name))
+  );
+
   return (
-    <section className="w-full font-poppins h-screen overflow-y-scroll py-24 lg:py-0">
+    <section className="w-screen font-poppins h-screen overflow-y-scroll py-24 lg:pt-0">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
         <div className="h-48 w-48 rounded-full bg-gray-300 lg:-mt-36 "></div>
@@ -26,7 +59,7 @@ const Profile = () => {
         </h3>
       </div>
       {userDetails && (
-        <div className="grid gap-16 grid-cols-1 lg:grid-cols-2 text-white px-8 lg:px-16 lg:pr-[calc(100vw/6)]">
+        <div className="grid gap-16 grid-cols-1 lg:grid-cols-2 text-white px-8 lg:px-16">
           <div className="">
             <div className="flex items-center space-x-4 w-full">
               <AiOutlineUser className="text-2xl" />
@@ -35,7 +68,7 @@ const Profile = () => {
             <div className="grid grid-cols-[100px_minmax(400px,1fr)]  w-full mt-8 space-y-1  ">
               <TextOutput heading="Name" content={userDetails.name} />
               <TextOutput heading="Email" content={userDetails.email} />
-              <TextOutput heading="Phone" content="+91 9876543210" />
+              <TextOutput heading="Phone" content={userDetails.phone} />
               <TextOutput heading="College" content={userDetails.college} />
             </div>
           </div>
@@ -44,21 +77,121 @@ const Profile = () => {
               <GrTransaction className="text-2xl text-white invert" />
               <h1 className="text-2xl">Transactions</h1>
             </div>
-            <div className="mt-8 space-y-2">
-              <div className="">
-                <div className="flex items-center justify-between text-xs">
-                  <p className="">Transaction: 03456458976458967</p>
-                  <p className="">10/02/2023</p>
-                </div>
-                <p className="text-lg">Registration paid successfully.</p>
+            <div className="mt-8 space-y-4">
+              {paymentDetails?.length === 0 && <div className="space-y-4">
+                <p className="text-lg">Uh oh! You have'nt made any transactions yet !</p>
+                <Link
+                  className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                  to="/../?sn=section5"
+                >
+                  <p className="">Pay general registration fee !</p>
+                  <IoIosArrowForward
+                    className="ml-1 group-hover:ml-2 transition-all"
+                    size={16}
+                  />
+                </Link>
               </div>
-              <div className="">
-                <div className="flex items-center justify-between text-xs">
-                  <p className="">Transaction: 03456458976458967</p>
-                  <p className="">10/02/2023</p>
+              }
+              {paymentDetails?.map((payment) => (
+                <div className="flex flex-row items-center space-x-4">
+                  {payment.status === "SUCCESS" ? (
+                    <BsCheck2Circle className="text-3xl text-green-500" />
+                  ) : (
+                    <MdOutlineCancel className="text-3xl text-red-500" />
+                  )}
+                  <div className="w-full">
+                    <div className="flex items-center justify-between text-xs">
+                      <p className="">Transaction ID: {payment.transactionId}</p>
+                      <div className="flex flex-col items-end">
+                        <p className="">{new Date(payment.datetime).toDateString()}</p>
+                        <p className="">{new Date(payment.datetime).toTimeString().split("GMT")[0]}</p>
+                      </div>
+                    </div>
+                    <div className={`${payment.status === "SUCCESS" ? "text-green-500" : "text-red-500"} flex items-center justify-between`}>
+                      <p className="text-lg w-5/6">{payment.eventId === "-1" ? "General" : "Workshop " + payment.eventId} registration {payment.status === "SUCCESS" ? "paid successfully" : "payment unsuccessful"}</p>
+                      <p className="text-lg">Rs. {payment.fee}</p>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-lg">Registration paid successfully.</p>
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full">
+            <div className="flex items-center space-x-4 w-full">
+              <MdEventAvailable className="text-2xl text-white" />
+              <h1 className="text-2xl">Registered Events</h1>
+            </div>
+            <div className="mt-8 space-y-4">
+              {eventDetails?.length === 0 && <div className="space-y-4">
+                <p className="text-lg">Uh oh! You have'nt registered for any events yet !</p>
+                <Link
+                  className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                  to="/portal/event"
+                >
+                  <p className="">Register for events here !</p>
+                  <IoIosArrowForward
+                    className="ml-1 group-hover:ml-2 transition-all"
+                    size={16}
+                  />
+                </Link>
               </div>
+              }
+              {eventDetails?.map((event) => (
+                <div className="">
+                  <div className="flex items-center justify-between text-xs">
+                    <p className="">Event ID: {event.eventId}</p>
+                    <p className="">Mar 24</p>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      to={`/portal/event/${event.eventId}`}
+                      className="text-lg hover:text-blue-400 hover:underline">
+                      {events.find((i) => i.id === event.eventId).name}
+                    </Link>
+                    <p className="text-lg">{events.find((i) => i.id === event.eventId).time}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="w-full">
+            <div className="flex items-center space-x-4 w-full">
+              <GrWorkshop className="text-2xl text-white invert" />
+              <h1 className="text-2xl">Registered Workshops</h1>
+            </div>
+            <div className="mt-8 space-y-4">
+              {paymentDetails?.filter((w) => w.type === "WORKSHOP").length === 0 && <div className="space-y-4">
+                <p className="text-lg">Uh oh! You have'nt registered for any workshops yet !</p>
+                <Link
+                  className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                  to="/../?sn=section5"
+                >
+                  <p className="">Register for workshops here !</p>
+                  <IoIosArrowForward
+                    className="ml-1 group-hover:ml-2 transition-all"
+                    size={16}
+                  />
+                </Link>
+              </div>
+              }
+              {paymentDetails?.filter((w) => w.type === "WORKSHOP").map((workshop) => (
+                <div className="">
+                  <div className="flex items-center justify-between text-xs">
+                    <p className="">Workshop ID: {workshop.eventId}</p>
+                    <p className="">Mar 24</p>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      to={`/portal/workshop/${workshop.eventId}`}
+                      className="text-lg hover:text-blue-400 hover:underline">
+                      {fetchWorkshops().find((i) => i.wid === workshop.eventId).workName}
+                    </Link>
+                    <p className="text-lg">Rs. 250</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
