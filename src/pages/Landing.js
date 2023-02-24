@@ -311,7 +311,7 @@ const NavBarForMobile = ({ consolee }) => {
             }}
             className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
           >
-            Sponsers
+            Sponsors
           </button>
           <button
             onClick={() => {
