@@ -335,15 +335,27 @@ const NavBarForMobile = ({ consolee }) => {
           </button>
           {
             localStorage.getItem("token") ? (
-              <button
-                onClick={() => {
-                  setIsOpen(!isOpen);
-                  navigate("/portal/profile");
-                }}
-                className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
-              >
-                Dashboard
-              </button>
+              <div>
+                <button
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    navigate("/portal/profile");
+                  }}
+                  className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+                >
+                  Dashboard
+                </button>
+                <button
+                  onClick={() => {
+                    setIsOpen(!isOpen);
+                    localStorage.clear();
+                    window.location.reload();
+                  }}
+                  className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
               <button
                 onClick={() => {

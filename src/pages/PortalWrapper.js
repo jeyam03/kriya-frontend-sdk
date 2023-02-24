@@ -3,6 +3,9 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { IoMdClose, IoMdArrowDropright, IoMdLogOut } from "react-icons/io";
 import { fetchEvents, fetchPapers, fetchWorkshops } from "../API/call";
 import { AiOutlinePlus } from "react-icons/ai";
+import { GrWorkshop } from "react-icons/gr";
+import { MdOutlineEmojiEvents } from "react-icons/md";
+import { HiOutlinePresentationChartBar } from "react-icons/hi";
 
 const PortalWrapper = ({ children }) => {
   return (
@@ -61,21 +64,30 @@ const NavBarForDesktop = () => {
           </Link> */}
           <Link
             to="/portal/event"
-            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2 flex items-center space-x-4"
           >
-            Events
+            <MdOutlineEmojiEvents className="text-2xl" />
+            <p className="">
+              Events
+            </p>
           </Link>
           <Link
             to="/../?sn=section5"
-            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+            className="group w-full text-gray-600 text-left hover:text-black text-base py-2 flex items-center space-x-4"
           >
-            Workshops
+            <GrWorkshop className="text-xl opacity-70 group-hover:opacity-100" />
+            <p className="">
+              Workshops
+            </p>
           </Link>
           <Link
             to="/../?sn=section4"
-            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2 flex items-center space-x-4"
           >
-            Paper Presentations
+            <HiOutlinePresentationChartBar className="text-2xl" />
+            <p className="">
+              Paper Presentations
+            </p>
           </Link>
         </div>
         <div className="py-8">
@@ -152,8 +164,8 @@ const NavBarForMobile = () => {
   });
 
   return (
-    <nav className="lg:hidden z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
-      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white">
+    <nav className="lg:hidden z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll font-poppins shadow-md">
+      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6">
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
         <Link
           to={"/"}
@@ -171,7 +183,7 @@ const NavBarForMobile = () => {
         className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
           } transition-all ease-in-out duration-300`}
       >
-        <div className="py-8 w-full flex flex-col">
+        <div className="py-8 w-full flex flex-col px-6">
           {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Register
           </Link> */}
@@ -209,7 +221,7 @@ const NavBarForMobile = () => {
             Sodapops
           </button>
         </div> */}
-        <div className="py-8 pb-16"
+        <div className="py-8 pb-16 px-6"
           id="navOpen">
           <h3 className="text-base font-semibold py-3" id="navElements">Events</h3>
           <EventNav
@@ -264,6 +276,23 @@ const NavBarForMobile = () => {
             papers={papers}
           />
         </div>
+
+        {
+          localStorage.getItem("token") && (
+            <div className="flex w-full z-10 justify-between items-center sticky bottom-0 bg-white shadow-lg">
+              <button
+                onClick={() => {
+                  localStorage.clear();
+                  window.location.reload();
+                }}
+                className="py-4 px-6 flex flex-row items-center gap-x-4"
+              >
+                <IoMdLogOut className="text-2xl" />
+                Logout
+              </button>
+            </div>
+          )
+        }
       </div>
     </nav>
   );

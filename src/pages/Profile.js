@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrTransaction, GrWorkshop } from "react-icons/gr";
-import { MdEventAvailable, MdOutlineCancel } from "react-icons/md";
+import { MdEventAvailable, MdOutlineCancel, MdOutlineEmojiEvents } from "react-icons/md";
 import { BsCheck2Circle } from "react-icons/bs";
 import { fetchEventDetailsByEmail, fetchEvents, fetchPaymentDetailsByEmail, fetchUserByEmail, fetchWorkshops } from "../API/call";
 import { IoIosArrowForward } from "react-icons/io";
@@ -119,7 +119,7 @@ const Profile = () => {
 
           <div className="w-full">
             <div className="flex items-center space-x-4 w-full">
-              <MdEventAvailable className="text-2xl text-white" />
+              <MdOutlineEmojiEvents className="text-2xl text-white" />
               <h1 className="text-2xl">Registered Events</h1>
             </div>
             <div className="mt-8 space-y-4">

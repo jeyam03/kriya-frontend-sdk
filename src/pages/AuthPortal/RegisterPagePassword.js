@@ -51,6 +51,8 @@ const RegisterPagePassword = ({ switchPage }) => {
         loading: "Updating password",
         success: (res) => {
           console.log(res.data);
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("email", res.data.user.email);
           setSearchParams({
             ...searchParams,
             type: "signup",

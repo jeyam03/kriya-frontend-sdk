@@ -15,6 +15,7 @@ import { Toaster } from "react-hot-toast";
 import PaymentFailure from "./pages/MiddlePorts/PaymentFailure";
 import AuthProvider from "./pages/AuthProvider";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import OtherPayments from "./pages/AuthPortal/OtherPayments";
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="payment/success" element={<PaymentSuccess />} />
             <Route path="verify/:id" element={<Verification />} />
             <Route path="auth" element={<AuthPortal />} />
+            <Route path="auth/payment" element={<OtherPayments />} />
             <Route index element={<Landing />} />
             <Route path="*" element={<Error404 />} />
           </Routes>

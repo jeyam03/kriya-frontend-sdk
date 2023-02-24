@@ -175,6 +175,18 @@ const Section1 = () => {
           >
             Contact Us
           </button>
+          {
+            localStorage.getItem("token") && (
+              <button
+                onClick={() => {
+                  localStorage.clear();
+                  window.location.reload();
+                }}
+                className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
+              >
+                Logout
+              </button>
+            )}
         </div>
 
         <div className="flex flex-row space-x-8">
@@ -337,6 +349,20 @@ const Section1 = () => {
               >
                 Contact Us
               </button>
+              {
+                localStorage.getItem("token") && (
+                  <button
+                    onClick={() => {
+                      setIsOpen(!isOpen);
+                      localStorage.clear();
+                      window.location.reload();
+                    }}
+                    id="nav-button"
+                    className={`w-full text-gray-600 text-left text-base py-2`}
+                  >
+                    Logout
+                  </button>
+                )}
             </div>
           </div>
           <div className="w-full h-full relative" id="image-multi-2">
