@@ -147,7 +147,7 @@ const Event = () => {
           <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
             <div className="flex flex-row items-center gap-4 lg:gap-4">
               <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
-                24
+                {eventDetail.date}
               </p>
               <div className="flex flex-col">
                 <p className="text-lg font-semibold tracking-wide text-[#3c4043]">

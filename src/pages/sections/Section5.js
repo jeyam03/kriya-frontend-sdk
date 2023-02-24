@@ -154,7 +154,7 @@ const Section5 = () => {
           </button>
         </div>
       </section>
-      <a id="anchor6" className="absolute top-[90%] w-full h-1"></a>
+      <a id="anchor6" className="absolute top-[90%] w-full h-1 -z-10"></a>
     </div>
   );
 };

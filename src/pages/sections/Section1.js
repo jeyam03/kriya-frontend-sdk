@@ -98,7 +98,7 @@ const Section1 = () => {
       id="section1"
       className="h-screen w-screen flex flex-row items-center relative "
     >
-      <a id="anchor1" className="w-screen absolute h-20 top-[75vh]"></a>
+      <a id="anchor1" className="w-screen absolute h-20 top-[75vh] -z-10"></a>
       <div className="hidden lg:flex flex-col w-[25vw] h-full pl-[calc(100vw/24)] py-[calc(100vw/24)] justify-between">
         <div
           id="kriya-logo"
@@ -413,7 +413,7 @@ const Section1 = () => {
             localStorage.getItem("token") ? (
               <button
                 id="registration-prompt"
-                className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal"
+                className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal z-10"
                 onClick={() => {
                   navigate("/portal/profile");
                 }}
@@ -421,7 +421,7 @@ const Section1 = () => {
                 Go to Dashboard
               </button>
             ) : (
-              <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16">
+              <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16 z-10">
                 <button
                   id="registration-prompt"
                   className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"

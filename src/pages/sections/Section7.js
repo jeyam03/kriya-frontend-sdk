@@ -139,7 +139,7 @@ const Section7 = () => {
           </div>
         </div>
       </section>
-      <a id="anchor8" className="absolute top-[75%] w-full h-20"></a>
+      <a id="anchor8" className="absolute top-[75%] w-full h-20 -z-10"></a>
     </div>
   );
 };

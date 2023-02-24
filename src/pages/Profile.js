@@ -50,11 +50,18 @@ const Profile = () => {
     <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
-        <div className="h-48 w-48 rounded-full bg-gray-300 lg:-mt-36 "></div>
+        <div className="h-48 w-48 rounded-full lg:-mt-36"
+        style={{
+          backgroundImage: `url(${userDetails?.profilePhoto})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        ></div>
         <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left">
           {userDetails ? userDetails?.name : "XXXXX"}
         </h1>
-        <h3 className="text-sm text-gray-300 tracking-widest text-center lg:text-left ">
+        <h3 className="text-sm text-gray-300 mt-2 tracking-widest text-center lg:text-left ">
           Profile
         </h3>
       </div>

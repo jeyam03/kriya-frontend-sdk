@@ -299,7 +299,7 @@ const Section3 = () => {
       </section>
       <a
         id="anchor3"
-        className="absolute top-[40%] lg:top-[75%] w-full h-20"
+        className="absolute top-[40%] lg:top-[75%] w-full h-20 -z-10"
       ></a>
       <div className="absolute top-[100%] w-full h-10"></div>
     </div>

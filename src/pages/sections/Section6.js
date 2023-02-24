@@ -38,8 +38,8 @@ const Section6 = () => {
       >
         <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
           <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
-            <div className="flex justify-between">
-              <div className=" p-4 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
+            <div className="flex flex-col lg:flex-row">
+              <div className=" p-4 px-6 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
                 <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                   <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                     {"TITLE "}
@@ -51,7 +51,7 @@ const Section6 = () => {
                   title="KLA"
                 />
               </div>
-              <div className="p-4 space-y-4 sponsors-text opacity-0 delay-100">
+              <div className="p-4 px-6 space-y-4 sponsors-text opacity-0 delay-100">
                 <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                   <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                     {"Co "}
@@ -79,44 +79,52 @@ const Section6 = () => {
               <div className="w-full max-w-full relative overflow-x-hidden h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
                   />
                   <Sponsors
-                    imgurl="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                    title="GOOGLE"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
                   />
                 </div>
               </div>
@@ -137,7 +145,7 @@ const Section6 = () => {
       </section>
       <a
         id="anchor7"
-        className="absolute top-[40%] lg:top-[75%] w-full h-20"
+        className="absolute top-[40%] lg:top-[75%] w-full h-20 -z-10"
       ></a>
       <div className="absolute top-[100%] w-full h-10"></div>
     </div>
@@ -147,7 +155,7 @@ const Section6 = () => {
 const Sponsors = ({ imgurl, title }) => {
   return (
     <div className="flex flex-col gap-y-2 w-48 lg:w-64">
-      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-6 lg:p-8 h-28 lg:w-64 lg:h-36 rounded-2xl">
+      <div className="bg-opacity-50 bg-gray-200 flex justify-center items-center p-4 lg:p-6 h-28 lg:w-64 lg:h-36 rounded-2xl">
         <div
           style={{
             background: `url("${imgurl}")`,

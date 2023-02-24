@@ -166,7 +166,7 @@ const Section2 = ({ scrollYByVH }) => {
           />
         </div>
       </section>
-      <a id="anchor2" className="absolute top-[35%] w-full h-20"></a>
+      <a id="anchor2" className="absolute top-[35%] w-full h-20 -z-10"></a>
     </div>
   );
 };
