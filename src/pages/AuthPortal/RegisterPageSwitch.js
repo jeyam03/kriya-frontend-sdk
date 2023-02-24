@@ -1,9 +1,8 @@
 import React from "react";
 import { useSearchParams } from "react-router-dom";
+import { BACKEND_URL } from "../../API/call";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
-
-const BACKEND_URL = "http://localhost:5002";
 
 
 const RegisterPageSwitch = ({ switchPage }) => {
