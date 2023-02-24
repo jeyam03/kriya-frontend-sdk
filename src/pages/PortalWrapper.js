@@ -33,6 +33,15 @@ const NavBarForDesktop = () => {
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  const goldEvents = fetchEvents()
+    .filter((event) => event.category === "Gold")
+    .map((event) => ({
+      name: event.eventName,
+      category: event.category,
+      id: event.eventId,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
   const papers = fetchPapers()
     .map((paper) => ({
       name: paper.eventName,
@@ -83,7 +92,7 @@ const NavBarForDesktop = () => {
               onClick={() => navigate("/auth?type=signup")}
               className="bg-black text-white rounded-lg px-6 py-3 text-lg mb-4"
             >
-              Register/Login
+              Register / Login
             </button>
           )}
           <Link
@@ -116,6 +125,8 @@ const NavBarForDesktop = () => {
           <EventNav category="Circuit" events={events} />
           <EventNav category="Core Engineering" events={events} />
           <EventNav category="Management" events={events} />
+          <h3 className="text-base font-semibold py-3">Gold Events</h3>
+          <GoldNav noMargin goldEvents={goldEvents} />
           <h3 className="text-base font-semibold py-3">Workshops</h3>
           <WorkNav noMargin workshops={workshops} />
           <h3 className="text-base font-semibold py-3">Paper Presentations</h3>
@@ -175,6 +186,15 @@ const NavBarForMobile = () => {
     name: workshop.workName,
     id: workshop.wid,
   }));
+
+  const goldEvents = fetchEvents()
+    .filter((event) => event.category === "Gold")
+    .map((event) => ({
+      name: event.eventName,
+      category: event.category,
+      id: event.eventId,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   useEffect(() => {
     const navOpen = document.querySelector("#navOpen");
@@ -240,17 +260,25 @@ const NavBarForMobile = () => {
       </div>
 
       <div
-        className={`divide-y divide-gray-600 ${
-          isOpen ? "h-fit" : "h-0 overflow-hidden"
-        } transition-all ease-in-out duration-300`}
+        className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
+          } transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col px-6">
-          <Link
-            to="/auth?type=login"
-            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
-          >
-            Register/Login
-          </Link>
+          {(localStorage.getItem("token") && userDetails) ? (
+            <Link
+              to="/portal/profile"
+              className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link
+              to="/auth?type=login"
+              className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+            >
+              Register / Login
+            </Link>
+          )}
           <Link
             to="/portal/event"
             id="navElements"
@@ -273,18 +301,6 @@ const NavBarForMobile = () => {
             Paper Presentations
           </Link>
         </div>
-        {/* <div className="py-8">
-          <h3 className="text-base font-semibold py-6">✨ Suggested Events</h3>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Scan and Reckon
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Thirstify
-          </button>
-          <button className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Sodapops
-          </button>
-        </div> */}
         <div className="py-8 pb-16 px-6" id="navOpen">
           <h3 className="text-base font-semibold py-3" id="navElements">
             Events
@@ -325,6 +341,15 @@ const NavBarForMobile = () => {
             isMobile
             category="Management"
             events={events}
+          />
+          <h3 className="text-base font-semibold py-3" id="navElements">
+            Gold Events
+          </h3>
+          <GoldNav
+            openState={[isOpen, setIsOpen]}
+            isMobile
+            noMargin
+            goldEvents={goldEvents}
           />
           <h3 className="text-base font-semibold py-3" id="navElements">
             Workshops
@@ -372,7 +397,7 @@ const EventNav = ({
   noMargin = false,
   events,
   isMobile = false,
-  openState = [true, () => {}],
+  openState = [true, () => { }],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -407,17 +432,15 @@ const EventNav = ({
   return (
     <React.Fragment>
       <button
-        className={`flex justify-between group items-center ${
-          !noMargin && "mt-0"
-        } my-2`}
+        className={`flex justify-between group items-center ${!noMargin && "mt-0"
+          } my-2`}
         onClick={() => setHideContent(!hideContent)}
         id="navElements"
       >
         <div>
           <IoMdArrowDropright
-            className={`text-lg text-gray-500 ${
-              hideContent ? "rotate-90" : "rotate-0"
-            } transition-all`}
+            className={`text-lg text-gray-500 ${hideContent ? "rotate-90" : "rotate-0"
+              } transition-all`}
           />
         </div>
         <p
@@ -427,9 +450,8 @@ const EventNav = ({
         </p>
       </button>
       <div
-        className={`${
-          !hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
-        } transition-all overflow-hidden flex flex-col`}
+        className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+          } transition-all overflow-hidden flex flex-col`}
         id="navElements"
       >
         {events
@@ -460,11 +482,69 @@ const EventNav = ({
   );
 };
 
+const GoldNav = ({
+  noMargin = false,
+  goldEvents,
+  isMobile = false,
+  openState = [true, () => { }],
+}) => {
+  const [isOpen, setIsOpen] = openState;
+  const [hideContent, setHideContent] = useState(false);
+  const navigate = useNavigate();
+
+  const toTitleCase = (phrase) => {
+    return phrase
+      .toLowerCase()
+      .split(" ")
+      .map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  };
+
+  useEffect(() => {
+    if (!isOpen) {
+      setHideContent(false);
+    }
+  }, [isOpen]);
+
+  return (
+    <React.Fragment>
+      <div
+        className={`${"flex h-fit mb-4"} transition-all overflow-hidden flex flex-col`}
+        id="navElements"
+      >
+        {goldEvents.map((e) =>
+          isMobile ? (
+            <button
+              onClick={(event) => {
+                console.log("clicked", e);
+                setIsOpen(!isOpen);
+                navigate(`/portal/event/${e.id}`);
+              }}
+              className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+            >
+              {toTitleCase(e.name)}
+            </button>
+          ) : (
+            <Link
+              to={`/portal/event/${e.id}`}
+              className="w-full text-gray-600 text-left hover:text-black text-base py-2 px-4 block"
+            >
+              {toTitleCase(e.name)}
+            </Link>
+          )
+        )}
+      </div>
+    </React.Fragment>
+  );
+};
+
 const WorkNav = ({
   noMargin = false,
   workshops,
   isMobile = false,
-  openState = [true, () => {}],
+  openState = [true, () => { }],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -508,17 +588,15 @@ const WorkNav = ({
           )}
       </div>
       <button
-        className={`flex justify-between group items-center ${
-          !noMargin && "mt-0"
-        } my-2 pl-2`}
+        className={`flex justify-between group items-center ${!noMargin && "mt-0"
+          } my-2 pl-2`}
         onClick={() => setHideContent(!hideContent)}
         id="navElements"
       >
         <div>
           <IoMdArrowDropright
-            className={`text-lg text-gray-500 ${
-              hideContent ? "rotate-90" : "rotate-0"
-            } transition-all`}
+            className={`text-lg text-gray-500 ${hideContent ? "rotate-90" : "rotate-0"
+              } transition-all`}
           />
         </div>
         <p className={`w-full text-sm text-gray-500 py-2 pl-1`}>
@@ -526,9 +604,8 @@ const WorkNav = ({
         </p>
       </button>
       <div
-        className={`${
-          !hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
-        } transition-all overflow-hidden flex flex-col`}
+        className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+          } transition-all overflow-hidden flex flex-col`}
         id="navElements"
       >
         {workshops
@@ -563,7 +640,7 @@ const PaperNav = ({
   noMargin = false,
   papers,
   isMobile = false,
-  openState = [true, () => {}],
+  openState = [true, () => { }],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -588,7 +665,7 @@ const PaperNav = ({
   return (
     <React.Fragment>
       <div
-        className={`${"flex h-fit mb-8"} transition-all overflow-hidden flex flex-col`}
+        className={`${"flex h-fit mb-4"} transition-all overflow-hidden flex flex-col`}
         id="navElements"
       >
         {papers.map((e) =>
