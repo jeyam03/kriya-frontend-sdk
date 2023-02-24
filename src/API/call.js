@@ -43,6 +43,9 @@ export const fetchUpdateUserPassword = (email, password) =>
 export const fetchPayGeneral = (formData) =>
   axios.post(`${PAYMENT_URL}/pay-general`, formData, {});
 
+export const fetchPayWorkshop = (eventId, formData) =>
+  axios.post(`${PAYMENT_URL}/pay-workshop/${eventId}`, formData, {});
+
 export const fetchPaymentDetailsByTxnId = (txnId) =>
   axios.get(`${PAYMENT_URL}/payment-details/${txnId}`, {});
 

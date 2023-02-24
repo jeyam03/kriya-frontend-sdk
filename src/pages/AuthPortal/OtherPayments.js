@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
-import { fetchPayGeneral, fetchUserByEmail, fetchWorkshopById } from "../../API/call";
+import {
+  fetchPayGeneral,
+  fetchPayWorkshop,
+  fetchUserByEmail,
+  fetchWorkshopById,
+} from "../../API/call";
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
@@ -11,18 +16,21 @@ const PSG_COLLEGE =
 
 const OtherPayments = ({ switchPage }) => {
   const [isPSG, setIsPSG] = useState(false);
-  const [formData, setFormData] = useState({});
   const [authEmail, setAuthEmail] = useState("");
   const [transaction, setTransaction] = useState(null);
 
   const [searchParams, setSearchParams] = useSearchParams();
+  const [userDetails, setUserDetails] = useState(null);
+  const [workshopDetails, setWorkshopDetails] = useState(null);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     fetchUserByEmail(localStorage.getItem("email"))
       .then((res) => {
-        setIsPSG(res.data.data.college === PSG_COLLEGE);
+        console.log("USER", res.data)
+        setIsPSG(res.data.user.college === PSG_COLLEGE);
+        setUserDetails(res.data.user);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -59,12 +67,26 @@ const OtherPayments = ({ switchPage }) => {
     };
   }, []);
 
-  const handlePayNow = () => {
+  const handlePayNowForGeneral = () => {
     fetchPayGeneral({
-      email: formData.email,
-      name: formData.name,
-      kriyaId: formData.kriyaId,
+      email: userDetails.email,
+      name: userDetails.name,
+      kriyaId: userDetails.kriyaId,
       fee: isPSG ? 1 : 2,
+    })
+      .then((res) => {
+        setTransaction(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handlePayNowForWorkshop = () => {
+    fetchPayWorkshop(searchParams.get("eventId"), {
+      email: localStorage.getItem("email"),
+      name: userDetails.name,
+      kriyaId: userDetails.kriyaId,
+      fee: workshopDetails.fee,
     })
       .then((res) => {
         setTransaction(res.data);
@@ -80,7 +102,7 @@ const OtherPayments = ({ switchPage }) => {
 
   useEffect(() => {
     if (!searchParams.get("eventId")) return;
-    // fetchWorkshopById(searchParams.get("eventId"))
+    setWorkshopDetails(fetchWorkshopById(searchParams.get("eventId")));
   }, []);
 
   return (
@@ -96,7 +118,7 @@ const OtherPayments = ({ switchPage }) => {
             backgroundPosition: "center",
           }}
         ></div>
-        {searchParams.get("type") === "WORKSHOP" && (
+        {searchParams.get("type") === "WORKSHOP" && workshopDetails && (
           <div className="relative z-30 w-full lg:w-[30vw] h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6 ">
             <div className="">
               <h3 className="text-sm text-gray-500">Confirm your payment</h3>
@@ -104,21 +126,14 @@ const OtherPayments = ({ switchPage }) => {
                 Pay for Workshop
               </h1>
             </div>
-            {!isPSG ? (
-              <p className="">
-                The general registration for Kriya 2023 is{" "}
-                <b className="font-semibold">Rs. 200</b>. You will be redirected
-                to our payment gateway and an email will be sent as a
-                confirmation.
-              </p>
-            ) : (
-              <p className="">
-                The general registration for Kriya 2023 is{" "}
-                <b className="font-semibold">Rs. 150</b> for the students of PSG
-                College of Technology. You can pay now and register for the
-                events. You are also availed of the option to pay later.
-              </p>
-            )}
+            <p className="">
+              The registration for workshop -{" "}
+              <b className="font-semibold"> {workshopDetails.workName} </b> in{" "}
+              Kriya 2023 is{" "}
+              <b className="font-semibold">Rs. {workshopDetails.fee}.00</b>. You
+              will be redirected to our payment gateway and an email will be
+              sent as a confirmation.
+            </p>
             <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
               <button
                 onClick={() => navigate(-1)}
@@ -127,7 +142,7 @@ const OtherPayments = ({ switchPage }) => {
                 Cancel
               </button>
               <button
-                onClick={handlePayNow}
+                onClick={handlePayNowForWorkshop}
                 className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
               >
                 Pay now
@@ -166,7 +181,7 @@ const OtherPayments = ({ switchPage }) => {
                 Cancel
               </button>
               <button
-                onClick={handlePayNow}
+                onClick={handlePayNowForGeneral}
                 className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
               >
                 Pay now
