@@ -7,6 +7,8 @@ import { AuthContext } from "../AuthProvider";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
+const BACKEND_URL = "http://localhost:5002";
+
 const Login = ({ switchPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -58,7 +60,7 @@ const Login = ({ switchPage }) => {
 
       <div className="w-full space-y-4 py-6 border-t border-t-gray-400">
         <a
-          href="http://localhost:5002/api/auth/google"
+          href={`${BACKEND_URL}/api/auth/google`}
           className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6"
         >
           <img

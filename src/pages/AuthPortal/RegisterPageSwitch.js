@@ -3,6 +3,9 @@ import { useSearchParams } from "react-router-dom";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
+const BACKEND_URL = "http://localhost:5002";
+
+
 const RegisterPageSwitch = ({ switchPage }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -17,7 +20,7 @@ const RegisterPageSwitch = ({ switchPage }) => {
       </h1>
       <p className="">Choose the method of Registration</p>
       <a
-        href="http://localhost:5002/api/auth/google"
+        href={`${BACKEND_URL}/api/auth/google`}
         className="bg-white shadow-lg px-4 py-3 w-full hover:bg-gray-300 transition-all border-gray-300 border-2 rounded-lg flex items-center justify-center space-x-6"
       >
         <img
