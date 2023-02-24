@@ -1,13 +1,11 @@
 import React, { useContext, useState } from "react";
 import TextInput from "../../components/TextInput";
 import { toast } from "react-hot-toast";
-import { fetchLogin } from "../../API/call";
+import { BACKEND_URL, fetchLogin } from "../../API/call";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
-
-const BACKEND_URL = "http://localhost:5002";
 
 const Login = ({ switchPage }) => {
   const [email, setEmail] = useState("");
