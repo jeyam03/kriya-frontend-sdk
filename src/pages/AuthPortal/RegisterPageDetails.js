@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { fetchUpdateUser, fetchUserByEmail } from "../../API/call";
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
 import departments from "../DepartmentList";
 import { toast } from "react-hot-toast";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 const PSG_COLLEGE =
   "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
@@ -23,6 +24,8 @@ const RegisterPageDetails = ({ switchPage }) => {
     isPSGStudent: false,
     phone: "",
   });
+
+  const navigate = useNavigate();
 
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -104,6 +107,13 @@ const RegisterPageDetails = ({ switchPage }) => {
           className="lg:hidden h-24 w-auto opacity-50"
         />
       </div>
+      <button
+        onClick={() => navigate(-2)}
+        className="flex hover:cursor-pointer group text-sm items-center space-x-2"
+      >
+        <MdOutlineArrowBackIosNew size={12} />
+        <p className="group-hover:underline">Back</p>
+      </button>
       <div className="">
         <h3 className="text-sm text-gray-500">Register for Kriya 2023</h3>
         <h1 className="text-2xl font-bold text-[#181818]">
@@ -193,7 +203,6 @@ const RegisterPageDetails = ({ switchPage }) => {
       >
         Already have an account ? <u>Login</u>
       </button>
-      <p className="w-full text-xs text-center">Page 2 of 3</p>
     </div>
   );
 };

@@ -12,7 +12,7 @@ import {
 
 const Workshop = () => {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [paymentDetails, setPaymentDetails] = useState(null);
 
   const toTitleCase = (phrase) => {
@@ -32,6 +32,7 @@ const Workshop = () => {
   }, [id]);
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) return;
     fetchUserByEmail(localStorage.getItem("email")).then((res) => {
       console.log(res.data.user);
       setIsLoggedIn(true);
@@ -47,7 +48,7 @@ const Workshop = () => {
 
   const handleRegister = () => {
     if (!isLoggedIn) {
-      navigate("/auth?type=signup");
+      navigate("/auth?type=login");
     } else {
       navigate(`/auth/payment?type=WORKSHOP&eventId=${id}`);
     }

@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { BACKEND_URL, fetchLogin } from "../../API/call";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
@@ -32,7 +33,7 @@ const Login = ({ switchPage }) => {
   };
 
   return (
-    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
+    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-8 lg:px-8 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
         <img
           src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png"
@@ -40,8 +41,16 @@ const Login = ({ switchPage }) => {
           className="lg:hidden h-24 w-auto opacity-50"
         />
       </div>
-      <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
-
+      <button
+        onClick={() => navigate(-2)}
+        className="flex hover:cursor-pointer group text-sm items-center space-x-2"
+      >
+        <MdOutlineArrowBackIosNew size={12} />
+        <p className="group-hover:underline">Back</p>
+      </button>
+      <div className="">
+        <h1 className="text-2xl font-bold text-[#181818]">Login</h1>
+      </div>
       <div className="w-full space-y-4 py-4">
         <TextInput
           title="Email / Kriya ID"

@@ -109,7 +109,6 @@ const RegisterPagePSG = ({ switchPage }) => {
         Send Email for verification
       </button>
 
-      <p className="w-full text-xs text-center">Page 5 of 5</p>
     </div>
   );
 };

@@ -298,7 +298,7 @@ const NavBarForMobile = ({ consolee }) => {
               }}
             ></Link>
           ) : (
-            <Link to={"/auth"} className="w-fit  rounded-lg text-black">
+            <Link to={"/auth?type=login"} className="w-fit  rounded-lg text-black">
               <FaRegUserCircle size={32} />
             </Link>
           )}

@@ -431,7 +431,7 @@ const Section1 = () => {
                 id="registration-prompt"
                 className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
                 onClick={() => {
-                  navigate("/auth");
+                  navigate("/auth?type=login");
                 }}
               >
                 Login

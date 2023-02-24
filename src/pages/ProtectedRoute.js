@@ -7,7 +7,7 @@ const ProtectedRoute = (rest) => {
 
   useEffect(() => {
     if (!checkAuth()) {
-      window.location.href = "/auth";
+      window.location.href = "/auth?type=login";
     }
     console.log("PROTECTED ROUTE", getAuth());
   }, []);

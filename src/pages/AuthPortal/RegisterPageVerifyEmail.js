@@ -69,7 +69,6 @@ const RegisterPageVerifyEmail = ({ switchPage }) => {
       <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full">
         Resend Email
       </button>
-      <p className="w-full text-xs text-center">Page 5 of 5</p>
     </div>
   );
 };

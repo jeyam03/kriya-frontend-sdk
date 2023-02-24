@@ -131,7 +131,6 @@ const RegisterPagePayment = ({ switchPage }) => {
       >
         Already have an account ? <u>Login</u>
       </button>
-      <p className="w-full text-xs text-center">Page 4 of 5</p>
     </div>
   );
 };

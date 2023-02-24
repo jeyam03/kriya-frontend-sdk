@@ -54,7 +54,6 @@ const RegisterPageFinal = ({ switchPage }) => {
         Go to Home Page
       </button>
 
-      <p className="w-full text-xs text-center">Page 5 of 5</p>
     </div>
   );
 };
