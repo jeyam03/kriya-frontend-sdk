@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { fetchPaymentDetailsByTxnId } from "../../API/call";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
@@ -7,12 +7,16 @@ const PaymentFailure = () => {
   const [searchParams, setsearchParams] = useSearchParams();
   const [transactionDetails, setTransactionDetails] = useState(null);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     // if (!searchParams.get("txn")) return;
     console.log(searchParams.get("txn"));
     fetchPaymentDetailsByTxnId(searchParams.get("txn"))
       .then((res) => {
         console.log(res.data.data);
+        if (res.data.data.status !== "ERROR")
+          navigate(`/payment/failure?txn=${searchParams.get("txn")}`);
         setTransactionDetails(res.data.data);
       })
       .catch((err) => console.log(err));

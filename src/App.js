@@ -1,4 +1,10 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Outlet,
+  Route,
+  Routes,
+} from "react-router-dom";
 import Landing from "./pages/Landing";
 import PortalWrapper from "./pages/PortalWrapper";
 import Event from "./pages/Event";
@@ -37,8 +43,10 @@ const App = () => {
             <Route path="payment/failure" element={<PaymentFailure />} />
             <Route path="payment/success" element={<PaymentSuccess />} />
             <Route path="verify/:id" element={<Verification />} />
-            <Route path="auth" element={<AuthPortal />} />
-            <Route path="auth/payment" element={<OtherPayments />} />
+            <Route path="auth" element={<Outlet />}>
+              <Route path="payment" element={<OtherPayments />} />
+              <Route index element={<AuthPortal />} />
+            </Route>
             <Route index element={<Landing />} />
             <Route path="*" element={<Error404 />} />
           </Routes>

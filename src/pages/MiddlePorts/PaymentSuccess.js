@@ -18,6 +18,8 @@ const PaymentSuccess = () => {
     localStorage.setItem("txn", searchParams.get("txn"));
     fetchPaymentDetailsByTxnId(searchParams.get("txn"))
       .then((res) => {
+        if (res.data.data.status !== "SUCCESS")
+          navigate(`/payment/failure?txn=${searchParams.get("txn")}`);
         if (searchParams.get("redirect") === "complete_register")
           navigate(
             `/auth/?type=signup&page=final&email=${res.data.data.email}`

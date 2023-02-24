@@ -59,7 +59,7 @@ const Event = () => {
     if (!isLoggedIn) {
       navigate("/auth?type=signup");
     } else if (!generalPayment) {
-      navigate("/auth/payment");
+      navigate("/auth/payment?type=GENERAL");
     } else {
       fetchEventRegister({
         email: localStorage.getItem("email"),
