@@ -79,7 +79,7 @@ const Section7 = () => {
           <ImageGrid vertical="Office Bearers" />
           <ImageGrid vertical="Ambience and Creativity" />
           <ImageGrid vertical="App and Web Development" />
-          <ImageGrid vertical="Design" />
+          <ImageGrid vertical="Design & Photography" />
           <ImageGrid vertical="Events Resource Management" />
           <ImageGrid vertical="PR and Sponsorship" />
         </div>
