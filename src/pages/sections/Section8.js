@@ -67,7 +67,7 @@ const FAQContent = [
   {
     question: "Who can participate in Kriya?",
     answer:
-      "The contest is open for all Undergraduate and Postgraduate students from Technical Higher Educational Institutions of India.",
+      "The contest is open for all Undergraduate and Postgraduate students from AICTE approved Technical Higher Educational Institutions of India.",
   },
   {
     question: "What are the benefits of taking part in Kriya ?",
