@@ -76,7 +76,7 @@ const NavBarForDesktop = () => {
             ></Link>
           ) : (
             <Link
-              to={"/auth"}
+              to={"/auth?type=signup"}
               className="w-fit px-4 py-2 mt-4 rounded-lg bg-[#1B73E8] text-white"
             >
               Register
@@ -232,7 +232,7 @@ const NavBarForMobile = () => {
               ></Link>
             ) : (
               <Link
-                to={"/auth"}
+                to={"/auth?type=signup"}
                 className="w-fit px-3 py-2 -mr-2 rounded-lg bg-[#1B73E8] text-white text-sm"
               >
                 Register

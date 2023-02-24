@@ -45,7 +45,7 @@ const Workshop = () => {
     if (!isLoggedIn) {
       navigate("/auth?type=signup");
     } else {
-      navigate("/auth/payment");
+      navigate("/auth/payment?type=WORKSHOP&eventId=" + id);
     }
   };
 

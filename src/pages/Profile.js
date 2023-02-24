@@ -50,7 +50,7 @@ const Profile = () => {
     <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
-        <div className="h-48 w-48 rounded-full lg:-mt-36"
+        <div className="h-48 w-48 rounded-full bg-white lg:-mt-36"
         style={{
           backgroundImage: `url(${userDetails?.profilePhoto})`,
           backgroundSize: "cover",
@@ -67,7 +67,7 @@ const Profile = () => {
       </div>
       {userDetails && (
         <div className="grid gap-16 grid-cols-1 lg:grid-cols-2 text-white px-8 lg:px-16">
-          <div className="">
+          <div className="w-full pr-8">
             <div className="flex items-center space-x-4 w-full">
               <AiOutlineUser className="text-2xl" />
               <h1 className="text-2xl">About</h1>
@@ -89,7 +89,7 @@ const Profile = () => {
                 <p className="text-lg">Uh oh! You have'nt made any transactions yet !</p>
                 <Link
                   className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                  to="/../?sn=section5"
+                  to="/auth/payment?type=GENERAL"
                 >
                   <p className="">Pay general registration fee !</p>
                   <IoIosArrowForward
@@ -124,7 +124,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="w-full">
+          <div className="w-full pr-8">
             <div className="flex items-center space-x-4 w-full">
               <MdOutlineEmojiEvents className="text-2xl text-white" />
               <h1 className="text-2xl">Registered Events</h1>
