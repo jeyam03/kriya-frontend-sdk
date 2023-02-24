@@ -19,8 +19,9 @@ const PaymentSuccess = () => {
     localStorage.setItem("txn", searchParams.get("txn"));
     fetchPaymentDetailsByTxnId(searchParams.get("txn"))
       .then((res) => {
-        if (res.data.data.status !== "SUCCESS")
-          navigate(`/payment/failure?txn=${searchParams.get("txn")}`);
+        console.log("ERRPR", res.data);
+        if (res.data.status !== "SUCCESS")
+          return navigate(`/payment/failure?txn=${searchParams.get("txn")}`);
         console.log(
           localStorage.getItem("txn_redirect_uri"),
           searchParams.get("txn"),

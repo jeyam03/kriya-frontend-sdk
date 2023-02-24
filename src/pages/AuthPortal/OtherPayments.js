@@ -51,12 +51,7 @@ const OtherPayments = ({ switchPage }) => {
     if (e.key === "txn") {
       console.log("STORAGE UPDATED", e.newValue);
       console.log(transaction);
-      setSearchParams({
-        ...searchParams,
-        type: "signup",
-        email: authEmail,
-        page: "final",
-      });
+      navigate(`/portal/workshop/${searchParams.get("eventId")}`);
     }
   };
 
