@@ -413,7 +413,7 @@ const Section1 = () => {
             localStorage.getItem("token") ? (
               <button
                 id="registration-prompt"
-                className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal"
                 onClick={() => {
                   navigate("/portal/profile");
                 }}
