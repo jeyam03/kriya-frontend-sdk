@@ -33,10 +33,13 @@ const Workshop = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
-      <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
-        {workshopDetail.workName}
-      </h1>
-      {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
+
+      <div className="w-fit">
+        <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
+          {workshopDetail.workName}
+        </h1>
+        <div className="w-[60%] lg:w-[80%] ml-8 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+      </div>      {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
       </h2> */}
       <p className="text-white mt-8 text-base w-full lg:w-[95%] pb-12 px-8 lg:px-0">
@@ -112,9 +115,9 @@ const Workshop = () => {
 
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
-            // onClick={() => {
-            //   isLoggedIn ? (window.confirm("Are you sure you want to register ?") ? (generalPayment ? navigate("/confirmed") : navigate("/payment")) : console.log("Cancelled")) : navigate("/register");
-            // }}
+          // onClick={() => {
+          //   isLoggedIn ? (window.confirm("Are you sure you want to register ?") ? (generalPayment ? navigate("/confirmed") : navigate("/payment")) : console.log("Cancelled")) : navigate("/register");
+          // }}
           >
             <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
               {"Registrations Opening Soon !"}

@@ -77,12 +77,15 @@ const Event = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
-      <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
-        {toTitleCase(eventDetail.eventName)}
-      </h1>
-      <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
+      <h2 className="text-base mb-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {eventDetail.category}
       </h2>
+      <div className="w-fit">
+        <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
+          {toTitleCase(eventDetail.eventName)}
+        </h1>
+        <div className="w-[60%] lg:w-[80%] ml-8 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+      </div>
       <p className="text-white mt-8 text-base w-full lg:w-[65%] pb-8 px-8 lg:px-0">
         {eventDetail.description}
       </p>
