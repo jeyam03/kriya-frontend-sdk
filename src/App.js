@@ -22,6 +22,7 @@ import PaymentFailure from "./pages/MiddlePorts/PaymentFailure";
 import AuthProvider from "./pages/AuthProvider";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import OtherPayments from "./pages/AuthPortal/OtherPayments";
+import GoogleFailure from "./pages/MiddlePorts/GoogleFailure";
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
             </Route>
             <Route path="payment/failure" element={<PaymentFailure />} />
             <Route path="payment/success" element={<PaymentSuccess />} />
+            <Route path="google-failed" element={<GoogleFailure />} />
             <Route path="verify/:id" element={<Verification />} />
             <Route path="auth" element={<Outlet />}>
               <Route path="payment" element={<OtherPayments />} />
