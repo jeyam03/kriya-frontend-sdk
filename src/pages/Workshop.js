@@ -4,7 +4,11 @@ import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
 import { BiRupee } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchPaymentDetailsByEmail, fetchUserByEmail, fetchWorkshopById } from "../API/call";
+import {
+  fetchPaymentDetailsByEmail,
+  fetchUserByEmail,
+  fetchWorkshopById,
+} from "../API/call";
 
 const Workshop = () => {
   const navigate = useNavigate();
@@ -45,7 +49,7 @@ const Workshop = () => {
     if (!isLoggedIn) {
       navigate("/auth?type=signup");
     } else {
-      navigate("/auth/payment?type=WORKSHOP&eventId=" + id);
+      navigate(`/auth/payment?type=WORKSHOP&eventId=${id}`);
     }
   };
 
@@ -55,19 +59,18 @@ const Workshop = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
-
       <div className="w-fit">
         <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
           {workshopDetail.workName}
         </h1>
         <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
-      </div>      {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
+      </div>{" "}
+      {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
       </h2> */}
       <p className="text-white mt-8 text-base w-full lg:w-[95%] pb-12 px-8 lg:px-0">
         {workshopDetail.desc}
       </p>
-
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-6">
         <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 relative py-12 px-8">
           <div className="text-4xl font-bold mb-8 text-[#3c4043]">Agenda</div>
@@ -91,7 +94,9 @@ const Workshop = () => {
                 <div className="ml-8">
                   <div className="flex flex-row gap-4 items-center">
                     <div className="w-6 h-6 z-10 rounded-full bg-[#3c4043]"></div>
-                    <div className="text-xl font-semibold text-[#3c4043]">{item.time}</div>
+                    <div className="text-xl font-semibold text-[#3c4043]">
+                      {item.time}
+                    </div>
                   </div>
                   <ol className="list-disc pt-2 border-l-[#3c4043] border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
                     {item.description.map((desc) => (
@@ -110,13 +115,18 @@ const Workshop = () => {
             onClick={() => {
               window.confirm("Are you sure you want to register ?")
                 ? handleRegister()
-                : console.log("Cancelled")
+                : console.log("Cancelled");
             }}
           >
-            {paymentDetails && <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {paymentDetails?.filter((w) => w.type === "WORKSHOP").find((i) => i.wid === id) ? "Registered" : "Register Here!"}
-            </span>}
-
+            {paymentDetails && (
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+                {paymentDetails
+                  ?.filter((w) => w.type === "WORKSHOP")
+                  .find((i) => i.wid === id)
+                  ? "Registered"
+                  : "Register Here!"}
+              </span>
+            )}
           </button>
 
           <div className="flex flex-col bg-[#ffffff] lg:rounded-3xl p-8 space-y-2 justify-center">
@@ -201,12 +211,17 @@ const Workshop = () => {
               </div>
             </div>
 
-            <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ", backgroundSize: "350%" }}>
-            </div>
+            <div
+              className=" hidden lg:block flex-1  rounded-b-3xl"
+              style={{
+                background:
+                  "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ",
+                backgroundSize: "350%",
+              }}
+            ></div>
           </div>
         </div>
       </div>
-
     </section>
   );
 };

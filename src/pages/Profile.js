@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrTransaction, GrWorkshop } from "react-icons/gr";
-import { MdEventAvailable, MdOutlineCancel, MdOutlineEmojiEvents } from "react-icons/md";
+import {
+  MdEventAvailable,
+  MdOutlineCancel,
+  MdOutlineEmojiEvents,
+} from "react-icons/md";
 import { BsCheck2Circle } from "react-icons/bs";
-import { fetchEventDetailsByEmail, fetchEvents, fetchPaymentDetailsByEmail, fetchUserByEmail, fetchWorkshops } from "../API/call";
+import {
+  fetchEventDetailsByEmail,
+  fetchEvents,
+  fetchPaymentDetailsByEmail,
+  fetchUserByEmail,
+  fetchWorkshops,
+} from "../API/call";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
-
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState(null);
@@ -23,7 +32,12 @@ const Profile = () => {
   useEffect(() => {
     fetchPaymentDetailsByEmail(localStorage.getItem("email")).then((res) => {
       console.log(res.data.data);
-      setPaymentDetails(res.data.data);
+      setPaymentDetails(
+        res.data.data
+          .filter((i) => i.status !== "INITIATED")
+          .sort((a, b) => a.datetime.localeCompare(b.datetime))
+          .reverse()
+      );
     });
   }, []);
 
@@ -73,10 +87,26 @@ const Profile = () => {
               <h1 className="text-2xl">About</h1>
             </div>
             <div className="grid grid-cols-1 gap-y-1   w-full mt-8 space-y-1  ">
-              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="Name" content={userDetails.name} />
-              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="Email" content={userDetails.email} />
-              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="Phone" content={userDetails.phone} />
-              <TextOutput className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid" heading="College" content={userDetails.college} />
+              <TextOutput
+                className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
+                heading="Name"
+                content={userDetails.name}
+              />
+              <TextOutput
+                className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
+                heading="Email"
+                content={userDetails.email}
+              />
+              <TextOutput
+                className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
+                heading="Phone"
+                content={userDetails.phone}
+              />
+              <TextOutput
+                className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
+                heading="College"
+                content={userDetails.college}
+              />
             </div>
           </div>
           <div className="w-full">
@@ -84,22 +114,25 @@ const Profile = () => {
               <GrTransaction className="text-2xl text-white invert" />
               <h1 className="text-2xl">Transactions</h1>
             </div>
-            <div className="mt-8 space-y-4 h-56 overflow-y-scroll">
-              {paymentDetails?.length === 0 && <div className="space-y-4">
-                <p className="text-lg">Uh oh! You have'nt made any transactions yet !</p>
-                <Link
-                  className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                  to="/auth/payment?type=GENERAL"
-                >
-                  <p className="">Pay general registration fee !</p>
-                  <IoIosArrowForward
-                    className="ml-1 group-hover:ml-2 transition-all"
-                    size={16}
-                  />
-                </Link>
-              </div>
-              }
-              {paymentDetails?.slice(0).reverse().map((payment) => (
+            <div className="mt-8 space-y-4 max-h-[40vh] overflow-y-auto pr-4">
+              {paymentDetails?.length === 0 && (
+                <div className="space-y-4">
+                  <p className="text-lg">
+                    Uh oh! You have'nt made any transactions yet !
+                  </p>
+                  <Link
+                    className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                    to="/../?sn=section5"
+                  >
+                    <p className="">Pay general registration fee !</p>
+                    <IoIosArrowForward
+                      className="ml-1 group-hover:ml-2 transition-all"
+                      size={16}
+                    />
+                  </Link>
+                </div>
+              )}
+              {paymentDetails?.map((payment) => (
                 <div className="flex flex-row items-center space-x-4">
                   {payment.status === "SUCCESS" ? (
                     <BsCheck2Circle className="text-3xl text-green-500" />
@@ -108,15 +141,39 @@ const Profile = () => {
                   )}
                   <div className="w-full">
                     <div className="flex items-center justify-between text-xs">
-                      <p className="w-1/2">Transaction ID: {payment.transactionId}</p>
+                      <p className="">
+                        Transaction ID: {payment.transactionId}
+                      </p>
                       <div className="flex flex-col items-end">
-                        <p className="">{new Date(payment.datetime).toDateString()}</p>
-                        <p className="">{new Date(payment.datetime).toTimeString().split("GMT")[0]}</p>
+                        <p className="text-right">
+                          {new Date(payment.datetime).toDateString()}
+                        </p>
+                        <p className="text-right">
+                          {
+                            new Date(payment.datetime)
+                              .toTimeString()
+                              .split("GMT")[0]
+                          }
+                        </p>
                       </div>
                     </div>
-                    <div className={`${payment.status === "SUCCESS" ? "text-green-500" : "text-red-500"} flex items-center justify-between`}>
-                      <p className="text-sm lg:text-base w-3/4 lg:w-5/6">{payment.eventId === "-1" ? "General" : "Workshop " + payment.eventId} registration {payment.status === "SUCCESS" ? "paid successfully" : "payment unsuccessful"}</p>
-                      <p className="text-base lg:text-lg">Rs. {payment.fee}</p>
+                    <div
+                      className={`${
+                        payment.status === "SUCCESS"
+                          ? "text-green-500"
+                          : "text-red-500"
+                      } flex items-center justify-between`}
+                    >
+                      <p className="text-lg w-5/6">
+                        {payment.eventId === "-1"
+                          ? "General"
+                          : "Workshop " + payment.eventId}{" "}
+                        registration{" "}
+                        {payment.status === "SUCCESS"
+                          ? "paid successfully"
+                          : "payment unsuccessful"}
+                      </p>
+                      <p className="text-lg">Rs. {payment.fee}</p>
                     </div>
                   </div>
                 </div>
@@ -130,20 +187,23 @@ const Profile = () => {
               <h1 className="text-2xl">Registered Events</h1>
             </div>
             <div className="mt-8 space-y-4">
-              {eventDetails?.length === 0 && <div className="space-y-4">
-                <p className="text-lg">Uh oh! You have'nt registered for any events yet !</p>
-                <Link
-                  className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                  to="/portal/event"
-                >
-                  <p className="">Register for events here !</p>
-                  <IoIosArrowForward
-                    className="ml-1 group-hover:ml-2 transition-all"
-                    size={16}
-                  />
-                </Link>
-              </div>
-              }
+              {eventDetails?.length === 0 && (
+                <div className="space-y-4">
+                  <p className="text-lg">
+                    Uh oh! You have'nt registered for any events yet !
+                  </p>
+                  <Link
+                    className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                    to="/portal/event"
+                  >
+                    <p className="">Register for events here !</p>
+                    <IoIosArrowForward
+                      className="ml-1 group-hover:ml-2 transition-all"
+                      size={16}
+                    />
+                  </Link>
+                </div>
+              )}
               {eventDetails?.map((event) => (
                 <div className="">
                   <div className="flex items-center justify-between text-xs">
@@ -153,10 +213,13 @@ const Profile = () => {
                   <div className="flex items-center justify-between">
                     <Link
                       to={`/portal/event/${event.eventId}`}
-                      className="text-lg hover:text-blue-400 hover:underline">
+                      className="text-lg hover:text-blue-400 hover:underline"
+                    >
                       {events.find((i) => i.id === event.eventId).name}
                     </Link>
-                    <p className="text-lg">{events.find((i) => i.id === event.eventId).time}</p>
+                    <p className="text-lg">
+                      {events.find((i) => i.id === event.eventId).time}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -169,36 +232,47 @@ const Profile = () => {
               <h1 className="text-2xl">Registered Workshops</h1>
             </div>
             <div className="mt-8 space-y-4">
-              {paymentDetails?.filter((w) => w.type === "WORKSHOP").length === 0 && <div className="space-y-4">
-                <p className="text-lg">Uh oh! You have'nt registered for any workshops yet !</p>
-                <Link
-                  className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                  to="/../?sn=section5"
-                >
-                  <p className="">Register for workshops here !</p>
-                  <IoIosArrowForward
-                    className="ml-1 group-hover:ml-2 transition-all"
-                    size={16}
-                  />
-                </Link>
-              </div>
-              }
-              {paymentDetails?.filter((w) => w.type === "WORKSHOP").map((workshop) => (
-                <div className="">
-                  <div className="flex items-center justify-between text-xs">
-                    <p className="">Workshop ID: {workshop.eventId}</p>
-                    <p className="">Mar 24</p>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <Link
-                      to={`/portal/workshop/${workshop.eventId}`}
-                      className="text-lg hover:text-blue-400 hover:underline">
-                      {fetchWorkshops().find((i) => i.wid === workshop.eventId).workName}
-                    </Link>
-                    <p className="text-lg">Rs. 250</p>
-                  </div>
+              {paymentDetails?.filter((w) => w.type === "WORKSHOP").length ===
+                0 && (
+                <div className="space-y-4">
+                  <p className="text-lg">
+                    Uh oh! You have'nt registered for any workshops yet !
+                  </p>
+                  <Link
+                    className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                    to="/../?sn=section5"
+                  >
+                    <p className="">Register for workshops here !</p>
+                    <IoIosArrowForward
+                      className="ml-1 group-hover:ml-2 transition-all"
+                      size={16}
+                    />
+                  </Link>
                 </div>
-              ))}
+              )}
+              {paymentDetails
+                ?.filter((w) => w.type === "WORKSHOP")
+                .map((workshop) => (
+                  <div className="">
+                    <div className="flex items-center justify-between text-xs">
+                      <p className="">Workshop ID: {workshop.eventId}</p>
+                      <p className="">Mar 24</p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={`/portal/workshop/${workshop.eventId}`}
+                        className="text-lg hover:text-blue-400 hover:underline"
+                      >
+                        {
+                          fetchWorkshops().find(
+                            (i) => i.wid === workshop.eventId
+                          ).workName
+                        }
+                      </Link>
+                      <p className="text-lg">Rs. 250</p>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

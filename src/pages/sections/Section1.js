@@ -175,18 +175,6 @@ const Section1 = () => {
           >
             Contact Us
           </button>
-          {
-            localStorage.getItem("token") && (
-              <button
-                onClick={() => {
-                  localStorage.clear();
-                  window.location.reload();
-                }}
-                className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
-              >
-                Logout
-              </button>
-            )}
         </div>
 
         <div className="flex flex-row space-x-8">
@@ -220,7 +208,12 @@ const Section1 = () => {
           </button>
           <button
             className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
-            onClick={() => window.open("https://youtube.com/c/StudentsUnionPSGTech", "_blank")}
+            onClick={() =>
+              window.open(
+                "https://youtube.com/c/StudentsUnionPSGTech",
+                "_blank"
+              )
+            }
           >
             <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
           </button>
@@ -233,8 +226,9 @@ const Section1 = () => {
       >
         {slides.map((slide, index) => (
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+              currentSlide === index ? "opacity-100" : "opacity-0"
+            }`}
             style={{
               background: `url(${slides[index]})`,
               backgroundPosition: "50% 50%  ",
@@ -263,15 +257,24 @@ const Section1 = () => {
             24<sup>th</sup>, 25<sup>th</sup> & 26<sup>th</sup> 2023
           </div>
         </div>
-        <div className={`lg:hidden flex flex-row w-full ${isOpen && "shadow-lg"} h-[50vh]`}>
+        <div
+          className={`lg:hidden flex flex-row w-full ${
+            isOpen && "shadow-lg"
+          } h-[50vh]`}
+        >
           <div className={`px-4 ${isOpen ? "h-full" : "h-fit"} z-10 bg-white`}>
             <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div
-            className={`divide-y divide-gray-600 ${isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
-              } transition-all ease-in-out duration-300`}
+            className={`divide-y divide-gray-600 ${
+              isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
+            } transition-all ease-in-out duration-300`}
           >
-            <div className={`w-full flex flex-col font-poppins absolute ${isOpen ? "z-20 h-[50%]" : "-z-20"} bg-white transition-all ease-in-out duration-300`}>
+            <div
+              className={`w-full flex flex-col font-poppins absolute ${
+                isOpen ? "z-20 h-[50%]" : "-z-20"
+              } bg-white transition-all ease-in-out duration-300`}
+            >
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
@@ -349,27 +352,14 @@ const Section1 = () => {
               >
                 Contact Us
               </button>
-              {
-                localStorage.getItem("token") && (
-                  <button
-                    onClick={() => {
-                      setIsOpen(!isOpen);
-                      localStorage.clear();
-                      window.location.reload();
-                    }}
-                    id="nav-button"
-                    className={`w-full text-gray-600 text-left text-base py-2`}
-                  >
-                    Logout
-                  </button>
-                )}
             </div>
           </div>
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
-                className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`w-full h-full absolute top-0 right-0 left-0 ${
+                  currentSlide === index ? "opacity-100" : "opacity-0"
+                }`}
                 style={{
                   background: `url(${slides[index]})`,
                   backgroundPosition: "50% 50%  ",
@@ -381,7 +371,10 @@ const Section1 = () => {
           </div>
         </div>
 
-        <h1 id="tagline" className="uppercase lg:delay-500 lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8">
+        <h1
+          id="tagline"
+          className="uppercase lg:delay-500 lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8"
+        >
           <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[3.25rem] lg:leading-[4rem] relative z-10">
             The Global Clash of Techno Talents.
           </span>
@@ -390,59 +383,61 @@ const Section1 = () => {
           <div className="hidden lg:flex flex-row w-full text-[#3c4043] font-poppins font-semibold justify-between">
             <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
               <div className="text-5xl">
-                <Number n={35} />
-                +
+                <Number n={35} />+
               </div>
-              <h1 className="text-sm text-center tracking-wide uppercase">Events</h1>
+              <h1 className="text-sm text-center tracking-wide uppercase">
+                Events
+              </h1>
             </div>
             <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
               <div className="text-5xl">
-                <Number n={12} />
-                +
+                <Number n={12} />+
               </div>
-              <h1 className="text-sm text-center tracking-wide uppercase">Workshops</h1>
+              <h1 className="text-sm text-center tracking-wide uppercase">
+                Workshops
+              </h1>
             </div>
             <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
               <div className="text-5xl">
                 <Number n={4} />
               </div>
-              <h1 className="text-xs text-center tracking-wide uppercase">Paper Presentations</h1>
+              <h1 className="text-xs text-center tracking-wide uppercase">
+                Paper Presentations
+              </h1>
             </div>
           </div>
-          {
-            localStorage.getItem("token") ? (
+          {localStorage.getItem("token") ? (
+            <button
+              id="registration-prompt"
+              className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal z-10"
+              onClick={() => {
+                navigate("/portal/profile");
+              }}
+            >
+              Go to Dashboard
+            </button>
+          ) : (
+            <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16 z-10">
               <button
                 id="registration-prompt"
-                className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal z-10"
+                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
                 onClick={() => {
-                  navigate("/portal/profile");
+                  navigate("/auth?type=signup");
                 }}
               >
-                Go to Dashboard
+                Register
               </button>
-            ) : (
-              <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16 z-10">
-                <button
-                  id="registration-prompt"
-                  className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
-                  onClick={() => {
-                    navigate("/auth?type=signup");
-                  }}
-                >
-                  Register
-                </button>
-                <button
-                  id="registration-prompt"
-                  className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
-                  onClick={() => {
-                    navigate("/auth");
-                  }}
-                >
-                  Login
-                </button>
-              </div>
-            )
-          }
+              <button
+                id="registration-prompt"
+                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                onClick={() => {
+                  navigate("/auth");
+                }}
+              >
+                Login
+              </button>
+            </div>
+          )}
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4 w-fit">
           <div
@@ -472,8 +467,9 @@ const Section1 = () => {
         <div className="w-full h-full relative">
           {slides.map((slide, index) => (
             <div
-              className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
-                }`}
+              className={`w-full h-full absolute top-0 right-0 left-0 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
               style={{
                 background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
                 backgroundPosition: "left",

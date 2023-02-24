@@ -14,7 +14,7 @@ const PaymentFailure = () => {
     console.log(searchParams.get("txn"));
     fetchPaymentDetailsByTxnId(searchParams.get("txn"))
       .then((res) => {
-        console.log(res.data.data);
+        console.log("ERRPR", res.data.data);
         if (res.data.data.status !== "ERROR")
           navigate(`/payment/failure?txn=${searchParams.get("txn")}`);
         setTransactionDetails(res.data.data);
@@ -68,6 +68,16 @@ const PaymentFailure = () => {
                 <TextOutput label="Name" value={transactionDetails.name} />
                 <TextOutput label="Email" value={transactionDetails.email} />
               </section>
+              <div className="w-full">
+                <button
+                  onClick={() => {
+                    navigate("/portal/profile");
+                  }}
+                  className="bg-black rounded-lg px-6 py-3 text-white"
+                >
+                  Go to Profile
+                </button>
+              </div>
             </Fragment>
           )}
         </section>
@@ -90,9 +100,13 @@ const PaymentFailure = () => {
             </li>
           </ul>
           <p className="mt-4">
-            On the <b className="font-semibold"> Transactions </b> column of
-            your profile page, you can see your transactions, including the
-            failed ones.
+            On the{" "}
+            <a href="/portal/profile" className="font-semibold">
+              {" "}
+              Transactions{" "}
+            </a>{" "}
+            column of your profile page, you can see your transactions,
+            including the failed ones.
           </p>
         </section>
         <section className="mt-8 bg-gray-200 p-8 rounded-xl">

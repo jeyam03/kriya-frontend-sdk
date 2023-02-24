@@ -28,7 +28,7 @@ const OtherPayments = ({ switchPage }) => {
   useEffect(() => {
     fetchUserByEmail(localStorage.getItem("email"))
       .then((res) => {
-        console.log("USER", res.data)
+        console.log("USER", res.data);
         setIsPSG(res.data.user.college === PSG_COLLEGE);
         setUserDetails(res.data.user);
       })
@@ -51,12 +51,7 @@ const OtherPayments = ({ switchPage }) => {
     if (e.key === "txn") {
       console.log("STORAGE UPDATED", e.newValue);
       console.log(transaction);
-      setSearchParams({
-        ...searchParams,
-        type: "signup",
-        email: authEmail,
-        page: "final",
-      });
+      navigate(`/portal/workshop/${searchParams.get("eventId")}`);
     }
   };
 
@@ -72,7 +67,8 @@ const OtherPayments = ({ switchPage }) => {
       email: userDetails.email,
       name: userDetails.name,
       kriyaId: userDetails.kriyaId,
-      fee: isPSG ? 1 : 2,
+      fee: isPSG ? 150 : 200,
+      // fee: isPSG ? 1 : 2,
     })
       .then((res) => {
         setTransaction(res.data);
@@ -86,7 +82,8 @@ const OtherPayments = ({ switchPage }) => {
       email: localStorage.getItem("email"),
       name: userDetails.name,
       kriyaId: userDetails.kriyaId,
-      fee: workshopDetails.fee,
+      // fee: workshopDetails.fee,
+      fee: 5,
     })
       .then((res) => {
         setTransaction(res.data);
@@ -97,6 +94,12 @@ const OtherPayments = ({ switchPage }) => {
 
   useEffect(() => {
     if (!transaction) return;
+    localStorage.setItem("txn", transaction.data.transactionId);
+    localStorage.setItem(
+      "txn_redirect_uri",
+      `/portal/workshop/${searchParams.get("eventId")}`
+    );
+    console.log(transaction);
     window.open(transaction.url, "_blank");
   }, [transaction]);
 
