@@ -169,7 +169,7 @@ const RegisterPageDetails = ({ switchPage }) => {
       <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
         <button
           onClick={handleBack}
-          className="border-2 border-black bg-white hover:bg-gray-700 transition-all duration-500 text-black text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
+          className="border-2 border-black bg-white hover:bg-gray-700 hover:text-white transition-all duration-500 text-black text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
         >
           Back
         </button>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { IoMdClose, IoMdArrowDropright } from "react-icons/io";
+import { IoMdClose, IoMdArrowDropright, IoMdLogOut } from "react-icons/io";
 import { fetchEvents, fetchPapers, fetchWorkshops } from "../API/call";
 import { AiOutlinePlus } from "react-icons/ai";
 
@@ -38,8 +38,8 @@ const NavBarForDesktop = () => {
     }))
 
   return (
-    <nav className="hidden lg:block z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md">
-      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white">
+    <nav className="hidden lg:block z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll font-poppins shadow-md">
+      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6">
         <Link
           to={"/"}
           className="w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3"
@@ -53,12 +53,12 @@ const NavBarForDesktop = () => {
       </div>
 
       <div
-        className={`divide-y divide-gray-600 h-fit transition-all ease-in-out duration-300`}
+        className={`divide-y divide-gray-600 h-fit transition-all ease-in-out duration-300 px-6 `}
       >
         <div className="py-8 w-full flex flex-col">
-          <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
+          {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
             Register
-          </Link>
+          </Link> */}
           <Link
             to="/portal/event"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2"
@@ -92,6 +92,23 @@ const NavBarForDesktop = () => {
           <PaperNav noMargin papers={papers} />
         </div>
       </div>
+
+      {
+        localStorage.getItem("token") && (
+          <div className="flex w-full z-10 justify-between items-center sticky bottom-0 bg-white shadow-black shadow-lg">
+            <button
+              onClick={() => {
+                localStorage.clear();
+                window.location.reload();
+              }}
+              className="py-4 px-6 flex flex-row items-center gap-x-4"
+            >
+              <IoMdLogOut className="text-2xl" />
+              Logout
+            </button>
+          </div>
+        )
+      }
     </nav>
   );
 };

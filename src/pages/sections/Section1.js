@@ -383,26 +383,40 @@ const Section1 = () => {
               <h1 className="text-xs text-center tracking-wide uppercase">Paper Presentations</h1>
             </div>
           </div>
-          <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16">
-            <button
-              id="registration-prompt"
-              className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
-              onClick={() => {
-                navigate("/auth?type=signup");
-              }}
-            >
-              Register
-            </button>
-            <button
-              id="registration-prompt"
-              className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
-              onClick={() => {
-                navigate("/auth");
-              }}
-            >
-              Login
-            </button>
-          </div>
+          {
+            localStorage.getItem("token") ? (
+              <button
+                id="registration-prompt"
+                className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                onClick={() => {
+                  navigate("/portal/profile");
+                }}
+              >
+                Go to Dashboard
+              </button>
+            ) : (
+              <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16">
+                <button
+                  id="registration-prompt"
+                  className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                  onClick={() => {
+                    navigate("/auth?type=signup");
+                  }}
+                >
+                  Register
+                </button>
+                <button
+                  id="registration-prompt"
+                  className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                  onClick={() => {
+                    navigate("/auth");
+                  }}
+                >
+                  Login
+                </button>
+              </div>
+            )
+          }
         </div>
         <div className="flex flex-row space-x-8 lg:space-x-4 w-fit">
           <div

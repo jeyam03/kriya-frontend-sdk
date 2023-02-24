@@ -50,6 +50,9 @@ export const fetchPaymentDetailsByEmail = (email) =>
 export const fetchEventDetailsByEmail = (email) =>
   axios.get(`${EVENT_URL}/events-from-user/${email}`, {});
 
+export const fetchEventRegister = (formData) =>
+  axios.post(`${EVENT_URL}/`, formData, {});
+
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 
 // export const fetchEventById = (id) => axios.get(`${EVENT_URL}/${id}`);

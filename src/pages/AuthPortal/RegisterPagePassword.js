@@ -50,7 +50,7 @@ const RegisterPagePassword = ({ switchPage }) => {
       {
         loading: "Updating password",
         success: (res) => {
-          console.log(res);
+          console.log(res.data);
           setSearchParams({
             ...searchParams,
             type: "signup",

@@ -215,7 +215,7 @@ const Section3 = () => {
                       background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
+                      backgroundSize: "contain",
                     }}
                     className="w-8 h-8 invert"
                   >

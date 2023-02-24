@@ -3,12 +3,14 @@ import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchEventById } from "../API/call";
+import { fetchEventById, fetchEventDetailsByEmail, fetchEventRegister, fetchUserByEmail } from "../API/call";
 
 const Event = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [generalPayment, setGeneralPayment] = useState(false);
+  const [userDetails, setUserDetails] = useState(null);
+  const [userEventDetails, setUserEventDetails] = useState(null);
 
   const toTitleCase = (phrase) => {
     const wordsToIgnore = ["of", "in", "for", "and", "an", "or"];
@@ -34,8 +36,40 @@ const Event = () => {
   const [eventDetail, setEventDetail] = useState(null);
 
   useEffect(() => {
+    fetchUserByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data.user);
+      setUserDetails(res.data.user);
+      setIsLoggedIn(true);
+      setGeneralPayment(res.data.user.isPaid);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchEventDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setUserEventDetails(res.data);
+    });
+  }, []);
+
+  useEffect(() => {
     setEventDetail(fetchEventById(id));
   }, [id]);
+
+  const handleRegister = () => {
+    if (!isLoggedIn) {
+      navigate("/auth?type=signup");
+    } else if (!generalPayment) {
+      navigate("/auth?type=signup&page=payment");
+    } else {
+      fetchEventRegister({
+        email: localStorage.getItem("email"),
+        eventId: id,
+      }).then((res) => {
+        console.log(res);
+        window.location.reload();
+      });
+    }
+  };
 
   return !eventDetail ? (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
@@ -52,29 +86,6 @@ const Event = () => {
       <p className="text-white mt-8 text-base w-full lg:w-[65%] pb-8 px-8 lg:px-0">
         {eventDetail.description}
       </p>
-
-      {/* <div className="hidden lg:flex flex-col lg:flex-row gap-4 w-full pt-6 px-4 lg:px-0">
-        <div className="bg-white w-full lg:w-1/3 rounded-3xl p-12"
-          style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/management_vogvi4.png)`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-          }}>
-          <p className="text-4xl lg:text-5xl font-semibold tracking-wider text-[#3c4043]">
-            Scan Plan and Reckon
-          </p>
-        </div>
-        <div className="bg-white w-full lg:w-2/3 rounded-3xl p-12">
-          <p className="text-xl text-justify font-semibold tracking-wider text-[#3c4043]">
-            An interesting event to bring out the Civil engineer in you. All you
-            need for this event is knowledge in AutoCAD software, innovative
-            ideas and the talent of justifying your ideas. If you have a knack
-            for all this, Come and grab your opportunities.
-          </p>
-        </div>
-      </div> */}
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-4 text-black">
         <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 space-y-12 relative py-8 px-8">
@@ -115,19 +126,15 @@ const Event = () => {
           <button
             className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
             onClick={() => {
-              isLoggedIn
-                ? window.confirm("Are you sure you want to register ?")
-                  ? generalPayment
-                    ? navigate("/confirmed")
-                    : navigate("/payment")
-                  : console.log("Cancelled")
-                : navigate("/auth?type=signup");
+              window.confirm("Are you sure you want to register ?")
+                ? handleRegister()
+                : console.log("Cancelled")
             }}
           >
-            <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {"Register Here!"}
-            </span>
-            
+            {userEventDetails && <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+              {userEventDetails.find((i) => i.eventId === id) ? "Registered" : "Register Here!"}
+            </span>}
+
           </button>
 
           {/* <p className="bg-gradient-to-r from-[#C80067] to-[#7470ff] py-4 px-6 rounded-xl shadow-lg shadow-gray-900 lg:shadow-md w-fit text-white text-2xl hover:underline">Register Here !</p> */}
