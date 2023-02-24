@@ -13,6 +13,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { fetchUserByEmail } from "../API/call";
+import Section10 from "./sections/Section10";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -77,6 +78,7 @@ const Landing = () => {
         <Section1 />
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
+        <Section10 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
         <Section4 scrollYByVH={consolee} />
         <Section7 scrollYByVH={consolee} />
