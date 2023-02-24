@@ -160,6 +160,23 @@ const EventList = () => {
           rightCurve="bg-[#28a5ea]"
           iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png"}
         />
+        <h1
+          className={`text-4xl lg:text-5xl tracking-wide font-semibold text-center pt-8`}
+          id="gold"
+        >
+          GOLD EVENTS
+        </h1>
+        <EventsGrid
+          imgurl={
+            "https://media.istockphoto.com/id/1181359760/vector/gold-glitter-and-shiny-golden-rain-on-black-background-vector-square-luxury-background.jpg?s=612x612&w=0&k=20&c=L8On7JUZdmNYNTMBeD03-45lsBvaD1E0c2z8h-MsVOs="
+          }
+          arrowCircleStart="from-[#8B5523]"
+          arrowCircleEnd="to-[#F2CC3E]"
+          obj={events.filter((i) => i.category === "Gold")}
+          topCurve="bg-[#010101]"
+          rightCurve="bg-[#010101]"
+          iconImg={"https://cdn-icons-png.flaticon.com/512/3309/3309977.png"}
+        />
       </section>
     </div>
   );
@@ -187,7 +204,7 @@ const EventsGrid = ({
       .map((word) => {
         if (wordsToIgnore.includes(word)) {
           return word;
-        } 
+        }
         if (wordsToCapitalize.includes(word)) {
           return word.toUpperCase();
         }

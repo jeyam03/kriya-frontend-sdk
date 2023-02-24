@@ -431,7 +431,7 @@ const NavBarForMobile = ({ consolee }) => {
                 condition ? "text-gray-200" : "text-gray-600"
               } text-left text-base py-2`}
             >
-              Register/Login
+              Register / Login
             </button>
           )}
         </div>

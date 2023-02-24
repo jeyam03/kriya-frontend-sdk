@@ -56,7 +56,7 @@ const Workshop = () => {
 
   return !workshopDetail ? (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
-      <p className="text-white text-xl">Loading...</p>
+      <p className="text-white text-xl px-8">Loading...</p>
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">

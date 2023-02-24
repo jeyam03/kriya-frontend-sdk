@@ -9,6 +9,18 @@
   /* height: 100vh; */
 }
 
+#gold {
+  background: linear-gradient(-45deg, #ffee35, #ffe83a, #ffb82b, #ffa228);
+  animation: gradient 3s ease infinite;
+  background-size: 400% 400%;
+  background-position: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* height: 100vh; */
+}
+
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
