@@ -20,7 +20,7 @@ const PaymentSuccess = () => {
     fetchPaymentDetailsByTxnId(searchParams.get("txn"))
       .then((res) => {
         console.log("ERRPR", res.data);
-        if (res.data.status !== "SUCCESS")
+        if (res.data.data.status !== "SUCCESS")
           return navigate(`/payment/failure?txn=${searchParams.get("txn")}`);
         console.log(
           localStorage.getItem("txn_redirect_uri"),

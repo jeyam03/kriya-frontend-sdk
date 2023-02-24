@@ -11,6 +11,8 @@ import Section8 from "./sections/Section8";
 import Section9 from "./sections/Section9";
 import { Link, useNavigate } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import { FaRegUserCircle } from "react-icons/fa";
+import { fetchUserByEmail } from "../API/call";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -95,8 +97,9 @@ const NavBar = ({ consolee }) => {
 
   return (
     <nav
-      className={`${consolee >= 0.97 ? "fixed lg:flex" : "lg:hidden"
-        } hidden top-0 w-full left-0 right-0 px-3 items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-14 lg:h-12 shadow-md
+      className={`${
+        consolee >= 0.97 ? "fixed lg:flex" : "lg:hidden"
+      } hidden top-0 w-full left-0 right-0 px-3 items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-14 lg:h-12 shadow-md
       ${condition ? "bg-[#121212]" : "bg-white"} `}
     >
       <button
@@ -104,16 +107,20 @@ const NavBar = ({ consolee }) => {
           const element = document.getElementById("section3");
           element.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
       >
         Events
       </button>
       <button
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section5");
           element.scrollIntoView({ behavior: "smooth" });
@@ -126,16 +133,20 @@ const NavBar = ({ consolee }) => {
           const element = document.getElementById("section4");
           element.scrollIntoView({ behavior: "smooth" });
         }}
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
       >
         Paper Presentations
       </button>
       <button
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section7");
           element.scrollIntoView({ behavior: "smooth" });
@@ -144,8 +155,9 @@ const NavBar = ({ consolee }) => {
         Our Team
       </button>
       <div
-        className={`w-[4.5rem] h-[4.5rem] mt-0 lg:mt-4 -mb-3 lg:mb-1 ${condition && "invert"
-          }`}
+        className={`w-[4.5rem] h-[4.5rem] mt-0 lg:mt-4 -mb-3 lg:mb-1 ${
+          condition && "invert"
+        }`}
         style={{
           background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
           backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
@@ -162,9 +174,11 @@ const NavBar = ({ consolee }) => {
         ></button>
       </div>
       <button
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section6");
           element.scrollIntoView({ behavior: "smooth" });
@@ -173,9 +187,11 @@ const NavBar = ({ consolee }) => {
         Sponsors
       </button>
       <button
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section8");
           element.scrollIntoView({ behavior: "smooth" });
@@ -184,9 +200,11 @@ const NavBar = ({ consolee }) => {
         FAQs
       </button>
       <button
-        className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-          } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-          } transition-all`}
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
         onClick={(e) => {
           const element = document.getElementById("section9");
           element.scrollIntoView({ behavior: "smooth" });
@@ -194,31 +212,33 @@ const NavBar = ({ consolee }) => {
       >
         Contact Us
       </button>
-      {
-        localStorage.getItem("token") ? (
-          <button
-            className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-              } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-              } transition-all`}
-            onClick={(e) => {
-              navigate("/portal/profile");
-            }}
-          >
-            Dashboard
-          </button>
-        ) : (
-          <button
-            className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
-              } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
-              } transition-all`}
-            onClick={(e) => {
-              navigate("/auth?type=signup");
-            }}
-          >
-            Register
-          </button>
-        )
-      }
+      {localStorage.getItem("token") ? (
+        <button
+          className={`hidden lg:block text-xs w-1/12 ${
+            condition ? "text-gray-300" : "text-gray-500"
+          } leading-5 font-poppins ${
+            condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+          onClick={(e) => {
+            navigate("/portal/profile");
+          }}
+        >
+          Dashboard
+        </button>
+      ) : (
+        <button
+          className={`hidden lg:block text-xs w-1/12 ${
+            condition ? "text-gray-300" : "text-gray-500"
+          } leading-5 font-poppins ${
+            condition ? "hover:text-white" : "hover:text-black"
+          } transition-all`}
+          onClick={(e) => {
+            navigate("/auth?type=signup");
+          }}
+        >
+          Register
+        </button>
+      )}
     </nav>
   );
 };
@@ -231,11 +251,22 @@ const NavBarForMobile = ({ consolee }) => {
 
   const navigate = useNavigate();
 
+  const [userDetails, setUserDetails] = useState(null);
+
+  useEffect(() => {
+    fetchUserByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setUserDetails(res.data.user);
+    });
+  }, []);
+
   return (
     <nav
-      className={`${consolee >= 0.25 ? "block" : "hidden"
-        }  lg:hidden z-50 w-screen lg:w-1/4 ${!condition ? "bg-white" : "bg-black"
-        } fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-6 font-poppins shadow-md`}
+      className={`${
+        consolee >= 0.25 ? "block" : "hidden"
+      }  lg:hidden z-50 w-screen lg:w-1/4 ${
+        !condition ? "bg-white" : "bg-black"
+      } fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-4 font-poppins shadow-md`}
     >
       <div className="flex w-full justify-between items-center sticky top-0">
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -244,8 +275,9 @@ const NavBarForMobile = ({ consolee }) => {
             const element = document.getElementById("section1");
             element.scrollIntoView({ behavior: "smooth" });
           }}
-          className={`w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3 ${condition && "invert"
-            }`}
+          className={`w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3 ${
+            condition && "invert"
+          }`}
           style={{
             background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
             backgroundPosition: "left",
@@ -253,23 +285,41 @@ const NavBarForMobile = ({ consolee }) => {
             backgroundSize: "contain",
           }}
         ></button>
+        <div className="flex justify-end">
+          {userDetails ? (
+            <Link
+              to={"/portal/profile"}
+              className="w-8 h-8 rounded-full"
+              style={{
+                backgroundImage: `url(${userDetails?.profilePhoto})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }}
+            ></Link>
+          ) : (
+            <Link to={"/auth"} className="w-fit  rounded-lg text-black">
+              <FaRegUserCircle size={32} />
+            </Link>
+          )}
+        </div>
       </div>
 
       <div
-        className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
-          } transition-all ease-in-out duration-300`}
+        className={`divide-y divide-gray-600 ${
+          isOpen ? "h-fit" : "h-0 overflow-hidden"
+        } transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col">
-          {/* <Link to="/auth" className="w-full text-gray-600 text-left hover:text-black text-base py-2">
-            Register
-          </Link> */}
           <button
             onClick={() => {
               setIsOpen(!isOpen);
               const element = document.getElementById("section3");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             Events
           </button>
@@ -279,7 +329,9 @@ const NavBarForMobile = ({ consolee }) => {
               const element = document.getElementById("section5");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             Workshops
           </button>
@@ -289,7 +341,9 @@ const NavBarForMobile = ({ consolee }) => {
               const element = document.getElementById("section4");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             Paper Presentations
           </button>
@@ -299,7 +353,9 @@ const NavBarForMobile = ({ consolee }) => {
               const element = document.getElementById("section7");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             Our Team
           </button>
@@ -309,7 +365,9 @@ const NavBarForMobile = ({ consolee }) => {
               const element = document.getElementById("section6");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             Sponsors
           </button>
@@ -319,7 +377,9 @@ const NavBarForMobile = ({ consolee }) => {
               const element = document.getElementById("section8");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             FAQs
           </button>
@@ -329,45 +389,51 @@ const NavBarForMobile = ({ consolee }) => {
               const element = document.getElementById("section9");
               element.scrollIntoView({ behavior: "smooth" });
             }}
-            className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
           >
             Contact Us
           </button>
-          {
-            localStorage.getItem("token") ? (
-              <div>
-                <button
-                  onClick={() => {
-                    setIsOpen(!isOpen);
-                    navigate("/portal/profile");
-                  }}
-                  className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
-                >
-                  Dashboard
-                </button>
-                <button
-                  onClick={() => {
-                    setIsOpen(!isOpen);
-                    localStorage.clear();
-                    window.location.reload();
-                  }}
-                  className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
-                >
-                  Logout
-                </button>
-              </div>
-            ) : (
+          {localStorage.getItem("token") ? (
+            <div>
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
-                  navigate("/auth?type=signup");
+                  navigate("/portal/profile");
                 }}
-                className={`w-full ${condition ? "text-gray-200" : "text-gray-600"} text-left text-base py-2`}
+                className={`w-full ${
+                  condition ? "text-gray-200" : "text-gray-600"
+                } text-left text-base py-2`}
               >
-                Register
+                Dashboard
               </button>
-            )
-          }
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  localStorage.clear();
+                  window.location.reload();
+                }}
+                className={`w-full ${
+                  condition ? "text-gray-200" : "text-gray-600"
+                } text-left text-base py-2`}
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => {
+                setIsOpen(!isOpen);
+                navigate("/auth?type=signup");
+              }}
+              className={`w-full ${
+                condition ? "text-gray-200" : "text-gray-600"
+              } text-left text-base py-2`}
+            >
+              Register/Login
+            </button>
+          )}
         </div>
       </div>
     </nav>

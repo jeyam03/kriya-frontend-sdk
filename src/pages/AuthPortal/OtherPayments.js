@@ -83,7 +83,7 @@ const OtherPayments = ({ switchPage }) => {
       name: userDetails.name,
       kriyaId: userDetails.kriyaId,
       // fee: workshopDetails.fee,
-      fee: 5,
+      fee: 1,
     })
       .then((res) => {
         setTransaction(res.data);
