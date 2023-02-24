@@ -4,12 +4,12 @@ import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
 import { BiRupee } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchWorkshopById } from "../API/call";
+import { fetchPaymentDetailsByEmail, fetchUserByEmail, fetchWorkshopById } from "../API/call";
 
 const Workshop = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [generalPayment, setGeneralPayment] = useState(false);
+  const [paymentDetails, setPaymentDetails] = useState(null);
 
   const toTitleCase = (phrase) => {
     return phrase
@@ -26,6 +26,28 @@ const Workshop = () => {
   useEffect(() => {
     setWorkshopDetail(fetchWorkshopById(id));
   }, [id]);
+
+  useEffect(() => {
+    fetchUserByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data.user);
+      setIsLoggedIn(true);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchPaymentDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data.data);
+      setPaymentDetails(res.data.data);
+    });
+  }, []);
+
+  const handleRegister = () => {
+    if (!isLoggedIn) {
+      navigate("/auth?type=signup");
+    } else {
+      navigate("/auth/payment");
+    }
+  };
 
   return !workshopDetail ? (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
@@ -54,7 +76,7 @@ const Workshop = () => {
             <div>
               <div className="flex flex-row items-center gap-4 mb-8">
                 <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
-                  24
+                  {workshopDetail.date}
                 </p>
                 <div className="flex flex-col">
                   <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
@@ -80,71 +102,41 @@ const Workshop = () => {
               ))}
             </div>
           )}
-
-          {workshopDetail.agenda.length > 1 && (
-            <div>
-              <div className="flex flex-row items-center gap-4 my-8">
-                <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
-                  25
-                </p>
-                <div className="flex flex-col">
-                  <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
-                    March
-                  </p>
-                  <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
-                    2023
-                  </p>
-                </div>
-              </div>
-              {workshopDetail.agenda[1].map((item, index) => (
-                <div className="ml-8">
-                  <div className="flex flex-row gap-4 items-center">
-                    <div className="w-6 h-6 z-10 rounded-full bg-[#3c4043]"></div>
-                    <div className="text-xl font-semibold text-[#3c4043]">{item.time}</div>
-                  </div>
-                  <ol className="list-disc pt-2 border-l-[#3c4043] border-l-2 border-dashed ml-3 pl-12 pb-8 space-y-2">
-                    {item.description.map((desc) => (
-                      <li>{desc}</li>
-                    ))}
-                  </ol>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
 
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
-          <button className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left"
-          // onClick={() => {
-          //   isLoggedIn ? (window.confirm("Are you sure you want to register ?") ? (generalPayment ? navigate("/confirmed") : navigate("/payment")) : console.log("Cancelled")) : navigate("/register");
-          // }}
+          <button
+            className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
+            onClick={() => {
+              window.confirm("Are you sure you want to register ?")
+                ? handleRegister()
+                : console.log("Cancelled")
+            }}
           >
-            <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {"Registrations Opening Soon !"}
-            </span>
+            {paymentDetails && <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+              {paymentDetails?.filter((w) => w.type === "WORKSHOP").find((i) => i.wid === id) ? "Registered" : "Register Here!"}
+            </span>}
+
           </button>
 
-          <div className="hidden flex flex-col bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-4 justify-center">
-            <div className="flex flex-row items-center gap-4 lg:gap-6">
+          <div className="flex flex-col bg-[#ffffff] lg:rounded-3xl p-8 space-y-2 justify-center">
+            <div className="flex flex-row items-center gap-4">
               <p className="text-4xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <MdOutlineLocationOn />
               </p>
               <div className="flex flex-col pl-2">
                 <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  K Block 1<sup>st</sup> Floor
-                </p>
-                <p className="text-base lg:text-base tracking-wide text-[#3c4043]">
-                  Civil Seminar Hall
+                  {workshopDetail.hall}
                 </p>
               </div>
             </div>
-            <div className="flex flex-row items-center gap-4 lg:gap-6">
+            <div className="flex flex-row items-center gap-4">
               <p className="text-4xl lg:text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                 <BiRupee />
               </p>
               <div className="flex flex-col pl-2">
-                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  250 Rs
+                <p className="text-lg lg:text-lg font-semibold tracking-wide text-[#3c4043]">
+                  Rs. {workshopDetail.fee}
                 </p>
               </div>
             </div>
