@@ -74,7 +74,7 @@ const Section3 = () => {
               </p>
               <Link
                 className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                to="/portal/event/"
+                to="/portal/event/?ctg=kriyative"
               >
                 <p className="">Explore more</p>
                 <IoIosArrowForward
