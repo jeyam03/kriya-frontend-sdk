@@ -74,7 +74,7 @@ const Profile = () => {
             backgroundRepeat: "no-repeat",
           }}
         ></div>
-        <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left">
+        <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left px-4">
           {userDetails ? userDetails?.name : "XXXXX"}
         </h1>
         <h3 className="text-sm text-gray-300 mt-2 tracking-widest text-center lg:text-left ">
@@ -188,7 +188,7 @@ const Profile = () => {
               <MdOutlineEmojiEvents className="text-2xl text-white" />
               <h1 className="text-2xl">Registered Events</h1>
             </div>
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-4 max-h-[40vh] overflow-y-auto pr-4">
               {eventDetails?.length === 0 && (
                 <div className="space-y-4">
                   <p className="text-lg">
@@ -214,7 +214,7 @@ const Profile = () => {
                       Mar {events.find((i) => i.id === event.eventId).date}
                     </p>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between space-x-4">
                     <Link
                       to={`/portal/event/${event.eventId}`}
                       className="text-lg hover:text-blue-400 hover:underline"
@@ -235,7 +235,7 @@ const Profile = () => {
               <GrWorkshop className="text-2xl text-white invert" />
               <h1 className="text-2xl">Registered Workshops</h1>
             </div>
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-4 max-h-[40vh] overflow-y-auto pr-4">
               {paymentDetails?.filter(
                 (w) => w.type === "WORKSHOP" && w.status === "SUCCESS"
               ).length === 0 && (
