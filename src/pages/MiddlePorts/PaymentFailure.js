@@ -118,9 +118,9 @@ const PaymentFailure = () => {
             <b className="font-semibold"> statement from your bank</b>{" "}
             confirming the debit (including the name of our service and your
             bank account identification). You can reach our service team at
-            <a href="" className="font-semibold text-blue-600">
+            <a href="mailto:helpdesk@psgkriya.in" className="font-semibold text-blue-600">
               {" "}
-              support@psgkriya.in{" "}
+              helpdesk@psgkriya.in{" "}
             </a>
             .
           </p>
