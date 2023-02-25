@@ -27,7 +27,7 @@ const Paper = () => {
     if (!isLoggedIn) {
       navigate("/auth?type=signup");
     } else if (!generalPayment) {
-      navigate("/auth/payment");
+      navigate("/auth/payment?type=GENERAL");
     }
   };
 
@@ -50,13 +50,11 @@ const Paper = () => {
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-28 lg:pt-12 h-screen overflow-y-scroll">
       <div className="w-fit">
-
         <h1 className="text-4xl text-white font-semibold px-8 lg:px-0">
           {toTitleCase(paperDetail.eventName)}
         </h1>
         <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
       </div>
-
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-8 text-black">
         <div className="w-full lg:w-3/5">
@@ -66,7 +64,16 @@ const Paper = () => {
             </p>
             <ul className="list-disc text-base lg:text-lg text-[#3c4043] lg:text-white pl-4 space-y-2">
               {paperDetail.topic.split("\n").map((item, index) => (
-                <li key={index} className={`${item.slice(-1) === ":" ? "text-xl font-semibold -ml-2 py-2" : "text-lg"}`}>{item}</li>
+                <li
+                  key={index}
+                  className={`${
+                    item.slice(-1) === ":"
+                      ? "text-xl font-semibold -ml-2 py-2"
+                      : "text-lg"
+                  }`}
+                >
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -90,13 +97,12 @@ const Paper = () => {
               onClick={() => {
                 window.confirm("Are you sure you want to register ?")
                   ? handleRegister()
-                  : console.log("Cancelled")
+                  : console.log("Cancelled");
               }}
             >
               <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
                 {"Register Here!"}
               </span>
-
             </button>
           ) : (
             <div className="flex flex-row gap-4 w-full lg:px-0">
@@ -154,7 +160,9 @@ const Paper = () => {
                   <MdOutlineLocationOn />
                 </p>
                 <div className="pl-2 flex flex-col">
-                  <p className={`text-base lg:text-lg font-semibold tracking-wider text-white lg:text-[#3c4043]`}>
+                  <p
+                    className={`text-base lg:text-lg font-semibold tracking-wider text-white lg:text-[#3c4043]`}
+                  >
                     {paperDetail.hall}
                   </p>
                 </div>
@@ -223,7 +231,6 @@ const Paper = () => {
           </div>
         </div>
       </div>
-
     </section>
   );
 };
