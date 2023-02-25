@@ -114,17 +114,20 @@ const Workshop = () => {
           <button
             className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
             onClick={() => {
-              !paymentDetails?.filter((w) => w.type === "WORKSHOP").find((i) => i.eventId === id) && (
-                window.confirm("Are you sure you want to register ?")
+              !paymentDetails
+                ?.filter((w) => w.type === "WORKSHOP")
+                .find((i) => i.eventId === id) &&
+                (window.confirm("Are you sure you want to register ?")
                   ? handleRegister()
-                  : console.log("Cancelled")
-              )
+                  : console.log("Cancelled"));
             }}
           >
             {paymentDetails && (
               <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
                 {paymentDetails
-                  ?.filter((w) => w.type === "WORKSHOP")
+                  ?.filter(
+                    (w) => w.type === "WORKSHOP" && w.status === "SUCCESS"
+                  )
                   .find((i) => i.eventId === id)
                   ? "Registered"
                   : "Register Here!"}
