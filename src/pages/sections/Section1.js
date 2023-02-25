@@ -104,7 +104,7 @@ const Section1 = () => {
           id="kriya-logo"
           className="w-36 h-36 before:w-full before:h-full before:bg-black relative before:absolute before:opacity-30 before:rounded-full before:[background:radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0)_70%)]"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -244,7 +244,7 @@ const Section1 = () => {
           <div
             className="lg:hidden w-32 h-28"
             style={{
-              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png)`,
               backgroundPosition: "left",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
