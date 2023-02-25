@@ -3,13 +3,14 @@ import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchPaperById, fetchUserByEmail } from "../API/call";
+import { fetchPaperById, fetchPaperDetailsByEmail, fetchPaperRegister, fetchUserByEmail } from "../API/call";
 import { SiGmail } from "react-icons/si";
 
 const Paper = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [generalPayment, setGeneralPayment] = useState(false);
+  const [userPaperDetails, setUserPaperDetails] = useState([]);
 
   const toTitleCase = (phrase) => {
     return phrase
@@ -23,11 +24,26 @@ const Paper = () => {
 
   const [paperDetail, setPaperDetail] = useState(null);
 
+  useEffect(() => {
+    fetchPaperDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setUserPaperDetails(res.data);
+    });
+  }, []);
+
   const handleRegister = () => {
     if (!isLoggedIn) {
       navigate("/auth?type=signup");
     } else if (!generalPayment) {
       navigate("/auth/payment?type=GENERAL");
+    } else {
+      fetchPaperRegister({
+        email: localStorage.getItem("email"),
+        paperId: id,
+      }).then((res) => {
+        console.log(res);
+        window.location.reload();
+      });
     }
   };
 
@@ -91,7 +107,7 @@ const Paper = () => {
         </div>
 
         <div className="w-full lg:w-2/5 space-y-4 flex flex-col">
-          {!generalPayment ? (
+          {!userPaperDetails.find((i) => i.paperId === id) ? (
             <button
               className="bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
               onClick={() => {
