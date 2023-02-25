@@ -55,6 +55,23 @@ const RegisterPageDetails = ({ switchPage }) => {
   };
 
   const handleContinue = () => {
+    if (!formData.name) return toast.error("Please enter your name");
+    if (!formData.email) return toast.error("Please enter your email");
+    if (!formData.phone) return toast.error("Please enter your phone number");
+    if (!formData.college) return toast.error("Please select your college");
+    if (!formData.department) return toast.error("Please select your department");
+    if (!formData.year) return toast.error("Please select your year");
+
+    if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    if (!(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im).test(formData.phone)) {
+      toast.error("Please enter a valid phone number");
+      return;
+    }
+
     toast.promise(fetchUpdateUser(authEmail, formData), {
       loading: "Updating User",
       success: (res) => {
@@ -99,7 +116,7 @@ const RegisterPageDetails = ({ switchPage }) => {
   }, [formData]);
 
   return (
-    <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-8 lg:px-8 shadow-xl bg-white space-y-6">
+    <div className="w-full h-full overflow-y-scroll lg:h-fit py-12 px-6 lg:py-8 lg:px-8 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
         <img
           src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png"

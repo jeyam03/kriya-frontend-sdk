@@ -1,5 +1,6 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { BACKEND_URL } from "../../API/call";
 
 const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
@@ -7,6 +8,7 @@ const GOOGLE_ICON = "https://cdn-icons-png.flaticon.com/512/281/281764.png";
 
 const RegisterPageSwitch = ({ switchPage }) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const handleRegisterWithEmail = () => {
     setSearchParams({ ...searchParams, type: "signup", page: "details" });
@@ -21,6 +23,13 @@ const RegisterPageSwitch = ({ switchPage }) => {
           className="lg:hidden h-24 w-auto opacity-50"
         />
       </div>
+      <button
+        onClick={() => navigate(-2)}
+        className="flex hover:cursor-pointer group text-sm items-center space-x-2"
+      >
+        <MdOutlineArrowBackIosNew size={12} />
+        <p className="group-hover:underline">Back</p>
+      </button>
       <h1 className="text-2xl font-bold text-[#181818]">
         Register for Kriya 2023
       </h1>
