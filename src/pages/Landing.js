@@ -79,10 +79,10 @@ const Landing = () => {
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
         <Section10 scrollYByVH={consolee} />
-        <Section5 scrollYByVH={consolee} />
         <Section4 scrollYByVH={consolee} />
-        <Section7 scrollYByVH={consolee} />
+        <Section5 scrollYByVH={consolee} />
         <Section6 scrollYByVH={consolee} />
+        <Section7 scrollYByVH={consolee} />
         <Section8 />
         <Section9 />
       </main>
@@ -101,7 +101,7 @@ const NavBar = ({ consolee }) => {
     <nav
       className={`${
         consolee >= 0.97 ? "fixed lg:flex" : "lg:hidden"
-      } hidden top-0 w-full left-0 right-0 px-3 items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-50 h-14 lg:h-12 shadow-md
+      } hidden top-0 w-full left-0 right-0 px-3 items-center justify-between lg:justify-evenly space-x-4 lg:space-x-8 z-[100] h-14 lg:h-12 shadow-md
       ${condition ? "bg-[#121212]" : "bg-white"} `}
     >
       <button
@@ -116,19 +116,6 @@ const NavBar = ({ consolee }) => {
         } transition-all`}
       >
         Events
-      </button>
-      <button
-        className={`hidden lg:block text-xs w-1/12 ${
-          condition ? "text-gray-300" : "text-gray-500"
-        } leading-5 font-poppins ${
-          condition ? "hover:text-white" : "hover:text-black"
-        } transition-all`}
-        onClick={(e) => {
-          const element = document.getElementById("section5");
-          element.scrollIntoView({ behavior: "smooth" });
-        }}
-      >
-        Workshops
       </button>
       <button
         onClick={(e) => {
@@ -150,11 +137,24 @@ const NavBar = ({ consolee }) => {
           condition ? "hover:text-white" : "hover:text-black"
         } transition-all`}
         onClick={(e) => {
-          const element = document.getElementById("section7");
+          const element = document.getElementById("section5");
           element.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        Our Team
+        Workshops
+      </button>
+      <button
+        className={`hidden lg:block text-xs w-1/12 ${
+          condition ? "text-gray-300" : "text-gray-500"
+        } leading-5 font-poppins ${
+          condition ? "hover:text-white" : "hover:text-black"
+        } transition-all`}
+        onClick={(e) => {
+          const element = document.getElementById("section6");
+          element.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        Sponsors
       </button>
       <div
         className={`w-[4.5rem] h-[4.5rem] mt-0 lg:mt-4 -mb-3 lg:mb-1 ${
@@ -182,11 +182,11 @@ const NavBar = ({ consolee }) => {
           condition ? "hover:text-white" : "hover:text-black"
         } transition-all`}
         onClick={(e) => {
-          const element = document.getElementById("section6");
+          const element = document.getElementById("section7");
           element.scrollIntoView({ behavior: "smooth" });
         }}
       >
-        Sponsors
+        Our Team
       </button>
       <button
         className={`hidden lg:block text-xs w-1/12 ${
@@ -291,7 +291,7 @@ const NavBarForMobile = ({ consolee }) => {
           {userDetails ? (
             <Link
               to={"/portal/profile"}
-              className="w-8 h-8 rounded-full"
+              className={`w-8 h-8 rounded-full`}
               style={{
                 backgroundImage: `url(${userDetails?.profilePhoto})`,
                 backgroundPosition: "center",
@@ -300,8 +300,8 @@ const NavBarForMobile = ({ consolee }) => {
               }}
             ></Link>
           ) : (
-            <Link to={"/auth?type=login"} className="w-fit  rounded-lg text-black">
-              <FaRegUserCircle size={32} />
+            <Link to={"/auth?type=login"}>
+              <FaRegUserCircle className={`text-3xl opacity-80 ${condition ? "text-white" : "text-black"}`} />
             </Link>
           )}
         </div>
@@ -328,18 +328,6 @@ const NavBarForMobile = ({ consolee }) => {
           <button
             onClick={() => {
               setIsOpen(!isOpen);
-              const element = document.getElementById("section5");
-              element.scrollIntoView({ behavior: "smooth" });
-            }}
-            className={`w-full ${
-              condition ? "text-gray-200" : "text-gray-600"
-            } text-left text-base py-2`}
-          >
-            Workshops
-          </button>
-          <button
-            onClick={() => {
-              setIsOpen(!isOpen);
               const element = document.getElementById("section4");
               element.scrollIntoView({ behavior: "smooth" });
             }}
@@ -352,14 +340,14 @@ const NavBarForMobile = ({ consolee }) => {
           <button
             onClick={() => {
               setIsOpen(!isOpen);
-              const element = document.getElementById("section7");
+              const element = document.getElementById("section5");
               element.scrollIntoView({ behavior: "smooth" });
             }}
             className={`w-full ${
               condition ? "text-gray-200" : "text-gray-600"
             } text-left text-base py-2`}
           >
-            Our Team
+            Workshops
           </button>
           <button
             onClick={() => {
@@ -372,6 +360,18 @@ const NavBarForMobile = ({ consolee }) => {
             } text-left text-base py-2`}
           >
             Sponsors
+          </button>
+          <button
+            onClick={() => {
+              setIsOpen(!isOpen);
+              const element = document.getElementById("section7");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className={`w-full ${
+              condition ? "text-gray-200" : "text-gray-600"
+            } text-left text-base py-2`}
+          >
+            Our Team
           </button>
           <button
             onClick={() => {

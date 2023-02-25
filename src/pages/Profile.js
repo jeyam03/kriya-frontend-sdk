@@ -53,6 +53,7 @@ const Profile = () => {
       .map((event) => ({
         name: event.eventName,
         id: event.eventId,
+        date: event.date,
         desc: event.one_line_desc ? event.one_line_desc : event.description,
         category: event.category,
         time: event.timing.split("to")[0],
@@ -181,7 +182,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="w-full pr-8">
+          <div className="w-full lg:pr-8">
             <div className="flex items-center space-x-4 w-full">
               <MdOutlineEmojiEvents className="text-2xl text-white" />
               <h1 className="text-2xl">Registered Events</h1>
@@ -208,7 +209,7 @@ const Profile = () => {
                 <div className="">
                   <div className="flex items-center justify-between text-xs">
                     <p className="">Event ID: {event.eventId}</p>
-                    <p className="">Mar 24</p>
+                    <p className="">Mar {events.find((i) => i.id === event.eventId).date}</p>
                   </div>
                   <div className="flex items-center justify-between">
                     <Link
@@ -217,7 +218,7 @@ const Profile = () => {
                     >
                       {events.find((i) => i.id === event.eventId).name}
                     </Link>
-                    <p className="text-lg">
+                    <p className="text-sm lg:text-base">
                       {events.find((i) => i.id === event.eventId).time}
                     </p>
                   </div>

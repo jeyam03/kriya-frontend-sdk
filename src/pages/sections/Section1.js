@@ -123,21 +123,21 @@ const Section1 = () => {
           </button>
           <button
             onClick={() => {
-              const element = document.querySelector("#section5");
-              element.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
-          >
-            Workshops
-          </button>
-          <button
-            onClick={() => {
               const element = document.querySelector("#section4");
               element.scrollIntoView({ behavior: "smooth" });
             }}
             className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Paper Presentations
+          </button>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#section5");
+              element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
+          >
+            Workshops
           </button>
           <button
             onClick={() => {
@@ -289,17 +289,6 @@ const Section1 = () => {
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
-                  const element = document.getElementById("section5");
-                  element.scrollIntoView({ behavior: "smooth" });
-                }}
-                id="nav-button"
-                className={`w-full text-gray-600 text-left text-base py-2`}
-              >
-                Workshops
-              </button>
-              <button
-                onClick={() => {
-                  setIsOpen(!isOpen);
                   const element = document.getElementById("section4");
                   element.scrollIntoView({ behavior: "smooth" });
                 }}
@@ -307,6 +296,17 @@ const Section1 = () => {
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Paper Presentations
+              </button>
+              <button
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  const element = document.getElementById("section5");
+                  element.scrollIntoView({ behavior: "smooth" });
+                }}
+                id="nav-button"
+                className={`w-full text-gray-600 text-left text-base py-2`}
+              >
+                Workshops
               </button>
               <button
                 onClick={() => {
@@ -399,7 +399,7 @@ const Section1 = () => {
             </div>
             <div className="w-1/3 flex flex-col items-center justify-between space-y-2">
               <div className="text-5xl">
-                <Number n={4} />
+                <Number n={6} />
               </div>
               <h1 className="text-xs text-center tracking-wide uppercase">
                 Paper Presentations

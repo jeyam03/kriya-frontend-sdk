@@ -34,7 +34,7 @@ const Section6 = () => {
     <div className="w-full h-full relative">
       <section
         id="section6"
-        className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-16 flex flex-col-reverse lg:flex-row items-center"
+        className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-24 flex flex-col-reverse lg:flex-row items-center"
       >
         <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
           <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
