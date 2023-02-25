@@ -123,7 +123,7 @@ const Profile = () => {
                   </p>
                   <Link
                     className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                    to="/../?sn=section5"
+                    to="/auth/payment?type=GENERAL"
                   >
                     <p className="">Pay general registration fee !</p>
                     <IoIosArrowForward
