@@ -91,16 +91,8 @@ const Section6 = () => {
                     title="Frozen Stick"
                   />
                   <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
-                    title="Waffle Cart"
-                  />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
-                    title="Polar Bear"
-                  />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
-                    title="Frozen Stick"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                    title="Creamery"
                   />
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
@@ -115,6 +107,10 @@ const Section6 = () => {
                     title="Frozen Stick"
                   />
                   <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                    title="Creamery"
+                  />
+                  <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
                     title="Waffle Cart"
                   />
@@ -125,6 +121,26 @@ const Section6 = () => {
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
                     title="Frozen Stick"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                    title="Creamery"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                    title="Creamery"
                   />
                 </div>
               </div>
