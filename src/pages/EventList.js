@@ -42,6 +42,23 @@ const EventList = () => {
           </h1>
         </div> */}
         <h1
+          className={`text-4xl lg:text-5xl tracking-wide font-semibold text-center pt-8`}
+          id="gold"
+        >
+          GOLD EVENTS
+        </h1>
+        <EventsGrid
+          imgurl={
+            "https://media.istockphoto.com/id/1181359760/vector/gold-glitter-and-shiny-golden-rain-on-black-background-vector-square-luxury-background.jpg?s=612x612&w=0&k=20&c=L8On7JUZdmNYNTMBeD03-45lsBvaD1E0c2z8h-MsVOs="
+          }
+          arrowCircleStart="from-[#8B5523]"
+          arrowCircleEnd="to-[#F2CC3E]"
+          obj={events.filter((i) => i.category === "Gold")}
+          topCurve="bg-[#010101]"
+          rightCurve="bg-[#010101]"
+          iconImg={"https://cdn-icons-png.flaticon.com/512/3309/3309977.png"}
+        />
+        <h1
           className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
           id="kriyative"
         >
@@ -58,7 +75,9 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Kriyative")}
           topCurve="bg-[#7d1ab2]"
           rightCurve="bg-[#551789]"
-          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png"}
+          iconImg={
+            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png"
+          }
         />
 
         <h1
@@ -78,7 +97,9 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Brainiac")}
           topCurve="bg-[#770658]"
           rightCurve="bg-[#630a3d]"
-          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png"}
+          iconImg={
+            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png"
+          }
         />
 
         <h1
@@ -98,7 +119,9 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Coding")}
           topCurve="bg-[#b21a56]"
           rightCurve="bg-[#891750]"
-          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png"}
+          iconImg={
+            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png"
+          }
         />
 
         <h1
@@ -118,7 +141,9 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Circuit")}
           topCurve="bg-[#e04918]"
           rightCurve="bg-[#e04918]"
-          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png"}
+          iconImg={
+            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png"
+          }
         />
 
         <h1
@@ -138,7 +163,9 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Core Engineering")}
           topCurve="bg-[#066b77]"
           rightCurve="bg-[#0a4c63]"
-          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png"}
+          iconImg={
+            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png"
+          }
         />
 
         <h1
@@ -158,24 +185,9 @@ const EventList = () => {
           obj={events.filter((i) => i.category === "Management")}
           topCurve="bg-[#28a5ea]"
           rightCurve="bg-[#28a5ea]"
-          iconImg={"https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png"}
-        />
-        <h1
-          className={`text-4xl lg:text-5xl tracking-wide font-semibold text-center pt-8`}
-          id="gold"
-        >
-          GOLD EVENTS
-        </h1>
-        <EventsGrid
-          imgurl={
-            "https://media.istockphoto.com/id/1181359760/vector/gold-glitter-and-shiny-golden-rain-on-black-background-vector-square-luxury-background.jpg?s=612x612&w=0&k=20&c=L8On7JUZdmNYNTMBeD03-45lsBvaD1E0c2z8h-MsVOs="
+          iconImg={
+            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png"
           }
-          arrowCircleStart="from-[#8B5523]"
-          arrowCircleEnd="to-[#F2CC3E]"
-          obj={events.filter((i) => i.category === "Gold")}
-          topCurve="bg-[#010101]"
-          rightCurve="bg-[#010101]"
-          iconImg={"https://cdn-icons-png.flaticon.com/512/3309/3309977.png"}
         />
       </section>
     </div>
@@ -193,7 +205,6 @@ const EventsGrid = ({
   rightCurve,
   iconImg,
 }) => {
-
   const toTitleCase = (phrase) => {
     const wordsToIgnore = ["of", "in", "for", "and", "a", "an", "or"];
     const wordsToCapitalize = ["it", "cad"];

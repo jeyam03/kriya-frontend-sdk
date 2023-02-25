@@ -283,7 +283,7 @@
   {
     "wid": "WKSP0008",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570949/Workshop/Nuts_and_Bots_with_naveen_1_mc6blf.png",
-    "fee": 300,
+    "fee": 200,
     "assnName": "Production Engineering Association",
     "workName": "Nuts and Bots with Naveen",
     "date": "26",
@@ -455,7 +455,7 @@
   {
     "wid": "WKSP0013",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535553/Workshop/Solaris-min_ydunjb.png",
-    "fee": 200,
+    "fee": 250,
     "assnName": "Astronomy Club",
     "workName": "Solaris (Workshop + Skywatch)",
     "date": "25",

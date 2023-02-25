@@ -783,7 +783,7 @@
   },
   {
     "eventName": "ProTech",
-    "category": "Gold",
+    "category": "Brainiac",
     "one_line_desc": "This will be a technical competition that attempts to develop young people's tech knowledge over a series of three rounds that will grow progressively harder and more engaging.",
     "description": "This is a technical event that aims to bring out the tech savvy in young minds. The event comprises 3 rounds, which consecutively gets more challenging. All the rounds are engineered to accommodate participants from all technical departments, however prior knowledge in physical Sciences or Coding is a prerequisite to participate in the event.",
     "round_title_1": "Round 1",
@@ -826,6 +826,29 @@
     "eventRules": "Participants should strictly adhere to the time limit.\n Participants are barred from using mobile phones and the internet. \n Decision of the judges shall be final. \n Participants shall not indulge in any form of mall practice.",
     "date": "24",
     "timing": "1:30 PM - 4:30 PM"
+  },
+  {
+    "eventName": "League of Drones",
+    "category": "Gold",
+    "one_line_desc": "This will be a technical competition that attempts to develop young people's tech knowledge over a series of three rounds that will grow progressively harder and more engaging.",
+    "description": "Build your own drone that travel from source point (starting point) to destination point (ending point) crossing various hurdles along the path of journey of laps. In this drone championship event, do you want to compete with others and become the best drone pilot champion. This is the place where you can show off your piloting skills. It is the game where the participants control drone's stability. In this event there will be totally three rounds. Each round consists of different points level. Based on the performance marks and lap timing the points will be awarded to the team. Finally, the winning team will be selected based on the points scored.",
+    "round_title_1": "Race for stability",
+    "round_desc_1": "There will be a track of different raddles. The participant must complete one lap. The points will be allocated to all the hurdles when they pass. The total points scored by the team will be selected to next round.",
+    "round_title_2": "Time to prove best pilot",
+    "round_desc_2": "In this round, each team should be complete the track (one lap). The lap timing will be noted. There will be negative points (time) if the quad hits the raddles. The pilot can travel with the drone. (LOS)",
+    "round_title_3": "Chance to win the race",
+    "round_desc_3": "In this round top 4 to 5 teams will be selected. In this round they should complete the lap. No negative points will be awarded. But the pilot should stand at one place and drive the drone, 1 of the team mate can move with drone to navigate.",
+    "round_title_4": "",
+    "round_desc_4": "",
+    "eventId": "EVNT0039",
+    "contact_name_1": "Dharmendra R",
+    "contact_mobile_1": 9486060706,
+    "contact_name_2": "Mano M",
+    "contact_mobile_2": 9360007515,
+    "hall": "N Block Ground",
+    "eventRules": "Drone frame dimension should be in range of (210mm-350mm).\nEach Team can have maximum of 3 members.\nEach participated team should bring their own drone and fly. Drone pilot can not be changed once they started.\nDrone should be at good condition.\nParticipants should bring required spare parts required for the event.\nDrones cannot be exchanged with another team.\nOne drone cannot be driven with more than i pilot.\nQuad should not fly above 15 ft high.\nEvent judges reserve all the rights to disqualify in case of any misbehavior.\nEvent judges rules and are final.\nNo extra time will be allocated for any reasons, after every round there will be 2 hours break utilize those time for charging.\nJudges result is the final.",
+    "date": "25",
+    "timing": "1:00 PM - 4:00 PM"
   },
   {
     "eventName": "KRIYA OPEN QUIZ",

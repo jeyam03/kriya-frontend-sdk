@@ -7,7 +7,7 @@ import {
   fetchUserByEmail,
   fetchWorkshops,
 } from "../API/call";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineHome } from "react-icons/ai";
 import { GrWorkshop } from "react-icons/gr";
 import { MdOutlineEmojiEvents } from "react-icons/md";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
@@ -95,6 +95,13 @@ const NavBarForDesktop = () => {
               Register / Login
             </button>
           )}
+          <Link
+            to="/"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2 flex items-center space-x-4"
+          >
+            <AiOutlineHome className="text-2xl" />
+            <p className="">Home</p>
+          </Link>
           <Link
             to="/portal/event"
             className="w-full text-gray-600 text-left hover:text-black text-base py-2 flex items-center space-x-4"
