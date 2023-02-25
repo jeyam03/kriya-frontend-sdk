@@ -68,7 +68,6 @@ const OtherPayments = ({ switchPage }) => {
       name: userDetails.name,
       kriyaId: userDetails.kriyaId,
       fee: isPSG ? 150 : 200,
-      // fee: isPSG ? 1 : 2,
     })
       .then((res) => {
         setTransaction(res.data);
@@ -82,8 +81,7 @@ const OtherPayments = ({ switchPage }) => {
       email: localStorage.getItem("email"),
       name: userDetails.name,
       kriyaId: userDetails.kriyaId,
-      // fee: workshopDetails.fee,
-      fee: 1,
+      fee: workshopDetails.fee,
     })
       .then((res) => {
         setTransaction(res.data);
