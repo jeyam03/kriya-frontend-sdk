@@ -431,7 +431,7 @@ const TeamDetails = [
     vertical: "Office Bearers",
     position: "Chairman",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Dharmendra_hwqi9a.jpg",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677312510/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/IMG_5758_ksblp7.jpg",
   },
   {
     name: "Mano M",

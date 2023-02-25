@@ -72,7 +72,7 @@ const NavBarForDesktop = () => {
           to={"/"}
           className="w-28 h-28 mt-4 -mb-3"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
