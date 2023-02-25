@@ -65,13 +65,14 @@ const Profile = () => {
     <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
-        <div className="h-48 w-48 rounded-full bg-white lg:-mt-36"
-        style={{
-          backgroundImage: `url(${userDetails?.profilePhoto})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
+        <div
+          className="h-48 w-48 rounded-full bg-white lg:-mt-36"
+          style={{
+            backgroundImage: `url(${userDetails?.profilePhoto})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         ></div>
         <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left">
           {userDetails ? userDetails?.name : "XXXXX"}
@@ -209,7 +210,9 @@ const Profile = () => {
                 <div className="">
                   <div className="flex items-center justify-between text-xs">
                     <p className="">Event ID: {event.eventId}</p>
-                    <p className="">Mar {events.find((i) => i.id === event.eventId).date}</p>
+                    <p className="">
+                      Mar {events.find((i) => i.id === event.eventId).date}
+                    </p>
                   </div>
                   <div className="flex items-center justify-between">
                     <Link
@@ -233,8 +236,9 @@ const Profile = () => {
               <h1 className="text-2xl">Registered Workshops</h1>
             </div>
             <div className="mt-8 space-y-4">
-              {paymentDetails?.filter((w) => w.type === "WORKSHOP").length ===
-                0 && (
+              {paymentDetails?.filter(
+                (w) => w.type === "WORKSHOP" && w.status === "SUCCESS"
+              ).length === 0 && (
                 <div className="space-y-4">
                   <p className="text-lg">
                     Uh oh! You have'nt registered for any workshops yet !
