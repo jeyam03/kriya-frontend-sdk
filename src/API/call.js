@@ -9,6 +9,7 @@ const BASE_URL = `${BACKEND_URL}/api`;
 const USER_URL = `${BASE_URL}/auth`;
 const EVENT_URL = `${BASE_URL}/register`;
 const PAYMENT_URL = `${BASE_URL}/payment`;
+const PAPER_URL = `${BASE_URL}/paper`;
 
 export const fetchLogin = (formData) =>
   axios.post(`${USER_URL}/login`, formData, {});
@@ -58,6 +59,12 @@ export const fetchEventDetailsByEmail = (email) =>
 export const fetchEventRegister = (formData) =>
   axios.post(`${EVENT_URL}/`, formData, {});
 
+export const fetchPaperRegister = (formData) =>
+  axios.post(`${PAPER_URL}/`, formData, {});
+
+export const fetchPaperDetailsByEmail = (email) =>
+  axios.get(`${PAPER_URL}/papers-from-user/${email}`, {});
+  
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 
 // export const fetchEventById = (id) => axios.get(`${EVENT_URL}/${id}`);
