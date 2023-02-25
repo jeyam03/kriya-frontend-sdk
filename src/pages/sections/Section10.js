@@ -285,13 +285,13 @@ const Section10 = ({ scrollYByVH }) => {
             </p>
           </Link>
           <Link
-            className="flex flex-col justify-center items-center h-32 rounded-xl bg-center bg-cover bg-no-repeat bg-[url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677280480/5111951_mifnpc.jpg)] w-full"
+            className="flex flex-col justify-center items-center h-32 rounded-xl bg-center bg-cover bg-no-repeat bg-[url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677316322/copter_blue_load_Converted_vh1k8i.png)] w-full"
             to="/portal/event/EVNT0036"
           >
             <p
               className={`text-3xl uppercase text-white font-bold font-poppins backdrop-blur-sm`}
             >
-              Pro Tech
+              League of Drones
             </p>
             <p
               className={`text-gray-200 hover:text-white uppercase tracking-wider text-sm mt-2 backdrop-blur-sm`}
