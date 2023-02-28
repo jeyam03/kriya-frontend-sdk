@@ -271,6 +271,13 @@ const NavBarForMobile = () => {
           } transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col px-6">
+          <Link
+            to="/"
+            id="navElements"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+          >
+            Home
+          </Link>
           {(localStorage.getItem("token") && userDetails) ? (
             <Link
               to="/portal/profile"
