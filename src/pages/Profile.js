@@ -5,6 +5,7 @@ import {
   MdEventAvailable,
   MdOutlineCancel,
   MdOutlineEmojiEvents,
+  MdOutlineModeEditOutline,
 } from "react-icons/md";
 import { BsCheck2Circle } from "react-icons/bs";
 import {
@@ -66,15 +67,24 @@ const Profile = () => {
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
         <div
-          className="h-48 w-48 rounded-full bg-white lg:-mt-36"
+          className="h-48 w-48 rounded-full bg-white lg:-mt-36 relative"
           style={{
             backgroundImage: `url(${userDetails?.profilePhoto})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
-        ></div>
-        <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left px-4">
+        >
+          {/* <button
+            className="text-2xl bg-gray-100 text-black rounded-full p-2 absolute bottom-6 -right-2"
+            onClick={() => {
+              
+            }}
+          >
+            <MdOutlineModeEditOutline />
+          </button> */}
+        </div>
+        <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left px-4 lg:px-0">
           {userDetails ? userDetails?.name : "XXXXX"}
         </h1>
         <h3 className="text-sm text-gray-300 mt-2 tracking-widest text-center lg:text-left ">
@@ -160,11 +170,10 @@ const Profile = () => {
                       </div>
                     </div>
                     <div
-                      className={`${
-                        payment.status === "SUCCESS"
-                          ? "text-green-500"
-                          : "text-red-500"
-                      } flex items-center justify-between`}
+                      className={`${payment.status === "SUCCESS"
+                        ? "text-green-500"
+                        : "text-red-500"
+                        } flex items-center justify-between`}
                     >
                       <p className="text-lg w-5/6">
                         {payment.eventId === "-1"
@@ -239,22 +248,22 @@ const Profile = () => {
               {paymentDetails?.filter(
                 (w) => w.type === "WORKSHOP" && w.status === "SUCCESS"
               ).length === 0 && (
-                <div className="space-y-4">
-                  <p className="text-lg">
-                    Uh oh! You have'nt registered for any workshops yet !
-                  </p>
-                  <Link
-                    className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
-                    to="/../?sn=section5"
-                  >
-                    <p className="">Register for workshops here !</p>
-                    <IoIosArrowForward
-                      className="ml-1 group-hover:ml-2 transition-all"
-                      size={16}
-                    />
-                  </Link>
-                </div>
-              )}
+                  <div className="space-y-4">
+                    <p className="text-lg">
+                      Uh oh! You have'nt registered for any workshops yet !
+                    </p>
+                    <Link
+                      className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                      to="/../?sn=section5"
+                    >
+                      <p className="">Register for workshops here !</p>
+                      <IoIosArrowForward
+                        className="ml-1 group-hover:ml-2 transition-all"
+                        size={16}
+                      />
+                    </Link>
+                  </div>
+                )}
               {paymentDetails
                 ?.filter((w) => w.type === "WORKSHOP")
                 .map((workshop) => (

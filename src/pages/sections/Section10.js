@@ -286,7 +286,7 @@ const Section10 = ({ scrollYByVH }) => {
           </Link>
           <Link
             className="flex flex-col justify-center items-center h-32 rounded-xl bg-center bg-cover bg-no-repeat bg-[url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677316322/copter_blue_load_Converted_vh1k8i.png)] w-full"
-            to="/portal/event/EVNT0036"
+            to="/portal/event/EVNT0039"
           >
             <p
               className={`text-3xl uppercase text-white font-bold font-poppins backdrop-blur-sm`}

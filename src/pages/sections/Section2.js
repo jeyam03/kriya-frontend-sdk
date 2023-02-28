@@ -101,8 +101,8 @@ const Section2 = ({ scrollYByVH }) => {
 
   useEffect(() => { }, []);
 
-  const condition = `${parseFloat(consolee) <= 0.75 ? "text-[#181818]" : "text-white"}`;
-  const borderCondition = `${parseFloat(consolee) <= 0.75 ? "border-[#181818]" : "border-white"}`;
+  const condition = `${parseFloat(consolee) < 0.75 ? "text-[#181818]" : "text-white"}`;
+  const borderCondition = `${parseFloat(consolee) < 0.75 ? "border-[#181818]" : "border-white"}`;
 
   return (
     <div className="w-full h-full relative">
@@ -184,7 +184,7 @@ const NumberAndTag = ({ number, tag, fadeInAnimate }) => {
     );
   }, [consolee]);
   
-  const condition = `${parseFloat(consolee) <= 0.75 ? "text-[#181818]" : "text-white"}`;
+  const condition = `${parseFloat(consolee) < 0.75 ? "text-[#181818]" : "text-white"}`;
   const gradientCondition = `${parseFloat(consolee) <= 0.75 ? "from-[rgba(18,18,18,0.3)] to-[rgba(18,18,18,0.6)]" : "from-[rgba(255,255,255,0.3)] to-[rgba(255,255,255,0.6)]"}`;
 
   return (
@@ -213,7 +213,7 @@ const NumberAndTagForMobile = ({ number, tag }) => {
     );
   }, [consolee]);
   
-  const condition = `${parseFloat(consolee) <= 0.75 ? "text-[#181818]" : "text-white"}`;
+  const condition = `${parseFloat(consolee) < 0.75 ? "text-[#181818]" : "text-white"}`;
 
   return (
     <div className={`space-y-2 flex flex-col justify-center ${condition}`}>

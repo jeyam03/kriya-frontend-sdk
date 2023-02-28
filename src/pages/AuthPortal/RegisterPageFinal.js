@@ -44,7 +44,7 @@ const RegisterPageFinal = ({ switchPage }) => {
         <b className="font-semibold">
           {formData ? formData.email : "XXXXXX@.com"}
         </b>
-        . You can login to the portal with your Kriya ID or your email.
+        . You can login to the portal with your email address.
       </p>
       <p className=""> Thank you for registering for Kriya 2023.</p>
       <button

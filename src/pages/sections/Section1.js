@@ -17,7 +17,7 @@ function Number({ n }) {
   return <animated.span>{props.number.to((n) => n.toFixed(0))}</animated.span>;
 }
 
-const Section1 = () => {
+const Section1 = ({scrollByVH}) => {
   const navigate = useNavigate();
   const slides = [
     "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
@@ -59,6 +59,19 @@ const Section1 = () => {
       resetTimeout();
     };
   }, [currentSlide]);
+
+  const [consolee, setConsolee] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener(
+      "scroll",
+      (event) => {
+        setConsolee((window.pageYOffset / window.innerHeight).toFixed(2));
+      },
+      { passive: true }
+    );
+  }, [consolee]);
+
 
   useEffect(() => {
     const element = document.querySelector("#anchor1");
@@ -439,7 +452,7 @@ const Section1 = () => {
             </div>
           )}
         </div>
-        <div className="flex flex-row space-x-8 lg:space-x-4 w-fit">
+        <div className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${consolee >= 0.75 && "invert"}`}>
           <div
             className="w-16 h-auto"
             style={{
@@ -449,7 +462,7 @@ const Section1 = () => {
               backgroundSize: "contain",
             }}
           ></div>
-          <div className=" text-sm lg:text-base w-fit ">
+          <div className=" text-sm lg:text-base w-fit  ">
             <p className="uppercase tracking-wider font-poppins text-sm w-fit">
               Presented By
             </p>
