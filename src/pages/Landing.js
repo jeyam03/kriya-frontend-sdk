@@ -75,7 +75,7 @@ const Landing = () => {
           scrollSnapType: "y mandatory",
         }}
       >
-        <Section1 />
+        <Section1 scrollYByVH={consolee} />
         <Section2 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
         <Section10 scrollYByVH={consolee} />
