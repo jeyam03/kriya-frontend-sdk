@@ -151,9 +151,11 @@ const Workshop = () => {
                 <BiRupee />
               </p>
               <div className="flex flex-col pl-2">
-                <p className="text-lg lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  Rs. {workshopDetail.fee}
+                <p className="text-lg lg:text-2xl font-semibold tracking-wide text-[#3c4043]">
+                  Rs. {workshopDetail.fee}*
+                  <span className="line-through text-sm ml-2 font-normal">Rs. {workshopDetail.alteredFee}</span>
                 </p>
+                <p className="text-xs">* Early bird offer</p>
               </div>
             </div>
           </div>
