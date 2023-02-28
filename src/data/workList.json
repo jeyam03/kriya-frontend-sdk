@@ -2,6 +2,7 @@
   {
     "wid": "WKSP0001",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535551/Workshop/Microcontroller_with_IOT_qzmkrm.png",
+    "alteredFee": 500,
     "fee": 600,
     "assnName": "IEEE EMBS Students Branch",
     "workName": " IoT system design using Embedded C and Python",
@@ -32,7 +33,9 @@
         },
         {
           "time": "11.45 - 1.00",
-          "description": ["Iot communication models – HTTP & MQTT protocol"]
+          "description": [
+            "Iot communication models – HTTP & MQTT protocol"
+          ]
         },
         {
           "time": "2.00 - 5.30",
@@ -48,6 +51,7 @@
   {
     "wid": "WKSP0002",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535551/Workshop/Mobile_Application_Development_vuwbb9.png",
+    "alteredFee": 650,
     "fee": 800,
     "assnName": "CAA(Computer Applications Association)",
     "workName": "Mobile App Development",
@@ -69,31 +73,45 @@
         },
         {
           "time": "10:00 - 10:30",
-          "description": ["Android Studio, Framework, Basic widgets"]
+          "description": [
+            "Android Studio, Framework, Basic widgets"
+          ]
         },
         {
           "time": "10:30 - 10:45",
-          "description": ["Short Recess"]
+          "description": [
+            "Short Recess"
+          ]
         },
         {
           "time": "10:45 - 11:30",
-          "description": ["View Based Architecture - XML and Java/Kotlin"]
+          "description": [
+            "View Based Architecture - XML and Java/Kotlin"
+          ]
         },
         {
           "time": "11:30 - 12:30",
-          "description": ["Building User Interfaces"]
+          "description": [
+            "Building User Interfaces"
+          ]
         },
         {
           "time": "01:30 - 02:30",
-          "description": ["Using Resources, Media and Menus to build"]
+          "description": [
+            "Using Resources, Media and Menus to build"
+          ]
         },
         {
           "time": "02:30 - 03:30",
-          "description": ["Jetpack Compose – Modern way of App"]
+          "description": [
+            "Jetpack Compose – Modern way of App"
+          ]
         },
         {
           "time": "03:45 - 04:45",
-          "description": ["Cross platform app development using Flutter"]
+          "description": [
+            "Cross platform app development using Flutter"
+          ]
         }
       ]
     ]
@@ -101,6 +119,7 @@
   {
     "wid": "WKSP0003",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676574196/Workshop/Deep_Learning_Unlocking_the_Full_Potential-min_yycxk1.png",
+    "alteredFee": 500,
     "fee": 600,
     "assnName": "Institute of Electrical & Electronics Engg. (IEEE) (Students Chapter)",
     "workName": "Deep Learning: Unlocking the Full Potential",
@@ -122,11 +141,15 @@
         },
         {
           "time": "11:15 AM - 12:30 PM",
-          "description": ["Convolutional Neural Networks\n"]
+          "description": [
+            "Convolutional Neural Networks\n"
+          ]
         },
         {
           "time": "2:00 PM - 3:30 PM",
-          "description": ["Language Modelling and Recurrent Neural Networks"]
+          "description": [
+            "Language Modelling and Recurrent Neural Networks"
+          ]
         },
         {
           "time": "3:45 PM - 5:00 PM",
@@ -140,6 +163,7 @@
   {
     "wid": "WKSP0004",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/R_Programming_in_Data_Analytics-min_cozob1.png",
+    "alteredFee": 500,
     "fee": 600,
     "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
     "workName": "R Programming in Data Analytics",
@@ -155,8 +179,9 @@
       [
         {
           "time": "9.30 AM - 10.30 AM",
-          "description": ["Introduction to programming with R"]
-
+          "description": [
+            "Introduction to programming with R"
+          ]
         },
         {
           "time": "10.45 AM - 12.30 PM",
@@ -166,11 +191,15 @@
         },
         {
           "time": "1.30 PM - 2.30 PM",
-          "description": ["Participants are taught how to make use of R to do statistical computations."]
+          "description": [
+            "Participants are taught how to make use of R to do statistical computations."
+          ]
         },
         {
           "time": "2.45 PM TO 4.30 PM",
-          "description": ["Particpants are taught on the various Data Visualization techniques using R"]
+          "description": [
+            "Particpants are taught on the various Data Visualization techniques using R"
+          ]
         }
       ]
     ]
@@ -178,6 +207,7 @@
   {
     "wid": "WKSP0005",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535560/Workshop/Workshop_and_Gaming-min-min_bd3khz.png",
+    "alteredFee": 400,
     "fee": 500,
     "assnName": "Information Technology Association",
     "workName": "Game Development",
@@ -193,7 +223,9 @@
       [
         {
           "time": "10.30 AM - 12.30 PM",
-          "description": ["Introduction to game development softwares such as Unity and Unreal engine and its hands-on implementation methods."]
+          "description": [
+            "Introduction to game development softwares such as Unity and Unreal engine and its hands-on implementation methods."
+          ]
         },
         {
           "time": "1.30 PM - 3.30 PM",
@@ -207,6 +239,7 @@
   {
     "wid": "WKSP0006",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Sensor_Interface_and_Integration-01-min_n718v0.png",
+    "alteredFee": 650,
     "fee": 800,
     "assnName": "American Society of Mechanical Engineers",
     "workName": "Sensor Interface and Integration",
@@ -228,15 +261,21 @@
         },
         {
           "time": "11:30 AM TO 12:30 PM",
-          "description": ["Hands-on Training I"]
+          "description": [
+            "Hands-on Training I"
+          ]
         },
         {
           "time": "1:30 PM - 2:30 PM",
-          "description": ["Hands-on Training II"]
+          "description": [
+            "Hands-on Training II"
+          ]
         },
         {
           "time": "2:45 PM - 3:45 PM",
-          "description": ["Hands-on Training III"]
+          "description": [
+            "Hands-on Training III"
+          ]
         }
       ]
     ]
@@ -244,6 +283,7 @@
   {
     "wid": "WKSP0007",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535552/Workshop/IOT_for_Mechanical_Application-min_cxs3mc.png",
+    "alteredFee": 400,
     "fee": 500,
     "assnName": "Indian Institution of Industrial Engineering (Students Chapter)",
     "workName": "IOT for Mechanical Applications",
@@ -259,7 +299,9 @@
       [
         {
           "time": "9:00 AM - 10:30 AM",
-          "description": ["Introduction to the basic concepts of IOT, its features and implementations"]
+          "description": [
+            "Introduction to the basic concepts of IOT, its features and implementations"
+          ]
         },
         {
           "time": "10:45 AM - 12:15 PM",
@@ -275,7 +317,9 @@
         },
         {
           "time": "02:30 PM - 04:00 PM",
-          "description": ["An interactive hands-on training with IoT kits"]
+          "description": [
+            "An interactive hands-on training with IoT kits"
+          ]
         }
       ]
     ]
@@ -283,7 +327,8 @@
   {
     "wid": "WKSP0008",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570949/Workshop/Nuts_and_Bots_with_naveen_1_mc6blf.png",
-    "fee": 200,
+    "alteredFee": 200,
+    "fee": 250,
     "assnName": "Production Engineering Association",
     "workName": "Nuts and Bots with Naveen",
     "date": "26",
@@ -304,23 +349,33 @@
         },
         {
           "time": "2:30 PM - 3:00 PM",
-          "description": ["Real-world demands and problems."]
+          "description": [
+            "Real-world demands and problems."
+          ]
         },
         {
           "time": "3:00 PM - 4:00 PM",
-          "description": ["All about 3D printing with a live demonstration"]
+          "description": [
+            "All about 3D printing with a live demonstration"
+          ]
         },
         {
           "time": "4:00 PM - 4:15 PM",
-          "description": ["Powerwall technology"]
+          "description": [
+            "Powerwall technology"
+          ]
         },
         {
           "time": "4:15 PM - 4:30 PM",
-          "description": ["Bots that assist humans"]
+          "description": [
+            "Bots that assist humans"
+          ]
         },
         {
           "time": "4:30 PM - 5:30 PM",
-          "description": ["All about EVs and their future."]
+          "description": [
+            "All about EVs and their future."
+          ]
         }
       ]
     ]
@@ -328,6 +383,7 @@
   {
     "wid": "WKSP0009",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Basics_of_ROS_and_Hardware_Interfacing_with_it_mcyp9b.png",
+    "alteredFee": 400,
     "fee": 500,
     "assnName": "Robotics & Automation Engineering Association",
     "workName": "Build your Custom Robot in ROS",
@@ -343,7 +399,9 @@
       [
         {
           "time": "9:00 AM - 11:00 PM",
-          "description": ["Introduction to ROS Framework and Prerequisites"]
+          "description": [
+            "Introduction to ROS Framework and Prerequisites"
+          ]
         },
         {
           "time": "11:15 PM - 1:00 PM",
@@ -364,12 +422,12 @@
           ]
         }
       ]
-      
     ]
   },
   {
     "wid": "WKSP0010",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535554/Workshop/CREATIVE_FUSION_A_Hands-On_Workshop_on_Photoshop_Blender_Video_Editing_and_Poster_Design_2_-min-min_sum9sa.png",
+    "alteredFee": 300,
     "fee": 400,
     "assnName": "Radio Hub",
     "workName": "Creative Fusion",
@@ -401,6 +459,7 @@
   {
     "wid": "WKSP0011",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676574194/Workshop/Non-Destructive_Testing-min_nnerrb.png",
+    "alteredFee": 250,
     "fee": 300,
     "assnName": "Metallurgical Engineering Association",
     "workName": "Non-Destructive Testing",
@@ -416,11 +475,15 @@
       [
         {
           "time": "9:00 AM - 10:30 AM",
-          "description": ["SESSION 1 – INTRODUCTION TO NDT"]
+          "description": [
+            "SESSION 1 – INTRODUCTION TO NDT"
+          ]
         },
         {
           "time": "10:30 AM - 12:00 PM",
-          "description": ["SESSION 2 - PHASED ARRAY TECHNIQUES"]
+          "description": [
+            "SESSION 2 - PHASED ARRAY TECHNIQUES"
+          ]
         }
       ]
     ]
@@ -428,6 +491,7 @@
   {
     "wid": "WKSP0012",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570948/Workshop/FPGA_based_SoC_Design_1_wuocut.png",
+    "alteredFee": 350,
     "fee": 400,
     "assnName": "Electrical and Communication Engineering Association",
     "workName": "FPGA Based System Design",
@@ -439,15 +503,19 @@
     "c2Name": "Praveenbabu R S",
     "c2Num": "9994542649",
     "desc": "The objective of this workshop is to give an overview of the FPGA design flow, Hardware description languages (HDLs) programming, and provide experience with Xilinx Vivado Platform. Implementation of digital logic designs, including finite state machines and data path circuits. Use of IP cores and embedded processors in FGPA based System on Chips(SOC) Design. Techniques for debugging and testing FGPA based systems. At last, the participants will be able to design, simulate, implement and test their own FGPA-based designs by the end of the workshop.",
-    "agenda":  [
+    "agenda": [
       [
         {
           "time": "9:30 AM - 12:30 PM",
-          "description": ["SESSION 1 – Introduction to Simple Digital Circuits Implementation and Basic Knowledge of Xilinx Platform"]
+          "description": [
+            "SESSION 1 – Introduction to Simple Digital Circuits Implementation and Basic Knowledge of Xilinx Platform"
+          ]
         },
         {
           "time": "1:30 PM - 4:30 PM",
-          "description": ["SESSION 2 - Simulation in Xilinx Vivado and implementation of combinational and sequential circuits"]
+          "description": [
+            "SESSION 2 - Simulation in Xilinx Vivado and implementation of combinational and sequential circuits"
+          ]
         }
       ]
     ]
@@ -455,7 +523,8 @@
   {
     "wid": "WKSP0013",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535553/Workshop/Solaris-min_ydunjb.png",
-    "fee": 250,
+    "alteredFee": 250,
+    "fee": 300,
     "assnName": "Astronomy Club",
     "workName": "Solaris (Workshop + Skywatch)",
     "date": "25",
@@ -466,8 +535,7 @@
     "c2Name": "HAYAGREEV RETHINAVEL",
     "c2Num": "9940922937",
     "desc": "This event consists of a workshop followed by a sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained, Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by a sky watch for the participants where telescope handling is also taught.",
-    "agenda":
-     [
+    "agenda": [
       [
         {
           "time": "9:00 AM - 10:30 AM",
@@ -499,7 +567,8 @@
   {
     "wid": "WKSP0014",
     "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/World_of_Biotechnology-min_dukug0.png",
-    "fee": 300,
+    "alteredFee": 300,
+    "fee": 350,
     "assnName": "Biotechnology Association",
     "workName": "Tensorflow Application In Biotechnology",
     "date": "26",
@@ -510,19 +579,25 @@
     "c2Name": "ILAKKIA V K",
     "c2Num": "6383233795",
     "desc": "Tensorflow is an end to end machine learning platform. This workshop teaches you how to build deep learning models from scratch using real world datasets with the tensorflow framework. Also this workshop gives you a insight on how tensorflow is useful in the field of biotechnology. ",
-    "agenda":  [
+    "agenda": [
       [
         {
           "time": "9:00 AM - 12:00 PM",
-          "description": ["SESSION 1 – Introduction on basic concepts of tensorflow and followed by a coding session"]
+          "description": [
+            "SESSION 1 – Introduction on basic concepts of tensorflow and followed by a coding session"
+          ]
         },
         {
           "time": "1:30 PM - 3:00 PM",
-          "description": ["SESSION 2 - MRI analysis using tensorflow"]
+          "description": [
+            "SESSION 2 - MRI analysis using tensorflow"
+          ]
         },
         {
           "time": "3:30 PM - 5:30 PM",
-          "description": ["SESSION 3 - Talk on research in (Biotechnology Field) using tensorflow and question & answer session"]
+          "description": [
+            "SESSION 3 - Talk on research in (Biotechnology Field) using tensorflow and question & answer session"
+          ]
         }
       ]
     ]

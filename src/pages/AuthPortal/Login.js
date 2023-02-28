@@ -53,7 +53,7 @@ const Login = ({ switchPage }) => {
       </div>
       <div className="w-full space-y-4 py-4">
         <TextInput
-          title="Email / Kriya ID"
+          title="Email"
           type="email"
           className=""
           valueState={[email, setEmail]}
