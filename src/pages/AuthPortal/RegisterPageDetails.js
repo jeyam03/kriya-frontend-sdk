@@ -7,6 +7,7 @@ import colleges from "../CollegeList";
 import departments from "../DepartmentList";
 import { toast } from "react-hot-toast";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
+import referralCodes from "../../data/referralCodes";
 
 const PSG_COLLEGE =
   "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
@@ -19,6 +20,7 @@ const RegisterPageDetails = ({ switchPage }) => {
     email: "",
     college: "",
     source: "",
+    referral: "KRI-",
     department: "",
     year: "",
     isPSGStudent: false,
@@ -61,6 +63,18 @@ const RegisterPageDetails = ({ switchPage }) => {
     if (!formData.college) return toast.error("Please select your college");
     if (!formData.department) return toast.error("Please select your department");
     if (!formData.year) return toast.error("Please select your year");
+
+    if (formData.referral.trim().length > 4) {
+      if (!referralCodes.includes(formData.referral.trim())) {
+        toast.error("Invalid referral code");
+        return;
+      } else {
+        formData.referral = formData.referral.trim();
+      }
+    }
+    else {
+      formData.referral = null;
+    }
 
     if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))) {
       toast.error("Please enter a valid email address");
@@ -161,6 +175,14 @@ const RegisterPageDetails = ({ switchPage }) => {
         valueState={[
           formData.phone,
           (val) => setFormData({ ...formData, phone: val }),
+        ]}
+      />
+      <TextInput
+        title="Referral Code (Optional)"
+        className=""
+        valueState={[
+          formData.referral,
+          (val) => setFormData({ ...formData, referral: val }),
         ]}
       />
       <Dropdown
