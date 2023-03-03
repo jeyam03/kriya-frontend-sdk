@@ -23,6 +23,7 @@ import AuthProvider from "./pages/AuthProvider";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import OtherPayments from "./pages/AuthPortal/OtherPayments";
 import GoogleFailure from "./pages/MiddlePorts/GoogleFailure";
+import RegisterRedirectForReferral from "./pages/MiddlePorts/RegisterRedirectForReferral";
 
 const App = () => {
   return (
@@ -40,6 +41,11 @@ const App = () => {
               <Route path="profile" element={<ProtectedRoute />}>
                 <Route index element={<Profile />} />
               </Route>
+            </Route>
+            <Route path="register" element={<Outlet/>}>
+              <Route path="by-referral" element={<RegisterRedirectForReferral />} />
+              <Route path="*" element={<Navigate to="/auth?type=signup&page=switch" />} />
+              <Route index element={<Navigate to="/auth?type=signup&page=switch" />} />
             </Route>
             <Route path="payment/failure" element={<PaymentFailure />} />
             <Route path="payment/success" element={<PaymentSuccess />} />

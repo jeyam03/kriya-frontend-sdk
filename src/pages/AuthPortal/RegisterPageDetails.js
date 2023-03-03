@@ -14,6 +14,7 @@ const PSG_COLLEGE =
 
 const RegisterPageDetails = ({ switchPage }) => {
   const [authEmail, setAuthEmail] = useState("");
+  const [refDisable, setrefDisable] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -30,6 +31,13 @@ const RegisterPageDetails = ({ switchPage }) => {
   const navigate = useNavigate();
 
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (localStorage.getItem("referral")) {
+      setFormData({ ...formData, referral: localStorage.getItem("referral").split("-")[1] });
+      // setrefDisable(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (!searchParams.get("email")) return;
@@ -115,6 +123,7 @@ const RegisterPageDetails = ({ switchPage }) => {
             });
           }
         }
+        localStorage.removeItem("referral");
         return "User Updated";
       },
       error: (err) => {
@@ -178,6 +187,7 @@ const RegisterPageDetails = ({ switchPage }) => {
       />
       <TextInput
         title="Referral Code (Optional)"
+        // isDisabled={refDisable}
         className=""
         referral
         valueState={[
