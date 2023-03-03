@@ -17,7 +17,7 @@ function Number({ n }) {
   return <animated.span>{props.number.to((n) => n.toFixed(0))}</animated.span>;
 }
 
-const Section1 = ({scrollByVH}) => {
+const Section1 = ({ scrollByVH }) => {
   const navigate = useNavigate();
   const slides = [
     "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
@@ -115,9 +115,9 @@ const Section1 = ({scrollByVH}) => {
       <div className="hidden lg:flex flex-col w-[25vw] h-full pl-[calc(100vw/24)] py-[calc(100vw/24)] justify-between">
         <div
           id="kriya-logo"
-          className="w-36 h-36 before:w-full before:h-full before:bg-black relative before:absolute before:opacity-30 before:rounded-full before:[background:radial-gradient(circle_at_center,rgba(0,0,0,0.5),rgba(0,0,0,0)_70%)]"
+          className="w-36 h-36"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png)`,
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -239,9 +239,8 @@ const Section1 = ({scrollByVH}) => {
       >
         {slides.map((slide, index) => (
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
-              currentSlide === index ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               background: `url(${slides[index]})`,
               backgroundPosition: "50% 50%  ",
@@ -257,7 +256,7 @@ const Section1 = ({scrollByVH}) => {
           <div
             className="lg:hidden w-32 h-28"
             style={{
-              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png)`,
+              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
               backgroundPosition: "left",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
@@ -271,22 +270,19 @@ const Section1 = ({scrollByVH}) => {
           </div>
         </div>
         <div
-          className={`lg:hidden flex flex-row w-full ${
-            isOpen && "shadow-lg"
-          } h-[50vh]`}
+          className={`lg:hidden flex flex-row w-full ${isOpen && "shadow-lg"
+            } h-[50vh]`}
         >
           <div className={`px-4 ${isOpen ? "h-full" : "h-fit"} z-10 bg-white`}>
             <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div
-            className={`divide-y divide-gray-600 ${
-              isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
-            } transition-all ease-in-out duration-300`}
+            className={`divide-y divide-gray-600 ${isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
+              } transition-all ease-in-out duration-300`}
           >
             <div
-              className={`w-full flex flex-col font-poppins absolute ${
-                isOpen ? "z-20 h-[50%]" : "-z-20"
-              } bg-white transition-all ease-in-out duration-300`}
+              className={`w-full flex flex-col font-poppins absolute ${isOpen ? "z-20 h-[50%]" : "-z-20"
+                } bg-white transition-all ease-in-out duration-300`}
             >
               <button
                 onClick={() => {
@@ -370,9 +366,8 @@ const Section1 = ({scrollByVH}) => {
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
-                className={`w-full h-full absolute top-0 right-0 left-0 ${
-                  currentSlide === index ? "opacity-100" : "opacity-0"
-                }`}
+                className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
+                  }`}
                 style={{
                   background: `url(${slides[index]})`,
                   backgroundPosition: "50% 50%  ",
@@ -480,9 +475,8 @@ const Section1 = ({scrollByVH}) => {
         <div className="w-full h-full relative">
           {slides.map((slide, index) => (
             <div
-              className={`w-full h-full absolute top-0 right-0 left-0 ${
-                currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
+              className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
+                }`}
               style={{
                 background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
                 backgroundPosition: "left",

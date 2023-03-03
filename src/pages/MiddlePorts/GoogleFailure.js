@@ -11,9 +11,9 @@ const GoogleFailure = () => {
         <section className="w-full lg:w-[40vw] h-screen lg:h-fit p-8 lg:px-16 bg-white shadow-lg flex flex-col">
           <div className="flex w-full justify-center lg:hidden items-center">
             <img
-              src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png"
+              src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
               alt="Kriya black"
-              className="lg:hidden h-24 w-auto opacity-50"
+              className="lg:hidden h-24 w-auto opacity-70"
             />
           </div>
           <h1 className="font-bold text-2xl text-center">
