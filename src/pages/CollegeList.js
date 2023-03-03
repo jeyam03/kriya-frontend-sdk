@@ -461,6 +461,7 @@ const colleges = [
  Namakkal District 637205`,
   `Vivekanandha College of Technology for Women, Sathinaickenpalayam, Elayampalayam Village, Kumaramangalam,
  Namakkal District 637205`,
+ `Other`,
 ];
 
 export default colleges;

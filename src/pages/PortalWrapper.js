@@ -12,6 +12,7 @@ import { GrWorkshop } from "react-icons/gr";
 import { MdOutlineEmojiEvents } from "react-icons/md";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { FaRegUserCircle } from "react-icons/fa";
+import "../styles/gradientAnimation.css";
 
 const PortalWrapper = ({ children }) => {
   return (
@@ -125,6 +126,15 @@ const NavBarForDesktop = () => {
           </Link>
         </div>
         <div className="py-8">
+          <div className="flex space-x-4 items-center">
+            <h3 className="text-base font-semibold py-3">Workshops</h3>
+            <div className="w-fit h-fit p-2 rounded-lg"
+              id="early-bird"
+            >
+              <p className="text-white text-xs font-poppins">✨ Early Bird Offer ✨</p>
+            </div>
+          </div>
+          <WorkNav noMargin workshops={workshops} />
           <h3 className="text-base font-semibold py-3">Events</h3>
           <EventNav category="Kriyative" noMargin events={events} />
           <EventNav category="Brainiac" events={events} />
@@ -134,8 +144,6 @@ const NavBarForDesktop = () => {
           <EventNav category="Management" events={events} />
           <h3 className="text-base font-semibold py-3">Gold Events</h3>
           <GoldNav noMargin goldEvents={goldEvents} />
-          <h3 className="text-base font-semibold py-3">Workshops</h3>
-          <WorkNav noMargin workshops={workshops} />
           <h3 className="text-base font-semibold py-3">Paper Presentations</h3>
           <PaperNav noMargin papers={papers} />
         </div>
@@ -316,6 +324,20 @@ const NavBarForMobile = () => {
           </Link>
         </div>
         <div className="py-8 pb-16 px-6" id="navOpen">
+          <div className="flex space-x-4 items-center">
+            <h3 className="text-base font-semibold py-3" id="navElements">Workshops</h3>
+            <div className="w-fit h-fit p-2 rounded-lg"
+              id="early-bird"
+            >
+              <p className="text-white text-xs font-poppins">✨ Early Bird Offer ✨</p>
+            </div>
+          </div>
+          <WorkNav
+            openState={[isOpen, setIsOpen]}
+            isMobile
+            noMargin
+            workshops={workshops}
+          />
           <h3 className="text-base font-semibold py-3" id="navElements">
             Events
           </h3>
@@ -364,15 +386,6 @@ const NavBarForMobile = () => {
             isMobile
             noMargin
             goldEvents={goldEvents}
-          />
-          <h3 className="text-base font-semibold py-3" id="navElements">
-            Workshops
-          </h3>
-          <WorkNav
-            openState={[isOpen, setIsOpen]}
-            isMobile
-            noMargin
-            workshops={workshops}
           />
           <h3 className="text-base font-semibold py-3" id="navElements">
             Paper Presentations

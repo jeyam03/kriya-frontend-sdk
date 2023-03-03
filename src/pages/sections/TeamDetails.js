@@ -441,11 +441,11 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Mano_vfdfci.jpg",
   },
   {
-    name: "Aditiya Varma",
+    name: "Aditya Varma",
     vertical: "Office Bearers",
     position: "Secretary (Men)",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Aditya_ac9afr.jpg",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677308360/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Aditiya_Varma_wk6d9s.png",
   },
   {
     name: "Sri Athrukshna B",

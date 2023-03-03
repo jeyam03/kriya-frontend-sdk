@@ -9,6 +9,15 @@
   /* height: 100vh; */
 }
 
+#early-bird {
+  background: linear-gradient(-45deg, #C80067, #5451B6);
+  animation: gradient 4s ease infinite;
+  background-size: 400% 400%;
+  background-position: center;
+  color: transparent;
+  /* height: 100vh; */
+}
+
 #gold {
   background: linear-gradient(-45deg, #ffee35, #ffe83a, #ffb82b, #ffa228);
   animation: gradient 3s ease infinite;

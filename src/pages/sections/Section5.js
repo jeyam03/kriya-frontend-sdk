@@ -4,6 +4,7 @@ import { fetchWorkshops } from "../../API/call";
 import { Link, useNavigate } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
+import "../../styles/gradientAnimation.css";
 
 // Workshops
 
@@ -73,7 +74,7 @@ const Section5 = () => {
             }`}
           id="right-workshop-grid"
         >
-          <div className="w-[50%] h-full flex flex-col lg:justify-center items-center p-24">
+          <div className="w-[50%] h-full flex flex-col justify-center p-24">
             <h1 className={`text-5xl font-poppins font-semibold workshop-text opacity-0 px-8 lg:p-0 pt-8`}>
               Join the
               <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
@@ -81,6 +82,12 @@ const Section5 = () => {
               </span>{" "}
               from innovation leaders and industry experts.
             </h1>
+
+            <div className="w-fit my-8 p-4 rounded-2xl"
+              id="early-bird"
+            >
+              <p className="text-white font-[500] tracking-wide text-xl font-poppins">✨ Early Bird Offer ✨</p>
+            </div>
           </div>
         </div>
 
@@ -116,7 +123,7 @@ const Section5 = () => {
         </div>
 
 
-        <div className="lg:hidden w-full p-8 pt-20">
+        <div className="lg:hidden w-full p-8 pt-20 flex flex-col items-center">
           <h1 className={`text-4xl font-poppins font-semibold workshop-text opacity-0 text-center`}>
             Join the
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
@@ -124,6 +131,11 @@ const Section5 = () => {
             </span>{" "}
             from innovation leaders and industry experts.
           </h1>
+          <div className="w-fit mt-6 p-4 rounded-2xl"
+            id="early-bird"
+          >
+            <p className="text-white font-[500] tracking-wide text-lg font-poppins">✨ Early Bird Offer ✨</p>
+          </div>
         </div>
 
         <div ref={ref} className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-4`}>

@@ -82,11 +82,10 @@ const Paper = () => {
               {paperDetail.topic.split("\n").map((item, index) => (
                 <li
                   key={index}
-                  className={`${
-                    item.slice(-1) === ":"
-                      ? "text-xl font-semibold -ml-2 py-2"
-                      : "text-lg"
-                  }`}
+                  className={`${item.slice(-1) === ":"
+                    ? "text-xl font-semibold -ml-2 py-2"
+                    : "text-lg"
+                    }`}
                 >
                   {item}
                 </li>
@@ -146,38 +145,62 @@ const Paper = () => {
             </div>
           )}
 
+          <div className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-6">
+            <p className="text-2xl font-semibold tracking-wide text-white lg:text-[#3c4043]">
+              Abstract Submission Deadline
+            </p>
+
+            <div className="flex flex-row items-center gap-4 lg:gap-4">
+              <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-white lg:text-[#3c4043]">
+                {paperDetail.deadline}
+              </p>
+              <div className="flex flex-col">
+                <p className="text-lg font-semibold tracking-wide text-white lg:text-[#3c4043]">
+                  March
+                </p>
+                <p className="text-lg font-semibold tracking-wide text-white lg:text-[#3c4043]">
+                  2023
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
-            <div className="bg-[#181818] lg:bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
+            <div className="bg-[#ffffff] w-full lg:rounded-3xl p-8 lg:p-12 space-y-4">
+              <p className="text-2xl font-semibold tracking-wide text-[#3c4043] pb-4">
+                Presentation Details
+              </p>
+
               <div className="flex flex-row items-center gap-4 lg:gap-4">
-                <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-white lg:text-[#3c4043]">
+                <p className="text-6xl lg:text-6xl font-semibold tracking-wide text-[#3c4043]">
                   {paperDetail.date}
                 </p>
                 <div className="flex flex-col">
-                  <p className="text-lg font-semibold tracking-wide text-white lg:text-[#3c4043]">
+                  <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
                     March
                   </p>
-                  <p className="text-lg font-semibold tracking-wide text-white lg:text-[#3c4043]">
+                  <p className="text-lg font-semibold tracking-wide text-[#3c4043]">
                     2023
                   </p>
                 </div>
               </div>
               <div className="flex flex-row items-center gap-4 lg:gap-6">
-                <p className="text-4xl font-semibold tracking-wide text-white lg:text-[#3c4043] p-3">
+                <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                   <MdAccessTime />
                 </p>
                 <div className="pl-2 flex flex-col">
-                  <p className="text-base lg:text-lg font-semibold tracking-wider text-white lg:text-[#3c4043]">
+                  <p className="text-base lg:text-lg font-semibold tracking-wider text-[#3c4043]">
                     {paperDetail.time}
                   </p>
                 </div>
               </div>
               <div className="flex flex-row items-center gap-4 lg:gap-6">
-                <p className="text-4xl font-semibold tracking-wide text-white lg:text-[#3c4043] p-3">
+                <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
                   <MdOutlineLocationOn />
                 </p>
                 <div className="pl-2 flex flex-col">
                   <p
-                    className={`text-base lg:text-lg font-semibold tracking-wider text-white lg:text-[#3c4043]`}
+                    className={`text-base lg:text-lg font-semibold tracking-wider text-[#3c4043]`}
                   >
                     {paperDetail.hall}
                   </p>
@@ -186,17 +209,17 @@ const Paper = () => {
             </div>
           </div>
 
-          <div className="bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-6">
-            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-[#3c4043]">
+          <div className="lg:bg-[#ffffff] lg:rounded-3xl p-8 lg:p-12 space-y-6">
+            <p className="text-3xl lg:text-3xl font-semibold tracking-wide text-white lg:text-[#3c4043]">
               Contact
             </p>
 
             <div className="flex flex-row items-center justify-between">
               <div className="w-1/2 lg:w-1/2">
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
+                <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(paperDetail.contact1[0])}
                 </p>
-                <p className="text-base lg:text-base tracking-wider text-[#3c4043]">
+                <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
                   {paperDetail.contact1[1]}
                 </p>
               </div>
@@ -206,24 +229,24 @@ const Paper = () => {
                     window.open(`tel:${paperDetail.contact1[1]}`);
                   }}
                 >
-                  <IoMdCall className="hover:text-gray-200 text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                  <IoMdCall className="hover:text-gray-200 text-white lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
                 </button>
                 <button
                   onClick={() => {
                     window.open(`https://wa.me/${paperDetail.contact1[1]}`);
                   }}
                 >
-                  <IoLogoWhatsapp className="hover:text-gray-200 text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                  <IoLogoWhatsapp className="hover:text-gray-200 text-white lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
                 </button>
               </div>
             </div>
 
             <div className="flex flex-row items-center justify-between">
               <div className="w-1/2 lg:w-1/2">
-                <p className="text-base lg:text-base font-semibold tracking-wide text-[#3c4043]">
+                <p className="text-base lg:text-base font-semibold tracking-wide text-white lg:text-[#3c4043]">
                   {toTitleCase(paperDetail.contact2[0])}
                 </p>
-                <p className="text-base lg:text-base tracking-wider text-[#3c4043]">
+                <p className="text-base lg:text-base tracking-wider text-white lg:text-[#3c4043]">
                   {paperDetail.contact2[1]}
                 </p>
               </div>
@@ -233,14 +256,14 @@ const Paper = () => {
                     window.open(`tel:${paperDetail.contact2[1]}`);
                   }}
                 >
-                  <IoMdCall className="hover:text-gray-200 text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                  <IoMdCall className="hover:text-gray-200 text-white lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
                 </button>
                 <button
                   onClick={() => {
                     window.open(`https://wa.me/${paperDetail.contact2[1]}`);
                   }}
                 >
-                  <IoLogoWhatsapp className="hover:text-gray-200 text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
+                  <IoLogoWhatsapp className="hover:text-gray-200 text-white lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
                 </button>
               </div>
             </div>
