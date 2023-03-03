@@ -18,9 +18,6 @@
 .env.test.local
 .env.production.local
 
-src/data/referralCodes.js
-src/data/referral.js
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
