@@ -20,7 +20,7 @@ const RegisterPageDetails = ({ switchPage }) => {
     email: "",
     college: "",
     source: "",
-    referral: "KRI-",
+    referral: "",
     department: "",
     year: "",
     isPSGStudent: false,
@@ -64,12 +64,11 @@ const RegisterPageDetails = ({ switchPage }) => {
     if (!formData.department) return toast.error("Please select your department");
     if (!formData.year) return toast.error("Please select your year");
 
-    if (formData.referral.trim().length > 4) {
-      if (!referralCodes.includes(formData.referral.trim())) {
+    if (formData.referral.length > 0) {
+      formData.referral = "KRI-" + formData.referral;
+      if (!referralCodes.includes(formData.referral)) {
         toast.error("Invalid referral code");
         return;
-      } else {
-        formData.referral = formData.referral.trim();
       }
     }
     else {
@@ -180,6 +179,7 @@ const RegisterPageDetails = ({ switchPage }) => {
       <TextInput
         title="Referral Code (Optional)"
         className=""
+        referral
         valueState={[
           formData.referral,
           (val) => setFormData({ ...formData, referral: val }),
