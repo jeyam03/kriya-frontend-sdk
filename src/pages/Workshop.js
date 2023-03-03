@@ -59,7 +59,41 @@ const Workshop = () => {
       <p className="text-white text-xl px-8">Loading...</p>
     </section>
   ) : (
-    <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
+    <section className="w-full lg:px-16 font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
+      <div className="flex w-[calc(100%+8rem)] overflow-x-hidden space-x-6 whitespace-nowrap  py-2 mb-12 text-white bg-gradient-to-r from-[#C80067] to-[#5451B6] -mx-16">
+        <div className="animate-marquee [will-change:transform] whitespace-nowrap flex space-x-6">
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+          <p className="">
+            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+          </p>
+        </div>
+      </div>
       <div className="w-fit">
         <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
           {workshopDetail.workName}

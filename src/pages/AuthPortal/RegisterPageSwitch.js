@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { toast } from "react-hot-toast";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { BACKEND_URL } from "../../API/call";
@@ -10,8 +11,13 @@ const RegisterPageSwitch = ({ switchPage }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  useEffect(() =>{
+    if(!searchParams.get("referral")) return;
+    if(searchParams.get("referral") === "invalid") return toast.error("Invalid Referral Code");
+  }, [searchParams])
+
   const handleRegisterWithEmail = () => {
-    setSearchParams({ ...searchParams, type: "signup", page: "details" });
+    setSearchParams({ ...searchParams, type: "signup", page: "details"});
   };
 
   return (

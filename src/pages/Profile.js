@@ -7,13 +7,16 @@ import {
   MdOutlineEmojiEvents,
   MdOutlineModeEditOutline,
 } from "react-icons/md";
+import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { BsCheck2Circle } from "react-icons/bs";
 import {
   fetchEventDetailsByEmail,
   fetchEvents,
+  fetchPaperDetailsByEmail,
   fetchPaymentDetailsByEmail,
   fetchUserByEmail,
   fetchWorkshops,
+  fetchPapers,
 } from "../API/call";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -22,6 +25,7 @@ const Profile = () => {
   const [userDetails, setUserDetails] = useState(null);
   const [paymentDetails, setPaymentDetails] = useState(null);
   const [eventDetails, setEventDetails] = useState(null);
+  const [paperDetails, setPaperDetails] = useState(null);
 
   useEffect(() => {
     fetchUserByEmail(localStorage.getItem("email")).then((res) => {
@@ -49,6 +53,13 @@ const Profile = () => {
     });
   }, []);
 
+  useEffect(() => {
+    fetchPaperDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      console.log(res.data);
+      setPaperDetails(res.data);
+    });
+  }, []);
+
   const [events, setEvents] = useState(
     fetchEvents()
       .map((event) => ({
@@ -61,6 +72,9 @@ const Profile = () => {
       }))
       .sort((a, b) => a.name.localeCompare(b.name))
   );
+
+  const [workshops, setWorkshops] = useState(fetchWorkshops());
+  const [papers, setPapers] = useState(fetchPapers());
 
   return (
     <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
@@ -175,7 +189,7 @@ const Profile = () => {
                         : "text-red-500"
                         } flex items-center justify-between`}
                     >
-                      <p className="text-lg w-5/6">
+                      <p className="lg:text-lg w-3/4">
                         {payment.eventId === "-1"
                           ? "General"
                           : "Workshop " + payment.eventId}{" "}
@@ -184,7 +198,7 @@ const Profile = () => {
                           ? "paid successfully"
                           : "payment unsuccessful"}
                       </p>
-                      <p className="text-lg">Rs. {payment.fee}</p>
+                      <p className="lg:text-lg">Rs. {payment.fee}</p>
                     </div>
                   </div>
                 </div>
@@ -226,11 +240,11 @@ const Profile = () => {
                   <div className="flex items-center justify-between space-x-4">
                     <Link
                       to={`/portal/event/${event.eventId}`}
-                      className="text-lg hover:text-blue-400 hover:underline"
+                      className="lg:text-lg hover:text-blue-400 hover:underline"
                     >
                       {events.find((i) => i.id === event.eventId).name}
                     </Link>
-                    <p className="text-sm lg:text-base">
+                    <p className="text-sm lg:text-base max-w-[50%]">
                       {events.find((i) => i.id === event.eventId).time}
                     </p>
                   </div>
@@ -265,17 +279,17 @@ const Profile = () => {
                   </div>
                 )}
               {paymentDetails
-                ?.filter((w) => w.type === "WORKSHOP")
+                ?.filter((w) => w.type === "WORKSHOP" && w.status === "SUCCESS")
                 .map((workshop) => (
                   <div className="">
                     <div className="flex items-center justify-between text-xs">
                       <p className="">Workshop ID: {workshop.eventId}</p>
-                      <p className="">Mar 24</p>
+                      <p className="">Mar {workshops.find((i) => i.wid === workshop.eventId).date}</p>
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between space-x-4">
                       <Link
                         to={`/portal/workshop/${workshop.eventId}`}
-                        className="text-lg hover:text-blue-400 hover:underline"
+                        className="lg:text-lg hover:text-blue-400 hover:underline w-3/4"
                       >
                         {
                           fetchWorkshops().find(
@@ -283,10 +297,57 @@ const Profile = () => {
                           ).workName
                         }
                       </Link>
-                      <p className="text-lg">Rs. 250</p>
+                      <p className="lg:text-lg">Rs. {workshop.fee}</p>
                     </div>
                   </div>
                 ))}
+            </div>
+          </div>
+
+          <div className="w-full lg:pr-8">
+            <div className="flex items-center space-x-4 w-full">
+              <HiOutlinePresentationChartBar className="text-2xl text-white" />
+              <h1 className="text-2xl">Registered Paper Presentations</h1>
+            </div>
+            <div className="mt-8 space-y-4 max-h-[40vh] overflow-y-auto pr-4">
+              {paperDetails?.length === 0 && (
+                <div className="space-y-4">
+                  <p className="text-lg">
+                    Uh oh! You have'nt registered for any paper presentations yet !
+                  </p>
+                  <Link
+                    className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                    to="/../?sn=section4"
+                  >
+                    <p className="">Register for paper presentations here !</p>
+                    <IoIosArrowForward
+                      className="ml-1 group-hover:ml-2 transition-all"
+                      size={16}
+                    />
+                  </Link>
+                </div>
+              )}
+              {paperDetails?.map((paper) => (
+                <div className="">
+                  <div className="flex items-center justify-between text-xs">
+                    <p className="">Paper Presentation ID: {paper.paperId}</p>
+                    <p className="">
+                      Mar {papers.find((i) => i.ppid === paper.paperId).date}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between space-x-4">
+                    <Link
+                      to={`/portal/paper/${paper.paperId}`}
+                      className="lg:text-lg hover:text-blue-400 hover:underline"
+                    >
+                      {papers.find((i) => i.ppid === paper.paperId).eventName}
+                    </Link>
+                    <p className="text-sm lg:text-base max-w-[50%]">
+                      {papers.find((i) => i.ppid === paper.paperId).time}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
