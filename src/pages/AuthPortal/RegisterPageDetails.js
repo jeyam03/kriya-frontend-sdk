@@ -226,16 +226,16 @@ const RegisterPageDetails = ({ switchPage }) => {
             valueState={[otherCollege, setOtherCollege]}
           />
         )}
-        {/* {!formData.isPSGStudent && (
+        {/* {formData.college !== PSG_COLLEGE && (
           <Dropdown
             valueState={[
               formData.accomodation,
-              (val) => setFormData({ ...formData, accomodation: val }),
+              (val) => setFormData({ ...formData, accomodation: val === "Yes" }),
             ]}
             title="Accomodation Required"
             className=""
             placeholder="Select an option"
-            options={["Yes", "No"]}
+            options={["No", "Yes"]}
           />
         )} */}
         <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
