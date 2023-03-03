@@ -26,7 +26,7 @@ const RegisterPageDetails = ({ switchPage }) => {
     department: "",
     year: "",
     isPSGStudent: false,
-    accomodation: false,
+    accomodation: "",
     phone: "",
   });
 
@@ -226,18 +226,18 @@ const RegisterPageDetails = ({ switchPage }) => {
             valueState={[otherCollege, setOtherCollege]}
           />
         )}
-        {/* {formData.college !== PSG_COLLEGE && (
+        {formData.college !== PSG_COLLEGE && (
           <Dropdown
             valueState={[
               formData.accomodation,
-              (val) => setFormData({ ...formData, accomodation: val === "Yes" }),
+              (val) => setFormData({ ...formData, accomodation: val }),
             ]}
             title="Accomodation Required"
             className=""
             placeholder="Select an option"
             options={["No", "Yes"]}
           />
-        )} */}
+        )}
         <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
           <Dropdown
             valueState={[
