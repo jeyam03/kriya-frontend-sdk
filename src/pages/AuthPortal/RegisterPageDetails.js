@@ -76,7 +76,9 @@ const RegisterPageDetails = ({ switchPage }) => {
     if (!formData.year) return toast.error("Please select your year");
 
     if (formData.referral.length > 0) {
-      formData.referral = "KRI-" + formData.referral;
+      if (!formData.referral.startsWith("KRI-")) {
+        formData.referral = "KRI-" + formData.referral;
+      }
       if (!referralCodes.includes(formData.referral)) {
         toast.error("Invalid referral code");
         return;
