@@ -8,6 +8,7 @@ import departments from "../DepartmentList";
 import { toast } from "react-hot-toast";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import referralCodes from "../../data/referralCodes";
+import Select from "react-select";
 
 const PSG_COLLEGE =
   "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
@@ -146,6 +147,19 @@ const RegisterPageDetails = ({ switchPage }) => {
     console.log("formData", formData);
   }, [formData]);
 
+  const selectStyles = {
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      border: "2px solid #E5E7EB",
+      borderRadius: "0.5rem",
+      padding: "0.25rem 0.5rem",
+    }),
+  }
+
+  const handleCollegeChange = e => {
+    setFormData({ ...formData, college: e.value });
+  }
+
   return (
     <div className="w-full h-full overflow-y-scroll lg:overflow-y-hidden flex flex-col lg:h-fit lg:max-h-[90%] py-12 px-6 lg:pt-8 lg:pb-0 lg:px-0 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
@@ -205,21 +219,24 @@ const RegisterPageDetails = ({ switchPage }) => {
             (val) => setFormData({ ...formData, referral: val }),
           ]}
         />
-        <Dropdown
-          valueState={[
-            formData.college,
-            (val) =>
-              setFormData({
-                ...formData,
-                college: val,
-                isPSGStudent: val === PSG_COLLEGE,
-              }),
-          ]}
-          title="College/University"
-          className=""
-          placeholder="Select a college"
-          options={colleges}
-        />
+        <div className="relative">
+          <label className="text-blue text-sm -top-3 left-3 absolute z-30 bg-white px-2">
+            College/University
+          </label>
+          <Select
+            styles={selectStyles}
+            className="z-20"
+            options={
+              colleges.map((college) => {
+                return {
+                  value: college,
+                  label: college,
+                };
+              })
+            }
+            onChange={handleCollegeChange}
+          />
+        </div>
         {formData.college === "Other" && (
           <TextInput
             title="College/University Name"
