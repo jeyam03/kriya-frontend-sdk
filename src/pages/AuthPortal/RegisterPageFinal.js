@@ -28,13 +28,13 @@ const RegisterPageFinal = ({ switchPage }) => {
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
         <img
-          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png"
+          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
           alt="Kriya black"
-          className="lg:hidden h-24 w-auto opacity-50"
+          className="lg:hidden h-24 w-auto opacity-70"
         />
       </div>
       <div className="">
-        <h3 className="text-sm text-gray-500">You're Kriya ID is</h3>
+        <h3 className="text-sm text-gray-500">Your Kriya ID is</h3>
         <h1 className="text-2xl font-bold text-[#181818]">
           {formData ? formData.kriyaId : "KRIYA00XXX"}
         </h1>

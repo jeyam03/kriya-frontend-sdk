@@ -428,36 +428,36 @@ const TeamDetails = [
   },
   {
     name: "Dharmendra R",
-    vertical: "Office Bearers",
-    position: "Chairman",
+    vertical: "Overall Coordinators",
+    position: "Chairperson, Students Union",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1677312510/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/IMG_5758_ksblp7.jpg",
   },
   {
     name: "Mano M",
-    vertical: "Office Bearers",
-    position: "Co-Chairman",
+    vertical: "Overall Coordinators",
+    position: "Co-Chairperson, Students Union",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Mano_vfdfci.jpg",
   },
   {
     name: "Aditya Varma",
-    vertical: "Office Bearers",
-    position: "Secretary (Men)",
+    vertical: "Overall Coordinators",
+    position: "Secretary (Men), Students Union",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677308360/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Aditiya_Varma_wk6d9s.png",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677916018/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Aditya_h73m3w.jpg",
   },
   {
     name: "Sri Athrukshna B",
-    vertical: "Office Bearers",
-    position: "Secretary (Women)",
+    vertical: "Overall Coordinators",
+    position: "Secretary (Women), Students Union",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Athrukshna_ihptl0.jpg",
   },
   {
     name: "Pavana S",
-    vertical: "Office Bearers",
-    position: "Secretary (Science)",
+    vertical: "Overall Coordinators",
+    position: "Secretary (Science), Students Union",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Pavana_tymd6o.jpg",
   },

@@ -71,9 +71,9 @@ const NavBarForDesktop = () => {
       <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6">
         <Link
           to={"/"}
-          className="w-28 h-28 mt-4 -mb-3"
+          className="w-28 h-28 mt-4"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png)`,
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -242,10 +242,10 @@ const NavBarForMobile = () => {
         <div className="flex justify-center">
           <Link
             to={"/"}
-            className="w-[4.5rem] h-[4.5rem] -mb-3"
+            className="w-[4.5rem] h-[3.25rem]"
             style={{
-              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
-              backgroundPosition: "left",
+              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+              backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
             }}
