@@ -251,7 +251,7 @@ const Section1 = ({ scrollByVH }) => {
         ))}
       </div>
 
-      <div className="w-full lg:w-[35vw] h-full pb-8 pt-4 lg:px-20 lg:pb-12 lg:pt-24 flex flex-col items-center lg:items-start justify-between">
+      <div className="w-full lg:w-[35vw] h-full pb-8 pt-4 lg:px-16 lg:pb-12 lg:pt-24 flex flex-col items-center lg:items-start justify-between">
         <div className="flex items-center space-x-4 w-full px-6">
           <div
             className="lg:hidden w-32 h-28"

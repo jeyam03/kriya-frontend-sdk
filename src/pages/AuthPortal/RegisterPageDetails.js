@@ -182,7 +182,7 @@ const RegisterPageDetails = ({ switchPage }) => {
           Enter your personal details
         </h1>
       </div>
-      <div className="h-full space-y-6 lg:overflow-auto lg:flex-1 pb-8 lg:px-8">
+      <div className="h-full space-y-6 lg:overflow-auto lg:flex-1 pb-12 lg:px-8">
         <TextInput
           title="Name"
           className="w-full"
