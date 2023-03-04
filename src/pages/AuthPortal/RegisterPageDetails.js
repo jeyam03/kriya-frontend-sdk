@@ -220,7 +220,7 @@ const RegisterPageDetails = ({ switchPage }) => {
           ]}
         />
         <div className="">
-          <label className="text-blue text-sm z-30 bg-white px-2">
+          <label className="text-blue text-sm z-30 bg-white p-2">
             College/University
           </label>
           <Select
