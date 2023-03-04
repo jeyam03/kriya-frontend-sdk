@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
-import { AiOutlineTeam } from "react-icons/ai";
+import { AiOutlineTeam, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchPaperById, fetchPaperDetailsByEmail, fetchPaperRegister, fetchUserByEmail } from "../API/call";
 import { SiGmail } from "react-icons/si";
@@ -78,7 +78,7 @@ const Paper = () => {
             <p className="text-2xl font-semibold tracking-wider text-[#3c4043] lg:text-white">
               Theme
             </p>
-            <ul className="list-disc text-base lg:text-lg text-[#3c4043] lg:text-white pl-4 space-y-2">
+            <ul className="list-disc text-base lg:text-lg text-[#3c4043] lg:text-white pl-4 space-y-2 lg:pr-16">
               {paperDetail.topic.split("\n").map((item, index) => (
                 <li
                   key={index}
@@ -163,6 +163,16 @@ const Paper = () => {
                 </p>
               </div>
             </div>
+
+            <div>
+              <p className="text-2xl font-semibold tracking-wide py-4 text-white lg:text-[#3c4043]">
+                Note
+              </p>
+              <ul className="list-disc text-base text-white lg:text-[#3c4043] pl-4 space-y-2">
+                <li>For teams, only <b className="font-semibold">one</b> team member needs to pay the general registration fee. (This is applicable only for paper presentations.)</li>
+                <li>If the abstract is accepted, a team must pay the event registration fee of <b className="font-semibold">Rs. 200</b> to present the paper</li>
+              </ul>
+            </div>
           </div>
 
           <div className="flex flex-row gap-4 w-full my-4 lg:px-0">
@@ -203,6 +213,16 @@ const Paper = () => {
                     className={`text-base lg:text-lg font-semibold tracking-wider text-[#3c4043]`}
                   >
                     {paperDetail.hall}
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-row items-center gap-4 lg:gap-6">
+                <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+                  {paperDetail.teamSize !== "1" ? <AiOutlineTeam /> : <AiOutlineUser />}
+                </p>
+                <div className="pl-2 flex flex-col">
+                  <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
+                    {paperDetail.teamSize} Member{paperDetail.teamSize !== "1" ? "s" : ""}
                   </p>
                 </div>
               </div>

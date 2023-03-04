@@ -8,6 +8,7 @@ import departments from "../DepartmentList";
 import { toast } from "react-hot-toast";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import referralCodes from "../../data/referralCodes";
+import Select from "react-select";
 
 const PSG_COLLEGE =
   "PSG College of Technology (Autonomous), Peelamedu, Coimbatore District 641004";
@@ -71,11 +72,11 @@ const RegisterPageDetails = ({ switchPage }) => {
     if (!formData.email) return toast.error("Please enter your email");
     if (!formData.phone) return toast.error("Please enter your phone number");
     if (!formData.college) return toast.error("Please select your college");
-    if (formData.college === "Other" && (!otherCollege || otherCollege.length === 0)) return toast.error("Please enter your college name");
+    if (formData.college === "Other" && (otherCollege === null || otherCollege.length === 0)) return toast.error("Please enter your college name");
     if (!formData.department) return toast.error("Please select your department");
     if (!formData.year) return toast.error("Please select your year");
 
-    if (formData.referral.length > 0) {
+    if (formData.referral && formData.referral.length > 0) {
       if (!formData.referral.startsWith("KRI-")) {
         formData.referral = "KRI-" + formData.referral;
       }
@@ -146,13 +147,26 @@ const RegisterPageDetails = ({ switchPage }) => {
     console.log("formData", formData);
   }, [formData]);
 
+  const selectStyles = {
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      border: "2px solid #E5E7EB",
+      borderRadius: "0.5rem",
+      padding: "0.25rem 0.5rem",
+    }),
+  }
+
+  const handleCollegeChange = e => {
+    setFormData({ ...formData, college: e.value });
+  }
+
   return (
     <div className="w-full h-full overflow-y-scroll lg:overflow-y-hidden flex flex-col lg:h-fit lg:max-h-[90%] py-12 px-6 lg:pt-8 lg:pb-0 lg:px-0 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
         <img
-          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png"
+          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
           alt="Kriya black"
-          className="lg:hidden h-24 w-auto opacity-50"
+          className="lg:hidden h-24 w-auto opacity-70"
         />
       </div>
       <button
@@ -168,7 +182,7 @@ const RegisterPageDetails = ({ switchPage }) => {
           Enter your personal details
         </h1>
       </div>
-      <div className="h-full space-y-6 lg:overflow-auto lg:flex-1 pb-8 lg:px-8">
+      <div className="h-full space-y-6 lg:overflow-auto lg:flex-1 pb-12 lg:px-8">
         <TextInput
           title="Name"
           className="w-full"
@@ -205,21 +219,24 @@ const RegisterPageDetails = ({ switchPage }) => {
             (val) => setFormData({ ...formData, referral: val }),
           ]}
         />
-        <Dropdown
-          valueState={[
-            formData.college,
-            (val) =>
-              setFormData({
-                ...formData,
-                college: val,
-                isPSGStudent: val === PSG_COLLEGE,
-              }),
-          ]}
-          title="College/University"
-          className=""
-          placeholder="Select a college"
-          options={colleges}
-        />
+        <div className="relative">
+          <label className="text-blue text-sm -top-3 left-3 absolute z-30 bg-white px-2">
+            College/University
+          </label>
+          <Select
+            styles={selectStyles}
+            className="z-20"
+            options={
+              colleges.map((college) => {
+                return {
+                  value: college,
+                  label: college,
+                };
+              })
+            }
+            onChange={handleCollegeChange}
+          />
+        </div>
         {formData.college === "Other" && (
           <TextInput
             title="College/University Name"

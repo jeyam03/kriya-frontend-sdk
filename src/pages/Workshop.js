@@ -60,7 +60,7 @@ const Workshop = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
-      <div className="flex w-[calc(100%+8rem)] overflow-x-hidden space-x-6 whitespace-nowrap  py-2 mb-12 text-white bg-gradient-to-r from-[#C80067] to-[#5451B6] -mx-16">
+      <div className="flex w-[calc(100%+4rem)] lg:w-[calc(100%+8rem)] overflow-x-hidden space-x-6 whitespace-nowrap py-2 mb-12 text-white bg-gradient-to-r from-[#C80067] to-[#5451B6] -mx-16">
         <div className="animate-marquee [will-change:transform] whitespace-nowrap flex space-x-6">
           <p className="">
             ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
@@ -103,7 +103,7 @@ const Workshop = () => {
       {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
       </h2> */}
-      <p className="text-white mt-8 text-base w-full lg:w-[95%] pb-12 px-8 lg:px-0">
+      <p className="text-white mt-8 text-base w-full lg:w-[90%] pb-12 px-8 lg:px-0">
         {workshopDetail.desc}
       </p>
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-6">

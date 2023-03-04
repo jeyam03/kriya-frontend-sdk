@@ -147,12 +147,12 @@ const NavBar = ({ consolee }) => {
       >
         Sponsors
       </button>
+      {condition && (<div className="w-[4.5rem] h-[3rem]"></div>)}
       <div
-        className={`w-[4.5rem] h-[4.5rem] mt-0 lg:mt-4 -mb-3 lg:mb-1 ${condition && "invert"
-          }`}
+        className={`w-[4.5rem] h-[3rem] ${condition && "hidden"}`}
         style={{
-          background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
-          backgroundPosition: `${window.innerWidth < 768 ? "left" : "center"}`,
+          background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+          backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
         }}
@@ -263,18 +263,17 @@ const NavBarForMobile = ({ consolee }) => {
         }  lg:hidden z-50 w-screen lg:w-1/4 ${!condition ? "bg-white" : "bg-black"
         } fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll px-4 font-poppins shadow-md`}
     >
-      <div className="flex w-full justify-between items-center sticky top-0">
+      <div className="flex w-full justify-between items-center sticky top-0 h-[3.25rem]">
         <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
         <button
           onClick={(e) => {
             const element = document.getElementById("section1");
             element.scrollIntoView({ behavior: "smooth" });
           }}
-          className={`w-[4.5rem] h-[4.5rem] lg:w-28 lg:h-28 mt-0 lg:mt-4 -mb-3 ${condition && "invert"
-            }`}
+          className={`w-[4.5rem] h-[3.25rem] ${condition && "hidden"}`}
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1674055063/el0wb34j9oudv852shzv.png)`,
-            backgroundPosition: "left",
+            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
           }}

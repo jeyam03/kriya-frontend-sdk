@@ -71,11 +71,9 @@ const AuthPortal = () => {
         >
           <div className="w-full h-full p-8 flex flex-col items-center justify-center">
             <img
-              src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674502647/Kriya_Logo_2023_white_npmqdj.png"
+              src={`${isLogInPage ? "https://res.cloudinary.com/dksmk66vo/image/upload/v1677837683/KriyaLogoKLA_ps63h1.png" : "https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"} `}
               alt="logo"
-              className={`${
-                !isLogInPage && "invert"
-              } transition-all duration-400 w-64`}
+              className={`transition-all duration-400 w-64`}
             />
           </div>
         </div>

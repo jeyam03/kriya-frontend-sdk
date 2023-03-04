@@ -38,7 +38,7 @@ const Dropdown = ({
           }}
           className={`px-4 h-12 py-2 pt-3 w-full rounded-lg text-slate bg-white bg-clip-padding bg-no-repeat border-2 border-solid ${
             error.length !== 0 ? "border-yellow" : "border-gray"
-          } first-letter:transition ease-in-out m-0 focus:outline-none focus:border-cloud`}
+          } first-letter:transition ease-in-out m-0 focus:outline-none hover:border-[#B3B3B3] focus:border-[#2584FF]`}
         >
           {placeholder.length > 0 && (
             <option value="" selected disabled>

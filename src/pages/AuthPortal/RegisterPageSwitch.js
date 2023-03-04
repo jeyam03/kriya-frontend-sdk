@@ -11,22 +11,22 @@ const RegisterPageSwitch = ({ switchPage }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  useEffect(() =>{
-    if(!searchParams.get("referral")) return;
-    if(searchParams.get("referral") === "invalid") return toast.error("Invalid Referral Code");
+  useEffect(() => {
+    if (!searchParams.get("referral")) return;
+    if (searchParams.get("referral") === "invalid") return toast.error("Invalid Referral Code");
   }, [searchParams])
 
   const handleRegisterWithEmail = () => {
-    setSearchParams({ ...searchParams, type: "signup", page: "details"});
+    setSearchParams({ ...searchParams, type: "signup", page: "details" });
   };
 
   return (
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
         <img
-          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677324488/Kriya_Logo_2023_black_bfo5o0.png"
+          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
           alt="Kriya black"
-          className="lg:hidden h-24 w-auto opacity-50"
+          className="lg:hidden h-24 w-auto opacity-70"
         />
       </div>
       <button

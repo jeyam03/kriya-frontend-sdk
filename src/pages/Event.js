@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
-import { AiOutlineTeam } from "react-icons/ai";
+import { AiOutlineTeam, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchEventById, fetchEventDetailsByEmail, fetchEventRegister, fetchUserByEmail } from "../API/call";
 
@@ -86,7 +86,7 @@ const Event = () => {
         </h1>
         <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
       </div>
-      <p className="text-white mt-8 text-base w-full lg:w-[65%] pb-8 px-8 lg:px-0">
+      <p className="text-white text-justify mt-8 text-base w-full lg:w-[90%] pb-8 px-8 lg:px-0">
         {eventDetail.description}
       </p>
 
@@ -179,15 +179,15 @@ const Event = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-              <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
-                <AiOutlineTeam />
-              </p>
-              <div className="pl-2 flex flex-col">
-                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  2 - 3 Members
+                <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+                  {eventDetail.teamSize !== "1" ? <AiOutlineTeam /> : <AiOutlineUser />}
                 </p>
+                <div className="pl-2 flex flex-col">
+                  <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
+                    {eventDetail.teamSize} Member{eventDetail.teamSize !== "1" ? "s" : ""}
+                  </p>
+                </div>
               </div>
-            </div>
           </div>
 
           <div className="lg:bg-[#ffffff] flex-1 flex flex-col lg:rounded-3xl p-8 lg:px-0 lg:pb-0 lg:pt-12 space-y-6">
