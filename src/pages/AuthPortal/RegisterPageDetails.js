@@ -72,11 +72,11 @@ const RegisterPageDetails = ({ switchPage }) => {
     if (!formData.email) return toast.error("Please enter your email");
     if (!formData.phone) return toast.error("Please enter your phone number");
     if (!formData.college) return toast.error("Please select your college");
-    if (formData.college === "Other" && (!otherCollege || otherCollege.length === 0)) return toast.error("Please enter your college name");
+    if (formData.college === "Other" && (otherCollege === null || otherCollege.length === 0)) return toast.error("Please enter your college name");
     if (!formData.department) return toast.error("Please select your department");
     if (!formData.year) return toast.error("Please select your year");
 
-    if (formData.referral.length > 0) {
+    if (formData.referral && formData.referral.length > 0) {
       if (!formData.referral.startsWith("KRI-")) {
         formData.referral = "KRI-" + formData.referral;
       }
