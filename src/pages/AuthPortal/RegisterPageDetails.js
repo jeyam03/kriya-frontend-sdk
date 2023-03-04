@@ -219,8 +219,8 @@ const RegisterPageDetails = ({ switchPage }) => {
             (val) => setFormData({ ...formData, referral: val }),
           ]}
         />
-        <div className="relative">
-          <label className="text-blue text-sm -top-3 left-3 absolute z-30 bg-white px-2">
+        <div className="">
+          <label className="text-blue text-sm z-30 bg-white px-2">
             College/University
           </label>
           <Select
