@@ -77,7 +77,7 @@ const Profile = () => {
   const [papers, setPapers] = useState(fetchPapers());
 
   return (
-    <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
+    <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll pt-24 pb-8 lg:pt-0 lg:pb-24">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
         <div
