@@ -76,7 +76,7 @@ const Section7 = () => {
             We bring our creativity and attention to detail to every event we
             plan, ensuring a seamless and unforgettable experience for you all.
           </p>
-          <ImageGrid vertical="Office Bearers" />
+          <ImageGrid vertical="Overall Coordinators" />
           <ImageGrid vertical="Ambience and Creativity" />
           <ImageGrid vertical="App and Web Development" />
           <ImageGrid vertical="Design & Photography" />
