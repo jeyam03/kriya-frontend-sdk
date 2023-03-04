@@ -14,6 +14,8 @@ import { useSearchParams } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import { fetchUserByEmail } from "../API/call";
 import Section10 from "./sections/Section10";
+import { BsInstagram, BsLinkedin } from "react-icons/bs";
+import { SiGmail, SiYoutube } from "react-icons/si";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -303,7 +305,7 @@ const NavBarForMobile = ({ consolee }) => {
           } transition-all ease-in-out duration-300`}
         id="landingNavOpen"
       >
-        <div className="py-8 w-full flex flex-col"
+        <div className="py-8 pl-4 w-full flex flex-col"
           id="landingNavElements"
         >
           <button
@@ -426,6 +428,63 @@ const NavBarForMobile = ({ consolee }) => {
               Register / Login
             </button>
           )}
+          <div className="flex flex-row space-x-8 pt-14">
+            <button
+              className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/company/studentsunion-psgtech/",
+                  "_blank"
+                )
+              }
+            >
+              <BsLinkedin size={24} className={`${condition ? "text-gray-400" : "text-gray-500"} hover:text-black`} />
+            </button>
+            <button
+              className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+              onClick={() =>
+                window.open("https://www.instagram.com/kriya_psgtech/", "_blank")
+              }
+            >
+              <BsInstagram
+                size={24}
+                className={`${condition ? "text-gray-400" : "text-gray-500"} hover:text-black`}
+              />
+            </button>
+            <button
+              className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+              onClick={() => window.open("mailto:events@psgkriya.in", "_blank")}
+            >
+              <SiGmail size={24} className={`${condition ? "text-gray-400" : "text-gray-500"} hover:text-black`} />
+            </button>
+            <button
+              className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+              onClick={() =>
+                window.open(
+                  "https://youtube.com/c/StudentsUnionPSGTech",
+                  "_blank"
+                )
+              }
+            >
+              <SiYoutube size={24} className={`${condition ? "text-gray-400" : "text-gray-500"} hover:text-black`} />
+            </button>
+            <button
+              style={{
+                background: `url(https://d1fdloi71mui9q.cloudfront.net/sdQF8AHkQY6RCSGRVJY5_HjZ8Yx97jSnr03x4)`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+              }}
+              className={`w-6 h-6 ${!condition && "invert"} hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100`}
+              onClick={() =>
+                window.open(
+                  "https://linktr.ee/su.psgtech",
+                  "_blank"
+                )
+              }
+            >
+            </button>
+          </div>
         </div>
       </div>
     </nav>

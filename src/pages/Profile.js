@@ -18,7 +18,7 @@ import {
   fetchWorkshops,
   fetchPapers,
 } from "../API/call";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward, IoMdLogOut } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
@@ -112,11 +112,16 @@ const Profile = () => {
               <AiOutlineUser className="text-2xl" />
               <h1 className="text-2xl">About</h1>
             </div>
-            <div className="grid grid-cols-1 gap-y-1   w-full mt-8 space-y-1  ">
+            <div className="grid grid-cols-1 gap-y-1 w-full mt-8 space-y-2">
               <TextOutput
                 className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
                 heading="Name"
                 content={userDetails.name}
+              />
+              <TextOutput
+                className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
+                heading="Kriya ID"
+                content={userDetails.kriyaId}
               />
               <TextOutput
                 className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
@@ -350,6 +355,17 @@ const Profile = () => {
               ))}
             </div>
           </div>
+
+          <button
+            className="lg:hidden flex flex-row w-full py-4"
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+          >
+            <IoMdLogOut size={24} className="mr-4" />
+            Logout
+          </button>
         </div>
       )}
     </section>

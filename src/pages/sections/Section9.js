@@ -28,6 +28,20 @@ const Section9 = () => {
             <SiGmail size={24} className="text-white" />
             <p className="text-lg">events@psgkriya.in</p>
           </button>
+          <button className="flex items-center space-x-4"
+            onClick={() => window.open("https://linktr.ee/su.psgtech", "_blank")}
+          >
+            <div
+              style={{
+                background: `url(https://d1fdloi71mui9q.cloudfront.net/sdQF8AHkQY6RCSGRVJY5_HjZ8Yx97jSnr03x4)`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+              className="w-8 h-8 -mx-1"
+            />
+            <p className="text-lg">Linktree SU</p>
+          </button>
         </div>
         <div className="flex-1 flex flex-col space-y-8 lg:space-y-0 lg:space-x-6 lg:flex-row items-center lg:justify-between">
 

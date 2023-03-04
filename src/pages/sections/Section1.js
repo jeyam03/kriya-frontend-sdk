@@ -230,6 +230,22 @@ const Section1 = ({ scrollByVH }) => {
           >
             <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
           </button>
+          <button
+            style={{
+              background: `url(https://d1fdloi71mui9q.cloudfront.net/sdQF8AHkQY6RCSGRVJY5_HjZ8Yx97jSnr03x4)`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+            }}
+            className="w-6 h-6 invert hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
+            onClick={() =>
+              window.open(
+                "https://linktr.ee/su.psgtech",
+                "_blank"
+              )
+            }
+          >
+          </button>
         </div>
       </div>
 
@@ -361,6 +377,64 @@ const Section1 = ({ scrollByVH }) => {
               >
                 Contact Us
               </button>
+              <div className="flex-1"></div>
+              <div className="flex flex-row space-x-8 pb-8">
+                <button
+                  className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/company/studentsunion-psgtech/",
+                      "_blank"
+                    )
+                  }
+                >
+                  <BsLinkedin size={24} className=" text-gray-500 hover:text-black" />
+                </button>
+                <button
+                  className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+                  onClick={() =>
+                    window.open("https://www.instagram.com/kriya_psgtech/", "_blank")
+                  }
+                >
+                  <BsInstagram
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
+                </button>
+                <button
+                  className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+                  onClick={() => window.open("mailto:events@psgkriya.in", "_blank")}
+                >
+                  <SiGmail size={24} className=" text-gray-500 hover:text-black" />
+                </button>
+                <button
+                  className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
+                  onClick={() =>
+                    window.open(
+                      "https://youtube.com/c/StudentsUnionPSGTech",
+                      "_blank"
+                    )
+                  }
+                >
+                  <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
+                </button>
+                <button
+                  style={{
+                    background: `url(https://d1fdloi71mui9q.cloudfront.net/sdQF8AHkQY6RCSGRVJY5_HjZ8Yx97jSnr03x4)`,
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "contain",
+                  }}
+                  className="w-6 h-6 invert hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
+                  onClick={() =>
+                    window.open(
+                      "https://linktr.ee/su.psgtech",
+                      "_blank"
+                    )
+                  }
+                >
+                </button>
+              </div>
             </div>
           </div>
           <div className="w-full h-full relative" id="image-multi-2">
@@ -415,20 +489,32 @@ const Section1 = ({ scrollByVH }) => {
             </div>
           </div>
           {localStorage.getItem("token") ? (
-            <button
-              id="registration-prompt"
-              className="lg:text-lg font-semibold w-1/2 text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal z-10"
-              onClick={() => {
-                navigate("/portal/profile");
-              }}
-            >
-              Go to Dashboard
-            </button>
+            <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16 z-10">
+              <button
+                id="registration-prompt"
+                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal"
+                onClick={() => {
+                  navigate("/portal/profile");
+                }}
+              >
+                Dashboard
+              </button>
+              <button
+                id="registration-prompt"
+                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal"
+                onClick={() => {
+                  localStorage.clear();
+                  window.location.reload();
+                }}
+              >
+                Logout
+              </button>
+            </div>
           ) : (
             <div className="flex flex-row space-x-6 lg:mt-8 items-center justify-center lg:px-12 w-full px-16 z-10">
               <button
                 id="registration-prompt"
-                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal"
                 onClick={() => {
                   navigate("/auth?type=signup");
                 }}
@@ -437,7 +523,7 @@ const Section1 = ({ scrollByVH }) => {
               </button>
               <button
                 id="registration-prompt"
-                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 lg:text-left whitespace-nowrap lg:whitespace-normal"
+                className="lg:text-lg font-semibold w-full text-center flex justify-center font-poppins bg-white text-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-8 py-2 rounded-lg my-8 lg:mb-16 whitespace-nowrap lg:whitespace-normal"
                 onClick={() => {
                   navigate("/auth?type=login");
                 }}
