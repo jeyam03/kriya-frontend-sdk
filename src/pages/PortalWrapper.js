@@ -68,7 +68,7 @@ const NavBarForDesktop = () => {
 
   return (
     <nav className="hidden lg:block z-50 w-screen lg:w-1/4 bg-white fixed lg:relative top-0 max-h-screen lg:h-screen overflow-y-scroll font-poppins shadow-md">
-      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6">
+      <div className="flex w-full z-10 justify-between items-center sticky top-0 bg-white px-6 shadow-sm">
         <Link
           to={"/"}
           className="w-28 h-28 mt-4"
