@@ -226,7 +226,7 @@ const Section3 = () => {
                 </p>
               </Link>
               <p className={`${condition} text-sm pb-2 text-justify`}>
-                Unleash your inner engineer and dive into the world of
+                Unleash the engineer in you and dive into the world of
                 innovation with our cutting-edge Core Engineering events at this
                 Kriya! Discover the power of engineering, and explore endless
                 possibilities to put your skills to the test.
