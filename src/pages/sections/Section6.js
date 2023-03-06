@@ -95,36 +95,20 @@ const Section6 = () => {
                     title="Creamery"
                   />
                   <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
-                    title="Waffle Cart"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110243/Sponsers/ChocoCrush_zvox6e.jpg"
+                    title="Choco Crush"
                   />
                   <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
-                    title="Polar Bear"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
+                    title="Momolicious"
                   />
                   <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
-                    title="Frozen Stick"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
+                    title="Tibbs"
                   />
                   <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
-                    title="Creamery"
-                  />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
-                    title="Waffle Cart"
-                  />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
-                    title="Polar Bear"
-                  />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
-                    title="Frozen Stick"
-                  />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
-                    title="Creamery"
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114741/Sponsers/The_Crunchy_Treats_uxgusw.jpg"
+                    title="The Crunchy Treats"
                   />
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
@@ -141,6 +125,86 @@ const Section6 = () => {
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
                     title="Creamery"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110243/Sponsers/ChocoCrush_zvox6e.jpg"
+                    title="Choco Crush"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
+                    title="Momolicious"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
+                    title="Tibbs"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114741/Sponsers/The_Crunchy_Treats_uxgusw.jpg"
+                    title="The Crunchy Treats"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                    title="Creamery"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110243/Sponsers/ChocoCrush_zvox6e.jpg"
+                    title="Choco Crush"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
+                    title="Momolicious"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
+                    title="Tibbs"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114741/Sponsers/The_Crunchy_Treats_uxgusw.jpg"
+                    title="The Crunchy Treats"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                    title="Waffle Cart"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                    title="Polar Bear"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                    title="Frozen Stick"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                    title="Creamery"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110243/Sponsers/ChocoCrush_zvox6e.jpg"
+                    title="Choco Crush"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
+                    title="Momolicious"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
+                    title="Tibbs"
+                  />
+                  <Sponsors
+                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114741/Sponsers/The_Crunchy_Treats_uxgusw.jpg"
+                    title="The Crunchy Treats"
                   />
                 </div>
               </div>
