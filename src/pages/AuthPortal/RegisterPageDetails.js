@@ -18,6 +18,8 @@ const RegisterPageDetails = ({ switchPage }) => {
   const [refDisable, setrefDisable] = useState(false);
   const [otherCollege, setOtherCollege] = useState("");
 
+  const [isOther, setIsOther] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -220,12 +222,13 @@ const RegisterPageDetails = ({ switchPage }) => {
           ]}
         />
         <div className="">
-          <label className="text-blue text-sm z-30 bg-white px-2">
+          <label className="text-blue text-sm z-30 bg-white p-2">
             College/University
           </label>
+
           <Select
             styles={selectStyles}
-            className="z-20"
+            className="z-20 flex-1"
             options={
               colleges.map((college) => {
                 return {
@@ -234,8 +237,18 @@ const RegisterPageDetails = ({ switchPage }) => {
                 };
               })
             }
+            isDisabled={isOther}
             onChange={handleCollegeChange}
           />
+          <div className="flex space-x-1 mt-2">
+            <input type="checkbox" checked={isOther} onClick={e => {
+              if (!isOther) setFormData({ ...formData, college: "Other" });
+              else setFormData({ ...formData, college: "" });
+              setIsOther(!isOther)
+            }} />
+            <p>Your college not listed above ? </p>
+          </div>
+
         </div>
         {formData.college === "Other" && (
           <TextInput

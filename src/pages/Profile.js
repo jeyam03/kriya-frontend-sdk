@@ -18,7 +18,7 @@ import {
   fetchWorkshops,
   fetchPapers,
 } from "../API/call";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward, IoMdLogOut } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
@@ -77,7 +77,7 @@ const Profile = () => {
   const [papers, setPapers] = useState(fetchPapers());
 
   return (
-    <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll py-24 lg:pt-0">
+    <section className="w-screen font-poppins h-screen overflow-x-hidden overflow-y-scroll pt-24 pb-8 lg:pt-0 lg:pb-24">
       <div className="hidden lg:block w-full h-36 bg-gradient-to-r from-[#C80067] to-[#5451B6]"></div>
       <div className="lg:px-16 py-12 text-white flex flex-col items-center lg:items-start">
         <div
@@ -112,11 +112,16 @@ const Profile = () => {
               <AiOutlineUser className="text-2xl" />
               <h1 className="text-2xl">About</h1>
             </div>
-            <div className="grid grid-cols-1 gap-y-1   w-full mt-8 space-y-1  ">
+            <div className="grid grid-cols-1 gap-y-1 w-full mt-8 space-y-2">
               <TextOutput
                 className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
                 heading="Name"
                 content={userDetails.name}
+              />
+              <TextOutput
+                className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
+                heading="Kriya ID"
+                content={userDetails.kriyaId}
               />
               <TextOutput
                 className="w-full lg:grid-cols-[100px_minmax(400px,1fr)] grid"
@@ -350,6 +355,17 @@ const Profile = () => {
               ))}
             </div>
           </div>
+
+          <button
+            className="lg:hidden flex flex-row w-full py-4"
+            onClick={() => {
+              localStorage.clear();
+              window.location.reload();
+            }}
+          >
+            <IoMdLogOut size={24} className="mr-4" />
+            Logout
+          </button>
         </div>
       )}
     </section>
