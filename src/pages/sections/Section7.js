@@ -105,9 +105,9 @@ const Section7 = () => {
               className="border row-span-1 col-span-2 w-[50vh] h-[25vh]  rounded-tl-[6rem] rounded-br-[6rem]"
               style={{
                 background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958606/IMG_0073-min_oy2aif.jpg)",
+                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1678111681/SU%20Team%20Photos/IMG_0634-min_rrxrie.jpg)",
                 backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat",
               }}
             ></div>
