@@ -182,10 +182,7 @@ const Section6 = () => {
 
               <div className="w-full max-w-full relative overflow-x-hidden h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee-rev">
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
-                    title="Momolicious"
-                  />
+                  
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
                     title="Tibbs Frankie"
@@ -206,10 +203,7 @@ const Section6 = () => {
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678169246/Sponsers/RoyalZip_rtrw6x.jpg"
                     title="Royal Zip"
                   />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
-                    title="Momolicious"
-                  />
+                  
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
                     title="Tibbs Frankie"
@@ -230,10 +224,7 @@ const Section6 = () => {
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678169246/Sponsers/RoyalZip_rtrw6x.jpg"
                     title="Royal Zip"
                   />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
-                    title="Momolicious"
-                  />
+                  
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
                     title="Tibbs Frankie"
@@ -254,10 +245,7 @@ const Section6 = () => {
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678169246/Sponsers/RoyalZip_rtrw6x.jpg"
                     title="Royal Zip"
                   />
-                  <Sponsors
-                    imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110052/Sponsers/Momolicious_n340sl.png"
-                    title="Momolicious"
-                  />
+                  
                   <Sponsors
                     imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
                     title="Tibbs Frankie"
