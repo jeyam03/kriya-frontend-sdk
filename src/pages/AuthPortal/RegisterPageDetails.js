@@ -29,7 +29,7 @@ const RegisterPageDetails = ({ switchPage }) => {
     department: "",
     year: "",
     isPSGStudent: false,
-    accomodation: "",
+    accomodation: "No",
     phone: "",
   });
 
