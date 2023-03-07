@@ -715,7 +715,8 @@
     "contact_mobile_2": 9944521395,
     "hall": "G503 G504",
     "eventRules": "",
-    "date": "24/03/2023",
+    "teamSize": "1",
+    "date": "24",
     "timing": "10:00 AM - 12:00 PM and 2:00 PM - 4:00 PM"
   },
   {
@@ -738,7 +739,8 @@
     "contact_mobile_2": 8012326847,
     "hall": "G509",
     "eventRules": "It is an event of two \nPrelims (Buzzer based quiz round) based on fashion elements and brands will be conducted \nThe theme for the second round can be selected by yourself. \nA canva & powerpoint template will be provided to the teams for making collage of the collected pictures. \nParticipants can bring personal laptops to the event.(If required) \nAfter making the collage, it should be sent to the given mail id in ppt/pdf format. \nStudents should make a collage with its price taken from the respective site. The total price of attire should not exceed the given budget. \nFor the third round, A3 size plain cardboard along with A3 sheets and basic colour paints with a brush will be provided for mask creation. \nStudents can bring any material (paint, brush, colour paper, surface embellishments) to decorate the mask. \nAt the end of each round the participants will be filtered ( At the end of first round - 20 participants and at the end of second round - 10 participants.\nEvaluation will be based on the creativity , relevance and presentation and also the application of elements and principles of designs will be considered).",
-    "date": "24/03/2023",
+    "teamSize": "2 - 3",
+    "date": "24",
     "timing": "9:00 AM to 12:00 PM"
   },
   {
@@ -747,9 +749,9 @@
     "one_line_desc": "The battle for 3s for the 4 th.      1C - cogitation , 2C - creativity, 3C - careful analysis for the 4 C - Champion .",
     "description": "During the first round , all participants will be given a crossword puzzle to solve in 20 minutes while answering technical questions. The top twenty teams will advance to the next  round. Round 2 delves into matching of famous tag lines with the products. The top ten teams will advance to the next round. Round 3 delves into marketing strategies for effectively advertising a given product. Come and join with us for this event to demonstrate your puzzle solving abilities and creativity in handling the given task.  ",
     "round_title_1": "Round 1",
-    "round_desc_1": " Round 1 is based on puzzle solving. The technical questions will be asked and then the participants need to fit the answers in the given boxes and he needs to come up with the same alphabet if the alphabets are overlapped by the consequent questions. Top twenty teams will be selected for second round. Each question carries 1 marks . ",
+    "round_desc_1": "Round 1 is based on puzzle solving. The technical questions will be asked and then the participants need to fit the answers in the given boxes and he needs to come up with the same alphabet if the alphabets are overlapped by the consequent questions. Top twenty teams will be selected for second round. Each question carries 1 marks . ",
     "round_title_2": "Round 2",
-    "round_desc_2": " Round 2 is based on finding tag line for the given products. Twenty products along with some famous tag line will be given to the participants. One who matches the tagline with the products will be qualified for next round . Top ten teams will be selected for third round . ",
+    "round_desc_2": "Round 2 is based on finding tag line for the given products. Twenty products along with some famous tag line will be given to the participants. One who matches the tagline with the products will be qualified for next round . Top ten teams will be selected for third round . ",
     "round_title_3": "Round 3",
     "round_desc_3": "Round 3 is about how the participants find new marketing skills to the particular product give by us . The judge will decide the winners , one who gives the new way of advertisement to the particular product. ",
     "round_title_4": "",
@@ -761,8 +763,9 @@
     "contact_mobile_2": 6381996676,
     "hall": "Y 302",
     "eventRules": "Number of participants in the team should be two members.",
-    "date": "24/03/2023",
-    "timing": "9.30 AM-11.30 AM"
+    "teamSize": "2",
+    "date": "24",
+    "timing": "9.30 AM - 11.30 AM"
   },
   {
     "eventName": "FUTECH",
@@ -784,7 +787,8 @@
     "contact_mobile_2": 9894317044,
     "hall": "G506",
     "eventRules": "1.For Id verification, a college id card is required.\n2.Participants should enter the allotted room after giving their attendance at the registration desk with their name and the last four digits of the Kriya ID..\n3.The Participants must not make noise throughout the event.\n4.Participants should come with a proper dress code.\n5.Malpractice is strictly prohibited.\n6.Usage of mobile phones is prohibited.\n7.The time limit will be strictly adhered to.\n8.Participants are supposed to be present on time.\n9.At the end of the first round-10 teams will be filtered.\n10.Judge's decision will be final.",
-    "date": "24/03/2023",
+    "teamSize": "2",
+    "date": "24",
     "timing": "11:00 AM to 2:00 PM"
   },
   {
@@ -807,7 +811,8 @@
     "contact_mobile_2": 6382234992,
     "hall": "G304",
     "eventRules": "The quiz consists of 2 rounds.\nThe points scored in the first round will be considered to select the finalists for the second round.\nUnanswered questions will be awarded no points.",
-    "date": "25/03/2023",
+    "teamSize": "1",
+    "date": "25",
     "timing": "2:00PM to 4:00PM"
   },
   {
@@ -829,8 +834,9 @@
     "contact_name_2": "Abhishek M B",
     "contact_mobile_2": 9345472545,
     "hall": "G401",
-    "eventRules": "● Individual participation. \n ● No mobile phones allowed.",
-    "date": "24/03/2023",
+    "eventRules": "Individual participation. \nNo mobile phones allowed.",
+    "teamSize": "1",
+    "date": "24",
     "timing": "9:00 AM to 12:00 PM"
   },
   {
@@ -853,7 +859,8 @@
     "contact_mobile_2": 9843711171,
     "hall": "G501 G502",
     "eventRules": "Participants should strictly adhere to the time limit.\n Participants are barred from using mobile phones and the internet. \n Decision of the judges shall be final. \n Participants shall not indulge in any form of mall practice.",
-    "date": "24/03/2023",
+    "teamSize": "2",
+    "date": "24",
     "timing": "9:30 AM - 12:30 PM"
   },
   {
@@ -894,13 +901,14 @@
     "round_title_4": "",
     "round_desc_4": "",
     "eventId": "EVNT0038",
-    "contact_name_1": "M.AHAMED UZAIR",
+    "contact_name_1": "M. AHAMED UZAIR",
     "contact_mobile_1": 7305950137,
-    "contact_name_2": "N.HARINI",
+    "contact_name_2": "N. HARINI",
     "contact_mobile_2": 6384920066,
     "hall": "D-Block First Floor",
     "eventRules": "Teams of 2 are allowed \nNo googling answers ( It’s a waste of time don’t bother trying it !) \nNever discuss with your neighbors  \nQuiz masters decision is the final \nRound-wise rules will be informed during the event",
-    "date": "25/03/2023",
+    "teamSize": "1",
+    "date": "25",
     "timing": "9:30 AM - 12:30 PM"
   }
 ]
