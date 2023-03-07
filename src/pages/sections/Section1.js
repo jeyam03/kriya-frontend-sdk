@@ -455,7 +455,7 @@ const Section1 = ({ scrollByVH }) => {
 
         <h1
           id="tagline"
-          className="uppercase lg:delay-500 lg:w-full font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8"
+          className="uppercase lg:delay-500 font-poppins text-3xl lg:text-[2.5rem] font-semibold ml-8 -mt-24 lg:-ml-40 lg:-mt-0 lg:mb-8"
         >
           <span className="bg-gradient-to-r from-[#C80067] to-[#7300fe] text-white leading-[3.25rem] lg:leading-[4rem] relative z-10">
             The Global Clash of Techno Talents.
