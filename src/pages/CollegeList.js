@@ -461,7 +461,6 @@ const colleges = [
  Namakkal District 637205`,
   `Vivekanandha College of Technology for Women, Sathinaickenpalayam, Elayampalayam Village, Kumaramangalam,
  Namakkal District 637205`,
-  `Other`,
   `Indian Institute of Technology Bombay (IITB)`,
   `Indian Institute of Technology Delhi (IITD)`,
   `Indian Institute of Technology Madras (IITM)`,

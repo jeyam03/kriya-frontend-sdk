@@ -126,6 +126,13 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482496/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/Bharath_Coat_black_tie_-_19L107_-_BHARATH_R-removebg-preview_wgjqp7.png",
   },
   {
+    name: "Aravindhan T",
+    vertical: "Design & Photography",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677306682/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/19M604_Aravindhan_T_oheuox.png",
+  },
+  {
     name: "Prethvish Mo",
     vertical: "Design & Photography",
     position: "",
@@ -158,7 +165,14 @@ const TeamDetails = [
     vertical: "Design & Photography",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482495/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/20L211_-_Jeevan.G.K-removebg-preview_wzbe7c.png",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676553855/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/20l211-jeevan-removebg-preview_padt3r.png",
+  },
+  {
+    name: "Akash S",
+    vertical: "Design & Photography",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677309457/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/Akash_S_gxygic.png",
   },
   {
     name: "Aakash M",
@@ -173,6 +187,13 @@ const TeamDetails = [
     position: "",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482496/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/Kailesh_htioyd.png",
+  },
+  {
+    name: "Aswin Balamurugan",
+    vertical: "Design & Photography",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677306301/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/Aswin_Balamurugan_dwq06n.png",
   },
   {
     name: "Cresent Ajai K",
@@ -224,6 +245,13 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482495/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/20T118_-_20T118_-_PASUPATHI_K-removebg-preview_uzco2k.png",
   },
   {
+    name: "Kavinkumar S",
+    vertical: "Design & Photography",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677306300/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/kavinkumar_S_fvnryt.png",
+  },
+  {
     name: "Harsini S",
     vertical: "Events Resource Management",
     position: "",
@@ -243,6 +271,20 @@ const TeamDetails = [
     position: "",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484801/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Arun_A_R_-_19M607_-_Arun_A_R-removebg-preview_mmrkvn.png",
+  },
+  {
+    name: "Sreehari Krishnakumar",
+    vertical: "Events Resource Management",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676536730/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Sreehari_Krishnakumar_qrimkj.png",
+  },
+  {
+    name: "Mohammed Rafi M",
+    vertical: "Events Resource Management",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677785299/SU%20Team%20Photos/website%20photo%20updated/Events%20management/IMG_9175-removebg-preview_pcb3ij.png",
   },
   {
     name: "Sevathal S",
@@ -399,32 +441,32 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484800/SU%20Team%20Photos/website%20photo%20updated/Events%20management/22R436_-_22R436_-_NITHISH_KUMAR_N_R-removebg-preview_q02yhb.png",
   },
   {
-    name: "Saikrishna V",
+    name: "Aayush Singh",
     vertical: "Events Resource Management",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484803/SU%20Team%20Photos/website%20photo%20updated/Events%20management/9fjtbs_-_Sai_Krishna-removebg-preview_ieohcq.png",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677307663/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Aayush_Singh_prjmhp.png",
   },
   {
     name: "Thirugnana Sampathan S",
     vertical: "Events Resource Management",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484803/SU%20Team%20Photos/website%20photo%20updated/Events%20management/20E155_-_20E155_-_THIRUNAVUKARASU_ROHIT-removebg-preview_ovogkl.png",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677308182/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Thirugnana_sampathan_S_g7xbui.png",
   },
   {
-    name: "Kishore K",
+    name: "Shri Nandhini A C ",
     vertical: "Events Resource Management",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484800/SU%20Team%20Photos/website%20photo%20updated/Events%20management/21E121_-_21E121_-_KISHORE_K-removebg-preview_uor74e.png",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678125838/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Shri_Nandhini_A_C_dqfc2o.png",
   },
   {
-    name: "Suresh Krishna Sankaranaarayanan",
+    name: "Sadhana J B",
     vertical: "Events Resource Management",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484800/SU%20Team%20Photos/website%20photo%20updated/Events%20management/21M255_-_21M255_-_SURESH_KRISHNA_SANKARANAARAYANAN-removebg-preview_n7lsr6.png",
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678125839/SU%20Team%20Photos/website%20photo%20updated/Events%20management/J.B._Sadhana_stb4d8.png",
   },
   {
     name: "Dharmendra R",
@@ -466,7 +508,14 @@ const TeamDetails = [
     vertical: "PR and Sponsorship",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484376/SU%20Team%20Photos/website%20photo%20updated/PR%20and%20Sponsor/Ramanathan_R_-_Passport_photo_-_Ramanathan_R-removebg-preview_xoamxa.png",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484376/SU%20Team%20Photos/website%20photo%20updated/PR%20and%20Sponsor/Ramanathan_R_-_Passport_photo_-_Ramanathan_R-removebg-preview_xoamxa.png",
+  },
+  {
+    name: "Sudharshan N",
+    vertical: "PR and Sponsorship",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678165629/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Sudharsan_arm1ui.png",
   },
   {
     name: "Raghan Harkesh R",
@@ -509,6 +558,13 @@ const TeamDetails = [
     position: "",
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484378/SU%20Team%20Photos/website%20photo%20updated/PR%20and%20Sponsor/21D218__-_21D218_-_G_LISALINI-removebg-preview_exfhoj.png",
+  },
+  {
+    name: "Sangamithra S",
+    vertical: "PR and Sponsorship",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1677306409/SU%20Team%20Photos/website%20photo%20updated/PR%20and%20Sponsor/IMG_9310-removebg-preview_pwzzg3.png",
   },
   {
     name: "Madumitha M P",

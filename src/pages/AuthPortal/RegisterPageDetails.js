@@ -75,6 +75,7 @@ const RegisterPageDetails = ({ switchPage }) => {
     if (!formData.phone) return toast.error("Please enter your phone number");
     if (!formData.college) return toast.error("Please select your college");
     if (formData.college === "Other" && (otherCollege === null || otherCollege.length === 0)) return toast.error("Please enter your college name");
+    if (formData.accomodation === null || formData.accomodation.length === 0) return toast.error("Please enter your accomodation details");
     if (!formData.department) return toast.error("Please select your department");
     if (!formData.year) return toast.error("Please select your year");
 
@@ -240,13 +241,13 @@ const RegisterPageDetails = ({ switchPage }) => {
             isDisabled={isOther}
             onChange={handleCollegeChange}
           />
-          <div className="flex space-x-1 mt-2">
+          <div className="flex space-x-2 pl-2 mt-2">
             <input type="checkbox" checked={isOther} onClick={e => {
               if (!isOther) setFormData({ ...formData, college: "Other" });
               else setFormData({ ...formData, college: "" });
               setIsOther(!isOther)
             }} />
-            <p>Your college not listed above ? </p>
+            <p>My college is not listed above </p>
           </div>
 
         </div>
