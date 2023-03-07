@@ -455,6 +455,20 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1677308182/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Thirugnana_sampathan_S_g7xbui.png",
   },
   {
+    name: "Shri Nandhini A C ",
+    vertical: "Events Resource Management",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678125838/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Shri_Nandhini_A_C_dqfc2o.png",
+  },
+  {
+    name: "Sadhana J B",
+    vertical: "Events Resource Management",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678125839/SU%20Team%20Photos/website%20photo%20updated/Events%20management/J.B._Sadhana_stb4d8.png",
+  },
+  {
     name: "Dharmendra R",
     vertical: "Overall Coordinators",
     position: "Chairperson, Students Union",
@@ -489,19 +503,19 @@ const TeamDetails = [
     image_url:
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676482316/SU%20Team%20Photos/website%20photo%20updated/Office%20Members/Pavana_tymd6o.jpg",
   },
-  // {
-  //   name: "Sudharshan N",
-  //   vertical: "PR and Sponsorship",
-  //   position: "",
-  //   image_url:
-  //     "https://res.cloudinary.com/dksmk66vo/image/upload/v1677306300/SU%20Team%20Photos/website%20photo%20updated/Design%20and%20Photogrphy/kavinkumar_S_fvnryt.png",
-  // },
   {
     name: "Ramanathan R",
     vertical: "PR and Sponsorship",
     position: "",
     image_url:
-      "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484376/SU%20Team%20Photos/website%20photo%20updated/PR%20and%20Sponsor/Ramanathan_R_-_Passport_photo_-_Ramanathan_R-removebg-preview_xoamxa.png",
+    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676484376/SU%20Team%20Photos/website%20photo%20updated/PR%20and%20Sponsor/Ramanathan_R_-_Passport_photo_-_Ramanathan_R-removebg-preview_xoamxa.png",
+  },
+  {
+    name: "Sudharshan N",
+    vertical: "PR and Sponsorship",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678165629/SU%20Team%20Photos/website%20photo%20updated/Events%20management/Sudharsan_arm1ui.png",
   },
   {
     name: "Raghan Harkesh R",
