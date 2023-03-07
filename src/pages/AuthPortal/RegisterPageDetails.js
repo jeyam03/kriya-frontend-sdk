@@ -106,7 +106,7 @@ const RegisterPageDetails = ({ switchPage }) => {
       return;
     }
 
-    toast.promise(fetchUpdateUser(authEmail, formData), {
+    toast.promise(fetchUpdateUser(authEmail && authEmail.length > 0 ? authEmail : formData.email, formData), {
       loading: "Updating User",
       success: (res) => {
         if (
