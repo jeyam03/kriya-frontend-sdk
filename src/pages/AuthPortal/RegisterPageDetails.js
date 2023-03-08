@@ -39,7 +39,10 @@ const RegisterPageDetails = ({ switchPage }) => {
 
   useEffect(() => {
     if (localStorage.getItem("referral")) {
-      setFormData({ ...formData, referral: localStorage.getItem("referral").split("-")[1] });
+      setFormData({
+        ...formData,
+        referral: localStorage.getItem("referral").split("-")[1],
+      });
       // setrefDisable(true);
     }
   }, []);
@@ -52,11 +55,9 @@ const RegisterPageDetails = ({ switchPage }) => {
       .then((res) => {
         console.log({ ...formData, ...res.data.user });
         setFormData({ ...formData, ...res.data.user });
-        if (
-          email.endsWith("psgtech.ac.in") &&
-          (!res.data.user.college || res.data.user.college.length <= 0)
-        )
+        if (email.endsWith("psgtech.ac.in"))
           setFormData({
+            ...formData,
             ...res.data.user,
             college: PSG_COLLEGE,
             isPSGStudent: true,
@@ -70,13 +71,21 @@ const RegisterPageDetails = ({ switchPage }) => {
   };
 
   const handleContinue = () => {
-    if (!formData.name || formData.name.length === 0) return toast.error("Please enter your name");
+    console.log(formData);
+    if (!formData.name || formData.name.length === 0)
+      return toast.error("Please enter your name");
     if (!formData.email) return toast.error("Please enter your email");
     if (!formData.phone) return toast.error("Please enter your phone number");
     if (!formData.college) return toast.error("Please select your college");
-    if (formData.college === "Other" && (otherCollege === null || otherCollege.length === 0)) return toast.error("Please enter your college name");
-    if (formData.accomodation === null || formData.accomodation.length === 0) return toast.error("Please enter your accomodation details");
-    if (!formData.department) return toast.error("Please select your department");
+    if (
+      formData.college === "Other" &&
+      (otherCollege === null || otherCollege.length === 0)
+    )
+      return toast.error("Please enter your college name");
+    if (formData.accomodation === null || formData.accomodation.length === 0)
+      return toast.error("Please enter your accomodation details");
+    if (!formData.department)
+      return toast.error("Please select your department");
     if (!formData.year) return toast.error("Please select your year");
 
     if (formData.referral && formData.referral.length > 0) {
@@ -87,8 +96,7 @@ const RegisterPageDetails = ({ switchPage }) => {
         toast.error("Invalid referral code");
         return;
       }
-    }
-    else {
+    } else {
       formData.referral = null;
     }
 
@@ -96,54 +104,64 @@ const RegisterPageDetails = ({ switchPage }) => {
       formData.college = otherCollege;
     }
 
-    if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       toast.error("Please enter a valid email address");
       return;
     }
 
-    if (!(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im).test(formData.phone)) {
+    if (
+      !/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(
+        formData.phone
+      )
+    ) {
       toast.error("Please enter a valid phone number");
       return;
     }
 
-    toast.promise(fetchUpdateUser(authEmail && authEmail.length > 0 ? authEmail : formData.email, formData), {
-      loading: "Updating User",
-      success: (res) => {
-        if (
-          formData.college === PSG_COLLEGE &&
-          !formData.email.endsWith("psgtech.ac.in")
-        ) {
-          setSearchParams({
-            ...searchParams,
-            type: "signup",
-            page: "psg",
-            email: formData.email,
-          });
-        } else {
-          if (res.data.user.source === "google") {
+    toast.promise(
+      fetchUpdateUser(
+        authEmail && authEmail.length > 0 ? authEmail : formData.email,
+        formData
+      ),
+      {
+        loading: "Updating User",
+        success: (res) => {
+          if (
+            formData.college === PSG_COLLEGE &&
+            !formData.email.endsWith("psgtech.ac.in")
+          ) {
             setSearchParams({
               ...searchParams,
               type: "signup",
-              page: "password",
-              email: authEmail,
-            });
-          } else {
-            setSearchParams({
-              ...searchParams,
-              type: "signup",
-              page: "verify-email",
+              page: "psg",
               email: formData.email,
             });
+          } else {
+            if (res.data.user.source === "google") {
+              setSearchParams({
+                ...searchParams,
+                type: "signup",
+                page: "password",
+                email: authEmail,
+              });
+            } else {
+              setSearchParams({
+                ...searchParams,
+                type: "signup",
+                page: "verify-email",
+                email: formData.email,
+              });
+            }
           }
-        }
-        localStorage.removeItem("referral");
-        return "User Updated";
-      },
-      error: (err) => {
-        console.log(err);
-        return "Error updating user";
-      },
-    });
+          localStorage.removeItem("referral");
+          return "User Updated";
+        },
+        error: (err) => {
+          console.log(err);
+          return "Error updating user";
+        },
+      }
+    );
   };
 
   useEffect(() => {
@@ -157,11 +175,11 @@ const RegisterPageDetails = ({ switchPage }) => {
       borderRadius: "0.5rem",
       padding: "0.25rem 0.5rem",
     }),
-  }
+  };
 
-  const handleCollegeChange = e => {
+  const handleCollegeChange = (e) => {
     setFormData({ ...formData, college: e.value });
-  }
+  };
 
   return (
     <div className="w-full h-full overflow-y-scroll lg:overflow-y-hidden flex flex-col lg:h-fit lg:max-h-[90%] py-12 px-6 lg:pt-8 lg:pb-0 lg:px-0 shadow-xl bg-white space-y-6">
@@ -230,26 +248,27 @@ const RegisterPageDetails = ({ switchPage }) => {
           <Select
             styles={selectStyles}
             className="z-20 flex-1"
-            options={
-              colleges.map((college) => {
-                return {
-                  value: college,
-                  label: college,
-                };
-              })
-            }
+            options={colleges.map((college) => {
+              return {
+                value: college,
+                label: college,
+              };
+            })}
             isDisabled={isOther}
             onChange={handleCollegeChange}
           />
           <div className="flex space-x-2 pl-2 mt-2">
-            <input type="checkbox" checked={isOther} onClick={e => {
-              if (!isOther) setFormData({ ...formData, college: "Other" });
-              else setFormData({ ...formData, college: "" });
-              setIsOther(!isOther)
-            }} />
+            <input
+              type="checkbox"
+              checked={isOther}
+              onClick={(e) => {
+                if (!isOther) setFormData({ ...formData, college: "Other" });
+                else setFormData({ ...formData, college: "" });
+                setIsOther(!isOther);
+              }}
+            />
             <p>My college is not listed above </p>
           </div>
-
         </div>
         {formData.college === "Other" && (
           <TextInput
