@@ -17,14 +17,14 @@
     "agenda": [
       [
         {
-          "time": "8.30 - 9.30",
+          "time": "9.00 - 10.00",
           "description": [
             "Overview on Iot technology and its application",
             "Introduction to STEPS Iot Development kit (will be provided) with built in network processor, IDE Platform"
           ]
         },
         {
-          "time": "9.30 - 11.30",
+          "time": "10.00 - 12.00",
           "description": [
             "Preparing Sensor Node (Things) Embedded C Arduino API Programming",
             "Sensor and actuators ",
@@ -32,7 +32,7 @@
           ]
         },
         {
-          "time": "11.45 - 1.00",
+          "time": "12.00 - 1.00",
           "description": [
             "Iot communication models – HTTP & MQTT protocol"
           ]
@@ -98,13 +98,13 @@
         {
           "time": "01:30 - 02:30",
           "description": [
-            "Using Resources, Media and Menus to build"
+            "Using Resources, Media and Menus to build apps"
           ]
         },
         {
           "time": "02:30 - 03:30",
           "description": [
-            "Jetpack Compose – Modern way of App"
+            "Jetpack Compose – Modern way of App Development"
           ]
         },
         {
@@ -126,7 +126,7 @@
     "date": "24",
     "hall": "CS LAB (GRD LAB, E-BLOCK First floor)",
     "time": "9.30 AM - 05.00 PM",
-    "c1Name": "Darshan",
+    "c1Name": "Darshan R J",
     "c1Num": "9952549553",
     "c2Name": "Priyanka G S",
     "c2Num": "93455 44874",
@@ -136,11 +136,11 @@
         {
           "time": "9:30 AM - 11:00 AM",
           "description": [
-            "Introduction to AI and Recent Trends, Artificial Neural Networks and The Mechanics of Deep\nLearning\n"
+            "Introduction to AI and Recent Trends, Artificial Neural Networks and The Mechanics of DeepLearning\n"
           ]
         },
         {
-          "time": "11:15 AM - 12:30 PM",
+          "time": "11:00 AM - 1:00 PM",
           "description": [
             "Convolutional Neural Networks\n"
           ]
@@ -180,25 +180,26 @@
         {
           "time": "9.30 AM - 10.30 AM",
           "description": [
-            "Introduction to programming with R"
+            "R basics"
           ]
         },
         {
           "time": "10.45 AM - 12.30 PM",
           "description": [
-            "Participants will be taught the Data structures in R followed by Data inspection and wrangling"
+            "Data structures in R",
+            "Data inspection and wrangling"
           ]
         },
         {
           "time": "1.30 PM - 2.30 PM",
           "description": [
-            "Participants are taught how to make use of R to do statistical computations."
+            "Statistical Computations"
           ]
         },
         {
           "time": "2.45 PM TO 4.30 PM",
           "description": [
-            "Particpants are taught on the various Data Visualization techniques using R"
+            "Data Visualization"
           ]
         }
       ]
@@ -222,7 +223,7 @@
     "agenda": [
       [
         {
-          "time": "10.30 AM - 12.30 PM",
+          "time": "10.15 AM - 12.30 PM",
           "description": [
             "Introduction to game development softwares such as Unity and Unreal engine and its hands-on implementation methods."
           ]
@@ -254,7 +255,7 @@
     "agenda": [
       [
         {
-          "time": "10:00 AM - 11:15 AM",
+          "time": "9:45 AM - 11:15 AM",
           "description": [
             "Introduction to Sensorics and Virtual Instrumentation "
           ]
@@ -316,7 +317,7 @@
           ]
         },
         {
-          "time": "02:30 PM - 04:00 PM",
+          "time": "02:30 PM - 04:30 PM",
           "description": [
             "An interactive hands-on training with IoT kits"
           ]
@@ -333,7 +334,7 @@
     "workName": "Nuts and Bots with Naveen",
     "date": "26",
     "hall": "Y-202",
-    "time": "2.00 AM - 05.00 PM",
+    "time": "2.00 PM - 05.00 PM",
     "c1Name": "DUVARAKESH D",
     "c1Num": "7397057322",
     "c2Name": "ARUN K",
@@ -372,7 +373,7 @@
           ]
         },
         {
-          "time": "4:30 PM - 5:30 PM",
+          "time": "4:30 PM - 5:00 PM",
           "description": [
             "All about EVs and their future."
           ]
@@ -465,24 +466,30 @@
     "workName": "Non-Destructive Testing",
     "date": "25",
     "hall": "Metallurgy Seminar Hall",
-    "time": "9:00 AM - 12:00 PM",
+    "time": "9:30 AM - 3:00 PM",
     "c1Name": "Yogeshwaraa R",
     "c1Num": "9629089852",
-    "c2Name": "Surya Krishnan P",
+    "c2Name": "Surya Krishnaa P",
     "c2Num": "9043346699",
     "desc": "Non destructive testing is a testing and analysis technique used in industry to evaluate the properties of a material, component, structure or system for characteristic differences or welding defects and discontinuities without causing damage to the original part. Why use NDT instead of conventional evaluation techniques? It is an effective technique via which the article can be tested without permanently altering its physical and chemical properties. It is a highly valuable technique that can save both money and time in product evaluation, troubleshooting and research. It is also a very safe testing method for operators with most techniques being harmless to humans with high accuracy.",
     "agenda": [
       [
         {
-          "time": "9:00 AM - 10:30 AM",
+          "time": "9:30 AM - 11:00 AM",
           "description": [
-            "SESSION 1 – INTRODUCTION TO NDT"
+            "SESSION 1 – Introduction to NDT and its various techniques"
           ]
         },
         {
-          "time": "10:30 AM - 12:00 PM",
+          "time": "11:10 AM - 12:30 PM",
           "description": [
-            "SESSION 2 - PHASED ARRAY TECHNIQUES"
+            "SESSION 2 - Visual Testing, Penetration Testing "
+          ]
+        },
+        {
+          "time": "1:30 PM - 3:00 PM",
+          "description": [
+            "SESSION 3 - Hands-on Session "
           ]
         }
       ]
@@ -532,25 +539,25 @@
     "time": "Workshop:9:00 AM - 04:00 PM\nSky Watch:6:00 PM - 8:00 PM",
     "c1Name": "BHAVANI K",
     "c1Num": "7402876123",
-    "c2Name": "HAYAGREEV RETHINAVEL",
+    "c2Name": "HYAGREEV RETHINAVEL",
     "c2Num": "9940922937",
     "desc": "This event consist of a workshop followed by sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained. Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands-on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by sky watch for the participants where telescope handling is also taught .",
     "agenda": [
       [
         {
-          "time": "9:00 AM - 10:30 AM",
+          "time": "9:00 AM - 12:00 PM",
           "description": [
-            "SESSION 1 – A lecture on recent advancements and technology in the astronomy field"
+            "SESSION 1 – A lecture on recent advancements and technology in the astronomy field and Hands-on workshop in SAO ds9 software"
           ]
         },
         {
-          "time": "10:30 AM - 11:30 AM",
+          "time": "1:30 PM - 2:30 PM",
           "description": [
-            "SESSION 2 - Participants will be taught python programming to process a celestial image  "
+            "SESSION 2 - Astronomy Image Stacking with open source softwares  "
           ]
         },
         {
-          "time": "11:30 AM - 1:00 PM",
+          "time": "2:40 PM - 4:00 PM",
           "description": [
             "SESSION 3 - Particpants are taught model buidling of satelites and telescopes followed by a guest lecture"
           ]
@@ -558,7 +565,7 @@
         {
           "time": "6:30 PM - 8:00 PM",
           "description": [
-            "SESSION 4 - Particpannts will be taught how to use telescopes to view stars and constellations in the final Sky Watch session"
+            "SESSION 4 - Particpants will be taught how to use telescopes to view stars and constellations in the final Sky Watch session"
           ]
         }
       ]
