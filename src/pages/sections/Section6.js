@@ -68,7 +68,7 @@ const Section6 = () => {
               </div>
             </div>
 
-            {/* <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
+            <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
               <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"MEDIA "}
@@ -80,12 +80,8 @@ const Section6 = () => {
                   imgurl="https://www.exchange4media.com/news-photo/100947-expresslogo.jpg"
                   title="The Indian Express"
                 />
-                <Sponsors
-                  imgurl="https://www.exchange4media.com/news-photo/100947-expresslogo.jpg"
-                  title="The Times of India"
-                />
               </div>
-            </div> */}
+            </div>
 
             <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
               <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">

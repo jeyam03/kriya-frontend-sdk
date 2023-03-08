@@ -18,6 +18,7 @@ const OtherPayments = ({ switchPage }) => {
   const [isPSG, setIsPSG] = useState(false);
   const [authEmail, setAuthEmail] = useState("");
   const [transaction, setTransaction] = useState(null);
+  const [alreadyPaid, setAlreadyPaid] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [userDetails, setUserDetails] = useState(null);
@@ -30,6 +31,7 @@ const OtherPayments = ({ switchPage }) => {
       .then((res) => {
         console.log("USER", res.data);
         setIsPSG(res.data.user.college === PSG_COLLEGE);
+        setAlreadyPaid(res.data.user.isPaid);
         setUserDetails(res.data.user);
       })
       .catch((err) => console.log(err));
@@ -63,6 +65,12 @@ const OtherPayments = ({ switchPage }) => {
   }, []);
 
   const handlePayNowForGeneral = () => {
+    if (!userDetails || !userDetails.email) {
+      toast("Please login to continue");
+      navigate("/auth?type=login");
+      return;
+    }
+
     fetchPayGeneral({
       email: userDetails.email,
       name: userDetails.name,
@@ -159,49 +167,84 @@ const OtherPayments = ({ switchPage }) => {
           </div>
         )}
         {searchParams.get("type") === "GENERAL" && (
-          <div className="relative z-30 w-full lg:w-[30vw] h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6 ">
-            <div className="flex w-full justify-center lg:hidden items-center">
-              <img
-                src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
-                alt="Kriya black"
-                className="lg:hidden h-24 w-auto opacity-70"
-              />
-            </div>
-            <div className="">
-              <h3 className="text-sm text-gray-500">Confirm your payment</h3>
-              <h1 className="text-2xl font-bold text-[#181818]">
-                Pay for your registration
-              </h1>
-            </div>
-            {!isPSG ? (
-              <p className="">
-                The general registration for Kriya 2023 is{" "}
-                <b className="font-semibold">Rs. 200</b>. You will be redirected
-                to our payment gateway and an email will be sent as a
-                confirmation.
-              </p>
-            ) : (
-              <p className="">
-                The general registration for Kriya 2023 is{" "}
-                <b className="font-semibold">Rs. 150</b> for the students of PSG
-                College of Technology. You can pay now and register for the
-                events. You are also availed of the option to pay later.
-              </p>
-            )}
-            <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
-              <button
-                onClick={() => navigate(-1)}
-                className="border-2 border-black bg-white hover:bg-gray-100 transition-all duration-500 text-black text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handlePayNowForGeneral}
-                className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
-              >
-                Pay now
-              </button>
-            </div>
+          <div>
+            {
+              alreadyPaid ? (
+                <div className="relative z-30 w-full lg:w-[30vw] h-screen lg:h-fit py-12 px-6 lg:py-8 lg:px-8 shadow-xl bg-white space-y-10 ">
+                  <div className="flex w-full justify-center lg:hidden items-center">
+                    <img
+                      src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
+                      alt="Kriya black"
+                      className="lg:hidden h-24 w-auto opacity-70"
+                    />
+                  </div>
+                  <div className="">
+                    <h1 className="text-xl text-[#181818]">
+                      You've <b>already paid</b> your general registration fee! Feel free to go ahead and register for events.
+                    </h1>
+                  </div>
+                  <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
+                    <button
+                      onClick={() => navigate("/")}
+                      className="border-2 border-black bg-white hover:bg-gray-100 transition-all duration-500 text-black text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
+                    >
+                      Go to Home Page
+                    </button>
+                    <button
+                      onClick={() => navigate("/portal/event")}
+                      className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
+                    >
+                      Go to events
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                
+                <div className="relative z-30 w-full lg:w-[30vw] h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6 ">
+                  <div className="flex w-full justify-center lg:hidden items-center">
+                    <img
+                      src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
+                      alt="Kriya black"
+                      className="lg:hidden h-24 w-auto opacity-70"
+                    />
+                  </div>
+                  <div className="">
+                    <h3 className="text-sm text-gray-500">Confirm your payment</h3>
+                    <h1 className="text-2xl font-bold text-[#181818]">
+                      Pay for your registration
+                    </h1>
+                  </div>
+                  {!isPSG ? (
+                    <p className="">
+                      The general registration for Kriya 2023 is{" "}
+                      <b className="font-semibold">Rs. 200</b>. You will be redirected
+                      to our payment gateway and an email will be sent as a
+                      confirmation.
+                    </p>
+                  ) : (
+                    <p className="">
+                      The general registration for Kriya 2023 is{" "}
+                      <b className="font-semibold">Rs. 150</b> for the students of PSG
+                      College of Technology. You can pay now and register for the
+                      events. You are also availed of the option to pay later.
+                    </p>
+                  )}
+                  <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
+                    <button
+                      onClick={() => navigate(-1) ? navigate(-1) : navigate("/portal/profile")}
+                      className="border-2 border-black bg-white hover:bg-gray-100 transition-all duration-500 text-black text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      onClick={handlePayNowForGeneral}
+                      className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full lg:w-1/2"
+                    >
+                      Pay now
+                    </button>
+                  </div>
+                </div>
+              )}
           </div>
         )}
       </main>
