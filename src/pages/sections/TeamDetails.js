@@ -70,6 +70,13 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676486840/SU%20Team%20Photos/website%20photo%20updated/Web%20and%20App%20Development/TG_Ashwin_Kumar_-_Passport_Size_Photo-removebg-preview_wwpcoo.png",
   },
   {
+    name: "Rhubanraj P",
+    vertical: "App and Web Development",
+    position: "",
+    image_url:
+      "https://res.cloudinary.com/dksmk66vo/image/upload/v1678282224/SU%20Team%20Photos/website%20photo%20updated/Web%20and%20App%20Development/Ruban_tbfzry.jpg",
+  },
+  {
     name: "Sachitha C",
     vertical: "App and Web Development",
     position: "",
@@ -77,7 +84,7 @@ const TeamDetails = [
       "https://res.cloudinary.com/dksmk66vo/image/upload/v1676483942/SU%20Team%20Photos/website%20photo%20updated/Web%20and%20App%20Development/20z337_-_20Z337_-_SACHITHA_C_1_-removebg-preview_d1bxnr.png",
   },
   {
-    name: "Sashti Amar Ra",
+    name: "Sashti Amar R A",
     vertical: "App and Web Development",
     position: "",
     image_url:
