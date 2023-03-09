@@ -86,7 +86,7 @@ const Landing = () => {
         <Section4 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />
         <Section6 scrollYByVH={consolee} />
-        <Section7 scrollYByVH={consolee} />
+        {/* <Section7 scrollYByVH={consolee} /> */}
         <Section8 />
         <Section9 />
       </main>
@@ -140,7 +140,7 @@ const NavBar = ({ consolee }) => {
       >
         Workshops
       </button>
-      <button
+      {/* <button
         className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
           } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
@@ -150,7 +150,7 @@ const NavBar = ({ consolee }) => {
         }}
       >
         Sponsors
-      </button>
+      </button> */}
       {condition && (<div className="w-[4.5rem] h-[3rem]"></div>)}
       <div
         className={`w-[4.5rem] h-[3rem] ${condition && "hidden"}`}
@@ -169,7 +169,7 @@ const NavBar = ({ consolee }) => {
           }}
         ></button>
       </div>
-      <button
+      {/* <button
         className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
           } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
           } transition-all`}
@@ -179,7 +179,7 @@ const NavBar = ({ consolee }) => {
         }}
       >
         Our Team
-      </button>
+      </button> */}
       <button
         className={`hidden lg:block text-xs w-1/12 ${condition ? "text-gray-300" : "text-gray-500"
           } leading-5 font-poppins ${condition ? "hover:text-white" : "hover:text-black"
@@ -358,7 +358,7 @@ const NavBarForMobile = ({ consolee }) => {
           >
             Sponsors
           </button>
-          <button
+          {/* <button
             onClick={() => {
               setIsOpen(!isOpen);
               const element = document.getElementById("section7");
@@ -369,7 +369,7 @@ const NavBarForMobile = ({ consolee }) => {
             id="landingNavElements"
           >
             Our Team
-          </button>
+          </button> */}
           <button
             onClick={() => {
               setIsOpen(!isOpen);
