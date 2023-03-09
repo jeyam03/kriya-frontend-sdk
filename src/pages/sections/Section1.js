@@ -72,8 +72,6 @@ const Section1 = ({ scrollByVH }) => {
     );
   }, [consolee]);
 
-  console.log(`url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`);
-
   useEffect(() => {
     const element = document.querySelector("#anchor1");
     const registrationPrompt = document.querySelector("#registration-prompt");
