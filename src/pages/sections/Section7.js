@@ -105,7 +105,7 @@ const Section7 = () => {
               className="border row-span-1 col-span-2 w-[50vh] h-[25vh]  rounded-tl-[6rem] rounded-br-[6rem]"
               style={{
                 background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1678111681/SU%20Team%20Photos/IMG_0634-min_rrxrie.jpg)",
+                  "url(/assets/Team/Group/1.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat",
@@ -118,7 +118,7 @@ const Section7 = () => {
               className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem]"
               style={{
                 background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675957035/1674280564600_iia6uc.jpg)",
+                  "url(/assets/Team/Group/2.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -128,7 +128,7 @@ const Section7 = () => {
               className="border row-span-1 col-span-1 w-[25vh] h-[25vh] "
               style={{
                 background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675958847/IMG_0776_futuj1.jpg)",
+                  "url(/assets/Team/Group/3.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",

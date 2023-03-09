@@ -69,7 +69,7 @@ const AuthPortal = () => {
         >
           <div className="w-full h-full p-8 flex flex-col items-center justify-center">
             <img
-              src={`${isLogInPage ? "https://res.cloudinary.com/dksmk66vo/image/upload/v1677837683/KriyaLogoKLA_ps63h1.png" : "/assets/Logo/Kriya_KLA_Logo_Final.png"} `}
+              src={`${isLogInPage ? "/assets/Logo/KriyaLogoKLAWhite.png" : "/assets/Logo/Kriya_KLA_Logo_Final.png"} `}
               alt="logo"
               className={`transition-all duration-400 w-64`}
             />
@@ -114,13 +114,13 @@ const AuthPortal = () => {
               ? {
                 opacity: "0.5",
                 background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675859289/e8ffd8ea-fc90-48c0-81ec-2703167b1b12_600x400_palaal.svg)",
+                  "url(/assets/Design/authbg.svg)",
                 filter: "invert(1)",
               }
               : {
                 opacity: "0.5",
                 background:
-                  "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675859289/e8ffd8ea-fc90-48c0-81ec-2703167b1b12_600x400_palaal.svg)",
+                  "url(/assets/Design/authbg.svg)",
               }
           }
         ></div>

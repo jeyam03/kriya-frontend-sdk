@@ -68,7 +68,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/coding_dpsp2m.png"
+            "/assets/EventGrid/kriyative.png"
           }
           arrowCircleStart="from-[#121a43]"
           arrowCircleEnd="to-[#a21cd9]"
@@ -76,7 +76,7 @@ const EventList = () => {
           topCurve="bg-[#7d1ab2]"
           rightCurve="bg-[#551789]"
           iconImg={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png"
+            "/assets/CatLogo/kriyative.png"
           }
         />
 
@@ -90,7 +90,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/brainiac_wgpqys.png"
+            "/assets/EventGrid/brainiac.png"
           }
           arrowCircleStart="from-[#980283]"
           arrowCircleEnd="to-[#500d23]"
@@ -98,7 +98,7 @@ const EventList = () => {
           topCurve="bg-[#770658]"
           rightCurve="bg-[#630a3d]"
           iconImg={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png"
+            "/assets/CatLogo/brainiac.png"
           }
         />
 
@@ -112,7 +112,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/coding_dfiojkgn_bfjdah.png"
+            "/assets/EventGrid/coding.png"
           }
           arrowCircleStart="from-[#c61b59]"
           arrowCircleEnd="to-[#371243]"
@@ -120,7 +120,7 @@ const EventList = () => {
           topCurve="bg-[#b21a56]"
           rightCurve="bg-[#891750]"
           iconImg={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png"
+            "/assets/CatLogo/coding.png"
           }
         />
 
@@ -134,7 +134,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/circuit_lcvpuh.png"
+            "/assets/EventGrid/circuit.png"
           }
           arrowCircleStart="from-[#c74517]"
           arrowCircleEnd="to-[#5c330f]"
@@ -142,7 +142,7 @@ const EventList = () => {
           topCurve="bg-[#e04918]"
           rightCurve="bg-[#e04918]"
           iconImg={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png"
+            "/assets/CatLogo/circuit.png"
           }
         />
 
@@ -156,7 +156,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676283611/EventGrid/core_engg_i8jzke.png"
+            "/assets/EventGrid/core.png"
           }
           arrowCircleStart="from-[#029893]"
           arrowCircleEnd="to-[#0d2e50]"
@@ -164,7 +164,7 @@ const EventList = () => {
           topCurve="bg-[#066b77]"
           rightCurve="bg-[#0a4c63]"
           iconImg={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png"
+            "/assets/CatLogo/core.png"
           }
         />
 
@@ -178,7 +178,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676282935/EventGrid/management_vogvi4.png"
+            "/assets/EventGrid/management.png"
           }
           arrowCircleStart="from-[#2696d9]"
           arrowCircleEnd="to-[#152e60]"
@@ -186,7 +186,7 @@ const EventList = () => {
           topCurve="bg-[#28a5ea]"
           rightCurve="bg-[#28a5ea]"
           iconImg={
-            "https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png"
+            "/assets/CatLogo/manager.png"
           }
         />
       </section>

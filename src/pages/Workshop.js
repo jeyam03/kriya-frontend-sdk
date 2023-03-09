@@ -257,7 +257,7 @@ const Workshop = () => {
               className=" hidden lg:block flex-1  rounded-b-3xl"
               style={{
                 background:
-                  "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ",
+                  "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(/assets/Design/heightFiller.png) ",
                 backgroundSize: "350%",
               }}
             ></div>

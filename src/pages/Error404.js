@@ -8,14 +8,14 @@ const Error404 = () => {
         className="absolute z-0 top-0 left-0 right-0 h-[40vh] w-full"
         style={{
           background:
-            "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676489173/cf6c51dc-f626-4169-8220-b74e114145b2_1920x1920_dxpfiv.png)",
+            "url(/assets/Design/errorbg.png)",
         }}
       ></div>
       <section className="relative z-20 flex flex-col justify-center items-center w-full h-full">
         <div
           style={{
             background:
-              "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676490184/2d9b083a-d626-4668-892c-7e62c9e58721_dpd5bk.png)",
+              "url(/assets/Design/404.png)",
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",

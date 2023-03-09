@@ -122,7 +122,7 @@ const OtherPayments = ({ switchPage }) => {
           className="absolute h-[50vh] top-0 left-0 right-0 w-full"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(243,244,246,0) 50%, rgba(243,244,246,1) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677240341/b3f11a2a-def8-487a-be9b-7f2aef2d0254_1920x1920_r5jfib.png)",
+              "linear-gradient(to bottom, rgba(243,244,246,0) 50%, rgba(243,244,246,1) 100%), url(/assets/Design/paybg.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
