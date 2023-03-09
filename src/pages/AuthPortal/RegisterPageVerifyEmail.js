@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { fetchUserByEmail, fetchUserVerify } from "../../API/call";
+import { fetchUserByEmail, fetchUserVerify } from "../../API/call.js";
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
 import colleges from "../CollegeList";
+import { toast } from "react-hot-toast";
 
 const RegisterPageVerifyEmail = ({ switchPage }) => {
   const [authEmail, setAuthEmail] = useState("");
@@ -27,29 +28,33 @@ const RegisterPageVerifyEmail = ({ switchPage }) => {
   }, [authEmail]);
 
   const sendMail = () => {
-    fetchUserVerify(authEmail)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    console.log(authEmail)
+    toast.promise(fetchUserVerify(authEmail), {
+      loading: "Sending email...",
+      success: (res) => { console.log(res); return "Email sent!"; },
+      error: (err) => { console.log(err); return "Could not send email" }
+    }
+    )
   };
 
-   const onStorageUpdate = (e) => {
-     if (e.key === "verify_email") {
-       console.log("STORAGE UPDATED", e.newValue);
-       setSearchParams({
-         ...searchParams,
-         type: "signup",
-         email: authEmail,
-         page: "password",
-       });
-     }
-   };
+  const onStorageUpdate = (e) => {
+    if (e.key === "verify_email") {
+      console.log("STORAGE UPDATED", e.newValue);
+      setSearchParams({
+        ...searchParams,
+        type: "signup",
+        email: authEmail,
+        page: "password",
+      });
+    }
+  };
 
-   useEffect(() => {
-     window.addEventListener("storage", onStorageUpdate);
-     return () => {
-       window.removeEventListener("storage", onStorageUpdate);
-     };
-   }, []);
+  useEffect(() => {
+    window.addEventListener("storage", onStorageUpdate);
+    return () => {
+      window.removeEventListener("storage", onStorageUpdate);
+    };
+  }, []);
 
   return (
     <div className="w-full h-screen lg:h-fit py-12 px-6 lg:py-16 lg:px-8 shadow-xl bg-white space-y-6">
@@ -66,7 +71,7 @@ const RegisterPageVerifyEmail = ({ switchPage }) => {
       <p className="">
         If you have not received the email, please check your spam folder.
       </p>
-      <button className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full">
+      <button onClick={sendMail} className="border-2 border-black bg-black hover:bg-gray-700 transition-all duration-500 text-white text-lg rounded-lg py-2 px-4 w-full">
         Resend Email
       </button>
     </div>
