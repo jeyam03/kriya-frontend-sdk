@@ -72,6 +72,7 @@ const Section1 = ({ scrollByVH }) => {
     );
   }, [consolee]);
 
+  console.log(`url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`);
 
   useEffect(() => {
     const element = document.querySelector("#anchor1");
@@ -117,7 +118,7 @@ const Section1 = ({ scrollByVH }) => {
           id="kriya-logo"
           className="w-36 h-36"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+            background: `url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -239,13 +240,9 @@ const Section1 = ({ scrollByVH }) => {
             }}
             className="w-6 h-6 invert hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
             onClick={() =>
-              window.open(
-                "https://linktr.ee/su.psgtech",
-                "_blank"
-              )
+              window.open("https://linktr.ee/su.psgtech", "_blank")
             }
-          >
-          </button>
+          ></button>
         </div>
       </div>
 
@@ -255,8 +252,9 @@ const Section1 = ({ scrollByVH }) => {
       >
         {slides.map((slide, index) => (
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
+              currentSlide === index ? "opacity-100" : "opacity-0"
+            }`}
             style={{
               background: `url(${slides[index]})`,
               backgroundPosition: "50% 50%  ",
@@ -272,7 +270,7 @@ const Section1 = ({ scrollByVH }) => {
           <div
             className="lg:hidden w-32 h-28"
             style={{
-              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+              background: `url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`,
               backgroundPosition: "left",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
@@ -286,19 +284,22 @@ const Section1 = ({ scrollByVH }) => {
           </div>
         </div>
         <div
-          className={`lg:hidden flex flex-row w-full ${isOpen && "shadow-lg"
-            } h-[50vh]`}
+          className={`lg:hidden flex flex-row w-full ${
+            isOpen && "shadow-lg"
+          } h-[50vh]`}
         >
           <div className={`px-4 ${isOpen ? "h-full" : "h-fit"} z-10 bg-white`}>
             <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div
-            className={`divide-y divide-gray-600 ${isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
-              } transition-all ease-in-out duration-300`}
+            className={`divide-y divide-gray-600 ${
+              isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
+            } transition-all ease-in-out duration-300`}
           >
             <div
-              className={`w-full flex flex-col font-poppins absolute ${isOpen ? "z-20 h-[50%]" : "-z-20"
-                } bg-white transition-all ease-in-out duration-300`}
+              className={`w-full flex flex-col font-poppins absolute ${
+                isOpen ? "z-20 h-[50%]" : "-z-20"
+              } bg-white transition-all ease-in-out duration-300`}
             >
               <button
                 onClick={() => {
@@ -388,12 +389,18 @@ const Section1 = ({ scrollByVH }) => {
                     )
                   }
                 >
-                  <BsLinkedin size={24} className=" text-gray-500 hover:text-black" />
+                  <BsLinkedin
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
                 </button>
                 <button
                   className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
                   onClick={() =>
-                    window.open("https://www.instagram.com/kriya_psgtech/", "_blank")
+                    window.open(
+                      "https://www.instagram.com/kriya_psgtech/",
+                      "_blank"
+                    )
                   }
                 >
                   <BsInstagram
@@ -403,9 +410,14 @@ const Section1 = ({ scrollByVH }) => {
                 </button>
                 <button
                   className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
-                  onClick={() => window.open("mailto:events@psgkriya.in", "_blank")}
+                  onClick={() =>
+                    window.open("mailto:events@psgkriya.in", "_blank")
+                  }
                 >
-                  <SiGmail size={24} className=" text-gray-500 hover:text-black" />
+                  <SiGmail
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
                 </button>
                 <button
                   className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
@@ -416,7 +428,10 @@ const Section1 = ({ scrollByVH }) => {
                     )
                   }
                 >
-                  <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
+                  <SiYoutube
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
                 </button>
                 <button
                   style={{
@@ -427,21 +442,18 @@ const Section1 = ({ scrollByVH }) => {
                   }}
                   className="w-6 h-6 invert hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
                   onClick={() =>
-                    window.open(
-                      "https://linktr.ee/su.psgtech",
-                      "_blank"
-                    )
+                    window.open("https://linktr.ee/su.psgtech", "_blank")
                   }
-                >
-                </button>
+                ></button>
               </div>
             </div>
           </div>
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
-                className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`w-full h-full absolute top-0 right-0 left-0 ${
+                  currentSlide === index ? "opacity-100" : "opacity-0"
+                }`}
                 style={{
                   background: `url(${slides[index]})`,
                   backgroundPosition: "50% 50%  ",
@@ -533,7 +545,11 @@ const Section1 = ({ scrollByVH }) => {
             </div>
           )}
         </div>
-        <div className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${consolee >= 0.75 && "invert"}`}>
+        <div
+          className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${
+            consolee >= 0.75 && "invert"
+          }`}
+        >
           <div
             className="w-16 h-auto"
             style={{
@@ -561,8 +577,9 @@ const Section1 = ({ scrollByVH }) => {
         <div className="w-full h-full relative">
           {slides.map((slide, index) => (
             <div
-              className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
-                }`}
+              className={`w-full h-full absolute top-0 right-0 left-0 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
               style={{
                 background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
                 backgroundPosition: "left",
