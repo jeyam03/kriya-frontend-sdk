@@ -19,20 +19,18 @@ function Number({ n }) {
 
 const Section1 = ({ scrollByVH }) => {
   const navigate = useNavigate();
+
   const slides = [
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891951/Landing%20Photos/1_bubuws.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/3_oylhx1.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891946/Landing%20Photos/5_sbbs8q.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891948/Landing%20Photos/4_srzui7.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/12_wxeqd8.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/6_lh4nx6.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/7_nl1u1m.jpg",
-    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891949/Landing%20Photos/8_cyxwku.jpg",
-    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/9_gqvqh8.jpg",
-    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/10_bqezla.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/11_e1utjk.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/13_cr7mhl.jpg",
+    "/assets/Landing/2.jpg",
+    "/assets/Landing/1.jpg",
+    "/assets/Landing/3.jpg",
+    "/assets/Landing/5.jpg",
+    "/assets/Landing/4.jpg",
+    "/assets/Landing/12.jpg",
+    "/assets/Landing/6.jpg",
+    "/assets/Landing/7.jpg",
+    "/assets/Landing/11.jpg",
+    "/assets/Landing/13.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -72,7 +70,7 @@ const Section1 = ({ scrollByVH }) => {
     );
   }, [consolee]);
 
-  console.log(`url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`);
+  console.log(`url(/assets/Logo/Kriya_KLA_Logo_Final.png)`);
 
   useEffect(() => {
     const element = document.querySelector("#anchor1");
@@ -118,7 +116,7 @@ const Section1 = ({ scrollByVH }) => {
           id="kriya-logo"
           className="w-36 h-36"
           style={{
-            background: `url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`,
+            background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -252,9 +250,8 @@ const Section1 = ({ scrollByVH }) => {
       >
         {slides.map((slide, index) => (
           <div
-            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${
-              currentSlide === index ? "opacity-100" : "opacity-0"
-            }`}
+            className={`w-full h-full absolute top-0 right-0 left-0 transition-all duration-100 ease-linear ${currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               background: `url(${slides[index]})`,
               backgroundPosition: "50% 50%  ",
@@ -270,7 +267,7 @@ const Section1 = ({ scrollByVH }) => {
           <div
             className="lg:hidden w-32 h-28"
             style={{
-              background: `url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`,
+              background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
               backgroundPosition: "left",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
@@ -284,22 +281,19 @@ const Section1 = ({ scrollByVH }) => {
           </div>
         </div>
         <div
-          className={`lg:hidden flex flex-row w-full ${
-            isOpen && "shadow-lg"
-          } h-[50vh]`}
+          className={`lg:hidden flex flex-row w-full ${isOpen && "shadow-lg"
+            } h-[50vh]`}
         >
           <div className={`px-4 ${isOpen ? "h-full" : "h-fit"} z-10 bg-white`}>
             <MenuToggle isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           <div
-            className={`divide-y divide-gray-600 ${
-              isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
-            } transition-all ease-in-out duration-300`}
+            className={`divide-y divide-gray-600 ${isOpen ? "h-full overflow-hidden" : "h-0 overflow-hidden"
+              } transition-all ease-in-out duration-300`}
           >
             <div
-              className={`w-full flex flex-col font-poppins absolute ${
-                isOpen ? "z-20 h-[50%]" : "-z-20"
-              } bg-white transition-all ease-in-out duration-300`}
+              className={`w-full flex flex-col font-poppins absolute ${isOpen ? "z-20 h-[50%]" : "-z-20"
+                } bg-white transition-all ease-in-out duration-300`}
             >
               <button
                 onClick={() => {
@@ -451,9 +445,8 @@ const Section1 = ({ scrollByVH }) => {
           <div className="w-full h-full relative" id="image-multi-2">
             {slides.map((slide, index) => (
               <div
-                className={`w-full h-full absolute top-0 right-0 left-0 ${
-                  currentSlide === index ? "opacity-100" : "opacity-0"
-                }`}
+                className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
+                  }`}
                 style={{
                   background: `url(${slides[index]})`,
                   backgroundPosition: "50% 50%  ",
@@ -546,9 +539,8 @@ const Section1 = ({ scrollByVH }) => {
           )}
         </div>
         <div
-          className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${
-            consolee >= 0.75 && "invert"
-          }`}
+          className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${consolee >= 0.75 && "invert"
+            }`}
         >
           <div
             className="w-16 h-auto"
@@ -577,9 +569,8 @@ const Section1 = ({ scrollByVH }) => {
         <div className="w-full h-full relative">
           {slides.map((slide, index) => (
             <div
-              className={`w-full h-full absolute top-0 right-0 left-0 ${
-                currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
+              className={`w-full h-full absolute top-0 right-0 left-0 ${currentSlide === index ? "opacity-100" : "opacity-0"
+                }`}
               style={{
                 background: `linear-gradient(to bottom, rgba(200,0,103,0.7) , rgba(84,81,182,0.7) ), url(${slides[index]})`,
                 backgroundPosition: "left",

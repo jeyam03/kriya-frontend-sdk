@@ -65,7 +65,7 @@ const PaymentSuccess = () => {
   return (
     <section className="h-screen w-screen flex flex-col justify-center items-center space-y-6">
       <img
-        src="https://res.cloudinary.com/dksmk66vo/image/upload/v1674502647/Kriya_Logo_2023_white_npmqdj.png"
+        src="assets/Logo/KriyaLogoKLAWhite.png"
         alt=""
         className="h-24 invert"
       />

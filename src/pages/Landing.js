@@ -155,7 +155,7 @@ const NavBar = ({ consolee }) => {
       <div
         className={`w-[4.5rem] h-[3rem] ${condition && "hidden"}`}
         style={{
-          background: `url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`,
+          background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
           backgroundPosition: "center",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -276,7 +276,7 @@ const NavBarForMobile = ({ consolee }) => {
           }}
           className={`w-[4.5rem] h-[3.25rem] ${condition && "hidden"}`}
           style={{
-            background: `url(${window.location.origin}/assets/Logo/new%20kriya%20black.png)`,
+            background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
