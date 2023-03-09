@@ -52,8 +52,7 @@ const Section4 = ({ scrollYByVH }) => {
                   data={data}
                 />
               );
-            })
-            }
+            })}
           </div>
         </div>
 
@@ -71,13 +70,8 @@ const Section4 = ({ scrollYByVH }) => {
         <div className="block lg:hidden w-full lg:w-[60%] h-full overflow-x-auto mt-8">
           <div className="flex w-fit h-full items-center relative space-x-6 px-8">
             {fetchPapers().map((data, index) => {
-              return (
-                <PaperPresentationItemMobile
-                  data={data}
-                />
-              );
-            })
-            }
+              return <PaperPresentationItemMobile data={data} />;
+            })}
           </div>
         </div>
       </section>
@@ -98,8 +92,9 @@ const PaperPresentationItemDesktop = ({
     <button
       onMouseEnter={(e) => setOnMouseHoverIndex(index)}
       onMouseLeave={(e) => setOnMouseHoverIndex(0)}
-      className={`text-left rounded-lg shadow-md p-8 ${onMouseHoverIndex === index ? "h-[90%] w-2/6" : "h-[85%] w-1/6"
-        } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+      className={`text-left rounded-lg shadow-md p-8 ${
+        onMouseHoverIndex === index ? "h-[90%] w-2/6" : "h-[85%] w-1/6"
+      } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
       onClick={() => {
         navigate(`/portal/paper/${data.ppid}`);
       }}
@@ -111,10 +106,11 @@ const PaperPresentationItemDesktop = ({
       }}
     >
       <p
-        className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${onMouseHoverIndex === index
-          ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-6 -translate-y-6"
-          : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-4 translate-x-[calc(35vw/6)]"
-          } uppercase`}
+        className={`font-semibold font-poppins text-gray-100 absolute w-full origin-top-left transition-all duration-150 ${
+          onMouseHoverIndex === index
+            ? "rotate-0 text-3xl opacity-100 bottom-0 left-0 translate-x-6 -translate-y-6"
+            : "-rotate-90 whitespace-nowrap text-2xl opacity-50 bottom-0 right-4 translate-x-[calc(35vw/6)]"
+        } uppercase`}
       >
         {data.eventName}
       </p>
@@ -122,7 +118,7 @@ const PaperPresentationItemDesktop = ({
   );
 };
 
-const PaperPresentationItemMobile = ({ data, }) => {
+const PaperPresentationItemMobile = ({ data }) => {
   const navigate = useNavigate();
 
   return (
