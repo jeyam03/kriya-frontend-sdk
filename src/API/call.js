@@ -3,7 +3,7 @@ import EventsList from "../data/eventsList2.json";
 import PapersList from "../data/ppList.json";
 import WorkList from "../data/workList.json";
 
-export const BACKEND_URL = "https://kriyadb.psgtech.ac.in";
+export const BACKEND_URL = "http://localhost:4300";
 
 const BASE_URL = `${BACKEND_URL}/api`;
 const USER_URL = `${BASE_URL}/auth`;
