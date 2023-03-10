@@ -31,11 +31,10 @@ const Section3 = () => {
     observer.observe(element);
   });
 
-  const condition = `${
-    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2
-      ? "text-white"
-      : "text-[#181818]"
-  }`;
+  const condition = `${parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2
+    ? "text-white"
+    : "text-[#181818]"
+    }`;
 
   return (
     <div className="w-full h-full relative">
@@ -53,7 +52,7 @@ const Section3 = () => {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#5238d1] to-[#8938d1] flex items-center justify-center">
                   <div
                     style={{
-                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/kriyative_aykvbt.png)`,
+                      background: `url(/assets/CatLogo/kriyative.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
@@ -92,7 +91,7 @@ const Section3 = () => {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#8f3ccf] to-[#df51ad] flex items-center justify-center">
                   <div
                     style={{
-                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/brainiac_ui6san.png)`,
+                      background: `url(/assets/CatLogo/brainiac.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
@@ -132,7 +131,7 @@ const Section3 = () => {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#dc4fab] to-[#eb587b] flex items-center justify-center">
                   <div
                     style={{
-                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/coding_uyxd7c.png)`,
+                      background: `url(/assets/CatLogo/coding.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
@@ -172,7 +171,7 @@ const Section3 = () => {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#e8567c] to-[#f48555] flex items-center justify-center">
                   <div
                     style={{
-                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/circuit_odhzwt.png)`,
+                      background: `url(/assets/CatLogo/circuit.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
@@ -212,7 +211,7 @@ const Section3 = () => {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#eac64a] to-[#2ea47e] flex items-center justify-center">
                   <div
                     style={{
-                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/core_x2lxoi.png)`,
+                      background: `url(/assets/CatLogo/core.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "contain",
@@ -251,7 +250,7 @@ const Section3 = () => {
                 <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#02b7e6] to-[#00c37b] flex items-center justify-center">
                   <div
                     style={{
-                      background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676785694/Category%20logos/manager_fmqb9i.png)`,
+                      background: `url(/assets/CatLogo/manager.png)`,
                       backgroundPosition: "center",
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",

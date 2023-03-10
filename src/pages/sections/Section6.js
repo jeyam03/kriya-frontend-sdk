@@ -73,7 +73,7 @@ const Section6 = () => {
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"MEDIA "}
                 </span>
-                Sponsors
+                Sponsor
               </p>
               <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <Sponsors
@@ -95,27 +95,27 @@ const Section6 = () => {
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
                   {Array(4).fill(<React.Fragment>
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677263568/Sponsers/waffle_lowqri.jpg"
+                      imgurl="/assets/Stalls/Waffle.jpg"
                       title="Waffle Cart"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677261166/Sponsers/Polar_bear_ljwgsp.png"
+                      imgurl="/assets/Stalls/PolarBear.png"
                       title="Polar Bear"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677262986/Sponsers/FrozenStick_mhmxla.jpg"
+                      imgurl="/assets/Stalls/FrozenStick.jpeg"
                       title="The Frozen Stick"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1677317377/Sponsers/creamery_lkgy7c.jpg"
+                      imgurl="/assets/Stalls/Creamery.jpeg"
                       title="Creamery"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678110243/Sponsers/ChocoCrush_zvox6e.jpg"
+                      imgurl="/assets/Stalls/ChocoCrush.jpg"
                       title="Choco Crush"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678202993/Sponsers/Fabino_zuwonq.jpg"
+                      imgurl="/assets/Stalls/Fabino.jpg"
                       title="Fabino"
                     />
                   </React.Fragment>)
@@ -127,27 +127,27 @@ const Section6 = () => {
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee-rev">
                   {Array(4).fill(<React.Fragment>
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114740/Sponsers/TIbbs_e4c0ve.jpg"
+                      imgurl="/assets/Stalls/Tibbs.jpeg"
                       title="Tibbs Frankie"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678114741/Sponsers/The_Crunchy_Treats_uxgusw.jpg"
+                      imgurl="/assets/Stalls/TheCrunchyTreats.jpeg"
                       title="The Crunchy Treats"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678136413/Sponsers/DosaHub_ypy99l.png"
+                      imgurl="/assets/Stalls/DosaHub.png"
                       title="Dosa Hub"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678165505/Sponsers/Marvel_f02i9v.jpg"
+                      imgurl="/assets/Stalls/Marvel.jpeg"
                       title="Marvel"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678169246/Sponsers/RoyalZip_rtrw6x.jpg"
+                      imgurl="/assets/Stalls/RoyalZip.jpg"
                       title="Royal Zip"
                     />
                     <Sponsors
-                      imgurl="https://res.cloudinary.com/dksmk66vo/image/upload/v1678202992/Sponsers/EggSticka_szkaey.jpg"
+                      imgurl="/assets/Stalls/EggSticka.jpeg"
                       title="Egg Stickaa"
                     />
                   </React.Fragment>)

@@ -1,7 +1,7 @@
 [
   {
     "wid": "WKSP0001",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535551/Workshop/Microcontroller_with_IOT_qzmkrm.png",
+    "image": "/assets/Workshops/Workshop1.png",
     "fee": 500,
     "alteredFee": 600,
     "assnName": "IEEE EMBS Students Branch",
@@ -50,7 +50,7 @@
   },
   {
     "wid": "WKSP0002",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535551/Workshop/Mobile_Application_Development_vuwbb9.png",
+    "image": "/assets/Workshops/Workshop2.png",
     "fee": 650,
     "alteredFee": 800,
     "assnName": "CAA(Computer Applications Association)",
@@ -118,7 +118,7 @@
   },
   {
     "wid": "WKSP0003",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676574196/Workshop/Deep_Learning_Unlocking_the_Full_Potential-min_yycxk1.png",
+    "image": "/assets/Workshops/Workshop3.png",
     "fee": 500,
     "alteredFee": 600,
     "assnName": "Institute of Electrical & Electronics Engg. (IEEE) (Students Chapter)",
@@ -162,7 +162,7 @@
   },
   {
     "wid": "WKSP0004",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/R_Programming_in_Data_Analytics-min_cozob1.png",
+    "image": "/assets/Workshops/Workshop4.png",
     "fee": 500,
     "alteredFee": 600,
     "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
@@ -207,7 +207,7 @@
   },
   {
     "wid": "WKSP0005",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535560/Workshop/Workshop_and_Gaming-min-min_bd3khz.png",
+    "image": "/assets/Workshops/Workshop5.png",
     "fee": 400,
     "alteredFee": 500,
     "assnName": "Information Technology Association",
@@ -239,7 +239,7 @@
   },
   {
     "wid": "WKSP0006",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Sensor_Interface_and_Integration-01-min_n718v0.png",
+    "image": "/assets/Workshops/Workshop6.png",
     "fee": 650,
     "alteredFee": 800,
     "assnName": "American Society of Mechanical Engineers",
@@ -283,7 +283,7 @@
   },
   {
     "wid": "WKSP0007",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535552/Workshop/IOT_for_Mechanical_Application-min_cxs3mc.png",
+    "image": "/assets/Workshops/Workshop7.png",
     "fee": 400,
     "alteredFee": 500,
     "assnName": "Indian Institution of Industrial Engineering (Students Chapter)",
@@ -327,7 +327,7 @@
   },
   {
     "wid": "WKSP0008",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570949/Workshop/Nuts_and_Bots_with_naveen_1_mc6blf.png",
+    "image": "/assets/Workshops/Workshop8.png",
     "fee": 200,
     "alteredFee": 250,
     "assnName": "Production Engineering Association",
@@ -383,7 +383,7 @@
   },
   {
     "wid": "WKSP0009",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/Basics_of_ROS_and_Hardware_Interfacing_with_it_mcyp9b.png",
+    "image": "/assets/Workshops/Workshop9.png",
     "fee": 400,
     "alteredFee": 500,
     "assnName": "Robotics & Automation Engineering Association",
@@ -427,7 +427,7 @@
   },
   {
     "wid": "WKSP0010",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535554/Workshop/CREATIVE_FUSION_A_Hands-On_Workshop_on_Photoshop_Blender_Video_Editing_and_Poster_Design_2_-min-min_sum9sa.png",
+    "image": "/assets/Workshops/Workshop10.png",
     "fee": 300,
     "alteredFee": 400,
     "assnName": "Radio Hub",
@@ -459,7 +459,7 @@
   },
   {
     "wid": "WKSP0011",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676574194/Workshop/Non-Destructive_Testing-min_nnerrb.png",
+    "image": "/assets/Workshops/Workshop11.png",
     "fee": 250,
     "alteredFee": 300,
     "assnName": "Metallurgical Engineering Association",
@@ -497,7 +497,7 @@
   },
   {
     "wid": "WKSP0012",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676570948/Workshop/FPGA_based_SoC_Design_1_wuocut.png",
+    "image": "/assets/Workshops/Workshop12.png",
     "fee": 350,
     "alteredFee": 400,
     "assnName": "Electrical and Communication Engineering Association",
@@ -529,7 +529,7 @@
   },
   {
     "wid": "WKSP0013",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676535553/Workshop/Solaris-min_ydunjb.png",
+    "image": "/assets/Workshops/Workshop13.png",
     "fee": 250,
     "alteredFee": 300,
     "assnName": "Astronomy Club",
@@ -573,7 +573,7 @@
   },
   {
     "wid": "WKSP0014",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676568888/Workshop/World_of_Biotechnology-min_dukug0.png",
+    "image": "/assets/Workshops/Workshop14.png",
     "fee": 300,
     "alteredFee": 350,
     "assnName": "Biotechnology Association",

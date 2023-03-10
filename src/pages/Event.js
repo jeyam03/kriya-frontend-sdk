@@ -179,15 +179,15 @@ const Event = () => {
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
-                <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
-                  {eventDetail.teamSize !== "1" ? <AiOutlineTeam /> : <AiOutlineUser />}
+              <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
+                {eventDetail.teamSize !== "1" ? <AiOutlineTeam /> : <AiOutlineUser />}
+              </p>
+              <div className="pl-2 flex flex-col">
+                <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
+                  {eventDetail.teamSize} Member{eventDetail.teamSize !== "1" ? "s" : ""}
                 </p>
-                <div className="pl-2 flex flex-col">
-                  <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                    {eventDetail.teamSize} Member{eventDetail.teamSize !== "1" ? "s" : ""}
-                  </p>
-                </div>
               </div>
+            </div>
           </div>
 
           <div className="lg:bg-[#ffffff] flex-1 flex flex-col lg:rounded-3xl p-8 lg:px-0 lg:pb-0 lg:pt-12 space-y-6">
@@ -249,7 +249,7 @@ const Event = () => {
               </div>
             </div>
 
-            <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1676552915/1707861b-feb2-4af8-b874-bfee594ae1d1_3600x3600_1_nnggwj.png) ", backgroundSize: "350%" }}>
+            <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(/assets/Design/heightFiller.png) ", backgroundSize: "350%" }}>
             </div>
           </div>
         </div>

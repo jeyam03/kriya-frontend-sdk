@@ -1,7 +1,7 @@
 [
   {
     "ppid": "PRPN0001",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676893693/Paper/Presenta_rtcz8i.png",
+    "image": "/assets/Paper/prezenta.png",
     "eventName": "PREZENTA",
     "contact1": ["Arjun K", 9489122550],
     "contact2": ["Arthik A Riju", 9842695165],
@@ -18,7 +18,7 @@
   },
   {
     "ppid": "PRPN0002",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676893693/Paper/textrivia_png-01_pk0mbe.png",
+    "image": "/assets/Paper/textrivia.png",
     "eventName": "TEXTRIVIA",
     "contact1": ["R. K. BHARATRAJ ", 9488504312],
     "contact2": ["N. NITHYASHRI", 9080307184],
@@ -35,7 +35,7 @@
   },
   {
     "ppid": "PRPN0003",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676893693/Paper/Technoration_abmact.png",
+    "image": "/assets/Paper/technoration.png",
     "eventName": "TECHNORATION",
     "contact1": ["Sharan S", 7305731610],
     "contact2": ["K. Jagad Narayana ", 9655637069],
@@ -52,7 +52,7 @@
   },
   {
     "ppid": "PRPN0004",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676893693/Paper/excellencia_li7r8o.png",
+    "image": "/assets/Paper/excellencia.png",
     "eventName": "EXCELLENCIA",
     "contact1": ["KEERTHIVASSAN S", 9489010302],
     "contact2": ["JANARANJAN B S", 9344968646],
@@ -69,7 +69,7 @@
   },
   {
     "ppid": "PRPN0005",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676893693/Paper/technoblitz_bmzz7e.png",
+    "image": "/assets/Paper/technoblitz.png",
     "eventName": "TECHNOBLITZ",
     "contact1": ["R S Krishna", 9500288886],
     "contact2": ["Mohit Akash P", 9597304275],
@@ -87,7 +87,7 @@
   },
   {
     "ppid": "PRPN0006",
-    "image": "https://res.cloudinary.com/dksmk66vo/image/upload/v1676893693/Paper/%E0%AE%85%E0%AE%B1%E0%AE%BF%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AF%8D_%E0%AE%95%E0%AF%82%E0%AE%9F%E0%AE%B2%E0%AF%8D_zg7kkl.png",
+    "image": "/assets/Paper/tamil.png",
     "eventName": "அறிந்தமிழ் கூடல்",
     "contact1": ["Anubharathi V S", 9751586191],
     "contact2": ["Sabareesh vishwanath K", 9791904969],

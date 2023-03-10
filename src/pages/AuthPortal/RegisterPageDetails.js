@@ -185,7 +185,7 @@ const RegisterPageDetails = ({ switchPage }) => {
     <div className="w-full h-full overflow-y-scroll lg:overflow-y-hidden flex flex-col lg:h-fit lg:max-h-[90%] py-12 px-6 lg:pt-8 lg:pb-0 lg:px-0 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
         <img
-          src="https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"
+          src="/assets/Logo/Kriya_KLA_Logo_Final.png"
           alt="Kriya black"
           className="lg:hidden h-24 w-auto opacity-70"
         />

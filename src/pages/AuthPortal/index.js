@@ -60,18 +60,16 @@ const AuthPortal = () => {
     <main className="w-screen h-screen overflow-x-hidden flex items-center bg-[#181818] font-poppins">
       <div className="hidden lg:block w-4 bg-gradient-to-t from-[#C80067] to-[#5451B6] h-screen"></div>
       <section
-        className={`w-full transition-all duration-200 ease-in-out ${
-          isLogInPage ? "bg-[#181818]" : "bg-[#f5f5f5]"
-        } h-screen overflow-hidden flex  relative`}
+        className={`w-full transition-all duration-200 ease-in-out ${isLogInPage ? "bg-[#181818]" : "bg-[#f5f5f5]"
+          } h-screen overflow-hidden flex  relative`}
       >
         <div
-          className={`hidden lg:block lg:w-[70vw] h-screen transition-all duration-200 ease-in-out pr-[15vw] ${
-            isLogInPage ? "bg-[#181818]" : "bg-[#eeeeee]"
-          }`}
+          className={`hidden lg:block lg:w-[70vw] h-screen transition-all duration-200 ease-in-out pr-[15vw] ${isLogInPage ? "bg-[#181818]" : "bg-[#eeeeee]"
+            }`}
         >
           <div className="w-full h-full p-8 flex flex-col items-center justify-center">
             <img
-              src={`${isLogInPage ? "https://res.cloudinary.com/dksmk66vo/image/upload/v1677837683/KriyaLogoKLA_ps63h1.png" : "https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png"} `}
+              src={`${isLogInPage ? "/assets/Logo/KriyaLogoKLAWhite.png" : "/assets/Logo/Kriya_KLA_Logo_Final.png"} `}
               alt="logo"
               className={`transition-all duration-400 w-64`}
             />
@@ -114,16 +112,16 @@ const AuthPortal = () => {
           style={
             isLogInPage
               ? {
-                  opacity: "0.5",
-                  background:
-                    "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675859289/e8ffd8ea-fc90-48c0-81ec-2703167b1b12_600x400_palaal.svg)",
-                  filter: "invert(1)",
-                }
+                opacity: "0.5",
+                background:
+                  "url(/assets/Design/authbg.svg)",
+                filter: "invert(1)",
+              }
               : {
-                  opacity: "0.5",
-                  background:
-                    "url(https://res.cloudinary.com/dksmk66vo/image/upload/v1675859289/e8ffd8ea-fc90-48c0-81ec-2703167b1b12_600x400_palaal.svg)",
-                }
+                opacity: "0.5",
+                background:
+                  "url(/assets/Design/authbg.svg)",
+              }
           }
         ></div>
       </section>

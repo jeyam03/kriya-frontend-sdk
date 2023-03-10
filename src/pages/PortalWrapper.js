@@ -73,7 +73,7 @@ const NavBarForDesktop = () => {
           to={"/"}
           className="w-28 h-28 mt-4"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+            background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -244,7 +244,7 @@ const NavBarForMobile = () => {
             to={"/"}
             className="w-[4.5rem] h-[3.25rem]"
             style={{
-              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+              background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",

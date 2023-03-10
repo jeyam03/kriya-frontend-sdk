@@ -57,7 +57,7 @@ const Section11 = () => {
   return (
     <div className="w-full relative mb-16 lg:mb-0"
       style={{
-        background: `linear-gradient(${condition_direction}, rgba(${condition_bg},0.8), rgba(${condition_bg},0.9)), url(https://res.cloudinary.com/dksmk66vo/image/upload/v1678114500/prizebg_m3cvok.png)`,
+        background: `linear-gradient(${condition_direction}, rgba(${condition_bg},0.8), rgba(${condition_bg},0.9)), url(/assets/Design/prizebg.png)`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover"

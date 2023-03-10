@@ -19,20 +19,18 @@ function Number({ n }) {
 
 const Section1 = ({ scrollByVH }) => {
   const navigate = useNavigate();
+
   const slides = [
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/2_mdehcc.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891951/Landing%20Photos/1_bubuws.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/3_oylhx1.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891946/Landing%20Photos/5_sbbs8q.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891948/Landing%20Photos/4_srzui7.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/12_wxeqd8.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891945/Landing%20Photos/6_lh4nx6.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/7_nl1u1m.jpg",
-    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891949/Landing%20Photos/8_cyxwku.jpg",
-    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/9_gqvqh8.jpg",
-    // "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891950/Landing%20Photos/10_bqezla.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/11_e1utjk.jpg",
-    "https://res.cloudinary.com/dksmk66vo/image/upload/v1676891947/Landing%20Photos/13_cr7mhl.jpg",
+    "/assets/Landing/2.jpg",
+    "/assets/Landing/1.jpg",
+    "/assets/Landing/3.jpg",
+    "/assets/Landing/5.jpg",
+    "/assets/Landing/4.jpg",
+    "/assets/Landing/12.jpg",
+    "/assets/Landing/6.jpg",
+    "/assets/Landing/7.jpg",
+    "/assets/Landing/11.jpg",
+    "/assets/Landing/13.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -72,6 +70,7 @@ const Section1 = ({ scrollByVH }) => {
     );
   }, [consolee]);
 
+  console.log(`url(/assets/Logo/Kriya_KLA_Logo_Final.png)`);
 
   useEffect(() => {
     const element = document.querySelector("#anchor1");
@@ -117,7 +116,7 @@ const Section1 = ({ scrollByVH }) => {
           id="kriya-logo"
           className="w-36 h-36"
           style={{
-            background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+            background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
             backgroundPosition: "left",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
@@ -161,7 +160,7 @@ const Section1 = ({ scrollByVH }) => {
           >
             Sponsors
           </button>
-          <button
+          {/* <button
             onClick={() => {
               const element = document.querySelector("#section7");
               element.scrollIntoView({ behavior: "smooth" });
@@ -169,7 +168,7 @@ const Section1 = ({ scrollByVH }) => {
             className="text-left text-lg text-gray-600 font-poppins uppercase font-semibold tracking-wide hover:tracking-widest hover:translate-x-2 transition-all duration-300 ease-out hover:text-black"
           >
             Our Team
-          </button>
+          </button> */}
           <button
             onClick={() => {
               const element = document.querySelector("#section8");
@@ -239,13 +238,9 @@ const Section1 = ({ scrollByVH }) => {
             }}
             className="w-6 h-6 invert hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
             onClick={() =>
-              window.open(
-                "https://linktr.ee/su.psgtech",
-                "_blank"
-              )
+              window.open("https://linktr.ee/su.psgtech", "_blank")
             }
-          >
-          </button>
+          ></button>
         </div>
       </div>
 
@@ -272,7 +267,7 @@ const Section1 = ({ scrollByVH }) => {
           <div
             className="lg:hidden w-32 h-28"
             style={{
-              background: `url(https://res.cloudinary.com/dksmk66vo/image/upload/v1677849228/Kriya_KLA_Logo_Final_qbhzt5.png)`,
+              background: `url(/assets/Logo/Kriya_KLA_Logo_Final.png)`,
               backgroundPosition: "left",
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
@@ -344,7 +339,7 @@ const Section1 = ({ scrollByVH }) => {
               >
                 Sponsors
               </button>
-              <button
+              {/* <button
                 onClick={() => {
                   setIsOpen(!isOpen);
                   const element = document.getElementById("section7");
@@ -354,7 +349,7 @@ const Section1 = ({ scrollByVH }) => {
                 className={`w-full text-gray-600 text-left text-base py-2`}
               >
                 Our Team
-              </button>
+              </button> */}
               <button
                 onClick={() => {
                   setIsOpen(!isOpen);
@@ -388,12 +383,18 @@ const Section1 = ({ scrollByVH }) => {
                     )
                   }
                 >
-                  <BsLinkedin size={24} className=" text-gray-500 hover:text-black" />
+                  <BsLinkedin
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
                 </button>
                 <button
                   className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
                   onClick={() =>
-                    window.open("https://www.instagram.com/kriya_psgtech/", "_blank")
+                    window.open(
+                      "https://www.instagram.com/kriya_psgtech/",
+                      "_blank"
+                    )
                   }
                 >
                   <BsInstagram
@@ -403,9 +404,14 @@ const Section1 = ({ scrollByVH }) => {
                 </button>
                 <button
                   className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
-                  onClick={() => window.open("mailto:events@psgkriya.in", "_blank")}
+                  onClick={() =>
+                    window.open("mailto:events@psgkriya.in", "_blank")
+                  }
                 >
-                  <SiGmail size={24} className=" text-gray-500 hover:text-black" />
+                  <SiGmail
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
                 </button>
                 <button
                   className="hover:-translate-y-2 transition-all duration-500 ease-in-out"
@@ -416,7 +422,10 @@ const Section1 = ({ scrollByVH }) => {
                     )
                   }
                 >
-                  <SiYoutube size={24} className=" text-gray-500 hover:text-black" />
+                  <SiYoutube
+                    size={24}
+                    className=" text-gray-500 hover:text-black"
+                  />
                 </button>
                 <button
                   style={{
@@ -427,13 +436,9 @@ const Section1 = ({ scrollByVH }) => {
                   }}
                   className="w-6 h-6 invert hover:-translate-y-2 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
                   onClick={() =>
-                    window.open(
-                      "https://linktr.ee/su.psgtech",
-                      "_blank"
-                    )
+                    window.open("https://linktr.ee/su.psgtech", "_blank")
                   }
-                >
-                </button>
+                ></button>
               </div>
             </div>
           </div>
@@ -533,7 +538,10 @@ const Section1 = ({ scrollByVH }) => {
             </div>
           )}
         </div>
-        <div className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${consolee >= 0.75 && "invert"}`}>
+        <div
+          className={`flex flex-row space-x-8 lg:space-x-4 w-full justify-center ${consolee >= 0.75 && "invert"
+            }`}
+        >
           <div
             className="w-16 h-auto"
             style={{
