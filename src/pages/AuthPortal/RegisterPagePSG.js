@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
+  fetchConvertToPSG,
   fetchUpdateUser,
   fetchUserByEmail,
   fetchUserVerify,
@@ -20,19 +21,6 @@ const RegisterPagePSG = ({ switchPage }) => {
     if (!searchParams.get("email")) return;
     const email = searchParams.get("email");
     setAuthEmail(email);
-    fetchUserByEmail(psgEmail)
-      .then((res) => {
-        console.log("EXISTS", res);
-      })
-      .catch((err) => {
-        console.log("DOES NOT EXIST", err);
-        fetchUserByEmail(email)
-          .then((res) => {
-            console.log(res.data.user);
-            const { name, email, source } = res.data.user;
-          })
-          .catch((err) => console.log("ERROR", err));
-      });
   }, [searchParams]);
 
   const onStorageUpdate = (e) => {
@@ -55,7 +43,7 @@ const RegisterPagePSG = ({ switchPage }) => {
   }, []);
 
   const handleSendVerification = () => {
-    toast.promise(fetchUpdateUser(authEmail, { email: psgEmail }), {
+    toast.promise(fetchConvertToPSG(authEmail, psgEmail ), {
       loading: "Sending Verification Email",
       success: (res) => {
         fetchUserVerify(psgEmail)
@@ -108,7 +96,6 @@ const RegisterPagePSG = ({ switchPage }) => {
       >
         Send Email for verification
       </button>
-
     </div>
   );
 };
