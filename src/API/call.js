@@ -32,6 +32,9 @@ export const fetchUpdateUser = (email = "", formData) =>
     ? axios.put(`${USER_URL}/user-details/create`, formData, {})
     : axios.put(`${USER_URL}/user-details/${email}`, formData, {});
 
+export const fetchConvertToPSG = (fromEmail, toEmail) =>
+  axios.put(`${USER_URL}/convert-to-psg`, { fromEmail, toEmail }, {});
+
 export const fetchUserVerify = (email) =>
   axios.get(`${USER_URL}/verify-email/${email}`, {});
 
@@ -64,7 +67,7 @@ export const fetchPaperRegister = (formData) =>
 
 export const fetchPaperDetailsByEmail = (email) =>
   axios.get(`${PAPER_URL}/papers-from-user/${email}`, {});
-  
+
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 
 // export const fetchEventById = (id) => axios.get(`${EVENT_URL}/${id}`);
