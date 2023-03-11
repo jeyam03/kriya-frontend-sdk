@@ -135,8 +135,8 @@ const Section6 = () => {
                       title="The Crunchy Treats"
                     />
                     <Sponsors
-                      imgurl="/assets/Stalls/DosaHub.png"
-                      title="Dosa Hub"
+                      imgurl="/assets/Stalls/ZenTreat.jpg"
+                      title="Zen Treat"
                     />
                     <Sponsors
                       imgurl="/assets/Stalls/Marvel.jpeg"
