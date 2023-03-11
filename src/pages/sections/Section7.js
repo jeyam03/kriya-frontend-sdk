@@ -105,7 +105,7 @@ const Section7 = () => {
               className="border row-span-1 col-span-2 w-[50vh] h-[25vh]  rounded-tl-[6rem] rounded-br-[6rem]"
               style={{
                 background:
-                  "url(/assets/Team/Group/1.jpg)",
+                  "url(/assets/Team/Group/one.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat",
@@ -118,7 +118,7 @@ const Section7 = () => {
               className="border row-span-1 col-span-1 w-[25vh] h-[25vh] rounded-tl-[6rem]"
               style={{
                 background:
-                  "url(/assets/Team/Group/2.jpg)",
+                  "url(/assets/Team/Group/two.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -128,7 +128,7 @@ const Section7 = () => {
               className="border row-span-1 col-span-1 w-[25vh] h-[25vh] "
               style={{
                 background:
-                  "url(/assets/Team/Group/3.jpg)",
+                  "url(/assets/Team/Group/three.jpg)",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
