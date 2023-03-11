@@ -143,10 +143,6 @@ const Section6 = () => {
                       title="Marvel"
                     />
                     <Sponsors
-                      imgurl="/assets/Stalls/RoyalZip.jpg"
-                      title="Royal Zip"
-                    />
-                    <Sponsors
                       imgurl="/assets/Stalls/EggSticka.jpeg"
                       title="Egg Stickaa"
                     />
