@@ -21,16 +21,16 @@ const Section1 = ({ scrollByVH }) => {
   const navigate = useNavigate();
 
   const slides = [
-    "/assets/Landing/2.jpg",
-    "/assets/Landing/1.jpg",
-    "/assets/Landing/3.jpg",
-    "/assets/Landing/5.jpg",
-    "/assets/Landing/4.jpg",
-    "/assets/Landing/12.jpg",
-    "/assets/Landing/6.jpg",
-    "/assets/Landing/7.jpg",
-    "/assets/Landing/11.jpg",
-    "/assets/Landing/13.jpg",
+    "/assets/Landing/2two.jpg",
+    "/assets/Landing/1one.jpg",
+    "/assets/Landing/3three.jpg",
+    "/assets/Landing/5five.jpg",
+    "/assets/Landing/4four.jpg",
+    "/assets/Landing/12twelve.jpg",
+    "/assets/Landing/6six.jpg",
+    "/assets/Landing/7seven.jpg",
+    "/assets/Landing/11eleven.jpg",
+    "/assets/Landing/13thirteen.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(1);
