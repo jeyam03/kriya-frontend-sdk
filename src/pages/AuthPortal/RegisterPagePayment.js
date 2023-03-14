@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { fetchPayGeneral, fetchUserByEmail } from "../../API/call";
 import TextInput from "../../components/TextInput";
 import Dropdown from "../../components/Dropdown";
@@ -101,14 +101,14 @@ const RegisterPagePayment = ({ switchPage }) => {
         <p className="">
           The general registration for Kriya 2023 is{" "}
           <b className="font-semibold">Rs. 200</b>. You can pay now and register
-          for the events. You are also availed of the option to pay later.
+          for all the events. You are also availed of the option to pay later.
         </p>
       ) : (
         <p className="">
           The general registration for Kriya 2023 is{" "}
           <b className="font-semibold">Rs. 150</b> for the students of PSG
-          College of Technology. You can pay now and register for the events.
-          You are also availed of the option to pay later.
+          College of Technology. You can pay now and register for all the
+          events. You are also availed of the option to pay later.
         </p>
       )}
       <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
@@ -125,6 +125,15 @@ const RegisterPagePayment = ({ switchPage }) => {
           Pay now
         </button>
       </div>
+      <p className="text-sm">
+        * After the transaction, the payment cannot be refunded. For any
+        queries,{" "}
+        <Link className="text-blue-500 font-semibold" to="/?sn=section9">
+          {" "}
+          Contact us{" "}
+        </Link>
+        .
+      </p>
       <button
         onClick={(e) => switchPage("login")}
         className="w-full text-center"

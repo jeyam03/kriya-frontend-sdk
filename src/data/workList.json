@@ -2,7 +2,6 @@
   {
     "wid": "WKSP0001",
     "image": "/assets/Workshops/Workshop1.png",
-    "fee": 500,
     "alteredFee": 600,
     "assnName": "IEEE EMBS Students Branch",
     "workName": "IoT system design using Embedded C and Python",
@@ -51,7 +50,6 @@
   {
     "wid": "WKSP0002",
     "image": "/assets/Workshops/Workshop2.png",
-    "fee": 650,
     "alteredFee": 800,
     "assnName": "CAA(Computer Applications Association)",
     "workName": "Mobile App Development",

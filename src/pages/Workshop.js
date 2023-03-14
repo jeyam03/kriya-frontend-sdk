@@ -63,34 +63,74 @@ const Workshop = () => {
       <div className="flex w-[calc(100%+4rem)] lg:w-[calc(100%+8rem)] overflow-x-hidden space-x-6 whitespace-nowrap py-2 mb-12 text-white bg-gradient-to-r from-[#C80067] to-[#5451B6] -mx-16">
         <div className="animate-marquee [will-change:transform] whitespace-nowrap flex space-x-6">
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
           <p className="">
-            ✨ Early Bird Offer ! ✨ On all workshops till <b>15<sup>th</sup></b> March
+            ✨ Early Bird Offer ! ✨ On all workshops till{" "}
+            <b>
+              15<sup>th</sup>
+            </b>{" "}
+            March
           </p>
         </div>
       </div>
@@ -185,11 +225,24 @@ const Workshop = () => {
                 <BiRupee />
               </p>
               <div className="flex flex-col pl-2">
-                <p className="text-lg lg:text-2xl font-semibold tracking-wide text-[#3c4043]">
-                  Rs. {workshopDetail.fee}*
-                  <span className="line-through text-sm ml-2 font-normal">Rs. {workshopDetail.alteredFee}</span>
-                </p>
-                <p className="text-xs">* Early bird offer</p>
+                {workshopDetail.fee ? (
+                  <React.Fragment>
+                    <p className="text-lg lg:text-2xl font-semibold tracking-wide text-[#3c4043]">
+                      Rs. {workshopDetail.fee}*
+                      <span className="line-through text-sm ml-2 font-normal">
+                        Rs. {workshopDetail.alteredFee}
+                      </span>
+                    </p>
+                    <p className="text-xs">* Early bird offer</p>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <p className="text-lg lg:text-2xl font-semibold tracking-wide text-[#3c4043]">
+                      Rs. {workshopDetail.alteredFee}
+                    </p>
+                    <p className="text-xs">Early bird offers closed for this workshop. Only few seats left. Hurry Up!</p>
+                  </React.Fragment>
+                )}
               </div>
             </div>
           </div>

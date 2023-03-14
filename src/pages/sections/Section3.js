@@ -58,8 +58,7 @@ const Section3 = () => {
                       backgroundSize: "cover",
                     }}
                     className="w-8 h-8 invert"
-                  >
-                  </div>
+                  ></div>
                 </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {" Kriyative "}
@@ -97,8 +96,7 @@ const Section3 = () => {
                       backgroundSize: "cover",
                     }}
                     className="w-8 h-8 invert"
-                  >
-                  </div>
+                  ></div>
                 </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
                   {" Brainiac "}
@@ -137,8 +135,7 @@ const Section3 = () => {
                       backgroundSize: "cover",
                     }}
                     className="w-8 h-8 invert"
-                  >
-                  </div>
+                  ></div>
                 </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
                   {" Coding "}
@@ -177,8 +174,7 @@ const Section3 = () => {
                       backgroundSize: "cover",
                     }}
                     className="w-8 h-8 invert"
-                  >
-                  </div>
+                  ></div>
                 </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
                   {" Circuit "}
@@ -217,8 +213,7 @@ const Section3 = () => {
                       backgroundSize: "contain",
                     }}
                     className="w-8 h-8 invert"
-                  >
-                  </div>
+                  ></div>
                 </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
                   {" Core Engineering "}
@@ -256,8 +251,7 @@ const Section3 = () => {
                       backgroundSize: "cover",
                     }}
                     className="w-8 h-8 invert"
-                  >
-                  </div>
+                  ></div>
                 </div>
                 <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
                   {" Management "}
@@ -294,6 +288,13 @@ const Section3 = () => {
             </span>
             , participate in events.
           </h1>
+          <h2 className="text-center lg:text-right text-lg lg:text-xl mt-8 lg:mt-16 font-poppins">
+            Get access to all the exciting events by paying the General
+            Registration Fee once.{" "}
+            <Link to="/auth?type=signup&page=switch" className="font-semibold">
+              {" Register Now!"}
+            </Link>
+          </h2>
         </div>
       </section>
       <a
