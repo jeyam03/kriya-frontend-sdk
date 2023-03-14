@@ -203,7 +203,7 @@ const RegisterPageDetails = ({ switchPage }) => {
           Enter your personal details
         </h1>
       </div>
-      <div className="h-full space-y-6 lg:overflow-auto lg:flex-1 pb-12 lg:px-8">
+      <div className="h-fit lg:h-full space-y-6 lg:overflow-auto lg:flex-1 pb-12 lg:px-8">
         <TextInput
           title="Name"
           className="w-full"
@@ -313,7 +313,7 @@ const RegisterPageDetails = ({ switchPage }) => {
           />
         </div>
       </div>
-      <div className="w-full pb-4 lg:py-8 px-8 lg:shadow-black lg:shadow-lg space-y-4">
+      <div className="w-full py-4 lg:py-8 px-8 lg:shadow-black lg:shadow-lg space-y-4">
         <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
           <button
             onClick={handleBack}
