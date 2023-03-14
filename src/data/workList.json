@@ -180,26 +180,31 @@
         {
           "time": "9.30 AM - 10.30 AM",
           "description": [
-            "R basics"
+            "Introduction to R programming – Datatypes, variables, I/O functions, operators, till control structures"
           ]
         },
         {
-          "time": "10.45 AM - 12.30 PM",
+          "time": "10.45 AM - 11.45 PM",
           "description": [
-            "Data structures in R",
-            "Data inspection and wrangling"
+            "Functions, Graphs, statistical functions"
           ]
         },
         {
-          "time": "1.30 PM - 2.30 PM",
+          "time": "12.00 PM - 01.00 PM",
           "description": [
-            "Statistical Computations"
+            "Hands-on Session"
+          ]
+        },
+        {
+          "time": "1.45 PM - 2.30 PM",
+          "description": [
+            "Data Analytics and Visualizations"
           ]
         },
         {
           "time": "2.45 PM TO 4.30 PM",
           "description": [
-            "Data Visualization"
+            "Hands-on Session"
           ]
         }
       ]
