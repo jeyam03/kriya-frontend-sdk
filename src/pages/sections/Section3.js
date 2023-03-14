@@ -288,13 +288,7 @@ const Section3 = () => {
             </span>
             , participate in events.
           </h1>
-          <h2 className="text-center lg:text-right text-lg lg:text-xl mt-8 lg:mt-16 font-poppins">
-            Get access to all the exciting events by paying the General
-            Registration Fee once.{" "}
-            <Link to="/auth?type=signup&page=switch" className="font-semibold">
-              {" Register Now!"}
-            </Link>
-          </h2>
+          <img src="/assets/Design/stamp.png" alt="stamp" />
         </div>
       </section>
       <a

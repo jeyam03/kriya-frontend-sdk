@@ -15,10 +15,11 @@ const PSG_COLLEGE =
 
 const RegisterPageDetails = ({ switchPage }) => {
   const [authEmail, setAuthEmail] = useState("");
-  const [refDisable, setrefDisable] = useState(false);
   const [otherCollege, setOtherCollege] = useState("");
+  const [otherDept, setOtherDept] = useState("");
 
   const [isOther, setIsOther] = useState(false);
+  const [isOtherDept, setIsOtherDept] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -86,6 +87,11 @@ const RegisterPageDetails = ({ switchPage }) => {
       return toast.error("Please enter your accomodation details");
     if (!formData.department)
       return toast.error("Please select your department");
+    if (
+      formData.department === "Other" &&
+      (otherDept === null || otherDept.length === 0)
+    )
+      return toast.error("Please enter your department name");
     if (!formData.year) return toast.error("Please select your year");
 
     if (formData.referral && formData.referral.length > 0) {
@@ -102,6 +108,10 @@ const RegisterPageDetails = ({ switchPage }) => {
 
     if (formData.college === "Other") {
       formData.college = otherCollege;
+    }
+
+    if (formData.department === "Other") {
+      formData.department = otherDept;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -181,6 +191,10 @@ const RegisterPageDetails = ({ switchPage }) => {
     setFormData({ ...formData, college: e.value });
   };
 
+  const handleDeptChange = (e) => {
+    setFormData({ ...formData, department: e.value });
+  };
+
   return (
     <div className="w-full h-full overflow-y-scroll lg:overflow-y-hidden flex flex-col lg:h-fit lg:max-h-[90%] py-12 px-6 lg:pt-8 lg:pb-0 lg:px-0 shadow-xl bg-white space-y-6">
       <div className="flex w-full justify-center lg:hidden items-center">
@@ -204,14 +218,17 @@ const RegisterPageDetails = ({ switchPage }) => {
         </h1>
       </div>
       <div className="h-fit lg:h-full space-y-6 lg:overflow-auto lg:flex-1 pb-12 lg:px-8">
-        <TextInput
-          title="Name"
-          className="w-full"
-          valueState={[
-            formData.name,
-            (val) => setFormData({ ...formData, name: val }),
-          ]}
-        />
+        <div>
+          <TextInput
+            title="Name"
+            className="w-full"
+            valueState={[
+              formData.name,
+              (val) => setFormData({ ...formData, name: val }),
+            ]}
+          />
+          <p className="text-xs pl-4 pt-1">*as per your college ID</p>
+        </div>
         <TextInput
           title="Email"
           type="email"
@@ -247,7 +264,7 @@ const RegisterPageDetails = ({ switchPage }) => {
 
           <Select
             styles={selectStyles}
-            className="z-20 flex-1"
+            className="z-30 flex-1"
             options={colleges.map((college) => {
               return {
                 value: college,
@@ -291,7 +308,7 @@ const RegisterPageDetails = ({ switchPage }) => {
           />
         )}
         <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-2 w-full">
-          <Dropdown
+          {/* <Dropdown
             valueState={[
               formData.department,
               (val) => setFormData({ ...formData, department: val }),
@@ -300,14 +317,54 @@ const RegisterPageDetails = ({ switchPage }) => {
             className="w-full lg:w-2/3"
             placeholder="Select a department"
             options={departments}
-          />
+          /> */}
+          <div className="w-full lg:w-2/3">
+            <div className="">
+              <label className="text-blue text-sm z-30 bg-white p-2">
+                Department
+              </label>
+
+              <Select
+                styles={selectStyles}
+                className="z-20 flex-1"
+                options={departments.map((dept) => {
+                  return {
+                    value: dept,
+                    label: dept,
+                  };
+                })}
+                isDisabled={isOtherDept}
+                onChange={handleDeptChange}
+              />
+              <div className="flex space-x-2 pl-2 mt-2">
+                <input
+                  type="checkbox"
+                  checked={isOtherDept}
+                  onClick={(e) => {
+                    if (!isOtherDept) setFormData({ ...formData, department: "Other" });
+                    else setFormData({ ...formData, department: "" });
+                    setIsOtherDept(!isOtherDept);
+                  }}
+                />
+                <p>My department is not listed above </p>
+              </div>
+            </div>
+            {formData.department === "Other" && (
+              <TextInput
+                title="Department Name"
+                placeholder="Enter your department name"
+                className="pt-2"
+                valueState={[otherDept, setOtherDept]}
+              />
+            )}
+          </div>
           <Dropdown
             valueState={[
               formData.year,
               (val) => setFormData({ ...formData, year: val }),
             ]}
             title="Year"
-            className="w-full lg:w-1/3"
+            className="w-full lg:w-1/3 lg:pt-4"
             placeholder="Select a year"
             options={[1, 2, 3, 4, 5]}
           />

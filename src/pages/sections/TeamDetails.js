@@ -204,6 +204,12 @@ const TeamDetails = [
     image_url: "/assets/Team/Design/18sarika.png"
   },
   {
+    name: "Pradeep N",
+    vertical: "Design & Photography",
+    position: "",
+    image_url: "/assets/Team/Design/23pradeep.png"
+  },
+  {
     name: "Sri Siranjevi S U",
     vertical: "Design & Photography",
     position: "",
@@ -226,12 +232,6 @@ const TeamDetails = [
     vertical: "Design & Photography",
     position: "",
     image_url: "/assets/Team/Design/22kavinkumar.png"
-  },
-  {
-    name: "Pradeep N",
-    vertical: "Design & Photography",
-    position: "",
-    image_url: "/assets/Team/Design/23pradeep.png"
   },
   {
     name: "Kavinesh",
