@@ -288,7 +288,7 @@ const Section3 = () => {
             </span>
             , participate in events.
           </h1>
-          <img src="/assets/Design/stamp.png" alt="stamp" />
+          <img src="/assets/Design/stamp.png" alt="stamp" className="-mt-12 lg:-mt-16" />
         </div>
       </section>
       <a
