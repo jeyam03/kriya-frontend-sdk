@@ -89,7 +89,7 @@ const OtherPayments = ({ switchPage }) => {
       email: localStorage.getItem("email"),
       name: userDetails.name,
       kriyaId: userDetails.kriyaId,
-      fee: workshopDetails.fee,
+      fee: workshopDetails.fee ? workshopDetails.fee : workshopDetails.alteredFee,
     })
       .then((res) => {
         setTransaction(res.data);
@@ -146,7 +146,7 @@ const OtherPayments = ({ switchPage }) => {
               The registration for workshop -{" "}
               <b className="font-semibold"> {workshopDetails.workName} </b> in{" "}
               Kriya 2023 is{" "}
-              <b className="font-semibold">Rs. {workshopDetails.fee}.00</b>. You
+              <b className="font-semibold">Rs. {workshopDetails.fee ? workshopDetails.fee : workshopDetails.alteredFee}.00</b>. You
               will be redirected to our payment gateway and an email will be
               sent as a confirmation.
             </p>
