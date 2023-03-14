@@ -12,6 +12,7 @@
     "c1Num": "9361277079",
     "c2Name": "P M HARISHREE",
     "c2Num": "9385561379",
+    "maxCount": "40",
     "desc": "The new era of imagination and deployment for a connected world is opened through Internet of Things with edge sensor nodes getting more and more intelligent and able to transmit directly to cloud and also get controlled. This workshop will provide a good understanding of Internet of Things and its exploding applications. The interactive lectures and hands-on exercises will provide attendees with a deep understanding of the technical aspects of IoT and inbuilt network processors.",
     "agenda": [
       [
@@ -60,6 +61,7 @@
     "c1Num": "6369969599",
     "c2Name": "RAJKUMAR B",
     "c2Num": "9842216369",
+    "maxCount": "60",
     "desc": "Learn essential Android programming concepts and build a variety of apps using Java/Kotlin and XML based architecture. Become a native mobile app developer with proficiency in all aspects of mobile applications from design to build for Android via this app development workshop. This workshop also covers the learning scope of Flutter which is a cross-platform framework for both IOS and Android. It provides an eye opener for the modern way of app development using Jetpack compose. The technologies used to create these apps are expanding and improving quickly, so it’s an exciting time to start learning Mobile Development and undertake extensive statistical computations and data visualization. This one day hands-on workshop will introduce participants to use R programming tools for data analytics.",
     "agenda": [
       [
@@ -128,6 +130,7 @@
     "c1Num": "9952549553",
     "c2Name": "Priyanka G S",
     "c2Num": "93455 44874",
+    "maxCount": "70",
     "desc": "Join us for a deep dive into the world of deep learning! During this intensive workshop, you'll  learn the concepts and principles of deep learning, as well as how to implement and apply deep learning  algorithms using tools such as Python and TensorFlow. You'll also get hands-on experience building and  training deep learning models, and learn how to use them to solve real-world problems. Whether you're a  beginner looking to get started with deep learning or an experienced professional looking to expand your  skills, this workshop is for you. Don't miss out on this opportunity to master the art of deep learning and  unlock the full potential of this powerful technology!\"",
     "agenda": [
       [
@@ -172,6 +175,7 @@
     "c1Num": "6381854033",
     "c2Name": "SYED ABUTAHIR S",
     "c2Num": "9080310803",
+    "maxCount": "60",
     "desc": "R is a simple programming environment that enables the effective handling of data, while providing  excellent graphical support. R is used for simple calculations, matrix calculations, differential equations,  optimization, statistical analysis, plotting graphs, etc. Also, it is useful for anybody who wishes to  undertake extensive statistical computations and data visualization. This one day hands-on workshop will introduce participants to use R programming tools for data analytics.",
     "agenda": [
       [
@@ -222,6 +226,7 @@
     "c1Num": "9176717108",
     "c2Name": "VARUNIKA D",
     "c2Num": "9994097426",
+    "maxCount": "70",
     "desc": "Video games have undeniably become an imperative part of our life,either as a form of entertainment or as a hobby. Video games are electronic games that require a user interface, input device that generates visual feedback for the  players, an output device that is either a two or three-dimensional display device. This workshop allows the students to gain more knowledge on gaming using softwares – unity3d & unreal.",
     "agenda": [
       [
@@ -254,6 +259,7 @@
     "c1Num": "9626386882",
     "c2Name": "Logesh K",
     "c2Num": "6384544377",
+    "maxCount": "100",
     "desc": "We provide opportunity for the budding engineers to explore the future work environment. This workshop introduces the participants into the world of sensorics and sensor integration using Virtual Instrumentation (VI) software. The participants will be provided with hands-on-training sessions. They will be exposed to acquiring data and taking control actions using VI software (LabVIEW) and Data acquisition cards. Apart from this, training on development of Robots using LEGO kits and sensors will also be offered.",
     "agenda": [
       [
@@ -298,6 +304,7 @@
     "c1Num": "9789348224",
     "c2Name": "YOGENDRAA S N",
     "c2Num": "8608782082",
+    "maxCount": "65",
     "desc": "The workshop focuses on the basic conceptual ideas behind the characteristics, challenges and network configurations of IoT along with Data Collection, Data Processing and Data Analytics including Cloud Computing and Big data. It also focuses on the MQTT usage of various embedded systems (Aurdino, Raspberry Pi). The final part of the workshop will be the hands-on training with embedded systems which will be provided to the participants.",
     "agenda": [
       [
@@ -342,6 +349,7 @@
     "c1Num": "7397057322",
     "c2Name": "ARUN K",
     "c2Num": "9003585358",
+    "maxCount": "100",
     "desc": " We provide workshop on IoT, bots, automation and electric vehicle and their batteries. The session will be conducted by Mr. Naveen Ganesan , an independent researcher and a famous YouTuber who bagged the young science enthusiast and confidence award for the year 2022. The session will cover topics such as house automation, bots, 3d printers, Powerwall, cloud-based systems and sensors, etc.",
     "agenda": [
       [
@@ -398,6 +406,7 @@
     "c1Num": "9894268704",
     "c2Name": "PRAGATHEESH R J",
     "c2Num": "8056920879",
+    "maxCount": "50",
     "desc": "The Robot Operating System (ROS) is an open-source framework that helps researchers and developers build and reuse code between robotics applications. It is also a global open-source community of engineers, developers, and hobbyists who contribute to making robots better, more accessible, and available to everyone. This workshop will provide an in-depth understanding of the framework and its various tools and libraries. Participants will learn about the ecosystem and how to use ROS to program and control their custom robots. They will also gain hands-on experience integrating packages and tools to build robotic systems. The participants will be taught how to interface Lidar, Arduino- development board and various high-grade sensors to the framework. This will be a valuable learning opportunity for anyone interested in robotics and ROS.",
     "agenda": [
       [
@@ -442,6 +451,7 @@
     "c1Num": "9080533862",
     "c2Name": "THANISH",
     "c2Num": "9944032407",
+    "maxCount": "100",
     "desc": "Unleash your creativity with \"Creative Fusion,\" a dynamic workshop that combines the power of Adobe Photoshop, Blender, Video Editing and Poster Designing. With hands-on instruction from experienced professionals, you will learn the skills to bring your ideas to life. Enhance your photography, create stunning 3D graphics, or edit professional-looking videos with this workshop. Get ready to delve into the exciting world of digital media and unleash your full creative potential!\"",
     "agenda": [
       [
@@ -474,6 +484,7 @@
     "c1Num": "9629089852",
     "c2Name": "Surya Krishnaa P",
     "c2Num": "9043346699",
+    "maxCount": "50",
     "desc": "Non destructive testing is a testing and analysis technique used in industry to evaluate the properties of a material, component, structure or system for characteristic differences or welding defects and discontinuities without causing damage to the original part. Why use NDT instead of conventional evaluation techniques? It is an effective technique via which the article can be tested without permanently altering its physical and chemical properties. It is a highly valuable technique that can save both money and time in product evaluation, troubleshooting and research. It is also a very safe testing method for operators with most techniques being harmless to humans with high accuracy.",
     "agenda": [
       [
@@ -512,6 +523,7 @@
     "c1Num": "9003033373",
     "c2Name": "Praveenbabu R S",
     "c2Num": "9994542649",
+    "maxCount": "70",
     "desc": "The objective of this workshop is to give an overview of the FPGA design flow, Hardware description languages (HDLs) programming, and provide experience with Xilinx Vivado Platform. Implementation of digital logic designs, including finite state machines and data path circuits. Use of IP cores and embedded processors in FGPA based System on Chips(SOC) Design, techniques for debugging and testing FGPA based systems. At last, the participants will be able to design, simulate, implement and test their own FGPA-based designs by the end of the workshop.",
     "agenda": [
       [
@@ -544,6 +556,7 @@
     "c1Num": "7402876123",
     "c2Name": "HYAGREEV RETHINAVEL",
     "c2Num": "9940922937",
+    "maxCount": "100",
     "desc": "This event consist of a workshop followed by sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained. Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands-on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by sky watch for the participants where telescope handling is also taught .",
     "agenda": [
       [
@@ -588,6 +601,7 @@
     "c1Num": "9003763704",
     "c2Name": "ILAKKIA V K",
     "c2Num": "6383233795",
+    "maxCount": "70",
     "desc": "Tensorflow is an end to end machine learning platform. This workshop teaches you how to build deep learning models from scratch, using real world datasets with the tensorflow framework. This workshop also gives you an insight on how tensorflow is useful in the field of biotechnology. ",
     "agenda": [
       [

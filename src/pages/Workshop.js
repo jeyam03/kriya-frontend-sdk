@@ -8,12 +8,14 @@ import {
   fetchPaymentDetailsByEmail,
   fetchUserByEmail,
   fetchWorkshopById,
+  fetchWorkshopStats,
 } from "../API/call";
 
 const Workshop = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [paymentDetails, setPaymentDetails] = useState(null);
+  const [currentCount, setCurrentCount] = useState(0);
 
   const toTitleCase = (phrase) => {
     return phrase
@@ -34,17 +36,21 @@ const Workshop = () => {
   useEffect(() => {
     if (!localStorage.getItem("token")) return;
     fetchUserByEmail(localStorage.getItem("email")).then((res) => {
-      console.log(res.data.user);
       setIsLoggedIn(true);
     });
   }, []);
 
   useEffect(() => {
     fetchPaymentDetailsByEmail(localStorage.getItem("email")).then((res) => {
-      console.log(res.data.data);
       setPaymentDetails(res.data.data);
     });
   }, []);
+
+  useEffect(() => {
+    fetchWorkshopStats().then((res) => {
+      setCurrentCount(res.data?.workshopWiseCount.find((i) => i._id === id)?.count);
+    });
+  }, [id]);
 
   const handleRegister = () => {
     if (!isLoggedIn) {
@@ -188,9 +194,9 @@ const Workshop = () => {
           <button
             className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
             onClick={() => {
-              !paymentDetails
+              (!paymentDetails
                 ?.filter((w) => w.type === "WORKSHOP" && w.status === "SUCCESS")
-                .find((i) => i.eventId === id) &&
+                .find((i) => i.eventId === id) && currentCount < workshopDetail.maxCount) &&
                 (window.confirm("Are you sure you want to register ?")
                   ? handleRegister()
                   : console.log("Cancelled"));
@@ -204,7 +210,15 @@ const Workshop = () => {
                   )
                   .find((i) => i.eventId === id)
                   ? "Registered"
-                  : "Register Here!"}
+
+                  : currentCount / workshopDetail.maxCount >= 0.8 && currentCount < workshopDetail.maxCount
+                    ? <div>Registrations Closing Soon!<br></br><span className="text-sm font-normal bg-clip-text [-webkit-text-fill-color:transparent] bg-white lg:bg-[#3c4043]">Limited Seats Available. Hurry Up!</span></div>
+
+                    : currentCount >= workshopDetail.maxCount
+                      ? "Registrations Closed!"
+
+                      : "Register Here!"
+                }
               </span>
             )}
           </button>
