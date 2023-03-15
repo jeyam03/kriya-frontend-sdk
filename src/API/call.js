@@ -68,6 +68,8 @@ export const fetchPaperRegister = (formData) =>
 export const fetchPaperDetailsByEmail = (email) =>
   axios.get(`${PAPER_URL}/papers-from-user/${email}`, {});
 
+export const fetchWorkshopStats = () => axios.get(`${BASE_URL}/statistics/workshop-stats`, {});
+
 // export const fetchEvents = () => axios.get(`${EVENT_URL}/`);
 
 // export const fetchEventById = (id) => axios.get(`${EVENT_URL}/${id}`);
