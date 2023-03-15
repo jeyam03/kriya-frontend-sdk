@@ -83,11 +83,11 @@ const Section5 = () => {
               from innovation leaders and industry experts.
             </h1>
 
-            <div className="w-fit my-8 p-4 rounded-2xl"
+            {/* <div className="w-fit my-8 p-4 rounded-2xl"
               id="early-bird"
             >
               <p className="text-white font-[500] tracking-wide text-xl font-poppins">✨ Early Bird Offer ✨</p>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -131,11 +131,11 @@ const Section5 = () => {
             </span>{" "}
             from innovation leaders and industry experts.
           </h1>
-          <div className="w-fit mt-6 p-4 rounded-2xl"
+          {/* <div className="w-fit mt-6 p-4 rounded-2xl"
             id="early-bird"
           >
             <p className="text-white font-[500] tracking-wide text-lg font-poppins">✨ Early Bird Offer ✨</p>
-          </div>
+          </div> */}
         </div>
 
         <div ref={ref} className={`lg:hidden overflow-x-scroll flex flex-row items-center w-full font-poppins p-4 space-x-4`}>

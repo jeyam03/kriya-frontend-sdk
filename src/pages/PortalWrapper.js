@@ -128,11 +128,11 @@ const NavBarForDesktop = () => {
         <div className="py-8">
           <div className="flex space-x-4 items-center">
             <h3 className="text-base font-semibold py-3">Workshops</h3>
-            <div className="w-fit h-fit p-2 rounded-lg"
+            {/* <div className="w-fit h-fit p-2 rounded-lg"
               id="early-bird"
             >
               <p className="text-white text-xs font-poppins">✨ Early Bird Offer ✨</p>
-            </div>
+            </div> */}
           </div>
           <WorkNav noMargin workshops={workshops} />
           <h3 className="text-base font-semibold py-3">Events</h3>
@@ -326,11 +326,11 @@ const NavBarForMobile = () => {
         <div className="py-8 pb-16 px-6" id="navOpen">
           <div className="flex space-x-4 items-center">
             <h3 className="text-base font-semibold py-3" id="navElements">Workshops</h3>
-            <div className="w-fit h-fit p-2 rounded-lg"
+            {/* <div className="w-fit h-fit p-2 rounded-lg"
               id="early-bird"
             >
               <p className="text-white text-xs font-poppins">✨ Early Bird Offer ✨</p>
-            </div>
+            </div> */}
           </div>
           <WorkNav
             openState={[isOpen, setIsOpen]}
