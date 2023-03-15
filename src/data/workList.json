@@ -119,7 +119,6 @@
   {
     "wid": "WKSP0003",
     "image": "/assets/Workshops/Workshop3.png",
-    "fee": 500,
     "alteredFee": 600,
     "assnName": "Institute of Electrical & Electronics Engg. (IEEE) (Students Chapter)",
     "workName": "Deep Learning: Unlocking the Full Potential",
@@ -164,7 +163,6 @@
   {
     "wid": "WKSP0004",
     "image": "/assets/Workshops/Workshop4.png",
-    "fee": 500,
     "alteredFee": 600,
     "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
     "workName": "R Programming in Data Analytics",
@@ -215,7 +213,6 @@
   {
     "wid": "WKSP0005",
     "image": "/assets/Workshops/Workshop5.png",
-    "fee": 400,
     "alteredFee": 500,
     "assnName": "Information Technology Association",
     "workName": "Game Development",
@@ -248,7 +245,6 @@
   {
     "wid": "WKSP0006",
     "image": "/assets/Workshops/Workshop6.png",
-    "fee": 650,
     "alteredFee": 800,
     "assnName": "American Society of Mechanical Engineers",
     "workName": "Sensor Interface and Integration",
@@ -293,7 +289,6 @@
   {
     "wid": "WKSP0007",
     "image": "/assets/Workshops/Workshop7.png",
-    "fee": 400,
     "alteredFee": 500,
     "assnName": "Indian Institution of Industrial Engineering (Students Chapter)",
     "workName": "IOT for Mechanical Applications",
@@ -338,7 +333,6 @@
   {
     "wid": "WKSP0008",
     "image": "/assets/Workshops/Workshop8.png",
-    "fee": 200,
     "alteredFee": 250,
     "assnName": "Production Engineering Association",
     "workName": "Nuts and Bots with Naveen",
@@ -395,7 +389,6 @@
   {
     "wid": "WKSP0009",
     "image": "/assets/Workshops/Workshop9.png",
-    "fee": 400,
     "alteredFee": 500,
     "assnName": "Robotics & Automation Engineering Association",
     "workName": "Build your Custom Robot in ROS",
@@ -440,7 +433,6 @@
   {
     "wid": "WKSP0010",
     "image": "/assets/Workshops/Workshop10.png",
-    "fee": 300,
     "alteredFee": 400,
     "assnName": "Radio Hub",
     "workName": "Creative Fusion",
@@ -473,7 +465,6 @@
   {
     "wid": "WKSP0011",
     "image": "/assets/Workshops/Workshop11.png",
-    "fee": 250,
     "alteredFee": 300,
     "assnName": "Metallurgical Engineering Association",
     "workName": "Non-Destructive Testing",
@@ -512,7 +503,6 @@
   {
     "wid": "WKSP0012",
     "image": "/assets/Workshops/Workshop12.png",
-    "fee": 350,
     "alteredFee": 400,
     "assnName": "Electrical and Communication Engineering Association",
     "workName": "FPGA Based System Design",
@@ -545,7 +535,6 @@
   {
     "wid": "WKSP0013",
     "image": "/assets/Workshops/Workshop13.png",
-    "fee": 250,
     "alteredFee": 300,
     "assnName": "Astronomy Club",
     "workName": "Solaris (Workshop + Skywatch)",
@@ -590,7 +579,6 @@
   {
     "wid": "WKSP0014",
     "image": "/assets/Workshops/Workshop14.png",
-    "fee": 300,
     "alteredFee": 350,
     "assnName": "Biotechnology Association",
     "workName": "Tensorflow Application In Biotechnology",
