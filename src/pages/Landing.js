@@ -17,6 +17,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { fetchUserByEmail } from "../API/call";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail, SiYoutube } from "react-icons/si";
+import Section12 from "./sections/Section12";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -71,7 +72,7 @@ const Landing = () => {
           //   consolee
           // )}, ${getColorVal(consolee)}, 1)`,
           background: condition
-            ? `rgba(18, 18, 18, 1)`
+            ? `rgba(0, 0, 0, 1)`
             : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
@@ -79,6 +80,7 @@ const Landing = () => {
         }}
       >
         <Section1 scrollYByVH={consolee} />
+        <Section12 scrollYByVH={consolee} />
         <Section2 scrollYByVH={consolee} />
         <Section11 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
