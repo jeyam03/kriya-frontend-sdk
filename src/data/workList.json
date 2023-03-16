@@ -1,122 +1,5 @@
 [
   {
-    "wid": "WKSP0001",
-    "image": "/assets/Workshops/Workshop1.png",
-    "alteredFee": 600,
-    "assnName": "IEEE EMBS Students Branch",
-    "workName": "IoT system design using Embedded C and Python",
-    "date": "25",
-    "hall": "Medical Informatics Lab, Ground floor, BME Dept.",
-    "time": "9.00 AM - 05.30 PM",
-    "c1Name": "PREETHI S ",
-    "c1Num": "9361277079",
-    "c2Name": "P M HARISHREE",
-    "c2Num": "9385561379",
-    "maxCount": "45",
-    "desc": "The new era of imagination and deployment for a connected world is opened through Internet of Things with edge sensor nodes getting more and more intelligent and able to transmit directly to cloud and also get controlled. This workshop will provide a good understanding of Internet of Things and its exploding applications. The interactive lectures and hands-on exercises will provide attendees with a deep understanding of the technical aspects of IoT and inbuilt network processors.",
-    "agenda": [
-      [
-        {
-          "time": "9.00 - 10.00",
-          "description": [
-            "Overview on Iot technology and its application",
-            "Introduction to STEPS Iot Development kit (will be provided) with built in network processor, IDE Platform"
-          ]
-        },
-        {
-          "time": "10.00 - 12.00",
-          "description": [
-            "Preparing Sensor Node (Things) Embedded C Arduino API Programming",
-            "Sensor and actuators ",
-            "Creating own webserver using HTTP protocol"
-          ]
-        },
-        {
-          "time": "12.00 - 1.00",
-          "description": [
-            "Iot communication models – HTTP & MQTT protocol"
-          ]
-        },
-        {
-          "time": "2.00 - 5.30",
-          "description": [
-            "Implementation of Iot system – sending date to cloud, data analysis and visualization using Think Speak cloud server  ",
-            "Dash board creation",
-            "Python programming implementation in microcontroller"
-          ]
-        }
-      ]
-    ]
-  },
-  {
-    "wid": "WKSP0002",
-    "image": "/assets/Workshops/Workshop2.png",
-    "alteredFee": 800,
-    "assnName": "CAA(Computer Applications Association)",
-    "workName": "Mobile App Development",
-    "date": "25",
-    "hall": "CC Lab (K Block 4th Floor)",
-    "time": "9.00 AM - 05.00 PM",
-    "c1Name": "MANOHARAN R ",
-    "c1Num": "6369969599",
-    "c2Name": "RAJKUMAR B",
-    "c2Num": "9842216369",
-    "maxCount": "60",
-    "desc": "Learn essential Android programming concepts and build a variety of apps using Java/Kotlin and XML based architecture. Become a native mobile app developer with proficiency in all aspects of mobile applications from design to build for Android via this app development workshop. This workshop also covers the learning scope of Flutter which is a cross-platform framework for both IOS and Android. It provides an eye opener for the modern way of app development using Jetpack compose. The technologies used to create these apps are expanding and improving quickly, so it’s an exciting time to start learning Mobile Development and undertake extensive statistical computations and data visualization. This one day hands-on workshop will introduce participants to use R programming tools for data analytics.",
-    "agenda": [
-      [
-        {
-          "time": "09:00 - 10:00",
-          "description": [
-            "Latest Trends in Native/Cross Platform Mobile App Development"
-          ]
-        },
-        {
-          "time": "10:00 - 10:30",
-          "description": [
-            "Android Studio, Framework, Basic widgets"
-          ]
-        },
-        {
-          "time": "10:30 - 10:45",
-          "description": [
-            "Short Recess"
-          ]
-        },
-        {
-          "time": "10:45 - 11:30",
-          "description": [
-            "View Based Architecture - XML and Java/Kotlin"
-          ]
-        },
-        {
-          "time": "11:30 - 12:30",
-          "description": [
-            "Building User Interfaces"
-          ]
-        },
-        {
-          "time": "01:30 - 02:30",
-          "description": [
-            "Using Resources, Media and Menus to build apps"
-          ]
-        },
-        {
-          "time": "02:30 - 03:30",
-          "description": [
-            "Jetpack Compose – Modern way of App Development"
-          ]
-        },
-        {
-          "time": "03:45 - 04:45",
-          "description": [
-            "Cross platform app development using Flutter"
-          ]
-        }
-      ]
-    ]
-  },
-  {
     "wid": "WKSP0003",
     "image": "/assets/Workshops/Workshop3.png",
     "alteredFee": 600,
@@ -141,15 +24,11 @@
         },
         {
           "time": "11:00 AM - 1:00 PM",
-          "description": [
-            "Convolutional Neural Networks\n"
-          ]
+          "description": ["Convolutional Neural Networks\n"]
         },
         {
           "time": "2:00 PM - 3:30 PM",
-          "description": [
-            "Language Modelling and Recurrent Neural Networks"
-          ]
+          "description": ["Language Modelling and Recurrent Neural Networks"]
         },
         {
           "time": "3:45 PM - 5:00 PM",
@@ -185,27 +64,19 @@
         },
         {
           "time": "10.45 AM - 11.45 PM",
-          "description": [
-            "Functions, Graphs, statistical functions"
-          ]
+          "description": ["Functions, Graphs, statistical functions"]
         },
         {
           "time": "12.00 PM - 01.00 PM",
-          "description": [
-            "Hands-on Session"
-          ]
+          "description": ["Hands-on Session"]
         },
         {
           "time": "1.45 PM - 2.30 PM",
-          "description": [
-            "Data Analytics and Visualizations"
-          ]
+          "description": ["Data Analytics and Visualizations"]
         },
         {
           "time": "2.45 PM TO 4.30 PM",
-          "description": [
-            "Hands-on Session"
-          ]
+          "description": ["Hands-on Session"]
         }
       ]
     ]
@@ -267,21 +138,15 @@
         },
         {
           "time": "11:30 AM TO 12:30 PM",
-          "description": [
-            "Hands-on Training I"
-          ]
+          "description": ["Hands-on Training I"]
         },
         {
           "time": "1:30 PM - 2:30 PM",
-          "description": [
-            "Hands-on Training II"
-          ]
+          "description": ["Hands-on Training II"]
         },
         {
           "time": "2:45 PM - 3:45 PM",
-          "description": [
-            "Hands-on Training III"
-          ]
+          "description": ["Hands-on Training III"]
         }
       ]
     ]
@@ -323,9 +188,7 @@
         },
         {
           "time": "02:30 PM - 04:30 PM",
-          "description": [
-            "An interactive hands-on training with IoT kits"
-          ]
+          "description": ["An interactive hands-on training with IoT kits"]
         }
       ]
     ]
@@ -355,33 +218,23 @@
         },
         {
           "time": "2:30 PM - 3:00 PM",
-          "description": [
-            "Real-world demands and problems."
-          ]
+          "description": ["Real-world demands and problems."]
         },
         {
           "time": "3:00 PM - 4:00 PM",
-          "description": [
-            "All about 3D printing with a live demonstration"
-          ]
+          "description": ["All about 3D printing with a live demonstration"]
         },
         {
           "time": "4:00 PM - 4:15 PM",
-          "description": [
-            "Powerwall technology"
-          ]
+          "description": ["Powerwall technology"]
         },
         {
           "time": "4:15 PM - 4:30 PM",
-          "description": [
-            "Bots that assist humans"
-          ]
+          "description": ["Bots that assist humans"]
         },
         {
           "time": "4:30 PM - 5:00 PM",
-          "description": [
-            "All about EVs and their future."
-          ]
+          "description": ["All about EVs and their future."]
         }
       ]
     ]
@@ -405,21 +258,15 @@
       [
         {
           "time": "9:00 AM - 11:00 PM",
-          "description": [
-            "Introduction to ROS Framework and Prerequisites"
-          ]
+          "description": ["Introduction to ROS Framework and Prerequisites"]
         },
         {
           "time": "11:15 PM - 1:00 PM",
-          "description": [
-            "ROS Ecosystem "
-          ]
+          "description": ["ROS Ecosystem "]
         },
         {
           "time": "2:00 PM - 3:30 PM",
-          "description": [
-            "ROS Tools and Utilities (Mobile robot)"
-          ]
+          "description": ["ROS Tools and Utilities (Mobile robot)"]
         },
         {
           "time": "3:45 PM - 5:00 PM",
@@ -487,15 +334,11 @@
         },
         {
           "time": "11:10 AM - 12:30 PM",
-          "description": [
-            "SESSION 2 - Visual Testing, Penetration Testing "
-          ]
+          "description": ["SESSION 2 - Visual Testing, Penetration Testing "]
         },
         {
           "time": "1:30 PM - 3:00 PM",
-          "description": [
-            "SESSION 3 - Hands-on Session "
-          ]
+          "description": ["SESSION 3 - Hands-on Session "]
         }
       ]
     ]
@@ -601,15 +444,114 @@
         },
         {
           "time": "1:30 PM - 3:00 PM",
-          "description": [
-            "SESSION 2 - MRI analysis using tensorflow"
-          ]
+          "description": ["SESSION 2 - MRI analysis using tensorflow"]
         },
         {
           "time": "3:30 PM - 5:30 PM",
           "description": [
             "SESSION 3 - Talk on research in (Biotechnology Field) using tensorflow and question & answer session"
           ]
+        }
+      ]
+    ]
+  },
+  {
+    "wid": "WKSP0001",
+    "image": "/assets/Workshops/Workshop1.png",
+    "alteredFee": 600,
+    "assnName": "IEEE EMBS Students Branch",
+    "workName": "IoT system design using Embedded C and Python",
+    "date": "25",
+    "hall": "Medical Informatics Lab, Ground floor, BME Dept.",
+    "time": "9.00 AM - 05.30 PM",
+    "c1Name": "PREETHI S ",
+    "c1Num": "9361277079",
+    "c2Name": "P M HARISHREE",
+    "c2Num": "9385561379",
+    "maxCount": "45",
+    "desc": "The new era of imagination and deployment for a connected world is opened through Internet of Things with edge sensor nodes getting more and more intelligent and able to transmit directly to cloud and also get controlled. This workshop will provide a good understanding of Internet of Things and its exploding applications. The interactive lectures and hands-on exercises will provide attendees with a deep understanding of the technical aspects of IoT and inbuilt network processors.",
+    "agenda": [
+      [
+        {
+          "time": "9.00 - 10.00",
+          "description": [
+            "Overview on Iot technology and its application",
+            "Introduction to STEPS Iot Development kit (will be provided) with built in network processor, IDE Platform"
+          ]
+        },
+        {
+          "time": "10.00 - 12.00",
+          "description": [
+            "Preparing Sensor Node (Things) Embedded C Arduino API Programming",
+            "Sensor and actuators ",
+            "Creating own webserver using HTTP protocol"
+          ]
+        },
+        {
+          "time": "12.00 - 1.00",
+          "description": ["Iot communication models – HTTP & MQTT protocol"]
+        },
+        {
+          "time": "2.00 - 5.30",
+          "description": [
+            "Implementation of Iot system – sending date to cloud, data analysis and visualization using Think Speak cloud server  ",
+            "Dash board creation",
+            "Python programming implementation in microcontroller"
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "wid": "WKSP0002",
+    "image": "/assets/Workshops/Workshop2.png",
+    "alteredFee": 800,
+    "assnName": "CAA(Computer Applications Association)",
+    "workName": "Mobile App Development",
+    "date": "25",
+    "hall": "CC Lab (K Block 4th Floor)",
+    "time": "9.00 AM - 05.00 PM",
+    "c1Name": "MANOHARAN R ",
+    "c1Num": "6369969599",
+    "c2Name": "RAJKUMAR B",
+    "c2Num": "9842216369",
+    "maxCount": "60",
+    "desc": "Learn essential Android programming concepts and build a variety of apps using Java/Kotlin and XML based architecture. Become a native mobile app developer with proficiency in all aspects of mobile applications from design to build for Android via this app development workshop. This workshop also covers the learning scope of Flutter which is a cross-platform framework for both IOS and Android. It provides an eye opener for the modern way of app development using Jetpack compose. The technologies used to create these apps are expanding and improving quickly, so it’s an exciting time to start learning Mobile Development and undertake extensive statistical computations and data visualization. This one day hands-on workshop will introduce participants to use R programming tools for data analytics.",
+    "agenda": [
+      [
+        {
+          "time": "09:00 - 10:00",
+          "description": [
+            "Latest Trends in Native/Cross Platform Mobile App Development"
+          ]
+        },
+        {
+          "time": "10:00 - 10:30",
+          "description": ["Android Studio, Framework, Basic widgets"]
+        },
+        {
+          "time": "10:30 - 10:45",
+          "description": ["Short Recess"]
+        },
+        {
+          "time": "10:45 - 11:30",
+          "description": ["View Based Architecture - XML and Java/Kotlin"]
+        },
+        {
+          "time": "11:30 - 12:30",
+          "description": ["Building User Interfaces"]
+        },
+        {
+          "time": "01:30 - 02:30",
+          "description": ["Using Resources, Media and Menus to build apps"]
+        },
+        {
+          "time": "02:30 - 03:30",
+          "description": ["Jetpack Compose – Modern way of App Development"]
+        },
+        {
+          "time": "03:45 - 04:45",
+          "description": ["Cross platform app development using Flutter"]
         }
       ]
     ]
