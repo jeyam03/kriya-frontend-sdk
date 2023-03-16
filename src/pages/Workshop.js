@@ -211,7 +211,7 @@ const Workshop = () => {
                   .find((i) => i.eventId === id)
                   ? "Registered"
 
-                  : currentCount / workshopDetail.maxCount >= 0.8 && currentCount < workshopDetail.maxCount
+                  : currentCount / workshopDetail.maxCount >= 0.5 && currentCount < workshopDetail.maxCount
                     ? <div>Registrations Closing Soon!<br></br><span className="text-sm font-normal bg-clip-text [-webkit-text-fill-color:transparent] bg-white lg:bg-[#3c4043]">Limited Seats Available. Hurry Up!</span></div>
 
                     : currentCount >= workshopDetail.maxCount
