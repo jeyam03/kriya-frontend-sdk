@@ -55,7 +55,7 @@ const Section12 = ({ scrollYByVH }) => {
 
         <div className="flex-1 h-full flex flex-col items-center lg:items-end justify-center px-12">
           <h1
-            className={`mt-16 lg:mt-0 text-4xl lg:text-4xl font-poppins font-semibold ${condition} text-center lg:text-right`}
+            className={`mt-16 lg:mt-0 text-4xl lg:text-5xl font-poppins font-semibold ${condition} text-center lg:text-right`}
           >
             Entry
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
