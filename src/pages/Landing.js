@@ -80,7 +80,7 @@ const Landing = () => {
         }}
       >
         <Section1 scrollYByVH={consolee} />
-        {/* <Section12 scrollYByVH={consolee} /> */}
+        <Section12 scrollYByVH={consolee} />
         <Section2 scrollYByVH={consolee} />
         <Section11 scrollYByVH={consolee} />
         <Section3 scrollYByVH={consolee} />
