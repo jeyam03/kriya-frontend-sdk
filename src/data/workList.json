@@ -213,7 +213,6 @@
   {
     "wid": "WKSP0005",
     "image": "/assets/Workshops/Workshop5.png",
-    "fee": 400,
     "alteredFee": 500,
     "assnName": "Information Technology Association",
     "workName": "Game Development",
