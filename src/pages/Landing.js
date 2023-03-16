@@ -55,7 +55,7 @@ const Landing = () => {
   }, [searchParams]);
 
   const condition =
-    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 3;
 
   return (
     <React.Fragment>
