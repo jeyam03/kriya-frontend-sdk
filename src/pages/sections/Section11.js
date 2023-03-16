@@ -32,12 +32,12 @@ const Section11 = () => {
     observer.observe(element);
   }, []);
 
-  const condition = `${parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2
+  const condition = `${parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3
     ? "text-white"
     : "text-[#181818]"
     }`;
 
-  const condition_bg = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2
+  const condition_bg = parseFloat(consolee) + 0.25 >= 2 && parseFloat(consolee) + 0.25 <= 3
     ? "18,18,18" : "255,255,255";
 
   const condition_direction = parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2 ?"to top" : "to bottom";

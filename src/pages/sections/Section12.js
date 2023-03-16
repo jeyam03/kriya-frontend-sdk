@@ -1,10 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import { Link, useNavigate } from "react-router-dom";
+import { fetchUserByEmail } from "../../API/call";
 
 // Countdown
 
 const Section12 = ({ scrollYByVH }) => {
-  const [fadeInAnimate, setFadeInAnimate] = useState(false);
   const [consolee, setConsolee] = useState(0);
+  const [paid, setPaid] = useState(false);
+  const email = localStorage.getItem("email");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchUserByEmail(email).then((res) => {
+      if (res.data.user.isPaid) {
+        setPaid(true);
+      }
+    });
+  }, [email]);
 
   useEffect(() => {
     window.addEventListener(
@@ -16,91 +29,6 @@ const Section12 = ({ scrollYByVH }) => {
     );
   }, [consolee]);
 
-  const [timer, setTimer] = useState({
-    hours: "0",
-    minutes: "0",
-    seconds: "0",
-    days: "0",
-  });
-
-  const timerRef = useRef(null);
-
-  const startTimer = (e) => {
-    let { total, hours, minutes, seconds, days } = getTimeRemaining(e);
-    if (total >= 0) {
-      setTimer({ hours, minutes, seconds, days });
-    }
-  };
-
-  const clearTimer = (e) => {
-    // If you adjust it you should also need to
-    // adjust the Endtime formula we are about
-    // to code next
-    setTimer({
-      hours: "00",
-      minutes: "00",
-      seconds: "00",
-      days: "00",
-    });
-
-    // If you try to remove this line the
-    // updating of timer Variable will be
-    // after 1000ms or 1sec
-    if (timerRef.current) clearInterval(timerRef.current);
-    const id = setInterval(() => {
-      startTimer(e);
-    }, 1000);
-    timerRef.current = id;
-  };
-
-  const getDeadTime = () => {
-    let deadline = new Date("2023-03-24");
-    return deadline;
-  };
-
-  // We can use useEffect so that when the component
-  // mount the timer will start as soon as possible
-
-  // We put empty array to act as componentDid
-  // mount only
-  useEffect(() => {
-    clearTimer(getDeadTime());
-  }, []);
-
-  const getTimeRemaining = (e) => {
-    const total = Date.parse(e) - Date.parse(new Date());
-    const seconds = Math.floor((total / 1000) % 60);
-    const minutes = Math.floor((total / 1000 / 60) % 60);
-    const hours = Math.floor((total / 1000 / 60 / 60) % 24);
-    const days = Math.floor(total / 1000 / 60 / 60 / 24);
-    return {
-      total,
-      hours,
-      minutes,
-      seconds,
-      days,
-    };
-  };
-
-  useEffect(() => {
-    const element = document.querySelector("#anchor2");
-    const numberTags = document.querySelectorAll(".number-tag");
-    const calenderTexts = document.querySelectorAll(".calender-text");
-    const observer = new IntersectionObserver((entries) => {
-
-      numberTags.forEach((numberTag) => {
-        numberTag.classList.add("animate-fade-in-bottom");
-      });
-      calenderTexts.forEach((calenderText) => {
-        calenderText.classList.add("animate-fade-in");
-      });
-    });
-
-    observer.observe(element);
-  });
-
-  useEffect(() => { }, []);
-
   const condition = `${parseFloat(consolee) < 0.75 ? "text-[#181818]" : "text-white"}`;
   const borderCondition = `${parseFloat(consolee) < 0.75 ? "border-[#181818]" : "border-white"}`;
 
@@ -110,14 +38,73 @@ const Section12 = ({ scrollYByVH }) => {
         id="section2"
         className="h-screen w-full relative [scroll-snap-align:start] flex flex-row"
       >
-        <div className={`w-full h-full`}
-          style={{
-            background: `url(/assets/Design/syed5.png)`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-          }}
-        >
+        {condition ? (
+          <div className={`w-[77%] h-full`}
+            style={{
+              background: `url(/assets/Design/proshowfinal.png)`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          >
+          </div>
+        ) : (
+          <div className={`w-3/4 h-full`}
+            style={{
+              background: `url(/assets/Design/proshowwhitefinal.png)`,
+              backgroundPosition: "left",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "contain",
+            }}
+          >
+          </div>
+        )}
+        <div className="w-[23%] h-full flex flex-col items-center justify-center px-12">
+          <h1
+            className={`text-3xl lg:text-4xl font-poppins font-semibold ${condition} text-right`}
+          >
+            Entry
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+              {" included "}
+            </span>
+            with general registration!
+          </h1>
+          {localStorage.getItem("email") ? (
+            <div>
+              {paid ? (
+                <button
+                  className={`mt-16 w-fit px-4 py-2 text-lg font-poppins rounded-lg ${borderCondition} ${condition} border`}
+                  onClick={() => {
+                    window.open(
+                      "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230325T123000Z%2F20230325T153000Z&details=&location=PSG%20College%20of%20Technology&text=Kriya%20%2723%20Pro%20Show"
+                    );
+                  }}
+                >
+                  Add to Calendar
+                </button>
+              ) : (
+                <Link
+                  className="bg-blue-500 text-white w-fit px-4 py-3 rounded-xl text-lg font-poppins flex items-center group mt-16"
+                  to="/auth/payment?type=GENERAL"
+                >
+                  <p className="">Pay general registration fee !</p>
+                  <IoIosArrowForward
+                    className="mr-6 group-hover:mr-4 transition-all"
+                    size={20}
+                  />
+                </Link>
+              )}
+            </div>
+          ) : (
+            <button
+              className="lg:text-lg font-semibold w-fit text-center flex justify-center font-poppins text-white bg-[#C80067] border-2 border-[#C80067] shadow-lg hover:scale-110 transition-all px-6 py-2 rounded-lg mt-16 whitespace-nowrap lg:whitespace-normal"
+              onClick={() => {
+                navigate("/auth?type=signup");
+              }}
+            >
+              Register Now !
+            </button>
+          )}
         </div>
       </section>
       <a id="anchor2" className="absolute top-[35%] w-full h-20 -z-10"></a>
