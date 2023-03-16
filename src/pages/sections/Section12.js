@@ -29,6 +29,8 @@ const Section12 = ({ scrollYByVH }) => {
     );
   }, [consolee]);
 
+  const bgUrl = `${parseFloat(consolee) < 0.75 ? "/assets/Design/proshowwhitefinal.png" : "/assets/Design/proshowfinal.png"}`;
+
   const condition = `${parseFloat(consolee) < 0.75 ? "text-[#181818]" : "text-white"}`;
   const borderCondition = `${parseFloat(consolee) < 0.75 ? "border-[#181818]" : "border-white"}`;
 
@@ -38,28 +40,16 @@ const Section12 = ({ scrollYByVH }) => {
         id="section2"
         className="h-screen w-full relative [scroll-snap-align:start] flex flex-row"
       >
-        {condition ? (
-          <div className={`w-[77%] h-full`}
-            style={{
-              background: `url(/assets/Design/proshowfinal.png)`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
-          >
-          </div>
-        ) : (
-          <div className={`w-3/4 h-full`}
-            style={{
-              background: `url(/assets/Design/proshowwhitefinal.png)`,
-              backgroundPosition: "left",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
-            }}
-          >
-          </div>
-        )}
-        <div className="w-[23%] h-full flex flex-col items-center justify-center px-12">
+        <div className={`w-[77%] h-full`}
+          style={{
+            background: 'url(' + bgUrl + ')',
+            backgroundPosition: "left",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
+        </div>
+        <div className="w-[23%] h-full flex flex-col items-end justify-center px-12">
           <h1
             className={`text-3xl lg:text-4xl font-poppins font-semibold ${condition} text-right`}
           >
@@ -87,7 +77,7 @@ const Section12 = ({ scrollYByVH }) => {
                   className="bg-blue-500 text-white w-fit px-4 py-3 rounded-xl text-lg font-poppins flex items-center group mt-16"
                   to="/auth/payment?type=GENERAL"
                 >
-                  <p className="">Pay general registration fee !</p>
+                  <p className="">Pay general registration fee!</p>
                   <IoIosArrowForward
                     className="mr-6 group-hover:mr-4 transition-all"
                     size={20}
@@ -102,7 +92,7 @@ const Section12 = ({ scrollYByVH }) => {
                 navigate("/auth?type=signup");
               }}
             >
-              Register Now !
+              Register Now!
             </button>
           )}
         </div>
