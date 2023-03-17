@@ -100,7 +100,7 @@ export default Landing;
 
 const NavBar = ({ consolee }) => {
   const condition =
-    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 3;
   const navigate = useNavigate();
 
   return (
@@ -235,7 +235,7 @@ const NavBarForMobile = ({ consolee }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const condition =
-    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 3;
 
   const navigate = useNavigate();
 
