@@ -72,7 +72,7 @@ const Landing = () => {
           //   consolee
           // )}, ${getColorVal(consolee)}, 1)`,
           background: condition
-            ? `rgba(0, 0, 0, 1)`
+            ? `rgba(18, 18, 18, 1)`
             : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
