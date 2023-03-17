@@ -72,7 +72,7 @@ const Landing = () => {
           //   consolee
           // )}, ${getColorVal(consolee)}, 1)`,
           background: condition
-            ? `rgba(0, 0, 0, 1)`
+            ? `rgba(18, 18, 18, 1)`
             : `rgba(255, 255, 255, 1)`,
           flexBasis: "50%",
           overflowY: "scroll",
@@ -100,7 +100,7 @@ export default Landing;
 
 const NavBar = ({ consolee }) => {
   const condition =
-    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 3;
   const navigate = useNavigate();
 
   return (
@@ -235,7 +235,7 @@ const NavBarForMobile = ({ consolee }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const condition =
-    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 2;
+    parseFloat(consolee) + 0.25 >= 1 && parseFloat(consolee) + 0.25 <= 3;
 
   const navigate = useNavigate();
 

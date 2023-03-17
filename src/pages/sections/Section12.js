@@ -31,11 +31,11 @@ const Section12 = ({ scrollYByVH }) => {
 
   const bgUrl = `${
     parseFloat(consolee) < 0.75
-      ? "/assets/Design/proshowwhitefinal.png"
-      : "/assets/Design/proshowfinal.png"
+      ? "/assets/Design/syedWhite.png"
+      : "/assets/Design/syedBlack.png"
   }`;
 
-  const mobBgUrl = "/assets/Design/syed6.jpg";
+  const mobBgUrl = "/assets/Design/syedMobile.jpg";
 
   const condition = `${
     parseFloat(consolee) < 0.75 ? "text-[#181818]" : "text-white"
@@ -48,14 +48,14 @@ const Section12 = ({ scrollYByVH }) => {
     <div className="w-full h-full relative">
       <section
         id="section2"
-        className="h-screen w-full relative [scroll-snap-align:start] flex flex-col lg:flex-row"
+        className="lg:h-screen w-full relative [scroll-snap-align:start] flex flex-col lg:flex-row"
       >
-        <img src={bgUrl} className="hidden lg:block h-full" />
-        <img src={mobBgUrl} className="w-full lg:hidden" />
+        <img src={bgUrl} className="hidden lg:block h-full" alt="Syed Subahan"/>
+        <img src={mobBgUrl} className="pt-16 w-full lg:hidden" alt="Syed Subahan"/>
 
-        <div className="flex-1 h-full flex flex-col items-center lg:items-end justify-center px-12">
+        <div className="flex-1 h-full flex flex-col items-center lg:items-end justify-center px-12 lg:pl-0">
           <h1
-            className={`mt-16 lg:mt-0 text-4xl lg:text-5xl font-poppins font-semibold ${condition} text-center lg:text-right`}
+            className={`mt-8 lg:mt-0 text-4xl lg:text-4xl font-poppins font-semibold ${condition} text-center lg:text-right`}
           >
             Entry
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
@@ -100,7 +100,7 @@ const Section12 = ({ scrollYByVH }) => {
             </button>
           )}
           <div className="mt-8 lg:mt-16">
-            <p className="text-white font-poppins text-lg text-center lg:text-right">
+            <p className={`${condition} font-poppins text-lg text-center lg:text-right`}>
               Know more
             </p>
             <div className="flex flex-wrap justify-end space-x-4 items-center mt-4">
@@ -110,7 +110,7 @@ const Section12 = ({ scrollYByVH }) => {
                     "https://open.spotify.com/artist/3gQ8iee3y7UsGTMuhjzEuD"
                   )
                 }
-                className="border-[#1DB954] border-2 rounded-lg p-4 [box-shadow:0px_0px_32px_rgba(30,215,96,0.6)]"
+                className="border-[#1DB954] border-2 rounded-lg p-4 [box-shadow:0px_0px_32px_rgba(30,215,96,0.5)] hover:[box-shadow:0px_0px_32px_rgba(30,215,96,0.9)]"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png"
@@ -124,7 +124,7 @@ const Section12 = ({ scrollYByVH }) => {
                     "https://www.youtube.com/channel/UC27ndgSDz1uqVhTG9n_ytDA"
                   )
                 }
-                className="border-[#ff0000] border-2 rounded-lg p-4 [box-shadow:0px_0px_32px_rgba(255,0,0,0.6)]"
+                className="border-[#ff0000] border-2 rounded-lg p-4 [box-shadow:0px_0px_32px_rgba(255,0,0,0.5)] hover:[box-shadow:0px_0px_32px_rgba(255,0,0,0.9)]"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/174/174883.png"
@@ -136,7 +136,7 @@ const Section12 = ({ scrollYByVH }) => {
                 onClick={() =>
                   window.open("https://www.instagram.com/syedsubahan/?hl=en")
                 }
-                className="border-[#E1306C] border-2 rounded-lg p-4 [box-shadow:0px_0px_32px_rgba(225,48,108,0.6)]"
+                className="border-[#C53A59] border-2 rounded-lg p-4 [box-shadow:0px_0px_32px_rgba(197,58,89,0.5)] hover:[box-shadow:0px_0px_32px_rgba(197,58,89,0.9)]"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
