@@ -1,194 +1,38 @@
 [
   {
-    "wid": "WKSP0003",
-    "image": "/assets/Workshops/Workshop3.png",
-    "alteredFee": 600,
-    "assnName": "Institute of Electrical & Electronics Engg. (IEEE) (Students Chapter)",
-    "workName": "Deep Learning: Unlocking the Full Potential",
-    "date": "24",
-    "hall": "CS LAB (GRD LAB, E-BLOCK First floor)",
-    "time": "9.30 AM - 05.00 PM",
-    "c1Name": "Darshan R J",
-    "c1Num": "9952549553",
-    "c2Name": "Priyanka G S",
-    "c2Num": "93455 44874",
-    "maxCount": "70",
-    "desc": "Join us for a deep dive into the world of deep learning! During this intensive workshop, you'll  learn the concepts and principles of deep learning, as well as how to implement and apply deep learning  algorithms using tools such as Python and TensorFlow. You'll also get hands-on experience building and  training deep learning models, and learn how to use them to solve real-world problems. Whether you're a  beginner looking to get started with deep learning or an experienced professional looking to expand your  skills, this workshop is for you. Don't miss out on this opportunity to master the art of deep learning and  unlock the full potential of this powerful technology!\"",
+    "wid": "WKSP0009",
+    "image": "/assets/Workshops/Workshop9.png",
+    "alteredFee": 500,
+    "assnName": "Robotics & Automation Engineering Association",
+    "workName": "Build your Custom Robot in ROS",
+    "date": "25",
+    "hall": "K-Block (CC Lab) - Second floor.",
+    "time": "9.00 AM - 05.00 PM",
+    "c1Name": "KISHORE S",
+    "c1Num": "9894268704",
+    "c2Name": "PRAGATHEESH R J",
+    "c2Num": "8056920879",
+    "maxCount": "50",
+    "desc": "The Robot Operating System (ROS) is an open-source framework that helps researchers and developers build and reuse code between robotics applications. It is also a global open-source community of engineers, developers, and hobbyists who contribute to making robots better, more accessible, and available to everyone. This workshop will provide an in-depth understanding of the framework and its various tools and libraries. Participants will learn about the ecosystem and how to use ROS to program and control their custom robots. They will also gain hands-on experience integrating packages and tools to build robotic systems. The participants will be taught how to interface Lidar, Arduino- development board and various high-grade sensors to the framework. This will be a valuable learning opportunity for anyone interested in robotics and ROS.",
     "agenda": [
       [
         {
-          "time": "9:30 AM - 11:00 AM",
-          "description": [
-            "Introduction to AI and Recent Trends, Artificial Neural Networks and The Mechanics of DeepLearning\n"
-          ]
+          "time": "9:00 AM - 11:00 PM",
+          "description": ["Introduction to ROS Framework and Prerequisites"]
         },
         {
-          "time": "11:00 AM - 1:00 PM",
-          "description": ["Convolutional Neural Networks\n"]
+          "time": "11:15 PM - 1:00 PM",
+          "description": ["ROS Ecosystem "]
         },
         {
           "time": "2:00 PM - 3:30 PM",
-          "description": ["Language Modelling and Recurrent Neural Networks"]
+          "description": ["ROS Tools and Utilities (Mobile robot)"]
         },
         {
           "time": "3:45 PM - 5:00 PM",
           "description": [
-            "CNN Application to Classification and Detection problems"
+            "Robot Tele-Operation ROS Gazebo full simulation, Knowledge required to develop a real robot"
           ]
-        }
-      ]
-    ]
-  },
-  {
-    "wid": "WKSP0004",
-    "image": "/assets/Workshops/Workshop4.png",
-    "alteredFee": 600,
-    "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
-    "workName": "R Programming in Data Analytics",
-    "date": "26",
-    "hall": "IS Lab (K Block 4th Floor)",
-    "time": "9.30 AM - 04.30 PM",
-    "c1Name": "BALAKUMARAN A",
-    "c1Num": "6381854033",
-    "c2Name": "SYED ABUTAHIR S",
-    "c2Num": "9080310803",
-    "maxCount": "60",
-    "desc": "R is a simple programming environment that enables the effective handling of data, while providing  excellent graphical support. R is used for simple calculations, matrix calculations, differential equations,  optimization, statistical analysis, plotting graphs, etc. Also, it is useful for anybody who wishes to  undertake extensive statistical computations and data visualization. This one day hands-on workshop will introduce participants to use R programming tools for data analytics.",
-    "agenda": [
-      [
-        {
-          "time": "9.30 AM - 10.30 AM",
-          "description": [
-            "Introduction to R programming – Datatypes, variables, I/O functions, operators, till control structures"
-          ]
-        },
-        {
-          "time": "10.45 AM - 11.45 PM",
-          "description": ["Functions, Graphs, statistical functions"]
-        },
-        {
-          "time": "12.00 PM - 01.00 PM",
-          "description": ["Hands-on Session"]
-        },
-        {
-          "time": "1.45 PM - 2.30 PM",
-          "description": ["Data Analytics and Visualizations"]
-        },
-        {
-          "time": "2.45 PM TO 4.30 PM",
-          "description": ["Hands-on Session"]
-        }
-      ]
-    ]
-  },
-  {
-    "wid": "WKSP0005",
-    "image": "/assets/Workshops/Workshop5.png",
-    "alteredFee": 500,
-    "assnName": "Information Technology Association",
-    "workName": "Game Development",
-    "date": "26",
-    "hall": "IT Main Lab",
-    "time": "10.00 AM - 03.30 PM",
-    "c1Name": "RAHUL GUNASEELAN",
-    "c1Num": "9176717108",
-    "c2Name": "VARUNIKA D",
-    "c2Num": "9994097426",
-    "maxCount": "70",
-    "desc": "Video games have undeniably become an imperative part of our life,either as a form of entertainment or as a hobby. Video games are electronic games that require a user interface, input device that generates visual feedback for the  players, an output device that is either a two or three-dimensional display device. This workshop allows the students to gain more knowledge on gaming using softwares – unity3d & unreal.",
-    "agenda": [
-      [
-        {
-          "time": "10.15 AM - 12.30 PM",
-          "description": [
-            "Introduction to game development softwares such as Unity and Unreal engine and its hands-on implementation methods."
-          ]
-        },
-        {
-          "time": "1.30 PM - 3.30 PM",
-          "description": [
-            "Participants will be taught on how to develop a sample game from scratch game using various components and tools,followed by deployment methods on various platforms  "
-          ]
-        }
-      ]
-    ]
-  },
-  {
-    "wid": "WKSP0006",
-    "image": "/assets/Workshops/Workshop6.png",
-    "alteredFee": 800,
-    "assnName": "American Society of Mechanical Engineers",
-    "workName": "Sensor Interface and Integration",
-    "date": "25",
-    "hall": "Sensorics Lab (1st Floor, G-Block)",
-    "time": "9.30 AM - 04.30 PM",
-    "c1Name": "Harivardhan S V",
-    "c1Num": "9626386882",
-    "c2Name": "Logesh K",
-    "c2Num": "6384544377",
-    "maxCount": "70",
-    "desc": "We provide opportunity for the budding engineers to explore the future work environment. This workshop introduces the participants into the world of sensorics and sensor integration using Virtual Instrumentation (VI) software. The participants will be provided with hands-on-training sessions. They will be exposed to acquiring data and taking control actions using VI software (LabVIEW) and Data acquisition cards. Apart from this, training on development of Robots using LEGO kits and sensors will also be offered.",
-    "agenda": [
-      [
-        {
-          "time": "9:45 AM - 11:15 AM",
-          "description": [
-            "Introduction to Sensorics and Virtual Instrumentation "
-          ]
-        },
-        {
-          "time": "11:30 AM TO 12:30 PM",
-          "description": ["Hands-on Training I"]
-        },
-        {
-          "time": "1:30 PM - 2:30 PM",
-          "description": ["Hands-on Training II"]
-        },
-        {
-          "time": "2:45 PM - 3:45 PM",
-          "description": ["Hands-on Training III"]
-        }
-      ]
-    ]
-  },
-  {
-    "wid": "WKSP0007",
-    "image": "/assets/Workshops/Workshop7.png",
-    "alteredFee": 500,
-    "assnName": "Indian Institution of Industrial Engineering (Students Chapter)",
-    "workName": "IOT for Mechanical Applications",
-    "date": "24",
-    "hall": "G-Block (G-509)",
-    "time": "9.00 AM - 05.00 PM",
-    "c1Name": "SANJAY S",
-    "c1Num": "9789348224",
-    "c2Name": "YOGENDRAA S N",
-    "c2Num": "8608782082",
-    "maxCount": "65",
-    "desc": "The workshop focuses on the basic conceptual ideas behind the characteristics, challenges and network configurations of IoT along with Data Collection, Data Processing and Data Analytics including Cloud Computing and Big data. It also focuses on the MQTT usage of various embedded systems (Aurdino, Raspberry Pi). The final part of the workshop will be the hands-on training with embedded systems which will be provided to the participants.",
-    "agenda": [
-      [
-        {
-          "time": "9:00 AM - 10:30 AM",
-          "description": [
-            "Introduction to the basic concepts of IOT, its features and implementations"
-          ]
-        },
-        {
-          "time": "10:45 AM - 12:15 PM",
-          "description": [
-            "A brief description on Data Collection(Sensor Module)"
-          ]
-        },
-        {
-          "time": "01:15 PM - 02:15 PM",
-          "description": [
-            "About the MQTT protocol using Data Processing followed by the Data Analytics techniques"
-          ]
-        },
-        {
-          "time": "02:30 PM - 04:30 PM",
-          "description": ["An interactive hands-on training with IoT kits"]
         }
       ]
     ]
@@ -240,39 +84,208 @@
     ]
   },
   {
-    "wid": "WKSP0009",
-    "image": "/assets/Workshops/Workshop9.png",
+    "wid": "WKSP0007",
+    "image": "/assets/Workshops/Workshop7.png",
     "alteredFee": 500,
-    "assnName": "Robotics & Automation Engineering Association",
-    "workName": "Build your Custom Robot in ROS",
-    "date": "25",
-    "hall": "K-Block (CC Lab) - Second floor.",
+    "assnName": "Indian Institution of Industrial Engineering (Students Chapter)",
+    "workName": "IOT for Mechanical Applications",
+    "date": "24",
+    "hall": "G-Block (G-509)",
     "time": "9.00 AM - 05.00 PM",
-    "c1Name": "KISHORE S",
-    "c1Num": "9894268704",
-    "c2Name": "PRAGATHEESH R J",
-    "c2Num": "8056920879",
-    "maxCount": "50",
-    "desc": "The Robot Operating System (ROS) is an open-source framework that helps researchers and developers build and reuse code between robotics applications. It is also a global open-source community of engineers, developers, and hobbyists who contribute to making robots better, more accessible, and available to everyone. This workshop will provide an in-depth understanding of the framework and its various tools and libraries. Participants will learn about the ecosystem and how to use ROS to program and control their custom robots. They will also gain hands-on experience integrating packages and tools to build robotic systems. The participants will be taught how to interface Lidar, Arduino- development board and various high-grade sensors to the framework. This will be a valuable learning opportunity for anyone interested in robotics and ROS.",
+    "c1Name": "SANJAY S",
+    "c1Num": "9789348224",
+    "c2Name": "YOGENDRAA S N",
+    "c2Num": "8608782082",
+    "maxCount": "65",
+    "desc": "The workshop focuses on the basic conceptual ideas behind the characteristics, challenges and network configurations of IoT along with Data Collection, Data Processing and Data Analytics including Cloud Computing and Big data. It also focuses on the MQTT usage of various embedded systems (Aurdino, Raspberry Pi). The final part of the workshop will be the hands-on training with embedded systems which will be provided to the participants.",
     "agenda": [
       [
         {
-          "time": "9:00 AM - 11:00 PM",
-          "description": ["Introduction to ROS Framework and Prerequisites"]
+          "time": "9:00 AM - 10:30 AM",
+          "description": [
+            "Introduction to the basic concepts of IOT, its features and implementations"
+          ]
         },
         {
-          "time": "11:15 PM - 1:00 PM",
-          "description": ["ROS Ecosystem "]
+          "time": "10:45 AM - 12:15 PM",
+          "description": [
+            "A brief description on Data Collection(Sensor Module)"
+          ]
+        },
+        {
+          "time": "01:15 PM - 02:15 PM",
+          "description": [
+            "About the MQTT protocol using Data Processing followed by the Data Analytics techniques"
+          ]
+        },
+        {
+          "time": "02:30 PM - 04:30 PM",
+          "description": ["An interactive hands-on training with IoT kits"]
+        }
+      ]
+    ]
+  },
+  {
+    "wid": "WKSP0013",
+    "image": "/assets/Workshops/Workshop13.png",
+    "alteredFee": 300,
+    "assnName": "Astronomy Club",
+    "workName": "Solaris (Workshop + Skywatch)",
+    "date": "25",
+    "hall": "Y-201",
+    "time": "Workshop:9:00 AM - 04:00 PM\nSky Watch:6:00 PM - 8:00 PM",
+    "c1Name": "BHAVANI K",
+    "c1Num": "7402876123",
+    "c2Name": "HYAGREEV RETHINAVEL",
+    "c2Num": "9940922937",
+    "maxCount": "65",
+    "desc": "This event consist of a workshop followed by sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained. Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands-on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by sky watch for the participants where telescope handling is also taught .",
+    "agenda": [
+      [
+        {
+          "time": "9:00 AM - 12:00 PM",
+          "description": [
+            "SESSION 1 – A lecture on recent advancements and technology in the astronomy field and Hands-on workshop in SAO ds9 software"
+          ]
+        },
+        {
+          "time": "1:30 PM - 2:30 PM",
+          "description": [
+            "SESSION 2 - Astronomy Image Stacking with open source softwares  "
+          ]
+        },
+        {
+          "time": "2:40 PM - 4:00 PM",
+          "description": [
+            "SESSION 3 - Particpants are taught model buidling of satelites and telescopes followed by a guest lecture"
+          ]
+        },
+        {
+          "time": "6:30 PM - 8:00 PM",
+          "description": [
+            "SESSION 4 - Particpants will be taught how to use telescopes to view stars and constellations in the final Sky Watch session"
+          ]
+        }
+      ]
+    ]
+  },
+  {
+    "wid": "WKSP0004",
+    "image": "/assets/Workshops/Workshop4.png",
+    "alteredFee": 600,
+    "assnName": "COMPUTER APPLICATIONS ASSOCIATION",
+    "workName": "R Programming in Data Analytics",
+    "date": "26",
+    "hall": "IS Lab (K Block 4th Floor)",
+    "time": "9.30 AM - 04.30 PM",
+    "c1Name": "BALAKUMARAN A",
+    "c1Num": "6381854033",
+    "c2Name": "SYED ABUTAHIR S",
+    "c2Num": "9080310803",
+    "maxCount": "60",
+    "desc": "R is a simple programming environment that enables the effective handling of data, while providing  excellent graphical support. R is used for simple calculations, matrix calculations, differential equations,  optimization, statistical analysis, plotting graphs, etc. Also, it is useful for anybody who wishes to  undertake extensive statistical computations and data visualization. This one day hands-on workshop will introduce participants to use R programming tools for data analytics.",
+    "agenda": [
+      [
+        {
+          "time": "9.30 AM - 10.30 AM",
+          "description": [
+            "Introduction to R programming – Datatypes, variables, I/O functions, operators, till control structures"
+          ]
+        },
+        {
+          "time": "10.45 AM - 11.45 PM",
+          "description": ["Functions, Graphs, statistical functions"]
+        },
+        {
+          "time": "12.00 PM - 01.00 PM",
+          "description": ["Hands-on Session"]
+        },
+        {
+          "time": "1.45 PM - 2.30 PM",
+          "description": ["Data Analytics and Visualizations"]
+        },
+        {
+          "time": "2.45 PM TO 4.30 PM",
+          "description": ["Hands-on Session"]
+        }
+      ]
+    ]
+  },
+
+  {
+    "wid": "WKSP0003",
+    "image": "/assets/Workshops/Workshop3.png",
+    "alteredFee": 600,
+    "assnName": "Institute of Electrical & Electronics Engg. (IEEE) (Students Chapter)",
+    "workName": "Deep Learning: Unlocking the Full Potential",
+    "date": "24",
+    "hall": "CS LAB (GRD LAB, E-BLOCK First floor)",
+    "time": "9.30 AM - 05.00 PM",
+    "c1Name": "Darshan R J",
+    "c1Num": "9952549553",
+    "c2Name": "Priyanka G S",
+    "c2Num": "93455 44874",
+    "maxCount": "70",
+    "desc": "Join us for a deep dive into the world of deep learning! During this intensive workshop, you'll  learn the concepts and principles of deep learning, as well as how to implement and apply deep learning  algorithms using tools such as Python and TensorFlow. You'll also get hands-on experience building and  training deep learning models, and learn how to use them to solve real-world problems. Whether you're a  beginner looking to get started with deep learning or an experienced professional looking to expand your  skills, this workshop is for you. Don't miss out on this opportunity to master the art of deep learning and  unlock the full potential of this powerful technology!\"",
+    "agenda": [
+      [
+        {
+          "time": "9:30 AM - 11:00 AM",
+          "description": [
+            "Introduction to AI and Recent Trends, Artificial Neural Networks and The Mechanics of DeepLearning\n"
+          ]
+        },
+        {
+          "time": "11:00 AM - 1:00 PM",
+          "description": ["Convolutional Neural Networks\n"]
         },
         {
           "time": "2:00 PM - 3:30 PM",
-          "description": ["ROS Tools and Utilities (Mobile robot)"]
+          "description": ["Language Modelling and Recurrent Neural Networks"]
         },
         {
           "time": "3:45 PM - 5:00 PM",
           "description": [
-            "Robot Tele-Operation ROS Gazebo full simulation, Knowledge required to develop a real robot"
+            "CNN Application to Classification and Detection problems"
           ]
+        }
+      ]
+    ]
+  },  
+  {
+    "wid": "WKSP0006",
+    "image": "/assets/Workshops/Workshop6.png",
+    "alteredFee": 800,
+    "assnName": "American Society of Mechanical Engineers",
+    "workName": "Sensor Interface and Integration",
+    "date": "25",
+    "hall": "Sensorics Lab (1st Floor, G-Block)",
+    "time": "9.30 AM - 04.30 PM",
+    "c1Name": "Harivardhan S V",
+    "c1Num": "9626386882",
+    "c2Name": "Logesh K",
+    "c2Num": "6384544377",
+    "maxCount": "70",
+    "desc": "We provide opportunity for the budding engineers to explore the future work environment. This workshop introduces the participants into the world of sensorics and sensor integration using Virtual Instrumentation (VI) software. The participants will be provided with hands-on-training sessions. They will be exposed to acquiring data and taking control actions using VI software (LabVIEW) and Data acquisition cards. Apart from this, training on development of Robots using LEGO kits and sensors will also be offered.",
+    "agenda": [
+      [
+        {
+          "time": "9:45 AM - 11:15 AM",
+          "description": [
+            "Introduction to Sensorics and Virtual Instrumentation "
+          ]
+        },
+        {
+          "time": "11:30 AM TO 12:30 PM",
+          "description": ["Hands-on Training I"]
+        },
+        {
+          "time": "1:30 PM - 2:30 PM",
+          "description": ["Hands-on Training II"]
+        },
+        {
+          "time": "2:45 PM - 3:45 PM",
+          "description": ["Hands-on Training III"]
         }
       ]
     ]
@@ -370,50 +383,6 @@
           "time": "1:30 PM - 4:30 PM",
           "description": [
             "SESSION 2 - Simulation in Xilinx Vivado and implementation of combinational and sequential circuits"
-          ]
-        }
-      ]
-    ]
-  },
-  {
-    "wid": "WKSP0013",
-    "image": "/assets/Workshops/Workshop13.png",
-    "alteredFee": 300,
-    "assnName": "Astronomy Club",
-    "workName": "Solaris (Workshop + Skywatch)",
-    "date": "25",
-    "hall": "Y-201",
-    "time": "Workshop:9:00 AM - 04:00 PM\nSky Watch:6:00 PM - 8:00 PM",
-    "c1Name": "BHAVANI K",
-    "c1Num": "7402876123",
-    "c2Name": "HYAGREEV RETHINAVEL",
-    "c2Num": "9940922937",
-    "maxCount": "65",
-    "desc": "This event consist of a workshop followed by sky watch. A lecture on astronomical topics such as telescopes, astronomical events and breakthroughs will be explained. Tutorial on Python programming on Processing celestial images will be taught and Participants are encouraged to work hands-on to produce filtered images in this Session. Model building of satellites and telescopes is held for the participants, followed by a guest lecture by renowned astronomy enthusiasts from Coimbatore Astronomy club. The workshop is followed by sky watch for the participants where telescope handling is also taught .",
-    "agenda": [
-      [
-        {
-          "time": "9:00 AM - 12:00 PM",
-          "description": [
-            "SESSION 1 – A lecture on recent advancements and technology in the astronomy field and Hands-on workshop in SAO ds9 software"
-          ]
-        },
-        {
-          "time": "1:30 PM - 2:30 PM",
-          "description": [
-            "SESSION 2 - Astronomy Image Stacking with open source softwares  "
-          ]
-        },
-        {
-          "time": "2:40 PM - 4:00 PM",
-          "description": [
-            "SESSION 3 - Particpants are taught model buidling of satelites and telescopes followed by a guest lecture"
-          ]
-        },
-        {
-          "time": "6:30 PM - 8:00 PM",
-          "description": [
-            "SESSION 4 - Particpants will be taught how to use telescopes to view stars and constellations in the final Sky Watch session"
           ]
         }
       ]
@@ -552,6 +521,38 @@
         {
           "time": "03:45 - 04:45",
           "description": ["Cross platform app development using Flutter"]
+        }
+      ]
+    ]
+  },
+  {
+    "wid": "WKSP0005",
+    "image": "/assets/Workshops/Workshop5.png",
+    "alteredFee": 500,
+    "assnName": "Information Technology Association",
+    "workName": "Game Development",
+    "date": "26",
+    "hall": "IT Main Lab",
+    "time": "10.00 AM - 03.30 PM",
+    "c1Name": "RAHUL GUNASEELAN",
+    "c1Num": "9176717108",
+    "c2Name": "VARUNIKA D",
+    "c2Num": "9994097426",
+    "maxCount": "70",
+    "desc": "Video games have undeniably become an imperative part of our life,either as a form of entertainment or as a hobby. Video games are electronic games that require a user interface, input device that generates visual feedback for the  players, an output device that is either a two or three-dimensional display device. This workshop allows the students to gain more knowledge on gaming using softwares – unity3d & unreal.",
+    "agenda": [
+      [
+        {
+          "time": "10.15 AM - 12.30 PM",
+          "description": [
+            "Introduction to game development softwares such as Unity and Unreal engine and its hands-on implementation methods."
+          ]
+        },
+        {
+          "time": "1.30 PM - 3.30 PM",
+          "description": [
+            "Participants will be taught on how to develop a sample game from scratch game using various components and tools,followed by deployment methods on various platforms  "
+          ]
         }
       ]
     ]
