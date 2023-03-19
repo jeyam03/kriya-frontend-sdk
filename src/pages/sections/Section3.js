@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaSoundcloud } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Landing.css";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -8,6 +8,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Section3 = () => {
   const [consolee, setConsolee] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener(
@@ -49,7 +50,7 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=kriyative"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#5238d1] to-[#8938d1] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#5238d1] to-[#8938d1] flex items-center justify-center">
                   <div
                     style={{
                       background: `url(/assets/CatLogo/kriyative.png)`,
@@ -57,14 +58,14 @@ const Section3 = () => {
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
-                    className="w-8 h-8 invert"
+                    className="w-6 h-6 invert"
                   ></div>
                 </div>
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                <p className="bg-clip-text text-xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {" Kriyative "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2 text-justify`}>
+              <p className={`${condition} text-xs pb-2 text-justify`}>
                 Let your imagination run wild with Kriyative! Whether you're an
                 experienced artist, a hobbyist or a curious beginner, our events
                 will inspire you to think outside the box, experiment with new
@@ -87,7 +88,7 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=brainiac"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#8f3ccf] to-[#df51ad] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#8f3ccf] to-[#df51ad] flex items-center justify-center">
                   <div
                     style={{
                       background: `url(/assets/CatLogo/brainiac.png)`,
@@ -95,14 +96,14 @@ const Section3 = () => {
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
-                    className="w-8 h-8 invert"
+                    className="w-6 h-6 invert"
                   ></div>
                 </div>
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
+                <p className="bg-clip-text text-xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
                   {" Brainiac "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2 text-justify`}>
+              <p className={`${condition} text-xs pb-2 text-justify`}>
                 Unlock Your Inner Genius: Join the Brainiac Brigade! Brainiac
                 events are designed to challenge your intellect, ignite your
                 curiosity and push the boundaries of your knowledge. From trivia
@@ -126,7 +127,7 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=coding"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#dc4fab] to-[#eb587b] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#dc4fab] to-[#eb587b] flex items-center justify-center">
                   <div
                     style={{
                       background: `url(/assets/CatLogo/coding.png)`,
@@ -134,14 +135,14 @@ const Section3 = () => {
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
-                    className="w-8 h-8 invert"
+                    className="w-6 h-6 invert"
                   ></div>
                 </div>
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
+                <p className="bg-clip-text text-xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#eb587b]">
                   {" Coding "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2 text-justify`}>
+              <p className={`${condition} text-xs pb-2 text-justify`}>
                 Whether you're a seasoned coder or just starting out, our events
                 offer something for everyone. Explore cutting-edge technologies,
                 connect with like-minded coders, and compete for glory in our
@@ -165,7 +166,7 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=circuit"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#e8567c] to-[#f48555] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#e8567c] to-[#f48555] flex items-center justify-center">
                   <div
                     style={{
                       background: `url(/assets/CatLogo/circuit.png)`,
@@ -173,14 +174,14 @@ const Section3 = () => {
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
-                    className="w-8 h-8 invert"
+                    className="w-6 h-6 invert"
                   ></div>
                 </div>
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
+                <p className="bg-clip-text text-xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#e8567c] to-[#f48555]">
                   {" Circuit "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2 text-justify`}>
+              <p className={`${condition} text-xs pb-2 text-justify`}>
                 Delve into the world of circuit engineering! From digital
                 electronics to power systems, our Circuit Events cover it all.
                 Get ready to master the fundamentals of circuit design and don’t
@@ -204,7 +205,7 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=core"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#eac64a] to-[#2ea47e] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#eac64a] to-[#2ea47e] flex items-center justify-center">
                   <div
                     style={{
                       background: `url(/assets/CatLogo/core.png)`,
@@ -212,14 +213,14 @@ const Section3 = () => {
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "contain",
                     }}
-                    className="w-8 h-8 invert"
+                    className="w-6 h-6 invert"
                   ></div>
                 </div>
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
+                <p className="bg-clip-text text-xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#eac64a] to-[#2ea47e]">
                   {" Core Engineering "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2 text-justify`}>
+              <p className={`${condition} text-xs pb-2 text-justify`}>
                 Unleash the engineer in you and dive into the world of
                 innovation with our cutting-edge Core Engineering events at this
                 Kriya! Discover the power of engineering, and explore endless
@@ -242,7 +243,7 @@ const Section3 = () => {
                 className="flex items-center space-x-4"
                 to="/portal/event?ctg=management"
               >
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#02b7e6] to-[#00c37b] flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#02b7e6] to-[#00c37b] flex items-center justify-center">
                   <div
                     style={{
                       background: `url(/assets/CatLogo/manager.png)`,
@@ -250,14 +251,14 @@ const Section3 = () => {
                       backgroundRepeat: "no-repeat",
                       backgroundSize: "cover",
                     }}
-                    className="w-8 h-8 invert"
+                    className="w-6 h-6 invert"
                   ></div>
                 </div>
-                <p className="bg-clip-text font-semibold lg:font-normal text-2xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
+                <p className="bg-clip-text text-xl py-2 tracking-wide [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#02b7e6] to-[#00c37b]">
                   {" Management "}
                 </p>
               </Link>
-              <p className={`${condition} text-sm pb-2 text-justify`}>
+              <p className={`${condition} text-xs pb-2 text-justify`}>
                 Calling all aspiring leaders and entrepreneurs! Explore the
                 dynamic world of Management at Kriya. From strategic planning to
                 marketing and innovation, join us for an engaging and
@@ -278,9 +279,9 @@ const Section3 = () => {
           </div>
         </div>
 
-        <div className="w-full lg:w-[30vw] px-12 lg:pr-0">
+        <div className="w-full lg:w-[30vw] px-12 lg:pr-0 flex flex-col items-end">
           <h1
-            className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} events-text opacity-0 text-center lg:text-right`}
+            className={`text-4xl lg:text-5xl font-poppins font-semibold ${condition} events-text opacity-0 text-center lg:text-right`}
           >
             Unleash your
             <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
@@ -289,6 +290,16 @@ const Section3 = () => {
             , participate in events.
           </h1>
           <img src="/assets/Design/stamp.png" alt="stamp" className="-mt-12 lg:-mt-16" />
+          <button
+            className="bg-blue-500 text-white w-fit px-4 py-3 rounded-xl font-poppins flex items-center group"
+            onClick={() => navigate("/auth/payment?type=GENERAL")}
+          >
+            <p className="">Pay general registration fee!</p>
+            <IoIosArrowForward
+              className="ml-2 transition-all group-hover:translate-x-2"
+              size={24}
+            />
+          </button>
         </div>
       </section>
       <a

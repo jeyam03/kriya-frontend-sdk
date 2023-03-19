@@ -8,16 +8,15 @@ import { fetchUserByEmail } from "../../API/call";
 const Section12 = ({ scrollYByVH }) => {
   const [consolee, setConsolee] = useState(0);
   const [paid, setPaid] = useState(false);
-  const email = localStorage.getItem("email");
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchUserByEmail(email).then((res) => {
+    fetchUserByEmail(localStorage.getItem("email")).then((res) => {
       if (res.data.user.isPaid) {
         setPaid(true);
       }
     });
-  }, [email]);
+  }, []);
 
   useEffect(() => {
     window.addEventListener(
@@ -70,7 +69,7 @@ const Section12 = ({ scrollYByVH }) => {
                   className={`mt-16 w-fit px-4 py-2 text-lg font-poppins rounded-lg ${borderCondition} ${condition} border`}
                   onClick={() => {
                     window.open(
-                      "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230325T123000Z%2F20230325T153000Z&details=&location=PSG%20College%20of%20Technology&text=Kriya%20%2723%20Pro%20Show"
+                      "https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20230325T120000Z%2F20230325T150000Z&details=&location=PSG%20College%20of%20Technology&text=Kriya%20%2723%20Pro%20Show"
                     );
                   }}
                 >
