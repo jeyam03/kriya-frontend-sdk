@@ -93,61 +93,71 @@ const Section6 = () => {
 
               <div className="w-full max-w-full relative overflow-x-hidden h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
-                  {Array(4).fill(<React.Fragment>
-                    <Sponsors
-                      imgurl="/assets/Stalls/Waffle.jpg"
-                      title="Waffle Cart"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/PolarBear.png"
-                      title="Polar Bear"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/FrozenStick.jpeg"
-                      title="The Frozen Stick"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/Creamery.jpeg"
-                      title="Creamery"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/ChocoCrush.jpg"
-                      title="Choco Crush"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/Fabino.jpg"
-                      title="Fabino"
-                    />
-                  </React.Fragment>)
-                  }
+                  {Array(4).fill(
+                    <React.Fragment>
+                      <Sponsors
+                        imgurl="/assets/Stalls/Waffle.jpg"
+                        title="Waffle Cart"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/PolarBear.png"
+                        title="Polar Bear"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/FrozenStick.jpeg"
+                        title="The Frozen Stick"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/Creamery.jpeg"
+                        title="Creamery"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/ChocoCrush.jpg"
+                        title="Choco Crush"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/KCOverseas.jpg"
+                        title="KC Overseas"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/Time.jpg"
+                        title="T.I.M.E"
+                      />
+                    </React.Fragment>
+                  )}
                 </div>
               </div>
 
               <div className="w-full max-w-full relative overflow-x-hidden h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee-rev">
-                  {Array(4).fill(<React.Fragment>
-                    <Sponsors
-                      imgurl="/assets/Stalls/Tibbs.jpeg"
-                      title="Tibbs Frankie"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/TheCrunchyTreats.jpeg"
-                      title="The Crunchy Treats"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/ZenTreat.jpg"
-                      title="Zen Treat"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/Marvel.jpeg"
-                      title="Marvel"
-                    />
-                    <Sponsors
-                      imgurl="/assets/Stalls/EggSticka.jpeg"
-                      title="Egg Stickaa"
-                    />
-                  </React.Fragment>)
-                  }
+                  {Array(4).fill(
+                    <React.Fragment>
+                      <Sponsors
+                        imgurl="/assets/Stalls/Tibbs.jpeg"
+                        title="Tibbs Frankie"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/TheCrunchyTreats.jpeg"
+                        title="The Crunchy Treats"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/ZenTreat.jpg"
+                        title="Zen Treat"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/Marvel.jpeg"
+                        title="Marvel"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/EggSticka.jpeg"
+                        title="Egg Stickaa"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/Fabino.jpg"
+                        title="Fabino"
+                      />
+                    </React.Fragment>
+                  )}
                 </div>
               </div>
             </div>
