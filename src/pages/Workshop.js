@@ -149,9 +149,20 @@ const Workshop = () => {
       {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
       </h2> */}
-      <p className="text-white text-justify mt-8 text-base w-full lg:w-[90%] pb-12 px-8 lg:px-0">
-        {workshopDetail.desc}
-      </p>
+      {id === "WKSP0009" ? (
+        <div className="flex flex-col lg:flex-row gap-4 w-full items-center">
+          <p className="text-white text-justify lg:text-left mt-8 text-base w-full lg:w-3/4 lg:pb-12 px-8 lg:px-0">
+            {workshopDetail.desc}
+          </p>
+          <img src="/assets/Design/robot.png"
+            alt="" className="w-3/4 lg:w-1/4"
+          />
+        </div>
+      ) : (
+        <p className="text-white text-justify mt-8 text-base w-full lg:w-[90%] pb-12 px-8 lg:px-0">
+          {workshopDetail.desc}
+        </p>
+      )}
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-6">
         <div className="bg-white w-full lg:w-2/3 lg:rounded-3xl lg:p-12 relative py-12 px-8">
           <div className="text-4xl font-bold mb-8 text-[#3c4043]">Agenda</div>
@@ -212,7 +223,7 @@ const Workshop = () => {
                   ? "Registered"
 
                   : currentCount / workshopDetail.maxCount >= 0.5 && currentCount < workshopDetail.maxCount
-                    ? <div>Registrations Closing Soon!<br></br><span className="text-sm font-normal bg-clip-text [-webkit-text-fill-color:transparent] bg-white lg:bg-[#3c4043]">Limited Seats Available. Hurry Up!</span></div>
+                    ? <div>Registrations Closing Soon!<br></br><span className="whitespace-nowrap text-sm font-normal bg-clip-text [-webkit-text-fill-color:transparent] bg-white lg:bg-[#3c4043]">Limited Seats Available. Hurry Up!</span></div>
 
                     : currentCount >= workshopDetail.maxCount
                       ? "Registrations Closed!"

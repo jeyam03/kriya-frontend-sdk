@@ -152,13 +152,18 @@ const Profile = () => {
                     Uh oh! You have'nt made any transactions yet !
                   </p>
                   <Link
-                    className="bg-blue-500 text-white w-fit px-4 py-2 rounded-xl text-sm flex items-center group"
+                    className="bg-blue-500 text-white w-fit px-4 py-2 mt-2 rounded-xl text-sm flex items-center group"
                     to="/auth/payment?type=GENERAL"
                   >
-                    <p className="">Pay general registration fee !</p>
+                    <div className="pr-4">
+                      <p className="font-[500]">Unlock the full experience!</p>
+                      <p className="font-[500] pb-1">Pay the general registration fee and,</p>
+                      <li className="text-sm pl-4">Gain access to the pro show</li>
+                      <li className="text-sm pl-4">Plus the chance to participate in all the exciting events.</li>
+                    </div>
                     <IoIosArrowForward
                       className="ml-1 group-hover:ml-2 transition-all"
-                      size={16}
+                      size={32}
                     />
                   </Link>
                 </div>
@@ -209,6 +214,23 @@ const Profile = () => {
                 </div>
               ))}
             </div>
+            {!userDetails.isPaid && (
+              <Link
+                className="bg-blue-500 text-white w-fit px-4 py-2 mt-2 rounded-xl text-sm flex items-center group"
+                to="/auth/payment?type=GENERAL"
+              >
+                <div className="pr-4">
+                  <p className="font-[500]">Unlock the full experience!</p>
+                  <p className="font-[500] pb-1">Pay the general registration fee and,</p>
+                  <li className="text-sm pl-4">Gain access to the pro show</li>
+                  <li className="text-sm pl-4">Plus the chance to participate in all the exciting events.</li>
+                </div>
+                <IoIosArrowForward
+                  className="ml-1 group-hover:ml-2 transition-all"
+                  size={32}
+                />
+              </Link>
+            )}
           </div>
 
           <div className="w-full lg:pr-8">

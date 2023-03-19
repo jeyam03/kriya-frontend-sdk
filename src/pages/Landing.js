@@ -18,10 +18,26 @@ import { fetchUserByEmail } from "../API/call";
 import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail, SiYoutube } from "react-icons/si";
 import Section12 from "./sections/Section12";
+import { IoMdClose } from "react-icons/io";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [popup, setPopup] = useState(true);
+  const [paid, setPaid] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("email")) {
+      fetchUserByEmail(localStorage.getItem("email")).then((res) => {
+        if (res.data.user.isPaid) {
+          setPaid(true);
+        }
+      });
+    } else {
+      setPopup(false);
+    }
+  }, []);
 
   useEffect(() => {
     window.addEventListener(
@@ -79,6 +95,39 @@ const Landing = () => {
           scrollSnapType: "y mandatory",
         }}
       >
+        {!paid && popup && (
+          <div className={`fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 z-50 flex items-center justify-center`}>
+            <div className="bg-gradient-to-l from-[#eccdde] to-[#cfbaea] w-[20rem] lg:w-[36rem] h-[24rem] p-8 rounded-2xl flex items-center relative">
+              <button
+                className="absolute right-4 top-4 text-2xl text-black"
+                onClick={() => {
+                  setPopup(false);
+                }}
+              >
+                <IoMdClose />
+              </button>
+              <div className="flex flex-col items-center lg:items-start justify-center space-y-6 lg:space-y-8 w-full lg:w-[60%] z-10">
+                <h1 className={`text-3xl lg:text-4xl font-semibold font-poppins text-center lg:text-left`}>
+                  Unlock the full{" "}
+                  <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+                    experience.
+                  </span>
+                </h1>
+                <p className="text-lg font-poppins text-center lg:text-left">
+                  Pay the general registration fee and gain access to the <b className="font-[500]">pro show</b> plus the chance to participate in <b className="font-[500]">all the exciting events</b>!
+                </p>
+                <button className="bg-[#5451B6] text-white font-poppins font-semibold text-lg px-4 py-2 rounded-lg shadow-lg hover:scale-105 transition-all"
+                  onClick={() => {
+                    navigate("/auth/payment?type=GENERAL");
+                  }}
+                >
+                  Pay Now
+                </button>
+              </div>
+              <img src="/assets/Design/im.png" alt="" className="hidden lg:block absolute bottom-0 right-0 rounded-br-2xl h-5/6" />
+            </div>
+          </div>
+        )}
         <Section1 scrollYByVH={consolee} />
         <Section12 scrollYByVH={consolee} />
         <Section2 scrollYByVH={consolee} />
