@@ -10,8 +10,8 @@
     "time": "9.00 AM - 05.00 PM",
     "c1Name": "KISHORE S",
     "c1Num": "9894268704",
-    "c2Name": "PRAGATHEESH R J",
-    "c2Num": "8056920879",
+    "c2Name": "VIMAL V K",
+    "c2Num": "9597555927",
     "maxCount": "50",
     "desc": "The Robot Operating System (ROS) is an open-source framework that helps researchers and developers build and reuse code between robotics applications. It is also a global open-source community of engineers, developers, and hobbyists who contribute to making robots better, more accessible, and available to everyone. This workshop will provide an in-depth understanding of the framework and its various tools and libraries. Participants will learn about the ecosystem and how to use ROS to program and control their custom robots. They will also gain hands-on experience integrating packages and tools to build robotic systems. The participants will be taught how to interface Lidar, Arduino- development board and various high-grade sensors to the framework. This will be a valuable learning opportunity for anyone interested in robotics and ROS.",
     "agenda": [
