@@ -24,6 +24,8 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 import OtherPayments from "./pages/AuthPortal/OtherPayments";
 import GoogleFailure from "./pages/MiddlePorts/GoogleFailure";
 import RegisterRedirectForReferral from "./pages/MiddlePorts/RegisterRedirectForReferral";
+import EnquiryWrapper from "./pages/Enquiry/EnquiryWrapper";
+import Accomodation from "./pages/Enquiry/Accomodation";
 
 const App = () => {
   return (
@@ -42,10 +44,22 @@ const App = () => {
                 <Route index element={<Profile />} />
               </Route>
             </Route>
-            <Route path="register" element={<Outlet/>}>
-              <Route path="by-referral" element={<RegisterRedirectForReferral />} />
-              <Route path="*" element={<Navigate to="/auth?type=signup&page=switch" />} />
-              <Route index element={<Navigate to="/auth?type=signup&page=switch" />} />
+            <Route path="enquiry" element={<EnquiryWrapper />}>
+              <Route path="accomodation" element={<Accomodation />} />
+            </Route>
+            <Route path="register" element={<Outlet />}>
+              <Route
+                path="by-referral"
+                element={<RegisterRedirectForReferral />}
+              />
+              <Route
+                path="*"
+                element={<Navigate to="/auth?type=signup&page=switch" />}
+              />
+              <Route
+                index
+                element={<Navigate to="/auth?type=signup&page=switch" />}
+              />
             </Route>
             <Route path="payment/failure" element={<PaymentFailure />} />
             <Route path="payment/success" element={<PaymentSuccess />} />
