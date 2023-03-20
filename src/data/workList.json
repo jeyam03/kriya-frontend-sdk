@@ -96,7 +96,7 @@
     "c1Num": "9789348224",
     "c2Name": "YOGENDRAA S N",
     "c2Num": "8608782082",
-    "maxCount": "65",
+    "maxCount": "50",
     "desc": "The workshop focuses on the basic conceptual ideas behind the characteristics, challenges and network configurations of IoT along with Data Collection, Data Processing and Data Analytics including Cloud Computing and Big data. It also focuses on the MQTT usage of various embedded systems (Aurdino, Raspberry Pi). The final part of the workshop will be the hands-on training with embedded systems which will be provided to the participants.",
     "agenda": [
       [
@@ -437,7 +437,7 @@
     "c1Num": "9361277079",
     "c2Name": "P M HARISHREE",
     "c2Num": "9385561379",
-    "maxCount": "60",
+    "maxCount": "50",
     "desc": "The new era of imagination and deployment for a connected world is opened through Internet of Things with edge sensor nodes getting more and more intelligent and able to transmit directly to cloud and also get controlled. This workshop will provide a good understanding of Internet of Things and its exploding applications. The interactive lectures and hands-on exercises will provide attendees with a deep understanding of the technical aspects of IoT and inbuilt network processors.",
     "agenda": [
       [
