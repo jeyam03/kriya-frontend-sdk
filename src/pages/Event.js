@@ -3,7 +3,12 @@ import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchEventById, fetchEventDetailsByEmail, fetchEventRegister, fetchUserByEmail } from "../API/call";
+import {
+  fetchEventById,
+  fetchEventDetailsByEmail,
+  fetchEventRegister,
+  fetchUserByEmail,
+} from "../API/call";
 
 const Event = () => {
   const navigate = useNavigate();
@@ -126,22 +131,31 @@ const Event = () => {
             )}
         </div>
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
-          <button
-            className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
-            onClick={() => {
-              !userEventDetails.find((i) => i.eventId === id) && (
-                window.confirm("Are you sure you want to register ?")
-                  ? handleRegister()
-                  : console.log("Cancelled")
-              )
-            }}
-          >
-            {userEventDetails && <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-              {userEventDetails.find((i) => i.eventId === id) ? "Registered" : "Register Here!"}
-            </span>}
-
-          </button>
-
+          {eventDetail.closed ? (
+            <div className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start">
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+                Registrations Closed
+              </span>
+            </div>
+          ) : (
+            <button
+              className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
+              onClick={() => {
+                !userEventDetails.find((i) => i.eventId === id) &&
+                  (window.confirm("Are you sure you want to register ?")
+                    ? handleRegister()
+                    : console.log("Cancelled"));
+              }}
+            >
+              {userEventDetails && (
+                <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+                  {userEventDetails.find((i) => i.eventId === id)
+                    ? "Registered"
+                    : "Register Here!"}
+                </span>
+              )}
+            </button>
+          )}
           {/* <p className="bg-gradient-to-r from-[#C80067] to-[#7470ff] py-4 px-6 rounded-xl shadow-lg shadow-gray-900 lg:shadow-md w-fit text-white text-2xl hover:underline">Register Here !</p> */}
 
           <div className="bg-[#ffffff] flex flex-col lg:rounded-3xl p-8 lg:p-12 space-y-2 justify-center">
@@ -173,18 +187,27 @@ const Event = () => {
                 <MdOutlineLocationOn />
               </p>
               <div className="pl-2 flex flex-col">
-                <p className={`text-base ${eventDetail.hall.length > 15 ? "lg:text-base" : "lg:text-lg"} font-semibold tracking-wider text-[#3c4043]`}>
+                <p
+                  className={`text-base ${
+                    eventDetail.hall.length > 15 ? "lg:text-base" : "lg:text-lg"
+                  } font-semibold tracking-wider text-[#3c4043]`}
+                >
                   {eventDetail.hall}
                 </p>
               </div>
             </div>
             <div className="flex flex-row items-center gap-4 lg:gap-6">
               <p className="text-4xl font-semibold tracking-wide text-[#3c4043] p-3">
-                {eventDetail.teamSize !== "1" ? <AiOutlineTeam /> : <AiOutlineUser />}
+                {eventDetail.teamSize !== "1" ? (
+                  <AiOutlineTeam />
+                ) : (
+                  <AiOutlineUser />
+                )}
               </p>
               <div className="pl-2 flex flex-col">
                 <p className="text-base lg:text-lg font-semibold tracking-wide text-[#3c4043]">
-                  {eventDetail.teamSize} Member{eventDetail.teamSize !== "1" ? "s" : ""}
+                  {eventDetail.teamSize} Member
+                  {eventDetail.teamSize !== "1" ? "s" : ""}
                 </p>
               </div>
             </div>
@@ -194,7 +217,12 @@ const Event = () => {
                   Note
                 </p>
                 <ul className="list-disc text-base text-[#3c4043] pl-4 space-y-2">
-                  <li>For team events, <b className="font-semibold">every member</b> of the team is required to register for the event and pay the general registration fee.</li>
+                  <li>
+                    For team events,{" "}
+                    <b className="font-semibold">every member</b> of the team is
+                    required to register for the event and pay the general
+                    registration fee.
+                  </li>
                 </ul>
               </div>
             )}
@@ -224,7 +252,9 @@ const Event = () => {
                 </button>
                 <button
                   onClick={() => {
-                    window.open(`https://wa.me/${eventDetail.contact_mobile_1}`);
+                    window.open(
+                      `https://wa.me/${eventDetail.contact_mobile_1}`
+                    );
                   }}
                 >
                   <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
@@ -251,7 +281,9 @@ const Event = () => {
                 </button>
                 <button
                   onClick={() => {
-                    window.open(`https://wa.me/${eventDetail.contact_mobile_2}`);
+                    window.open(
+                      `https://wa.me/${eventDetail.contact_mobile_2}`
+                    );
                   }}
                 >
                   <IoLogoWhatsapp className="text-white hover:text-gray-200 lg:text-[#3c4043] lg:hover:text-[#5f6164] text-3xl" />
@@ -259,8 +291,14 @@ const Event = () => {
               </div>
             </div>
 
-            <div className=" hidden lg:block flex-1  rounded-b-3xl" style={{ background: "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(/assets/Design/heightFiller.png) ", backgroundSize: "350%" }}>
-            </div>
+            <div
+              className=" hidden lg:block flex-1  rounded-b-3xl"
+              style={{
+                background:
+                  "linear-gradient(to bottom, white 10%, rgba(255,255,255,0) 100%), url(/assets/Design/heightFiller.png) ",
+                backgroundSize: "350%",
+              }}
+            ></div>
           </div>
         </div>
       </div>

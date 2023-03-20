@@ -21,7 +21,8 @@
     "eventRules": "A team of 2 can participate in this event.(Minimum- 2 , Maximum - 2)\nParticipants should strictly adhere to the time limit.\nParticipants are not allowed to use the smartphones during the event.\nParticipants are not encouraged for any forms of malpractice.",
     "teamSize": "2",
     "date": "25",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM - 12:30 PM",
+    "closed": false
   },
   {
     "eventName": "Quest for Avians",
@@ -45,7 +46,8 @@
     "eventRules": "Individual Participants",
     "teamSize": "1",
     "date": "24",
-    "timing": "9:00 AM - 1:30 PM"
+    "timing": "9:00 AM - 1:30 PM",
+    "closed": false
   },
   {
     "eventName": "MasterMinds",
@@ -69,7 +71,8 @@
     "eventRules": "Participants should have their college ID card.\nParticipants should keep up timing for every round.\nParticipants involving in malpractice are directly disqualified.\nDiscussion with other teams are strictly not allowed.",
     "teamSize": "1 - 2",
     "date": "24",
-    "timing": "9.30 AM - 1.30 PM"
+    "timing": "9.30 AM - 1.30 PM",
+    "closed": false
   },
   {
     "eventName": "MATH - 2 - HUNT",
@@ -93,7 +96,8 @@
     "eventRules": "",
     "teamSize": "2",
     "date": "26",
-    "timing": "9.30 AM - 1.00 PM"
+    "timing": "9.30 AM - 1.00 PM",
+    "closed": false
   },
   {
     "eventName": "Fortunatrix",
@@ -117,7 +121,8 @@
     "eventRules": "Participants should strictly adhere to the time limit.\nParticipants are strictly prohibited from using the internet.\nParticipants are advised not to indulge in any form of malpractice.\nDecision of the convenors/ judges will stand final.",
     "teamSize": "2",
     "date": "24",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM - 12:30 PM",
+    "closed": false
   },
   {
     "eventName": "MechManiacs",
@@ -141,7 +146,8 @@
     "eventRules": "Registered Participants may come with Laptop if available.\nJudges Decisions are final.\nStudents must attend the event with their College ID Card.\nUsage of Mobile phones is strictly prohibited during the conduction of the event.",
     "teamSize": "1",
     "date": "26",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM - 12:30 PM",
+    "closed": false
   },
   {
     "eventName": "SCAN, PLAN AND RECKON",
@@ -165,7 +171,8 @@
     "eventRules": "Participants are advised to come with laptop, if not computers with autocad version 2007 will only be provided.\nTime based events and rounds will be conducted on elimination basis.\nJudges decisions will be final.",
     "teamSize": "2 - 3",
     "date": "25",
-    "timing": "9:30 AM - 3:00 PM"
+    "timing": "9:30 AM - 3:00 PM",
+    "closed": false
   },
   {
     "eventName": "Electri - Warz",
@@ -189,7 +196,8 @@
     "category": "Circuit",
     "teamSize": "2",
     "date": "26",
-    "timing": "10:00 AM - 4:00 PM"
+    "timing": "10:00 AM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "Maze Runner",
@@ -213,7 +221,8 @@
     "eventRules": " Round 1\nEach team can have a minimum of 1 and a maximum of 4 members\n Participants should be present in the informed venue before or on time.\n The participants will be given 15 minutes for presenting their idea which will be followed by a 5- minute question-and-answer session.\n Implementation of the robot via simulation or model will be an added credit\n Usage of internet resources is allowed however direct plagiarism of ideas is strictly prohibited.\n The decision of the judges will be deemed final and no correspondence will be entered into . \n Round 2 \nThe bot must be completely autonomous, no human involvement is allowed in any of the tasks.\n The controller unit should be embedded in the robot and cannot be placed outside the robot.\n The robot should be battery operated\n The robot shall not leave any part of its body behind while navigating the maze.\n The robot shall not jump over, fly over, climb, scratch, cut, burn, mark, damage, or destroy the walls of the maze.\nThe robot shall not be larger either in length or in width than the dimensions of the maze(20cm)",
     "teamSize": "1 - 4",
     "date": "26",
-    "timing": "9:00 AM - 4:00 PM"
+    "timing": "9:00 AM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "PhyzPro",
@@ -237,7 +246,8 @@
     "eventRules": "Participants should not try to copy from the other participants.\nParticipants should not repeat words in their team answer.\nNo usage of electronic gadgets.",
     "teamSize": "2",
     "date": "25",
-    "timing": "10:00 AM - 12:00 PM"
+    "timing": "10:00 AM - 12:00 PM",
+    "closed": false
   },
   {
     "eventName": "Traze",
@@ -261,7 +271,8 @@
     "eventRules": "All participants must register for the event prior to the commencement of the first round.\nAll participants must adhere to the rules and regulations of the event.\nThe first round of the event will be a quiz. All participants must answer the questions within the allotted time. Usage of mobile phones is restricted in the first round.\nThe second round of the event will be a debate. All participants must present their arguments logically and in a manner that is respectful to all participants.\nAny form of malpractice will not be entertained and participants engaging in such activities will be disqualified.\nAll participants must adhere to the instructions of the judges throughout the event.\nWinners will be decided based on their performance in second round.",
     "teamSize": "2",
     "date": "26",
-    "timing": "1:30 PM - 4:00 PM"
+    "timing": "1:30 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "Treasure hunt in metaverse",
@@ -285,7 +296,8 @@
     "eventRules": "Team size can range from 2-3 participants.\nParticipation is open to all engineering branches.\nParticipants should have knowledge on how to clone, commit, push, create pull request and issue in GitHub prior to the start of the event.\nThe evaluation for the first 3 rounds is based on how fast they complete the given tasks.\nThe evaluation for the final round is based on creativity, practicality, feasibility, and implementation plan.\nFor the final round, teams will be given 10 mins to think about an idea for the given problem, 5 mins to orally present their ideas and 5 mins for Q&A. These deadlines are strictly followed.",
     "teamSize": "2 - 3",
     "date": "25",
-    "timing": "9:30 AM - 4:00 PM"
+    "timing": "9:30 AM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "FORENSICIST",
@@ -309,7 +321,8 @@
     "eventRules": "The teams are to finish the challenge within the given specified time.\nThe teams are to successfully eliminate the imposter with fair means.\nTeams are not allowed to sabotage another team.\nThe teams are expected to maintain decorum.\nThe teams are expected to play fair and not use unnecessary means.",
     "teamSize": "3 - 4",
     "date": "26",
-    "timing": "9:30 AM - 4:00 PM"
+    "timing": "9:30 AM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "TRY AND TRIUMPH",
@@ -333,7 +346,8 @@
     "eventRules": "The teams are to finish the challenge within the given specified time.\nTeams are to play fair and not use other means like force to unlock the lock\nTeams are not allowed to sabotage another team\nThe teams are expected to maintain decorum.\nThe teams are expected to play fair and not use unnecessary means.",
     "teamSize": "4",
     "date": "25",
-    "timing": "9:00 AM - 4:30 PM"
+    "timing": "9:00 AM - 4:30 PM",
+    "closed": false
   },
   {
     "eventName": "AUTO - FACSIMILE",
@@ -357,7 +371,8 @@
     "eventRules": "Team should consist of two members.",
     "teamSize": "2",
     "date": "24",
-    "timing": "1.30 PM - 4.30 PM"
+    "timing": "1.30 PM - 4.30 PM",
+    "closed": false
   },
   {
     "eventName": "QRack IT",
@@ -381,7 +396,8 @@
     "eventRules": "The teams would not run around the whole block\nReferring to google is allowed for solving the problems\nGetting help from non-participants is not allowed",
     "teamSize": "3 - 4",
     "date": "26",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM - 12:30 PM",
+    "closed": false
   },
   {
     "eventName": "GREENOVATION ",
@@ -405,7 +421,8 @@
     "eventRules": "Round 1 &2 individual participation and round 3 group participation\nParticipants are restricted to use their mobile phones during event\nParticipants are asked to have prior knowledge on sustainable built environment\nEvent judges’ decision is the final decision",
     "teamSize": "1",
     "date": "26",
-    "timing": "1:00 PM - 4:00 PM"
+    "timing": "1:00 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "Ludovic",
@@ -429,7 +446,8 @@
     "eventRules": "The rules of the Ludo game will apply and should be strictly followed.\nThe Decision of the judges will be final.\nFor each correct answer, 2  points  will be awarded and no points will be awarded for wrong answer.\nIn case where the question is not answered, it will be passed on to the next participant and 1 point will be given for correct answer of the passed question. ",
     "teamSize": "1",
     "date": "25",
-    "timing": "1:30 PM - 4:00 PM"
+    "timing": "1:30 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "CRYPTIQUE",
@@ -453,7 +471,8 @@
     "eventRules": "Maximum of two members per team.\nInternet Access will be provided.\nThe decision made by the faculty judge is final.",
     "teamSize": "1 - 2",
     "date": "24",
-    "timing": "1:00 PM - 4:30 PM"
+    "timing": "1:00 PM - 4:30 PM",
+    "closed": true
   },
   {
     "eventName": "The Startup challenge",
@@ -477,7 +496,8 @@
     "eventRules": "This is a team event \nEach team can comprise of 2-3 participants \nEach team will have to present their business idea related to engineering field. The ideas can be related to not only apparel but also jewelry design, branding, marketing service, arts and crafts. \nA maximum duration of 1 hour is given for the preparation of 1st round \n  Logo creation carries valid mark in 1st round, it can be done using Adobe illustrator, canva, or any designing software. \nPresentation will be held in PPT format for minimum of 10 minutes per team \n7 minutes for presentation and 3 minutes for questions which will be asked by the judges. \n The detailed 2nd Presentation will also be held in PPT format for minimum of 10 minutes per team. \n Each member in the team should present a part of the content. Content should be divided equally between them. \n A panel of judges will allot points based on certain criteria's such as clarity on idea and innovation, strategy planning, marketing strategy, financial management planning and creativity in pitching \n  The team with best business pitch will be chosen as winners. \n A business Pitch template will be shared with the participants for reference. They should follow the template for uniformity.",
     "teamSize": "2 - 3",
     "date": "25",
-    "timing": "9:00 AM- 3:00 PM"
+    "timing": "9:00 AM- 3:00 PM",
+    "closed": false
   },
   {
     "eventName": "FightByte",
@@ -501,7 +521,8 @@
     "eventRules": "Use of mobile phones is not allowed after a round starts.\nThere are round specific rules that will be provided to the participants when the round begins. This is to not reveal more about the rounds themselves.\nTeam size should not exceed 3 members.\nComputers will be provided, so use of own laptop inside the event grounds without supervision is prohibited.\nNot following the above rules will result in instant disqualification of the team.",
     "teamSize": "2 - 3",
     "date": "26",
-    "timing": "9:30 AM - 2:30 PM"
+    "timing": "9:30 AM - 2:30 PM",
+    "closed": false
   },
   {
     "eventName": "AQUAJET",
@@ -525,7 +546,8 @@
     "eventRules": "A team can consist of 2 or 3 members of same college.\nWater rocket can be designed with multiple stages. Parachute and other booster mechanisms are allowed.\nParticipants should use only identically designed water rocket for same round. But for different round they can use different water rocket.\nTwo chances will be provided to each team and best of two will be accounted.\nThe teams will be disqualified if model is found dangerous in anyway.\nParticipants should not use any electrical components and explosives which will lead to disqualification.\nThe rocket should be made only with plastic aerated soft drinks bottles with maximum capacity of 2.5L and should be free of failures and defects. Total volume of the rocket should not be greater than 2.5L.\nParticipants should have their own launch pads/launcher and sharing of launch pads with other teams will lead to disqualification.\nMaximum pressure supported 60psi.\nMarks will also be based on Neatness and uniqueness of Design.\nIn case of tie, time taken will also be considered.\nThe foot pump provided will be compatible with common bicycle valves only and participants must use only the provided foot pump.\nDecision of judge is final.",
     "teamSize": "2 - 3",
     "date": "25",
-    "timing": "9:00 AM - 3:00 PM"
+    "timing": "9:00 AM - 3:00 PM",
+    "closed": false
   },
   {
     "eventName": "Robo Rush",
@@ -549,7 +571,8 @@
     "eventRules": "Note: Participants can participate in both categories. Two teams will be chosen as the winners, one from category 1 and another from category 2.\nCategory 1:\nThe team can have a maximum of 5 members.\nThe robots in the contest must be built by the team members. \nIf the bot is wired control, the cable length is unlimited. However, be careful not to wind the cable on the facilities and game objects in the field.\nThe bots are designed in such a way that; it shouldn’t cause any damage to the game field. \nThe pneumatic system should not be provided. If the team required compressed air, they could be taken up by their own. \nAir pressure must not exceed 5 bar. \nAny power source deemed dangerous may be banned from use. \nBots are inspected before the event starts and checked for the event’s requirements. \nThe required components are brought on their own, it won’t be provided from the organizer’s side. \n Category 2:\nParticipants in this Category 2 should design the eye marking system for the given idol’s image. \nThe idol’s eye marking should be perfect and accurate.\nThe final decision will be decided by the judges. \nThe required components are brought on their own, it won’t be provided from the organizer’s side.",
     "teamSize": "1 - 5",
     "date": "25",
-    "timing": "9.30 AM - 4.30 PM"
+    "timing": "9.30 AM - 4.30 PM",
+    "closed": false
   },
   {
     "eventName": "CAD - Enhance",
@@ -573,12 +596,13 @@
     "eventRules": "Participants are not allowed to use the mobile phones during the course of event.\n Participants should not discuss with other participants. \n If the participants break the any of the above-mentioned rules it may lead to direct disqualification.",
     "teamSize": "1",
     "date": "25",
-    "timing": "1:30 PM - 4:30 PM"
+    "timing": "1:30 PM - 4:30 PM",
+    "closed": false
   },
   {
     "eventName": "ELECTORAPTORS",
     "category": "Circuit",
-    "one_line_desc":"Circuit branches,flow your remembrance and ideation faab like the flow of charge.",
+    "one_line_desc": "Circuit branches,flow your remembrance and ideation faab like the flow of charge.",
     "description": "This is a technical event where participants are scrutinized for their memory and their capability is put to test with intriguing questions.",
     "round_title_1": "Episodic Memory",
     "round_desc_1": "This round contains 2 parts. In the first part, one participant from each team will be given a sheet which contains 25 elements and they will be given time constraints (90 seconds) to memorize them. They will reveal the elements to their partner who will in turn have to write it down on the sheet of paper provided within the left-out time.\n In the latter part the participants are shown 5 circuits, out of which they have to identify the additional components/elements which were not among the 25 elements given in the former part.\nFor the latter part of this round, we provide 3 lifeline common to all, which are Re-view - where participants can revisit all the 25 elements, check me 2 - where participants can check 2 components and verify whether it is an additional component or not and finally “Am I correct?”-participants can get to check their 1 circuit’s whole answer, where we will tell among them how many are correct and incorrect.",
@@ -597,7 +621,8 @@
     "eventRules": "In part 1 of round 1, each team will be provided a maximum of 4 minutes as a whole.\nFirst 90 seconds can be used to memorize the components and the left out 150 seconds can be utilized to reveal the elements to their partners who will in turn write down the same. \n Each component can only be repeated twice to the partner 2.\n Usage of lifeline in 1 circuit leads to reduction of marks i.e. If they secured 3 points in 1 circuit, it will be turned into 1.5 points.\n In round 2, preparation time is 25 minutes among which they have to make a ppt of their idea. Presentation time in-front of judge should not exceed more than 5 mins. A reminder will be given at 4 mins 30 sec.",
     "teamSize": "2",
     "date": "26",
-    "timing": "9:00 AM - 12: 00 PM"
+    "timing": "9:00 AM - 12: 00 PM",
+    "closed": false
   },
   {
     "eventName": "MECHANICAL Maestro V2.0",
@@ -621,7 +646,8 @@
     "eventRules": "The decision made by the judges would be final and the participants are devoid of the right to appeal against the same.\nThe participants are expected to make the submissions based on their own ideas and any form of plagiarism in the same would be scrutinized and the repective participants would be disqualified from the event.\nThe participants are expected to follow the schedule and the entry of participants after the commencement of the respective rounds shall not be entertained.\nBoth the participants constituting a team should be from the same institution.",
     "teamSize": "1",
     "date": "24",
-    "timing": "9:30 AM - 1:00 PM"
+    "timing": "9:30 AM - 1:00 PM",
+    "closed": false
   },
   {
     "eventName": "The Darwinian game",
@@ -645,7 +671,8 @@
     "eventRules": "Each question needs to be answered within one minute.\nEach correct answer scores one point.\nFor first two rounds, negative answers will not stop the teams to move on to the next question.\nIn the last round (Knockout round), a single negative answer will lead to straight knock out.\nFor all lifelines duration of one minute will be provided.\nFor 50-50, four options will be reduced to two options.\nFor Phone-a-friend lifeline, the teams can call their friend for the answer, if the first friend doesn’t pick up a provision for a call to a second friend is allowed in final round only, not for the previous rounds.\nFor Audience vote, answers from panel of ten volunteers will be given.\nIf the lifeline is not used in the allotted round, bonus points will be allotted.\nIn case of tie, a tie breaker round with buzzer will be conducted.",
     "teamSize": "2",
     "date": "25",
-    "timing": "1:30 PM - 4:30 PM"
+    "timing": "1:30 PM - 4:30 PM",
+    "closed": false
   },
   {
     "eventName": "TECHORYX",
@@ -669,7 +696,8 @@
     "eventRules": "Team size can range from 3 – 4 participants.\nParticipants is open to all engineering branches.\nThere are 5 themes identified for the hackathon\n->Banking\n->Shopping\n->Travel\n->Manufacturing\n->Hi – Tech\nParticipants have to choose a theme of their choice and need to attempt the problem statement (which will be provided based on the theme) in the given time.\nParticipants have to build applications around any one of the given problem statements in the given time.\nOn completion, participants are expected to upload the source files into given GitHub repository.\nThe evaluation is mostly based on the following parameters: functionality of the application, design aesthetics and the quality of the code written.",
     "teamSize": "3 - 4",
     "date": "24",
-    "timing": "9:30 AM - 2:00 PM"
+    "timing": "9:30 AM - 2:00 PM",
+    "closed": false
   },
   {
     "eventName": "Quizpicable me",
@@ -693,7 +721,8 @@
     "eventRules": "A team of 2 members can enroll in the contest.\nA single person cannot enroll themselves as a team\nThe selection round (Prelims), would be held in online mode to select top 8 teams for the finals. Only one enrolment must be done from a team to take up the prelims quiz\nThe top 8 teams qualifying to the finals must handle the buzzers provided to them with concern. Questions will be projected in the form of PowerPoint presentation in the finals.\nParticipants should not use smartphones or smartwatches to find answers.\nAll 5 rounds in the finals, contain a mandatory question for a team for which no negative markings would be awarded for a wrong answer. But negative marks would be given for the passed question obtained by the use of buzzer by another team, if the answer is wrong. But if the answer is correct, half of the marks would be provided.\nAfter the mandatory questions set, open-to-all questions would be displayed (for all rounds), where the team pressing the buzzer first, gets to answer. Correct answer is awarded with points while the wrong answers are given negative marks. In this set, the questions will not be passed to another team.\n Each team would be provided with 3 powerups such as question swap, 2x points, etc. It could be used in any of the 5 rounds in finals.\nIn case of tie, tie breaker would be implemented.\nDecision of judge is final.",
     "teamSize": "2",
     "date": "24",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM - 12:30 PM",
+    "closed": false
   },
   {
     "eventName": "Metaract",
@@ -717,7 +746,8 @@
     "eventRules": "",
     "teamSize": "1",
     "date": "24",
-    "timing": "1:30 PM - 4:30 PM"
+    "timing": "1:30 PM - 4:30 PM",
+    "closed": false
   },
   {
     "eventName": "Pro - Shopper",
@@ -741,7 +771,8 @@
     "eventRules": "It is an event of two \nPrelims (Buzzer based quiz round) based on fashion elements and brands will be conducted \nThe theme for the second round can be selected by yourself. \nA canva & powerpoint template will be provided to the teams for making collage of the collected pictures. \nParticipants can bring personal laptops to the event.(If required) \nAfter making the collage, it should be sent to the given mail id in ppt/pdf format. \nStudents should make a collage with its price taken from the respective site. The total price of attire should not exceed the given budget. \nFor the third round, A3 size plain cardboard along with A3 sheets and basic colour paints with a brush will be provided for mask creation. \nStudents can bring any material (paint, brush, colour paper, surface embellishments) to decorate the mask. \nAt the end of each round the participants will be filtered ( At the end of first round - 20 participants and at the end of second round - 10 participants.\nEvaluation will be based on the creativity , relevance and presentation and also the application of elements and principles of designs will be considered).",
     "teamSize": "2",
     "date": "24",
-    "timing": "9:00 AM - 12:00 PM"
+    "timing": "9:00 AM - 12:00 PM",
+    "closed": false
   },
   {
     "eventName": "Tech - zap",
@@ -765,7 +796,8 @@
     "eventRules": "Number of participants in the team should be two members.",
     "teamSize": "2",
     "date": "24",
-    "timing": "1:30 PM - 4:00 PM"
+    "timing": "1:30 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "FUTECH",
@@ -789,7 +821,8 @@
     "eventRules": "For Id verification, a college id card is required.\nParticipants should enter the allotted room after giving their attendance at the registration desk with their name and the last four digits of the Kriya ID..\nThe Participants must not make noise throughout the event.\nParticipants should come with a proper dress code.\nMalpractice is strictly prohibited.\nUsage of mobile phones is prohibited.\nThe time limit will be strictly adhered to.\nParticipants are supposed to be present on time.\nAt the end of the first round-10 teams will be filtered.\nJudge's decision will be final.",
     "teamSize": "2",
     "date": "24",
-    "timing": "9:30 AM - 1:00 PM"
+    "timing": "9:30 AM - 1:00 PM",
+    "closed": false
   },
   {
     "eventName": "Scienza",
@@ -813,7 +846,8 @@
     "eventRules": "The quiz consists of 2 rounds.\nThe points scored in the first round will be considered to select the finalists for the second round.\nUnanswered questions will be awarded no points.",
     "teamSize": "1",
     "date": "25",
-    "timing": "2:00 PM - 4:00 PM"
+    "timing": "2:00 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "ProTech",
@@ -837,7 +871,8 @@
     "eventRules": "Individual participation. \nNo mobile phones allowed.",
     "teamSize": "1",
     "date": "26",
-    "timing": "1:00 PM - 4:00 PM"
+    "timing": "1:00 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "Electroblitz",
@@ -861,7 +896,8 @@
     "eventRules": "Participants should strictly adhere to the time limit.\nParticipants are barred from using mobile phones and the internet. \nDecision of the judges shall be final. \nParticipants shall not indulge in any form of malpractice.",
     "teamSize": "2",
     "date": "24",
-    "timing": "1:30 PM - 4:30 PM"
+    "timing": "1:30 PM - 4:30 PM",
+    "closed": false
   },
   {
     "eventName": "League of Drones",
@@ -879,13 +915,14 @@
     "eventId": "EVNT0039",
     "contact_name_1": "PRAGATHEESH R J",
     "contact_mobile_1": 8056920879,
-    "contact_name_2": "KISHORE S",
-    "contact_mobile_2": 9894268704,
+    "contact_name_2": "SUBASH D",
+    "contact_mobile_2": 6379003794,
     "hall": "N Block Ground",
     "eventRules": "Drone frame dimension should be in range of (210mm-350mm).\nEach Team can have maximum of 3 members.\nEach participated team should bring their own drone and fly. Drone pilot can not be changed once they started.\nDrone should be at good condition.\nParticipants should bring required spare parts required for the event.\nDrones cannot be exchanged with another team.\nOne drone cannot be driven with more than i pilot.\nQuad should not fly above 15 ft high.\nEvent judges reserve all the rights to disqualify in case of any misbehavior.\nEvent judges rules and are final.\nNo extra time will be allocated for any reasons, after every round there will be 2 hours break utilize those time for charging.\nJudges result is the final.",
     "teamSize": "2 - 3",
     "date": "25",
-    "timing": "1:00 PM - 4:00 PM"
+    "timing": "1:00 PM - 4:00 PM",
+    "closed": false
   },
   {
     "eventName": "KRIYA OPEN QUIZ",
@@ -909,6 +946,7 @@
     "eventRules": "Teams of 2 are allowed \nNo googling answers ( It’s a waste of time don’t bother trying it !) \nNever discuss with your neighbors  \nQuiz masters decision is the final \nRound-wise rules will be informed during the event",
     "teamSize": "1",
     "date": "25",
-    "timing": "9:30 AM - 12:30 PM"
+    "timing": "9:30 AM - 12:30 PM",
+    "closed": false
   }
 ]
