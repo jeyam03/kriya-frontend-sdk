@@ -96,7 +96,7 @@
     "c1Num": "9789348224",
     "c2Name": "YOGENDRAA S N",
     "c2Num": "8608782082",
-    "maxCount": "65",
+    "maxCount": "50",
     "desc": "The workshop focuses on the basic conceptual ideas behind the characteristics, challenges and network configurations of IoT along with Data Collection, Data Processing and Data Analytics including Cloud Computing and Big data. It also focuses on the MQTT usage of various embedded systems (Aurdino, Raspberry Pi). The final part of the workshop will be the hands-on training with embedded systems which will be provided to the participants.",
     "agenda": [
       [
