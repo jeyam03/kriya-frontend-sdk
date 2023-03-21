@@ -80,6 +80,14 @@ const Accomodation = () => {
   }, []);
 
   const handleProceed = () => {
+    setFormData({
+      ...formData,
+      days: dates.indexOf(formData.to) - dates.indexOf(formData.from),
+      amount: ((dates.indexOf(formData.to) - dates.indexOf(formData.from)) * roomCost[formData.roomType]) +
+        (50 * (formData.breakfast1 + formData.breakfast2 + formData.breakfast3 + formData.dinner1 + formData.dinner2 + formData.dinner3)) +
+        (formData.amenities === "Yes" && 100 * (dates.indexOf(formData.to) - dates.indexOf(formData.from)))
+    });
+
     toast.promise(fetchAccomodationRegister(formData), {
       loading: "Registering...",
       success: (res) => {
