@@ -36,7 +36,7 @@ const Inputfield = ({
             setValue(e.target.value);
             setError("");
           }}
-          className={`${referral && "pl-12"} px-4 py-3  rounded-lg w-full text-slate bg-gray bg-clip-padding bg-no-repeat border-2 border-solid ${
+          className={`${referral && "pl-12"} p-3 px-4  rounded-lg w-full text-slate bg-gray bg-clip-padding bg-no-repeat border-2 border-solid ${
             error.length !== 0 ? "border-yellow" : "border-gray"
           } first-letter:transition ease-in-out m-0 focus:outline-none hover:border-[#B3B3B3] focus:border-[#2584FF]`}
         />

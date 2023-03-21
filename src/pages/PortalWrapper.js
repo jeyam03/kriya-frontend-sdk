@@ -13,6 +13,7 @@ import { MdOutlineEmojiEvents } from "react-icons/md";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { FaRegUserCircle } from "react-icons/fa";
 import "../styles/gradientAnimation.css";
+import { BiBuildingHouse } from "react-icons/bi";
 
 const PortalWrapper = ({ children }) => {
   return (
@@ -123,6 +124,13 @@ const NavBarForDesktop = () => {
           >
             <HiOutlinePresentationChartBar className="text-2xl" />
             <p className="">Paper Presentations</p>
+          </Link>
+          <Link
+            to="/portal/accommodation"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2 flex items-center space-x-4"
+          >
+            <BiBuildingHouse className="text-2xl" />
+            <p className="">Accommodations</p>
           </Link>
         </div>
         <div className="py-8">
@@ -275,8 +283,9 @@ const NavBarForMobile = () => {
       </div>
 
       <div
-        className={`divide-y divide-gray-600 ${isOpen ? "h-fit" : "h-0 overflow-hidden"
-          } transition-all ease-in-out duration-300`}
+        className={`divide-y divide-gray-600 ${
+          isOpen ? "h-fit" : "h-0 overflow-hidden"
+        } transition-all ease-in-out duration-300`}
       >
         <div className="py-8 w-full flex flex-col px-6">
           <Link
@@ -286,7 +295,7 @@ const NavBarForMobile = () => {
           >
             Home
           </Link>
-          {(localStorage.getItem("token") && userDetails) ? (
+          {localStorage.getItem("token") && userDetails ? (
             <Link
               to="/portal/profile"
               className="w-full text-gray-600 text-left hover:text-black text-base py-2"
@@ -322,10 +331,19 @@ const NavBarForMobile = () => {
           >
             Paper Presentations
           </Link>
+          <Link
+            to="/portal/accommodation"
+            id="navElements"
+            className="w-full text-gray-600 text-left hover:text-black text-base py-2"
+          >
+            Accommodations
+          </Link>
         </div>
         <div className="py-8 pb-16 px-6" id="navOpen">
           <div className="flex space-x-4 items-center">
-            <h3 className="text-base font-semibold py-3" id="navElements">Workshops</h3>
+            <h3 className="text-base font-semibold py-3" id="navElements">
+              Workshops
+            </h3>
             {/* <div className="w-fit h-fit p-2 rounded-lg"
               id="early-bird"
             >
@@ -424,7 +442,7 @@ const EventNav = ({
   noMargin = false,
   events,
   isMobile = false,
-  openState = [true, () => { }],
+  openState = [true, () => {}],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -459,15 +477,17 @@ const EventNav = ({
   return (
     <React.Fragment>
       <button
-        className={`flex justify-between group items-center ${!noMargin && "mt-0"
-          } my-2`}
+        className={`flex justify-between group items-center ${
+          !noMargin && "mt-0"
+        } my-2`}
         onClick={() => setHideContent(!hideContent)}
         id="navElements"
       >
         <div>
           <IoMdArrowDropright
-            className={`text-lg text-gray-500 ${hideContent ? "rotate-90" : "rotate-0"
-              } transition-all`}
+            className={`text-lg text-gray-500 ${
+              hideContent ? "rotate-90" : "rotate-0"
+            } transition-all`}
           />
         </div>
         <p
@@ -477,8 +497,9 @@ const EventNav = ({
         </p>
       </button>
       <div
-        className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
-          } transition-all overflow-hidden flex flex-col`}
+        className={`${
+          !hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+        } transition-all overflow-hidden flex flex-col`}
         id="navElements"
       >
         {events
@@ -513,7 +534,7 @@ const GoldNav = ({
   noMargin = false,
   goldEvents,
   isMobile = false,
-  openState = [true, () => { }],
+  openState = [true, () => {}],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -571,7 +592,7 @@ const WorkNav = ({
   noMargin = false,
   workshops,
   isMobile = false,
-  openState = [true, () => { }],
+  openState = [true, () => {}],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
@@ -615,15 +636,17 @@ const WorkNav = ({
           )}
       </div>
       <button
-        className={`flex justify-between group items-center ${!noMargin && "mt-0"
-          } my-2 pl-2`}
+        className={`flex justify-between group items-center ${
+          !noMargin && "mt-0"
+        } my-2 pl-2`}
         onClick={() => setHideContent(!hideContent)}
         id="navElements"
       >
         <div>
           <IoMdArrowDropright
-            className={`text-lg text-gray-500 ${hideContent ? "rotate-90" : "rotate-0"
-              } transition-all`}
+            className={`text-lg text-gray-500 ${
+              hideContent ? "rotate-90" : "rotate-0"
+            } transition-all`}
           />
         </div>
         <p className={`w-full text-sm text-gray-500 py-2 pl-1`}>
@@ -631,8 +654,9 @@ const WorkNav = ({
         </p>
       </button>
       <div
-        className={`${!hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
-          } transition-all overflow-hidden flex flex-col`}
+        className={`${
+          !hideContent ? "h-0 overflow-hidden" : "flex h-fit mb-8"
+        } transition-all overflow-hidden flex flex-col`}
         id="navElements"
       >
         {workshops
@@ -667,7 +691,7 @@ const PaperNav = ({
   noMargin = false,
   papers,
   isMobile = false,
-  openState = [true, () => { }],
+  openState = [true, () => {}],
 }) => {
   const [isOpen, setIsOpen] = openState;
   const [hideContent, setHideContent] = useState(false);
