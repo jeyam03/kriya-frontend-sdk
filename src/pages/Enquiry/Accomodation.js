@@ -128,7 +128,12 @@ const Accomodation = () => {
 
   return (
     <main className="h-full w-full p-8 pt-16 lg:py-8 lg:px-20 font-poppins bg-white">
-      <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
+      <h1 className="text-xl font-semibold font-poppins w-full text-center">
+        The page you were looking for is experiencing technical
+        difficulties, but our team of tech wizards is working on a fix. Please check back in 15 minutes. In the
+        meantime, why not explore some of our other electrifying events?
+      </h1>
+      {/* <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
         <div className="w-fit">
           <h1 className="mt-1 text-4xl font-bold relative z-10">
             Apply for Accomodation
@@ -636,7 +641,7 @@ const Accomodation = () => {
             </button>
           </div>
         )}
-      </section>
+      </section> */}
     </main>
   );
 };
