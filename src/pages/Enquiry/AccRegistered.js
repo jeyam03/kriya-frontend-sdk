@@ -78,7 +78,7 @@ const AccRegistered = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">No. of Days</h1>
-                <p className="text-lg font-medium">{parseInt(accomodationDetails.to.slice(0, 2)) - parseInt(accomodationDetails.from.slice(0, 2))} Days</p>
+                <p className="text-lg font-medium">{accomodationDetails.days} Days</p>
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">From Date</h1>
@@ -103,7 +103,7 @@ const AccRegistered = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">Total Amount</h1>
-                <p className="text-lg font-medium">₹ {(parseInt(accomodationDetails.to.slice(0, 2)) - parseInt(accomodationDetails.from.slice(0, 2))) * roomCost[accomodationDetails.roomType] + (50 * (accomodationDetails.breakfast1 + accomodationDetails.breakfast2 + accomodationDetails.breakfast3 + accomodationDetails.dinner1 + accomodationDetails.dinner2 + accomodationDetails.dinner3)) + (accomodationDetails.amenities === "Yes" && 100 * (parseInt(accomodationDetails.to.slice(0, 2)) - parseInt(accomodationDetails.from.slice(0, 2))))}</p>
+                <p className="text-lg font-medium">₹ {accomodationDetails.amount}</p>
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">Payment Status</h1>
