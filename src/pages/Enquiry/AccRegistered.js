@@ -15,13 +15,6 @@ const AccRegistered = () => {
   const [accomodationDetails, setAccomodationDetails] = useState({});
   const navigate = useNavigate();
 
-  const roomCost = {
-    "Common Free Hall": 0,
-    "Two Sharing": 150,
-    "4 / 6 Sharing with common bathroom": 150,
-    "2 Sharing with attached bathroom": 600
-  };
-
   useEffect(() => {
     toast.promise(fetchAccomodationDetailsByEmail(localStorage.getItem("email")), {
       loading: "Loading...",
@@ -40,12 +33,7 @@ const AccRegistered = () => {
 
   return (
     <main className="h-full w-full p-8 pt-16 lg:py-8 lg:px-20 font-poppins bg-[#181818] text-white">
-      <h1 className="text-xl font-semibold font-poppins w-full text-center">
-        The page you were looking for is experiencing technical
-        difficulties, but our team of tech wizards is working on a fix. Please check back in 15 minutes. In the
-        meantime, why not explore some of our other electrifying events?
-      </h1>
-      {/* <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
+      <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
         <div className="w-fit">
           <h1 className="mt-1 text-4xl font-bold relative z-10">Accomodation Details</h1>
           <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
@@ -148,7 +136,7 @@ const AccRegistered = () => {
             </div>
           )
         }
-      </section> */}
+      </section>
     </main>
   );
 };

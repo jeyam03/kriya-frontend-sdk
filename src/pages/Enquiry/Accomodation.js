@@ -24,8 +24,8 @@ const Accomodation = () => {
     phone: "",
     gender: "Male",
     roomType: "Common Free Hall",
-    from: "23rd March 2023",
-    to: "26th March 2023",
+    from: "23rd March Night",
+    to: "26th March Evening",
     breakfast1: false,
     breakfast2: false,
     breakfast3: false,
@@ -37,12 +37,17 @@ const Accomodation = () => {
     amount: 0,
   });
   const [paid, setPaid] = useState(false);
-  const dates = [
-    "23rd March 2023",
-    "24th March 2023",
-    "25th March 2023",
-    "26th March 2023",
+  const fromDates = [
+    "23rd March Night",
+    "24th March Morning",
+    "25th March Morning",
+    "26th March Morning",
   ];
+  const toDates = [
+    "24th March Night",
+    "25th March Night",
+    "26th March Evening",
+  ]
   const roomCost = {
     "Common Free Hall": 0,
     "Two Sharing": 150,
@@ -97,10 +102,24 @@ const Accomodation = () => {
   const handleProceed = async () => {
     const newFormData = {
       ...formData,
-      days: dates.indexOf(formData.to) - dates.indexOf(formData.from),
-      amount: (dates.indexOf(formData.to) -
-        dates.indexOf(formData.from)) *
-        roomCost[formData.roomType] +
+      days: (formData.from === "23rd March Night" ?
+        (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 1
+        ) : (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 2
+        )
+      ),
+      amount: ((formData.from === "23rd March Night" ?
+        (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 1
+        ) : (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 2
+        )
+      ) * roomCost[formData.roomType]) +
         50 *
         (formData.breakfast1 +
           formData.breakfast2 +
@@ -110,8 +129,15 @@ const Accomodation = () => {
           formData.dinner3) +
         (formData.amenities === "Yes" &&
           100 *
-          (dates.indexOf(formData.to) -
-            dates.indexOf(formData.from)))
+          (formData.from === "23rd March Night" ?
+            (
+              toDates.indexOf(formData.to) -
+              fromDates.indexOf(formData.from) + 1
+            ) : (
+              toDates.indexOf(formData.to) -
+              fromDates.indexOf(formData.from) + 2
+            )
+          ))
     };
 
     toast.promise(fetchAccomodationRegister(newFormData), {
@@ -128,12 +154,7 @@ const Accomodation = () => {
 
   return (
     <main className="h-full w-full p-8 pt-16 lg:py-8 lg:px-20 font-poppins bg-white">
-      <h1 className="text-xl font-semibold font-poppins w-full text-center">
-        The page you were looking for is experiencing technical
-        difficulties, but our team of tech wizards is working on a fix. Please check back in 15 minutes. In the
-        meantime, why not explore some of our other electrifying events?
-      </h1>
-      {/* <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
+      <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
         <div className="w-fit">
           <h1 className="mt-1 text-4xl font-bold relative z-10">
             Apply for Accomodation
@@ -296,7 +317,7 @@ const Accomodation = () => {
                             formData.from,
                             (val) => setFormData({ ...formData, from: val }),
                           ]}
-                          options={dates.slice(0, dates.indexOf(formData.to))}
+                          options={fromDates}
                         />
                         <Dropdown
                           title="To"
@@ -304,16 +325,22 @@ const Accomodation = () => {
                             formData.to,
                             (val) => setFormData({ ...formData, to: val }),
                           ]}
-                          options={dates.slice(
-                            dates.indexOf(formData.from) + 1
-                          )}
+                          options={toDates}
                         />
                         {formData.from && formData.to && (
                           <p className="mt-2 pl-2">
                             No. of days:{" "}
                             <b className="font-semibold">
-                              {dates.indexOf(formData.to) -
-                                dates.indexOf(formData.from)}
+                              {
+                                formData.from === "23rd March Night" ?
+                                  (
+                                    toDates.indexOf(formData.to) -
+                                    fromDates.indexOf(formData.from) + 1
+                                  ) : (
+                                    toDates.indexOf(formData.to) -
+                                    fromDates.indexOf(formData.from) + 2
+                                  )
+                              }
                             </b>
                           </p>
                         )}
@@ -347,7 +374,7 @@ const Accomodation = () => {
                             formData.from,
                             (val) => setFormData({ ...formData, from: val }),
                           ]}
-                          options={dates.slice(0, dates.indexOf(formData.to))}
+                          options={fromDates}
                         />
                         <Dropdown
                           title="To"
@@ -355,15 +382,21 @@ const Accomodation = () => {
                             formData.to,
                             (val) => setFormData({ ...formData, to: val }),
                           ]}
-                          options={dates.slice(
-                            dates.indexOf(formData.from) + 1
-                          )}
+                          options={toDates}
                         />
                         <p className="mt-2 pl-2">
                           No. of days:{" "}
                           <b className="font-semibold">
-                            {dates.indexOf(formData.to) -
-                              dates.indexOf(formData.from)}
+                            {
+                              formData.from === "23rd March Night" ?
+                                (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 1
+                                ) : (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 2
+                                )
+                            }
                           </b>
                         </p>
                       </div>
@@ -517,16 +550,31 @@ const Accomodation = () => {
                         <p className="font-semibold">Accomodation</p>
                         <p className="text-sm">{formData.roomType}</p>
                         <p className="text-sm">
-                          {dates.indexOf(formData.to) -
-                            dates.indexOf(formData.from)}{" "}
-                          Days
+                          {
+                            formData.from === "23rd March Night" ?
+                              (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 1
+                              ) : (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 2
+                              )
+                          }
+                          {" "}Days
                         </p>
                       </div>
 
                       <p className="text-lg font-semibold w-1/2 flex justify-end">
                         ₹{" "}
-                        {(dates.indexOf(formData.to) -
-                          dates.indexOf(formData.from)) *
+                        {(formData.from === "23rd March Night" ?
+                          (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 1
+                          ) : (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 2
+                          )
+                        ) *
                           roomCost[formData.roomType]}
                       </p>
                     </div>
@@ -555,8 +603,15 @@ const Accomodation = () => {
                       <div className="w-1/2">
                         <p className="">Amenities</p>
                         <p className="text-sm">
-                          {dates.indexOf(formData.to) -
-                            dates.indexOf(formData.from)}{" "}
+                          {(formData.from === "23rd March Night" ?
+                            (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 1
+                            ) : (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 2
+                            )
+                          )}{" "}
                           Days
                         </p>
                       </div>
@@ -564,8 +619,15 @@ const Accomodation = () => {
                         ₹{" "}
                         {formData.amenities === "Yes"
                           ? 100 *
-                          (dates.indexOf(formData.to) -
-                            dates.indexOf(formData.from))
+                          (formData.from === "23rd March Night" ?
+                            (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 1
+                            ) : (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 2
+                            )
+                          )
                           : 0}
                       </p>
                     </div>
@@ -573,9 +635,15 @@ const Accomodation = () => {
                       <p className="w-1/2 text-lg">Total</p>
                       <p className="text-xl font-semibold w-1/2 flex justify-end">
                         ₹{" "}
-                        {(dates.indexOf(formData.to) -
-                          dates.indexOf(formData.from)) *
-                          roomCost[formData.roomType] +
+                        {((formData.from === "23rd March Night" ?
+                          (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 1
+                          ) : (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 2
+                          )
+                        ) * roomCost[formData.roomType]) +
                           50 *
                           (formData.breakfast1 +
                             formData.breakfast2 +
@@ -585,8 +653,15 @@ const Accomodation = () => {
                             formData.dinner3) +
                           (formData.amenities === "Yes" &&
                             100 *
-                            (dates.indexOf(formData.to) -
-                              dates.indexOf(formData.from)))}
+                            (formData.from === "23rd March Night" ?
+                              (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 1
+                              ) : (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 2
+                              )
+                            ))}
                       </p>
                     </div>
                   </div>
@@ -607,6 +682,18 @@ const Accomodation = () => {
                           formData.phone === ""
                         ) {
                           toast.error("Please fill all the details");
+                        } else if (
+                          (formData.from === "23rd March Night" ?
+                            (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 1
+                            ) : (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 2
+                            )
+                          ) <= 0
+                        ) {
+                          toast.error("Please select valid dates")
                         } else {
                           handleProceed();
                         }
@@ -641,7 +728,7 @@ const Accomodation = () => {
             </button>
           </div>
         )}
-      </section> */}
+      </section>
     </main>
   );
 };
