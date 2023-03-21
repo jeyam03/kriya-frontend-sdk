@@ -156,6 +156,10 @@ const Section6 = () => {
                         imgurl="/assets/Stalls/Fabino.jpg"
                         title="Fabino"
                       />
+                      <Sponsors
+                        imgurl="/assets/Stalls/Annapoorna.jpg"
+                        title="Annapoorna"
+                      />
                     </React.Fragment>
                   )}
                 </div>
