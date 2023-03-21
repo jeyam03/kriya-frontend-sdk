@@ -122,6 +122,11 @@ const AccRegistered = () => {
                   <b className="font-semibold">UPI Payments</b>.
                 </p>
               </div>
+              <p className="mt-16 text-sm">
+                For accommodation related queries, contact:<br />
+                <b className="font-semibold">BHARATH R - <a href="tel:9344785172">9344785172</a></b><br />
+                <b className="font-semibold">SREEHARI - <a href="tel:8825721923">8825721923</a></b><br />
+              </p>
             </div>
           ) : (
             <div className="mt-12">
