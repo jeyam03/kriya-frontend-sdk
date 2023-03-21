@@ -95,7 +95,11 @@ const Accomodation = () => {
   return (
     <main className="h-full w-full p-8 pt-16 lg:py-8 lg:px-20 font-poppins bg-white">
       <section className="overflow-y-scroll h-full w-full pr-2 pb-12">
-        <h1 className="mt-1 text-4xl font-bold relative z-10">Apply for Accomodation</h1>
+        <div className="w-fit">
+          <h1 className="mt-1 text-4xl font-bold relative z-10">Apply for Accomodation</h1>
+          <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+        </div>
+
         {
           !accomodationDetails ? (
             <div className="flex flex-col">
@@ -425,7 +429,7 @@ const Accomodation = () => {
                       </div>
 
                       <div className="lg:w-1/2 w-full flex flex-col justify-center lg:justify-end items-center lg:items-end pt-12 lg:pt-0 lg:pr-16">
-                        <p className="text-sm pb-4 text-right">You can pay <b className="font-semibold">on the spot</b> when you arrive. <br/>We accept only <b className="font-semibold">UPI Payments</b>.</p>
+                        <p className="text-sm pb-4 text-right">You can pay <b className="font-semibold">on the spot</b> when you arrive. <br />We accept only <b className="font-semibold">UPI Payments</b>.</p>
                         <button
                           className="bg-[#C80067] w-fit text-white font-semibold rounded-lg py-3 px-8 flex justify-center items-center"
                           onClick={() => {
