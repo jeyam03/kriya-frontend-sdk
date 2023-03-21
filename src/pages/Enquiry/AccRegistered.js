@@ -115,6 +115,12 @@ const AccRegistered = () => {
                   )}</p>
                   <p className={`text-lg font-medium ${accomodationDetails.payment ? "text-green-500" : "text-red-500"}`}>{accomodationDetails.payment ? "Paid" : "Not Paid"}</p>
                 </div>
+                <p className="text-sm pb-4">
+                  You can pay <b className="font-semibold">on the spot</b>{" "}
+                  when you arrive. <br />
+                  We accept only{" "}
+                  <b className="font-semibold">UPI Payments</b>.
+                </p>
               </div>
             </div>
           ) : (
