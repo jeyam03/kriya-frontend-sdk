@@ -30,7 +30,7 @@ const AccRegistered = () => {
           console.log(res.data.accommodations);
           setAccomodationDetails(res.data.accommodations);
         }
-        return "Loaded Successfullyg";
+        return "Loaded Successfully";
       },
       error: (err) => {
         console.log(err);
@@ -90,12 +90,12 @@ const AccRegistered = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">Meals</h1>
+                {accomodationDetails.dinner1 && <li className="pl-4 text-lg font-medium">23th Dinner</li>}
                 {accomodationDetails.breakfast1 && <li className="pl-4 text-lg font-medium">24th Breakfast</li>}
+                {accomodationDetails.dinner2 && <li className="pl-4 text-lg font-medium">24th Dinner</li>}
                 {accomodationDetails.breakfast2 && <li className="pl-4 text-lg font-medium">25th Breakfast</li>}
+                {accomodationDetails.dinner3 && <li className="pl-4 text-lg font-medium">25th Dinner</li>}
                 {accomodationDetails.breakfast3 && <li className="pl-4 text-lg font-medium">26th Breakfast</li>}
-                {accomodationDetails.dinner1 && <li className="pl-4 text-lg font-medium">24th Dinner</li>}
-                {accomodationDetails.dinner2 && <li className="pl-4 text-lg font-medium">25th Dinner</li>}
-                {accomodationDetails.dinner3 && <li className="pl-4 text-lg font-medium">26th Dinner</li>}
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">Amenities Required</h1>

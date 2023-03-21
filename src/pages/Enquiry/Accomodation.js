@@ -33,6 +33,8 @@ const Accomodation = () => {
     dinner2: false,
     dinner3: false,
     amenities: "No",
+    days: 0,
+    amount: 0,
   });
   const [paid, setPaid] = useState(false);
   const dates = [
@@ -92,8 +94,27 @@ const Accomodation = () => {
     );
   }, []);
 
-  const handleProceed = () => {
-    toast.promise(fetchAccomodationRegister(formData), {
+  const handleProceed = async () => {
+    const newFormData = {
+      ...formData,
+      days: dates.indexOf(formData.to) - dates.indexOf(formData.from),
+      amount: (dates.indexOf(formData.to) -
+        dates.indexOf(formData.from)) *
+        roomCost[formData.roomType] +
+        50 *
+        (formData.breakfast1 +
+          formData.breakfast2 +
+          formData.breakfast3 +
+          formData.dinner1 +
+          formData.dinner2 +
+          formData.dinner3) +
+        (formData.amenities === "Yes" &&
+          100 *
+          (dates.indexOf(formData.to) -
+            dates.indexOf(formData.from)))
+    };
+
+    toast.promise(fetchAccomodationRegister(newFormData), {
       loading: "Registering...",
       success: (res) => {
         navigate("/portal/acc-registered");
@@ -359,27 +380,13 @@ const Accomodation = () => {
                       <p className="w-1/3 flex justify-center">Dinner</p>
                     </div>
                     <div className="flex flex-row mt-4 w-full items-center">
-                      <p className="w-1/3">24th March</p>
+                      <p className="w-1/3">23rd March</p>
                       <div className="w-1/3 flex justify-center">
-                        <button
-                          className={`${
-                            formData.breakfast1 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
-                          onClick={() => {
-                            setFormData({
-                              ...formData,
-                              breakfast1: !formData.breakfast1,
-                            });
-                          }}
-                        >
-                          <FiCheck className="w-8 h-8" />
-                        </button>
                       </div>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.dinner1 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.dinner1 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
@@ -392,16 +399,15 @@ const Accomodation = () => {
                       </div>
                     </div>
                     <div className="flex flex-row mt-4 w-full items-center">
-                      <p className="w-1/3">25th March</p>
+                      <p className="w-1/3">24th March</p>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.breakfast2 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.breakfast1 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
-                              breakfast2: !formData.breakfast2,
+                              breakfast1: !formData.breakfast1,
                             });
                           }}
                         >
@@ -410,9 +416,8 @@ const Accomodation = () => {
                       </div>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.dinner2 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.dinner2 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
@@ -425,12 +430,42 @@ const Accomodation = () => {
                       </div>
                     </div>
                     <div className="flex flex-row mt-4 w-full items-center">
+                      <p className="w-1/3">25th March</p>
+                      <div className="w-1/3 flex justify-center">
+                        <button
+                          className={`${formData.breakfast2 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              breakfast2: !formData.breakfast2,
+                            });
+                          }}
+                        >
+                          <FiCheck className="w-8 h-8" />
+                        </button>
+                      </div>
+                      <div className="w-1/3 flex justify-center">
+                        <button
+                          className={`${formData.dinner3 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              dinner3: !formData.dinner3,
+                            });
+                          }}
+                        >
+                          <FiCheck className="w-8 h-8" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex flex-row mt-4 w-full items-center">
                       <p className="w-1/3">26th March</p>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.breakfast3 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.breakfast3 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
@@ -442,19 +477,6 @@ const Accomodation = () => {
                         </button>
                       </div>
                       <div className="w-1/3 flex justify-center">
-                        <button
-                          className={`${
-                            formData.dinner3 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
-                          onClick={() => {
-                            setFormData({
-                              ...formData,
-                              dinner3: !formData.dinner3,
-                            });
-                          }}
-                        >
-                          <FiCheck className="w-8 h-8" />
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -537,8 +559,8 @@ const Accomodation = () => {
                         ₹{" "}
                         {formData.amenities === "Yes"
                           ? 100 *
-                            (dates.indexOf(formData.to) -
-                              dates.indexOf(formData.from))
+                          (dates.indexOf(formData.to) -
+                            dates.indexOf(formData.from))
                           : 0}
                       </p>
                     </div>
@@ -550,16 +572,16 @@ const Accomodation = () => {
                           dates.indexOf(formData.from)) *
                           roomCost[formData.roomType] +
                           50 *
-                            (formData.breakfast1 +
-                              formData.breakfast2 +
-                              formData.breakfast3 +
-                              formData.dinner1 +
-                              formData.dinner2 +
-                              formData.dinner3) +
+                          (formData.breakfast1 +
+                            formData.breakfast2 +
+                            formData.breakfast3 +
+                            formData.dinner1 +
+                            formData.dinner2 +
+                            formData.dinner3) +
                           (formData.amenities === "Yes" &&
                             100 *
-                              (dates.indexOf(formData.to) -
-                                dates.indexOf(formData.from)))}
+                            (dates.indexOf(formData.to) -
+                              dates.indexOf(formData.from)))}
                       </p>
                     </div>
                   </div>
