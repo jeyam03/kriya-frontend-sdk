@@ -30,6 +30,7 @@ const AccRegistered = () => {
           console.log(res.data.accommodations);
           setAccomodationDetails(res.data.accommodations);
         }
+        return "Loaded Successfullyg";
       },
       error: (err) => {
         console.log(err);
