@@ -17,15 +17,18 @@ import {
   fetchUserByEmail,
   fetchWorkshops,
   fetchPapers,
+  fetchAccomodationDetailsByEmail,
 } from "../API/call";
 import { IoIosArrowForward, IoMdLogOut } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState(null);
   const [paymentDetails, setPaymentDetails] = useState(null);
   const [eventDetails, setEventDetails] = useState(null);
   const [paperDetails, setPaperDetails] = useState(null);
+  const [accomodationDetails, setAccomodationDetails] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchUserByEmail(localStorage.getItem("email")).then((res) => {
@@ -57,6 +60,14 @@ const Profile = () => {
     fetchPaperDetailsByEmail(localStorage.getItem("email")).then((res) => {
       console.log(res.data);
       setPaperDetails(res.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchAccomodationDetailsByEmail(localStorage.getItem("email")).then((res) => {
+      if (res.data.accommodations) {
+        setAccomodationDetails(true);
+      }
     });
   }, []);
 
@@ -98,12 +109,28 @@ const Profile = () => {
             <MdOutlineModeEditOutline />
           </button> */}
         </div>
-        <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left px-4 lg:px-0">
-          {userDetails ? userDetails?.name : "XXXXX"}
-        </h1>
-        <h3 className="text-sm text-gray-300 mt-2 tracking-widest text-center lg:text-left ">
-          Profile
-        </h3>
+        <div className="flex flex-col lg:flex-row justify-between items-center w-full">
+          <div>
+            <h1 className="text-4xl mt-8 font-bold text-white text-center lg:text-left px-4 lg:px-0">
+              {userDetails ? userDetails?.name : "XXXXX"}
+            </h1>
+            <h3 className="text-sm text-gray-300 mt-2 tracking-widest text-center lg:text-left ">
+              Profile
+            </h3>
+          </div>
+          {
+
+          }
+          <button
+            onClick={() => {
+              navigate(`${accomodationDetails ? "/portal/acc-registered" : "/portal/accommodation"}`);
+            }}
+            className="flex items-center gap-2 mt-8 bg-[#C80067] text-white px-4 py-2 rounded-lg font-semibold"
+          >
+            {accomodationDetails ? "View your acommodation details here" : "Apply for Accommodation"}
+            <IoIosArrowForward />
+          </button>
+        </div>
       </div>
       {userDetails && (
         <div className="grid gap-16 grid-cols-1 lg:grid-cols-2 text-white px-8 lg:px-16">
