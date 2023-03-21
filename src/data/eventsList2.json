@@ -722,7 +722,7 @@
     "teamSize": "2",
     "date": "24",
     "timing": "9:30 AM - 12:30 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "Metaract",
