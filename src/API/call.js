@@ -48,7 +48,7 @@ export const fetchAccomodationRegister = (formData) =>
   axios.post(`${BASE_URL}/acc/`, formData, {});
 
 export const fetchAccomodationDetailsByEmail = (email) =>
-  axios.get(`${BASE_URL}/acc/${email}`, {});
+  axios.get(`${BASE_URL}/acc/email/${email}`, {});
 
 export const fetchPayGeneral = (formData) =>
   axios.post(`${PAYMENT_URL}/pay-general`, formData, {});
