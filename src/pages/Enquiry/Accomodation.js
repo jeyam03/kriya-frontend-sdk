@@ -587,7 +587,7 @@ const Accomodation = () => {
                   </div>
 
                   <div className="lg:w-1/2 w-full flex flex-col justify-center lg:justify-end items-center lg:items-end pt-12 lg:pt-0 lg:pr-16">
-                    <p className="text-sm pb-4 text-right">
+                    <p className="text-sm pb-4 text-center lg:text-right">
                       You can pay <b className="font-semibold">on the spot</b>{" "}
                       when you arrive. <br />
                       We accept only{" "}
