@@ -447,7 +447,7 @@
     "teamSize": "1",
     "date": "25",
     "timing": "1:30 PM - 4:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "CRYPTIQUE",
@@ -797,7 +797,7 @@
     "teamSize": "2",
     "date": "24",
     "timing": "1:30 PM - 4:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "FUTECH",

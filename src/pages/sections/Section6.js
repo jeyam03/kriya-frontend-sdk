@@ -86,7 +86,7 @@ const Section6 = () => {
             <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
               <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"STALL "}
+                  {"OTHER "}
                 </span>
                 Sponsors
               </p>
@@ -112,16 +112,16 @@ const Section6 = () => {
                         title="Creamery"
                       />
                       <Sponsors
-                        imgurl="/assets/Stalls/ChocoCrush.jpg"
-                        title="Choco Crush"
-                      />
-                      <Sponsors
                         imgurl="/assets/Stalls/KCOverseas.jpg"
                         title="KC Overseas"
                       />
                       <Sponsors
                         imgurl="/assets/Stalls/Time.jpg"
                         title="T.I.M.E"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/Annapoorna.jpg"
+                        title="Annapoorna"
                       />
                     </React.Fragment>
                   )}
@@ -149,16 +149,53 @@ const Section6 = () => {
                         title="Marvel"
                       />
                       <Sponsors
-                        imgurl="/assets/Stalls/EggSticka.jpeg"
-                        title="Egg Stickaa"
-                      />
-                      <Sponsors
                         imgurl="/assets/Stalls/Fabino.jpg"
                         title="Fabino"
                       />
                       <Sponsors
-                        imgurl="/assets/Stalls/Annapoorna.jpg"
-                        title="Annapoorna"
+                        imgurl="/assets/Stalls/RoyalZip.jpg"
+                        title="Royal Zip"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/saranya.jpeg"
+                        title="Studio 11"
+                      />
+                    </React.Fragment>
+                  )}
+                </div>
+              </div>
+
+              <div className="w-full max-w-full relative overflow-x-hidden h-48">
+                <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
+                  {Array(4).fill(
+                    <React.Fragment>
+                      <Sponsors
+                        imgurl="/assets/Stalls/ChocoCrush.jpg"
+                        title="Choco Crush"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/boc.png"
+                        title="Bluestone Overseas"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/sjs.jpeg"
+                        title="SJS Phone Accessories"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/parvesh.jpeg"
+                        title="90's Kids Mittai"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/zee.jpeg"
+                        title="Zee Taurus"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/chai.jpeg"
+                        title="Chai N Gupshup"
+                      />
+                      <Sponsors
+                        imgurl="/assets/Stalls/marudhamalai.png"
+                        title="Marudhamalai Juice"
                       />
                     </React.Fragment>
                   )}
