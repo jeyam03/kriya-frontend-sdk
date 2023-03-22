@@ -3,6 +3,7 @@ import Inputfield from "../../components/TextInput";
 import {
   fetchAccomodationDetailsByEmail,
   fetchAccomodationRegister,
+  fetchMasterAccommodation,
   fetchUserByEmail,
 } from "../../API/call";
 import Dropdown from "../../components/Dropdown";
@@ -23,7 +24,7 @@ const Accomodation = () => {
     city: "",
     phone: "",
     gender: "Male",
-    roomType: "Common Free Hall",
+    roomType: "",
     from: "23rd March Night",
     to: "26th March Evening",
     breakfast1: false,
@@ -55,6 +56,10 @@ const Accomodation = () => {
     "2 Sharing with attached bathroom": 600,
   };
   const [accomodationDetails, setAccomodationDetails] = useState(false);
+  const [maleCurrent, setMaleCurrent] = useState(0);
+  const [femaleCurrent, setFemaleCurrent] = useState(0);
+  const maleMax = 45;
+  const femaleMax = 16;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -97,6 +102,13 @@ const Accomodation = () => {
         },
       }
     );
+  }, []);
+
+  useEffect(() => {
+    fetchMasterAccommodation().then((res) => {
+      setMaleCurrent(res.data?.maleStats?.find((item) => item.roomType === "Common Free Hall")?.count);
+      setFemaleCurrent(res.data?.femaleStats?.find((item) => item.roomType === "Common Free Hall")?.count);
+    });
   }, []);
 
   const handleProceed = async () => {
@@ -306,8 +318,8 @@ const Accomodation = () => {
                           formData.roomType,
                           (val) => setFormData({ ...formData, roomType: val }),
                         ]}
-                        options={["Common Free Hall", "Two Sharing"]}
-                        amount={["Free", "₹ 150"]}
+                        options={maleCurrent >= maleMax ? ["Two Sharing"] : ["Common Free Hall", "Two Sharing"]}
+                        amount={maleCurrent >= maleMax ? ["₹ 150"] : ["Free", "₹ 150"]}
                         className="w-full lg:w-1/2"
                       />
                       <div className="flex flex-col w-full lg:w-1/2 justify-center">
@@ -327,23 +339,21 @@ const Accomodation = () => {
                           ]}
                           options={toDates}
                         />
-                        {formData.from && formData.to && (
-                          <p className="mt-2 pl-2">
-                            No. of days:{" "}
-                            <b className="font-semibold">
-                              {
-                                formData.from === "23rd March Night" ?
-                                  (
-                                    toDates.indexOf(formData.to) -
-                                    fromDates.indexOf(formData.from) + 1
-                                  ) : (
-                                    toDates.indexOf(formData.to) -
-                                    fromDates.indexOf(formData.from) + 2
-                                  )
-                              }
-                            </b>
-                          </p>
-                        )}
+                        <p className="mt-2 pl-2">
+                          No. of days:{" "}
+                          <b className="font-semibold">
+                            {
+                              formData.from === "23rd March Night" ?
+                                (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 1
+                                ) : (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 2
+                                )
+                            }
+                          </b>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -359,12 +369,9 @@ const Accomodation = () => {
                           formData.roomType,
                           (val) => setFormData({ ...formData, roomType: val }),
                         ]}
-                        options={[
-                          "Common Free Hall",
-                          "4 / 6 Sharing with common bathroom",
-                          "2 Sharing with attached bathroom",
-                        ]}
-                        amount={["Free", "₹ 150", "₹ 600"]}
+                        options={femaleCurrent >= femaleMax ? ["4 / 6 Sharing with common bathroom", "2 Sharing with attached bathroom"] : [
+                          "Common Free Hall", "4 / 6 Sharing with common bathroom", "2 Sharing with attached bathroom",]}
+                        amount={femaleCurrent >= femaleMax ? ["₹ 150", "₹ 600"] : ["Free", "₹ 150", "₹ 600"]}
                         className="w-full lg:w-2/3"
                       />
                       <div className="flex flex-col w-full lg:w-1/3 justify-center">
@@ -679,7 +686,8 @@ const Accomodation = () => {
                         if (
                           formData.city === "" ||
                           formData.residentialAddress === "" ||
-                          formData.phone === ""
+                          formData.phone === "" ||
+                          formData.roomType === ""
                         ) {
                           toast.error("Please fill all the details");
                         } else if (
