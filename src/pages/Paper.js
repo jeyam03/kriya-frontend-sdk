@@ -109,14 +109,15 @@ const Paper = () => {
           {!userPaperDetails.find((i) => i.paperId === id) ? (
             <button
               className="bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start"
-              onClick={() => {
-                window.confirm("Are you sure you want to register ?")
-                  ? handleRegister()
-                  : console.log("Cancelled");
-              }}
+              // onClick={() => {
+              //   window.confirm("Are you sure you want to register ?")
+              //     ? handleRegister()
+              //     : console.log("Cancelled");
+              // }}
             >
               <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
-                {"Register Here!"}
+                {/* {"Register Here!"} */}
+                {"Registrations Closed!"}
               </span>
             </button>
           ) : (

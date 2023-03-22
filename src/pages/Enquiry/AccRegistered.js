@@ -15,13 +15,6 @@ const AccRegistered = () => {
   const [accomodationDetails, setAccomodationDetails] = useState({});
   const navigate = useNavigate();
 
-  const roomCost = {
-    "Common Free Hall": 0,
-    "Two Sharing": 150,
-    "4 / 6 Sharing with common bathroom": 150,
-    "2 Sharing with attached bathroom": 600
-  };
-
   useEffect(() => {
     toast.promise(fetchAccomodationDetailsByEmail(localStorage.getItem("email")), {
       loading: "Loading...",
@@ -30,7 +23,7 @@ const AccRegistered = () => {
           console.log(res.data.accommodations);
           setAccomodationDetails(res.data.accommodations);
         }
-        return "Loaded Successfullyg";
+        return "Loaded Successfully";
       },
       error: (err) => {
         console.log(err);
@@ -90,12 +83,12 @@ const AccRegistered = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">Meals</h1>
+                {accomodationDetails.dinner1 && <li className="pl-4 text-lg font-medium">23th Dinner</li>}
                 {accomodationDetails.breakfast1 && <li className="pl-4 text-lg font-medium">24th Breakfast</li>}
+                {accomodationDetails.dinner2 && <li className="pl-4 text-lg font-medium">24th Dinner</li>}
                 {accomodationDetails.breakfast2 && <li className="pl-4 text-lg font-medium">25th Breakfast</li>}
+                {accomodationDetails.dinner3 && <li className="pl-4 text-lg font-medium">25th Dinner</li>}
                 {accomodationDetails.breakfast3 && <li className="pl-4 text-lg font-medium">26th Breakfast</li>}
-                {accomodationDetails.dinner1 && <li className="pl-4 text-lg font-medium">24th Dinner</li>}
-                {accomodationDetails.dinner2 && <li className="pl-4 text-lg font-medium">25th Dinner</li>}
-                {accomodationDetails.dinner3 && <li className="pl-4 text-lg font-medium">26th Dinner</li>}
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-xl font-semibold">Amenities Required</h1>
@@ -115,7 +108,18 @@ const AccRegistered = () => {
                   )}</p>
                   <p className={`text-lg font-medium ${accomodationDetails.payment ? "text-green-500" : "text-red-500"}`}>{accomodationDetails.payment ? "Paid" : "Not Paid"}</p>
                 </div>
+                <p className="text-sm pb-4">
+                  You can pay <b className="font-semibold">on the spot</b>{" "}
+                  when you arrive. <br />
+                  We accept only{" "}
+                  <b className="font-semibold">UPI Payments</b>.
+                </p>
               </div>
+              <p className="mt-16 text-sm">
+                For accommodation related queries, contact:<br />
+                <b className="font-semibold">BHARATH R - <a href="tel:9344785172">9344785172</a></b><br />
+                <b className="font-semibold">SREEHARI - <a href="tel:8825721923">8825721923</a></b><br />
+              </p>
             </div>
           ) : (
             <div className="mt-12">

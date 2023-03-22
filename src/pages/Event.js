@@ -311,7 +311,15 @@ const Event = () => {
             </p>
             <ul className="list-disc text-base tracking-wide text-justify text-[#3c4043] pl-4">
               {eventDetail.eventRules.split("\n").map((rule, index) => (
-                <li key={index}>{rule}</li>
+                <div>
+                  {
+                    rule.startsWith("->") ? (
+                      <li key={index} className="ml-4">{rule.substring(2)}</li>
+                    ) : (
+                      <li key={index}>{rule}</li>
+                    )
+                  }
+                </div>
               ))}
             </ul>
           </div>

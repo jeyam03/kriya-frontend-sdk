@@ -3,6 +3,7 @@ import Inputfield from "../../components/TextInput";
 import {
   fetchAccomodationDetailsByEmail,
   fetchAccomodationRegister,
+  fetchMasterAccommodation,
   fetchUserByEmail,
 } from "../../API/call";
 import Dropdown from "../../components/Dropdown";
@@ -23,9 +24,9 @@ const Accomodation = () => {
     city: "",
     phone: "",
     gender: "Male",
-    roomType: "Common Free Hall",
-    from: "23rd March 2023",
-    to: "26th March 2023",
+    roomType: "",
+    from: "23rd March Night",
+    to: "26th March Evening",
     breakfast1: false,
     breakfast2: false,
     breakfast3: false,
@@ -33,14 +34,21 @@ const Accomodation = () => {
     dinner2: false,
     dinner3: false,
     amenities: "No",
+    days: 0,
+    amount: 0,
   });
   const [paid, setPaid] = useState(false);
-  const dates = [
-    "23rd March 2023",
-    "24th March 2023",
-    "25th March 2023",
-    "26th March 2023",
+  const fromDates = [
+    "23rd March Night",
+    "24th March Morning",
+    "25th March Morning",
+    "26th March Morning",
   ];
+  const toDates = [
+    "24th March Night",
+    "25th March Night",
+    "26th March Evening",
+  ]
   const roomCost = {
     "Common Free Hall": 0,
     "Two Sharing": 150,
@@ -48,6 +56,10 @@ const Accomodation = () => {
     "2 Sharing with attached bathroom": 600,
   };
   const [accomodationDetails, setAccomodationDetails] = useState(false);
+  const [maleCurrent, setMaleCurrent] = useState(0);
+  const [femaleCurrent, setFemaleCurrent] = useState(0);
+  const maleMax = 45;
+  const femaleMax = 16;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -92,19 +104,58 @@ const Accomodation = () => {
     );
   }, []);
 
-  const handleProceed = () => {
-    setFormData({
-      ...formData,
-      days: dates.indexOf(formData.to) - dates.indexOf(formData.from),
-      amount: ((dates.indexOf(formData.to) - dates.indexOf(formData.from)) * roomCost[formData.roomType]) +
-        (50 * (formData.breakfast1 + formData.breakfast2 + formData.breakfast3 + formData.dinner1 + formData.dinner2 + formData.dinner3)) +
-        (formData.amenities === "Yes" && 100 * (dates.indexOf(formData.to) - dates.indexOf(formData.from)))
+  useEffect(() => {
+    fetchMasterAccommodation().then((res) => {
+      setMaleCurrent(res.data?.maleStats?.find((item) => item.roomType === "Common Free Hall")?.count);
+      setFemaleCurrent(res.data?.femaleStats?.find((item) => item.roomType === "Common Free Hall")?.count);
     });
+  }, []);
 
-    toast.promise(fetchAccomodationRegister(formData), {
+  const handleProceed = async () => {
+    const newFormData = {
+      ...formData,
+      days: (formData.from === "23rd March Night" ?
+        (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 1
+        ) : (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 2
+        )
+      ),
+      amount: ((formData.from === "23rd March Night" ?
+        (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 1
+        ) : (
+          toDates.indexOf(formData.to) -
+          fromDates.indexOf(formData.from) + 2
+        )
+      ) * roomCost[formData.roomType]) +
+        50 *
+        (formData.breakfast1 +
+          formData.breakfast2 +
+          formData.breakfast3 +
+          formData.dinner1 +
+          formData.dinner2 +
+          formData.dinner3) +
+        (formData.amenities === "Yes" &&
+          100 *
+          (formData.from === "23rd March Night" ?
+            (
+              toDates.indexOf(formData.to) -
+              fromDates.indexOf(formData.from) + 1
+            ) : (
+              toDates.indexOf(formData.to) -
+              fromDates.indexOf(formData.from) + 2
+            )
+          ))
+    };
+
+    toast.promise(fetchAccomodationRegister(newFormData), {
       loading: "Registering...",
       success: (res) => {
-        navigate("/acc-registered");
+        navigate("/portal/acc-registered");
         return "Registered Successfully";
       },
       error: (err) => {
@@ -267,8 +318,8 @@ const Accomodation = () => {
                           formData.roomType,
                           (val) => setFormData({ ...formData, roomType: val }),
                         ]}
-                        options={["Common Free Hall", "Two Sharing"]}
-                        amount={["Free", "₹ 150"]}
+                        options={maleCurrent >= maleMax ? ["Two Sharing"] : ["Common Free Hall", "Two Sharing"]}
+                        amount={maleCurrent >= maleMax ? ["₹ 150"] : ["Free", "₹ 150"]}
                         className="w-full lg:w-1/2"
                       />
                       <div className="flex flex-col w-full lg:w-1/2 justify-center">
@@ -278,7 +329,7 @@ const Accomodation = () => {
                             formData.from,
                             (val) => setFormData({ ...formData, from: val }),
                           ]}
-                          options={dates.slice(0, dates.indexOf(formData.to))}
+                          options={fromDates}
                         />
                         <Dropdown
                           title="To"
@@ -286,19 +337,23 @@ const Accomodation = () => {
                             formData.to,
                             (val) => setFormData({ ...formData, to: val }),
                           ]}
-                          options={dates.slice(
-                            dates.indexOf(formData.from) + 1
-                          )}
+                          options={toDates}
                         />
-                        {formData.from && formData.to && (
-                          <p className="mt-2 pl-2">
-                            No. of days:{" "}
-                            <b className="font-semibold">
-                              {dates.indexOf(formData.to) -
-                                dates.indexOf(formData.from)}
-                            </b>
-                          </p>
-                        )}
+                        <p className="mt-2 pl-2">
+                          No. of days:{" "}
+                          <b className="font-semibold">
+                            {
+                              formData.from === "23rd March Night" ?
+                                (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 1
+                                ) : (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 2
+                                )
+                            }
+                          </b>
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -314,12 +369,9 @@ const Accomodation = () => {
                           formData.roomType,
                           (val) => setFormData({ ...formData, roomType: val }),
                         ]}
-                        options={[
-                          "Common Free Hall",
-                          "4 / 6 Sharing with common bathroom",
-                          "2 Sharing with attached bathroom",
-                        ]}
-                        amount={["Free", "₹ 150", "₹ 600"]}
+                        options={femaleCurrent >= femaleMax ? ["4 / 6 Sharing with common bathroom", "2 Sharing with attached bathroom"] : [
+                          "Common Free Hall", "4 / 6 Sharing with common bathroom", "2 Sharing with attached bathroom",]}
+                        amount={femaleCurrent >= femaleMax ? ["₹ 150", "₹ 600"] : ["Free", "₹ 150", "₹ 600"]}
                         className="w-full lg:w-2/3"
                       />
                       <div className="flex flex-col w-full lg:w-1/3 justify-center">
@@ -329,7 +381,7 @@ const Accomodation = () => {
                             formData.from,
                             (val) => setFormData({ ...formData, from: val }),
                           ]}
-                          options={dates.slice(0, dates.indexOf(formData.to))}
+                          options={fromDates}
                         />
                         <Dropdown
                           title="To"
@@ -337,15 +389,21 @@ const Accomodation = () => {
                             formData.to,
                             (val) => setFormData({ ...formData, to: val }),
                           ]}
-                          options={dates.slice(
-                            dates.indexOf(formData.from) + 1
-                          )}
+                          options={toDates}
                         />
                         <p className="mt-2 pl-2">
                           No. of days:{" "}
                           <b className="font-semibold">
-                            {dates.indexOf(formData.to) -
-                              dates.indexOf(formData.from)}
+                            {
+                              formData.from === "23rd March Night" ?
+                                (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 1
+                                ) : (
+                                  toDates.indexOf(formData.to) -
+                                  fromDates.indexOf(formData.from) + 2
+                                )
+                            }
                           </b>
                         </p>
                       </div>
@@ -367,27 +425,13 @@ const Accomodation = () => {
                       <p className="w-1/3 flex justify-center">Dinner</p>
                     </div>
                     <div className="flex flex-row mt-4 w-full items-center">
-                      <p className="w-1/3">24th March</p>
+                      <p className="w-1/3">23rd March</p>
                       <div className="w-1/3 flex justify-center">
-                        <button
-                          className={`${
-                            formData.breakfast1 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
-                          onClick={() => {
-                            setFormData({
-                              ...formData,
-                              breakfast1: !formData.breakfast1,
-                            });
-                          }}
-                        >
-                          <FiCheck className="w-8 h-8" />
-                        </button>
                       </div>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.dinner1 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.dinner1 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
@@ -400,16 +444,15 @@ const Accomodation = () => {
                       </div>
                     </div>
                     <div className="flex flex-row mt-4 w-full items-center">
-                      <p className="w-1/3">25th March</p>
+                      <p className="w-1/3">24th March</p>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.breakfast2 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.breakfast1 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
-                              breakfast2: !formData.breakfast2,
+                              breakfast1: !formData.breakfast1,
                             });
                           }}
                         >
@@ -418,9 +461,8 @@ const Accomodation = () => {
                       </div>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.dinner2 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.dinner2 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
@@ -433,12 +475,42 @@ const Accomodation = () => {
                       </div>
                     </div>
                     <div className="flex flex-row mt-4 w-full items-center">
+                      <p className="w-1/3">25th March</p>
+                      <div className="w-1/3 flex justify-center">
+                        <button
+                          className={`${formData.breakfast2 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              breakfast2: !formData.breakfast2,
+                            });
+                          }}
+                        >
+                          <FiCheck className="w-8 h-8" />
+                        </button>
+                      </div>
+                      <div className="w-1/3 flex justify-center">
+                        <button
+                          className={`${formData.dinner3 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          onClick={() => {
+                            setFormData({
+                              ...formData,
+                              dinner3: !formData.dinner3,
+                            });
+                          }}
+                        >
+                          <FiCheck className="w-8 h-8" />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex flex-row mt-4 w-full items-center">
                       <p className="w-1/3">26th March</p>
                       <div className="w-1/3 flex justify-center">
                         <button
-                          className={`${
-                            formData.breakfast3 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
+                          className={`${formData.breakfast3 && "bg-[#C80067]"
+                            } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
                           onClick={() => {
                             setFormData({
                               ...formData,
@@ -450,19 +522,6 @@ const Accomodation = () => {
                         </button>
                       </div>
                       <div className="w-1/3 flex justify-center">
-                        <button
-                          className={`${
-                            formData.dinner3 && "bg-[#C80067]"
-                          } border-2 border-[#C80067] text-white rounded-lg font-poppins flex items-center`}
-                          onClick={() => {
-                            setFormData({
-                              ...formData,
-                              dinner3: !formData.dinner3,
-                            });
-                          }}
-                        >
-                          <FiCheck className="w-8 h-8" />
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -498,16 +557,31 @@ const Accomodation = () => {
                         <p className="font-semibold">Accomodation</p>
                         <p className="text-sm">{formData.roomType}</p>
                         <p className="text-sm">
-                          {dates.indexOf(formData.to) -
-                            dates.indexOf(formData.from)}{" "}
-                          Days
+                          {
+                            formData.from === "23rd March Night" ?
+                              (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 1
+                              ) : (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 2
+                              )
+                          }
+                          {" "}Days
                         </p>
                       </div>
 
                       <p className="text-lg font-semibold w-1/2 flex justify-end">
                         ₹{" "}
-                        {(dates.indexOf(formData.to) -
-                          dates.indexOf(formData.from)) *
+                        {(formData.from === "23rd March Night" ?
+                          (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 1
+                          ) : (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 2
+                          )
+                        ) *
                           roomCost[formData.roomType]}
                       </p>
                     </div>
@@ -536,8 +610,15 @@ const Accomodation = () => {
                       <div className="w-1/2">
                         <p className="">Amenities</p>
                         <p className="text-sm">
-                          {dates.indexOf(formData.to) -
-                            dates.indexOf(formData.from)}{" "}
+                          {(formData.from === "23rd March Night" ?
+                            (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 1
+                            ) : (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 2
+                            )
+                          )}{" "}
                           Days
                         </p>
                       </div>
@@ -545,8 +626,15 @@ const Accomodation = () => {
                         ₹{" "}
                         {formData.amenities === "Yes"
                           ? 100 *
-                            (dates.indexOf(formData.to) -
-                              dates.indexOf(formData.from))
+                          (formData.from === "23rd March Night" ?
+                            (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 1
+                            ) : (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 2
+                            )
+                          )
                           : 0}
                       </p>
                     </div>
@@ -554,26 +642,39 @@ const Accomodation = () => {
                       <p className="w-1/2 text-lg">Total</p>
                       <p className="text-xl font-semibold w-1/2 flex justify-end">
                         ₹{" "}
-                        {(dates.indexOf(formData.to) -
-                          dates.indexOf(formData.from)) *
-                          roomCost[formData.roomType] +
+                        {((formData.from === "23rd March Night" ?
+                          (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 1
+                          ) : (
+                            toDates.indexOf(formData.to) -
+                            fromDates.indexOf(formData.from) + 2
+                          )
+                        ) * roomCost[formData.roomType]) +
                           50 *
-                            (formData.breakfast1 +
-                              formData.breakfast2 +
-                              formData.breakfast3 +
-                              formData.dinner1 +
-                              formData.dinner2 +
-                              formData.dinner3) +
+                          (formData.breakfast1 +
+                            formData.breakfast2 +
+                            formData.breakfast3 +
+                            formData.dinner1 +
+                            formData.dinner2 +
+                            formData.dinner3) +
                           (formData.amenities === "Yes" &&
                             100 *
-                              (dates.indexOf(formData.to) -
-                                dates.indexOf(formData.from)))}
+                            (formData.from === "23rd March Night" ?
+                              (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 1
+                              ) : (
+                                toDates.indexOf(formData.to) -
+                                fromDates.indexOf(formData.from) + 2
+                              )
+                            ))}
                       </p>
                     </div>
                   </div>
 
                   <div className="lg:w-1/2 w-full flex flex-col justify-center lg:justify-end items-center lg:items-end pt-12 lg:pt-0 lg:pr-16">
-                    <p className="text-sm pb-4 text-right">
+                    <p className="text-sm pb-4 text-center lg:text-right">
                       You can pay <b className="font-semibold">on the spot</b>{" "}
                       when you arrive. <br />
                       We accept only{" "}
@@ -585,9 +686,22 @@ const Accomodation = () => {
                         if (
                           formData.city === "" ||
                           formData.residentialAddress === "" ||
-                          formData.phone === ""
+                          formData.phone === "" ||
+                          formData.roomType === ""
                         ) {
                           toast.error("Please fill all the details");
+                        } else if (
+                          (formData.from === "23rd March Night" ?
+                            (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 1
+                            ) : (
+                              toDates.indexOf(formData.to) -
+                              fromDates.indexOf(formData.from) + 2
+                            )
+                          ) <= 0
+                        ) {
+                          toast.error("Please select valid dates")
                         } else {
                           handleProceed();
                         }
@@ -597,6 +711,12 @@ const Accomodation = () => {
                     </button>
                   </div>
                 </div>
+
+                <p className="mt-16 text-sm">
+                  For accommodation related queries, contact:<br />
+                  <b className="font-semibold">BHARATH R - <a href="tel:9344785172">9344785172</a></b><br />
+                  <b className="font-semibold">SREEHARI - <a href="tel:8825721923">8825721923</a></b><br />
+                </p>
               </section>
             )}
           </div>

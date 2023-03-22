@@ -44,11 +44,14 @@ export const fetchUserVerifyConfirm = (id) =>
 export const fetchUpdateUserPassword = (email, password) =>
   axios.post(`${USER_URL}/user-password/${email}`, { password: password }, {});
 
+export const fetchMasterAccommodation = () =>
+  axios.get(`${BASE_URL}/acc/stats`, {});
+
 export const fetchAccomodationRegister = (formData) =>
   axios.post(`${BASE_URL}/acc/`, formData, {});
 
 export const fetchAccomodationDetailsByEmail = (email) =>
-  axios.get(`${BASE_URL}/acc/${email}`, {});
+  axios.get(`${BASE_URL}/acc/email/${email}`, {});
 
 export const fetchPayGeneral = (formData) =>
   axios.post(`${PAYMENT_URL}/pay-general`, formData, {});
