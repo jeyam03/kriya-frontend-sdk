@@ -222,7 +222,7 @@
     "teamSize": "1 - 4",
     "date": "26",
     "timing": "9:00 AM - 4:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "PhyzPro",
@@ -297,7 +297,7 @@
     "teamSize": "2 - 3",
     "date": "25",
     "timing": "9:30 AM - 4:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "FORENSICIST",
@@ -322,7 +322,7 @@
     "teamSize": "3 - 4",
     "date": "26",
     "timing": "9:30 AM - 4:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "TRY AND TRIUMPH",
@@ -347,7 +347,7 @@
     "teamSize": "4",
     "date": "25",
     "timing": "9:00 AM - 4:30 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "AUTO - FACSIMILE",
@@ -772,7 +772,7 @@
     "teamSize": "2",
     "date": "24",
     "timing": "9:00 AM - 12:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "Tech - zap",

@@ -1,51 +1,5 @@
 [
   {
-    "wid": "WKSP0008",
-    "image": "/assets/Workshops/Workshop8.png",
-    "alteredFee": 250,
-    "assnName": "Production Engineering Association",
-    "workName": "Nuts and Bots with Naveen",
-    "date": "26",
-    "hall": "Y-202",
-    "time": "2.00 PM - 05.00 PM",
-    "c1Name": "DUVARAKESH D",
-    "c1Num": "7397057322",
-    "c2Name": "ARUN K",
-    "c2Num": "9003585358",
-    "maxCount": "100",
-    "desc": " We provide workshop on IoT, bots, automation and electric vehicle and their batteries. The session will be conducted by Mr. Naveen Ganesan , an independent researcher and a famous YouTuber who bagged the young science enthusiast and confidence award for the year 2022. The session will cover topics such as house automation, bots, 3d printers, Powerwall, cloud-based systems and sensors, etc.",
-    "agenda": [
-      [
-        {
-          "time": "2:00 PM - 2:30 PM",
-          "description": [
-            "Self-introduction and information about the companies he founded."
-          ]
-        },
-        {
-          "time": "2:30 PM - 3:00 PM",
-          "description": ["Real-world demands and problems."]
-        },
-        {
-          "time": "3:00 PM - 4:00 PM",
-          "description": ["All about 3D printing with a live demonstration"]
-        },
-        {
-          "time": "4:00 PM - 4:15 PM",
-          "description": ["Powerwall technology"]
-        },
-        {
-          "time": "4:15 PM - 4:30 PM",
-          "description": ["Bots that assist humans"]
-        },
-        {
-          "time": "4:30 PM - 5:00 PM",
-          "description": ["All about EVs and their future."]
-        }
-      ]
-    ]
-  },
-  {
     "wid": "WKSP0006",
     "image": "/assets/Workshops/Workshop6.png",
     "alteredFee": 800,
@@ -111,6 +65,52 @@
           "description": [
             "SESSION 2 - Simulation in Xilinx Vivado and implementation of combinational and sequential circuits"
           ]
+        }
+      ]
+    ]
+  },
+  {
+    "wid": "WKSP0008",
+    "image": "/assets/Workshops/Workshop8.png",
+    "alteredFee": 250,
+    "assnName": "Production Engineering Association",
+    "workName": "Nuts and Bots with Naveen",
+    "date": "26",
+    "hall": "Y-202",
+    "time": "2.00 PM - 05.00 PM",
+    "c1Name": "DUVARAKESH D",
+    "c1Num": "7397057322",
+    "c2Name": "ARUN K",
+    "c2Num": "9003585358",
+    "maxCount": "60",
+    "desc": " We provide workshop on IoT, bots, automation and electric vehicle and their batteries. The session will be conducted by Mr. Naveen Ganesan , an independent researcher and a famous YouTuber who bagged the young science enthusiast and confidence award for the year 2022. The session will cover topics such as house automation, bots, 3d printers, Powerwall, cloud-based systems and sensors, etc.",
+    "agenda": [
+      [
+        {
+          "time": "2:00 PM - 2:30 PM",
+          "description": [
+            "Self-introduction and information about the companies he founded."
+          ]
+        },
+        {
+          "time": "2:30 PM - 3:00 PM",
+          "description": ["Real-world demands and problems."]
+        },
+        {
+          "time": "3:00 PM - 4:00 PM",
+          "description": ["All about 3D printing with a live demonstration"]
+        },
+        {
+          "time": "4:00 PM - 4:15 PM",
+          "description": ["Powerwall technology"]
+        },
+        {
+          "time": "4:15 PM - 4:30 PM",
+          "description": ["Bots that assist humans"]
+        },
+        {
+          "time": "4:30 PM - 5:00 PM",
+          "description": ["All about EVs and their future."]
         }
       ]
     ]
