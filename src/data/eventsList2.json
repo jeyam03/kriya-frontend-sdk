@@ -297,7 +297,7 @@
     "teamSize": "2 - 3",
     "date": "25",
     "timing": "9:30 AM - 4:00 PM",
-    "closed": true
+    "closed": false
   },
   {
     "eventName": "FORENSICIST",
@@ -522,7 +522,7 @@
     "teamSize": "2 - 3",
     "date": "26",
     "timing": "9:30 AM - 2:30 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "AQUAJET",
@@ -921,7 +921,7 @@
     "eventRules": "Drone frame dimension should be in range of (210mm-350mm).\nEach Team can have maximum of 3 members.\nEach participated team should bring their own drone and fly. Drone pilot can not be changed once they started.\nDrone should be at good condition.\nParticipants should bring required spare parts required for the event.\nDrones cannot be exchanged with another team.\nOne drone cannot be driven with more than i pilot.\nQuad should not fly above 15 ft high.\nEvent judges reserve all the rights to disqualify in case of any misbehavior.\nEvent judges rules and are final.\nNo extra time will be allocated for any reasons, after every round there will be 2 hours break utilize those time for charging.\nJudges result is the final.",
     "teamSize": "2 - 3",
     "date": "25",
-    "timing": "1:00 PM - 4:00 PM",
+    "timing": "9:30 PM - 4:00 PM",
     "closed": false
   },
   {
