@@ -79,7 +79,7 @@ const Section9 = () => {
               <p className="text-lg">Linktree SU</p>
             </button>
           </div>
-          <div className="flex-1 flex flex-col space-y-8 lg:space-y-0 lg:space-x-6 lg:flex-row items-center lg:justify-between">
+          <div className="flex-1 flex flex-col lg:flex-wrap gap-8 lg:gap-6 lg:gap-y-12 lg:flex-row items-center lg:justify-between">
             <div className="w-full lg:w-56">
               <h5 className="text-xs tracking-widest">Chairperson</h5>
               <ContactItem name="Dharmendra R" phone="+91 94860 60706" />
@@ -113,6 +113,16 @@ const Section9 = () => {
               <ContactItem
                 name="Jeyam Palaniappan"
                 phone="+91 93847 68177"
+                className="mt-4 lg:mt-14"
+              />
+            </div>
+
+            <div className="w-full lg:w-56">
+              <h5 className="text-xs tracking-widest">Accommodation Support</h5>
+              <ContactItem name="Bharath R (Boys)" phone="+91 93447 85172" />
+              <ContactItem
+                name="Lisalini (Girls)"
+                phone="+91 87544 16195"
                 className="mt-4 lg:mt-14"
               />
             </div>
