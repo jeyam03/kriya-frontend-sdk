@@ -492,6 +492,12 @@ const TeamDetails = [
     image_url: "/assets/Team/PR/4swastika.png",
   },
   {
+    name: "Asvika M",
+    vertical: "PR and Sponsorship",
+    position: "",
+    image_url: "/assets/Team/PR/5asvika.png",
+  },
+  {
     name: "A.B.Harishma",
     vertical: "PR and Sponsorship",
     position: "",
