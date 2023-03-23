@@ -50,7 +50,7 @@
     "c1Num": "9003033373",
     "c2Name": "Praveenbabu R S",
     "c2Num": "9994542649",
-    "maxCount": "70",
+    "maxCount": "54",
     "desc": "The objective of this workshop is to give an overview of the FPGA design flow, Hardware description languages (HDLs) programming, and provide experience with Xilinx Vivado Platform. Implementation of digital logic designs, including finite state machines and data path circuits. Use of IP cores and embedded processors in FGPA based System on Chips(SOC) Design, techniques for debugging and testing FGPA based systems. At last, the participants will be able to design, simulate, implement and test their own FGPA-based designs by the end of the workshop.",
     "agenda": [
       [

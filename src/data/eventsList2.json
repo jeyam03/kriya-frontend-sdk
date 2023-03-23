@@ -297,7 +297,7 @@
     "teamSize": "2 - 3",
     "date": "25",
     "timing": "9:30 AM - 4:00 PM",
-    "closed": true
+    "closed": false
   },
   {
     "eventName": "FORENSICIST",
@@ -522,7 +522,7 @@
     "teamSize": "2 - 3",
     "date": "26",
     "timing": "9:30 AM - 2:30 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "AQUAJET",
