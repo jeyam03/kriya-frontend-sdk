@@ -241,7 +241,7 @@ const Profile = () => {
                 </div>
               ))}
             </div>
-            {!userDetails.isPaid && (
+            {paymentDetails?.length !== 0 && !userDetails.isPaid && (
               <Link
                 className="bg-blue-500 text-white w-fit px-4 py-2 mt-2 rounded-xl text-sm flex items-center group"
                 to="/auth/payment?type=GENERAL"
