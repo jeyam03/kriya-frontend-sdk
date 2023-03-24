@@ -697,7 +697,7 @@
     "teamSize": "3 - 4",
     "date": "24",
     "timing": "9:30 AM - 2:00 PM",
-    "closed": false
+    "closed": true
   },
   {
     "eventName": "Quizpicable me",
