@@ -227,7 +227,7 @@ const Profile = () => {
                         } flex items-center justify-between`}
                     >
                       <p className="lg:text-lg w-3/4">
-                        {payment.eventId === "-1"
+                        {payment.eventId === "-1" || payment.eventId === "-2"
                           ? "General"
                           : "Workshop " + payment.eventId}{" "}
                         registration{" "}
