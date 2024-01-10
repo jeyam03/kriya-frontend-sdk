@@ -68,7 +68,7 @@ const Section7 = () => {
             id="our-team-text"
           >
             Our
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
               {" Team "}
             </span>
           </h1>
@@ -155,7 +155,7 @@ const ImageGrid = ({ vertical }) => {
   return (
     <React.Fragment>
       <h2 className="text-[#181818] text-2xl mt-8 mb-4">{vertical}</h2>
-      <div className="flex flex-wrap gap-2 w-full">
+      <div className="flex flex-wrap gap-2 w-full bg-gray-100 shadow-xl rounded-lg p-4">
         {TeamDetails.filter((i) => i.vertical === vertical).map((item, i) => {
           return (
             <div

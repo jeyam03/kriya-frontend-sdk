@@ -1,11 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import { FaSoundcloud } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import EventGrid from "../components/EventGrid";
 import { fetchEvents } from "../API/call";
 import "../styles/gradientAnimation.css";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import particleOptions from "../ParticleOptions";
 
 const EventList = () => {
+
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    //await loadFull(engine);
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = (container) => {
+  console.log(container);
+};
+
+
+
+
+  
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [events, setEvents] = useState(
@@ -32,8 +54,14 @@ const EventList = () => {
   }, [events]);
 
   return (
-    <div className="w-full font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
-      <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-6 lg:px-8 flex flex-col items-center lg:block p-8">
+    
+  
+  <div className="w-full font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
+ <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} className="top-0 left-0 absolute" height="100vh" width="100vh" options={particleOptions} />
+    
+
+    <section className="h-fit w-full relative overflow-x-hidden lg:overflow-hidden font-poppins px-6 lg:px-8 flex flex-col items-center lg:block p-8">
+    
         {/* <div className="w-full my-8 lg:mt-0">
           <h1 className={`text-4xl lg:text-6xl text-white font-semibold font-poppins text-center py-2`}
             id="soon-text"
@@ -48,8 +76,11 @@ const EventList = () => {
           GOLD EVENTS
         </h1>
         <EventsGrid
+          // imgurl={
+          //   "https://media.istockphoto.com/id/1181359760/vector/gold-glitter-and-shiny-golden-rain-on-black-background-vector-square-luxury-background.jpg?s=612x612&w=0&k=20&c=L8On7JUZdmNYNTMBeD03-45lsBvaD1E0c2z8h-MsVOs="
+          // }
           imgurl={
-            "https://media.istockphoto.com/id/1181359760/vector/gold-glitter-and-shiny-golden-rain-on-black-background-vector-square-luxury-background.jpg?s=612x612&w=0&k=20&c=L8On7JUZdmNYNTMBeD03-45lsBvaD1E0c2z8h-MsVOs="
+            "/assets/EventGrid/goldbg.png"
           }
           arrowCircleStart="from-[#8B5523]"
           arrowCircleEnd="to-[#F2CC3E]"
@@ -57,6 +88,7 @@ const EventList = () => {
           topCurve="bg-[#010101]"
           rightCurve="bg-[#010101]"
           iconImg={"https://cdn-icons-png.flaticon.com/512/3309/3309977.png"}
+
         />
         <h1
           className={`text-3xl lg:text-4xl font-semibold text-center pt-8`}
@@ -68,7 +100,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "/assets/EventGrid/kriyative.png"
+            "/assets/EventGrid/1.jpeg"
           }
           arrowCircleStart="from-[#121a43]"
           arrowCircleEnd="to-[#a21cd9]"
@@ -90,7 +122,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "/assets/EventGrid/brainiac.png"
+            "/assets/EventGrid/brainiac.jpg"
           }
           arrowCircleStart="from-[#980283]"
           arrowCircleEnd="to-[#500d23]"
@@ -112,7 +144,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "/assets/EventGrid/coding.png"
+            "/assets/EventGrid/coding.jpg"
           }
           arrowCircleStart="from-[#c61b59]"
           arrowCircleEnd="to-[#371243]"
@@ -134,7 +166,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "/assets/EventGrid/circuit.png"
+            "/assets/EventGrid/circuit.jpg"
           }
           arrowCircleStart="from-[#c74517]"
           arrowCircleEnd="to-[#5c330f]"
@@ -156,7 +188,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "/assets/EventGrid/core.png"
+            "/assets/EventGrid/core.jpg"
           }
           arrowCircleStart="from-[#029893]"
           arrowCircleEnd="to-[#0d2e50]"
@@ -178,7 +210,7 @@ const EventList = () => {
         </h1>
         <EventsGrid
           imgurl={
-            "/assets/EventGrid/management.png"
+            "/assets/EventGrid/management.jpg"
           }
           arrowCircleStart="from-[#2696d9]"
           arrowCircleEnd="to-[#152e60]"
@@ -190,6 +222,7 @@ const EventList = () => {
           }
         />
       </section>
+
     </div>
   );
 };

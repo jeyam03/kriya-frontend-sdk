@@ -171,7 +171,7 @@ const Accomodation = () => {
           <h1 className="mt-1 text-4xl font-bold relative z-10">
             Apply for Accomodation
           </h1>
-          <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+          <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#3b82f6] to-[#8b5cf6]"></div>
         </div>
 
         {!accomodationDetails ? (

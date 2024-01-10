@@ -54,7 +54,7 @@ const Section2 = ({ scrollYByVH }) => {
   };
 
   const getDeadTime = () => {
-    let deadline = new Date("2023-03-24");
+    let deadline = new Date("2024-02-22");
     return deadline;
   };
 
@@ -113,13 +113,13 @@ const Section2 = ({ scrollYByVH }) => {
         <div className="w-full lg:w-[50vw] lg:pl-[calc(100vw/12)] py-16 lg:pr-16 h-full flex flex-col items-center lg:items-start justify-center">
           <h1 className={`text-6xl lg:text-7xl opacity-0 px-8 lg:p-0  font-[600] ${condition} calender-text font-poppins text-center lg:text-left`}>
             Mark your{" "}
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
               calendar
             </span>
           </h1>
           <p className={`text-xl mt-8 opacity-0 px-8 lg:p-0 ${condition} calender-text font-poppins text-center lg:text-left`}>
             Join us at the forefront of technological advancements and gain
-            valuable insights at our upcoming technical symposium Kriya 2023 !
+            valuable insights at our upcoming technical symposium Kriya 2024 !
           </p>
           <div className="px-8 lg:p-0 ">
             <button

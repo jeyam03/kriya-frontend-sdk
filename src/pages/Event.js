@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam, AiOutlineUser } from "react-icons/ai";
@@ -10,12 +10,26 @@ import {
   fetchUserByEmail,
 } from "../API/call";
 
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import particleOptions from "../ParticleOptions";
+
 const Event = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [generalPayment, setGeneralPayment] = useState(false);
   const [userDetails, setUserDetails] = useState(null);
   const [userEventDetails, setUserEventDetails] = useState(null);
+
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+ 
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = (container) => {
+  console.log(container);
+}
 
   const toTitleCase = (phrase) => {
     const wordsToIgnore = ["of", "in", "for", "and", "an", "or"];
@@ -82,6 +96,7 @@ const Event = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-36 lg:pt-12 h-screen overflow-y-scroll">
+    <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} className="top-0 left-0 absolute" height="100vh" width="100vh" options={particleOptions} />
       <h2 className="text-base mb-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {eventDetail.category}
       </h2>
@@ -89,7 +104,7 @@ const Event = () => {
         <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
           {toTitleCase(eventDetail.eventName)}
         </h1>
-        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#3b82f6] to-[#8b5cf6]"></div>
       </div>
       <p className="text-white text-justify mt-8 text-base w-full lg:w-[90%] pb-8 px-8 lg:px-0">
         {eventDetail.description}
@@ -133,7 +148,7 @@ const Event = () => {
         <div className="w-full lg:w-1/3 space-y-4 flex flex-col justify-between">
           {eventDetail.closed ? (
             <div className="lg:bg-white lg:rounded-3xl p-8 lg:p-12 space-y-4 text-center lg:text-left flex justify-center lg:justify-start">
-              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
                 Registrations Closed
               </span>
             </div>
@@ -148,7 +163,7 @@ const Event = () => {
               }}
             >
               {userEventDetails && (
-                <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+                <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
                   {userEventDetails.find((i) => i.eventId === id)
                     ? "Registered"
                     : "Register Here!"}

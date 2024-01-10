@@ -207,7 +207,7 @@ const WorkshopGrid = ({ number, imgurl, title, id }) => {
                 <IoIosArrowForward className="ml-1 group-hover:ml-2 transition-all" size={16} />
               </Link>
             </div>
-            <div className="text-6xl lg:text-8xl font-semibold text-gray-400 group-hover:bg-clip-text group-hover:[-webkit-text-fill-color:transparent] group-hover:bg-gradient-to-b from-[#C80067] to-[#5451B6] transition-all">
+            <div className="text-6xl lg:text-8xl font-semibold text-gray-400 bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6] transition-all">
               {number}
             </div>
           </div>

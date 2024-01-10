@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../styles/Landing.css";
 import { IoIosArrowForward } from "react-icons/io";
 
+
 // Events
 
 const Section3 = () => {

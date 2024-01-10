@@ -61,7 +61,7 @@ const Section4 = ({ scrollYByVH }) => {
             className={`text-4xl lg:text-6xl font-poppins font-semibold ${condition} workshop-text opacity-0 px-8 lg:p-0 text-center lg:text-right`}
           >
             Engineering.
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
               {" Researching. "}
             </span>{" "}
             Solutions.
@@ -94,7 +94,7 @@ const PaperPresentationItemDesktop = ({
       onMouseLeave={(e) => setOnMouseHoverIndex(0)}
       className={`text-left rounded-lg shadow-md p-8 ${
         onMouseHoverIndex === index ? "h-[90%] w-2/6" : "h-[85%] w-1/6"
-      } transition-all bg-gradient-to-t from-[#C80067] to-[#5451B6] relative`}
+      } transition-all bg-gradient-to-t from-[#3b82f6] to-[#8b5cf6] relative`}
       onClick={() => {
         navigate(`/portal/paper/${data.ppid}`);
       }}

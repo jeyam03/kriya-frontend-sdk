@@ -57,7 +57,7 @@ const Section12 = ({ scrollYByVH }) => {
             className={`mt-8 lg:mt-0 text-4xl lg:text-4xl font-poppins font-semibold ${condition} text-center lg:text-right`}
           >
             Entry
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
               {" included "}
             </span>
             with general registration!

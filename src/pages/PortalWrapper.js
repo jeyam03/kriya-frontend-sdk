@@ -18,7 +18,7 @@ import { BiBuildingHouse } from "react-icons/bi";
 const PortalWrapper = ({ children }) => {
   return (
     <main className="w-screen h-screen overflow-x-hidden flex items-center bg-[#181818] ">
-      <div className="w-4 bg-gradient-to-t from-[#C80067] to-[#5451B6] h-screen hidden lg:block"></div>
+      <div className="w-4 bg-gradient-to-t from-[#3b82f6] to-[#8b5cf6] h-screen hidden lg:block"></div>
       <NavBarForDesktop />
       <NavBarForMobile />
       <Outlet />

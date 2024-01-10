@@ -32,7 +32,7 @@ const Error404 = () => {
           to="/"
           className="bg-gray-200 px-6 py-2 text-xl rounded-xl font-poppins mt-16 font-semibold shadow-lg lg:hover:scale-110 transition-all"
         >
-          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#dc4fab] to-[#8458eb] ">
+          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6] ">
             Go to Home Page
           </span>
         </Link>

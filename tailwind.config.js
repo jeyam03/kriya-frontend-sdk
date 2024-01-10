@@ -8,6 +8,16 @@ module.exports = {
       poppins: ["'Poppins'", "sans-serif"],
       jetbrains: ["'JetBrains Mono'", "monospace"]
     },
+    extend:{
+      backgroundImage:{
+        '1':"url('../../public/assets/images/Event_Cards/1.png')",
+        '2':"url('../../public/assets/images/Event_Cards/2.png')",
+        '3':"url('../../public/assets/images/Event_Cards/3.png')",
+        '4':"url('../../public/assets/images/Event_Cards/4.png')",
+        '5':"url('../../public/assets/images/Event_Cards/5.png')",
+        
+      }
+    }
   },
   variants: {
     extend: {

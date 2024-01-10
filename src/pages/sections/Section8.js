@@ -14,7 +14,7 @@ const Section8 = () => {
       >
         <h1 className="text-4xl lg:text-5xl font-bold text-center">
           Frequently Asked{" "}
-          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
+          <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
             Questions
           </span>
         </h1>

@@ -19,6 +19,10 @@ import { BsInstagram, BsLinkedin } from "react-icons/bs";
 import { SiGmail, SiYoutube } from "react-icons/si";
 import Section12 from "./sections/Section12";
 import { IoMdClose } from "react-icons/io";
+import Section3v2 from "./sections/Section3v2";
+import Section3v3 from "./sections/Section3v3";
+import Section3v4 from "./sections/Section3v4";
+import Section1v2 from "./sections/Section1v2";
 
 const Landing = () => {
   const [consolee, setConsolee] = useState(0);
@@ -128,11 +132,11 @@ const Landing = () => {
             </div>
           </div>
         )}
-        <Section1 scrollYByVH={consolee} />
+        <Section1v2 scrollYByVH={consolee} />
         <Section12 scrollYByVH={consolee} />
         <Section2 scrollYByVH={consolee} />
         <Section11 scrollYByVH={consolee} />
-        <Section3 scrollYByVH={consolee} />
+        <Section3v4 scrollYByVH={consolee} />
         <Section10 scrollYByVH={consolee} />
         <Section4 scrollYByVH={consolee} />
         <Section5 scrollYByVH={consolee} />

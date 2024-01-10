@@ -43,7 +43,7 @@ const Section10 = ({ scrollYByVH }) => {
         <div className="w-full lg:w-[40%] h-full flex items-center px-8 lg:pl-0 lg:pr-16 font-semibold font-poppins">
           <h1 className="text-4xl lg:text-5xl text-center lg:text-left w-full">
             Introducing our{" "}
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#8f3ccf] to-[#df51ad]">
+            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
               {" Flagship "}
             </span>
             Events{" "}

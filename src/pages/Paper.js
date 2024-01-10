@@ -1,16 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam, AiOutlineUser } from "react-icons/ai";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchPaperById, fetchPaperDetailsByEmail, fetchPaperRegister, fetchUserByEmail } from "../API/call";
 import { SiGmail } from "react-icons/si";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import particleOptions from "../ParticleOptions";
 
 const Paper = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [generalPayment, setGeneralPayment] = useState(false);
   const [userPaperDetails, setUserPaperDetails] = useState([]);
+
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+ 
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = (container) => {
+  console.log(container);
+}
 
   const toTitleCase = (phrase) => {
     return phrase
@@ -65,11 +78,12 @@ const Paper = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-28 lg:pt-12 h-screen overflow-y-scroll">
-      <div className="w-fit">
+     <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} className="top-0 left-0 absolute" height="100vh" width="100vh" options={particleOptions}/>
+     <div className="w-fit">
         <h1 className="text-4xl text-white font-semibold px-8 lg:px-0">
           {toTitleCase(paperDetail.eventName)}
         </h1>
-        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#3b82f6] to-[#8b5cf6]"></div>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-4 w-full lg:px-0 my-8 text-black">
@@ -115,7 +129,7 @@ const Paper = () => {
               //     : console.log("Cancelled");
               // }}
             >
-              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
                 {/* {"Register Here!"} */}
                 {"Registrations Closed!"}
               </span>

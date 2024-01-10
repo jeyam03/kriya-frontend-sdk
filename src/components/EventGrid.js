@@ -42,7 +42,6 @@ const EventGrid = ({
         className={`${className} group-hover:shadow-lg z-20 text-lg text-blue rounded-xl lg:rounded-3xl h-full relative bg-gray-200 lg:group-hover:scale-[110%] transition-all`}
         style={{
           background: `url("${imgurl}")`,
-          backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
@@ -74,7 +73,7 @@ const EventGrid = ({
               style={{
                 background: `url("${iconImg}")`,
                 backgroundPosition: "center",
-                backgroundSize: "contain",
+                backgroundSize: "cover,contain",
                 backgroundRepeat: "no-repeat",
               }}
               className="w-8 h-8"

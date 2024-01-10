@@ -73,7 +73,7 @@ const Section11 = () => {
             <p className="mb-8 drop-shadow-xl">
               Register now to win from an exciting prize pool worth
             </p>
-            <span className="text-5xl lg:text-[10rem] tracking-wide lg:tracking-wider bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6] drop-shadow-xl font-poppins">
+            <span className="text-5xl lg:text-[10rem] tracking-wide lg:tracking-wider bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6] drop-shadow-xl font-poppins">
               <span className="font-oswald">₹ {" "}</span>{<Number n={500000} />}
             </span>
           </h1>

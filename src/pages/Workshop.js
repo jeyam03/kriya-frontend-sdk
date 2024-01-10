@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import { IoMdCall, IoLogoWhatsapp } from "react-icons/io";
 import { MdAccessTime, MdOutlineLocationOn } from "react-icons/md";
 import { AiOutlineTeam } from "react-icons/ai";
@@ -10,12 +10,25 @@ import {
   fetchWorkshopById,
   fetchWorkshopStats,
 } from "../API/call";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import particleOptions from "../ParticleOptions";
 
 const Workshop = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [paymentDetails, setPaymentDetails] = useState(null);
   const [currentCount, setCurrentCount] = useState(0);
+
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+ 
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = (container) => {
+  console.log(container);
+}
 
   const toTitleCase = (phrase) => {
     return phrase
@@ -66,6 +79,8 @@ const Workshop = () => {
     </section>
   ) : (
     <section className="w-full lg:px-16 font-poppins py-12 pt-24 lg:pt-12 h-screen overflow-y-scroll">
+         <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} className="top-0 left-0 absolute" height="100vh" width="100vh" options={particleOptions}/>
+
       {/* <div className="flex w-[calc(100%+4rem)] lg:w-[calc(100%+8rem)] overflow-x-hidden space-x-6 whitespace-nowrap py-2 mb-12 text-white bg-gradient-to-r from-[#C80067] to-[#5451B6] -mx-16">
         <div className="animate-marquee [will-change:transform] whitespace-nowrap flex space-x-6">
           <p className="">
@@ -144,7 +159,7 @@ const Workshop = () => {
         <h1 className="text-3xl text-white font-semibold px-8 lg:px-0">
           {workshopDetail.workName}
         </h1>
-        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#C80067] to-[#7470ff]"></div>
+        <div className="w-[60%] lg:w-[80%] ml-8 lg:ml-0 mt-2 h-[4px] bg-gradient-to-r rounded-[2px] from-[#3b82f6] to-[#8b5cf6]"></div>
       </div>{" "}
       {/* <h2 className="text-base mt-2 text-gray-400 tracking-widest px-8 lg:px-0">
         {workshopDetail.assnName}
@@ -214,7 +229,7 @@ const Workshop = () => {
             }}
           >
             {paymentDetails && (
-              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#7470ff]">
+              <span className="text-3xl lg:text-3xl font-semibold tracking-wide bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]">
                 {paymentDetails
                   ?.filter(
                     (w) => w.type === "WORKSHOP" && w.status === "SUCCESS"

@@ -36,10 +36,10 @@ const Section6 = () => {
         id="section6"
         className="h-full w-full relative lg:px-[calc(100vw/12)] lg:p-24 flex flex-col-reverse lg:flex-row items-center"
       >
-        <div className="w-full lg:w-[70%] overflow-x-hidden h-full">
+        <div className="w-full lg:w-[100%] overflow-x-hidden h-full">
           <div className="flex flex-col p-8 lg:pl-0 font-poppins space-y-8 lg:space-y-4">
-            <div className="flex flex-col lg:flex-row">
-              <div className=" p-4 px-6 space-y-4 flex flex-col items-center lg:items-start sponsors-text opacity-0 delay-100">
+            <div className="flex flex-col lg:flex-row justify-center items-center">
+              <div className=" p-4 px-6 space-y-4 flex flex-col items-center lg:justify-center sponsors-text opacity-0 delay-100">
                 <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                   <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                     {"TITLE "}
@@ -51,31 +51,15 @@ const Section6 = () => {
                   title="KLA"
                 />
               </div>
-              <div className="p-4 px-6 space-y-4 sponsors-text opacity-0 delay-100">
+            </div>
+            <div className="flex flex-col lg:flex-row justify-center items-center">
+              <div className=" p-4 px-6 space-y-4 flex flex-col items-center lg:justify-center sponsors-text opacity-0 delay-100">
                 <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                   <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                    {"Co "}
+                    {"MEDIA"}
                   </span>
                   Sponsor
                 </p>
-
-                <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
-                  <Sponsors
-                    imgurl="https://blog.shikshacoach.com/wp-content/uploads/2022/01/shankar-ias-academy-e1643541869552.jpg"
-                    title="Shankar IAS Academy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
-              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
-                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
-                  {"MEDIA "}
-                </span>
-                Sponsor
-              </p>
-              <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <Sponsors
                   imgurl="https://www.exchange4media.com/news-photo/100947-expresslogo.jpg"
                   title="The Indian Express"
@@ -83,7 +67,22 @@ const Section6 = () => {
               </div>
             </div>
 
-            <div className="p-0 lg:p-4 space-y-4 sponsors-text opacity-0 delay-100">
+            {/* <div className="p-0 lg:p-4 flex justify-center space-y-4 sponsors-text opacity-0 delay-100">
+              <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
+                <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
+                  {"MEDIA "}
+                </span>
+                Sponsor
+              </p>
+              <div className="flex flex-wrap gap-6  lg:justify-start">
+                <Sponsors
+                  imgurl="https://www.exchange4media.com/news-photo/100947-expresslogo.jpg"
+                  title="The Indian Express"
+                />
+              </div>
+            </div> */}
+
+            <div className="p-0 lg:p-4 space-y-10 sponsors-text opacity-0 delay-100">
               <p className="text-2xl font-semibold tracking-wider text-center lg:text-left">
                 <span className="bg-clip-text text-3xl py-2 [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#5238d1] to-[#8938d1]">
                   {"OTHER "}
@@ -91,8 +90,8 @@ const Section6 = () => {
                 Sponsors
               </p>
 
-              <div className="w-full max-w-full relative overflow-x-hidden h-48">
-                <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
+              <div className="w-screen h-48">
+                <div className="flex space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
                   {Array(4).fill(
                     <React.Fragment>
                       <Sponsors
@@ -128,7 +127,7 @@ const Section6 = () => {
                 </div>
               </div>
 
-              <div className="w-full max-w-full relative overflow-x-hidden h-48">
+              <div className="w-screen h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee-rev">
                   {Array(4).fill(
                     <React.Fragment>
@@ -165,7 +164,7 @@ const Section6 = () => {
                 </div>
               </div>
 
-              <div className="w-full max-w-full relative overflow-x-hidden h-48">
+              <div className="w-screen h-48">
                 <div className="flex w-fit space-x-6 absolute whitespace-nowrap [will-change:transform] animate-marquee">
                   {Array(4).fill(
                     <React.Fragment>
@@ -203,17 +202,6 @@ const Section6 = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="w-full lg:w-[30%] p-8 pb-0 lg:p-0">
-          <h1
-            className={`text-4xl lg:text-6xl font-poppins font-semibold  sponsors-text opacity-0 text-center lg:text-right`}
-          >
-            Kriya '23
-            <span className="bg-clip-text [-webkit-text-fill-color:transparent] bg-gradient-to-r from-[#C80067] to-[#5451B6]">
-              {" Sponsors"}
-            </span>
-          </h1>
         </div>
       </section>
       <a
